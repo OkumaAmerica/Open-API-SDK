@@ -1,0 +1,3647 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Okuma.CLCMDAPI</name>
+    <version>1.8.0.0</version>
+    <fullname>Okuma.CLCMDAPI, Version=1.8.0.0, Culture=neutral, PublicKeyToken=a223a5616e84547b</fullname>
+  </assembly>
+  <members>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CATC">
+      <summary>
+ Class provides information about Auto Tool Changer. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/2/2008	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.#ctor">
+      <summary>
+ Create an instance of this class 
+ </summary>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.UnRegisterToolPot(System.Int32)">
+      <summary>
+ Un-register a tool at the specified pot number 
+ </summary>
+ <example> This example shows how to call the UnRegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Private Sub atcButtonRegister_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles atcButtonRegister.Click 
+ Dim objcatc As CATC 
+ Try 
+    objcatc = New CATC() 
+    objcatc.UnRegisterToolPot(intPotNo) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ End Sub 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where the tool will be un-registered</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> ATC TOOL INFORMATION 
+ <para>
+ <img src="Lathe.ATC.SET2.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	12/2/2008	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.RegisterToolPot(System.Int32,System.Int32,Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum,Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum,Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum)">
+      <summary>
+ Register a tool at the specified pot number with other tool attributes. 
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Private Sub atcButtonRegister_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles atcButtonRegister.Click 
+ Dim objcatc As CATC 
+ Try 
+    objcatc = New CATC() 
+    objcatc.RegisterToolPot(intPotNo, intToolNo, enToolKind, enToolSize, enReturnMagazine) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ End Sub 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">testing</exception>
+ <param name="intPotNo">Pot number where a tool will be registered to.</param>
+ <param name="intToolNo">Tool number to be registered</param>
+ <param name="enSettingToolKind">Tool Kind for the registered tool</param>
+ <param name="enSettingToolSize">Tool Size for the registered tool</param>
+ <param name="enReturnMagazine">Return magazine number for the registered tool and applicable for ATC having sub magazine only</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ When a large, super-large, right-large or left-large diameter tool is returned from the turret to the 
+ magazine, the tool is always returned to the pot where it was stored previously. The pot where 
+ any of a super-large, an R-large and an L-large diameter tool is stored is recognized as the pot 
+ for which the tool to be returned is determined (the pot is called a “reserved pot”) when a tool is 
+ removed from such a pot. Tools other than the previously stored tool are not returned to the pot 
+ recognized as the reserved pot.  The reserved pot is displayed with a R letter. 
+ </remarks>
+ <Figure> ATC TOOL INFORMATION 
+ <para>
+ <img src="Lathe.ATC.SET2.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.SetNextTool(System.Int32,Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum,Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum,Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum)">
+      <summary>
+ Set a registered tool number in ATC table as Next Tool 
+ </summary>
+ <example> This example shows how to call the SetNextTool mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CATC 
+ Try 
+    objcatc = New CATC() 
+    objcatc.SetNextTool(intToolNo, enToolKind, enToolSize, enReturnMagazine) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number to be registered</param>
+ <param name="enSettingToolKind">Tool Kind for the registered tool</param>
+ <param name="enSettingToolSize">Tool Size for the registered tool</param>
+ <param name="enReturnMagazine">Return magazine number for the registered tool and applicable for ATC having sub magazine only</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ None 
+ </remarks>
+ <Figure> ATC TOOL INFORMATION 
+ <para> NEXT TOOL 
+ <img src="Lathe.ATC.SET1.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	12/2/2008	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC.SetToolInStation(System.Int32,Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum,Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum,Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum,Okuma.CLCMDAPI.Enumerations.TurretStationEnum)">
+      <summary>
+ Set tool number in station 
+ </summary>
+ <example> This example shows how to call the SetToolInStation mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CATC 
+ Try 
+    objcatc = New CATC() 
+    objcatc.SetToolInStation(intToolNo, enToolKind, enToolSize, enReturnMagazine, enTurretStation) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number to be registered</param>
+ <param name="enSettingToolKind">Tool Kind for the registered tool</param>
+ <param name="enSettingToolSize">Tool Size for the registered tool</param>
+ <param name="enReturnMagazine">Return magazine number for the registered tool and applicable for ATC having sub magazine only</param>
+ <param name="enTurretStation">Station number where tool is set to</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ None 
+ </remarks>
+ <Figure> ATC TOOL INFORMATION 
+ <para> STATION NO. 1 
+ <img src="Lathe.ATC.SET1.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	12/2/2008	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CATC2">
+      <summary>
+ Class provides information about Auto Tool Changer for 8 digits Tool ID. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/2/2008	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC2.#ctor">
+      <summary>
+ Create an instance of this class 
+ </summary>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC2.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CATC2.RegisterToolPot(System.Int32,System.Int32,System.Int32,Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum,System.Int32,Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum,System.Int32,Okuma.CLCMDAPI.Enumerations.TurretEnum,Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum)">
+      <summary>
+ Register a tool at the specified pot number with other tool attributes. 
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Private Sub RegisterTool() 
+ Dim objcatc As CATC2 
+ Dim intPotNo, intGroupNo, intSerialNo, intEdges, intToolAngle As Integer 
+ Dim enTurret as TurretEnum 
+ Dim enToolKind As ToolIDSettingToolKindEnum 
+ Dim enToolSize As ToolIDSettingToolSizeEnum 
+ Dim enReturnMagazine As ReturnMagazineEnum 
+ Try 
+    objcatc = New CATC2() 
+    objcatc.RegisterToolPot(intPotNo, intGroupNo, intSerialNo, enToolKind, intEdges, enToolSize, intToolAngle, enReturnMagazine, enTurret) 
+ Catch ae As ApplicationException 
+    Throw 
+ Catch ex As Exception 
+    Throw 
+ End Try 
+ End Sub 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where a tool will be registered to.</param>
+ <param name="intGroupNo">Group number to be registered for the tool</param>
+ <param name="intSerialNo">Serial number to be registered for the tool</param>
+ <param name="intEdges">Number of edges for multi-point tool kind</param>
+ <param name="enSettingToolKind">Tool Kind for the registered tool</param>
+ <param name="enSettingToolSize">Tool Size for the registered tool</param>
+ <param name="intToolAngle">
+ <para>Tool angle for multi-point tool kind</para>
+ <para>Valid angle for 12 edges tool: 0/30/60/90/120/150/180/210/240/270/300/330</para>
+ <para>Valid angle for other multi-edge tool: 0/45/90/135/180/225/270/315</para>
+ </param>
+ <param name="enTurret">
+ <para>Turret number for the registered tool</para>
+ </param>
+ <param name="enReturnMagazine">Magazine to be returned</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ <para>
+ <para>
+ Note 1: 
+ </para>
+ When a large, super-large, right-large or left-large diameter tool is returned from the turret to the 
+ magazine, the tool is always returned to the pot where it was stored previously. The pot where 
+ any of a super-large, an R-large and an L-large diameter tool is stored is recognized as the pot 
+ for which the tool to be returned is determined (the pot is called a “reserved pot”) when a tool is 
+ removed from such a pot. Tools other than the previously stored tool are not returned to the pot 
+ recognized as the reserved pot.  The reserved pot is displayed with a R letter. 
+ </para>
+ <para>
+ <para>
+ Note 2: 
+ </para>
+ <para>
+ 1) The tool cannot be registered due to a duplicate tool number if a tool with the same group 
+ number and the same serial number exists in another pot. 
+ </para>
+ <para>
+ 2) The tool ID data can be deleted by changing both the group and serial numbers to 0. 
+ </para>
+ <para>
+ 3) If the tool has been registered, the data in the tool setting window cannot be directly edited. 
+ Delete the data once and create again. 
+ </para>
+ <para>
+ 4) The “RETURN MAGAZINE” setting is only effective for models with multiple magazines or 
+ subsidiary magazine. Otherwise, the data is not displayed or set up. 
+ </para>
+ <para>
+ 5) The TIPS (CHIP) and TIP (CHIP) ANGLE settings are only effective when a ML tool (a multiple 
+ edge tool) is selected as tool kind. Otherwise, the data will not be displayed or set up. Do not 
+ specify the same tip angle for multiple tips of a multiple edge tool. Specifying duplicated angles 
+ results in an error. 
+ </para>
+ <para>
+ 6) ML tool (multiple edge tool) cannot be selected as tool kind for the B-turret. Selecting it results 
+ in an error. The RETURN MAGAZINE data will not be displayed or set up for the B-turret. 
+ </para>
+ <para>
+ 7) Selecting a size other than normal diameter with the adjacent pots occupied leads to an error. 
+ Extra-big diameter tool: The preceding or following pots shall be empty. 
+ Right big diameter tool: The preceding pot shall be empty. 
+ Left big diameter tool: The following pot shall be empty. 
+ SL tool: The preceding and following pots shall not be occupied by a dummy tool or a big 
+ diameter tool. 
+ </para>
+ </para>
+ </remarks>
+ <Figure> ATC TOOL INFORMATION 
+ <para>
+ <img src="Lathe.ToolID.ATC2.SET.jpg" />
+ </para>
+ </Figure></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CBase">
+      <summary>
+ Base class for all classes in this library.  It should not be used or derived directly. 
+ It provides logging and error handling services to all derived class. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String)">
+      <summary>
+ Create an instance of CBase class given the derived class name and ID. 
+ </summary>
+ <param name="strClassId">Class ID</param>
+ <param name="strClassName">Class Name</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String,System.String)">
+      <summary>
+ Create an instance of CBase class given the derived class name and ID. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strClassId">Class ID</param>
+ <param name="strClassName">Class Name</param>
+ <param name="strLoggingName">Logging Name.  Globally, the logging name will be combined with library name as the logging name for all logging messages.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.CheckErrorCode(System.Int32,System.Int32,System.String)">
+      <summary>
+ Check return error from OCJ functions.  It is designed for internal use only. 
+ <para>All error codes that are less than 0 will throw A System.NotSupportedException</para>
+ <para>All error codes that are greater 0 will throw A System.ApplicationException</para>
+ </summary>
+<param name="nErrorCode">Error Code</param>
+<param name="intFunctionErrorCode">Function Error code</param>
+<param name="strSource">Source string</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.ThrowAE(System.Int32,System.String,System.String)">
+      <summary>A helper function that throw System.ApplicationException given function ID, operation message, and an error message. 
+ It is designed for internal use only</summary>
+<param name="intFunctionId">Function Id</param>
+<param name="strMessage">String Message</param>
+<param name="strError">String Error</param></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.ThrowNE(System.Int32,System.String,System.String)">
+      <summary>A helper function that throw System.NotSupportedException given function ID, operation message, and an error message. 
+ It is designed for internal use only</summary>
+<param name="intFunctionId">Function Id</param>
+<param name="strMessage">String Message</param>
+<param name="strError">String Error</param></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.AllExceptionHandler(System.String,System.String@,System.Exception@,System.Int32)">
+      <summary>An exception handler for all expected exceptions. It is designed to simplify the exception handling process. 
+ All exception will be logged</summary>
+<param name="strFunctionName">Function Name</param>
+<param name="strParameters">Parameters</param>
+<param name="objEx">Exception Object</param>
+<param name="intFunctionErrorCode">Function Error Code</param></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String@,Okuma.ApiLog.loggingRequestType)">
+      <summary>Log function name, function parameters.  This library name and name of instance of class derived from this base class is also logged.</summary>
+<example> This example shows how to call the LogMessage mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="strFunctionName">Function Name.</param>
+<param name="strParameters">Parameter String.</param>
+<param name="enLogType">Log Type. Values for this parameter come from the Okuma.CLCMDAPI.CommandAPI.LoggingService.ApiLog.loggingRequestType</param>
+         '''<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String@,Okuma.ApiLog.loggingRequestType,System.Boolean)">
+      <summary>Log message with function name, function parameter given the logging level. </summary>
+<param name="strFunctionName">Function Name</param>
+<param name="strParameters">Parameters</param>
+<param name="enLogType">Login Request Type</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.ConvertUnitToInch(System.Double)">
+      <summary>Convert mm to inch unit</summary>
+<param name="dblValue">mm Value to convert to inch</param>
+<returns>A System.Double Value</returns>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.ConvertUnitToMM(System.Double)">
+      <summary>Convert inch to mm unit</summary>
+<param name="dblValue">inch Value to convert to mm</param>
+<returns>A System.Double Value</returns>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.CheckLicense(System.String,System.String,System.String,System.String)">
+      <summary>N/A</summary>
+<example> This example shows how to call the CheckLicense method. 
+<code escaped="true" language="Visual Basic">
+ Not available in Object Browser. 
+</code>
+</example>
+<param name="strFeatureName">License Feature Name</param>
+<param name="strFeatureVersion">License Feature Version</param>
+<param name="strFeatureLabel">License Feature Label.</param>
+<param name="strLicensePath">License Path</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.CreateLoggingService">
+      <summary>Create a logging service instance</summary>
+<example> This example shows how to call the CreateLoggingService method. 
+<code escaped="true" language="Visual Basic">
+ Not available in Object Browser. 
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.GetErrorCode(System.Int32)">
+      <summary>Helper function to generate framework error code.  Error code scheme includes library id, class id, and error code</summary>
+<param name="intErrorCode">Error Code</param>
+<returns>A System.String</returns>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.GetErrorNumberFromErrorMessage(System.String)">
+      <summary>Helper function to extract error code number from error message</summary>
+<param name="strErrorCode">String Error Code</param>
+<returns>A Sytem.String</returns>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.GetExceptionErrorCode(System.Int32)">
+      <summary>N/A</summary>
+<param name="intErrorCode">Integer Error Code</param>
+<returns>A Sytem.String</returns>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CBase.LogExceptionMessage(System.String,System.String@,System.String@)">
+      <summary>N/A</summary>
+<param name="strFunctionName">String Function Name</param>
+<param name="strParameters">String Parameters</param>
+<param name="strError">String Error Code</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.ToolIDOffsetTypeEnum">
+      <summary>
+ Specifies the offset type to be 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.TurretEnum">
+      <summary>
+ Specify turret side of machine 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretEnum.A_Turret">
+      <summary>
+ A Turret 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretEnum.B_Turret">
+      <summary>
+ B Turret 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum">
+      <summary>
+ Specify tool size for a registered tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum.None">
+      <summary>
+ No attribute 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum.E_Tool">
+      <summary>
+ Super Large diameter tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum.BR_Tool">
+      <summary>
+ BR tool size  (Right Side large tool) 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum.B_Tool">
+      <summary>
+ B Tool size (Left Side large tool) 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolSizeEnum.SL_Tool">
+      <summary>
+ Large Diameter tool and represented as 'SL' 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum">
+      <summary>
+ Specify tool kind for a registered tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum.M_Tool">
+      <summary>
+ A M tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum.L_Tool">
+      <summary>
+ A L tool. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum.SensorTool">
+      <summary>
+ Sensor tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum.DummyTool">
+      <summary>
+ A dummy tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ToolIDSettingToolKindEnum.MultiPoint">
+      <summary>
+ Multi-point Tool 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.FeatureSetEnum">
+      <summary>
+ 
+ Feature Set enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	3/25/2008	Created 
+ </history>
+ ----------------------------------------------------------------------------- 
+'</member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.TurretStationEnum">
+      <summary>
+ Represents Turret stations 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretStationEnum.TurretStationNo1">
+      <summary>
+ Station 1 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretStationEnum.TurretStationNo2">
+      <summary>
+ Station 2 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretStationEnum.TurretStationNo3">
+      <summary>
+ Station 3 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.TurretStationEnum.TurretStationNo4">
+      <summary>
+ Station 4 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum">
+      <summary>
+ Specify the return magazine for a registered tool for multi-magazine specification machine. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum.MG1">
+      <summary>
+ First Magazine 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.ReturnMagazineEnum.MG2">
+      <summary>
+ Second magazine 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum">
+      <summary>
+ Specify tool size for a registered tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.SL_Tool">
+      <summary>
+ Large Diameter tool and can only support on MULTUS machines equipped with ATC Type G or H. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.H_Tool">
+      <summary>
+ Heavy Tool. ATC arm acceleration/deceleration is reduced. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.E_Tool">
+      <summary>
+ Large diameter tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.B_Tool">
+      <summary>
+ Suprer Large diameter tool left 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.BR_Tool">
+      <summary>
+ Large diameter tool right 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolSizeEnum.Standard">
+      <summary>
+ Standard tool 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum">
+      <summary>
+ Specify tool kind for a registered tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum.DummyTool">
+      <summary>
+ A dummy tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum.L_Tool">
+      <summary>
+ An Lathe tool. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum.M_Tool">
+      <summary>
+ An Mill tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SettingToolKindEnum.SensorTool">
+      <summary>
+ A Sensor tool 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.FunctionIndexEnum">
+      <summary>
+ Function Index enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	3/25/2008	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.ControlTypeEnum">
+      <summary>
+ Control type enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	3/25/2008	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.DataUnitEnum.Unit_mm">
+      <summary>
+ Millimeter unit 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.DataUnitEnum.Unit_Inch">
+      <summary>
+ Inch unit 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum">
+      <summary>
+ Specified the panel name 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/18/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.OperationMode">
+      <summary>
+ Mode at which NC is under either Auto/MDI/Manual mode. 
+ </summary>
+ <remarks>
+ Auto/MDI/Manual mode cannot be changed by this panel mode, but the screen can be changed while NC in one of these modes. 
+ <para>For example, screen can be changed from ACTUAL POSITION to MAIN PROGRAM.</para>
+ </remarks></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.ProgramMode">
+      <summary>
+ In this mode program and data files can be edited, input/output, displayed, and deleted 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.ParameterMode">
+      <summary>
+ In this mode the parameter data necessary for numerical control can be set, changed, an displayed. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.ZeroSetMode">
+      <summary>
+ In this mode the zero offset data and zero offset shift data which define a program coordinate 
+ system can be set, changed, or checked. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.ToolDataSettingMode">
+      <summary>
+ In this mode the tool offset data, nose radius compensation data, tool shape data, and load monitor 
+ data can be set, changed, or displayed 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.PanelGroupEnum.MacManMode">
+      <summary>
+ In this mode the machining management function can be used. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum">
+      <summary>
+ Specifies the cutting position in relation of tool index, turrent index, and spindle position 
+ </summary>
+ <Figure>
+ <para>
+ <img src="Lathe.Multi.CuttingPosition.jpg" />
+ </para>
+ </Figure></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis1_BaseA">
+      <summary>
+ First Spindle (Principal axis 1) Base position, Side A 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis1_BaseB">
+      <summary>
+ First Spindle (Principal axis 1) Base position, Side B 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis1_VerticalA">
+      <summary>
+ First Spindle (Principal axis 1) Vertical position, Side A 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis1_VerticalB">
+      <summary>
+ First Spindle (Principal axis 1) Vertical position, Side B 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis2_BaseA">
+      <summary>
+ Second Spindle (Principal axis 2) Base position, Side A 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis2_BaseB">
+      <summary>
+ Second Spindle (Principal axis 2) Base position, Side B 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis2_VerticalA">
+      <summary>
+ Second Spindle (Principal axis 2) Vertical position, Side A 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.PrincipalAxis2_VerticalB">
+      <summary>
+ Second Spindle (Principal axis 2) Vertical position, Side B 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.SensorDirectionEnum">
+      <summary>
+ Specifies the sensor direction for using in CTools.MeasureCalculateToolOffset 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SensorDirectionEnum.PositiveDirection">
+      <summary>
+ Positive (+) The direction of a sensor( Machine) 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SensorDirectionEnum.NegativeDirection">
+      <summary>
+ Negative (-) The direction of a sensor( Machine) 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.OffsetTypeEnum">
+      <summary>
+ Specifies the offset type to be 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum">
+      <summary>
+ Specifies list of available axes for Add/Subtract/Cal tool offset. 
+ </summary>
+ ''' <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.X_Axis">
+      <summary>
+ X axis 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.Z_Axis">
+      <summary>
+ Z axis 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.YI_Axis">
+      <summary>
+ YI axis 
+ </summary>
+ <remarks>
+ Valid for Tool offset ONLY. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum">
+      <summary>
+ Specifies list of available axes for Add/Subtract/Measure/Calculate for Nose Radius Compensation, and Tool Wear. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.X_Axis">
+      <summary>
+ X axis 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.Z_Axis">
+      <summary>
+ Z axis 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/24/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.SubSystemEnum">
+      <summary>
+ List of available sub systems to functions, if applicable. 
+ Each sub sytem represents a specific data area of machine that is interested of. 
+ </summary>
+ <remarks>
+ <para>Not all machines support all subsystems.</para>
+ <para>It is necessary to specify the sub system to obtain different machine data if applicable.</para>
+ <para>For example:</para>
+ <para>In order to get tool offset values for machine that has 2 turrets, A and B, the sub system must be set for A or B turret as shown below:  </para>
+ <para> objTools.SetSubSystem(SubSystemEnum.NC_RUN_1) 'set current subsystem to A Turret</para>
+ <para> objTools.GetToolOffset(intOffsetIndex, enAxisIndex) 'obtain tool offset value in A turret for the specified offset index and axis index</para>
+ <para> objTools.SetSubSystem(SubSystemEnum.NC_RUN_2) 'set current subsystem to B Turret</para>
+ <para> objTools.GetToolOffset(intOffsetIndex, enAxisIndex) 'obtain tool offset value in B turret for the specified offset index and axis index</para>
+ <para> For machine that has only 1 turret, tool offset value can be obtained by setting sub system to NC_RUN or NC_RUN_1.</para>
+ <para> A NotSupportedException will be thrown if trying to access tool offset values in B Turret</para>
+ <para> By default, the sub system is NC_RUN.  The data will be the current active data area of the machine.</para>
+ <para> Tool offset values will be data for B Turret if B Turret selection is selected, and vice versa</para>
+ </remarks>
+ <Figure>
+ <para>
+ <img src="Lathe.SubSystemIndexChart.jpg" />
+ </para>
+ <para>
+ The following four coordinate systems are available by the combination of the turret and the spindle 
+ <img src="Lathe.SubSystem.2SP2Turrets.jpg" />
+ </para>
+ </Figure></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_RUN">
+      <summary>
+ Panel selection machine/panel selection turret/command selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_RUN_1">
+      <summary>
+ Panel selection machine/first turret (side A)/command selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_RUN_2">
+      <summary>
+ Panel selection machine/second turret (side B)/command selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_PANEL">
+      <summary>
+ Panel selection machine/panel selection turret/panel selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_PANEL_1">
+      <summary>
+ Panel selection machine/first turret (side A)/panel selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_PANEL_2">
+      <summary>
+ Panel selection machine/second turret (side B)/panel selection spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_AL">
+      <summary>
+ First machine/first turret (side A)/first spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_AR">
+      <summary>
+ First machine/first turret (side A)/second spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_BL">
+      <summary>
+ First machine/second turret (side B)/first spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_BR">
+      <summary>
+ First machine/second turret (side B)/second spindle 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.SubSystemEnum.NC_2AL">
+      <summary>
+ Second machine/first turret (side A)/first spindle 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.SpindleSideEnum">
+      <summary>
+ Specifies spindle side on 2 spindles machine spec 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/19/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.GraphModeEnum">
+      <summary>
+ Animate Graph Mode 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/19/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.GraphModeEnum.Standard">
+      <summary>
+ Standard graph mode 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.GraphModeEnum.Enlarge">
+      <summary>
+ Enlarge graph mode 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum">
+      <summary>
+ Enlarge Scale Frame 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum.Enlarge">
+      <summary>
+ Enlarge Frame 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum.Reduce">
+      <summary>
+ Reduce Frame 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum">
+      <summary>
+ Enlarge Scale Frame Shift Enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum.Right">
+      <summary>
+ Shift Frame to the Right 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum.Left">
+      <summary>
+ Shift Frame to the Left 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum.Up">
+      <summary>
+ Shift Frame up 
+ </summary>
+    </member>
+    <member name="F:Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum.Down">
+      <summary>
+ Shift Frame down 
+ </summary>
+    </member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CMachine">
+      <summary>
+ Class provides general machine operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.InputMDI(System.String)">
+      <summary>
+ Sets the Command MDI string into the MDI buffer. 
+ </summary>
+ <example> This example shows how to Sets the Command MDI string into the MDI buffer. 
+ <code escaped="true" language="Visual Basic">
+ objCMDMachine.InputMDI(Me.macMDICommand.Text) 
+ </code>
+ </example>
+ <param name="strMDICommand">MDI command</param>
+ <remarks>
+ After the MDI command string is inserted into the NC MDI buffer screen,  a cycle start from control is needed to execute the MDI command. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.CycleStart">
+      <summary>Issue a cycle start command to NC</summary>
+<example> This example shows how to call the CycleStart method. 
+<code>
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.CycleStep">
+      <summary>N/A</summary>
+<example> This example shows how to call the CycleStep method. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.CycleStop">
+      <summary>N/A</summary>
+<example> This example shows how to call the CycleStop method. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.ResetNC">
+      <summary>N/A</summary>
+<example> This example shows how to call the ResetNC method. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.SetFeedrateOverride(System.Int32)">
+      <summary>Feedrate override</summary>
+<example> This example shows how to call the SetFeedrateOverride method. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<param name="intValue">Integer Value</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CMachine.SetSpindlerateOverride(System.Object)">
+      <summary>M Spindle rate override</summary>
+<example> This example shows how to call the SetSpindlerateOverride method. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<param name="intValue">Integer Value</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CProgram">
+      <summary>
+ Class provides general part program operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectMainProgram(System.String,System.String,System.String,System.String)">
+      <summary>
+ Load the specified part program file into NC. Optionally, 
+ it can also load sub program file name, or run a particular program name. 
+ </summary>
+ <example> This example shows how to call SelectMainProgram method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDProgram.SelectMainProgram(prog1.Text, prog2.Text, prog3.Text, prog4.Text) 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strMainProgramFileName">Main program file name to be loaded into NC</param>
+ <param name="strSubProgramFileName">Sub program file name for this main program</param>
+ <param name="strSystemSubtituteProgramFileName">System Subtitute Programe file name</param>
+ <param name="strProgramName">Program Name.  It can be specified to load a particular program name inside program file name.  Program name must be start with capital O plus 4 characters for program name such as O1234. </param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <figure>
+ </figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.CancelMainProgram">
+      <summary>
+ Cancel main program currently loaded in NC. 
+ </summary>
+ <example> This example shows how to call CancelMainProgram method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDProgram.CancelMainProgram() 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <figure>
+ </figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectMainProgramLSide(System.String,System.String,System.String,System.String)">
+      <summary>
+ Load the specified part program file into NC on left side of 2 sides machine. Optionally, 
+ it can also load sub program file name, or run a particular program name. 
+ </summary>
+ <example> This example shows how to call SelectMainProgramLSide method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDProgram.SelectMainProgramLSide(prog1.Text, prog2.Text, prog3.Text, prog4.Text) 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strMainProgramFileName">Main program file name to be loaded into NC</param>
+ <param name="strSubProgramFileName">Sub program file name for this main program</param>
+ <param name="strSystemSubtituteProgramFileName">System Subtitute Programe file name</param>
+ <param name="strProgramName">Program Name.  It can be specified to load a particular program name inside program file name.  Program name must be start with capital O plus 4 characters for program name such as O1234. </param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectMainProgramRSide(System.String,System.String,System.String,System.String)">
+      <summary>
+ Load the specified part program file into NC on right side of 2 sides machine. Optionally, 
+ it can also load sub program file name, or run a particular program name. 
+ </summary>
+ <example> This example shows how to call SelectMainProgramRSide method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDProgram.SelectMainProgramRSide(prog1.Text, prog2.Text, prog3.Text, prog4.Text) 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strMainProgramFileName">Main program file name to be loaded into NC</param>
+ <param name="strSubProgramFileName">Sub program file name for this main program</param>
+ <param name="strSystemSubtituteProgramFileName">System Subtitute Programe file name</param>
+ <param name="strProgramName">Program Name.  It can be specified to load a particular program name inside program file name.  Program name must be start with capital O plus 4 characters for program name such as O1234. </param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SequenceRestart(System.String,System.Int32)">
+      <summary>
+ Perform the sequence restart at the specified sequence number when execution of a program has been interrupted 
+ during an automatic operation by tool breakage, entangled chips, or some other causes. 
+ The program is restarted from the block immediately before the one where the operation was interrupted. 
+ <para>For more information, please refer to Lathe Operation Manual - Section 5 Automatic Operation - Sequence Restart</para>
+ </summary>
+ <example> This example shows how to call CancelMainProgram method. 
+ <code escaped="true" language="Visual Basic">
+ Dim strSequence as String 
+ Dim intOrderNumber as Integer 
+ Try 
+     objCMDProgram.SequenceRestart(strSequence,intOrderNumber ) 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strSequence">Sequence number or block counter. Sequence restart starts with N + 4 sequence numbers.  For example, N1234 is a sequence name.</param>
+ <param name="intOrderNumber">
+ The “order” when designating a sequence name is a value that specifies, in cases where 
+ the same sequence number occurs a number of times in the same part program, the 
+ position of the sequence number from which the sequence is to be restarted. It indicates 
+ which occurrence of the sequence number - starting from the first block of the part 
+ program - is the relevant one. 
+ </param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>AUTO OPERATION - RESTART SEQUENCE 
+ <para>
+ <img src="Lathe.SequenceRestart.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+     Support in LCMDAPI.exe version 1.0.2.1, Lathe.dll 2.0.2.7 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectScheduleProgram(System.String)">
+      <summary>
+ Load the specified schedule part program file into NC. 
+ </summary>
+ <example>
+ This example shows how to call the SelectScheduleProgram mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcprogram As CLCMDAPI.CProgram 
+ Try 
+    objcprogram.SelectScheduleProgram(prog1.Text) 
+ Catch ae As ApplicationException 
+    doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+    doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strScheduleProgramFileName">Schedule program file name to be loaded into NC</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ All files should be located in the default MD1 folder of the OSP system. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectScheduleProgramRSide(System.String)">
+      <summary>
+ Load the specified schedule part program file into NC for Right Side of 2 sides machine. 
+ </summary>
+ <example>
+ This example shows how to call the SelectScheduleProgramRSide mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcprogram As CLCMDAPI.CProgram 
+ Try 
+    objcprogram.SelectScheduleProgramRSide(prog1.Text) 
+ Catch ae As ApplicationException 
+    doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+    doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strScheduleProgramFileName">Schedule program file name to be loaded into NC</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para>All files should be located in the default MD1 folder of the OSP system.</para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CProgram.SelectScheduleProgramLSide(System.String)">
+      <summary>
+ Load the specified schedule part program file into NC for Left Side of 2 sides machine. 
+ </summary>
+ <example>
+ This example shows how to call the SelectScheduleProgramLSide mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcprogram As CLCMDAPI.CProgram 
+ Try 
+    objcprogram.SelectScheduleProgramLSide(prog1.Text) 
+ Catch ae As ApplicationException 
+    doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+    doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strScheduleProgramFileName">Schedule program file name to be loaded into NC</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para>All files should be located in the default MD1 folder of the OSP system.</para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CSimulation">
+      <summary>
+ Class provides general graphic operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.SelectGraphLineAnimate">
+      <summary>
+ Selecting the specified Graph Line Animate. 
+ </summary>
+ <example> This example shows how to call the SelectGraphLineAnimate method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.SelectGraphLineAnimate() 
+ </code>
+ </example>
+ <remarks>
+ <para>Each call to this function will turn on the Trace/Animate mode in 2D Graphic mode as following:</para>
+ <para>TRACE ON</para>
+ <para>ANIMATE ON</para>
+ <para>TRACE AND ANIMATE ON</para>
+ <para>TRACE ON</para>
+ <para>and so on</para>
+ </remarks>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - Trace/Animate 
+ <para>
+ <img src="Lathe.AnimateSimulation.TraceAnimate.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.Select2D3DGraph">
+      <summary>
+ Selecting the specified 2D and 3D Graph. 
+ </summary>
+ <example> This example shows how to call the Select2D3DGraph method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.Select2D3DGraph() 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - 2D/3D CHANGE 
+ <para>
+ <img src="Lathe.AnimateSimulation.2D3D.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.DeleteGraphWork">
+      <summary>
+ Deleting the Graph work. 
+ </summary>
+ <example> This example shows how to call the DeleteGraphWork method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.DeleteGraphWork() 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - CLEAR 
+ <para>
+ <img src="Lathe.AnimateSimulation.Clear.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.StartGraphWork">
+      <summary>
+ Starting the Graph work. 
+ </summary>
+ <example> This example shows how to call the StartGraphWork method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.StartGraphWork() 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - MATERIAL DRAWING 
+ <para>
+ <img src="Lathe.AnimateSimulation.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.ChangeReal3DSpindleMode">
+      <summary>
+ Changing the Real 3D Spindle Mode. 
+ </summary>
+ <example> This example shows how to call the ChangeReal3DSpindleMode method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.ChangeReal3DSpindleMode() 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION(READ 3D) - Spindle-1/Spindle-2 
+ <para>
+ <img src="Lathe.AnimateSimulation.Real3DSpindleMode.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.AutoScaleAnimate">
+      <summary>
+ Enable Auto Scaling the Animation. 
+ </summary>
+ <example> This example shows how to call the AutoScaleAnimate method. 
+ <code escaped="true" language="Visual Basic">
+ objSimulation.AutoScaleAnimate() 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - AUTO SCALE 
+ <para>
+ <img src="Lathe.AnimateSimulation.AutoScale.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.ChangeGraphMode(Okuma.CLCMDAPI.Enumerations.GraphModeEnum)">
+      <summary>
+ Change animate graph mode to normal or enlarge mode. 
+ </summary>
+ <example> This example shows how to call the ChangeGraphMode method. 
+ <code escaped="true" language="Visual Basic">
+ Dim enGraphMode as GraphModeEnum 
+ objSimulation.ChangeGraphMode(enGraphMode) 
+ </code>
+ </example>
+ <param name="enGraphMode">Animate graph mode</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - ANIMATED SIMULATION (2D GRAPHIC) - STD/ENL GRAPHIC 
+ <para>
+ <img src="Lathe.AnimateSimulation.TraceAnimate.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+     Support in LCMDAPI.exe version 1.0.2.1, Lathe.dll 2.0.2.7 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.ChangeNormalScale(System.Double)">
+      <summary>
+ Change animate normal scale value 
+ </summary>
+ <example> This example shows how to call the ChangeNormalScale method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intScaleValue as Integer 
+ objSimulation.ChangeNormalScale(intScaleValue) 
+ </code>
+ </example>
+ <param name="dblScaleValue">scale value to be set</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - ANIMATED SIMULATION (2D GRAPHIC) - NORMAL SCALE - Current Normal Scale value is 3.0000 
+ <para>
+ <img src="Lathe.AnimateSimulation.NormalEnlargeScale.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+     Support in LCMDAPI.exe version 1.0.2.1, Lathe.dll 2.0.2.7 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.ChangeEnlargeScaleFrame(Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum)">
+      <summary>
+ Enlarge/Reduce animate scale frame 
+ </summary>
+ <example> This example shows how to call the ChangeEnlargeScaleFrame method. 
+ <code escaped="true" language="Visual Basic">
+ Dim enValue as EnlargeScaleFrameEnum 
+ objSimulation.ChangeEnlargeScaleFrame(enScale) 
+ </code>
+ </example>
+ <param name="enScaleFrame">scale frame value to be set. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - ANIMATED SIMULATION (2D GRAPHIC) - ENLARGE SCALE 
+ <para>
+ <img src="Lathe.AnimateSimulation.EnlargeScale.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+     Support in LCMDAPI.exe version 1.0.2.1, Lathe.dll 2.0.2.7 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSimulation.ShiftEnlargeScaleFrame(Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameShiftEnum)">
+      <summary>
+ Shift animate enlarge scale frame to Right/Left/Up/Down 
+ </summary>
+ <example> This example shows how to call the ShiftEnlargeScaleFrame method. 
+ <code escaped="true" language="Visual Basic">
+ Dim enValue as EnlargeScaleFrameEnum 
+ objSimulation.ShiftEnlargeScaleFrame(enScale) 
+ </code>
+ </example>
+ <param name="enShift">scale frame value to be set. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.EnlargeScaleFrameEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>ANIMATED SIMULATION - ANIMATED SIMULATION (2D GRAPHIC) - ENLARGE SCALE 
+ <para>
+ <img src="Lathe.AnimateSimulation.EnlargeScale.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+     Support in LCMDAPI.exe version 1.0.2.1, Lathe.dll 2.0.2.7 
+ </history></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CSpec">
+      <summary>
+ Class provides general machine specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSpec.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CSpec.GetInterfaceVersion">
+      <summary>
+ Get the current version of this library. 
+ </summary>
+ <example> This example shows how to call the GetInterfaceVersion method. 
+ <code escaped="true" language="Visual Basic">
+ Dim curSpecEnum As OptionSpecEnum 
+ Try 
+     Me.specSaddleSpec.Text = objSpec.Get2SaddleSpec 
+     specInterfaceVersion.Text = objCMDSpec.GetInterfaceVersion() 
+ Catch ae As ApplicationException 
+     doError("CSpec", ae.Message) 
+ Catch ex As Exception 
+     doError("CSpec", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <returns>A System.String value that represents the version of this library.  Version format: Major.Minor.Build.Revision </returns>
+ <figure>
+ </figure></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CTools">
+      <summary>
+ Class provides tool offset/Nose Radius Compensation operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, AddConstantToolOffset, has 2 overload methods for adding constant tool offset value</overloads>
+ <summary>
+ Adding a constant value, set with a related parameter, from the tool offset value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.AddConstantToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - TOOL OFFSET - CONST ADD. 0.012 FOR INDEX 1, X AXIS, B Turret 
+ <para>
+ <img src="Lathe.ToolOffset.AddConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantNoseRadiusCompensation(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, AddConstantNoseRadiusCompensation, has 2 overload methods for adding constant Nose Radius Compensation value</overloads>
+ <summary>
+ Adding a constant value, set with a related parameter, from the compensation value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantNoseRadiusCompensation method. 
+ <code escaped="true" language="Visual Basic">
+  objCMDTool.AddConstantNoseRadiusCompensation(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - NOSE R COMPENSATION - CONST ADD. 0.012 FOR INDEX 1, X AXIS, B Turret 
+ <para>
+ <img src="Lathe.NoseRComp.AddConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantToolWear(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, AddConstantToolWear, has 2 overload methods for adding constant Tool Wear value</overloads>
+ <summary>
+ Adding a constant value, set with a related parameter, from the tool wear value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolWear method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.AddConstantToolWear(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL WEAR OFFSET - CONST ADD. 0.012 FOR INDEX 1, X AXIS, B Turret 
+ <para>
+ <img src="Lathe.ToolWear.AddConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, SubtractConstantToolOffset, has 2 overload methods for subtracting constant Tool Offset value</overloads>
+ <summary>
+ Subtracts a constant value, set with a related parameter, from the tool offset value at the specified offset index. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+  objCMDTool.SubtractConstantToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - TOOL OFFSET - CONST SUB. 0.012 FOR INDEX 1, X Axis, B Turret 
+ <para>
+ <img src="Lathe.ToolOffset.SubConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantNoseRadiusCompensation(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, SubtractConstantNoseRadiusCompensation, has 2 overload methods for subtracting constant Nose Radius Compensation value</overloads>
+ <summary>
+ Subtracts a constant value, set with a related parameter, from the compensation value at the specified offset index. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantNoseRadiusCompensation method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.SubtractConstantNoseRadiusCompensation(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - NOSE-R COMPENSATION - CONST SUB. 0.012 FOR INDEX 1, X AXIS, B Turret 
+ <para>
+ <img src="Lathe.NoseRComp.SubConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantToolWear(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <overloads>This method, SubtractConstantToolWear, has 2 overload methods for subtracting constant Tool Wear value</overloads>
+ <summary>
+ Subtracts a constant value, set with a related parameter, from the compensation value at the specified offset index. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantToolWear method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.SubtractConstantToolWear(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL WEAR OFFSET - CONST SUB. 0.012 FOR INDEX 1, X AXIS, B Turret 
+ <para>
+ <img src="Lathe.ToolWear.SubConst.BTurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.CalculateToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,System.Double)">
+      <summary>
+ Determines the offset value based on the input value and actual position. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the CalculateToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDTool.CalculateToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, CDbl(Me.toolCalToolOffset.Text)) 
+ Catch ae As ApplicationException 
+     doError("CMDTool", ae.Message) 
+ Catch ex As Exception 
+     doError("CMDTool", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="dblValue">Input value to be calculated from</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - CAL FOR INDEX 1, X AXIS, A Turret 
+ <para>
+ <img src="Lathe.ToolOffset.Cal.ATurret.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para>The internal calculation in the NC is as follows: </para>
+ <para>Tool offset value = Calculated value (actual tool position relative to machine zero) - Zero offset value - Input value (value measured with a micrometer) </para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AutoCalculateToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <summary>
+ Performs one-touch calculation of tool offset values. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AutoCalculateToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDTool.AutoCalculateToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis2Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, CDbl(Me.toolAutoCalToolOffset.Text)) 
+ Catch ae As ApplicationException 
+     doError("CMDTool", ae.Message) 
+ Catch ex As Exception 
+     doError("CMDTool", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - AUTO CAL FOR INDEX 1, X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.ToolOffset.MeasureAutoCal.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ Note: for 45° lathe tools: 
+ </para>
+ <para>
+ When using lathe tools at an angle (typically 45°) Auto Calc will give some unexpected results. 
+ This is because of how Auto Calc works. 
+ When Auto Calc calculates the other offsets from the one that was set it does so based on the distance of the tool edge back to the center point of the turret. 
+ As long as you are touching off a tool at either the base or vertical position this is not a problem. 
+ However, when toughing tools off at different angles (such as 45°) you will get unexpected results for the opposite lathe tool index position. 
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.MeasureCalculateToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SensorDirectionEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <summary>
+ Tool offset Measurement operation is carried out. 
+ </summary>
+ <example> This example shows how to call the MeasureCalculateToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objCMDTool.MeasureCalculateToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis2Combo.SelectedValue, Me.toolSensorDirectionCombo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, CDbl(Me.toolMeasureCalToolOffset.Text)) 
+ Catch ae As ApplicationException 
+     doError("CMDTool", ae.Message) 
+ Catch ex As Exception 
+     doError("CMDTool", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSensorDirection">Sensor Direction. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SensorDirectionEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - CAL FOR INDEX 1, X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.ToolOffset.MeasureAutoCal.jpg" />
+ </para>
+ <para> SENSOR TOUCH SURFACE 
+ <img src="Lathe.ToolOffset.MeasureCal.Sensor.jpg" />
+ </para>
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Adding a constant value, set with a related parameter, from the tool offset value at the specified offset index, and cutting position. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.AddConstantToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - TOOL OFFSET - CONST ADD. 0.012 FOR INDEX 1, YI AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.ToolOffset.AddConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantNoseRadiusCompensation(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Adding a constant value, set with a related parameter, from the compensation value at the specified offset index, and cutting position. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantNoseRadiusCompensation method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.AddConstantNoseRadiusCompensation(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - NOSE R COMPENSATION - CONST ADD. 0.012 FOR INDEX 1, X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.NoseRComp.AddConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.AddConstantToolWear(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Adding a constant value, set with a related parameter, from the tool wear offset value at the specified offset index, and cutting position. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolWear method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.AddConstantToolWear(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL WEAR OFFSET - CONST ADD. 0.012 FOR X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.ToolWear.AddConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/22/2007	Created 
+ 	[Lhuynh]	3/25/2008 add control-type check routine 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantToolOffset(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Subtracts a constant value, set with a related parameter, from the tool offset value at the specified offset index, and cutting position. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantToolOffset method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.SubtractConstantToolOffset(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - TOOL OFFSET - CONST SUB. 0.012 FOR INDEX 1, YI AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.ToolOffset.SubConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantNoseRadiusCompensation(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Subtracts a constant value, set with a related parameter, from the compensation value at the specified offset index, and cutting position. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantNoseRadiusCompensation method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.SubtractConstantNoseRadiusCompensation(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - NOSE-R COMPENSATION - CONST SUB. 0.012 FOR INDEX 1, X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.NoseRComp.SubConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.SubtractConstantToolWear(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.SubSystemEnum,Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum)">
+      <summary>
+ For Tool Offset Multi-System function, Subtracts a constant value, set with a related parameter, from the tool wear value at the specified offset index, and cutting position. 
+ </summary>
+ <example> This example shows how to call the SubtractConstantToolWear method. 
+ <code escaped="true" language="Visual Basic">
+ objCMDTool.SubtractConstantToolWear(CInt(Me.toolToolNo.Text), Me.toolOffsetAxis1Combo.SelectedValue, Me.toolSubSystemsCombo.SelectedValue, Me.toolCuttingPositionsCombo.SelectedValue) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enSubSystem">Sub System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.SubSystemEnum.</param>
+ <param name="enCuttingPosition">Cutting postion. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.CuttingPositionEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>TOOL WEAR OFFSET - CONST SUB. 0.012 FOR INDEX 1, X AXIS, CUTTING POSITION BASE A 
+ <para>
+ <img src="Lathe.Multi.ToolWear.SubConst.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>********************* This function can only be supported in OSP-P200 machines. ************************</para>
+ <para> Add/Sub constant value depends on parameter setting as shown below:</para>
+ <Figure>TOOL OFFSET/NOSE R COMPENSATION - PARAMETER SETTING 
+ <para>
+ <img src="Lathe.ToolOffset.NoseRComp.AddSub.ParameterSetting.jpg" />
+ </para>
+ </Figure>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis1_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_BaseB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalA must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ 
+ <para>
+ The following specifications for cutting position PrincipalAxis2_VerticalB must be met in order to function: 
+ <list type="table">
+ <listheader>
+ <term>Specification</term>
+ <description>Valid/Invalid</description>
+ </listheader>
+ <item>
+ <term>Tool wear compensation specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Tool offset multi-system specification (SPEC CODE[21,6]) </term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>L Tool index specification</term>
+ <description>Valid</description>
+ </item>
+ <item>
+ <term>Sub spindle specification</term>
+ <description>Valid</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools.GetSubSystem(Okuma.CLCMDAPI.Enumerations.SubSystemEnum)">
+      <summary>Sets current data unit for this class instance.</summary>
+' <example> This example shows how to call the SetDataUnit method. 
+' <code escaped="true" language="Visual Basic">
+' objTool.SetDataUnit(cmb_Tool2_DataUnit.SelectedItem) 
+' </code>
+' </example>
+' <param name="enValue">Data Unit to be set</param>
+' <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+' <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+' <remarks>
+' If applicable, this setting is applied to data in this class instance only, not for NC Data Unit. 
+' For example: If NC Data unit is set to mm, and the data unit for this class instance is in inch, 
+' then offset value will be converted to inch from NC offset data and vice versa. 
+' </remarks>
+' <Figure> DATA SET UNIT - Data Unit in mm or inch.  This is for NC Data only. 
+' <para>
+' <img src="ParametersScreen.DataUnit.jpg" />
+' </para>
+' </Figure>
+ <summary>
+ N/A 
+ </summary>
+ <example> This example shows how to call the GetSubSystem method. 
+ <code escaped="true" language="Visual Basic">
+ </code>
+ </example>
+ <param name="enValue">Sub Sytem number.</param>
+ <return>A System.Short value</return>
+ <figure>
+ </figure></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CTools2">
+      <summary>
+ Class provides tool offset/Nose Radius Compensation operations for 8 digits Tool ID. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/22/2010	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	02/22/2010	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantToolOffset1(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the tool offset 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolOffset1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.AddConstantToolOffset1(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - INDICATION DATA / MG - OFFSET1 - X/OFFSET Z/OFFSET Y/OFFSET 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset1.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ <item>
+ <term>YI-Axis</term>
+ <description>A Turret</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantToolOffset1(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the tool offset 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantToolOffset1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.SubtractConstantToolOffset1(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - INDICATION DATA / MG - OFFSET1 - X/OFFSET Z/OFFSET Y/OFFSET 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset1.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ <item>
+ <term>YI-Axis</term>
+ <description>A Turret</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantToolOffset2(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the tool offset 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolOffset2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.AddConstantToolOffset2(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Offset 1 - OFFSET1 - OFFSET X/OFFSET Z/OFFSET Y 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset2.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ <item>
+ <term>YI-Axis</term>
+ <description>A Turret</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantToolOffset2(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the tool offset 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantToolOffset2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.SubtractConstantToolOffset2(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - INDICATION DATA / MG - OFFSET2 - X/OFFSET Z/OFFSET Y/OFFSET 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset2.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ <item>
+ <term>YI-Axis</term>
+ <description>A Turret</description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantNoseRadiusCompensation1(System.Int32,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the Nose radius compensation 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantNoseRadiusCompensation1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ objCMDTool2.AddConstantNoseRadiusCompensation1(intOffsetNo, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Offset 1 - OFFSET1 - NOSE-R 
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset1.jpg" />
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantNoseRadiusCompensation2(System.Int32,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the Nose radius compensation 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantNoseRadiusCompensation2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ objCMDTool2.AddConstantNoseRadiusCompensation2(intOffsetNo, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Offset 2 - OFFSET2 - NOSE-R 
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset2.jpg" />
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantNoseRadiusCompensation1(System.Int32,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the Nose radius compensation 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantNoseRadiusCompensation1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ objCMDTool2.SubtractConstantNoseRadiusCompensation1(intOffsetNo, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Offset 1 - OFFSET1 - NOSE-R 
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset1.jpg" />
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantNoseRadiusCompensation2(System.Int32,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the Nose radius compensation 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantNoseRadiusCompensation2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ objCMDTool2.SubtractConstantNoseRadiusCompensation2(intOffsetNo, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Offset 2 - OFFSET2 - NOSE-R 
+ <img src="Lathe.ToolID.ToolData.MGToolID.Offset2.jpg" />
+ </Figure></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantToolWearOffset1(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the tool wear offset 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolWearOffset1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.AddConstantToolWearOffset1(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Wear Offset - WEAR - OFFSET1 - WEAR X/WEAR Z 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.WearOffset.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.AddConstantToolWearOffset2(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Adding a constant value, set with a related parameter, from the tool wear offset 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the AddConstantToolWearOffset2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndexEnum 
+ objCMDTool2.AddConstantToolWearOffset2(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndexEnum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Wear Offset - WEAR - OFFSET2 - WEAR X/WEAR Z 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.WearOffset.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantToolWearOffset1(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the tool wear offset 1 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantToolWearOffset1 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndex2Enum 
+ objCMDTool2.SubtractConstantToolWearOffset1(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Wear Offset - WEAR - OFFSET1 - WEAR X/WEAR Z 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.WearOffset.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CTools2.SubtractConstantToolWearOffset2(System.Int32,Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum,Okuma.CLCMDAPI.Enumerations.TurretEnum)">
+      <summary>
+ Subtracting a constant value, set with a related parameter, from the tool wear offset 2 value at the specified offset index. 
+ </summary>
+ <DataUnit>
+  Data unit is current setting of NC Data Unit. 
+ </DataUnit>
+ <example> This example shows how to call the SubtractConstantToolWearOffset2 method. 
+ <code escaped="true" language="Visual Basic">
+ Dim intOffsetNo As Integer 
+ Dim enTurret As TurretEnum 
+ Dim enAxisIndex As OffsetAxisIndex2Enum 
+ objCMDTool2.SubtractConstantToolWearOffset2(intOffsetNo, enAxisIndex, enTurret) 
+ </code>
+ </example>
+ <param name="intOffsetNo">Offset number.</param>
+ <param name="enAxisIndex">Axis Index. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.OffsetAxisIndex2Enum.</param>
+ <param name="enTurret">Turret System. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.TurretEnum.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>MG Tool ID Information - Tool Wear Offset - WEAR - OFFSET2 - WEAR X/WEAR Z 
+ <para>
+ <img src="Lathe.ToolID.ToolData.MGToolID.WearOffset.jpg" />
+ </para>
+ </Figure>
+ <remarks>
+ <para>
+ The following specifications must be met for each axis in order to function correctly: 
+ <list type="table">
+ <listheader>
+ <term>Axis</term>
+ <description>Specifications</description>
+ </listheader>
+ <item>
+ <term>X-Axis</term>
+ <description>
+ <para>* A Turret</para>
+ <para>* B Turret and Steady Rest ZB Axial Control  spec. is not enabled</para>
+ </description>
+ </item>
+ </list>
+ </para>
+ </remarks></member>
+    <member name="T:Okuma.CLCMDAPI.CommandAPI.CViews">
+      <summary>
+ Class provides screen change operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/20/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CViews.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CLCMDAPI.CommandAPI.CViews.ChangeScreen(Okuma.CLCMDAPI.Enumerations.PanelGroupEnum,System.String)">
+      <summary>
+ Allow changing current screen on NC to different screen by specified the panel group name and screen name. 
+ </summary>
+ <example> This example shows how to call the ChangeScreen method. 
+ <code escaped="true" language="Visual Basic">
+ Me.Cmb_ChangeScreen.DataSource = System.Enum.GetValues(GetType(Okuma.CLCMDAPI.Enumerations.PanelGroupEnum)) 
+ Private Sub cmd_ChangeScreen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_ChangeScreen.Click 
+ Dim objview As Okuma.CLCMDAPI.CommandAPI.CViews 
+ Dim int_panalenum As Int32 
+ Try 
+     int_panalenum = CInt(Cmb_ChangeScreen.SelectedItem) 
+     objview = New Okuma.CLCMDAPI.CommandAPI.CViews 
+     objview.ChangeScreen(int_panalenum, txt_screenname.Text) 
+ Catch ae As ApplicationException 
+     doError("Cview", ae.Message) 
+ Catch ex As Exception 
+     doError("Cview", ex.Message) 
+ End Try 
+ End Sub 
+ </code>
+ </example>
+ <param name="enPanelGroup">Panel group name where the screen resides. Value of parameter comes from Okuma.CLCMDAPI.Enumerations.PanelGroupEnum</param>
+ <param name="strScreenName">Screen name to be displayed as active screen on NC.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <figure>
+ </figure></member>
+    <member name="M:Okuma.CLCMDAPI.modMain.ValidateDependencyFiles(System.String)">
+      <summary>N/A</summary>
+<example> This example shows how to call the CheckLicense method. 
+<code escaped="true" language="Visual Basic">
+ Not available in Object Browser. 
+</code>
+</example>
+<param name="strFeatureName">License Feature Name</param>
+<param name="strFeatureVersion">License Feature Version</param>
+<param name="strFeatureLabel">License Feature Label.</param>
+<param name="strLicensePath">License Path</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.modMain.ThrowAE(System.Int32,System.String,System.String)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the ThrowAE mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="intFunctionId">Function ID.</param>
+<param name="strMessage">Message String.</param>
+<param name="strError">Error String</param>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CLCMDAPI.modMain.GetErrorCode(System.Int32)">
+      <summary>N/A</summary>
+<example> This example shows how to call the GetErrorCode mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="intErrorCode">Error Code.</param>
+<return>A System.String value</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+  </members>
+</doc>

@@ -1,0 +1,1634 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Okuma.CMCMDAPI</name>
+    <version>2.0.0.0</version>
+    <fullname>Okuma.CMCMDAPI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=da5164982ff0f268</fullname>
+  </assembly>
+  <members>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CATC">
+      <summary>
+ Class provides information about Auto Tool Changer. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.#ctor">
+      <summary>
+ Create an instance of this class based on current ATC type configured on the machine. 
+ </summary>
+ <remarks>
+ <para>
+ If the machine is equipped with Random ATC Type then the instance will be created to be used for Random ATC type. 
+ </para>
+ <para>
+ If the machine is equipped with Fixed ATC Type then the instance will be created to be used for Fixed Address ATC type. 
+ </para>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.#ctor(System.String)">
+      <summary>
+ Create an instance of this class at the specified ATC type. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.CancelTool">
+      <summary>
+ Clear the entire ATC Tool Pot table. 
+ </summary>
+ <example> This example shows how to call the CancelTool mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.CancelTool() 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <remarks>
+ None 
+ </remarks>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.UnRegisterToolPot(System.Int32)">
+      <summary>
+ Un-register a tool at the specified pot number. 
+ </summary>
+ <example> This example shows how to call the UnRegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.UnRegisterToolPot(CInt(Me.atcCMDPotNumber.Text)) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where the current registered tool to be un-registered</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ After the tool is un-registered at the specified pot, a 'NONE' will be displayed at the specified pot number in the ATC Tool Pot table. 
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table 
+ <para>
+ <img src="MC.ATC.FIXED_ADDRESS.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.RegisterToolPot(System.Int32,System.Int32)">
+      <overloads> This function has 2 overload methods to register tool to at the specified pot number.</overloads>
+ <summary>
+ Register a tool at the specified pot number. 
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Private Sub atcButtonRegister_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles atcButtonRegister.Click 
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.RegisterToolPot(CInt(Me.atcCMDPotNumber.Text), CInt(Me.atcCMDToolNumber.Text)) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ End Sub 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where a tool will be registered to.</param>
+ <param name="intToolNo">Tool number to be registered</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ This method will register a tool at the specified pot number without using any tool attribute such as a tool with large diameter. 
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table 
+ <para>
+ <img src="MC.ATC.SET.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.RegisterToolPot(System.Int32,System.Int32,Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum)">
+      <summary>
+ Register a tool at the specified pot number with tool attribute 
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.RegisterToolPot(CInt(Me.atcCMDPotNumber.Text), CInt(Me.atcCMDToolNumber.Text), Me.atcComboToolAttribute.SelectedValue) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where a tool will be registered to.</param>
+ <param name="intToolNo">Tool number to be registered</param>
+ <param name="enToolAttribute">Tool attribute of the tool to be registered.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum enumeration.  </param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ This method will register a tool including tool attribute at the specified pot number such as a tool with large diameter. 
+ To register a pot as dummy tool pot, register a valid tool number with an attribute of ToolAttributeEnum.DummyTool. 
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table 
+ <para>
+ <img src="MC.ATC.SET.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.SetActualTool(System.Int32,Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum)">
+      <summary>
+ Set a tool number as actual tool for Randdom/Fixed Address ATC Type. 
+ </summary>
+ <example> This example shows how to call the SetActualTool mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.SetActualTool(CInt(Me.atcCMDToolNumber.Text), Me.atcComboToolAttribute.SelectedValue) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number to be set as Actual Tool.  Setting value of zero will set Actual tool to NONE</param>
+ <param name="enToolAttribute">Tool attribute of the tool to be set as Actual tool in Random Adress ATC Type only.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum enumeration.  </param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ <para>For ATC Fixed Address: </para>
+ This method will set a registered tool as the Actual Tool.  Tool attribute is ignored if specified as part of tool number. 
+ The tool attribute will be the attribute of current registered tool number if any. 
+ <para>For ATC Radnom Address: </para>
+ This method will set a non-registered tool number as the Actual Tool.  Tool attribute can be set as part of the tool number. 
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table 
+ <para> Actual Tool (ACT) in Fixed Address ATC Type 
+ <img src="MC.ATC.FIXED_ADDRESS.jpg" />
+ </para>
+ <para> Actual Tool (ACT) in Random Address ATC Type 
+ <img src="MC.ATC.RANDOM_ADDRESS.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/10/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.SetNextTool(System.Int32)">
+      <summary>
+ Set a registered tool number in ATC table as Next Tool 
+ </summary>
+ <example> This example shows how to call the SetNextTool mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.SetNextTool(CInt(Me.atcCMDToolNumber.Text)) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">A registered tool number to be set as Next Tool</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ For machine equipped with Random Address ATC type, Next Tool or Return Pot number can only be set if the other is set to NONE. 
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table 
+ <para> Next Tool (NXT) in Fixed Address ATC Type 
+ <img src="MC.ATC.FIXED_ADDRESS.jpg" />
+ </para>
+ <para> Next Tool (NXT) in Random Address ATC Type 
+ <img src="MC.ATC.RANDOM_ADDRESS.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/10/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC.SetReturnPot(System.Int32)">
+      <summary>
+ Set return pot number for machine equipped with ATC Random Address 
+ </summary>
+ <example> This example shows how to call the SetReturnPot mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcatc As CMCMDAPI.CATC 
+ Try 
+    objcatc = New CMCMDAPI.CATC(Me.atcComboATCType.SelectedValue) 
+    objcatc.SetReturnPot(CInt(Me.atcCMDToolNumber.Text)) 
+ Catch ae As ApplicationException 
+    doError("CATC", ae.Message) 
+ Catch ex As Exception 
+    doError("CATC", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Pot number to be set</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ <para>
+ For machine equipped with ATC Random magazine, Next Tool or Return Pot number can only be set if the other is set to NONE. 
+ </para>
+ </remarks>
+ <Figure> POT NO./TOOL NO. TABLE - ATC Tool Pot Table - POT NO. 
+ <para> Return Pot number in Random Address ATC Type. 
+ <img src="MC.ATC.RANDOM_ADDRESS.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/10/2007	Created 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CATC2">
+      <summary>
+ Class provides information about Auto Tool Changer for 8-Digits Tool ID specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/27/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.#ctor">
+      <summary>
+ Create an instance of this class. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.RegisterToolPot(System.Int32,System.Int32,System.Int32,System.Boolean,System.String)">
+      <overloads>This function has 2 overload methods to register tool/pot for Fixed/Random Address ATC.</overloads>
+ <summary>
+ <para>
+ Fixed Address ATC: Register a tool at the specified pot number. 
+ A combination of group number and serial number are assigned and to be used as tool number for a pot. 
+ </para>
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.RegisterToolPot(CInt(txtATC2.PotNoValue.Text), CInt(txtATC2.GroupNoValue.Text), CInt(txtATC2.SerialNoValue.Text), CBool(chkATC2.DummyTool.SelectValue),txtATC2.ToolNameValue.Text  ) 
+ End Sub 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where a tool will be registered to.  Pot number is 1 to the maximum pot number.</param>
+ <param name="intGroupNo">Group number to be assigned to this pot.  Group number will be ignored if tool is registered as DUMMY TOOL.  Tool group number is 1 to 9999 in case of NC OP. bit No.57 bit1 ON. Tool group number is 1 to 99999999 in case of NC OP. bit No.57 bit1 OFF</param>
+ <param name="intSerialNo">Serial number to be assigned to this pot.  Serial number will be ignored if tool is registered as DUMMY TOOL.  Tool serial number is 1 to 9999.  Tool name can have a maximum 16 characters composed of single-space capital A-Z, 0-9.</param>
+ <param name="blnDummyTool">Optionally, a DUMMY tool is registered into this pot.  True if it is a DUMMY Tool, otherwise false.  </param>
+ <param name="strToolName">Optionally, a tool name can be assinged to this pot.  Tool name will be ignored if tool is registered as DUMMY TOOL.  The first character of tool name cannot be '.' or '-'.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - POT TOOL TABLE - POT - TOOL SET 
+ <para> Fixed ATC 
+ <img src="MC.ToolID.TOOLSET.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.UnRegisterToolPot(System.Int32,System.Int32,System.Boolean)">
+      <summary>
+ <para>
+ Fixed Address ATC: Un-register a tool at the specified pot number. 
+ </para>
+ <para>
+ Random Address ATC: Un-register a tool at the specified tool and pot number. 
+ </para>
+ </summary>
+ <example> This example shows how to call the UnRegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.UnRegisterToolPot(CInt(txtATC2.PotNoValue.Text)) 
+ </code>
+ </example>
+ <param name="intPotNo">Pot number where the current registered tool to be un-registered</param>
+ <param name="intToolNo">Tool number currently registered in the specified Pot number.  For ATC Random only</param>
+ <param name="blnRandomATC">Specified wheter this operation is for Random Address ATC type or not.  Default value is false</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - POT TOOL TABLE - POT - TOOL SET - TOOL NO. CLEAR 
+ <para> Fixed ATC 
+ <img src="MC.ToolID.ToolSet.jpg" />
+ </para>
+ <para> Random ATC 
+ <img src="MC.ToolID.ToolSet.RandomATC.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ 	[Lhuynh]	10/1/2008	revise to support Random ATC 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.SetToolKind(System.Int32,Okuma.CMCMDAPI.Enumerations.ToolKindEnum)">
+      <summary>
+ <para>
+ Fixed Address ATC: Set tool kind at the specified pot number. 
+ </para>
+ <para>
+ Memory Random ATC: Set tool kind at the specified tool number. 
+ </para>
+ </summary>
+ <example> This example shows how to call the SetToolKind mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.SetToolKind(CInt(txtATC2.ToolKindValue.Text)) 
+ </code>
+ </example>
+ <param name="intToolPotNo">Tool/Pot number. 
+ Tool number is within 1 to maximum tool number. 
+ Pot number is within 1 to maximum pot number.</param>
+ <param name="enToolKind">Tool Kind.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.ToolKindEnum enumeration.  </param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - POT TOOL TABLE - POT - TOOL KIND 
+ <para> Fixed ATC 
+ <img src="MC.TOOLID.PotToolTable.jpg" />
+ </para>
+ <para> Random ATC 
+ <img src="MC.TOOLID.PotToolTable.RandomATC.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ 	[Lhuynh]	10/1/2008	revise to support Random ATC 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.SetToolLifeStatus(System.Int32,Okuma.CMCMDAPI.Enumerations.ToolLifeStatusEnum)">
+      <summary>
+ <para>
+ Fixed Address ATC: Set tool life status at the specified pot number. 
+ </para>
+ <para>
+ Memory Random ATC: Set tool life status at the specified tool number. 
+ </para>
+ </summary>
+ <example> This example shows how to call the SetToolLifeStatus mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.SetToolLifeStatus(CInt(txtATC2.ToolPotNo.Text), chkATC2.ToolLifeStatusValue.SelectedValue) 
+ </code>
+ </example>
+ <param name="intToolPotNo">Tool/Pot number. 
+ Tool number is within 1 to maximum tool number. 
+ Pot number is within 1 to maximum pot number.</param>
+ <param name="enToolLifeStatus">Tool life status.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.ToolLifeStatusEnum enumeration.  </param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - TOOL LIFE MANAGEMENT - LIFE - STATUS 
+ <para> Fixed ATC 
+ <img src="MC.TOOLID.Life.jpg" />
+ </para>
+ <para> Random ATC 
+ <img src="MC.TOOLID.Life.RandomATC.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ 	[Lhuynh]	10/1/2008	revise to support Random ATC 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.SetToolCarrierStatus(System.Int32,Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum)">
+      <summary>
+ <para>
+ Fixed Address ATC: Set tool data carrier status at the specified pot number. 
+ </para>
+ <para>
+ Memory Random ATC: Set tool data carrier status at the specified tool number. 
+ </para>
+ </summary>
+ <example> This example shows how to call the SetToolCarrierStatus mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.SetToolCarrierStatus(CInt(txtATC2.PotNo.Text), cboToolID.CarrierStatus.SelectedValue) 
+ </code>
+ </example>
+ <param name="intToolPotNo">Tool/Pot number. 
+ Tool number is within 1 to maximum tool number. 
+ Pot number is within 1 to maximum pot number.</param>
+ <param name="enCarrierStatus">Tool Data carrier status.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum enumeration.  </param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - POT TOOL TABLE - POT - CARRIER 
+ <para> Fixed ATC 
+ <img src="MC.TOOLID.PotToolTable.jpg" />
+ </para>
+ <para> Random ATC 
+ <img src="MC.TOOLID.PotToolTable.RandomATC.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ 	[Lhuynh]	10/1/2008	revise to support Random ATC 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CATC2.RegisterToolPot(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.String)">
+      <summary>
+ <para>
+ Memory Random ATC: Register a tool at the specified pot number. 
+ A combination of group number and serial number are assigned and to be used as tool number for a pot. 
+ </para>
+ </summary>
+ <example> This example shows how to call the RegisterToolPot mothod. 
+ <code escaped="true" language="Visual Basic">
+    objATC2.RegisterToolPot(CInt(txtATC2.ToolNoValue.Text), CInt(txtATC2.PotNoValue.Text), CInt(txtATC2.GroupNoValue.Text), CInt(txtATC2.SerialNoValue.Text), CBool(chkATC2.DummyTool.SelectValue),txtATC2.ToolNameValue.Text  ) 
+ End Sub 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number to be registered into the specified pot number.  Tool number is 1 to the maximum tool number.</param>
+ <param name="intPotNo">Pot number where a tool will be registered to.  Pot number is 1 to the maximum pot number.</param>
+ <param name="intGroupNo">Group number to be assigned to this pot.  Group number will be ignored if tool is registered as DUMMY TOOL.  Tool group number is 1 to 9999 in case of NC OP. bit No.57 bit1 ON. Tool group number is 1 to 99999999 in case of NC OP. bit No.57 bit1 OFF</param>
+ <param name="intSerialNo">Serial number to be assigned to this pot.  Serial number will be ignored if tool is registered as DUMMY TOOL.  Tool serial number is 1 to 9999.  Tool name can have a maximum 16 characters composed of single-space capital A-Z, 0-9.</param>
+ <param name="blnDummyTool">Optionally, a DUMMY tool is registered into this pot.  True if it is a DUMMY Tool, otherwise false.  </param>
+ <param name="strToolName">Optionally, a tool name can be assinged to this pot.  Tool name will be ignored if tool is registered as DUMMY TOOL.  The first character of tool name cannot be '.' or '-'.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <Figure> TOOL DATA - TOOL ID INFORMATION - POT TOOL TABLE - TOOL - TOOL SET 
+ <para> Random ATC 
+ <img src="MC.ToolID.ToolSet.RandomATC.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	10/1/2008	Created 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CBase">
+      <summary>
+ It is a base class for all classes of Data API. 
+ All classes in DATA-API will be derived from this class to handle error handling, logging service, 
+ and other services for internal data structure of this library ONLY. 
+ </summary>
+ <remarks>
+ It should not be create directly by any client application. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String)">
+      <summary>
+ Create an instance of CBase class given class ID and class name. 
+ </summary>
+ <param name="strClassId">Derived class ID</param>
+ <param name="strClassName">Derived class name.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String,System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strClassId">Derived class ID</param>
+ <param name="strClassName">Derived class name.</param>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.GetLastErrorMessage">
+      <summary>
+ Get the last error message 
+ </summary>
+ <example> This example shows how to call the GetLastErrorMessage method. 
+ <code escaped="true" language="Visual Basic">
+ Dim strMessage As String 
+ Try 
+     txtMessage.Text = objCMDSpec.GetLastErrorMessage() 
+ Catch ae As ApplicationException 
+     doError("CSpec", ae.Message) 
+ Catch ex As Exception 
+     doError("CSpec", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <returns>A System.String value</returns>
+ <figure>
+ </figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.CheckErrorCode(System.Int32,System.Int32,System.String)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the CheckErrorCode mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="nErrorCode">Error Code.</param>
+<param name="intFunctionErrorCode">Function Error Code.</param>
+<param name="strSource">Source String</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.ThrowAE(System.Int32,System.String,System.String)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the ThrowAE mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="intFunctionId">Function ID.</param>
+<param name="strMessage">Message String.</param>
+<param name="strError">Error String</param>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.ThrowNE(System.Int32,System.String,System.String)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the ThrowNE mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="intFunctionId">Function ID.</param>
+<param name="strMessage">Message String.</param>
+<param name="strError">Error String</param>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.AllExceptionHandler(System.String,System.String@,System.Exception@,System.Int32)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the AllExceptionHandler mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="strFunctionName">Function Name.</param>
+<param name="strParameters">Parameter String.</param>
+<param name="objEx">Object Exception</param>
+<param name="intFunctionErrorCode">Function Error Code</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String@,Okuma.ApiLog.loggingRequestType)">
+      <summary>Log function name, function parameters.  This library name and name of instance of class derived from this base class is also logged.</summary>
+<example> This example shows how to call the LogMessage mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="strFunctionName">Function Name.</param>
+<param name="strParameters">Parameter String.</param>
+<param name="enLogType">Log Type. Values for this parameter come from the Okuma.CMCMDAPI.CommandAPI.LoggingService.ApiLog.loggingRequestType</param>
+         '''<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String@,Okuma.ApiLog.loggingRequestType,System.Boolean)">
+      <summary>Log message with function name, function parameter given the logging level. </summary>
+<param name="strFunctionName">Function Name</param>
+<param name="strParameters">Parameters</param>
+<param name="enLogType">Login Request Type</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.ConvertUnitToInch(System.Double)">
+      <summary>N/A</summary>
+<example> This example shows how to call the ConvertUnitToInch mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="dblValue">Double Value.</param>
+<return>A System.Double value that converted from unit to inch</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.ConvertUnitToMM(System.Double)">
+      <summary>N/A</summary>
+<example> This example shows how to call the ConvertUnitToMM mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="dblValue">Double Value.</param>
+<return>A System.Double value that converted from unit to MM</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.CheckLicense(System.String,System.String,System.String,System.String)">
+      <summary>N/A</summary>
+<example> This example shows how to call the CheckLicense method. 
+<code escaped="true" language="Visual Basic">
+ Not available in Object Browser. 
+</code>
+</example>
+<param name="strFeatureName">License Feature Name</param>
+<param name="strFeatureVersion">License Feature Version</param>
+<param name="strFeatureLabel">License Feature Label.</param>
+<param name="strLicensePath">License Path</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.CreateLoggingService">
+      <summary>N/A</summary>
+<example> This example shows how to call the CreateLoggingService mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.GetErrorCode(System.Int32)">
+      <summary>N/A</summary>
+<example> This example shows how to call the GetErrorCode mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="intErrorCode">Error Code.</param>
+<return>A System.String value</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.GetErrorNumberFromErrorMessage(System.String)">
+      <summary>N/A</summary>
+<example> This example shows how to call the GetErrorNumberFromErrorMessage mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="strErrorCode">Error Code String.</param>
+<return>A System.String value</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.GetExceptionErrorCode(System.Int32)">
+      <summary>N/A</summary>
+<example> This example shows how to call the GetExceptionErrorCode mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="intErrorCode">Error Code.</param>
+<return>A System.String value</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CBase.LogExceptionMessage(System.String,System.String@,System.String@)">
+      <summary>N/A</summary>
+<example> This example shows how to call the LogExceptionMessage mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="strFunctionName">Function Name.</param>
+<param name="strParameters">Parameter String.</param>
+<param name="strError">Error String.</param>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.FeatureSetEnum">
+      <summary>
+ 
+ Feature Set enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	3/25/2008	Created 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ControlTypeEnum">
+      <summary>
+ Control type enumeration 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	3/25/2008	Created 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum">
+      <summary>
+ Represents status of Tool ID carrier 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum.No">
+      <summary>
+ Data carrier is not available 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum.Yes">
+      <summary>
+ Data carrier is available 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.CarrierStatusEnum.COMP_Write">
+      <summary>
+ Forcibly write data to the data carrier without verifying the tool number. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ToolLifeStatusEnum">
+      <summary>
+ Represents tool life status for 8-Digits Tool ID specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolLifeStatusEnum.OK">
+      <summary>
+ Tool life status is in good condition. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolLifeStatusEnum.NG">
+      <summary>
+ Tool life status is not in good condition - NG2( User) 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ToolKindEnum">
+      <summary>
+ Represents tool kind for 8-Digits Tool ID specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolKindEnum.None">
+      <summary>
+ Regular Tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolKindEnum.Large">
+      <summary>
+ Large Tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolKindEnum.Heavy">
+      <summary>
+ Heavy Tool 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolKindEnum.UAxisLarge">
+      <summary>
+ U-axis Large diameter tool. 
+ This tool kind is only valid if specification of U-Axis is active. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ToolAttribute2Enum">
+      <summary>
+ Represents tool attributes for 8-Digits Tool ID specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/28/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttribute2Enum.None">
+      <summary>
+ Tool without an attribute 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttribute2Enum.DummyTool">
+      <summary>
+ A dummy tool.  A tool that is assigned next to a large diameter tool to prevent colliding with the adjacent tools. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttribute2Enum.NoTool">
+      <summary>
+ No tool 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum">
+      <summary>
+ MID Block restart options. 
+ </summary>
+ <history>
+ 	[Lhuynh]	11/5/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum.None">
+      <summary>
+ No return to the middle block 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum.MC_POSIT_X">
+      <summary>
+ return to the middle block for X axis 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum.MC_POSIT_Y">
+      <summary>
+ return to the middle block for Y axis 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum.MC_POSIT_Z">
+      <summary>
+ return to the middle block for Z axis 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum.SlideHold">
+      <summary>
+ (STOP) Slide Hold 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum">
+      <summary>
+ List of axes movement order when sequence restart is performed. 
+ </summary>
+ <history>
+ 	[Lhuynh]	11/5/2007	Created 
+ OCJ DOCUMENT ENUMERATE IN OPPOSITE DIRECTION.  USE NC HMI ORDER 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.None">
+      <summary>
+ All 3 axes move into position simultaneously 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.X_Firt_Move">
+      <summary>
+ +X - Move X axis to position first 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.Y_Firt_Move">
+      <summary>
+ +Y - Move Y axis to position first 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.Z_Firt_Move">
+      <summary>
+ +Z - Move Z axis to position first 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.X_Last_Move">
+      <summary>
+ -X - Move X axis into position last 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.Y_Last_Move">
+      <summary>
+ -Y - Move Y axis into position last 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum.Z_Last_Move">
+      <summary>
+ -Z - Move Z axis into position last 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum">
+      <summary>
+ List of available NC panel group mode. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	1/18/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.OperationMode">
+      <summary>
+ Operation mode - NC is under either Auto/MDI/Manual mode. 
+ </summary>
+ <remarks>
+ Auto/MDI/Manual mode cannot be changed by this command, but the screen can be changed while NC in one of these modes. 
+ <para>For example, screen can be changed from ACTUAL POSITION to MAIN PROGRAM.</para>
+ </remarks></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.ProgramMode">
+      <summary>
+ In this mode program and data files can be edited, input/output, displayed, and deleted 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.ParameterMode">
+      <summary>
+ In this mode the parameter data necessary for numerical control can be set, changed, an displayed. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.ZeroSetMode">
+      <summary>
+ In this mode the zero offset data and zero offset shift data which define a program coordinate 
+ system can be set, changed, or checked. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.ToolDataSettingMode">
+      <summary>
+ In this mode the tool offset data, nose radius compensation data, tool shape data, and load monitor 
+ data can be set, changed, or displayed 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.PanelGroupEnum.MacManMode">
+      <summary>
+ In this mode the machining management function can be used. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ATCTypesEnum">
+      <summary>
+ Represents type of ATC 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ATCTypesEnum.RandomMemory">
+      <summary>
+ Random Memory ATC Type. When a tool is going to be returned to the magazine, NC will select the return pot automatically 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ATCTypesEnum.FixedAddress">
+      <summary>
+ Fixed Adress ATC Type. When a tool is going to be returned to the magazine, it will return to the same location as it is getting from. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum">
+      <summary>
+ Represents tool attributes. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.None">
+      <summary>
+ Tool without an attribute 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.HeavyTool">
+      <summary>
+ A heavy tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.PlanarTool">
+      <summary>
+ A planar tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.PlanarHeavyTool">
+      <summary>
+ A planar and heavy tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.AttachmentTool">
+      <summary>
+ An attachement tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.AttachmentHeavyTool">
+      <summary>
+ An attachment and heavy tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.UAxisTool">
+      <summary>
+ An U axis tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.UAxisHeavyTool">
+      <summary>
+ An U axis and heavy tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.ManualAttachTool">
+      <summary>
+ A manual attach tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.ToolWithLid">
+      <summary>
+ A tool type that has a lid 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterTool">
+      <summary>
+ A large diameter tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterHeavyTool">
+      <summary>
+ A large diameter and heavy tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterPlanarTool">
+      <summary>
+ A large diameter planer tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterPlanarHeavyTool">
+      <summary>
+ A large diameter and heavy planar tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterAttachTool">
+      <summary>
+ A large diameter attach tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterAttachHeavyTool">
+      <summary>
+ A large diameter and heavy attach tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterUAxisTool">
+      <summary>
+ A large diameter U axis tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterUAxisHeavyTool">
+      <summary>
+ A large diameter and heavy U axis tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterManualAttachTool">
+      <summary>
+ A large diameter manual attach tool type 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.LargeDiameterToolWithLid">
+      <summary>
+ A large diameter tool type that has lid 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.ToolAttributeEnum.DummyTool">
+      <summary>
+ A dummy tool.  A tool that is assigned next to a large diameter tool to prevent colliding with the adjacent tools. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.Enumerations.FileReadModeEnum">
+      <summary>
+ Represents file reading mode of part program. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.FileReadModeEnum.A">
+      <summary>
+ Read part program in A spec. mode. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.FileReadModeEnum.B">
+      <summary>
+ Read part program in B spec. mode. 
+ </summary>
+    </member>
+    <member name="F:Okuma.CMCMDAPI.Enumerations.FileReadModeEnum.S">
+      <summary>
+ Read part program in S spec. mode. 
+ </summary>
+    </member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CMachine">
+      <summary>
+ Class provides general machine operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.#ctor">
+      <summary>
+ Create an instance of this class 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.InputMDI(System.String)">
+      <summary>
+ Sets the Command MDI string into the MDI buffer. 
+ </summary>
+ <example> This example shows how to call the InputMDI method. 
+ <code escaped="true" language="Visual Basic">
+ Dim objmac As Okuma.CMCMDAPI.CommandAPI.CMachine 
+ Try 
+     objmac = New Okuma.CMCMDAPI.CommandAPI.CMachine 
+     objmac.InputMDI(Txt_mdicommand.Text) 
+ Catch ae As ApplicationException 
+     doError("Cmachine", ae.Message) 
+ Catch ex As Exception 
+     doError("Cmachine", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strMDICommand">MDI command</param>
+ <remarks>
+ After the MDI command string is inserted into the NC MDI buffer screen,  a cycle start from control is needed to execute the MDI command. 
+ </remarks>
+ <Figure> MDI - G1X100 is inserted to NC MDI buffer.  A cycle start is needed to carry out the MDI command. 
+ <para>
+ <img src="MC.MDI.SET.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.CycleStart">
+      <summary>N/A</summary>
+<example> This example shows how to call the CycleStart mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.CycleStep">
+      <summary>N/A</summary>
+<example> This example shows how to call the CycleStep mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.CycleStop">
+      <summary>N/A</summary>
+<example> This example shows how to call the CycleStop mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.ResetNC">
+      <summary>N/A</summary>
+<example> This example shows how to call the ResetNC mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.SetFeedrateOverride(System.Int32)">
+      <summary>N/A</summary>
+<example> This example shows how to call the SetFeedrateOverride mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<param name="intValue">Feedrate override Value</param>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMachine.SetSpindlerateOverride(System.Object)">
+      <summary>N/A</summary>
+<example> This example shows how to call the SetSpindlerateOverride mothod. 
+<code escaped="true" language="Visual Basic">
+</code>
+</example>
+<param name="intValue">Spindlerate Override Value</param>
+<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CMOPTool">
+      <summary>
+ Class provides MOP Tool operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMOPTool.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMOPTool.Edit(System.Int32,System.Int32)">
+      <summary>
+ Create a MOP Tool Data number with the specified tool number and its associated class number if it does not exist in the MOP Data table. 
+ </summary>
+ <example> This example shows how to call the Edit mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objccmop As CMCMDAPI.CMOPTool 
+ Try 
+    objccmop = New CMCMDAPI.CMOPTool 
+    objccmop.Edit(CLng(Me.mopCMDToolNumber.Text), CInt(Me.mopCMDClassNumber.Text)) 
+ Catch ae As ApplicationException 
+    doError("cmop", ae.Message) 
+ Catch ex As Exception 
+    doError("cmop", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number.  Valid tool number is ranging from 1 - 999.</param>
+ <param name="intClassNo">Classification number for this tool number.  Valid class numbers is from 0 to 9.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ NC will assigned a MOP Tool data number for each tool number and its classification number automatically based on the current MOP Tool Data list such that 
+ the order of tool numbers and its classification numbers are displayed in ascending order. 
+ Therefore, a MOP Tool Data number assigned for a pair of tool number and its classification number could be changed if there is a deletion or addition to the MOP Tool Data table. 
+ For example, if tool number 45-0 is removed from the MOP Tool Data list, then tool 50-0 will has a MOP Tool Data number 4. 
+ </remarks>
+ <Figure> MOP TOOL - TOOL DATA SETING - ENTRY TOOL LIST - list of all MOP Tool Data and its associated tool number with classification nunber. 
+ <para>
+ <img src="MopTool.ToolDataSettinglist.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CMOPTool.Delete(System.Int32,System.Int32)">
+      <summary>
+ Delete the current tool number and its associated class number in the MOP Tool Data table. 
+ </summary>
+ <example> This example shows how to call the Delete mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objccmop As CMCMDAPI.CMOPTool 
+ Try 
+     objccmop = New CMCMDAPI.CMOPTool 
+     objccmop.Delete(CLng(Me.mopCMDToolNumber.Text), CInt(Me.mopCMDClassNumber.Text)) 
+ Catch ae As ApplicationException 
+     doError("cmop", ae.Message) 
+ Catch ex As Exception 
+     doError("cmop", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="intToolNo">Tool number.  Valid tool number is ranging from 1 - 999.</param>
+ <param name="intClassNo">Classification number for this tool number.  Valid class numbers is from 0 to 9.</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ NC will assigned a MOP Tool data number for each tool number and its classification number automatically based on the current MOP Tool Data list such that 
+ the order of tool numbers and its classification numbers are displayed in ascending order. 
+ Therefore, a MOP Tool Data number assigned for a pair of tool number and its classification number could be changed if there is a deletion or addition to the MOP Tool Data table. 
+ For example, if tool number 45-0 is removed from the MOP Tool Data list, then tool 50-0 will has a MOP Tool Data number 4. 
+ </remarks>
+ <Figure> MOP TOOL - TOOL DATA SETING - ENTRY TOOL LIST - list of all MOP Tool Data and its associated tool number with classification nunber. 
+ <para>
+ <img src="MopTool.ToolDataSettinglist.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CProgram">
+      <summary>
+ Class provides general part program operations. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CProgram.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CProgram.SelectMainProgram(System.String,System.String,System.String,Okuma.CMCMDAPI.Enumerations.FileReadModeEnum)">
+      <summary>
+ Load the specified part program file into NC. Optionally, it can also load sub program file name, or run a particular program name. 
+ </summary>
+ <example> This example shows how to call the SelectMainProgram mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcprogram As CMCMDAPI.CProgram 
+ Try 
+    objcprogram.SelectMainProgram(prog1.Text, prog2.Text, prog3.Text, prog4.Text) 
+ Catch ae As ApplicationException 
+    doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+    doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strMainProgram">Main program file name to be loaded into NC</param>
+ <param name="strSubProgram">Sub program file name for this main program</param>
+ <param name="strProgramName">Name of program in the main program file to be run.  Name must be starting with an O and a maximum length of characters is 5.</param>
+ <param name="enFileReadMode">File read mode applied to main program file</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ All files should be located in the default MD1 folder of the OSP system. 
+ In order to load program with B or S method, NC Optional parameter WORD # 11 must be set to 1 for B method, or 2 for S method, respectively. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	4/26/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CProgram.CancelMainProgram">
+      <summary>
+ Cancel main program currently loaded in NC.  Machine must be not in Execute Mode. 
+ </summary>
+ <example> This example shows how to call CancelMainProgram method. 
+ <code escaped="true" language="Visual Basic">
+ Try 
+     objcprogram.CancelMainProgram() 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <figure>
+ </figure></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CProgram.SelectScheduleProgram(System.String)">
+      <summary>
+ Load the specified schedule part program file into NC. 
+ </summary>
+ <example>
+ This example shows how to call the SelectScheduleProgram mothod. 
+ <code escaped="true" language="Visual Basic">
+ Dim objcprogram As CMCMDAPI.CProgram 
+ Try 
+    objcprogram.SelectScheduleProgram(prog1.Text) 
+ Catch ae As ApplicationException 
+    doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+    doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strScheduleProgramFileName">Schedule program file name to be loaded into NC</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ All files should be located in the default MD1 folder of the OSP system. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	10/10/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CProgram.ReturnSearch(System.String,Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum,Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum,System.Int32,System.Int32)">
+      <summary>
+ Perform the return search operation. The return search and sequence restart functions are used to restart automatic operation after 
+ taking necessary measures like changing a tool if automatic operation is interrupted due to problems 
+ such as tool breakage. The return search function processes the program up to the specified sequence while 
+ moving the pointer. 
+ <para>
+ For more information, please refer to Machining Center Operation Manual - Section 5 Automatic Operation - Return Search and Sequence Restart 
+ </para>
+ </summary>
+ <example> This example shows how to call ReturnSearch method. 
+ <code escaped="true" language="Visual Basic">
+ Dim strSequence as String 
+ Dim intOrderNumber as Integer 
+ Try 
+     objCMDProgram.RestartSequence(strSequence, intRepeatnumber.ToString, Convert.ToSByte(enAxisMovementOrder), Convert.ToSByte(enMidBlockRestart), intNumberRelativeBlock) 
+ Catch ae As ApplicationException 
+     doError("CMD program", ae.Message) 
+ Catch ex As Exception 
+     doError("CMD Program", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <param name="strSequence">
+ <para>
+ Sequence number or block counter. Sequence restart starts with N + 5 sequence numbers.  For example, N1234 is a sequence name. 
+ </para>
+ <para>
+ The sequence name or block counter input field can accept the input of asterisk “*”. 
+ The asterisk “*” means the previously executed block counter value (displayed on the title bar 
+ of the screen). Further, + or – sign can be used for addition or subtraction of the block counter 
+ value. 
+ </para>
+ <para>
+ Ex. If you input “*–2” when the previous counter value is 415, the program return to the 
+ block No. 413. 
+ If a block counter is input instead of a sequence name, the RESTART pop-up window 
+ does not display the relative number of blocks from the sequence name to the return point 
+ or the number of repetitions. 
+ Set the other items in the same manner as the items displayed by the input of a sequence name. 
+ </para>
+ </param>
+ <param name="enAxisMovementOrder">Specified the axis movement order when sequence restart is perfromed.  Values of parameter come from the Okuma.CMCMDAPI.Enumerations.AxisMovementOrderEnum enumeration.  </param>
+ <param name="enMidBlockRestart">
+ <para>
+ Enables sequence restart from the point where the operation was interrupted.  In 
+ addition, the order of axis movements to return to the sequence restart point can be set by assigning the 
+ priority to the axes.Values of parameter come from the Okuma.CMCMDAPI.Enumerations.MIDBlockRestartEnum enumeration. 
+ </para>
+ <para>
+ For more information on MID-BLOCK RESTART please refer to the OSP-P200M Special Functions Manual No. 1 - SECTION 4 UPGRADED SEQUENCE RESTART FUNCTION (MID-BLOCK RESTART FUNCTION) 
+ </para>
+ </param>
+ <param name="intNumberRelativeBlock">Specified the relative number of blocks (A NUMBER OF BLOCK BEYOND SEQ. NAME) from sequence name to the return point.</param>
+ <param>Applied only when a sequence name is specified to the first parameter.</param>
+ <param name="intRepeatnumber">
+ The “order” when designating a sequence name is a value that specifies, in cases where 
+ the same sequence number occurs a number of times in the same part program, the 
+ position of the sequence number from which the sequence is to be restarted. It indicates 
+ which occurrence of the sequence number - starting from the first block of the part 
+ program - is the relevant one. 
+ <para>Applied only when a sequence name is specified to the first parameter.</para>
+ </param>
+ <remarks>
+ The Return Search operation is only valid in AUTO MODE operation.  In other mode, no operation is carried out or ignore. 
+ An error occurs if return search is executed during the execution of a schedule or main program. 
+ <para>
+ The Axis Movement Order and Mid Block Restart parameters will be ignored in the operation if Spec code number 11 bit 6 is not enabled. 
+ </para>
+ </remarks>
+ <exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+ <Figure>AUTO OPERATION - RESTART 
+ <para>
+ <img src="MC.SequenceRestart.jpg" />
+ </para>
+ </Figure>
+ <history>
+ 	[Lhuynh]	11/05/2007	Created 
+     Support in MCMCAPI.exe version 1.0.2.1, MC.dll 41.1.0.0 
+ </history></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CSpec">
+      <summary>
+ Class provides general machine specification. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CSpec.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CSpec.GetInterfaceVersion">
+      <summary>
+ Get the current version of this library. 
+ </summary>
+ <example> This example shows how to call the GetInterfaceVersion method. 
+ <code escaped="true" language="Visual Basic">
+ Dim curSpecEnum As OptionSpecEnum 
+ Try 
+     specInterfaceVersion.Text = objCMDSpec.GetInterfaceVersion() 
+ Catch ae As ApplicationException 
+     doError("CSpec", ae.Message) 
+ Catch ex As Exception 
+     doError("CSpec", ex.Message) 
+ End Try 
+ </code>
+ </example>
+ <returns>A System.String value that represents the version of this library.  Version format: Major.Minor.Build.Revision </returns>
+ <figure>
+ </figure></member>
+    <member name="T:Okuma.CMCMDAPI.CommandAPI.CViews">
+      <summary>
+ Provides operations for controlling NC screens. 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	2/6/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CViews.#ctor(System.String)">
+      <summary>
+ Create an instance of this class. 
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+ <param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Lhuynh]	12/4/2007	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.CommandAPI.CViews.ChangeScreen(Okuma.CMCMDAPI.Enumerations.PanelGroupEnum,System.String)">
+      <summary>
+ Allow to change current screen on NC to different screen by specified the panel group name and screen name. 
+ </summary>
+ <example> This example shows how to call the ChangeScreen mothod. 
+ <code escaped="true" language="Visual Basic">
+ Me.Cmb_ChangeScreen.DataSource = System.Enum.GetValues(GetType(Okuma.CMCMDAPI.Enumerations.PanelGroupEnum)) 
+ Private Sub cmd_ChangeScreen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_ChangeScreen.Click 
+     Dim objview As Okuma.CMCMDAPI.CommandAPI.CViews 
+     Dim int_panalenum As Int32 
+     Try 
+         int_panalenum = CInt(Cmb_ChangeScreen.SelectedItem) 
+         objview = New Okuma.CMCMDAPI.CommandAPI.CViews 
+         objview.ChangeScreen(int_panalenum, txt_screenname.Text) 
+     Catch ae As ApplicationException 
+         doError("Cview", ae.Message) 
+     Catch ex As Exception 
+         doError("Cview", ex.Message) 
+     End Try 
+ End Sub 
+ </code>
+ </example>
+ <param name="enPanelGroup">Panel group name where the screen resides.</param>
+ <param name="strScreenName">Screen name to be displayed as active screen on NC</param>
+ <exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+ <exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+ <remarks>
+ If no screen name is specified, then the previous active screen or default screen name of the specified panel group name will be displayed. 
+ </remarks>
+ <history>
+ 	[Lhuynh]	11/10/2006	Created 
+ </history></member>
+    <member name="M:Okuma.CMCMDAPI.modMain.ValidateDependencyFiles(System.String)">
+      <summary>N/A</summary>
+'<example> This example shows how to call the CheckLicense method. 
+'<code escaped="true" language="Visual Basic">
+' Not available in Object Browser. 
+'</code>
+'</example>
+'<param name="strFeatureName">License Feature Name</param>
+'<param name="strFeatureVersion">License Feature Version</param>
+'<param name="strFeatureLabel">License Feature Label.</param>
+'<param name="strLicensePath">License Path</param>
+'<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+'<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+'<Figure>
+'</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.modMain.ThrowAE(System.Int32,System.String,System.String)">
+      <summary>For internal usage only</summary>
+<example> This example shows how to call the ThrowAE mothod. 
+<code escaped="true" language="Visual Basic">
+ Sample code is not available. 
+</code>
+</example>
+<param name="intFunctionId">Function ID.</param>
+<param name="strMessage">Message String.</param>
+<param name="strError">Error String</param>
+<Figure>
+</Figure></member>
+    <member name="M:Okuma.CMCMDAPI.modMain.GetErrorCode(System.Int32)">
+      <summary>N/A</summary>
+<example> This example shows how to call the GetErrorCode mothod. 
+<code escaped="true" language="Visual Basic">
+ Not available in object browser 
+</code>
+</example>
+<param name="intErrorCode">Error Code.</param>
+<return>A System.String value</return>
+<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+<Figure>
+</Figure></member>
+  </members>
+</doc>

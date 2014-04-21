@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "thincMCTestApp", "thincMCTestApp.vbproj", "{CEBCBDF7-D54D-4632-B71D-8B8F94B10249}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CEBCBDF7-D54D-4632-B71D-8B8F94B10249}.Debug.ActiveCfg = Debug|.NET
+		{CEBCBDF7-D54D-4632-B71D-8B8F94B10249}.Debug.Build.0 = Debug|.NET
+		{CEBCBDF7-D54D-4632-B71D-8B8F94B10249}.Release.ActiveCfg = Release|.NET
+		{CEBCBDF7-D54D-4632-B71D-8B8F94B10249}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
