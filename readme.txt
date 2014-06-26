@@ -1,4 +1,4 @@
-﻿Okuma Open API Application SDK v0.2a
+﻿Okuma Open API Application SDK v0.3a
 __________________________________________________________________
 Purpose:
 
@@ -16,23 +16,25 @@ Structure:
 │   └───1.9.1
 │       ├───Bin
 │       └───Help
-└───Examples			/* Example usage of the API	*/
-    ├───CommonVariables_simple	/* The example in this folder	*/
-    │   ├───Compiled		/* is repeated in several	*/
-    │   ├───CS_Lathe		/* programming languages,	*/
-    │   ├───CS_MC		/* targeting multiple platforms	*/
-    │   ├───CS_WPF		/* so the beginner can see a	*/
-    │   ├───Shared		/* minimal API reference work.	*/
-    │   ├───VB_Lathe
-    │   └───VB_MC
-    └───EveryFunction_complex	/* The examples in this folder	*/
-        ├───ThincLathe		/* are used in Okuma testing to	*/
-        └───ThincMC		/* verify every function works	*/
-__________________________________________________________________
+├───Examples			/* Example usage of the API	*/
+│   ├───CommonVariables_simple	/* The example in this folder	*/
+│   │   ├───Compiled		/* is repeated in several	*/
+│   │   ├───CS_Lathe		/* programming languages,	*/
+│   │   ├───CS_MC		/* targeting multiple platforms	*/
+│   │   ├───CS_WPF		/* so the beginner can see a	*/
+│   │   ├───Shared		/* minimal API reference work.	*/
+│   │   ├───VB_Lathe
+│   │   └───VB_MC
+│   └───EveryFunction_complex	/* The examples in this folder	*/
+│       ├───ThincLathe		/* are used in Okuma testing to	*/
+│       └───ThincMC		/* verify every function works	*/
+└───Documentation		/* Guidelines and approval info */
+_________________________________________________________________
 Revision History:
 
-v0.1a	> first distributable version
-v0.2a	> added Okuma OpenAPI v1.17.1
+v0.1a	2014.04.??	> first distributable version
+v0.2a	2014.04.??	> add Okuma OpenAPI v1.17.1
+v0.3a	2014.06.26	> add approval and widget Documentation
 __________________________________________________________________
 Contact:
 
