@@ -989,7 +989,7 @@
             <remarks>[OAC API FILE]</remarks>    
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincLatheDataApi_Version">
-            <summary> Return the version of the THINC Data API file 'Okuma.CLCMDAPI.dll' </summary>
+            <summary> Return the version of the THINC Data API file 'Okuma.CLDATAPI.dll' </summary>
             <returns>string</returns>
             <remarks>Will either return the version information or an error message 
             [OAC API FILE] Obtained from Global Assembly Cache </remarks>
