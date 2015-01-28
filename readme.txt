@@ -41,7 +41,7 @@ Revision History:
 v0.1a	2014.04.??	> first distributable version
 v0.2a	2014.04.??	> add Okuma OpenAPI v1.17.1
 v0.3a	2014.06.26	> add approval and widget Documentation
-v0.4a	2015.01.19	> add Scout libraries and test application
+v0.4a	2015.01.28	> add Scout libraries and test application
 ____________________________________________________________________
 Contact:
 
