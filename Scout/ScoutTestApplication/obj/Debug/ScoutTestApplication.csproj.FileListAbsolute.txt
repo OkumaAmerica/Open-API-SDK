@@ -22,3 +22,17 @@ D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Debug
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Debug\ScoutTestApplication.csproj.GenerateResource.Cache
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Debug\ScoutTestApplication.exe
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Debug\ScoutTestApplication.pdb
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.exe
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.pdb
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\ScoutTestApplication.exe
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\ScoutTestApplication.pdb
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\ScoutTestApplication.exe.CodeAnalysisLog.xml
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\ScoutTestApplication.exe.lastcodeanalysissucceeded
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\Okuma.Scout.dll
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\Okuma.Scout.pdb
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\Okuma.Scout.xml
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.csprojResolveAssemblyReference.cache
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.ScoutTestApplicationForm.resources
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.Properties.Resources.resources
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Debug\ScoutTestApplication.csproj.GenerateResource.Cache
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Debug\ScoutTestApplication.exe.config

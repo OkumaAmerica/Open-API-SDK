@@ -116,6 +116,9 @@ namespace ScoutTestApplication
 
             // display the status of subscription status
             this.CheckBox_ErrorSubscribed.Checked = true;
+
+            // Subscribing multiple times would result in duplicate lines.
+            this.Button_ErrorSubscribe.Enabled = false;
         }
 
         /// <summary>
@@ -131,8 +134,11 @@ namespace ScoutTestApplication
             // Scout functionality loses scope.
             Okuma.Scout.Error.Reporter -= this.HandleScoutErrorInfo;
 
-            // display the status of subscription status
+            // Display the status of subscription status.
             this.CheckBox_ErrorSubscribed.Checked = false;
+
+            // Allow user to subscribe to the event again.
+            this.Button_ErrorSubscribe.Enabled = true;
         }
 
         /// <summary>

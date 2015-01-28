@@ -12,3 +12,11 @@ D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Relea
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Release\ScoutTestApplication.Properties.Resources.resources
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Release\ScoutTestApplication.csproj.GenerateResource.Cache
 D:\VS Projects\Git\scout-dll\ScoutTestApplication\ScoutTestApplication\obj\Release\ScoutTestApplication.exe
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Release\ScoutTestApplication.exe
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Release\Okuma.Scout.dll
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Release\ScoutTestApplication.csprojResolveAssemblyReference.cache
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Release\ScoutTestApplication.ScoutTestApplicationForm.resources
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Release\ScoutTestApplication.Properties.Resources.resources
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Release\ScoutTestApplication.csproj.GenerateResource.Cache
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\obj\Release\ScoutTestApplication.exe
+D:\VS Projects\Git\scout-dll\Test Application\ScoutTestApplication\bin\Release\ScoutTestApplication.exe.config

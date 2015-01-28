@@ -8,7 +8,7 @@
             <summary>
             This class deals with the Data Management Card </summary>
         </member>
-        <member name="F:Okuma.Scout.DMC.DMCString">
+        <member name="F:Okuma.Scout.DMC.privateDMCString">
             <summary>
             Once class DMC is read, this contains the contents of the Data Management Card 
             (if it exists, otherwise will remain the default value and `dmc_exist` will = false. ) </summary>
@@ -17,7 +17,7 @@
             <summary>
             This is the string value returned if an error is encountered 
             during the Data Management Card item retrieval process. 
-            Typically this only occours if the DMC is not found. </summary>
+            Typically this only occurs if the DMC is not found. </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.OSPType">
             <summary> Returns the entry assosiated with "Type of OSP" from the Data Management Card </summary>
@@ -175,12 +175,10 @@
             </summary>
         </member>
         <member name="M:Okuma.Scout.DotNet.GetNetfx10SPLevel">
-            <summary>
-                Function Name:  GetNetfx10SPLevel
-                Description:    Uses the detection method recommended at
-               http://blogs.msdn.com/astebner/archive/2004/09/14/229802.aspx
-               to determine what service pack for the
-               .NET Framework 1.0 is installed on the machine </summary>
+            <summary> Uses the detection method recommended at
+            http://blogs.msdn.com/astebner/archive/2004/09/14/229802.aspx
+            to determine what service pack for the .NET Framework 1.0 is 
+            installed on the machine </summary>
             <returns>integer representing SP level for .NET Framework 1.0</returns>
         </member>
         <member name="M:Okuma.Scout.DotNet.GetNetfxSPLevel(System.String,System.String)">
@@ -231,7 +229,7 @@
         </member>
         <member name="M:Okuma.Scout.DotNet.RegistryGetLocalMachineValue(System.String,System.String,System.String@)">
             <summary>
-            Get the value of a reg key </summary>
+            Get the value of a registry key </summary>
             <param name="SubKey">Name of the key to retrieve</param>
             <param name="Value">The value that will be retrieved</param>
             <param name="Result">Contents of Value</param>
@@ -320,8 +318,8 @@
         </member>
         <member name="T:Okuma.Scout.Enums.MachineType">
             <summary>
-            Describes the Machine as a PC, Lathe, Maching Center, or Grinder (also if it's either an NC Master or PC NC Master)
-            Indetermiate value = "Unknown"
+            Describes the Machine as a PC, Lathe, Machining Center, or Grinder (also if it's either an NC Master or PC NC Master)
+            Indeterminate value = "Unknown"
             </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.Unknown">
@@ -331,31 +329,31 @@
             <summary>Personal Computer (not a machine) </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.L">
-            <summary>Lathe </summary>
+            <summary>Type Lathe </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.NCM_L">
-            <summary>NC-Master Lathe </summary>
+            <summary>Type NC-Master Lathe </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_L">
-            <summary>PC-NC-Master Lathe </summary>
+            <summary>Type PC-NC-Master Lathe </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.M">
-            <summary>Machining Center </summary>
+            <summary>Type Machining Center </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.NCM_M">
-            <summary>NC-Master Machining Center </summary>
+            <summary>Type NC-Master Machining Center </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_M">
-            <summary>PC-NC-Master Machining Center </summary>
+            <summary>Type PC-NC-Master Machining Center </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.G">
-            <summary>Grinder </summary>
+            <summary>Type Grinder </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.NCM_G">
-            <summary>NC-Master Grinder </summary>
+            <summary>Type NC-Master Grinder </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_G">
-            <summary>PC-NC-Master Grinder </summary>
+            <summary>Type PC-NC-Master Grinder </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.ControlType">
             <summary>
@@ -468,7 +466,7 @@
         </member>
         <member name="T:Okuma.Scout.Enums.DMCSearchPattern">
             <summary>
-            Used to specificy which section of the DMC is being searched.
+            Used to specify which section of the DMC is being searched.
             </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Data">
@@ -504,6 +502,60 @@
         </member>
         <member name="F:Okuma.Scout.Enums.MessageLevel.Exception">
             <summary>Run-time error that effects the operation of SCOUT </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ApiVersionCheckResult">
+            <summary>
+            Return value for 'VersionInformation.Result' used to indicate 
+            If the THINC API Install Version was successfully determined. </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.NoResult">
+            <summary>Default value before check performed</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.VersionRecognized">
+            <summary>Value indicating success</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.UnknownVersion">
+            <summary>Install version cannot be identified, but the individual
+            API file versions should still be available.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MachineTypeNotSupported">
+            <summary>Base machine type other than L or M was identified</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingApiFiles">
+            <summary>Install version identification is accomplished by comparing known version information 
+            for API files. If any of these files are missing, identification cannot take place.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingCrossReference">
+            <summary>An internal file is used for version information comparison. 
+            The comparison cannot take place without this file.</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ApiStatus">
+            <summary>
+            Used as the return value for 'ThincApi.ApiAvailable' and 'ThincApi.InitAPI()'.
+            These values provide more detailed information about the results, beyond what would
+            be possible with a simple boolean result.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.Ready">
+            <summary>The API is ready to be initialized</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.NotReady">
+            <summary>API cannot be initialized and API functions cannot be used at this time</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.Initialized">
+            <summary>API Init was successful, and API functions may now be called</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.FailedToInitialize">
+            <summary>Exception encountered while attempting to initialize the API. 
+            Handle the Error Event "Okuma.Scout.Error.Reporter" or use a try-catch around the 
+            methods that return this object to view the specific details.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.FiveSecondTimeOutPeriod">
+            <summary>When 'ThincApi.ApiAvailable' is called on machines with API version less than 1.17.1, 
+            an attempt to initialize the API will take place to determine readyness. That function or calling 
+            Initialize directly may only attempt to call Init at 5 second or greater intervals. This is the 
+            return result that will be generated if more than one call is generated within a 5 second period.
+            </summary>
         </member>
         <member name="T:Okuma.Scout.Error">
             <summary>
@@ -555,6 +607,141 @@
         <member name="P:Okuma.Scout.Error.Args.Exception">
             <summary> Exception object (not used for debugging information) </summary>
         </member>
+        <member name="T:Okuma.Scout.AccessGAC">
+            <summary>  Access GAC  </summary>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.GetAssVersionFromGAC(System.String)">
+            <summary>
+            Used to retrieve version information about an assembly
+            </summary>
+            <param name="asm">The assembly name</param>
+            <returns>type string </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.GetAssemblyInfo(System.String)">
+            <summary>
+            Attempts to get the version of an assembly in the GAC
+            </summary>
+            <param name="name">name of the assembly</param>
+            <returns>type string</returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.AssemblyExist(System.String,System.String@)">
+            <summary>
+            Check if a given assembly file exists in the GAC </summary>
+            <param name="assemblyname">string name of assembly</param>
+            <param name="response">output string (use out keyword)</param>
+            <returns>type boolean</returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.QueryAssemblyInfo(System.String)">
+            <summary>
+            Get assembly information from GAC </summary>
+            <remarks>If assemblyName is not fully qualified, a random matching may be.</remarks>
+            <param name="assemblyName">Which assembly</param>
+            <returns>type string</returns>
+        </member>
+        <member name="T:Okuma.Scout.LicenseItem">
+            <summary>
+            This class is used by 'LicenseChecker' to store information about features 
+            found in the Okuma License file </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateFeature">
+            <summary> Feature Name </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateVersion">
+            <summary> Version of feature </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateExpires">
+            <summary> If the feature expires </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateStatus">
+            <summary> status of check </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateExpiryDate">
+            <summary> Expiration date </summary>
+        </member>
+        <member name="F:Okuma.Scout.LicenseItem.privateEndIndex">
+            <summary> End Index of last thing gotten from license file </summary>
+        </member>
+        <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Boolean)">
+            <summary> Initializes a new instance of the <see cref="T:Okuma.Scout.LicenseItem"/> class. 
+            Requires that a feature name, version, and can expire?(boolean) values be provided. </summary>
+            <param name="featureName">Name of feature</param>
+            <param name="featureVersion">Version of feature</param>
+            <param name="featureCanExpire">Whether the feature can expire or not</param>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.Feature">
+            <summary>Gets license feature name </summary>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.Version">
+            <summary>Gets version of license feature </summary>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.Expires">
+            <summary>Gets a value indicating whether license expires</summary>
+            <remarks>False if type = "permanent", otherwise true. </remarks>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.Status">
+            <summary>Gets the result of feature validation check. 
+            Value is null by default (before checking) </summary>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.ExpiryDate">
+            <summary> Gets or sets DateTime type which holds the license feature expire date.
+            This value will be Vars.ErrorDateTime by default </summary>
+        </member>
+        <member name="P:Okuma.Scout.LicenseItem.EndIndex">
+            <summary>
+            Gets or sets the end index </summary>
+        </member>
+        <member name="T:Okuma.Scout.VersionInformation">
+            <summary>
+            Public object used to hold information about the current THINC API version </summary>
+        </member>
+        <member name="F:Okuma.Scout.VersionInformation.result">
+            <summary>Return value for Version Information.Result </summary>
+        </member>
+        <member name="F:Okuma.Scout.VersionInformation.apiversion">
+            <summary>When found, the install version of THINC API </summary>
+        </member>
+        <member name="F:Okuma.Scout.VersionInformation.commandapiversion">
+            <summary>If found, the version of command api </summary>
+        </member>
+        <member name="F:Okuma.Scout.VersionInformation.dataapiversion">
+            <summary>If found, the version of data api </summary>
+        </member>
+        <member name="F:Okuma.Scout.VersionInformation.apinotifierversion">
+            <summary>If found, the verison of api notifier </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.Result">
+            <summary> Gets the result of attempt to identify the THINC API Version. 
+            Type 'Enums.ApiVersionCheckResult' </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.ApiVersion">
+            <summary> Gets the THINC API Install Version.
+            Null until successful check is performed. 
+            Either perform null check before retrieving or check the 'Result' field first. </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.CommandApiVersion">
+            <summary>
+            Gets the version of Command API file (as string), otherwise "N/A" </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.DataApiVersion">
+            <summary>
+            Gets the version of Data API file (as string), otherwise "N/A" </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.ApiNotifierVersion">
+            <summary>
+            Gets the version of the APINotifierService executable (as string), otherwise "N/A" </summary>
+        </member>
+        <member name="T:Okuma.Scout.Helper">
+            <summary>
+            Extension methods for the .NET language </summary>
+        </member>
+        <member name="M:Okuma.Scout.Helper.VersionParse(System.String)">
+            <summary>
+            A this library is compiled using .NET 2.0 for compatability, this version does not contain a Version.Parse method.
+            Thus, this helper class provides the functionality.
+            </summary>
+            <param name="input">version string, period delimited</param>
+            <returns>Type System.Version</returns>
+        </member>
         <member name="T:Okuma.Scout.LicenseChecker">
             <summary>
             This class can read the licencse file for the Okuma API and 
@@ -577,7 +764,7 @@
         </member>
         <member name="M:Okuma.Scout.LicenseChecker.LicenseItemProvider(System.String)">
             <summary>
-            Retreieves the license item from the list generated in the constructor using the license file.
+            Retrieves the license item from the list generated in the constructor using the license file.
             If the feature doesn't exist, a default item is returned.
             If the status hasn't been retrieved yet, it is checked at this time.
             </summary>
@@ -680,6 +867,11 @@
             Returns Optional THINC API 8 Digit Tool ID Machining Center License object.
             This object contains the licenses feature name, version, if it expires, 
             when it expires, and it's current status. </summary>
+        </member>
+        <member name="T:Okuma.Scout.NativeMethods">
+            <summary>
+            
+            </summary>
         </member>
         <member name="M:Okuma.Scout.NativeMethods.GetSystemMetrics(System.Int32)">
             <summary>
@@ -814,7 +1006,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterCommandApi_Exists">
-            <summary> Does the OSP Command API file 'MDATAPI.DLL' exist under 'C:\OSP-P\' ? </summary>
+            <summary> Does the OSP Command API file 'MCMDAPI.EXE' exist under 'C:\OSP-P\' ? </summary>
             <returns>bool</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -989,7 +1181,7 @@
             Gets the full version of the operating system running on this computer. </summary>
         </member>
         <member name="P:Okuma.Scout.OS.InternetConnection">
-            <summary> Checks for internet connection by pinging Myokuma.com. 
+            <summary> Checks for internet connection by pinging MyOkuma.com. 
             returns bool</summary>
         </member>
         <member name="P:Okuma.Scout.OS.Name">
@@ -1049,6 +1241,13 @@
             <summary>
             Returns enum of type 'ControlType' </summary>
         </member>
+        <member name="P:Okuma.Scout.Platform.BaseMachineType">
+            <summary>
+            The Base type ignores NC-Master or PC-NC master types and only reports 
+            Lathe or Machining Center for those types. This is for convience when 
+            differentiating which API calls are required in a function which can then 
+            provide the desired functionality regardless of machine type. </summary>
+        </member>
         <member name="T:Okuma.Scout.ProgramInfo">
             <summary>
             This class was built to be a reusable way to populate the about screen with useful information
@@ -1104,6 +1303,18 @@
             <summary>
             This class retrieves Machine Spec Codes from NC Data Files </summary>
         </member>
+        <member name="M:Okuma.Scout.SpecCode.TurnCutSpecEnabled">
+            <summary>
+            P300 Machining Center Only
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.P300SpecEnabled">
+            <summary>
+            P300 Machining Center Only
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Okuma.Scout.SpecCode.ThincApiSpecCodeEnabled">
             <summary>
             Checks the "Custom API" NC Spec Code from NC data file </summary>
@@ -1117,7 +1328,7 @@
             TODO
             </summary>
             <param name="SpecPart"></param>
-            <param name="word"></param>
+            <param name="word">Not to exceed 16 (17-32 is 'B' part)</param>
             <param name="bit">Not to exceed 7 (8 bits per word, zero based)</param>
             <returns></returns>
         </member>
@@ -1165,7 +1376,7 @@
         </member>
         <member name="M:Okuma.Scout.SpecCode.GetNcBSpecFile">
             <summary>
-            Returns the file path to the NC-B Spec Code file </summary>
+            Returns the file path to the NC Spec Code file </summary>
             <returns>true if found, else false</returns>
         </member>
         <member name="P:Okuma.Scout.SpecCode.MachineType">
@@ -1176,6 +1387,15 @@
         </member>
         <member name="P:Okuma.Scout.SpecCode.FileReadErrorMessage">
             <summary>Error message returned when a file is not found </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.PLC_SpecCodeFileExists">
+            <summary>Does the Spec Code File for PLC exist? </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC_SpecCodeFileExists">
+            <summary>Does the Spec Code File for NC exist? </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB_SpecCodeFileExists">
+            <summary>Does the Spec Code File for NC exist? </summary>
         </member>
         <member name="P:Okuma.Scout.SpecCode.PLC1A">
             <summary>Retrieve PLC Spec Code '1A' from NC Spec Code Data File </summary>
@@ -1265,45 +1485,170 @@
             file is not found, for example, and in all other caseses where execution does
             not complete normally, it will return false.</remarks>
         </member>
+        <member name="P:Okuma.Scout.SpecCode.P300Spec">
+            <summary>
+            -MACHINING CENTER ONLY- 
+            Checks the "P300" NC Spec Code from NC data file </summary>
+            <returns>True if the spec code is turned on, else false</returns>
+            <remarks>This function will not return any error information. If the spec code
+            file is not found, for example, and in all other caseses where execution does
+            not complete normally, it will return false.</remarks>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.TurnCutSpec">
+            <summary>
+            -MACHINING CENTER ONLY- 
+            Checks the "L. Turning cut" / "LAMC" NC Spec Code from NC data file </summary>
+            <returns>True if the spec code is turned on, else false</returns>
+            <remarks>This function will not return any error information. If the spec code
+            file is not found, for example, and in all other caseses where execution does
+            not complete normally, it will return false.</remarks>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.BaseOpScreenSpec">
+            <summary>
+            -LAHTE ONLY- 
+            Checks the "BASE OP. SCREEN" / "BOPS" NC Spec Code from NC data file </summary>
+            <returns>True if the spec code is turned on, else false</returns>
+            <remarks>This function will not return any error information. If the spec code
+            file is not found, for example, and in all other caseses where execution does
+            not complete normally, it will return false.</remarks>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.EasyOperationPanelSpec">
+            <summary>
+            -LAHTE ONLY- 
+            Checks the "EASY OPERAT PANEL" / "EOPL" NC Spec Code from NC data file </summary>
+            <returns>True if the spec code is turned on, else false</returns>
+            <remarks>This function will not return any error information. If the spec code
+            file is not found, for example, and in all other caseses where execution does
+            not complete normally, it will return false.</remarks>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.MultOperationPanelSpec">
+            <summary>
+            -LAHTE ONLY- 
+            Checks the "MULT OPERAT PANEL" / "MEOP" NC Spec Code from NC data file </summary>
+            <returns>True if the spec code is turned on, else false</returns>
+            <remarks>This function will not return any error information. If the spec code
+            file is not found, for example, and in all other caseses where execution does
+            not complete normally, it will return false.</remarks>
+        </member>
         <member name="T:Okuma.Scout.ThincApi">
             <summary>
             This class is used to determine the version of THINC API on the target system
             </summary>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.#cctor">
+        <member name="F:Okuma.Scout.ThincApi.privateLCmdGacExist">
+            <summary>Does the Lathe Command API assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateLDataGacExist">
+            <summary>Does the Lathe Data API assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateMCmdGacExist">
+            <summary>Does the Machining Center Command API assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateMDataGacExist">
+            <summary>Does the Machining Center Data API assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateFlexNetGacExist">
+            <summary>Does the Flexnet assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateLCmdGacVer">
+            <summary>Version of the Lathe Command API assembly from Global Assembly Cache </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateLDataGacVer">
+            <summary>Version of the Lathe Data API assembly from Global Assembly Cache  </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateMCmdGacVer">
+            <summary>Version of the Machining Center Command API assembly from Global Assembly Cache  </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateMDataGacVer">
+            <summary>Version of the Machining Center Data API assembly from Global Assembly Cache  </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateApiNotifierVer">
+            <summary>Version of the API Notifier Service assembly from Global Assembly Cache </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateFlexNetVer">
+            <summary>Version of the FlexNet assembly from Global Assembly Cache</summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.thincApiVersion">
+            <summary>Object to store Version information of API files and install version </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.apiInitHasBeenAttempted">
+            <summary>Has API Initialization been attempted? </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.apiInitTimeOut">
+            <summary>Used to make sure API Init is not executed more than once every 5 seconds</summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.dataApiHasBeenInitialized">
+            <summary>Has the data API been initialized? </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.commandApiHasBeenInstantiated">
+            <summary>Has the command API been initialized? </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.catcChecked">
+            <summary>Has the ATC class been initialized? </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.apiCrossReferenceDictionary">
             <summary>
-            Static constructor - retreives in formation on class load.</summary>
+            Storage location for information retrieved from ApiVersionCrossRef.xml </summary>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.#cctor">
+            <summary> 
+            Initializes static members of the <see cref="T:Okuma.Scout.ThincApi"/> class.
+            Retreives in formation on class load.</summary>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.InitAPI">
+            <summary>
+            Instantiate THINC-API on Lathe or Machine Center using reflection </summary>
+            <returns>Type Enums.ApiStatus</returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.MachineName">
+            <summary>
+            Get Machine Name using the API through reflection </summary>
+            <returns>string: the machine name, or string EMPTY if unable to determine. </returns>
+            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.SerialNumber">
+            <summary>
+            Get Serial Number using the API through reflection </summary>
+            <returns>string: the serial number, or string EMPTY if unable to determine. </returns>
+            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.GetCommonVariable(System.Int32)">
+            <summary>
+            Retrieves the specified common variable value using the API through reflection. </summary>
+            <param name="readCV">type integer, the CV number to read (0 is NOT ALLOWED).</param>
+            <returns>double: the value of the common variable</returns>
+            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacLatheDataApiExist">
-            <summary>Checks the Global Assembly Cache for the existance of any version 
+            <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Lathe Data API (Okuma.CLDATAPI) </summary>
-            <returns>string</returns>
+            <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacLatheCmdApiExist">
-            <summary>Checks the Global Assembly Cache for the existance of any version 
+            <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Lathe Command API (Okuma.CLCMDAPI) </summary>
-            <returns>string</returns>
+            <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacMachineCenterDataApiExist">
-            <summary>Checks the Global Assembly Cache for the existance of any version 
+            <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Machine Center Data API (Okuma.CMDATAPI) </summary>
-            <returns>string</returns>
+            <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacMachineCenterCmdApiExist">
-            <summary>Checks the Global Assembly Cache for the existance of any version 
+            <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Machine Center Command API (Okuma.CMCMDAPI) </summary>
-            <returns>string</returns>
+            <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacFlexNetExist">
-            <summary>Checks the Global Assembly Cache for the existance of any version 
+            <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Okuma FlexNet dll (Okuma.FlexNet) </summary>
-            <returns>string</returns>
+            <returns>type string</returns>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.p_ThincApiInstalled">
+        <member name="M:Okuma.Scout.ThincApi.P_ThincApiInstalled">
             <summary>
-            Checks existance of THINC API files in GAC to determine if API is installed
+            Checks existence of THINC API files in GAC to determine if API is installed
                 (API files could still exist in the OSP directory although API is not installed...) </summary>
-            <returns>bool</returns>
+            <returns>type boolean </returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.ThincApiInstallType">
             <summary>
@@ -1313,465 +1658,800 @@
         </member>
         <member name="M:Okuma.Scout.ThincApi.APIVersion">
             <summary>
-            Determines the API install version by comparing API Dll 
+            Determines the API install version by comparing API DLL 
             versions to known versions for install packages. </summary>
             <returns>string: Returns the API install version or else "Unknown:" 
-            followed by the versions of CMD and DATA API dlls respectivly. </returns>
+            followed by the versions of CMD and DATA API libraries respectively. </returns>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.InitAPI(Okuma.Scout.Enums.MachineType)">
+        <member name="M:Okuma.Scout.ThincApi.GetApiVersionsFromXml">
             <summary>
-             Instantiate THINC-API on Lathe or Machine Center using reflection </summary>
-            <param name="MT">Machine Type</param>
-            <returns>Do not attempt to pass MT other than Machine Center or Lathe or exception will result.
-            If THINC API files are not in the GAC, exception will result.</returns>
+            Initialize a VersionInfo object and Fill the Cross-Reference dictionary
+            </summary>
+            <returns>type object "VersionInformation"</returns>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.MachineName(Okuma.Scout.Enums.MachineType)">
+        <member name="M:Okuma.Scout.ThincApi.P_ApiReady">
             <summary>
-            Get Machine Name using the API through reflection </summary>
-            <param name="MT">Machine Type</param>
-            <returns>string: the machine name, or string EMPTY if unable to determine. </returns>
-            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
-        </member>
-        <member name="M:Okuma.Scout.ThincApi.SerialNumber(Okuma.Scout.Enums.MachineType)">
-            <summary>
-            Get Serial Number using the API through reflection </summary>
-            <param name="MT">Machine Type</param>
-            <returns>string: the serial number, or string EMPTY if unable to determine. </returns>
-            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
-        </member>
-        <member name="M:Okuma.Scout.ThincApi.GetCommonVariable(Okuma.Scout.Enums.MachineType,System.Int32)">
-            <summary>
-            Retreives the specified common variable value using the API through reflection. </summary>
-            <param name="MT">Machine Type</param>
-            <param name="ReadCV">int: the CV number to read (0 is NOT ALLOWED).</param>
-            <returns>double: the value of the common variable</returns>
-            <remarks>Only implemented for MT: Machine Center and Lathe.</remarks>
+            Attempt to determine if the API is ready to be initialized based on ApiNotifier status
+            registry entry. If the current version of API doesn't support this, use the old method
+            of just attempting to the initialize the API.
+            </summary>
+            <returns>Type Enums.ApiStatus</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.RegistryGetLocalMachineValue(System.String,System.String,System.String@)">
             <summary>
-            Get the value of a reg key </summary>
-            <param name="SubKey">Name of the key to retrieve</param>
-            <param name="Value">The value that will be retrieved</param>
-            <param name="Result">Contents of Value</param>
+            Get the value of a registry key </summary>
+            <param name="subKey">Name of the key to retrieve</param>
+            <param name="value">The value that will be retrieved</param>
+            <param name="result">Contents of Value</param>
             <returns>true if successful, false otherwise</returns>
         </member>
         <member name="P:Okuma.Scout.ThincApi.InstallVersion">
             <summary>
-            Returns type string: THINC API Install Version, "Unknown", or individual Command and Data API versions. </summary>
+            Gets Version Information about the THINC API including Install Version </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.InstallType">
             <summary>
-            Returns type string: "Basic", "Development", or "N/A" </summary>
+            Gets type string: "Basic", "Development", or "N/A" </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.Installed">
             <summary>
-            Returns boolean true if THINC API files exist in the Global Assembly Cache </summary>
+            Gets a value indicating whether THINC API files exist in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.ApiAvailable">
             <summary>
-            Is the ApiNotifier Status "Ready"? </summary>
+            Gets is the ApiNotifier Status "Ready"? </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.DataApiExistInGAC_Lathe">
             <summary>
-            Returns boolean true if Okuma.CLDATAPI exists in the Global Assembly Cache </summary>
+            Gets a value indicating whether Okuma.CLDATAPI exists in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.CommandApiExistInGAC_Lathe">
             <summary>
-            Returns boolean true if Okuma.CLCMDAPI exists in the Global Assembly Cache </summary>
+            Gets a value indicating whether Okuma.CLCMDAPI exists in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.DataApiExistInGAC_MachiningCenter">
             <summary>
-            Returns boolean true if Okuma.CMDATAPI exists in the Global Assembly Cache </summary>
+            Gets a value indicating whether Okuma.CMDATAPI exists in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.CommandApiExistInGAC_MachiningCenter">
             <summary>
-            Returns boolean true if Okuma.CMCMDAPI exists in the Global Assembly Cache </summary>
+            Gets a value indicating whether Okuma.CMCMDAPI exists in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.FlexNetExistInGAC">
             <summary>
-            Returns boolean true if Okuma.FlexNet exists in the Global Assembly Cache </summary>
+            Gets a value indicating whether Okuma.FlexNet exists in the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.DataApiVersionInGAC_Lathe">
             <summary>
-            Returns string version of THINC Lathe Data API file from the Global Assembly Cache </summary>
+            Gets string version of THINC Lathe Data API file from the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.DataApiVersionInGAC_MachiningCenter">
             <summary>
-            Returns string version of THINC Machining Center Data API file from the Global Assembly Cache </summary>
+            Gets string version of THINC Machining Center Data API file from the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.CommandApiVersionInGAC_Lathe">
             <summary>
-            Returns string version of THINC Lathe Command API file from the Global Assembly Cache </summary>
+            Gets string version of THINC Lathe Command API file from the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.CommandApiVersionInGAC_MachiningCenter">
             <summary>
-            Returns string version of THINC Machining Center Command API file from the Global Assembly Cache </summary>
+            Gets string version of THINC Machining Center Command API file from the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.FlexNetVersionInGAC">
             <summary>
-            Returns string version of FlexNet Library from the Global Assembly Cache </summary>
+            Gets string version of FlexNet Library from the Global Assembly Cache </summary>
+        </member>
+        <member name="T:Okuma.Scout.ThincApi.ThisSystemInfo">
+            <summary>
+            Convenient object for storing basic compatibility information.
+            This object is not used by <c>Scout.dll</c> and must be instantiated 
+            and populated in the user program. </summary>
+            <remarks>For comparison with app requirements by SCOUT.EXE</remarks>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.operatingSystem">
+            <summary>Operating System </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.applicationProgrammingInterface">
+            <summary>The API </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.dotNetFramework">
+            <summary>Dot Net </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.controlType">
+            <summary>The Control </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.machineType">
+            <summary>Machine Type </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ThisSystemInfo.licenseFeatures">
+            <summary>License Features </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.OS">
+            <summary>Gets or sets Operating system </summary>
+            <value>XP-32,XP-32_SP1,XP-32_SP2,XP-32_SP3,XP-64,XP-64_SP1,XP-64_SP2,W7-32,W7-32_SP1,W7-64,W7-64_SP1,W8-32,W8-64</value>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.API">
+            <summary>Gets or sets API version detected on this machine </summary>
+            <value>(Unknown API Version. CMD: ...),1.6.4.0,1.8.0.0,1.9.1.0,1.10.0.0,1.11.0.0,1.11.1.0,1.12.0.0,1.12.1.0,1.15.0.0,1.16.0.0,1.17.1.0,1.17.2.0</value>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.DotNet">
+            <summary>Gets or sets List of all versions of .NET installed on this system </summary>
+            <value>10,11,20,30,35,40C,40F,45,451,452</value>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.Control">
+            <summary>Gets or sets the control type of this machine (if it's a machine) </summary>
+            <value>string.Empty(if not machine),P100,P100II,P200,P200A,P300,P300S</value>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.MachineType">
+            <summary>Gets or sets the Machine Type of this system </summary>
+            <value>PC,L,NCM_L,PCNCM_L,M,NCM_M,PCNCM_M,G,NCM_G,PCNCM_G</value>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ThisSystemInfo.LicenseFeatures">
+            <summary>Gets or sets all valid optional THINC API license features on this machine </summary>
+            <value>CurrentAlarm,ToolID,M_TaskIOVar,L_TaskIOVar,M_UserAlarm,L_UserAlarm</value>
+        </member>
+        <member name="T:Okuma.Scout.ThincApi.ApiCrossReferenceItem">
+            <summary>
+            This class is used to store the various assembly versions used 
+            for comparison to the current system </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.commandapi">
+            <summary>private field for the command API </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.dataapi">
+            <summary>private field for the data API </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.notifierservice">
+            <summary>private field for the notifier service </summary>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.ApiCrossReferenceItem.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Okuma.Scout.ThincApi.ApiCrossReferenceItem"/> class.
+            </summary>
+            <param name="cmd">the command library</param>
+            <param name="data">the data library</param>
+            <param name="notifier">the notifier service executable</param>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Cmd">
+            <summary>Gets the command version </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Data">
+            <summary>Gets the data version </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Notifier">
+            <summary>Gets the notifier version </summary>
         </member>
         <member name="T:Okuma.Scout.Vars">
             <summary>
             Class containing commonly referenced constants related to Okuma OSP Controls
             </summary>
         </member>
+        <member name="F:Okuma.Scout.Vars.slash">
+            <summary>Directory separator character </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringOspP">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringCnsDat">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringHmi">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringShareDll">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringVolante">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringCrad">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringOkuma">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringLicenses">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringApiNotifier">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDirectoryStringThincApiBin">
+            <summary> [DIRECTORIES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFilePathStringOSPMNGCDCNC">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringLDATAPIDLL">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringLCMDAPIEXE">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringMCDATAPIDLL">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringMCMDAPIEXE">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringSOFTSWITCHEXE">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringLTMIMAPIDLL">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringMTMIMAPIDLL">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaApiLicense">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCLCMDAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCLDATAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCMCMDAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCMDATAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringPLCSpecWild">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringNCSpecWild">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringNCBSpecWild">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringDataManagementCard">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringEBISTARTEXE">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringAPINotifierServiceExe">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaFlexNetDll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueControlType">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueMachineType">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueSoftProdNum">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueSerialNumber">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueProductionDate">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerName">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerAddress">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerPhone">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerCustomer">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteOne">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteSpecialSpec">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteComment">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDMediaWindows">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDDVDMediaWindows">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDMediaOSP">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDDVDMediaOSP">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueWindowsSystem">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOneTouchSSVersion">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueExcelVersionA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueExcelVersionB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCASModelsCDVersionA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCASModelsCDVersionB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcInstaller">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueRTOSDriver">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueRTOS">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcControl">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcControlMsg">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCSystem">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCSystemMsg">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcAlarmHelp">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcManualA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNcManualB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueP100Tool">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCControlA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCControlB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTIL">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTIM">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTIMT">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTIMsg">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueVFKA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueVFKB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueVFK2">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueVFKMsgA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueVFKMsgB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTSFileCntrlA">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTSFileCntrlB">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTSFileCntrlMsg">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOTSPreInst">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueITPlaza">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCAS">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueEasyModel">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustAPI">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNCSpecCode1">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNCBSpecCode1">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCSpecCode1">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateDataManCardValuePLCSpecCode2">
+            <summary> [DMC VALUES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceLDataApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceLCommandApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassLCommandCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassLDataCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassLCATC">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassLCVariables">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateClassLCSpec">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceMDataApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceMCommandApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassMDataCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassMCommandCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassMCATC">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassMCVariables">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateClassMCSpec">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceFlexNet">
+            <summary> [Licensing] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateClassFlexNet">
+            <summary> [Licensing] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateApiNotifierRegKeyName">
+            <summary> [Licensing] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateApiNotifierRegValueName">
+            <summary> [API] Value for getter </summary>
+        </member>
         <member name="P:Okuma.Scout.Vars.DMC_Path">
-            <summary> C:\OSP-P\OSPMNGCD.CNC </summary>
+            <summary>Gets C:\OSP-P\OSPMNGCD.CNC </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.OSP_Dir">
-            <summary> C:\OSP-P\ </summary>
+            <summary>Gets C:\OSP-P\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CNS_Dir">
-            <summary> C:\OSP-P\CNS-DAT\ </summary>
+            <summary>Gets C:\OSP-P\CNS-DAT\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.HMI_Dir">
-            <summary> C:\OSP-P\HMI\ </summary>
+            <summary>Gets C:\OSP-P\HMI\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.SHAREDDLL_Dir">
-            <summary> C:\OSP-P\SHAREDDLL\ </summary>
+            <summary>Gets C:\OSP-P\SHAREDDLL\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.VOLANTE_Dir">
-            <summary> C:\OSP-P\VOLANTE\ </summary>
+            <summary>Gets C:\OSP-P\VOLANTE\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CRAD_Dir">
-            <summary> C:\OSP-P\VOLANTE\CRAD\ </summary>
+            <summary>Gets C:\OSP-P\VOLANTE\CRAD\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.OkumaDir">
-            <summary> D:\Program Files\Okuma\ </summary>
+            <summary>Gets D:\Program Files\Okuma\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.LicenseDir">
-            <summary> D:\Program Files\Okuma\Licenses\ </summary>
+            <summary>Gets D:\Program Files\Okuma\Licenses\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.ApiNotifierDir">
-            <summary> D:\Program Files\Okuma\APINotifier\ </summary>
+            <summary>Gets D:\Program Files\Okuma\APINotifier\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.ThincApiBinDir">
-            <summary> D:\Program Files\Okuma\THINC API\Bin\ </summary>
+            <summary>Gets D:\Program Files\Okuma\THINC API\Bin\ </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.L_Data_API">
-            <summary> LDATAPI.DLL </summary>
+            <summary>Gets string literal "LDATAPI.DLL" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.L_CMD_API">
-            <summary> LCMDAPI.EXE </summary>
+            <summary>Gets string literal "LCMDAPI.EXE" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.MC_Data_API">
-            <summary> MDATAPI.DLL </summary>
+            <summary>Gets string literal "MDATAPI.DLL" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.MC_CMD_API">
-            <summary> MCMDAPI.EXE </summary>
+            <summary>Gets string literal "MCMDAPI.EXE" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.SoftSwitch">
-            <summary> SOFTSWITCH.EXE </summary>
+            <summary>Gets string literal "SOFTSWITCH.EXE" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.P300LS_API">
-            <summary> LTMIM_API.DLL </summary>
+            <summary>Gets string literal "LTMIM_API.DLL" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.P300M_API">
-            <summary> MTMIM_API.DLL </summary>
+            <summary>Gets string literal "MTMIM_API.DLL" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.API_License">
-            <summary> okuma.api.lic </summary>
+            <summary>Gets string literal "okuma.api.lic" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CLCMDAPI">
-            <summary> Okuma.CLCMDAPI.dll </summary>
+            <summary>Gets string literal "Okuma.CLCMDAPI.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CLDATAPI">
-            <summary> Okuma.CLDATAPI.dll </summary>
+            <summary>Gets string literal "Okuma.CLDATAPI.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CMCMDAPI">
-            <summary> Okuma.CMCMDAPI.dll </summary>
+            <summary>Gets string literal "Okuma.CMCMDAPI.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.CMDATAPI">
-            <summary> Okuma.CMDATAPI.dll </summary>
+            <summary>Gets string literal "Okuma.CMDATAPI.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.PLCSpecWild">
-            <summary> PLCUB11-*.CNS </summary>
+            <summary>Gets string literal "PLCUB11-*.CNS" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.NCSpecWild">
-            <summary> *NCSPEC-*.DAT </summary>
+            <summary>Gets string literal "*NCSPEC-*.DAT" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.NCBSpecWild">
-            <summary> *NCBSPC-*.DAT </summary>
+            <summary>Gets string literal "*NCBSPC-*.DAT" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DataManagementCard">
-            <summary> OSPMNGCD.CNC </summary>
+            <summary>Gets string literal "OSPMNGCD.CNC" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.EbiFry">
-            <summary> EBISTART.EXE </summary>
+            <summary>Gets string literal "EBISTART.EXE" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.ApiNotifier">
-            <summary> APINotifierService.exe </summary>
+            <summary>Gets string literal "APINotifierService.exe" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.FlexNet">
-            <summary> Okuma.FlexNet.dll </summary>
+            <summary>Gets string literal "Okuma.FlexNet.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ControlType">
-            <summary> Type of OSP </summary>
+            <summary>Gets string literal "Type of OSP" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_MachineType">
-            <summary> Type of Machine </summary>
+            <summary>Gets string literal "Type of Machine" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_SoftProdNum">
-            <summary> Soft Production No </summary>
+            <summary>Gets string literal "Soft Production No" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_SerialNumber">
-            <summary> Project No </summary>
+            <summary>Gets string literal "Project No" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ProductionDate">
-            <summary> Software Production Date </summary>
+            <summary>Gets string literal "Software Production Date" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CustomerName">
-            <summary>Name</summary>
+            <summary>Gets string literal "Name" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CustomerAddress">
-            <summary>Address</summary>
+            <summary>Gets string literal "Address" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CustomerPhone">
-            <summary>Phone</summary>
+            <summary>Gets string literal "Phone"</summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CustomerCustomer">
-            <summary>Customer</summary>
+            <summary>Gets string literal "Customer"</summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NoteOne">
-            <summary> " Note NO.1 " </summary>
+            <summary>Gets string literal " Note NO.1 " </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NoteSpecialSpec">
-            <summary> " Special Spec " </summary>
+            <summary>Gets string literal " Special Spec " </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NoteComment">
-            <summary> " Comment " </summary>
+            <summary>Gets string literal " Comment " </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDMediaWindows">
-            <summary> [ Windows System CD Version ] </summary>
+            <summary>Gets string literal "[ Windows System CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDDVDMediaWindows">
-            <summary> [ Windows System CD/DVD Version ] </summary>
+            <summary>Gets string literal "[ Windows System CD/DVD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDMediaOSP">
-            <summary> [ OSP System CD Version ] </summary>
+            <summary>Gets string literal "[ OSP System CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDDVDMediaOSP">
-            <summary> [ OSP System CD/DVD Version ] </summary>
+            <summary>Gets string literal "[ OSP System CD/DVD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_WindowsSystem">
-            <summary> [ Windows System Version ] </summary>
+            <summary>Gets string literal "[ Windows System Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OneTouchSSVersion">
-            <summary> [ One-Touch SpreadSheet Sample Contents CD Version ] </summary>
+            <summary>Gets string literal "[ One-Touch SpreadSheet Sample Contents CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ExcelVersionA">
-            <summary> [ Microsoft Excel Version ] </summary>
+            <summary>Gets string literal "[ Microsoft Excel Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ExcelVersionB">
-            <summary> [ Microsoft Office Excel Version ] </summary>
+            <summary>Gets string literal "[ Microsoft Office Excel Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CASModelsCDVersionA">
-            <summary> [ Collision Avoidance Model Data CD Version ] </summary>
+            <summary>Gets string literal "[ Collision Avoidance Model Data CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CASModelsCDVersionB">
-            <summary> [ Collision AvoidanceSystem Machine Model Data CD Version ] </summary>
+            <summary>Gets string literal "[ Collision AvoidanceSystem Machine Model Data CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcInstaller">
-            <summary> [ NC INSTALLER ] </summary>
+            <summary>Gets string literal "[ NC INSTALLER ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_RTOSDriver">
-            <summary> [ REALTIME OS DRIVER ] </summary>
+            <summary>Gets string literal "[ REALTIME OS DRIVER ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_RTOS">
-            <summary> [ REALTIME OS ] </summary>
+            <summary>Gets string literal "[ REALTIME OS ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcControl">
-            <summary> [ NC CONTROL ] </summary>
+            <summary>Gets string literal "[ NC CONTROL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcControlMsg">
-            <summary> [ NC CONTROL MESSAGE ] </summary>
+            <summary>Gets string literal "[ NC CONTROL MESSAGE ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCSystem">
-            <summary> [ PLC SYSTEM ] </summary>
+            <summary>Gets string literal "[ PLC SYSTEM ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCSystemMsg">
-            <summary> [ PLC SYSTEM MESSAGE ] </summary>
+            <summary>Gets string literal "[ PLC SYSTEM MESSAGE ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcAlarmHelp">
-            <summary> [ NC ALARM HELP ] </summary>
+            <summary>Gets string literal "[ NC ALARM HELP ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcManualA">
-            <summary> [ NC MAMUAL ] </summary>
+            <summary>Gets string literal "[ NC MAMUAL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NcManualB">
-            <summary> [ NC MANUAL ] </summary>
+            <summary>Gets string literal "[ NC MANUAL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_P100Tool">
-            <summary> [ P100 TOOL ] </summary>
+            <summary>Gets string literal "[ P100 TOOL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCControlA">
-            <summary> [ PLC CONTROL ] </summary>
+            <summary>Gets string literal "[ PLC CONTROL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCControlB">
-            <summary> [ PLC CONTORL ] </summary>
+            <summary>Gets string literal "[ PLC CONTORL ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTIL">
-            <summary> [ ONE TOUCH IGF ] </summary>
+            <summary>Gets string literal "[ ONE TOUCH IGF ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTIM">
-            <summary> [ ONE TOUCH IGF ADVANCE M COMMON] </summary>
+            <summary>Gets string literal "[ ONE TOUCH IGF ADVANCE M COMMON]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTIMT">
-            <summary> [ ONE TOUCH IGF ADVANCE M MACHINE TYPE] </summary>
+            <summary>Gets string literal "[ ONE TOUCH IGF ADVANCE M MACHINE TYPE]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTIMsg">
-            <summary> [ ONE TOUCH IGF MESSAGE ] </summary>
+            <summary>Gets string literal "[ ONE TOUCH IGF MESSAGE ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_VFKA">
-            <summary> [ VERTICAL FUNCTION KEY ] </summary>
+            <summary>Gets string literal "[ VERTICAL FUNCTION KEY ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_VFKB">
-            <summary> [ Vertical function key ] </summary>
+            <summary>Gets string literal "[ Vertical function key ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_VFK2">
-            <summary> [ Vertical function key 2 ] </summary>
+            <summary>Gets string literal "[ Vertical function key 2 ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_VFKMsgA">
-            <summary> [ VERTICAL FUNCTION KEY MESSAGE ] </summary>
+            <summary>Gets string literal "[ VERTICAL FUNCTION KEY MESSAGE ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_VFKMsgB">
-            <summary> [ Vertical function key message ] </summary>
+            <summary>Gets string literal "[ Vertical function key message ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTSFileCntrlA">
-            <summary> [ ONE-TOUCH SPREADSHEET FILE CONTROLER ] </summary>
+            <summary>Gets string literal "[ ONE-TOUCH SPREADSHEET FILE CONTROLER ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTSFileCntrlB">
-            <summary> [ ONE-TOUCH SPREADSHEET FILE CONTROLLER ] </summary>
+            <summary>Gets string literal "[ ONE-TOUCH SPREADSHEET FILE CONTROLLER ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTSFileCntrlMsg">
-            <summary> [ ONE-TOUCH SPREADSHEET FILE CONTROLER MESSAGE ] </summary>
+            <summary>Gets string literal "[ ONE-TOUCH SPREADSHEET FILE CONTROLER MESSAGE ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_OTSPreInst">
-            <summary> [ ONE-TOUCH SPREADSHEET PREINSTALL CONTENTS ] </summary>
+            <summary>Gets string literal "[ ONE-TOUCH SPREADSHEET PREINSTALL CONTENTS ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ITPlaza">
-            <summary> [ IT PLAZA APPLICATION COMMON ] </summary>
+            <summary>Gets string literal "[ IT PLAZA APPLICATION COMMON ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CAS">
-            <summary> [ COLLISION AVOIDANCE SYSTEM ] </summary>
+            <summary>Gets string literal "[ COLLISION AVOIDANCE SYSTEM ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_EasyModel">
-            <summary> [ EASY MODELLING ] </summary>
+            <summary>Gets string literal "[ EASY MODELLING ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CustAPI">
-            <summary> [ CUSTOM API ] </summary>
+            <summary>Gets string literal "[ CUSTOM API ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NCSpecCode1">
-            <summary> [ NC-SPEC CODE No.1 ] </summary>
+            <summary>Gets string literal "[ NC-SPEC CODE No.1 ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_NCBSpecCode1">
-            <summary> [ NC-B SPEC CODE No.1 ] </summary>
+            <summary>Gets string literal "[ NC-B SPEC CODE No.1 ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCSpecCode1">
-            <summary> [ PLC-SPEC CODE No.1 ] </summary>
+            <summary>Gets string literal "[ PLC-SPEC CODE No.1 ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_PLCSpecCode2">
-            <summary> [ PLC-SPEC CODE No.2 ] </summary>
+            <summary>Gets string literal "[ PLC-SPEC CODE No.2 ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.NameSpace_LDataApi">
-            <summary> Okuma.CLDATAPI </summary>
+            <summary>Gets string literal "Okuma.CLDATAPI" </summary>
         </member>
-        <member name="P:Okuma.Scout.Vars.SubClass_LCMachine">
-            <summary> Okuma.CLDATAPI.DataAPI.CMachine </summary>
+        <member name="P:Okuma.Scout.Vars.NameSpace_LCommandApi">
+            <summary>Gets string literal "Okuma.CLCMDAPI" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_LCommandCMachine">
+            <summary>Gets string literal "Okuma.CLCMDAPI.CommandAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_LDataCMachine">
+            <summary>Gets string literal "Okuma.CLDATAPI.DataAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_LCATC">
+            <summary>Gets string literal "Okuma.CLCMDAPI.CommandAPI.CATC" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.SubClass_LCVariables">
-            <summary> Okuma.CLDATAPI.DataAPI.CVariables </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.NameSpace_MDataApi">
-            <summary> Okuma.CMDATAPI </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.SubClass_MCMachine">
-            <summary> Okuma.CMDATAPI.DataAPI.CMachine </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.SubClass_MCVariables">
-            <summary> Okuma.CMDATAPI.DataAPI.CVariables </summary>
+            <summary>Gets string literal "Okuma.CLDATAPI.DataAPI.CVariables" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.Class_LCSpec">
-            <summary> Okuma.CLDATAPI.DataAPI.CSpec </summary>
+            <summary>Gets string literal "Okuma.CLDATAPI.DataAPI.CSpec" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NameSpace_MDataApi">
+            <summary>Gets string literal "Okuma.CMDATAPI" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NameSpace_MCommandApi">
+            <summary>Gets string literal "Okuma.CMCMDAPI" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_MDataCMachine">
+            <summary>Gets string literal "Okuma.CMDATAPI.DataAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_MCommandCMachine">
+            <summary>Gets string literal "Okuma.CMCMDAPI.CommandAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_MCATC">
+            <summary>Gets string literal "Okuma.CMCMDAPI.CommandAPI.CATC" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_MCVariables">
+            <summary>Gets string literal "Okuma.CMDATAPI.DataAPI.CVariables" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.Class_MCSpec">
-            <summary> Okuma.CMDATAPI.DataAPI.CSpec </summary>
+            <summary>Gets string literal "Okuma.CMDATAPI.DataAPI.CSpec" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.NameSpace_FlexNet">
-            <summary> Okuma.FlexNet </summary>
+            <summary>Gets string literal "Okuma.FlexNet" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.Class_FlexNet">
-            <summary> Okuma.Licensing.CLicenseMgr </summary>
+            <summary>Gets string literal "Okuma.Licensing.CLicenseMgr" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.ApiNotifierRegKeyName">
-            <summary> Software\\OAC\\APINotifier </summary>
+            <summary>Gets string literal "Software\\OAC\\APINotifier" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.ApiNotifierRegValueName">
-            <summary> APIStatus </summary>
-        </member>
-        <member name="T:Okuma.Scout.LicenseItem">
-            <summary>
-            This class is used by 'LicenseChecker' to store information about features 
-            found in the Okuma License file </summary>
-        </member>
-        <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Boolean)">
-            <summary> Constructor for LicenseItem class. 
-            Requires that a feature name, version, and can expire?(bool) values be provided. </summary>
-        </member>
-        <member name="P:Okuma.Scout.LicenseItem.Feature">
-            <summary> License feature name </summary>
-        </member>
-        <member name="P:Okuma.Scout.LicenseItem.Version">
-            <summary> Version of license feature </summary>
-        </member>
-        <member name="P:Okuma.Scout.LicenseItem.Expires">
-            <summary> False if type = "permanent", otherwise true. </summary>
-        </member>
-        <member name="P:Okuma.Scout.LicenseItem.Status">
-            <summary>Result of feature validation check. Value is null by default (before checking) </summary>
-        </member>
-        <member name="P:Okuma.Scout.LicenseItem.ExpiryDate">
-            <summary> DateTime type which holds the license feature expire date.
-            This value will be Vars.ErrorDateTime by default </summary>
-        </member>
-        <member name="T:Okuma.Scout.thisSystemInfo">
-            <summary>
-            Convient object for storing basic compatability information.
-            This object is not used by Scout.dll and must be instantiated 
-            and populated in the user program. </summary>
-            <remarks>For comparison with app requirements by SCOUT.EXE</remarks>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.OS">
-            <summary>
-            The system Operating system </summary>
-            <value>XP-32,XP-32_SP1,XP-32_SP2,XP-32_SP3,XP-64,XP-64_SP1,XP-64_SP2,W7-32,W7-32_SP1,W7-64,W7-64_SP1,W8-32,W8-64</value>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.API">
-            <summary>
-            API version detected on this machine
-            </summary>
-            <value>(Unknown API Version. CMD: ...),1.6.4.0,1.8.0.0,1.9.1.0,1.10.0.0,1.11.0.0,1.11.1.0,1.12.0.0,1.12.1.0,1.15.0.0,1.16.0.0,1.17.1.0,1.17.2.0</value>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.DotNet">
-            <summary>
-            List of all versions of .NET installed on this system.</summary>
-            <value>10,11,20,30,35,40C,40F,45,451,452</value>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.Control">
-            <summary>
-            The control type of this machine (if it's a machine)</summary>
-            <value>string.Empty(if not machine),P100,P100II,P200,P200A,P300,P300S</value>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.MachineType">
-            <summary>
-            The Machine Type of this system</summary>
-            <value>PC,L,NCM_L,PCNCM_L,M,NCM_M,PCNCM_M,G,NCM_G,PCNCM_G</value>
-        </member>
-        <member name="P:Okuma.Scout.thisSystemInfo.LicenseFeatures">
-            <summary>
-            All valid optional THINC API license features on this machine</summary>
-            <value>CurrentAlarm,ToolID,M_TaskIOVar,L_TaskIOVar,M_UserAlarm,L_UserAlarm</value>
+            <summary>Gets string literal "APIStatus" </summary>
         </member>
     </members>
 </doc>

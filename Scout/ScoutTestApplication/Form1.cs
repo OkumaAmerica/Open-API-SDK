@@ -35,6 +35,9 @@ namespace ScoutTestApplication
     /// Scout Test Application class </summary>
     public partial class ScoutTestApplicationForm : Form
     {
+        /// <summary>Used to prevent unnecessary repeat checks of ready status</summary>
+        private bool apiHasBeenInitializedOrIsReady = false;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ScoutTestApplicationForm"/> class.
         /// </summary>
@@ -133,8 +136,15 @@ namespace ScoutTestApplication
             // THINC API Install Info
             this.TextBox_ApiSpecValid.Text = Okuma.Scout.SpecCode.ThincApiSpec.ToString();
             this.TextBox_ApiInstalled.Text = Okuma.Scout.ThincApi.Installed.ToString();
-            this.TextBox_ApiInstallVersion.Text = Okuma.Scout.ThincApi.InstallVersion;
             this.TextBox_InstallType.Text = Okuma.Scout.ThincApi.InstallType;
+            if (Okuma.Scout.ThincApi.InstallVersion.Result == Okuma.Scout.Enums.ApiVersionCheckResult.VersionRecognized)
+            {
+                this.TextBox_ApiInstallVersion.Text = Okuma.Scout.ThincApi.InstallVersion.ApiVersion.ToString(); 
+            }
+            else
+            {
+                this.TextBox_ApiInstallVersion.Text = Okuma.Scout.ThincApi.InstallVersion.Result.ToString();
+            }
 
             // THINC API Installed Libraries
             this.TextBox_ThincLatheCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_Lathe.ToString();
@@ -150,12 +160,69 @@ namespace ScoutTestApplication
             this.TextBox_ThincMachiningCenterDataApiVer.Text = Okuma.Scout.ThincApi.DataApiVersionInGAC_MachiningCenter;
             this.TextBox_FlexNetVersion.Text = Okuma.Scout.ThincApi.FlexNetVersionInGAC;
 
-            // Pre-requisite to instantiating the API and calling API functions
-            this.TextBox_ApiAvailable.Text = Okuma.Scout.ThincApi.ApiAvailable.ToString();
+            if (this.apiHasBeenInitializedOrIsReady == false)
+            {
+                // Check if the API is available for use
+                // Note that accessing this property may result in an attempt to instantiate the
+                // API and will not allow the check to be made more than once every 5 seconds.
+                // Thus, the property should be temporarily kept in a local variable if it is to be
+                // used multiple times in the same scope.
+                Okuma.Scout.Enums.ApiStatus status = Okuma.Scout.ThincApi.ApiAvailable;
 
-            if (Okuma.Scout.ThincApi.ApiAvailable) 
-            { 
-                this.Button_ExecuteApiFunctions.Enabled = true; 
+                switch (status)
+                {
+                    case Okuma.Scout.Enums.ApiStatus.Ready:
+                        {
+                            this.TextBox_ApiAvailable.Text = status.ToString();
+                            this.Button_InitApi.Enabled = true;
+                            this.apiHasBeenInitializedOrIsReady = true;
+                            break;
+                        }
+
+                    case Okuma.Scout.Enums.ApiStatus.NotReady:
+                        {
+                            this.TextBox_ApiAvailable.Text = status.ToString();
+                            break;
+                        }
+
+                    case Okuma.Scout.Enums.ApiStatus.Initialized:
+                        {
+                            this.TextBox_ApiAvailable.Text = "Ready";
+                            this.TextBox_ApiInstantiated.Text = status.ToString();
+                            this.Button_ExecuteApiFunctions.Enabled = true; 
+                            this.apiHasBeenInitializedOrIsReady = true;
+                            break;
+                        }
+
+                    case Okuma.Scout.Enums.ApiStatus.FailedToInitialize:
+                        {
+                            this.TextBox_ApiAvailable.Text = status.ToString();
+                            break;
+                        }
+
+                    case Okuma.Scout.Enums.ApiStatus.FiveSecondTimeOutPeriod:
+                        {
+                            this.TextBox_ApiAvailable.Text = status.ToString();
+                            break;
+                        }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Using Scout, Initialize the API through reflection
+        /// </summary>
+        /// <param name="sender">The button object</param>
+        /// <param name="e">Event arguments associated with the button click</param>
+        private void Button_InitApi_Click(object sender, EventArgs e)
+        {
+            Okuma.Scout.Enums.ApiStatus status = Okuma.Scout.ThincApi.InitAPI();
+            this.TextBox_ApiInstantiated.Text = status.ToString();
+
+            if (status == Okuma.Scout.Enums.ApiStatus.Initialized)
+            {
+                this.Button_ExecuteApiFunctions.Enabled = true;
+                this.Button_InitApi.Enabled = false;
             }
         }
 
@@ -166,17 +233,14 @@ namespace ScoutTestApplication
         /// <param name="e">Event arguments associated with the button click</param>
         private void Button_ExecuteApiFunctions_Click(object sender, EventArgs e)
         {
-            Okuma.Scout.Enums.MachineType currentMachineType = Okuma.Scout.Platform.Machine;
-
             /* !! WARNING !! These functions are only to be used in situations where accessing the THINC API
              * via Reflection (http://msdn.microsoft.com/en-us/library/vstudio/f7ykdhsy%28v=vs.110%29.aspx) is necessary.
              * Normally, these same API functions can be accessed in your program by adding the THINC API files as
              * references to your project. That is the reccomended method to use the THINC API. 
              */
-            this.TextBox_ApiInstantiated.Text = Okuma.Scout.ThincApi.InitAPI(currentMachineType).ToString();
-            this.TextBox_ApiMachineName.Text = Okuma.Scout.ThincApi.MachineName(currentMachineType);
-            this.TextBox_ApiSerialNumber.Text = Okuma.Scout.ThincApi.SerialNumber(currentMachineType);
-            this.TextBox_ApiCV1.Text = Okuma.Scout.ThincApi.GetCommonVariable(currentMachineType, 1).ToString();
+            this.TextBox_ApiMachineName.Text = Okuma.Scout.ThincApi.MachineName();
+            this.TextBox_ApiSerialNumber.Text = Okuma.Scout.ThincApi.SerialNumber();
+            this.TextBox_ApiCV1.Text = Okuma.Scout.ThincApi.GetCommonVariable(1).ToString();
         }
 
         /// <summary>
@@ -253,6 +317,14 @@ namespace ScoutTestApplication
             this.PostResult(this.TextBox_OspMachiningCenterCommandApiVer, tempString);
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Version;
             this.PostResult(this.TextBox_OspMachiningCenterDataApiVer, tempString);
+
+            // Spec Code Files Exist?
+            tempString = Okuma.Scout.SpecCode.PLC_SpecCodeFileExists.ToString();
+            this.PostResult(this.TextBox_PLCSpecFileExist, tempString);
+            tempString = Okuma.Scout.SpecCode.NC_SpecCodeFileExists.ToString();
+            this.PostResult(this.TextBox_NCSpecFileExist, tempString);
+            tempString = Okuma.Scout.SpecCode.NCB_SpecCodeFileExists.ToString();
+            this.PostResult(this.TextBox_NCBSpecFileExist, tempString);  
         }
 
         /// <summary>

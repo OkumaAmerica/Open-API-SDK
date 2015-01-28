@@ -27,6 +27,7 @@ namespace ScoutTestApplication
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Mult")]
         private void InitializeComponent()
         {
             this.TextBox_MachineType = new System.Windows.Forms.TextBox();
@@ -53,14 +54,13 @@ namespace ScoutTestApplication
             this.label8 = new System.Windows.Forms.Label();
             this.Button_Directories = new System.Windows.Forms.Button();
             this.API = new System.Windows.Forms.TabPage();
+            this.Button_InitApi = new System.Windows.Forms.Button();
             this.TextBox_ApiSpecValid = new System.Windows.Forms.TextBox();
             this.label132 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.TextBox_FlexNetVersion = new System.Windows.Forms.TextBox();
             this.TextBox_FlexNet = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
             this.TextBox_ApiCV1 = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
             this.TextBox_ApiSerialNumber = new System.Windows.Forms.TextBox();
@@ -257,17 +257,17 @@ namespace ScoutTestApplication
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.Button_ApiLicense = new System.Windows.Forms.Button();
-            this.TextBox_License_ToolId_Status = new ResultBox();
-            this.TextBox_License_UserAlarmMC_Status = new ResultBox();
-            this.TextBox_License_UserAlarmL_Status = new ResultBox();
-            this.TextBox_License_NcCurrentAlarm_Status = new ResultBox();
-            this.TextBox_License_UserTaskIOMC_Status = new ResultBox();
-            this.TextBox_License_UserTaskIOL_Status = new ResultBox();
-            this.TextBox_License_P200_Status = new ResultBox();
-            this.TextBox_License_MCMDAPI_Status = new ResultBox();
-            this.TextBox_License_MDATAPI_Status = new ResultBox();
-            this.TextBox_License_LCMDAPI_Status = new ResultBox();
-            this.TextBox_License_LDATAPI_Status = new ResultBox();
+            this.TextBox_License_ToolId_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_NcCurrentAlarm_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_P200_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LDATAPI_Status = new ScoutTestApplication.ResultBox();
             this.Program = new System.Windows.Forms.TabPage();
             this.label105 = new System.Windows.Forms.Label();
             this.TextBox_ProgramBits = new System.Windows.Forms.TextBox();
@@ -378,6 +378,12 @@ namespace ScoutTestApplication
             this.Button_ErrorWarning = new System.Windows.Forms.Button();
             this.Button_ErrorException = new System.Windows.Forms.Button();
             this.Button_ErrorSubscribe = new System.Windows.Forms.Button();
+            this.label68 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpecFileExist = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecFileExist = new System.Windows.Forms.TextBox();
+            this.label133 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecFileExist = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Platform.SuspendLayout();
             this.Dir.SuspendLayout();
@@ -396,15 +402,16 @@ namespace ScoutTestApplication
             // TextBox_MachineType
             // 
             this.TextBox_MachineType.Enabled = false;
-            this.TextBox_MachineType.Location = new System.Drawing.Point(219, 151);
+            this.TextBox_MachineType.Location = new System.Drawing.Point(124, 76);
             this.TextBox_MachineType.Name = "TextBox_MachineType";
             this.TextBox_MachineType.Size = new System.Drawing.Size(215, 20);
             this.TextBox_MachineType.TabIndex = 0;
+            this.TextBox_MachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 154);
+            this.label1.Location = new System.Drawing.Point(40, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 1;
@@ -413,7 +420,7 @@ namespace ScoutTestApplication
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 180);
+            this.label2.Location = new System.Drawing.Point(40, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 3;
@@ -422,10 +429,11 @@ namespace ScoutTestApplication
             // TextBox_ControlType
             // 
             this.TextBox_ControlType.Enabled = false;
-            this.TextBox_ControlType.Location = new System.Drawing.Point(219, 177);
+            this.TextBox_ControlType.Location = new System.Drawing.Point(124, 102);
             this.TextBox_ControlType.Name = "TextBox_ControlType";
             this.TextBox_ControlType.Size = new System.Drawing.Size(215, 20);
             this.TextBox_ControlType.TabIndex = 2;
+            this.TextBox_ControlType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabControl1
             // 
@@ -519,6 +527,7 @@ namespace ScoutTestApplication
             this.TextBox_DirSystem.Name = "TextBox_DirSystem";
             this.TextBox_DirSystem.Size = new System.Drawing.Size(202, 20);
             this.TextBox_DirSystem.TabIndex = 27;
+            this.TextBox_DirSystem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label113
             // 
@@ -536,6 +545,7 @@ namespace ScoutTestApplication
             this.TextBox_DirCurrent.Name = "TextBox_DirCurrent";
             this.TextBox_DirCurrent.Size = new System.Drawing.Size(440, 20);
             this.TextBox_DirCurrent.TabIndex = 25;
+            this.TextBox_DirCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label37
             // 
@@ -553,6 +563,7 @@ namespace ScoutTestApplication
             this.TextBox_DirOkuma.Name = "TextBox_DirOkuma";
             this.TextBox_DirOkuma.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DirOkuma.TabIndex = 23;
+            this.TextBox_DirOkuma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -570,6 +581,7 @@ namespace ScoutTestApplication
             this.TextBox_DirOsp.Name = "TextBox_DirOsp";
             this.TextBox_DirOsp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DirOsp.TabIndex = 11;
+            this.TextBox_DirOsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -587,6 +599,7 @@ namespace ScoutTestApplication
             this.TextBox_DirCns.Name = "TextBox_DirCns";
             this.TextBox_DirCns.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DirCns.TabIndex = 13;
+            this.TextBox_DirCns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_DirCrad
             // 
@@ -595,6 +608,7 @@ namespace ScoutTestApplication
             this.TextBox_DirCrad.Name = "TextBox_DirCrad";
             this.TextBox_DirCrad.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DirCrad.TabIndex = 21;
+            this.TextBox_DirCrad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -612,6 +626,7 @@ namespace ScoutTestApplication
             this.TextBox_DirVolante.Name = "TextBox_DirVolante";
             this.TextBox_DirVolante.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DirVolante.TabIndex = 15;
+            this.TextBox_DirVolante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -635,14 +650,13 @@ namespace ScoutTestApplication
             // 
             // API
             // 
+            this.API.Controls.Add(this.Button_InitApi);
             this.API.Controls.Add(this.TextBox_ApiSpecValid);
             this.API.Controls.Add(this.label132);
             this.API.Controls.Add(this.label72);
             this.API.Controls.Add(this.TextBox_FlexNetVersion);
             this.API.Controls.Add(this.TextBox_FlexNet);
             this.API.Controls.Add(this.label73);
-            this.API.Controls.Add(this.label68);
-            this.API.Controls.Add(this.label91);
             this.API.Controls.Add(this.TextBox_ApiCV1);
             this.API.Controls.Add(this.label82);
             this.API.Controls.Add(this.TextBox_ApiSerialNumber);
@@ -686,6 +700,18 @@ namespace ScoutTestApplication
             this.API.Text = "API Info";
             this.API.UseVisualStyleBackColor = true;
             // 
+            // Button_InitApi
+            // 
+            this.Button_InitApi.Enabled = false;
+            this.Button_InitApi.Location = new System.Drawing.Point(146, 270);
+            this.Button_InitApi.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_InitApi.Name = "Button_InitApi";
+            this.Button_InitApi.Size = new System.Drawing.Size(140, 23);
+            this.Button_InitApi.TabIndex = 198;
+            this.Button_InitApi.Text = "Init API";
+            this.Button_InitApi.UseVisualStyleBackColor = true;
+            this.Button_InitApi.Click += new System.EventHandler(this.Button_InitApi_Click);
+            // 
             // TextBox_ApiSpecValid
             // 
             this.TextBox_ApiSpecValid.Enabled = false;
@@ -707,7 +733,7 @@ namespace ScoutTestApplication
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(360, 200);
+            this.label72.Location = new System.Drawing.Point(321, 193);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(45, 13);
             this.label72.TabIndex = 195;
@@ -716,59 +742,43 @@ namespace ScoutTestApplication
             // TextBox_FlexNetVersion
             // 
             this.TextBox_FlexNetVersion.Enabled = false;
-            this.TextBox_FlexNetVersion.Location = new System.Drawing.Point(411, 197);
+            this.TextBox_FlexNetVersion.Location = new System.Drawing.Point(372, 190);
             this.TextBox_FlexNetVersion.Name = "TextBox_FlexNetVersion";
             this.TextBox_FlexNetVersion.Size = new System.Drawing.Size(78, 20);
             this.TextBox_FlexNetVersion.TabIndex = 194;
+            this.TextBox_FlexNetVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_FlexNet
             // 
             this.TextBox_FlexNet.Enabled = false;
-            this.TextBox_FlexNet.Location = new System.Drawing.Point(268, 196);
+            this.TextBox_FlexNet.Location = new System.Drawing.Point(229, 189);
             this.TextBox_FlexNet.Name = "TextBox_FlexNet";
             this.TextBox_FlexNet.Size = new System.Drawing.Size(78, 20);
             this.TextBox_FlexNet.TabIndex = 193;
+            this.TextBox_FlexNet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(182, 200);
+            this.label73.Location = new System.Drawing.Point(143, 193);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(80, 13);
             this.label73.TabIndex = 192;
             this.label73.Text = "FlexNet Library:";
             // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(46, 261);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(166, 13);
-            this.label68.TabIndex = 191;
-            this.label68.Text = "(Ready to execute API Functions)";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(272, 260);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(90, 13);
-            this.label91.TabIndex = 190;
-            this.label91.Text = "( using reflection )";
-            // 
             // TextBox_ApiCV1
             // 
             this.TextBox_ApiCV1.Enabled = false;
-            this.TextBox_ApiCV1.Location = new System.Drawing.Point(533, 316);
+            this.TextBox_ApiCV1.Location = new System.Drawing.Point(485, 293);
             this.TextBox_ApiCV1.Name = "TextBox_ApiCV1";
-            this.TextBox_ApiCV1.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiCV1.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiCV1.TabIndex = 189;
             this.TextBox_ApiCV1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label82
             // 
             this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(426, 319);
+            this.label82.Location = new System.Drawing.Point(378, 296);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(101, 13);
             this.label82.TabIndex = 188;
@@ -777,16 +787,16 @@ namespace ScoutTestApplication
             // TextBox_ApiSerialNumber
             // 
             this.TextBox_ApiSerialNumber.Enabled = false;
-            this.TextBox_ApiSerialNumber.Location = new System.Drawing.Point(533, 290);
+            this.TextBox_ApiSerialNumber.Location = new System.Drawing.Point(485, 267);
             this.TextBox_ApiSerialNumber.Name = "TextBox_ApiSerialNumber";
-            this.TextBox_ApiSerialNumber.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiSerialNumber.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiSerialNumber.TabIndex = 187;
             this.TextBox_ApiSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(451, 293);
+            this.label81.Location = new System.Drawing.Point(403, 270);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(76, 13);
             this.label81.TabIndex = 186;
@@ -795,16 +805,16 @@ namespace ScoutTestApplication
             // TextBox_ApiMachineName
             // 
             this.TextBox_ApiMachineName.Enabled = false;
-            this.TextBox_ApiMachineName.Location = new System.Drawing.Point(533, 264);
+            this.TextBox_ApiMachineName.Location = new System.Drawing.Point(485, 241);
             this.TextBox_ApiMachineName.Name = "TextBox_ApiMachineName";
-            this.TextBox_ApiMachineName.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiMachineName.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiMachineName.TabIndex = 185;
             this.TextBox_ApiMachineName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label80
             // 
             this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(445, 267);
+            this.label80.Location = new System.Drawing.Point(397, 244);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(82, 13);
             this.label80.TabIndex = 184;
@@ -813,7 +823,7 @@ namespace ScoutTestApplication
             // Button_ExecuteApiFunctions
             // 
             this.Button_ExecuteApiFunctions.Enabled = false;
-            this.Button_ExecuteApiFunctions.Location = new System.Drawing.Point(248, 235);
+            this.Button_ExecuteApiFunctions.Location = new System.Drawing.Point(485, 212);
             this.Button_ExecuteApiFunctions.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
             this.Button_ExecuteApiFunctions.Name = "Button_ExecuteApiFunctions";
             this.Button_ExecuteApiFunctions.Size = new System.Drawing.Size(140, 23);
@@ -825,7 +835,7 @@ namespace ScoutTestApplication
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(406, 241);
+            this.label32.Location = new System.Drawing.Point(19, 302);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(121, 13);
             this.label32.TabIndex = 181;
@@ -834,27 +844,29 @@ namespace ScoutTestApplication
             // TextBox_ApiInstantiated
             // 
             this.TextBox_ApiInstantiated.Enabled = false;
-            this.TextBox_ApiInstantiated.Location = new System.Drawing.Point(533, 238);
+            this.TextBox_ApiInstantiated.Location = new System.Drawing.Point(146, 299);
             this.TextBox_ApiInstantiated.Name = "TextBox_ApiInstantiated";
-            this.TextBox_ApiInstantiated.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiInstantiated.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiInstantiated.TabIndex = 182;
+            this.TextBox_ApiInstantiated.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(46, 241);
+            this.label41.Location = new System.Drawing.Point(43, 244);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(109, 13);
+            this.label41.Size = new System.Drawing.Size(97, 13);
             this.label41.TabIndex = 179;
-            this.label41.Text = "THINC API Available:";
+            this.label41.Text = "THINC API Ready:";
             // 
             // TextBox_ApiAvailable
             // 
             this.TextBox_ApiAvailable.Enabled = false;
-            this.TextBox_ApiAvailable.Location = new System.Drawing.Point(161, 238);
+            this.TextBox_ApiAvailable.Location = new System.Drawing.Point(146, 241);
             this.TextBox_ApiAvailable.Name = "TextBox_ApiAvailable";
-            this.TextBox_ApiAvailable.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiAvailable.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiAvailable.TabIndex = 180;
+            this.TextBox_ApiAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label79
             // 
@@ -872,6 +884,7 @@ namespace ScoutTestApplication
             this.TextBox_InstallType.Name = "TextBox_InstallType";
             this.TextBox_InstallType.Size = new System.Drawing.Size(113, 20);
             this.TextBox_InstallType.TabIndex = 177;
+            this.TextBox_InstallType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label78
             // 
@@ -889,13 +902,14 @@ namespace ScoutTestApplication
             this.TextBox_ApiInstallVersion.Name = "TextBox_ApiInstallVersion";
             this.TextBox_ApiInstallVersion.Size = new System.Drawing.Size(257, 20);
             this.TextBox_ApiInstallVersion.TabIndex = 175;
+            this.TextBox_ApiInstallVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ApiInstalled
             // 
             this.TextBox_ApiInstalled.Enabled = false;
             this.TextBox_ApiInstalled.Location = new System.Drawing.Point(495, 22);
             this.TextBox_ApiInstalled.Name = "TextBox_ApiInstalled";
-            this.TextBox_ApiInstalled.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiInstalled.Size = new System.Drawing.Size(113, 20);
             this.TextBox_ApiInstalled.TabIndex = 172;
             this.TextBox_ApiInstalled.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -911,7 +925,7 @@ namespace ScoutTestApplication
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(360, 174);
+            this.label33.Location = new System.Drawing.Point(321, 167);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(45, 13);
             this.label33.TabIndex = 77;
@@ -920,23 +934,25 @@ namespace ScoutTestApplication
             // TextBox_ThincMachiningCenterDataApiVer
             // 
             this.TextBox_ThincMachiningCenterDataApiVer.Enabled = false;
-            this.TextBox_ThincMachiningCenterDataApiVer.Location = new System.Drawing.Point(411, 171);
+            this.TextBox_ThincMachiningCenterDataApiVer.Location = new System.Drawing.Point(372, 164);
             this.TextBox_ThincMachiningCenterDataApiVer.Name = "TextBox_ThincMachiningCenterDataApiVer";
             this.TextBox_ThincMachiningCenterDataApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincMachiningCenterDataApiVer.TabIndex = 76;
+            this.TextBox_ThincMachiningCenterDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ThincMachiningCenterDataApi
             // 
             this.TextBox_ThincMachiningCenterDataApi.Enabled = false;
-            this.TextBox_ThincMachiningCenterDataApi.Location = new System.Drawing.Point(268, 170);
+            this.TextBox_ThincMachiningCenterDataApi.Location = new System.Drawing.Point(229, 163);
             this.TextBox_ThincMachiningCenterDataApi.Name = "TextBox_ThincMachiningCenterDataApi";
             this.TextBox_ThincMachiningCenterDataApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincMachiningCenterDataApi.TabIndex = 75;
+            this.TextBox_ThincMachiningCenterDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(57, 173);
+            this.label34.Location = new System.Drawing.Point(18, 166);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(181, 13);
             this.label34.TabIndex = 74;
@@ -945,7 +961,7 @@ namespace ScoutTestApplication
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(360, 148);
+            this.label35.Location = new System.Drawing.Point(321, 141);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(45, 13);
             this.label35.TabIndex = 73;
@@ -954,23 +970,25 @@ namespace ScoutTestApplication
             // TextBox_ThincMachiningCenterCommandApiVer
             // 
             this.TextBox_ThincMachiningCenterCommandApiVer.Enabled = false;
-            this.TextBox_ThincMachiningCenterCommandApiVer.Location = new System.Drawing.Point(411, 145);
+            this.TextBox_ThincMachiningCenterCommandApiVer.Location = new System.Drawing.Point(372, 138);
             this.TextBox_ThincMachiningCenterCommandApiVer.Name = "TextBox_ThincMachiningCenterCommandApiVer";
             this.TextBox_ThincMachiningCenterCommandApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincMachiningCenterCommandApiVer.TabIndex = 72;
+            this.TextBox_ThincMachiningCenterCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ThincMachiningCenterCommandApi
             // 
             this.TextBox_ThincMachiningCenterCommandApi.Enabled = false;
-            this.TextBox_ThincMachiningCenterCommandApi.Location = new System.Drawing.Point(268, 144);
+            this.TextBox_ThincMachiningCenterCommandApi.Location = new System.Drawing.Point(229, 137);
             this.TextBox_ThincMachiningCenterCommandApi.Name = "TextBox_ThincMachiningCenterCommandApi";
             this.TextBox_ThincMachiningCenterCommandApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincMachiningCenterCommandApi.TabIndex = 71;
+            this.TextBox_ThincMachiningCenterCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(57, 147);
+            this.label36.Location = new System.Drawing.Point(18, 140);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(205, 13);
             this.label36.TabIndex = 70;
@@ -979,7 +997,7 @@ namespace ScoutTestApplication
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(360, 122);
+            this.label28.Location = new System.Drawing.Point(321, 115);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(45, 13);
             this.label28.TabIndex = 68;
@@ -988,23 +1006,25 @@ namespace ScoutTestApplication
             // TextBox_ThincLatheDataApiVer
             // 
             this.TextBox_ThincLatheDataApiVer.Enabled = false;
-            this.TextBox_ThincLatheDataApiVer.Location = new System.Drawing.Point(411, 119);
+            this.TextBox_ThincLatheDataApiVer.Location = new System.Drawing.Point(372, 112);
             this.TextBox_ThincLatheDataApiVer.Name = "TextBox_ThincLatheDataApiVer";
             this.TextBox_ThincLatheDataApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincLatheDataApiVer.TabIndex = 67;
+            this.TextBox_ThincLatheDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ThincLatheDataApi
             // 
             this.TextBox_ThincLatheDataApi.Enabled = false;
-            this.TextBox_ThincLatheDataApi.Location = new System.Drawing.Point(268, 118);
+            this.TextBox_ThincLatheDataApi.Location = new System.Drawing.Point(229, 111);
             this.TextBox_ThincLatheDataApi.Name = "TextBox_ThincLatheDataApi";
             this.TextBox_ThincLatheDataApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincLatheDataApi.TabIndex = 66;
+            this.TextBox_ThincLatheDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(113, 122);
+            this.label29.Location = new System.Drawing.Point(74, 115);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(125, 13);
             this.label29.TabIndex = 65;
@@ -1013,7 +1033,7 @@ namespace ScoutTestApplication
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(360, 96);
+            this.label30.Location = new System.Drawing.Point(321, 89);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(45, 13);
             this.label30.TabIndex = 64;
@@ -1022,23 +1042,25 @@ namespace ScoutTestApplication
             // TextBox_ThincLatheCommandApiVer
             // 
             this.TextBox_ThincLatheCommandApiVer.Enabled = false;
-            this.TextBox_ThincLatheCommandApiVer.Location = new System.Drawing.Point(411, 93);
+            this.TextBox_ThincLatheCommandApiVer.Location = new System.Drawing.Point(372, 86);
             this.TextBox_ThincLatheCommandApiVer.Name = "TextBox_ThincLatheCommandApiVer";
             this.TextBox_ThincLatheCommandApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincLatheCommandApiVer.TabIndex = 63;
+            this.TextBox_ThincLatheCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ThincLatheCommandApi
             // 
             this.TextBox_ThincLatheCommandApi.Enabled = false;
-            this.TextBox_ThincLatheCommandApi.Location = new System.Drawing.Point(268, 92);
+            this.TextBox_ThincLatheCommandApi.Location = new System.Drawing.Point(229, 85);
             this.TextBox_ThincLatheCommandApi.Name = "TextBox_ThincLatheCommandApi";
             this.TextBox_ThincLatheCommandApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincLatheCommandApi.TabIndex = 62;
+            this.TextBox_ThincLatheCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(113, 96);
+            this.label31.Location = new System.Drawing.Point(74, 89);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(149, 13);
             this.label31.TabIndex = 61;
@@ -1057,6 +1079,12 @@ namespace ScoutTestApplication
             // 
             // Files
             // 
+            this.Files.Controls.Add(this.label133);
+            this.Files.Controls.Add(this.TextBox_NCBSpecFileExist);
+            this.Files.Controls.Add(this.label91);
+            this.Files.Controls.Add(this.TextBox_NCSpecFileExist);
+            this.Files.Controls.Add(this.label68);
+            this.Files.Controls.Add(this.TextBox_PLCSpecFileExist);
             this.Files.Controls.Add(this.label24);
             this.Files.Controls.Add(this.TextBox_OspMachiningCenterDataApiVer);
             this.Files.Controls.Add(this.TextBox_OspMachiningCenterDataApi);
@@ -1114,7 +1142,7 @@ namespace ScoutTestApplication
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(375, 310);
+            this.label24.Location = new System.Drawing.Point(324, 312);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(45, 13);
             this.label24.TabIndex = 89;
@@ -1123,23 +1151,25 @@ namespace ScoutTestApplication
             // TextBox_OspMachiningCenterDataApiVer
             // 
             this.TextBox_OspMachiningCenterDataApiVer.Enabled = false;
-            this.TextBox_OspMachiningCenterDataApiVer.Location = new System.Drawing.Point(426, 307);
+            this.TextBox_OspMachiningCenterDataApiVer.Location = new System.Drawing.Point(375, 309);
             this.TextBox_OspMachiningCenterDataApiVer.Name = "TextBox_OspMachiningCenterDataApiVer";
             this.TextBox_OspMachiningCenterDataApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterDataApiVer.TabIndex = 88;
+            this.TextBox_OspMachiningCenterDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_OspMachiningCenterDataApi
             // 
             this.TextBox_OspMachiningCenterDataApi.Enabled = false;
-            this.TextBox_OspMachiningCenterDataApi.Location = new System.Drawing.Point(262, 307);
+            this.TextBox_OspMachiningCenterDataApi.Location = new System.Drawing.Point(211, 309);
             this.TextBox_OspMachiningCenterDataApi.Name = "TextBox_OspMachiningCenterDataApi";
             this.TextBox_OspMachiningCenterDataApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterDataApi.TabIndex = 87;
+            this.TextBox_OspMachiningCenterDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(62, 310);
+            this.label25.Location = new System.Drawing.Point(11, 312);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(170, 13);
             this.label25.TabIndex = 86;
@@ -1148,7 +1178,7 @@ namespace ScoutTestApplication
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(62, 259);
+            this.label10.Location = new System.Drawing.Point(11, 261);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(182, 13);
             this.label10.TabIndex = 78;
@@ -1157,7 +1187,7 @@ namespace ScoutTestApplication
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(375, 284);
+            this.label26.Location = new System.Drawing.Point(324, 286);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(45, 13);
             this.label26.TabIndex = 85;
@@ -1166,23 +1196,25 @@ namespace ScoutTestApplication
             // TextBox_OspMachiningCenterCommandApiVer
             // 
             this.TextBox_OspMachiningCenterCommandApiVer.Enabled = false;
-            this.TextBox_OspMachiningCenterCommandApiVer.Location = new System.Drawing.Point(426, 280);
+            this.TextBox_OspMachiningCenterCommandApiVer.Location = new System.Drawing.Point(375, 282);
             this.TextBox_OspMachiningCenterCommandApiVer.Name = "TextBox_OspMachiningCenterCommandApiVer";
             this.TextBox_OspMachiningCenterCommandApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterCommandApiVer.TabIndex = 84;
+            this.TextBox_OspMachiningCenterCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_OspMachiningCenterCommandApi
             // 
             this.TextBox_OspMachiningCenterCommandApi.Enabled = false;
-            this.TextBox_OspMachiningCenterCommandApi.Location = new System.Drawing.Point(262, 281);
+            this.TextBox_OspMachiningCenterCommandApi.Location = new System.Drawing.Point(211, 283);
             this.TextBox_OspMachiningCenterCommandApi.Name = "TextBox_OspMachiningCenterCommandApi";
             this.TextBox_OspMachiningCenterCommandApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterCommandApi.TabIndex = 83;
+            this.TextBox_OspMachiningCenterCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(62, 284);
+            this.label27.Location = new System.Drawing.Point(11, 286);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(194, 13);
             this.label27.TabIndex = 82;
@@ -1191,15 +1223,16 @@ namespace ScoutTestApplication
             // TextBox_OspMachiningCenterSpecialApi
             // 
             this.TextBox_OspMachiningCenterSpecialApi.Enabled = false;
-            this.TextBox_OspMachiningCenterSpecialApi.Location = new System.Drawing.Point(262, 255);
+            this.TextBox_OspMachiningCenterSpecialApi.Location = new System.Drawing.Point(211, 257);
             this.TextBox_OspMachiningCenterSpecialApi.Name = "TextBox_OspMachiningCenterSpecialApi";
             this.TextBox_OspMachiningCenterSpecialApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterSpecialApi.TabIndex = 79;
+            this.TextBox_OspMachiningCenterSpecialApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(375, 258);
+            this.label12.Location = new System.Drawing.Point(324, 260);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 13);
             this.label12.TabIndex = 80;
@@ -1208,15 +1241,16 @@ namespace ScoutTestApplication
             // TextBox_OspMachiningCenterSpecialApiVer
             // 
             this.TextBox_OspMachiningCenterSpecialApiVer.Enabled = false;
-            this.TextBox_OspMachiningCenterSpecialApiVer.Location = new System.Drawing.Point(426, 254);
+            this.TextBox_OspMachiningCenterSpecialApiVer.Location = new System.Drawing.Point(375, 256);
             this.TextBox_OspMachiningCenterSpecialApiVer.Name = "TextBox_OspMachiningCenterSpecialApiVer";
             this.TextBox_OspMachiningCenterSpecialApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspMachiningCenterSpecialApiVer.TabIndex = 81;
+            this.TextBox_OspMachiningCenterSpecialApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 180);
+            this.label5.Location = new System.Drawing.Point(69, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 13);
             this.label5.TabIndex = 66;
@@ -1225,15 +1259,16 @@ namespace ScoutTestApplication
             // TextBox_OspLatheSpecialApi
             // 
             this.TextBox_OspLatheSpecialApi.Enabled = false;
-            this.TextBox_OspLatheSpecialApi.Location = new System.Drawing.Point(262, 177);
+            this.TextBox_OspLatheSpecialApi.Location = new System.Drawing.Point(211, 179);
             this.TextBox_OspLatheSpecialApi.Name = "TextBox_OspLatheSpecialApi";
             this.TextBox_OspLatheSpecialApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheSpecialApi.TabIndex = 67;
+            this.TextBox_OspLatheSpecialApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(375, 179);
+            this.label11.Location = new System.Drawing.Point(324, 181);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 68;
@@ -1242,15 +1277,16 @@ namespace ScoutTestApplication
             // TextBox_OspLatheSpecialApiVer
             // 
             this.TextBox_OspLatheSpecialApiVer.Enabled = false;
-            this.TextBox_OspLatheSpecialApiVer.Location = new System.Drawing.Point(426, 177);
+            this.TextBox_OspLatheSpecialApiVer.Location = new System.Drawing.Point(375, 179);
             this.TextBox_OspLatheSpecialApiVer.Name = "TextBox_OspLatheSpecialApiVer";
             this.TextBox_OspLatheSpecialApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheSpecialApiVer.TabIndex = 69;
+            this.TextBox_OspLatheSpecialApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(375, 232);
+            this.label22.Location = new System.Drawing.Point(324, 234);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(45, 13);
             this.label22.TabIndex = 77;
@@ -1259,23 +1295,25 @@ namespace ScoutTestApplication
             // TextBox_OspLatheDataApiVer
             // 
             this.TextBox_OspLatheDataApiVer.Enabled = false;
-            this.TextBox_OspLatheDataApiVer.Location = new System.Drawing.Point(426, 229);
+            this.TextBox_OspLatheDataApiVer.Location = new System.Drawing.Point(375, 231);
             this.TextBox_OspLatheDataApiVer.Name = "TextBox_OspLatheDataApiVer";
             this.TextBox_OspLatheDataApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheDataApiVer.TabIndex = 76;
+            this.TextBox_OspLatheDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_OspLatheDataApi
             // 
             this.TextBox_OspLatheDataApi.Enabled = false;
-            this.TextBox_OspLatheDataApi.Location = new System.Drawing.Point(262, 229);
+            this.TextBox_OspLatheDataApi.Location = new System.Drawing.Point(211, 231);
             this.TextBox_OspLatheDataApi.Name = "TextBox_OspLatheDataApi";
             this.TextBox_OspLatheDataApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheDataApi.TabIndex = 75;
+            this.TextBox_OspLatheDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(118, 232);
+            this.label23.Location = new System.Drawing.Point(67, 234);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(114, 13);
             this.label23.TabIndex = 74;
@@ -1284,7 +1322,7 @@ namespace ScoutTestApplication
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(375, 206);
+            this.label20.Location = new System.Drawing.Point(324, 208);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(45, 13);
             this.label20.TabIndex = 73;
@@ -1293,23 +1331,25 @@ namespace ScoutTestApplication
             // TextBox_OspLatheCommandApiVer
             // 
             this.TextBox_OspLatheCommandApiVer.Enabled = false;
-            this.TextBox_OspLatheCommandApiVer.Location = new System.Drawing.Point(426, 203);
+            this.TextBox_OspLatheCommandApiVer.Location = new System.Drawing.Point(375, 205);
             this.TextBox_OspLatheCommandApiVer.Name = "TextBox_OspLatheCommandApiVer";
             this.TextBox_OspLatheCommandApiVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheCommandApiVer.TabIndex = 72;
+            this.TextBox_OspLatheCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_OspLatheCommandApi
             // 
             this.TextBox_OspLatheCommandApi.Enabled = false;
-            this.TextBox_OspLatheCommandApi.Location = new System.Drawing.Point(262, 203);
+            this.TextBox_OspLatheCommandApi.Location = new System.Drawing.Point(211, 205);
             this.TextBox_OspLatheCommandApi.Name = "TextBox_OspLatheCommandApi";
             this.TextBox_OspLatheCommandApi.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspLatheCommandApi.TabIndex = 71;
+            this.TextBox_OspLatheCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(120, 207);
+            this.label21.Location = new System.Drawing.Point(69, 209);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(138, 13);
             this.label21.TabIndex = 70;
@@ -1318,7 +1358,7 @@ namespace ScoutTestApplication
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(347, 50);
+            this.label77.Location = new System.Drawing.Point(296, 52);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(73, 13);
             this.label77.TabIndex = 64;
@@ -1327,15 +1367,16 @@ namespace ScoutTestApplication
             // TextBox_ThincApiLicenseModified
             // 
             this.TextBox_ThincApiLicenseModified.Enabled = false;
-            this.TextBox_ThincApiLicenseModified.Location = new System.Drawing.Point(426, 47);
+            this.TextBox_ThincApiLicenseModified.Location = new System.Drawing.Point(375, 49);
             this.TextBox_ThincApiLicenseModified.Name = "TextBox_ThincApiLicenseModified";
             this.TextBox_ThincApiLicenseModified.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincApiLicenseModified.TabIndex = 65;
+            this.TextBox_ThincApiLicenseModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(375, 128);
+            this.label38.Location = new System.Drawing.Point(324, 130);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(45, 13);
             this.label38.TabIndex = 63;
@@ -1344,23 +1385,25 @@ namespace ScoutTestApplication
             // TextBox_SoftSwitchVer
             // 
             this.TextBox_SoftSwitchVer.Enabled = false;
-            this.TextBox_SoftSwitchVer.Location = new System.Drawing.Point(426, 125);
+            this.TextBox_SoftSwitchVer.Location = new System.Drawing.Point(375, 127);
             this.TextBox_SoftSwitchVer.Name = "TextBox_SoftSwitchVer";
             this.TextBox_SoftSwitchVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_SoftSwitchVer.TabIndex = 62;
+            this.TextBox_SoftSwitchVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_SoftSwitch
             // 
             this.TextBox_SoftSwitch.Enabled = false;
-            this.TextBox_SoftSwitch.Location = new System.Drawing.Point(261, 125);
+            this.TextBox_SoftSwitch.Location = new System.Drawing.Point(210, 127);
             this.TextBox_SoftSwitch.Name = "TextBox_SoftSwitch";
             this.TextBox_SoftSwitch.Size = new System.Drawing.Size(78, 20);
             this.TextBox_SoftSwitch.TabIndex = 61;
+            this.TextBox_SoftSwitch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(105, 128);
+            this.label39.Location = new System.Drawing.Point(54, 130);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(150, 13);
             this.label39.TabIndex = 60;
@@ -1380,7 +1423,7 @@ namespace ScoutTestApplication
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(132, 154);
+            this.label14.Location = new System.Drawing.Point(81, 156);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(123, 13);
             this.label14.TabIndex = 45;
@@ -1389,15 +1432,16 @@ namespace ScoutTestApplication
             // TextBox_DMC
             // 
             this.TextBox_DMC.Enabled = false;
-            this.TextBox_DMC.Location = new System.Drawing.Point(261, 151);
+            this.TextBox_DMC.Location = new System.Drawing.Point(210, 153);
             this.TextBox_DMC.Name = "TextBox_DMC";
             this.TextBox_DMC.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DMC.TabIndex = 46;
+            this.TextBox_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(347, 154);
+            this.label13.Location = new System.Drawing.Point(296, 156);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 13);
             this.label13.TabIndex = 47;
@@ -1406,15 +1450,16 @@ namespace ScoutTestApplication
             // TextBox_DMCModified
             // 
             this.TextBox_DMCModified.Enabled = false;
-            this.TextBox_DMCModified.Location = new System.Drawing.Point(426, 151);
+            this.TextBox_DMCModified.Location = new System.Drawing.Point(375, 153);
             this.TextBox_DMCModified.Name = "TextBox_DMCModified";
             this.TextBox_DMCModified.Size = new System.Drawing.Size(78, 20);
             this.TextBox_DMCModified.TabIndex = 48;
+            this.TextBox_DMCModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(104, 50);
+            this.label15.Location = new System.Drawing.Point(53, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 13);
             this.label15.TabIndex = 49;
@@ -1423,15 +1468,16 @@ namespace ScoutTestApplication
             // TextBox_ThincApiLicense
             // 
             this.TextBox_ThincApiLicense.Enabled = false;
-            this.TextBox_ThincApiLicense.Location = new System.Drawing.Point(262, 47);
+            this.TextBox_ThincApiLicense.Location = new System.Drawing.Point(211, 49);
             this.TextBox_ThincApiLicense.Name = "TextBox_ThincApiLicense";
             this.TextBox_ThincApiLicense.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ThincApiLicense.TabIndex = 50;
+            this.TextBox_ThincApiLicense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(375, 102);
+            this.label18.Location = new System.Drawing.Point(324, 104);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 13);
             this.label18.TabIndex = 58;
@@ -1440,7 +1486,7 @@ namespace ScoutTestApplication
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(116, 76);
+            this.label17.Location = new System.Drawing.Point(65, 78);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(140, 13);
             this.label17.TabIndex = 51;
@@ -1449,39 +1495,43 @@ namespace ScoutTestApplication
             // TextBox_ApiNotifierVer
             // 
             this.TextBox_ApiNotifierVer.Enabled = false;
-            this.TextBox_ApiNotifierVer.Location = new System.Drawing.Point(426, 99);
+            this.TextBox_ApiNotifierVer.Location = new System.Drawing.Point(375, 101);
             this.TextBox_ApiNotifierVer.Name = "TextBox_ApiNotifierVer";
             this.TextBox_ApiNotifierVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ApiNotifierVer.TabIndex = 57;
+            this.TextBox_ApiNotifierVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_EbiFry
             // 
             this.TextBox_EbiFry.Enabled = false;
-            this.TextBox_EbiFry.Location = new System.Drawing.Point(262, 73);
+            this.TextBox_EbiFry.Location = new System.Drawing.Point(211, 75);
             this.TextBox_EbiFry.Name = "TextBox_EbiFry";
             this.TextBox_EbiFry.Size = new System.Drawing.Size(78, 20);
             this.TextBox_EbiFry.TabIndex = 52;
+            this.TextBox_EbiFry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_ApiNotifier
             // 
             this.TextBox_ApiNotifier.Enabled = false;
-            this.TextBox_ApiNotifier.Location = new System.Drawing.Point(261, 99);
+            this.TextBox_ApiNotifier.Location = new System.Drawing.Point(210, 101);
             this.TextBox_ApiNotifier.Name = "TextBox_ApiNotifier";
             this.TextBox_ApiNotifier.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ApiNotifier.TabIndex = 56;
+            this.TextBox_ApiNotifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_EbiFryVer
             // 
             this.TextBox_EbiFryVer.Enabled = false;
-            this.TextBox_EbiFryVer.Location = new System.Drawing.Point(426, 73);
+            this.TextBox_EbiFryVer.Location = new System.Drawing.Point(375, 75);
             this.TextBox_EbiFryVer.Name = "TextBox_EbiFryVer";
             this.TextBox_EbiFryVer.Size = new System.Drawing.Size(78, 20);
             this.TextBox_EbiFryVer.TabIndex = 53;
+            this.TextBox_EbiFryVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(192, 102);
+            this.label19.Location = new System.Drawing.Point(141, 104);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 13);
             this.label19.TabIndex = 55;
@@ -1490,7 +1540,7 @@ namespace ScoutTestApplication
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(375, 76);
+            this.label16.Location = new System.Drawing.Point(324, 78);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(45, 13);
             this.label16.TabIndex = 54;
@@ -1523,6 +1573,7 @@ namespace ScoutTestApplication
             this.TextBox_SoftSwitchRun.Name = "TextBox_SoftSwitchRun";
             this.TextBox_SoftSwitchRun.Size = new System.Drawing.Size(78, 20);
             this.TextBox_SoftSwitchRun.TabIndex = 63;
+            this.TextBox_SoftSwitchRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label42
             // 
@@ -1549,6 +1600,7 @@ namespace ScoutTestApplication
             this.TextBox_ApiNotifierRun.Name = "TextBox_ApiNotifierRun";
             this.TextBox_ApiNotifierRun.Size = new System.Drawing.Size(78, 20);
             this.TextBox_ApiNotifierRun.TabIndex = 52;
+            this.TextBox_ApiNotifierRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -1566,6 +1618,7 @@ namespace ScoutTestApplication
             this.TextBox_OwmRun.Name = "TextBox_OwmRun";
             this.TextBox_OwmRun.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OwmRun.TabIndex = 27;
+            this.TextBox_OwmRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -1583,6 +1636,7 @@ namespace ScoutTestApplication
             this.TextBox_OspRun.Name = "TextBox_OspRun";
             this.TextBox_OspRun.Size = new System.Drawing.Size(78, 20);
             this.TextBox_OspRun.TabIndex = 25;
+            this.TextBox_OspRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Button_Processes
             // 
@@ -1704,6 +1758,7 @@ namespace ScoutTestApplication
             this.TextBox_Net46.Name = "TextBox_Net46";
             this.TextBox_Net46.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net46.TabIndex = 66;
+            this.TextBox_Net46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label62
             // 
@@ -1721,6 +1776,7 @@ namespace ScoutTestApplication
             this.TextBox_Net452.Name = "TextBox_Net452";
             this.TextBox_Net452.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net452.TabIndex = 64;
+            this.TextBox_Net452.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label60
             // 
@@ -1738,6 +1794,7 @@ namespace ScoutTestApplication
             this.TextBox_Net451.Name = "TextBox_Net451";
             this.TextBox_Net451.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net451.TabIndex = 60;
+            this.TextBox_Net451.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label58
             // 
@@ -1755,6 +1812,7 @@ namespace ScoutTestApplication
             this.TextBox_Net45.Name = "TextBox_Net45";
             this.TextBox_Net45.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net45.TabIndex = 56;
+            this.TextBox_Net45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label59
             // 
@@ -1772,6 +1830,7 @@ namespace ScoutTestApplication
             this.TextBox_Net45AndUpReleaseVersion.Name = "TextBox_Net45AndUpReleaseVersion";
             this.TextBox_Net45AndUpReleaseVersion.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net45AndUpReleaseVersion.TabIndex = 58;
+            this.TextBox_Net45AndUpReleaseVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label56
             // 
@@ -1789,6 +1848,7 @@ namespace ScoutTestApplication
             this.TextBox_Net40F.Name = "TextBox_Net40F";
             this.TextBox_Net40F.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40F.TabIndex = 52;
+            this.TextBox_Net40F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label57
             // 
@@ -1806,6 +1866,7 @@ namespace ScoutTestApplication
             this.TextBox_Net40FSp.Name = "TextBox_Net40FSp";
             this.TextBox_Net40FSp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40FSp.TabIndex = 54;
+            this.TextBox_Net40FSp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label54
             // 
@@ -1823,6 +1884,7 @@ namespace ScoutTestApplication
             this.TextBox_Net40C.Name = "TextBox_Net40C";
             this.TextBox_Net40C.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40C.TabIndex = 48;
+            this.TextBox_Net40C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label55
             // 
@@ -1840,6 +1902,7 @@ namespace ScoutTestApplication
             this.TextBox_Net40CSp.Name = "TextBox_Net40CSp";
             this.TextBox_Net40CSp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40CSp.TabIndex = 50;
+            this.TextBox_Net40CSp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label52
             // 
@@ -1857,6 +1920,7 @@ namespace ScoutTestApplication
             this.TextBox_Net35.Name = "TextBox_Net35";
             this.TextBox_Net35.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net35.TabIndex = 44;
+            this.TextBox_Net35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label53
             // 
@@ -1874,6 +1938,7 @@ namespace ScoutTestApplication
             this.TextBox_Net35Sp.Name = "TextBox_Net35Sp";
             this.TextBox_Net35Sp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net35Sp.TabIndex = 46;
+            this.TextBox_Net35Sp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label50
             // 
@@ -1891,6 +1956,7 @@ namespace ScoutTestApplication
             this.TextBox_Net30.Name = "TextBox_Net30";
             this.TextBox_Net30.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net30.TabIndex = 40;
+            this.TextBox_Net30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label51
             // 
@@ -1908,6 +1974,7 @@ namespace ScoutTestApplication
             this.TextBox_Net30Sp.Name = "TextBox_Net30Sp";
             this.TextBox_Net30Sp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net30Sp.TabIndex = 42;
+            this.TextBox_Net30Sp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label48
             // 
@@ -1925,6 +1992,7 @@ namespace ScoutTestApplication
             this.TextBox_Net20.Name = "TextBox_Net20";
             this.TextBox_Net20.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net20.TabIndex = 36;
+            this.TextBox_Net20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label49
             // 
@@ -1942,6 +2010,7 @@ namespace ScoutTestApplication
             this.TextBox_Net20Sp.Name = "TextBox_Net20Sp";
             this.TextBox_Net20Sp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net20Sp.TabIndex = 38;
+            this.TextBox_Net20Sp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label46
             // 
@@ -1959,6 +2028,7 @@ namespace ScoutTestApplication
             this.TextBox_Net11.Name = "TextBox_Net11";
             this.TextBox_Net11.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net11.TabIndex = 32;
+            this.TextBox_Net11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label47
             // 
@@ -1976,6 +2046,7 @@ namespace ScoutTestApplication
             this.TextBox_Net11Sp.Name = "TextBox_Net11Sp";
             this.TextBox_Net11Sp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net11Sp.TabIndex = 34;
+            this.TextBox_Net11Sp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label44
             // 
@@ -1993,6 +2064,7 @@ namespace ScoutTestApplication
             this.TextBox_Net10.Name = "TextBox_Net10";
             this.TextBox_Net10.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net10.TabIndex = 28;
+            this.TextBox_Net10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label45
             // 
@@ -2010,6 +2082,7 @@ namespace ScoutTestApplication
             this.TextBox_Net10Sp.Name = "TextBox_Net10Sp";
             this.TextBox_Net10Sp.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net10Sp.TabIndex = 30;
+            this.TextBox_Net10Sp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Button_DotNet
             // 
@@ -2813,6 +2886,7 @@ namespace ScoutTestApplication
             this.TextBox_ProgramBits.Name = "TextBox_ProgramBits";
             this.TextBox_ProgramBits.Size = new System.Drawing.Size(234, 20);
             this.TextBox_ProgramBits.TabIndex = 104;
+            this.TextBox_ProgramBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label97
             // 
@@ -2830,6 +2904,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyBuildDate.Name = "TextBox_AssemblyBuildDate";
             this.TextBox_AssemblyBuildDate.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyBuildDate.TabIndex = 98;
+            this.TextBox_AssemblyBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label96
             // 
@@ -2847,6 +2922,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyDescription.Name = "TextBox_AssemblyDescription";
             this.TextBox_AssemblyDescription.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyDescription.TabIndex = 96;
+            this.TextBox_AssemblyDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label95
             // 
@@ -2864,6 +2940,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyCompany.Name = "TextBox_AssemblyCompany";
             this.TextBox_AssemblyCompany.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyCompany.TabIndex = 94;
+            this.TextBox_AssemblyCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label94
             // 
@@ -2881,6 +2958,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyCopyright.Name = "TextBox_AssemblyCopyright";
             this.TextBox_AssemblyCopyright.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyCopyright.TabIndex = 92;
+            this.TextBox_AssemblyCopyright.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label93
             // 
@@ -2898,6 +2976,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyVersion.Name = "TextBox_AssemblyVersion";
             this.TextBox_AssemblyVersion.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyVersion.TabIndex = 90;
+            this.TextBox_AssemblyVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label92
             // 
@@ -2915,6 +2994,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyTitle.Name = "TextBox_AssemblyTitle";
             this.TextBox_AssemblyTitle.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyTitle.TabIndex = 88;
+            this.TextBox_AssemblyTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label76
             // 
@@ -2932,6 +3012,7 @@ namespace ScoutTestApplication
             this.TextBox_AssemblyGuid.Name = "TextBox_AssemblyGuid";
             this.TextBox_AssemblyGuid.Size = new System.Drawing.Size(234, 20);
             this.TextBox_AssemblyGuid.TabIndex = 86;
+            this.TextBox_AssemblyGuid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Button_SetErrorMessage
             // 
@@ -2959,6 +3040,7 @@ namespace ScoutTestApplication
             this.TextBox_ErrorMessage.Name = "TextBox_ErrorMessage";
             this.TextBox_ErrorMessage.Size = new System.Drawing.Size(177, 20);
             this.TextBox_ErrorMessage.TabIndex = 83;
+            this.TextBox_ErrorMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Button_ProgramInfo
             // 
@@ -3036,6 +3118,7 @@ namespace ScoutTestApplication
             this.TextBox_EnvUserDomain.Name = "TextBox_EnvUserDomain";
             this.TextBox_EnvUserDomain.Size = new System.Drawing.Size(220, 20);
             this.TextBox_EnvUserDomain.TabIndex = 125;
+            this.TextBox_EnvUserDomain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label118
             // 
@@ -3053,6 +3136,7 @@ namespace ScoutTestApplication
             this.TextBox_EnvUserName.Name = "TextBox_EnvUserName";
             this.TextBox_EnvUserName.Size = new System.Drawing.Size(220, 20);
             this.TextBox_EnvUserName.TabIndex = 123;
+            this.TextBox_EnvUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label117
             // 
@@ -3070,6 +3154,7 @@ namespace ScoutTestApplication
             this.TextBox_EnvProcessorCount.Name = "TextBox_EnvProcessorCount";
             this.TextBox_EnvProcessorCount.Size = new System.Drawing.Size(120, 20);
             this.TextBox_EnvProcessorCount.TabIndex = 121;
+            this.TextBox_EnvProcessorCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label116
             // 
@@ -3104,6 +3189,7 @@ namespace ScoutTestApplication
             this.TextBox_EnvMachineName.Name = "TextBox_EnvMachineName";
             this.TextBox_EnvMachineName.Size = new System.Drawing.Size(220, 20);
             this.TextBox_EnvMachineName.TabIndex = 117;
+            this.TextBox_EnvMachineName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label112
             // 
@@ -3121,6 +3207,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionTarget.Name = "TextBox_OSVersionTarget";
             this.TextBox_OSVersionTarget.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionTarget.TabIndex = 115;
+            this.TextBox_OSVersionTarget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label111
             // 
@@ -3138,6 +3225,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionLanguage.Name = "TextBox_OSVersionLanguage";
             this.TextBox_OSVersionLanguage.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionLanguage.TabIndex = 113;
+            this.TextBox_OSVersionLanguage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label110
             // 
@@ -3155,6 +3243,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionConfigVersion.Name = "TextBox_OSVersionConfigVersion";
             this.TextBox_OSVersionConfigVersion.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionConfigVersion.TabIndex = 111;
+            this.TextBox_OSVersionConfigVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label109
             // 
@@ -3172,6 +3261,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionConfigDate.Name = "TextBox_OSVersionConfigDate";
             this.TextBox_OSVersionConfigDate.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionConfigDate.TabIndex = 109;
+            this.TextBox_OSVersionConfigDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label108
             // 
@@ -3189,6 +3279,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionComment.Name = "TextBox_OSVersionComment";
             this.TextBox_OSVersionComment.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionComment.TabIndex = 107;
+            this.TextBox_OSVersionComment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label107
             // 
@@ -3215,6 +3306,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersionTitle.Name = "TextBox_OSVersionTitle";
             this.TextBox_OSVersionTitle.Size = new System.Drawing.Size(220, 20);
             this.TextBox_OSVersionTitle.TabIndex = 104;
+            this.TextBox_OSVersionTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label104
             // 
@@ -3232,6 +3324,7 @@ namespace ScoutTestApplication
             this.TextBox_OSBits.Name = "TextBox_OSBits";
             this.TextBox_OSBits.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSBits.TabIndex = 100;
+            this.TextBox_OSBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label103
             // 
@@ -3249,6 +3342,7 @@ namespace ScoutTestApplication
             this.TextBox_OSInternet.Name = "TextBox_OSInternet";
             this.TextBox_OSInternet.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSInternet.TabIndex = 98;
+            this.TextBox_OSInternet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label102
             // 
@@ -3266,6 +3360,7 @@ namespace ScoutTestApplication
             this.TextBox_OSProcessorBits.Name = "TextBox_OSProcessorBits";
             this.TextBox_OSProcessorBits.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSProcessorBits.TabIndex = 96;
+            this.TextBox_OSProcessorBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label101
             // 
@@ -3283,6 +3378,7 @@ namespace ScoutTestApplication
             this.TextBox_OSVersion.Name = "TextBox_OSVersion";
             this.TextBox_OSVersion.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSVersion.TabIndex = 94;
+            this.TextBox_OSVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label100
             // 
@@ -3300,6 +3396,7 @@ namespace ScoutTestApplication
             this.TextBox_OSServicePack.Name = "TextBox_OSServicePack";
             this.TextBox_OSServicePack.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSServicePack.TabIndex = 92;
+            this.TextBox_OSServicePack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label99
             // 
@@ -3317,6 +3414,7 @@ namespace ScoutTestApplication
             this.TextBox_OSEdition.Name = "TextBox_OSEdition";
             this.TextBox_OSEdition.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSEdition.TabIndex = 90;
+            this.TextBox_OSEdition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label98
             // 
@@ -3334,6 +3432,7 @@ namespace ScoutTestApplication
             this.TextBox_OSName.Name = "TextBox_OSName";
             this.TextBox_OSName.Size = new System.Drawing.Size(120, 20);
             this.TextBox_OSName.TabIndex = 88;
+            this.TextBox_OSName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Button_OS
             // 
@@ -3868,14 +3967,68 @@ namespace ScoutTestApplication
             this.Button_ErrorSubscribe.UseVisualStyleBackColor = true;
             this.Button_ErrorSubscribe.Click += new System.EventHandler(this.Button_ErrorSubscribe_Click);
             // 
-            // ScoutTestApplication
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(498, 52);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(135, 13);
+            this.label68.TabIndex = 90;
+            this.label68.Text = "PLC Spec Code File Exists:";
+            // 
+            // TextBox_PLCSpecFileExist
+            // 
+            this.TextBox_PLCSpecFileExist.Enabled = false;
+            this.TextBox_PLCSpecFileExist.Location = new System.Drawing.Point(531, 75);
+            this.TextBox_PLCSpecFileExist.Name = "TextBox_PLCSpecFileExist";
+            this.TextBox_PLCSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_PLCSpecFileExist.TabIndex = 91;
+            this.TextBox_PLCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(498, 104);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(130, 13);
+            this.label91.TabIndex = 92;
+            this.label91.Text = "NC Spec Code File Exists:";
+            // 
+            // TextBox_NCSpecFileExist
+            // 
+            this.TextBox_NCSpecFileExist.Enabled = false;
+            this.TextBox_NCSpecFileExist.Location = new System.Drawing.Point(531, 127);
+            this.TextBox_NCSpecFileExist.Name = "TextBox_NCSpecFileExist";
+            this.TextBox_NCSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_NCSpecFileExist.TabIndex = 93;
+            this.TextBox_NCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(496, 156);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(140, 13);
+            this.label133.TabIndex = 94;
+            this.label133.Text = "NC B-Spec Code File Exists:";
+            // 
+            // TextBox_NCBSpecFileExist
+            // 
+            this.TextBox_NCBSpecFileExist.Enabled = false;
+            this.TextBox_NCBSpecFileExist.Location = new System.Drawing.Point(531, 179);
+            this.TextBox_NCBSpecFileExist.Name = "TextBox_NCBSpecFileExist";
+            this.TextBox_NCBSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_NCBSpecFileExist.TabIndex = 95;
+            this.TextBox_NCBSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ScoutTestApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 385);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(678, 423);
-            this.Name = "ScoutTestApplication";
+            this.Name = "ScoutTestApplicationForm";
             this.Text = "Okuma.Scout Test Application";
             this.Load += new System.EventHandler(this.ScoutTestApplication_Loaded);
             this.tabControl1.ResumeLayout(false);
@@ -4136,10 +4289,8 @@ namespace ScoutTestApplication
         private System.Windows.Forms.TextBox TextBox_ApiAvailable;
         private System.Windows.Forms.TextBox TextBox_ApiSerialNumber;
         private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label91;
         private System.Windows.Forms.TextBox TextBox_ApiCV1;
         private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.TextBox TextBox_FlexNetVersion;
         private System.Windows.Forms.TextBox TextBox_FlexNet;
@@ -4258,6 +4409,13 @@ namespace ScoutTestApplication
         private System.Windows.Forms.CheckBox CheckBox_ErrorSubscribed;
         private System.Windows.Forms.Button Button_ErrorUnSubscribe;
         private System.Windows.Forms.RichTextBox TextBox_ErrorHandling;
+        private System.Windows.Forms.Button Button_InitApi;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.TextBox TextBox_NCBSpecFileExist;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox TextBox_NCSpecFileExist;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox TextBox_PLCSpecFileExist;
     }
 }
 
