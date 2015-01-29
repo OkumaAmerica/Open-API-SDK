@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <Dictionary>
+   <!-- This dictionary prevents "CA2204: Literals should be spelled correctly" message from appearing when the project is compiled with code analysis tools. 
+   For more information, refer to http://msdn.microsoft.com/en-us/library/bb264488.aspx -->
+      <Words>
+         <Recognized>
+           <Word>THINC</Word>
+           <Word>API</Word>
+           <Word>Notifier</Word>
+           <Word>FlexNet</Word>
+           <Word>Volante</Word>      
+           <Word>Env</Word>
+           <Word>Enums</Word>
+           <Word>Realtime</Word>
+           <Word>Netfx</Word>
+           <Word>msdn</Word>
+           <Word>astebner</Word>
+           <Word>aspx</Word>
+           <Word>MyOkuma</Word>
+           <Word>Init</Word>
+           <Word>Notifier</Word>
+           <Word>dll</Word>
+         </Recognized>
+      </Words>
+</Dictionary>
