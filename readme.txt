@@ -1,4 +1,4 @@
-﻿Okuma Open API Application SDK v0.3a
+﻿Okuma Open API Application SDK v0.4a
 ____________________________________________________________________
 Purpose:
 
