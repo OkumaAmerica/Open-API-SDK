@@ -13,6 +13,11 @@
             Once class DMC is read, this contains the contents of the Data Management Card 
             (if it exists, otherwise will remain the default value and `dmc_exist` will = false. ) </summary>
         </member>
+        <member name="P:Okuma.Scout.DMC.DMCString">
+            <summary>
+            This string holds the entire contents of the data management card.
+            </summary>
+        </member>
         <member name="P:Okuma.Scout.DMC.DMC_ErrorMessage">
             <summary>
             This is the string value returned if an error is encountered 
@@ -20,7 +25,7 @@
             Typically this only occurs if the DMC is not found. </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.OSPType">
-            <summary> Returns the entry assosiated with "Type of OSP" from the Data Management Card </summary>
+            <summary> Returns the entry associated with "Type of OSP" from the Data Management Card </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.MachineType">
             <summary> Type of Okuma machine represented by this Class instance. </summary>
@@ -77,10 +82,10 @@
             <summary> Data Management Card entry for 'NC Installer' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.RTOSDriver">
-            <summary> Data Management Card entry for 'Realtime OS Driver' </summary>
+            <summary> Data Management Card entry for 'Real-time OS Driver' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.RTOS">
-            <summary> Data Management Card entry for 'Realtime OS' </summary>
+            <summary> Data Management Card entry for 'Real-time OS' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.NcControl">
             <summary> Data Management Card entry for 'NC Control' </summary>
@@ -98,7 +103,7 @@
             <summary> Data Management Card entry for 'NC Alarm Help' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.NcManual">
-            <summary> Data Management Card entry for 'Nc Manual' </summary>
+            <summary> Data Management Card entry for 'NC Manual' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.P100Tool">
             <summary> Data Management Card entry for 'P100 Tool' </summary>
@@ -137,7 +142,7 @@
             <summary> Data Management Card entry for 'IT Plaza Application Common' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.CAS">
-            <summary> Data Management Card entry for 'Collision Avaodance System' </summary>
+            <summary> Data Management Card entry for 'Collision Avoidance System' </summary>
         </member>
         <member name="P:Okuma.Scout.DMC.EasyModel">
             <summary> Data Management Card entry for Easy Modeling' </summary>
@@ -168,6 +173,113 @@
         </member>
         <member name="P:Okuma.Scout.DMC.PLCSpecCode2b">
             <summary> PLC Spec Code No.2 (part 2) </summary>
+        </member>
+        <member name="T:Okuma.Scout.Display">
+            <summary>
+            This class is used to determine details about the displays attached to the system.
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.Display.PopulateDisplayDictionary">
+            <summary>
+            Combines Screen and Device information, while leaving out extraneous data.
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.Display.RefreshDisplayInfo">
+            <summary>
+            Clears stored information and enumerates display data.
+            This function rebuilds the Display Dictionary and should not be 
+            called excessively </summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayDictionary">
+            <summary>
+            Public property that returns a dictionary of all 
+            Screens and their associated data. </summary>
+            <remarks>
+            As display devices are enumerated, they are assigned a number based on the order 
+            they are retrieved. This number will be used as the dictionary key.</remarks>
+        </member>
+        <member name="M:Okuma.Scout.Display.DisplayDevice.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the DisplayDevice class. </summary>
+            <param name="number"> number used as dictionary key </param>
+            <param name="cb"> Size, in bytes, of the DISPLAY_DEVICE structure. </param>
+            <param name="id"> GUID of the display </param>
+            <param name="key"> registry key of display </param>
+            <param name="name"> Adaptor or Monitor name </param>
+            <param name="str"> device context string </param>
+            <param name="monitor"> Monitor 'friendly' name </param>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayDevice.cb">
+            <summary> Size, in bytes, of the DISPLAY_DEVICE structure. This must be initialized 
+            prior to calling EnumDisplayDevices. </summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayDevice.DeviceString">
+            <summary>
+            An array of characters containing the device context string. This is either a 
+            description of the display adapter or of the display monitor. </summary>
+        </member>
+        <member name="M:Okuma.Scout.Display.aScreen.#ctor(System.Int32,System.Boolean,System.String,System.Drawing.Rectangle,System.String,System.Drawing.Rectangle)">
+            <summary>
+            Initializes a new instance of the aScreen class.
+            </summary>
+            <param name="i"> Integer index </param>
+            <param name="p"> Boolean primary </param>
+            <param name="sn"> String screen name </param>
+            <param name="b"> Rectangle bounds </param>
+            <param name="t"> String type </param>
+            <param name="wa"> Rectangle work area </param>
+        </member>
+        <member name="T:Okuma.Scout.Display.DisplayInfo">
+            <summary>
+            This class is used to organize information related to a specific display.
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.Display.DisplayInfo.#ctor(System.String,System.String,System.Boolean,System.Drawing.Rectangle,System.Drawing.Rectangle,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the DisplayInfo class.
+            </summary>
+            <param name="dDisplayName"> string Windows Display Name </param>
+            <param name="dMonitorName"> string Monitor Name (as reported in control panel) </param>
+            <param name="dIsPrimary"> Boolean is the Primary display </param>
+            <param name="dBounds"> Screen Resolution </param>
+            <param name="dWorkArea"> Usable area </param>
+            <param name="dDeviceID"> GUID of display </param>
+            <param name="dDeviceKey"> Registry key of display </param>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.DisplayName">
+            <summary>
+            An array of characters identifying the display name. 
+            This is the Screen Name and either the Adapter Device Name or the Monitor Device Name. </summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.MonitorName">
+            <summary>
+            Gets the name of the monitor.
+            Typically this is brand and model but listed as "Generic PnP" 
+            for older Displays that rely on Windows drivers. </summary>
+            <remarks>
+            Result taken from DeviceString when calling 'EnumDisplayDevices' a second time
+            and specifying the adaptor and device names </remarks>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.Primary">
+            <summary> Gets a Boolean value indicating if this display 
+            is the primary display or not </summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.Bounds">
+            <summary> Gets the display bounds. 
+            Display bounds are equal to the display resolution.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.WorkArea">
+            <summary> Gets the working area for the display. 
+            Working Area is the desktop area of the display, 
+            excluding taskbars, docked windows, and docked toolbars.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.DeviceID">
+            <summary> 
+            Gets the GUID of the display (Windows XP SP3 and later) </summary> 
+        </member>
+        <member name="P:Okuma.Scout.Display.DisplayInfo.DeviceKey">
+            <summary> 
+            Gets the registry key for the device (Windows XP SP3 and later) </summary>
         </member>
         <member name="T:Okuma.Scout.DotNet">
             <summary>
@@ -227,94 +339,155 @@
         <member name="M:Okuma.Scout.DotNet.p_v452_Installed">
             ******************************************************************
         </member>
-        <member name="M:Okuma.Scout.DotNet.RegistryGetLocalMachineValue(System.String,System.String,System.String@)">
-            <summary>
-            Get the value of a registry key </summary>
-            <param name="SubKey">Name of the key to retrieve</param>
-            <param name="Value">The value that will be retrieved</param>
-            <param name="Result">Contents of Value</param>
-            <returns>true if successful, false otherwise</returns>
-        </member>
         <member name="P:Okuma.Scout.DotNet.v10_Installed">
             <summary>
-            Returns (bool) true if .NET 1.0 is installed, else returns false. </summary>
+            Returns true if .NET 1.0 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v11_Installed">
             <summary>
-            Returns (bool) true if .NET 1.1 is installed, else returns false. </summary>
+            Returns true if .NET 1.1 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v20_Installed">
             <summary>
-            Returns (bool) true if .NET 2.0 is installed, else returns false. </summary>
+            Returns true if .NET 2.0 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v30_Installed">
             <summary>
-            Returns (bool) true if .NET 3.0 is installed, else returns false. </summary>
+            Returns true if .NET 3.0 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v35_Installed">
             <summary>
-            Returns (bool) true if .NET 3.5 is installed, else returns false. </summary>
+            Returns true if .NET 3.5 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v40Client_Installed">
             <summary>
-            Returns (bool) true if .NET 4.0 Client is installed, else returns false. </summary>
+            Returns true if .NET 4.0 Client is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v40Full_Installed">
             <summary>
-            Returns (bool) true if .NET 4.0 Full is installed, else returns false. </summary>
+            Returns true if .NET 4.0 Full is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v45_Installed">
             <summary>
-            Returns (bool) true if .NET 4.5 is installed, else returns false. </summary>
+            Returns true if .NET 4.5 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v451_Installed">
             <summary>
-            Returns (bool) true if .NET 4.5.1 is installed, else returns false. </summary>
+            Returns true if .NET 4.5.1 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v452_Installed">
             <summary>
-            Returns (bool) true if .NET 4.5.2 is installed, else returns false. </summary>
+            Returns true if .NET 4.5.2 is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v46Preview_Installed">
             <summary>
-            Returns (bool) true if .NET 4.6 Preview is installed, else returns false. </summary>
+            Returns true if .NET 4.6 Preview is installed, else returns false. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_10">
             <summary>
-            Returns (int) the service pack level of .NET 1.0 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 1.0 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_11">
             <summary>
-            Returns (int) the service pack level of .NET 1.1 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 1.1 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_20">
             <summary>
-            Returns (int) the service pack level of .NET 2.0 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 2.0 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_30">
             <summary>
-            Returns (int) the service pack level of .NET 3.0 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 3.0 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_35">
             <summary>
-            Returns (int) the service pack level of .NET 3.5 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 3.5 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_40Client">
             <summary>
-            Returns (int) the service pack level of .NET 4.0 Client or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 4.0 Client or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ServicePack_40Full">
             <summary>
-            Returns (int) the service pack level of .NET 4.0 Full or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 4.0 Full or -1 if not installed or no service pack. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.ReleaseVersion_45AndUp">
             <summary>
-            Returns (int) the service pack level of .NET 4.5 or -1 if not installed or no service pack. </summary>
+            Returns the service pack level of .NET 4.5 or -1 if not installed or no service pack. </summary>
         </member>
         <member name="T:Okuma.Scout.Enums">
             <summary>
             Enumerations used by Okuma.Scout
             </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.NCSpecGroup">
+            <summary>
+            NC Spec Code Group Number (32 byte groups) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC1MG">
+            <summary>Group 1 (standard)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC2MG">
+            <summary>Group 2 (non-standard)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC3MG">
+            <summary>Group 3 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC4MG">
+            <summary>Group 4 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC5MG">
+            <summary>Group 5 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC6MG">
+            <summary>Group 6 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC7MG">
+            <summary>Group 7 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCSpecGroup.NC8MG">
+            <summary>Group 8 (currently unused)</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.NCBSpecGroup">
+            <summary>
+            NC B-Spec Code Group Number (32 byte groups) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB1MG">
+            <summary>Group 1 (standard)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB2MG">
+            <summary>Group 2 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB3MG">
+            <summary>Group 3 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB4MG">
+            <summary>Group 4 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB5MG">
+            <summary>Group 5 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB6MG">
+            <summary>Group 6 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB7MG">
+            <summary>Group 7 (currently unused)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NCBSpecGroup.NCB8MG">
+            <summary>Group 8 (currently unused)</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.PLCSpecGroup">
+            <summary>
+            PLC Spec Code Group Number (32 byte groups) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PLCSpecGroup.PLC1MG">
+            <summary>Group 1 (standard)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PLCSpecGroup.PLC2MG">
+            <summary>Group 2 (standard)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PLCSpecGroup.PLC3MG">
+            <summary>Group 3 (currently unused)</summary>
         </member>
         <member name="T:Okuma.Scout.Enums.MachineType">
             <summary>
@@ -387,37 +560,37 @@
             <summary>Result of checking License</summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Valid">
-            <summary>License checks out good! </summary>
+            <summary> License checks out good! </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Flexnet_Not_Found">
-            <summary>Flexnet License Verification library Not Found. </summary>
+            <summary> Flexnet License Verification library Not Found. </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Invalid_Machine_Type">
-            <summary>Unable to Check THINC API License due to Unknown Machine Type. </summary>
+            <summary> Unable to Check THINC API License due to Unknown Machine Type. </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Bad_Version">
-            <summary>Version number is invlaid (must be in format '#.#', major-major.major-minor) </summary>
+            <summary> Version number is invalid (must be in format '#.#', major-major.major-minor) </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.License_Not_Found">
-            <summary>License File Not Found! </summary>
+            <summary> License File Not Found! </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Feature_Not_Found">
-            <summary>You are not licenced to use the feature </summary>
+            <summary> You are not licensed to use the feature </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Bad_Key">
-            <summary>Your licence has been tampered with and is no longer valid! </summary>
+            <summary> Your license has been tampered with and is no longer valid! </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Insufficient_Version">
-            <summary>Your licence does not cover this version of the application. </summary>
+            <summary> Your license does not cover this version of the application. </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Invalid">
-            <summary>Your licence is no good. </summary>
+            <summary> Your license is no good. </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Expired">
-            <summary>Your licence has expired. </summary>
+            <summary> Your license has expired. </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Critical_Exception">
-            <summary>Critical Exception Occurred! </summary>
+            <summary> Critical Exception Occurred! </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.PlcSpecCode">
             <summary>
@@ -533,7 +706,7 @@
             <summary>
             Used as the return value for 'ThincApi.ApiAvailable' and 'ThincApi.InitAPI()'.
             These values provide more detailed information about the results, beyond what would
-            be possible with a simple boolean result.
+            be possible with a simple Boolean result.
             </summary>
         </member>
         <member name="F:Okuma.Scout.Enums.ApiStatus.Ready">
@@ -552,15 +725,121 @@
         </member>
         <member name="F:Okuma.Scout.Enums.ApiStatus.FiveSecondTimeOutPeriod">
             <summary>When 'ThincApi.ApiAvailable' is called on machines with API version less than 1.17.1, 
-            an attempt to initialize the API will take place to determine readyness. That function or calling 
+            an attempt to initialize the API will take place to determine readiness. That function or calling 
             Initialize directly may only attempt to call Init at 5 second or greater intervals. This is the 
             return result that will be generated if more than one call is generated within a 5 second period.
             </summary>
         </member>
+        <member name="T:Okuma.Scout.Enums.ApiType">
+            <summary>
+            Used to differentiate between API code bases
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.NONE">
+            <summary>Uninitialized Value</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.THINC">
+            <summary>THINC API type (OAC)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.CUSTOM">
+            <summary>CUSTOM API type (OCJ)</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.RegDataType">
+            <summary>Specify the data type to retrieve from the registry</summary>
+            <remarks> https://msdn.microsoft.com/en-us/library/windows/desktop/ms724884%28v=vs.85%29.aspx </remarks>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_NONE">
+            <summary>[0] No defined value type.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_SZ">
+            <summary>[1] Null-terminated string. 
+            It will be a Unicode or ANSI string, depending on whether you use the Unicode or ANSI functions.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_EXPAND_SZ">
+            <summary>[2] Null-terminated string that contains unexpanded references to environment variables (for example, "%PATH%"). 
+            It will be a Unicode or ANSI string, depending on whether you use the Unicode or ANSI functions.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_BINARY">
+            <summary>[3] Binary data in any form.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_DWORD">
+            <summary>[4] 32-bit number.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_DWORD_BIG_ENDIAN">
+            <summary>[5] 32-bit number in big-Endean format.
+            In big-Endean format, a multi-byte value is stored in memory from the highest byte (the "big end") to the lowest byte.
+            For example, the value 0x12345678 is stored as (0x12 0x34 0x56 0x78) in big-Endean format.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_LINK">
+            <summary>[6]Unicode symbolic link.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_MULTI_SZ">
+            <summary>[7] Array of null-terminated strings that are terminated by two null characters.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_RESOURCE_LIST">
+            <summary>[8]Device-driver resource list.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_FULL_RESOURCE_DESCRIPTOR">
+            <summary>[9] </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_RESOURCE_REQUIREMENTS_LIST">
+            <summary>[10] </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegDataType.REG_QWORD">
+            <summary>[11] 64-bit number.</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.RegSAM">
+            <summary>A data type used for specifying the security access attributes in the registry.</summary>
+            <remarks>Refer to https://msdn.microsoft.com/en-us/library/windows/desktop/ms724878%28v=vs.85%29.aspx </remarks>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.QueryValue">
+            <summary>Permission to query sub-key data.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.SetValue">
+            <summary>Permission to set sub-key data.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.CreateSubKey">
+            <summary>Permission to create sub-keys.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.EnumerateSubKeys">
+            <summary>Permission to enumerate sub-keys.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.Notify">
+            <summary>Permission for change notification.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.CreateLink">
+            <summary>Permission to create a symbolic link.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.WOW64_32Key">
+            <summary>Indicates that an application on 64-bit Windows should operate on the 32-bit registry view. 
+            This flag is ignored by 32-bit Windows. For more information, see Accessing an Alternate Registry View.</summary>
+            <remarks>This flag must be combined using the OR operator with the other flags in this table that either query or access registry values.
+            Windows 2000:  This flag is not supported.</remarks>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.WOW64_64Key">
+            <summary>Indicates that an application on 64-bit Windows should operate on the 64-bit registry view. 
+            This flag is ignored by 32-bit Windows. For more information, see Accessing an Alternate Registry View.</summary>
+            <remarks>This flag must be combined using the OR operator with the other flags in this table that either query or access registry values.
+            Windows 2000:  This flag is not supported.</remarks>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.Read">
+            <summary>Combination of KEY_QUERY_VALUE, KEY_ENUMERATE_SUB_KEYS, and KEY_NOTIFY access.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.Write">
+            <summary>Combination of KEY_SET_VALUE and KEY_CREATE_SUB_KEY access.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.Execute">
+            <summary>Permission for read access.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.RegSAM.AllAccess">
+            <summary>Combination of KEY_QUERY_VALUE, KEY_ENUMERATE_SUB_KEYS, KEY_NOTIFY, KEY_CREATE_SUB_KEY, KEY_CREATE_LINK, and KEY_SET_VALUE access.</summary>
+        </member>
         <member name="T:Okuma.Scout.Error">
             <summary>
-            TODO
-            </summary>
+            Unified Error Handling Class for SCOUT.dll 
+            Subscribe to the Reporter event to handle SCOUT errors.
+            Failure to do so could result in unhandled exceptions </summary>
+            <remarks>All SCOUT errors are routed through this </remarks>
         </member>
         <member name="M:Okuma.Scout.Error.HandleError(Okuma.Scout.Enums.MessageLevel,System.String,System.Exception)">
             <summary>
@@ -577,7 +856,7 @@
             </summary>
         </member>
         <member name="E:Okuma.Scout.Error.Reporter">
-            <summary> This event is availabe to view degugging infomration
+            <summary> This event is available to view debugging information
             and allow for custom handling of errors.</summary>
         </member>
         <member name="P:Okuma.Scout.Error.ShowDebugInfo">
@@ -595,7 +874,7 @@
             Constructor for new Error event arguments
             </summary>
             <param name="severity">type of Scout.Enums.MessageLevel: severity </param>
-            <param name="message">type string: infomration content </param>
+            <param name="message">type string: information content </param>
             <param name="exception">Type System.Exception: only valid for severity of type MessageLevel.Exception</param>
         </member>
         <member name="P:Okuma.Scout.Error.Args.Severity">
@@ -627,9 +906,9 @@
         <member name="M:Okuma.Scout.AccessGAC.AssemblyExist(System.String,System.String@)">
             <summary>
             Check if a given assembly file exists in the GAC </summary>
-            <param name="assemblyname">string name of assembly</param>
-            <param name="response">output string (use out keyword)</param>
-            <returns>type boolean</returns>
+            <param name="assemblyname"> string name of assembly</param>
+            <param name="response"> output string (use out keyword)</param>
+            <returns> type Boolean</returns>
         </member>
         <member name="M:Okuma.Scout.AccessGAC.QueryAssemblyInfo(System.String)">
             <summary>
@@ -663,7 +942,7 @@
         </member>
         <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Boolean)">
             <summary> Initializes a new instance of the <see cref="T:Okuma.Scout.LicenseItem"/> class. 
-            Requires that a feature name, version, and can expire?(boolean) values be provided. </summary>
+            Requires that a feature name, version, and can expire?(Boolean) values be provided. </summary>
             <param name="featureName">Name of feature</param>
             <param name="featureVersion">Version of feature</param>
             <param name="featureCanExpire">Whether the feature can expire or not</param>
@@ -692,7 +971,8 @@
         </member>
         <member name="T:Okuma.Scout.VersionInformation">
             <summary>
-            Public object used to hold information about the current THINC API version </summary>
+            This class is used to format and report the results of checking THINC API and CUSTOM API versions.
+            In case of CUSTOM API, 'ApiNotifierVersion' is unused. </summary>
         </member>
         <member name="F:Okuma.Scout.VersionInformation.result">
             <summary>Return value for Version Information.Result </summary>
@@ -700,14 +980,17 @@
         <member name="F:Okuma.Scout.VersionInformation.apiversion">
             <summary>When found, the install version of THINC API </summary>
         </member>
+        <member name="F:Okuma.Scout.VersionInformation.capiversion">
+            <summary>When found, the installed version of CUSTOM API </summary>
+        </member>
         <member name="F:Okuma.Scout.VersionInformation.commandapiversion">
-            <summary>If found, the version of command api </summary>
+            <summary>If found, the version of command API </summary>
         </member>
         <member name="F:Okuma.Scout.VersionInformation.dataapiversion">
-            <summary>If found, the version of data api </summary>
+            <summary>If found, the version of data API </summary>
         </member>
         <member name="F:Okuma.Scout.VersionInformation.apinotifierversion">
-            <summary>If found, the verison of api notifier </summary>
+            <summary>If found, the version of API Notifier </summary>
         </member>
         <member name="P:Okuma.Scout.VersionInformation.Result">
             <summary> Gets the result of attempt to identify the THINC API Version. 
@@ -715,6 +998,11 @@
         </member>
         <member name="P:Okuma.Scout.VersionInformation.ApiVersion">
             <summary> Gets the THINC API Install Version.
+            Null until successful check is performed. 
+            Either perform null check before retrieving or check the 'Result' field first. </summary>
+        </member>
+        <member name="P:Okuma.Scout.VersionInformation.CustomApiVersion">
+            <summary> Gets the CUSTOM API Version.
             Null until successful check is performed. 
             Either perform null check before retrieving or check the 'Result' field first. </summary>
         </member>
@@ -734,9 +1022,18 @@
             <summary>
             Extension methods for the .NET language </summary>
         </member>
+        <member name="M:Okuma.Scout.Helper.RegDwordIntegerVersionParse(System.String)">
+            <summary>
+            This function is designed specifically for producing a System.Version object from the Uninstall information
+            ("Version" key) in the Windows registry for a given app.
+            </summary>
+            <param name="input">Using the Registry class to obtain a REG_DWORD value for an installed application, 
+            you are left with an integer as string. Input that here.</param>
+            <returns>System Version Object (Major, Minor, Build) </returns>
+        </member>
         <member name="M:Okuma.Scout.Helper.VersionParse(System.String)">
             <summary>
-            A this library is compiled using .NET 2.0 for compatability, this version does not contain a Version.Parse method.
+            A this library is compiled using .NET 2.0 for compatibility, this version does not contain a Version.Parse method.
             Thus, this helper class provides the functionality.
             </summary>
             <param name="input">version string, period delimited</param>
@@ -744,7 +1041,7 @@
         </member>
         <member name="T:Okuma.Scout.LicenseChecker">
             <summary>
-            This class can read the licencse file for the Okuma API and 
+            This class can read the license file for the Okuma API and 
             check to see if individual license features are valid. </summary>
         </member>
         <member name="M:Okuma.Scout.LicenseChecker.#cctor">
@@ -870,7 +1167,7 @@
         </member>
         <member name="T:Okuma.Scout.NativeMethods">
             <summary>
-            
+            NativeMethods Class (not to be visible outside the assembly)
             </summary>
         </member>
         <member name="M:Okuma.Scout.NativeMethods.GetSystemMetrics(System.Int32)">
@@ -881,6 +1178,30 @@
             <returns>true if the OS is Tablet PC or Media Center
             false otherwise</returns>
         </member>
+        <member name="M:Okuma.Scout.NativeMethods.RegQueryValueEx(System.UIntPtr,System.String,System.Int32,System.UInt32@,System.IntPtr,System.Int32@)">
+            <summary>
+            Retrieves the type and data for the specified value name associated with an open registry key.
+            </summary>
+            <param name="hKey">[in] A handle to an open registry key. The key must have been opened with the KEY_QUERY_VALUE access right.</param>
+            <param name="lpValueName">[in, optional]The name of the registry value.
+             If lpValueName is NULL or an empty string, "", the function retrieves the type and data for the key's unnamed or default value, if any. </param>
+            <param name="lpReserved">This parameter is reserved and must be NULL.</param>
+            <param name="lpType">[out, optional] A pointer to a variable that receives a code indicating the type of data stored in the specified value. 
+            For a list of the possible type codes, see Registry Value Types. The lpType parameter can be NULL if the type code is not required. </param>
+            <param name="lpData">[out, optional] A pointer to a buffer that receives the value's data. This parameter can be NULL if the data is not required. </param>
+            <param name="lpcbData"></param>
+            <returns>type unsigned integer</returns>
+            <remarks>
+            https://msdn.microsoft.com/en-us/library/aa914692.aspx
+            https://msdn.microsoft.com/en-us/library/windows/desktop/ms724911%28v=vs.85%29.aspx
+            http://stackoverflow.com/questions/6725547/should-dword-map-to-int-or-uint
+            </remarks>
+        </member>
+        <member name="T:Okuma.Scout.NativeMethods.DISPLAY_DEVICE">
+            <summary>
+            Structure used to organize data retrieved from EnumDisplayDevices().
+            </summary>
+        </member>
         <member name="T:Okuma.Scout.OspFileInfo">
             <summary>
             This class is used to discover information about the file system
@@ -888,7 +1209,7 @@
         </member>
         <member name="M:Okuma.Scout.OspFileInfo.ExistanceCheckPlusSearch(System.Nullable{System.Boolean}@,System.String,System.String,System.String)">
             <summary>
-            check for the existance of files a couple of different ways. </summary>
+            check for the existence of files a couple of different ways. </summary>
             <param name="localExistVar"></param>
             <param name="ExplicitLocation"></param>
             <param name="GeneralLocation"></param>
@@ -919,7 +1240,7 @@
         </member>
         <member name="M:Okuma.Scout.OspFileInfo.SearchForFile(System.String,System.String)">
             <summary>
-            Looks for the file specified in the directorty specifiefd + subdirectories.
+            Looks for the file specified in the directory specified + subdirectories.
             </summary>
             <param name="BaseDir"></param>
             <param name="FileName"></param>
@@ -932,27 +1253,27 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_OSP">
             <summary> Does the directory 'C:\OSP-P\' Exist? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_CNS">
             <summary> Does the directory 'C:\OSP-P\CNS-DAT\' Exist? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_VOLANTE">
             <summary> Does the directory 'C:\OSP-P\VOLANTE\' Exist? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_CRAD">
             <summary> Does the directory 'C:\OSP-P\VOLANTE\CRAD\' Exist? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_Okuma">
             <summary> Does the directory 'D:\Program Files\Okuma\' Exist? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheSpecialApi_Exists">
             <summary> Does the OSP API file for P300 Special Lathe 'LTMIM_API.DLL' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheSpecialApi_Version">
@@ -963,7 +1284,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheCommandApi_Exists">
             <summary> Does the OSP Command API file 'LCMDAPI.EXE' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheCommandApi_Version">
@@ -974,7 +1295,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheDataApi_Exists">
             <summary> Does the OSP Data API file 'LDATAPI.DLL' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheDataApi_Version">
@@ -985,7 +1306,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincLatheDataApi_Exists">
             <summary> Does the THINC Data API file 'Okuma.CLDATAPI.dll' exist in the Global Assembly Cache ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE]</remarks>    
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincLatheDataApi_Version">
@@ -996,7 +1317,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterSpecialApi_Exists">
             <summary> Does the OSP API file for P300 Special Machining Center 'MTMIM_API.DLL' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterSpecialApi_Version">
@@ -1007,7 +1328,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterCommandApi_Exists">
             <summary> Does the OSP Command API file 'MCMDAPI.EXE' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterCommandApi_Version">
@@ -1018,7 +1339,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincMachiningCenterCommandApi_Exists">
             <summary> Does the THINC Command API file 'Okuma.CMCMDAPI.dll' exist in the Global Assembly Cache ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincMachiningCenterCommandApi_Version">
@@ -1029,7 +1350,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Exists">
             <summary> Does the OSP Data API file 'MDATAPI.DLL' exist under 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Version">
@@ -1040,7 +1361,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincMachiningCenterDataApi_Exists">
             <summary> Does the THINC Data API file 'Okuma.CMDATAPI.dll' exist in the Global Assembly Cache ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincMachiningCenterDataApi_Version">
@@ -1051,7 +1372,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincApiLicenseExists">
             <summary> Does the file 'okuma.api.lic' exist in 'D:\Program Files\Okuma\Licenses\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincApiLicenseModifiedDate">
             <summary>
@@ -1061,7 +1382,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.EbyFryExists">
             <summary> Does the file 'EBISTART.EXE' exist in 'C:\OSP-P\HMI\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>This is part of the OSP NC Software HMI Program</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.EbiFryVersion">
@@ -1072,7 +1393,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ApiNotifierExists">
             <summary> Does the file 'APINotifierService.exe' exist in 'D:\Program Files\Okuma\APINotifier\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ApiNotifierVersion">
             <summary>
@@ -1081,7 +1402,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.SoftSwitchExists">
             <summary> Does the file 'SOFTSWITCH.EXE' exist in 'C:\OSP-P\VOLANTE\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.SoftSwitchVersion">
             <summary>
@@ -1091,7 +1412,7 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DMCExists">
             <summary> Does the file 'OSPMNGCd.CNC' exist in 'C:\OSP-P\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DMCModifiedDate">
             <summary>
@@ -1101,22 +1422,22 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevCommandApiExists_Lathe">
             <summary> Does the THINC Command API file 'Okuma.CLCMDAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevCommandApiExists_MachiningCenter">
             <summary> Does the THINC Command API file 'Okuma.CMCMDAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevDataApiExists_Lathe">
             <summary> Does the THINC Data API file 'Okuma.CLDATAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevDataApiExists_MachiningCenter">
             <summary> Does the THINC Data API file 'Okuma.CMDATAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
-            <returns>bool</returns>
+            <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
         <member name="T:Okuma.Scout.OspProcessInfo">
@@ -1182,7 +1503,7 @@
         </member>
         <member name="P:Okuma.Scout.OS.InternetConnection">
             <summary> Checks for internet connection by pinging MyOkuma.com. 
-            returns bool</summary>
+            returns Boolean</summary>
         </member>
         <member name="P:Okuma.Scout.OS.Name">
             <summary>
@@ -1212,7 +1533,7 @@
         </member>
         <member name="M:Okuma.Scout.Platform.DetermineMachineType">
             <summary>
-            Determines the Machine type based on existance of Data Management Card, OSP files, and contents of DMC.
+            Determines the Machine type based on existence of Data Management Card, OSP files, and contents of DMC.
             </summary>
             <remarks>At this time it is impossible to determine type Grinder (because it doesn't exist yet with P Control)</remarks>
             <returns>enum Platform.MachineType </returns>
@@ -1244,7 +1565,7 @@
         <member name="P:Okuma.Scout.Platform.BaseMachineType">
             <summary>
             The Base type ignores NC-Master or PC-NC master types and only reports 
-            Lathe or Machining Center for those types. This is for convience when 
+            Lathe or Machining Center for those types. This is for convince when 
             differentiating which API calls are required in a function which can then 
             provide the desired functionality regardless of machine type. </summary>
         </member>
@@ -1261,7 +1582,7 @@
         <member name="P:Okuma.Scout.ProgramInfo.ErrorDateTime">
             <summary>
             This is the DateTime value returned if an error is encountered.
-            The default error datetime is April 4th, 1898.
+            The default error date time is April 4th, 1898.
             </summary>
         </member>
         <member name="P:Okuma.Scout.ProgramInfo.AssemblyGuid">
@@ -1274,11 +1595,6 @@
             <summary>
             Returns the program "Title" / Name.
             Alternatively, if the title attribute is empty, it will try getting the file name of the assembly minus the extension.
-            </summary>
-        </member>
-        <member name="P:Okuma.Scout.ProgramInfo.AssemblyVersion">
-            <summary>
-            Returns the application version or ErrorMessage if unable to get it
             </summary>
         </member>
         <member name="P:Okuma.Scout.ProgramInfo.AssemblyCopyright">
@@ -1295,11 +1611,72 @@
             <summary>
             Returns the description of this assembly or else ErrorMessage </summary>
         </member>
-        <member name="P:Okuma.Scout.ProgramInfo.AssemblyBuildDate">
+        <member name="P:Okuma.Scout.ProgramInfo.ScoutDllAssemblyVersion">
             <summary>
-            returns the last modified date of this assembly, or else Vars.ErrorDateTime </summary>
+            Returns the application version or ErrorMessage if unable to get it
+            </summary>    
+        </member>
+        <member name="P:Okuma.Scout.ProgramInfo.ThisAssemblyVersion">
+            <summary>
+            Returns the application version or ErrorMessage if unable to get it
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.ProgramInfo.ScoutDllBuildDate">
+            <summary>Returns the build date of Okuma.Scout.dll </summary>
+        </member>
+        <member name="P:Okuma.Scout.ProgramInfo.ThisAssemblyBuildDate">
+            <summary>Returns the build date of the application consuming Scout.dll </summary>
+        </member>
+        <member name="T:Okuma.Scout.Reg">
+            <summary>
+            TO DO
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.Reg.RegistryGetSubKeyNames(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            
+            </summary>
+            <returns>List of sub-keys listed under the specified key (if present, otherwise NULL)</returns>
+        </member>
+        <member name="M:Okuma.Scout.Reg.RegistryGetLocalMachineValue(System.String,System.String,System.String@)">
+            <summary>
+            This function is superior to using .NET 'Registry' class because it will work on both 32bit and 64bit systems 
+            and uses native Win32 API code for faster execution. However the only data types supported at this time
+            are "REG_SZ", "REG_DWORD", and "REG_QWORD".</summary>
+            <param name="SubKey">Name of the key to retrieve</param>
+            <param name="Value">The value that will be retrieved</param>
+            <param name="Result">Contents of Value</param>
+            <returns>true if successful, false otherwise</returns>
+        </member>
+        <member name="M:Okuma.Scout.Reg.RegistryWOW6432.GetRegKey64(System.String,System.String)">
+            <summary>
+            Returns the DATA value for a given VALUE and KEY from the Windows registry.
+            </summary>
+            <param name="inKeyName">Key name where desired VALUE exists</param>
+            <param name="inValueName">The VALUE to retrieve DATA from</param>
+            <returns>type string</returns>
+        </member>
+        <member name="M:Okuma.Scout.Reg.RegistryWOW6432.GetSubKeys64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inKeyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Okuma.Scout.Reg.RegistryWOW6432.GetSubKeys32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inKeyName"></param>
+            <returns></returns>
         </member>
         <member name="T:Okuma.Scout.SpecCode">
+            <summary>
+            This class retrieves Machine Spec Codes from NC Data Files </summary>
+            <summary>
+            This class retrieves Machine Spec Codes from NC Data Files </summary>
+            <summary>
+            This class retrieves Machine Spec Codes from NC Data Files </summary>
             <summary>
             This class retrieves Machine Spec Codes from NC Data Files </summary>
         </member>
@@ -1320,7 +1697,7 @@
             Checks the "Custom API" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="M:Okuma.Scout.SpecCode.GetSpecCodeBit(System.String,System.Int32,System.Int32)">
@@ -1340,47 +1717,17 @@
             <param name="fromDmc"></param>
             <returns></returns>
         </member>
-        <member name="M:Okuma.Scout.SpecCode.GetPlcSpecCodes(Okuma.Scout.Enums.PlcSpecCode)">
-            <summary>
-            Returns the desired spec code from a given spec code file path </summary>
-            <param name="spec">enum of the desired spec</param>
-            <returns>returns "true" if the spec was found, else false and result will be empty</returns>
-        </member>
-        <member name="M:Okuma.Scout.SpecCode.GetNcSpec">
-            <summary>
-            TODO
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Okuma.Scout.SpecCode.GetNcBSpec">
-            <summary>
-            TODO
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Okuma.Scout.SpecCode.GetSpecCodesFromDMC">
             <summary>
             TODO
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Okuma.Scout.SpecCode.GetPlcSpecFile">
+        <member name="M:Okuma.Scout.SpecCode.DataHexToString(System.Byte[])">
             <summary>
-            Retreived the file path to the PLC Spec Code file </summary>
-            <returns>true if found correctly, else false</returns>
-        </member>
-        <member name="M:Okuma.Scout.SpecCode.GetNcSpecFile">
-            <summary>
-            Returns the file path to the NC Spec Code file </summary>
-            <returns>true if found, else false</returns>
-        </member>
-        <member name="M:Okuma.Scout.SpecCode.GetNcBSpecFile">
-            <summary>
-            Returns the file path to the NC Spec Code file </summary>
-            <returns>true if found, else false</returns>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.MachineType">
-            <summary>Retrieve Machine Type from NC Spec Code Data File </summary>
+            Transforms raw bytes into something readily readable by man</summary>
+            <param name="dataHex">The source data</param>
+            <returns>A string</returns>
         </member>
         <member name="P:Okuma.Scout.SpecCode.FileNotFoundErrorMessage">
             <summary>Error message returned when a file is not found </summary>
@@ -1388,92 +1735,59 @@
         <member name="P:Okuma.Scout.SpecCode.FileReadErrorMessage">
             <summary>Error message returned when a file is not found </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC_SpecCodeFileExists">
-            <summary>Does the Spec Code File for PLC exist? </summary>
+        <member name="P:Okuma.Scout.SpecCode.PLC1_DMC_FirstHalf">
+            <summary>Retrieve the first half of PLC Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.NC_SpecCodeFileExists">
-            <summary>Does the Spec Code File for NC exist? </summary>
+        <member name="P:Okuma.Scout.SpecCode.PLC1_DMC_SecondHalf">
+            <summary>Retrieve the second half of PLC Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.NCB_SpecCodeFileExists">
-            <summary>Does the Spec Code File for NC exist? </summary>
+        <member name="P:Okuma.Scout.SpecCode.PLC2_DMC_FirstHalf">
+            <summary>Retrieve the first half of PLC Spec Code No.2 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC1A">
-            <summary>Retrieve PLC Spec Code '1A' from NC Spec Code Data File </summary>
+        <member name="P:Okuma.Scout.SpecCode.PLC2_DMC_SecondHalf">
+            <summary>Retrieve the second half of PLC Spec Code No.2 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC1B">
-            <summary>Retrieve PLC Spec Code '1B' from NC Spec Code Data File </summary>
+        <member name="P:Okuma.Scout.SpecCode.NC1_DMC_FirstHalf">
+            <summary>Retrieve the first half of NC Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC2A">
-            <summary>Retrieve PLC Spec Code '2A' from NC Spec Code Data File </summary>
+        <member name="P:Okuma.Scout.SpecCode.NC1_DMC_SecondHalf">
+            <summary>Retrieve the second half of NC Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC2B">
-            <summary>Retrieve PLC Spec Code '2B' from NC Spec Code Data File </summary>
+        <member name="P:Okuma.Scout.SpecCode.NCB1_DMC_FirstHalf">
+            <summary>Retrieve the first half of NC B-Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.NCA">
-            <summary>Retrieve NC Spec Code 'A' from NC Spec Code Data File </summary>
+        <member name="P:Okuma.Scout.SpecCode.NCB1_DMC_SecondHalf">
+            <summary>Retrieve the second half of NC B-Spec Code No.1 from Data Management Card </summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.NCB">
-            <summary>Retrieve NC Spec Code 'B' from NC Spec Code Data File </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCBA">
-            <summary>Retrieve NC B-Spec Code 'A' from NC Spec Code Data File </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCBB">
-            <summary>Retrieve NC B-Spec Code 'B' from NC Spec Code Data File </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC1A_DMC">
-            <summary>Retrieve PLC Spec Code '1A' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC1B_DMC">
-            <summary>Retrieve PLC Spec Code '1B' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC2A_DMC">
-            <summary>Retrieve PLC Spec Code '2A' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.PLC2B_DMC">
-            <summary>Retrieve PLC Spec Code '1A' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCA_DMC">
-            <summary>Retrieve NC Spec Code 'A' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCB_DMC">
-            <summary>Retrieve NC Spec Code 'B' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCBA_DMC">
-            <summary>Retrieve NC B-Spec Code 'A' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.NCBB_DMC">
-            <summary>Retrieve NC B-Spec Code 'B' from Data Management Card </summary>
-        </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_PLC1A">
+        <member name="P:Okuma.Scout.SpecCode.Match_PLC1_FirstHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for PLC Spec Code '1A'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_PLC1B">
+        <member name="P:Okuma.Scout.SpecCode.Match_PLC1_SecondHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for PLC Spec Code '1B'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_PLC2A">
+        <member name="P:Okuma.Scout.SpecCode.Match_PLC2_FirstHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for PLC Spec Code '2A'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_PLC2B">
+        <member name="P:Okuma.Scout.SpecCode.Match_PLC2_SecondHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for PLC Spec Code '2B'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_NCA">
+        <member name="P:Okuma.Scout.SpecCode.Match_NC1_FirstHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for NC Spec Code 'A'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_NCB">
+        <member name="P:Okuma.Scout.SpecCode.Match_NC1_SecondHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for NC Spec Code 'B'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_NCBA">
+        <member name="P:Okuma.Scout.SpecCode.Match_NCB1_FirstHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for NC B-Spec Code 'A'</summary>
         </member>
-        <member name="P:Okuma.Scout.SpecCode.Match_NCBB">
+        <member name="P:Okuma.Scout.SpecCode.Match_NCB1_SecondHalf">
             <summary>Determine if the NC Spec Code Data File matches the Data Management Card
             for NC B-Spec Code 'B'</summary>
         </member>
@@ -1482,7 +1796,7 @@
             Checks the "Custom API" / "CAPI" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="P:Okuma.Scout.SpecCode.P300Spec">
@@ -1491,7 +1805,7 @@
             Checks the "P300" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="P:Okuma.Scout.SpecCode.TurnCutSpec">
@@ -1500,7 +1814,7 @@
             Checks the "L. Turning cut" / "LAMC" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="P:Okuma.Scout.SpecCode.BaseOpScreenSpec">
@@ -1509,7 +1823,7 @@
             Checks the "BASE OP. SCREEN" / "BOPS" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="P:Okuma.Scout.SpecCode.EasyOperationPanelSpec">
@@ -1518,7 +1832,7 @@
             Checks the "EASY OPERAT PANEL" / "EOPL" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
         </member>
         <member name="P:Okuma.Scout.SpecCode.MultOperationPanelSpec">
@@ -1527,8 +1841,339 @@
             Checks the "MULT OPERAT PANEL" / "MEOP" NC Spec Code from NC data file </summary>
             <returns>True if the spec code is turned on, else false</returns>
             <remarks>This function will not return any error information. If the spec code
-            file is not found, for example, and in all other caseses where execution does
+            file is not found, for example, and in all other cases where execution does
             not complete normally, it will return false.</remarks>
+        </member>
+        <member name="T:Okuma.Scout.SpecCode.NC">
+            <summary>This class is responsible for providing NC Spec codes </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.machineName">
+            <summary>Name of machine from NC Spec Code file </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.projectNumber">
+            <summary>Project Number</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc1MG">
+            <summary>NC-SPEC CODE No.1</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc2MG">
+            <summary>NC-SPEC CODE No.2</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc3MG">
+            <summary>NC-SPEC CODE No.3</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc4MG">
+            <summary>NC-SPEC CODE No.4</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc5MG">
+            <summary>NC-SPEC CODE No.5</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc6MG">
+            <summary>NC-SPEC CODE No.6</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc7MG">
+            <summary>NC-SPEC CODE No.7</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.nc8MG">
+            <summary>NC-SPEC CODE No.8</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.machineSpecCodeFileExist">
+            <summary>Machine Spec Code File has been successfully retrieved</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.useuserdefinedfile">
+            <summary>If true, use the requestedSpecCodeFilePath, otherwise use MachineSpecCodeFilePath</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.machineSpecCodeFilePath">
+            <summary>File path to active NC spec code file (generally for machines and simulators only)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.activeSpecCodeFilePath">
+            <summary>File source for currently loaded spec items (if not empty, spec items should be populated)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.userDefinedSpecCodeFilePath">
+            <summary>File source for user defined spec code file </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NC.SpecCodeFileValidAndReadSuccess">
+            <summary>True when a file has been read and it is valid </summary>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.Bit(Okuma.Scout.Enums.NCSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Check status of NC Spec Codes by Group, Word, and Bit </summary>
+            <param name="groupNo">Typically only 'NC1MG' is used, the rest are available for expansion</param>
+            <param name="byteNo">Word "No." (1-32)</param>
+            <param name="bitNo">Bit Number (0-7)</param>
+            <returns>Boolean status of spec</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.GroupFirstHalf(Okuma.Scout.Enums.NCSpecGroup)">
+            <summary>
+            Retrieve first half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.GroupSecondHalf(Okuma.Scout.Enums.NCSpecGroup)">
+            <summary>
+            Retrieve second half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.GetSpecCodeBit(Okuma.Scout.Enums.NCSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Logic for public member 'CheckNCSpecCodeBitStatus'
+            </summary>
+            <param name="group">Refer to NCSpecGroup enumeration</param>
+            <param name="byteNumber">Self explanatory</param>
+            <param name="bit">Self explanatory too</param>
+            <returns>Boolean True if the spec is turned ON</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.GetMachineNcSpecFile">
+            <summary>
+            Returns the file path to the NC Spec Code file </summary>
+            <returns>true if found, else false</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NC.GetNcSpec">
+            <summary>
+            TO DO
+            </summary>
+            <returns> Boolean true if success</returns>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.SpecFileIsValid">
+            <summary>
+            Returns true if the currently selected Spec Code file exits and is the correct file type
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.MachineSpecCodeFileExists">
+            <summary>Does an active NC Spec Code File exist on this machine? 
+            Note: active means the file name and location is accordant with a real machine or simulator</summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.UseUserDefinedFile">
+            <summary>
+            Switch indicating whether to use active machine spec file or a user defined one 
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.UserDefinedFilePath">
+            <summary>
+            User defined file path to an NC Spec Code file
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.machineNameFromFile">
+            <summary>
+            Machine Name from NC Spec Code file</summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NC.projectNumberFromFile">
+            <summary>
+            Project Number from NC Spec Code file</summary>
+        </member>
+        <member name="T:Okuma.Scout.SpecCode.NCB">
+            <summary>This class is responsible for providing NC B-Spec codes </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.machineName">
+            <summary>Name of machine from NC Spec Code file </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.projectNumber">
+            <summary>Project Number</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb1MG">
+            <summary>NC B-SPEC CODE No.1</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb2MG">
+            <summary>NC B-SPEC CODE No.2</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb3MG">
+            <summary>NC B-SPEC CODE No.3</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb4MG">
+            <summary>NC B-SPEC CODE No.4</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb5MG">
+            <summary>NC B-SPEC CODE No.5</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb6MG">
+            <summary>NC B-SPEC CODE No.6</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb7MG">
+            <summary>NC B-SPEC CODE No.7</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.ncb8MG">
+            <summary>NC B-SPEC CODE No.8</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.machineSpecCodeFileExist">
+            <summary>Machine Spec Code File has been successfully retrieved</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.useuserdefinedfile">
+            <summary>If true, use the requestedSpecCodeFilePath, otherwise use MachineSpecCodeFilePath</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.machineSpecCodeFilePath">
+            <summary>File path to active NC spec code file (generally for machines and simulators only)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.activeSpecCodeFilePath">
+            <summary>File source for currently loaded spec items (if not empty, spec items should be populated)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.userDefinedSpecCodeFilePath">
+            <summary>File source for user defined spec code file </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.NCB.SpecCodeFileValidAndReadSuccess">
+            <summary>True when a file has been read and it is valid </summary>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.Bit(Okuma.Scout.Enums.NCBSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Check status of NC Spec Codes by Group, Word, and Bit </summary>
+            <param name="groupNo">Typically only 'NC1MG' is used, the rest are available for expansion</param>
+            <param name="byteNo">Word "No." (1-32)</param>
+            <param name="bitNo">Bit Number (0-7)</param>
+            <returns> Boolean status of spec</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.GroupFirstHalf(Okuma.Scout.Enums.NCBSpecGroup)">
+            <summary>
+            Retrieve first half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.GroupSecondHalf(Okuma.Scout.Enums.NCBSpecGroup)">
+            <summary>
+            Retrieve second half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.GetBSpecCodeBit(Okuma.Scout.Enums.NCBSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Logic for public member 'CheckNCSpecCodeBitStatus'
+            </summary>
+            <param name="group">Refer to NCSpecGroup enumeration</param>
+            <param name="byteNumber">Self explanatory</param>
+            <param name="bit">Self explanatory too</param>
+            <returns>Boolean True if the spec is turned ON</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.GetMachineNcbSpecFile">
+            <summary>
+            Returns the file path to the NC Spec Code file </summary>
+            <returns>true if found, else false</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.NCB.GetNcbSpec">
+            <summary>
+            This function opens and reads the Spec Code file, populating the appropriate data values
+            </summary>
+            <returns> Boolean true if success</returns>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.SpecFileIsValid">
+            <summary>
+            Returns true if the currently selected Spec Code file exits and is the correct file type
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.MachineSpecCodeFileExists">
+            <summary>Does an active NC Spec Code File exist on this machine? 
+            Note: active means the file name and location is accordant with a real machine or simulator</summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.UseUserDefinedFile">
+            <summary>
+            Switch indicating whether to use active machine spec file or a user defined one 
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.UserDefinedFilePath">
+            <summary>
+            User defined file path to an NC Spec Code file
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.machineNameFromFile">
+            <summary>
+            Machine Name from NC Spec Code file</summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.NCB.projectNumberFromFile">
+            <summary>
+            Project Number from NC Spec Code file</summary>
+        </member>
+        <member name="T:Okuma.Scout.SpecCode.PLC">
+            <summary>This class is responsible for providing PLC Spec codes </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.plc1MG">
+            <summary>NC B-SPEC CODE No.1</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.plc2MG">
+            <summary>NC B-SPEC CODE No.2</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.plc3MG">
+            <summary>NC B-SPEC CODE No.3</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.machineSpecCodeFileExist">
+            <summary>Machine Spec Code File has been successfully retrieved</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.useuserdefinedfile">
+            <summary>If true, use the requestedSpecCodeFilePath, otherwise use MachineSpecCodeFilePath</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.machineSpecCodeFilePath">
+            <summary>File path to active NC spec code file (generally for machines and simulators only)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.activeSpecCodeFilePath">
+            <summary>File source for currently loaded spec items (if not empty, spec items should be populated)</summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.userDefinedSpecCodeFilePath">
+            <summary>File source for user defined spec code file </summary>
+        </member>
+        <member name="F:Okuma.Scout.SpecCode.PLC.SpecCodeFileValidAndReadSuccess">
+            <summary>True when a file has been read and it is valid </summary>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.Bit(Okuma.Scout.Enums.PLCSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Check status of NC Spec Codes by Group, Word, and Bit </summary>
+            <param name="groupNo">Typically only 'NC1MG' is used, the rest are available for expansion</param>
+            <param name="byteNo">Word "No." (1-32)</param>
+            <param name="bitNo">Bit Number (0-7)</param>
+            <returns> Boolean status of spec</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.GroupFirstHalf(Okuma.Scout.Enums.PLCSpecGroup)">
+            <summary>
+            Retrieve first half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.GroupSecondHalf(Okuma.Scout.Enums.PLCSpecGroup)">
+            <summary>
+            Retrieve second half (16 bytes) of spec code group
+            </summary>
+            <param name="groupNo">Which group to retrieve</param>
+            <returns>String containing hyphen delimited 2 byte data words, else string.empty</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.GetPlcSpecCodeBit(Okuma.Scout.Enums.PLCSpecGroup,System.Int32,System.Int32)">
+            <summary>
+            Logic for public member 'CheckNCSpecCodeBitStatus'
+            </summary>
+            <param name="group">Refer to NCSpecGroup enumeration</param>
+            <param name="byteNumber">Self explanatory</param>
+            <param name="bit">Self explanatory too</param>
+            <returns>Boolean True if the spec is turned ON</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.GetMachinePlcSpecFile">
+            <summary>
+            Returns the file path to the NC Spec Code file </summary>
+            <returns>true if found, else false</returns>
+        </member>
+        <member name="M:Okuma.Scout.SpecCode.PLC.GetPlcSpec">
+            <summary>
+            TO DO
+            </summary>
+            <returns> Boolean true if success</returns>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.PLC.SpecFileIsValid">
+            <summary>
+            Returns true if the currently selected Spec Code file exits and is the correct file type
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.PLC.MachineSpecCodeFileExists">
+            <summary>Does an active NC Spec Code File exist on this machine? 
+            Note: active means the file name and location is accordant with a real machine or simulator</summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.PLC.UseUserDefinedFile">
+            <summary>
+            Switch indicating whether to use active machine spec file or a user defined one 
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.SpecCode.PLC.UserDefinedFilePath">
+            <summary>
+            User defined file path to an NC Spec Code file
+            </summary>
         </member>
         <member name="T:Okuma.Scout.ThincApi">
             <summary>
@@ -1562,14 +2207,16 @@
         <member name="F:Okuma.Scout.ThincApi.privateMDataGacVer">
             <summary>Version of the Machining Center Data API assembly from Global Assembly Cache  </summary>
         </member>
-        <member name="F:Okuma.Scout.ThincApi.privateApiNotifierVer">
-            <summary>Version of the API Notifier Service assembly from Global Assembly Cache </summary>
-        </member>
         <member name="F:Okuma.Scout.ThincApi.privateFlexNetVer">
             <summary>Version of the FlexNet assembly from Global Assembly Cache</summary>
         </member>
         <member name="F:Okuma.Scout.ThincApi.thincApiVersion">
-            <summary>Object to store Version information of API files and install version </summary>
+            <summary>Object to store Version information of THINC API files and installed version </summary>
+            <remarks> Storing here and checking for null prevents unnecessarily running code to check every time.</remarks>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.customApiVersion">
+            <summary>Object to store Version information of CUSTOM API files and CAPI version </summary>
+            <remarks> Storing here and checking for null prevents unnecessarily running code to check every time.</remarks>
         </member>
         <member name="F:Okuma.Scout.ThincApi.apiInitHasBeenAttempted">
             <summary>Has API Initialization been attempted? </summary>
@@ -1593,7 +2240,7 @@
         <member name="M:Okuma.Scout.ThincApi.#cctor">
             <summary> 
             Initializes static members of the <see cref="T:Okuma.Scout.ThincApi"/> class.
-            Retreives in formation on class load.</summary>
+            Retrieves in formation on class load.</summary>
         </member>
         <member name="M:Okuma.Scout.ThincApi.InitAPI">
             <summary>
@@ -1641,33 +2288,54 @@
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacFlexNetExist">
             <summary>Checks the Global Assembly Cache for the existence of any version 
-            of the Okuma FlexNet dll (Okuma.FlexNet) </summary>
+            of the Okuma FlexNet DLL (Okuma.FlexNet) </summary>
             <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.P_ThincApiInstalled">
             <summary>
             Checks existence of THINC API files in GAC to determine if API is installed
                 (API files could still exist in the OSP directory although API is not installed...) </summary>
-            <returns>type boolean </returns>
+            <returns>type Boolean </returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.ThincApiInstallType">
             <summary>
             Detects if the THINC-API "Development" Version is installed by looking for 
             THINC API files in the `THINC API\Bin` folder.</summary>
-            <returns>bool: If false, but API files exist in the GAC, assume "Basic" install</returns>
+            <returns> Boolean: If false, but API files exist in the GAC, assume "Basic" install</returns>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.APIVersion">
+        <member name="M:Okuma.Scout.ThincApi.DetermineThincAPIVersion">
             <summary>
-            Determines the API install version by comparing API DLL 
+            Determines the THINC API install version by comparing API DLL 
             versions to known versions for install packages. </summary>
             <returns>string: Returns the API install version or else "Unknown:" 
             followed by the versions of CMD and DATA API libraries respectively. </returns>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.GetApiVersionsFromXml">
+        <member name="M:Okuma.Scout.ThincApi.DetermineCAPIVersion">
             <summary>
-            Initialize a VersionInfo object and Fill the Cross-Reference dictionary
+            Determines the Custom API version by comparing Machine API 
+            Library files to known versions. </summary>
+            <returns>string: Returns the CAPI package version or else "Unknown:" 
+            followed by the versions of CMD and DATA API assemblies respectively. </returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.GetThincApiVersionData">
+            <summary>
+            Creates a set of THINC API file versions (if they exist)
             </summary>
             <returns>type object "VersionInformation"</returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.GetCustomApiVersionData">
+            <summary>
+            Creates a set of CUSTOM API file versions based on the machine type.
+            Returns a null object if the files or machine type doesn't exist. </summary>
+            <returns> Type object "VersionInformation" </returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.BuildApiCrossReference">
+            <summary>
+            Read 'ApiVersionCrossRef.xml' and populate the API Cross Reference Dictionary. </summary>
+            <remarks>This method may be called several times but should only execute once,
+            based on the dictionary item count. 
+            If the base machine type is other than M, L, or G, than the nothing will be added
+            to the cross reference dictionary.</remarks>
         </member>
         <member name="M:Okuma.Scout.ThincApi.P_ApiReady">
             <summary>
@@ -1687,7 +2355,11 @@
         </member>
         <member name="P:Okuma.Scout.ThincApi.InstallVersion">
             <summary>
-            Gets Version Information about the THINC API including Install Version </summary>
+            Gets Install Version THINC API </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.CAPIVersion">
+            <summary>
+            Gets the OSP Custom API Version</summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.InstallType">
             <summary>
@@ -1795,31 +2467,38 @@
             This class is used to store the various assembly versions used 
             for comparison to the current system </summary>
         </member>
+        <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.apitype">
+            <summary> Reference Item API Type </summary>
+        </member>
         <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.commandapi">
-            <summary>private field for the command API </summary>
+            <summary> private field for the command API </summary>
         </member>
         <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.dataapi">
-            <summary>private field for the data API </summary>
+            <summary> private field for the data API </summary>
         </member>
         <member name="F:Okuma.Scout.ThincApi.ApiCrossReferenceItem.notifierservice">
-            <summary>private field for the notifier service </summary>
+            <summary> private field for the Notifier service </summary>
         </member>
-        <member name="M:Okuma.Scout.ThincApi.ApiCrossReferenceItem.#ctor(System.String,System.String,System.String)">
+        <member name="M:Okuma.Scout.ThincApi.ApiCrossReferenceItem.#ctor(Okuma.Scout.Enums.ApiType,System.String,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Okuma.Scout.ThincApi.ApiCrossReferenceItem"/> class.
             </summary>
-            <param name="cmd">the command library</param>
-            <param name="data">the data library</param>
-            <param name="notifier">the notifier service executable</param>
+            <param name="type"> Type of API being itemized (Enums.ApiType) </param>
+            <param name="cmd"> the command library</param>
+            <param name="data"> the data library</param>
+            <param name="notifier"> the Notifier service executable</param>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Type">
+            <summary> Gets the type of reference item </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Cmd">
-            <summary>Gets the command version </summary>
+            <summary> Gets the command version </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Data">
-            <summary>Gets the data version </summary>
+            <summary> Gets the data version </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.ApiCrossReferenceItem.Notifier">
-            <summary>Gets the notifier version </summary>
+            <summary> Gets the Notifier version </summary>
         </member>
         <member name="T:Okuma.Scout.Vars">
             <summary>

@@ -32,6 +32,9 @@ namespace ScoutTestApplication
     /// organization and clarity </summary>
     public partial class ScoutTestApplicationForm : Form
     {
+
+        static bool uiLoaded = false;
+
         /// <summary>
         /// Some Scout functions in this test application are executed using threading.
         /// Because of this, cross-threading issues may arise when attempting to
@@ -56,7 +59,7 @@ namespace ScoutTestApplication
         /// <param name="e">Event arguments associated with the sender</param>
         private void ScoutTestApplication_Loaded(object sender, EventArgs e)
         {
-            // Refer to the events below for more deails.
+            // Refer to the events below for more details.
 
             // Subscribe to the error handler by default
             Okuma.Scout.Error.Reporter += this.HandleScoutErrorInfo;
@@ -65,7 +68,12 @@ namespace ScoutTestApplication
             // Show debugging information by default
             Okuma.Scout.Error.ShowDebugInfo = true;
             this.CheckBox_ShowDebugInfo.CheckState = CheckState.Checked;
+
+            SetInitialComboBoxConditions();
+
+            uiLoaded = true;
         }
+
 
         /// <summary>
         /// When handling the Reporter event, make sure to distinguish between 

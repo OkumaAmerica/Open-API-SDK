@@ -81,6 +81,11 @@
     <Compile Include="ResultBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SortableBindingList.cs" />
+    <Compile Include="SpecCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subkeys.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

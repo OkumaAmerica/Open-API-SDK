@@ -28,15 +28,25 @@ namespace ScoutTestApplication
     using System.Collections.Generic;
     using System.Data;
     using System.Text;
+    using System.Drawing;
     using System.Threading; 
     using System.Windows.Forms;
+    using Okuma.Scout;
 
     /// <summary>
-    /// Scout Test Application class </summary>
+    /// Scout Test Application Class (Form1.cs)
+    /// For Error Handling Code, refer to ErrorHandling.cs </summary>
     public partial class ScoutTestApplicationForm : Form
     {
+        /// <summary>Used to prevent access to Okuma.Scout.Display until user has executed 'Platform'.</summary>
+        private bool platformExecuted = false;
+
         /// <summary>Used to prevent unnecessary repeat checks of ready status</summary>
         private bool apiHasBeenInitializedOrIsReady = false;
+
+        /// <summary>Support structures for DataGridView on 'Registry' tab</summary>
+        DataGridView BackingInstanceForDataGridView_SubKeys;
+        SortableBindingList<Subkeys> SubkeysBindingList;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ScoutTestApplicationForm"/> class.
@@ -55,47 +65,22 @@ namespace ScoutTestApplication
              * Okuma.Scout.OS.ErrorMessage = "No Value";
              * 
              */
+
+            // Prepare 'Registry' tab support structures (Refer to Subkeys.cs and SortableBindingList.cs)
+            BackingInstanceForDataGridView_SubKeys = DataGridView_SubKeys; 
+            SubkeysBindingList = new SortableBindingList<Subkeys>();
+            BackingInstanceForDataGridView_SubKeys.DataSource = SubkeysBindingList;
+
+            // Options identification not implemented.
+            tabControl1.TabPages.Remove(OptionsTab);
         }
 
-        /// <summary>
-        /// This function translates the return value of DotNet.ServicePack_.. 
-        /// and replaces the invalid / error value of -1 with 'N/A'.
-        /// </summary>
-        /// <param name="sp">Integer representing the service pack</param>
-        /// <returns>A string value representing the service pack</returns>
-        private static string SPCheck(int sp)
-        {
-            if (sp == -1)
-            {
-                return "N/A";
-            }
-            else
-            {
-                return sp.ToString();
-            }
-        }
 
+        #region Platform
         /// <summary>
-        /// Return just the date and format as string if the license expires, otherwise return "N/A" </summary>
-        /// <param name="expires">Boolean value Okuma.Scout.LicenseItem.Expires </param>
-        /// <param name="expireDate">DateTime Okuma.Scout.LicenseItem.ExpiryDate </param>
-        /// <returns>type string</returns>
-        private static string FormatExpireDate(bool expires, DateTime expireDate)
-        {
-            if (expires)
-            {
-                return expireDate.ToString("dd/MM/yyyy");
-            }
-            else
-            {
-                return "N/A";
-            }
-        }
-
-        /// <summary>
-        /// Using Scout, acquire the machine type and control type </summary>
+        /// Acquire the machine type, control type, and display information </summary>
         /// <param name="sender">The button object</param>
-        /// <param name="e">Event arguments associated with the button click</param>
+        /// <param name="e">Event arguments associated with the button click </param>
         private void Button_Platform_Click(object sender, EventArgs e)
         {
             // This is where the machine and control type are determined.
@@ -106,8 +91,64 @@ namespace ScoutTestApplication
             // ConvertToMachineTypeString() returns a human readable version.
             this.TextBox_MachineType.Text = Okuma.Scout.Platform.ConvertToMachineTypeString(currentMachine);
             this.TextBox_ControlType.Text = currentControl.ToString();
+
+            // Clear the display data and refresh it every time the Platform button is clicked.
+            this.ComboBox_Display.Items.Clear();
+            Okuma.Scout.Display.RefreshDisplayInfo();
+
+            // Add the detected displays to the combo box
+            foreach (KeyValuePair<int, Okuma.Scout.Display.DisplayInfo> DI in Okuma.Scout.Display.DisplayDictionary)
+            {
+                this.ComboBox_Display.Items.Add(DI.Value.DisplayName);
+            }
+            platformExecuted = true;
+
+            // Select the first item in the list (if any exist).
+            if (ComboBox_Display.Items.Count > 0)
+            {
+                ComboBox_Display.SelectedIndex = 0;
+            }
         }
 
+        /// <summary>
+        /// When a display is selected from the combo box, show the information related
+        /// to that display in the Display Information textbox.
+        /// </summary>
+        /// <param name="sender">The combo box object</param>
+        /// <param name="e">Event arguments associated with the combo box index change </param>
+        private void ComboBoxDisplay_IndexChanged(object sender, EventArgs e)
+        {
+            if (uiLoaded && platformExecuted)
+            {
+                foreach (KeyValuePair<int, Okuma.Scout.Display.DisplayInfo> DI in Okuma.Scout.Display.DisplayDictionary)
+                {
+                    if (DI.Value.DisplayName == ComboBox_Display.SelectedItem.ToString())
+                    {
+                        string DisplayName = "Display Name: " + DI.Value.DisplayName;
+                        string MonitorName = "Monitor Name: " + DI.Value.MonitorName;
+                        string Primary = "Primary Display: " + DI.Value.Primary.ToString();
+                        string Bounds = "Display Bounds: " + DI.Value.Bounds.ToString();
+                        string WorkArea = "Display Work Area: " + DI.Value.WorkArea.ToString();
+                        string DeviceID = "Device ID: " + DI.Value.DeviceID;
+                        string DeviceKey = "Device Key: " + DI.Value.DeviceKey;
+
+                        TextBox_DisplayInfo.Text = 
+                            DisplayName + Environment.NewLine +
+                            MonitorName + Environment.NewLine +
+                            Primary + Environment.NewLine +
+                            Bounds + Environment.NewLine +
+                            WorkArea + Environment.NewLine +
+                            DeviceID + Environment.NewLine +
+                            DeviceKey;                    
+                    }
+                }
+            }
+        }
+
+
+        #endregion
+
+        #region Directories
         /// <summary>
         /// Using Scout, acquire the existence of system directories
         /// </summary>
@@ -115,7 +156,7 @@ namespace ScoutTestApplication
         /// <param name="e">Event arguments</param>
         private void Button_Directories_Click(object sender, EventArgs e)
         {
-            // Returns type bool, converted to string for display in text box
+            // Returns type Boolean, converted to string for display in text box
             this.TextBox_DirOsp.Text = Okuma.Scout.OspFileInfo.DirExists_OSP.ToString();
             this.TextBox_DirCns.Text = Okuma.Scout.OspFileInfo.DirExists_CNS.ToString();
             this.TextBox_DirVolante.Text = Okuma.Scout.OspFileInfo.DirExists_VOLANTE.ToString();
@@ -125,13 +166,16 @@ namespace ScoutTestApplication
             this.TextBox_DirCurrent.Text = Environment.CurrentDirectory;
             this.TextBox_DirSystem.Text = Environment.SystemDirectory;                
         }
+        #endregion
+
+        #region API Info
 
         /// <summary>
         /// Using Scout, acquire information about the API
         /// </summary>
         /// <param name="sender">The button object</param>
         /// <param name="e">Event arguments associated with the button click</param>
-        private void Button_ApiInfo_Click(object sender, EventArgs e)
+        private void Button_ThincApiInfo_Click(object sender, EventArgs e)
         {
             // THINC API Install Info
             this.TextBox_ApiSpecValid.Text = Okuma.Scout.SpecCode.ThincApiSpec.ToString();
@@ -236,43 +280,63 @@ namespace ScoutTestApplication
             /* !! WARNING !! These functions are only to be used in situations where accessing the THINC API
              * via Reflection (http://msdn.microsoft.com/en-us/library/vstudio/f7ykdhsy%28v=vs.110%29.aspx) is necessary.
              * Normally, these same API functions can be accessed in your program by adding the THINC API files as
-             * references to your project. That is the reccomended method to use the THINC API. 
+             * references to your project. That is the recommended method to use the THINC API. 
+             * These functions can only be executed once Okuma.Scout.ThincApi.InitAPI() returns "Initialized".
              */
             this.TextBox_ApiMachineName.Text = Okuma.Scout.ThincApi.MachineName();
             this.TextBox_ApiSerialNumber.Text = Okuma.Scout.ThincApi.SerialNumber();
             this.TextBox_ApiCV1.Text = Okuma.Scout.ThincApi.GetCommonVariable(1).ToString();
         }
 
-        /// <summary>
-        /// Using Scout, acquire information about Okuma system files
-        /// </summary>
-        /// <param name="sender">The button object</param>
-        /// <param name="e">Event arguments associated with the button click</param>
-        private void Button_FileInfo_Click(object sender, EventArgs e)
+
+        private void Button_OspApiInfo_Click(object sender, EventArgs e)
         {
-            // Misc Files Exist
-            this.TextBox_DMC.Text = Okuma.Scout.OspFileInfo.DMCExists.ToString();
-            this.TextBox_ThincApiLicense.Text = Okuma.Scout.OspFileInfo.ThincApiLicenseExists.ToString();
-            this.TextBox_EbiFry.Text = Okuma.Scout.OspFileInfo.EbyFryExists.ToString();
-            this.TextBox_ApiNotifier.Text = Okuma.Scout.OspFileInfo.ApiNotifierExists.ToString();
-            this.TextBox_EbiFryVer.Text = Okuma.Scout.OspFileInfo.EbiFryVersion;
-            this.TextBox_ApiNotifierVer.Text = Okuma.Scout.OspFileInfo.ApiNotifierVersion;
-            this.TextBox_SoftSwitch.Text = Okuma.Scout.OspFileInfo.SoftSwitchExists.ToString();
-            this.TextBox_SoftSwitchVer.Text = Okuma.Scout.OspFileInfo.SoftSwitchVersion;
-
-            // Modified
-            this.TextBox_DMCModified.Text = Okuma.Scout.OspFileInfo.DMCModifiedDate;
-            this.TextBox_ThincApiLicenseModified.Text = Okuma.Scout.OspFileInfo.ThincApiLicenseModifiedDate;
-
             // OSP API Files Exist
             // The process of gathering all API files information can take up to a 
-            // few seconds. To prevent locking up the User Interface, the retreival
+            // few seconds. To prevent locking up the User Interface, the retrieval
             // of this information is performed using a thread.
             Thread getApiFilesInfo = new Thread(new ThreadStart(this.ApiFiles));
             getApiFilesInfo.Name = "GetApiFileInfoThread";
             getApiFilesInfo.Priority = ThreadPriority.Normal;
             getApiFilesInfo.Start();
-        }        
+
+
+            Okuma.Scout.VersionInformation ver = Okuma.Scout.ThincApi.CAPIVersion;
+
+            switch (ver.Result)
+            {
+                case Enums.ApiVersionCheckResult.MachineTypeNotSupported:
+                    {
+                        TextBox_CAPIVersion.Text = "N/A";
+                        break;
+                    }
+                case Enums.ApiVersionCheckResult.MissingApiFiles:
+                    {
+                        TextBox_CAPIVersion.Text = "CAPI files missing";
+                        break;
+                    }
+                case Enums.ApiVersionCheckResult.MissingCrossReference:
+                    {
+                        TextBox_CAPIVersion.Text = "Version Cross Reference missing.";
+                        break;
+                    }
+                case Enums.ApiVersionCheckResult.UnknownVersion:
+                    {
+                        TextBox_CAPIVersion.Text = "Unknown CAPI version.";
+                        break;
+                    }
+                case Enums.ApiVersionCheckResult.VersionRecognized:
+                    {
+                        TextBox_CAPIVersion.Text = ver.CustomApiVersion;
+                        break;
+                    }
+                default:
+                    {
+                        TextBox_CAPIVersion.Text = "Error";
+                        break;
+                    }
+            }
+        }
 
         /// <summary>
         /// Using Scout, acquire information related to API files.
@@ -283,7 +347,7 @@ namespace ScoutTestApplication
             string tempString = string.Empty;
 
             // Lathe Files Exist?
-            // Returns type bool, converted to string for display in text box
+            // Returns type Boolean, converted to string for display in text box
             tempString = Okuma.Scout.OspFileInfo.OspLatheSpecialApi_Exists.ToString();
             this.PostResult(this.TextBox_OspLatheSpecialApi, tempString);
             tempString = Okuma.Scout.OspFileInfo.OspLatheCommandApi_Exists.ToString();
@@ -292,7 +356,7 @@ namespace ScoutTestApplication
             this.PostResult(this.TextBox_OspLatheDataApi, tempString);
 
             // Machining Center Files Exist?
-            // Returns type bool, converted to string for display in text box
+            // Returns type Boolean, converted to string for display in text box
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterSpecialApi_Exists.ToString();
             this.PostResult(this.TextBox_OspMachiningCenterSpecialApi, tempString);
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterCommandApi_Exists.ToString();
@@ -309,7 +373,7 @@ namespace ScoutTestApplication
             tempString = Okuma.Scout.OspFileInfo.OspLatheDataApi_Version;
             this.PostResult(this.TextBox_OspLatheDataApiVer, tempString);
 
-            // Maching Center File Versions
+            // Machining Center File Versions
             // Returns type string
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterSpecialApi_Version;
             this.PostResult(this.TextBox_OspMachiningCenterSpecialApiVer, tempString);
@@ -317,16 +381,43 @@ namespace ScoutTestApplication
             this.PostResult(this.TextBox_OspMachiningCenterCommandApiVer, tempString);
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Version;
             this.PostResult(this.TextBox_OspMachiningCenterDataApiVer, tempString);
-
-            // Spec Code Files Exist?
-            tempString = Okuma.Scout.SpecCode.PLC_SpecCodeFileExists.ToString();
-            this.PostResult(this.TextBox_PLCSpecFileExist, tempString);
-            tempString = Okuma.Scout.SpecCode.NC_SpecCodeFileExists.ToString();
-            this.PostResult(this.TextBox_NCSpecFileExist, tempString);
-            tempString = Okuma.Scout.SpecCode.NCB_SpecCodeFileExists.ToString();
-            this.PostResult(this.TextBox_NCBSpecFileExist, tempString);  
         }
 
+        #endregion
+
+        #region File Info
+
+        /// <summary>
+        /// Using Scout, acquire information about Okuma system files
+        /// </summary>
+        /// <param name="sender">The button object</param>
+        /// <param name="e">Event arguments associated with the button click</param>
+        private void Button_FileInfo_Click(object sender, EventArgs e)
+        {
+            // Spec Code Files Exist
+            this.TextBox_PLCSpecFileExist.Text = Okuma.Scout.SpecCode.PLC.MachineSpecCodeFileExists.ToString();
+            this.TextBox_NCSpecFileExist.Text = Okuma.Scout.SpecCode.NC.MachineSpecCodeFileExists.ToString();
+            this.TextBox_NCBSpecFileExist.Text = Okuma.Scout.SpecCode.NCB.MachineSpecCodeFileExists.ToString();
+
+            // Misc Files Exist
+            this.TextBox_DMC.Text = Okuma.Scout.OspFileInfo.DMCExists.ToString();
+            this.TextBox_ThincApiLicense.Text = Okuma.Scout.OspFileInfo.ThincApiLicenseExists.ToString();
+            this.TextBox_EbiFry.Text = Okuma.Scout.OspFileInfo.EbyFryExists.ToString();
+            this.TextBox_ApiNotifier.Text = Okuma.Scout.OspFileInfo.ApiNotifierExists.ToString();
+            this.TextBox_EbiFryVer.Text = Okuma.Scout.OspFileInfo.EbiFryVersion;
+            this.TextBox_ApiNotifierVer.Text = Okuma.Scout.OspFileInfo.ApiNotifierVersion;
+            this.TextBox_SoftSwitch.Text = Okuma.Scout.OspFileInfo.SoftSwitchExists.ToString();
+            this.TextBox_SoftSwitchVer.Text = Okuma.Scout.OspFileInfo.SoftSwitchVersion;
+
+            // Modified
+            this.TextBox_DMCModified.Text = Okuma.Scout.OspFileInfo.DMCModifiedDate;
+            this.TextBox_ThincApiLicenseModified.Text = Okuma.Scout.OspFileInfo.ThincApiLicenseModifiedDate;
+        }        
+
+ 
+        #endregion
+
+        #region Processes
         /// <summary>
         /// Using Scout, acquire information about running processes
         /// </summary>
@@ -339,7 +430,9 @@ namespace ScoutTestApplication
             this.TextBox_OwmRun.Text = Okuma.Scout.OspProcessInfo.WidgetManagerRunning.ToString();
             this.TextBox_SoftSwitchRun.Text = Okuma.Scout.OspProcessInfo.SoftSwitchRunning.ToString();
         }
+        #endregion
 
+        #region Data Management Card
         /// <summary>
         /// Using Scout, acquire information from the Data Management Card
         /// </summary>
@@ -348,7 +441,7 @@ namespace ScoutTestApplication
         private void Button_DMC_Click(object sender, EventArgs e)
         {
             // The process of gathering all Data Management Card Items can take up to a 
-            // few seconds. To prevent locking up the User Interface, the retreival
+            // few seconds. To prevent locking up the User Interface, the retrieval
             // of this information is performed using a thread.
             Thread getDMCInfo = new Thread(new ThreadStart(this.DMCItems));
             getDMCInfo.Name = "GetDMCItemsThread";
@@ -409,6 +502,63 @@ namespace ScoutTestApplication
         }
 
         /// <summary>
+        /// This function resolves cross-threading issues by invoking the 
+        /// GUI thread to change list box contents </summary>
+        /// <param name="item">New string to add to the list box</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Exceptions are reported via the Error Handling Tab.")]
+        private void PostItem(string item)
+        {
+            try
+            {
+                if (this.InvokeRequired)
+                {
+                    this.BeginInvoke((MethodInvoker)delegate
+                    {
+                        this.ListBox_DMC.Items.Add(item + Environment.NewLine);
+                    });
+                }
+                else
+                {
+                    this.ListBox_DMC.Items.Add(item + Environment.NewLine);
+                }
+            }
+            catch (Exception ex)
+            {
+                Okuma.Scout.Error.Args args = new Okuma.Scout.Error.Args(Okuma.Scout.Enums.MessageLevel.Exception, string.Empty, ex);
+                this.HandleScoutErrorInfo(null, args);
+            }
+        }
+
+        /// <summary>
+        /// This function resolves cross-threading issues by invoking the 
+        /// GUI thread to clear the list box contents </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Exceptions are reported via the Error Handling Tab.")]
+        private void ClearItems()
+        {
+            try
+            {
+                if (this.InvokeRequired)
+                {
+                    this.BeginInvoke((MethodInvoker)delegate
+                    {
+                        this.ListBox_DMC.Items.Clear();
+                    });
+                }
+                else
+                {
+                    this.ListBox_DMC.Items.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                Okuma.Scout.Error.Args args = new Okuma.Scout.Error.Args(Enums.MessageLevel.Exception, string.Empty, ex);
+                this.HandleScoutErrorInfo(null, args);
+            }
+        }
+        #endregion
+
+        #region .NET
+        /// <summary>
         /// Using Scout, acquire information about the .NET Framework
         /// </summary>
         /// <param name="sender">The button object</param>
@@ -438,6 +588,26 @@ namespace ScoutTestApplication
             this.TextBox_Net45AndUpReleaseVersion.Text = SPCheck(Okuma.Scout.DotNet.ReleaseVersion_45AndUp);
         }
 
+        /// <summary>
+        /// This function translates the return value of DotNet.ServicePack_.. 
+        /// and replaces the invalid / error value of -1 with 'N/A'.
+        /// </summary>
+        /// <param name="sp">Integer representing the service pack</param>
+        /// <returns>A string value representing the service pack</returns>
+        private static string SPCheck(int sp)
+        {
+            if (sp == -1)
+            {
+                return "N/A";
+            }
+            else
+            {
+                return sp.ToString();
+            }
+        }
+        #endregion
+
+        #region License
         /// <summary>
         /// Using Scout, acquire information related to licensing of API features
         /// </summary>
@@ -535,6 +705,26 @@ namespace ScoutTestApplication
         }
 
         /// <summary>
+        /// Return just the date and format as string if the license expires, otherwise return "N/A" </summary>
+        /// <param name="expires">Boolean value Okuma.Scout.LicenseItem.Expires </param>
+        /// <param name="expireDate">DateTime Okuma.Scout.LicenseItem.ExpiryDate </param>
+        /// <returns>type string</returns>
+        private static string FormatExpireDate(bool expires, DateTime expireDate)
+        {
+            if (expires)
+            {
+                return expireDate.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                return "N/A";
+            }
+        }
+        #endregion
+
+        #region Program Info
+
+        /// <summary>
         /// Using Scout, acquire information about the currently executing program.
         /// In this case, it is the Scout test application.
         /// </summary>
@@ -545,17 +735,36 @@ namespace ScoutTestApplication
             this.TextBox_ErrorMessage.Text = Okuma.Scout.ProgramInfo.ErrorMessage;
             this.TextBox_AssemblyGuid.Text = Okuma.Scout.ProgramInfo.AssemblyGuid;
             this.TextBox_AssemblyTitle.Text = Okuma.Scout.ProgramInfo.AssemblyTitle;
-            this.TextBox_AssemblyVersion.Text = Okuma.Scout.ProgramInfo.AssemblyVersion;
             this.TextBox_AssemblyCopyright.Text = Okuma.Scout.ProgramInfo.AssemblyCopyright;
             this.TextBox_AssemblyCompany.Text = Okuma.Scout.ProgramInfo.AssemblyCompany;
             this.TextBox_AssemblyDescription.Text = Okuma.Scout.ProgramInfo.AssemblyDescription;
-            this.TextBox_AssemblyBuildDate.Text = Okuma.Scout.ProgramInfo.AssemblyBuildDate.ToString();
+
+            // This line vomits exception under XP32...
+            this.TextBox_ScoutDllAssemblyVersion.Text = Okuma.Scout.ProgramInfo.ScoutDllAssemblyVersion;
+
+            this.TextBox_ScoutDllBuildDate.Text = Okuma.Scout.ProgramInfo.ScoutDllBuildDate.ToString();
+
+            this.TextBox_TestAppVersion.Text = Okuma.Scout.ProgramInfo.ThisAssemblyVersion;
+            this.TextBox_TestAppBuildDate.Text = Okuma.Scout.ProgramInfo.ThisAssemblyBuildDate.ToString();
+            
 
             // Slightly misleading, but this function is found in the Operating System class.
             // It reports the "bitness" of the currently executing program, hence it is under the Program tab.
             this.TextBox_ProgramBits.Text = Okuma.Scout.OS.ProgramBits.ToString();
         }
 
+        /// <summary>
+        /// Set the Scout program information error message
+        /// </summary>
+        /// <param name="sender">The button object</param>
+        /// <param name="e">Event arguments associated with the button click</param>
+        private void Button_SetErrorMessage_Click(object sender, EventArgs e)
+        {
+            Okuma.Scout.ProgramInfo.ErrorMessage = this.TextBox_ErrorMessage.Text;
+        }
+        #endregion
+
+        #region Operating System
         /// <summary>
         /// Using Scout, acquire information about the Operating System
         /// </summary>
@@ -564,9 +773,9 @@ namespace ScoutTestApplication
         private void Button_OS_Click(object sender, EventArgs e)
         {
             // The process of gathering Operating System information can take up to a 
-            // few seconds. To prevent locking up the User Interface, the retreival
+            // few seconds. To prevent locking up the User Interface, the retrieval
             // of this information is performed using a thread.
-            // Particularily, OS.InternetConnection takes time to obtain a result.
+            // Particularly, OS.InternetConnection takes time to obtain a result.
             Thread getOSInfo = new Thread(new ThreadStart(this.OSInfo));
             getOSInfo.Name = "GetApiFileInfoThread";
             getOSInfo.Priority = ThreadPriority.Normal;
@@ -602,58 +811,162 @@ namespace ScoutTestApplication
             // Do this last, as it takes the most time.
             this.PostResult(this.TextBox_OSInternet, Okuma.Scout.OS.InternetConnection.ToString());
         }
+        #endregion
 
+        #region Registry
+        
         /// <summary>
-        /// Using Scout, acquire information about the machine specifications
+        /// Populates the SubKeys DataGridView with results based 
+        /// on the user's input from 'TextBox_RegKey'
         /// </summary>
         /// <param name="sender">The button object</param>
         /// <param name="e">Event arguments associated with the button click</param>
-        private void Button_SpecCodes_Click(object sender, EventArgs e)
+        private void Button_Registry_Click(object sender, EventArgs e)
         {
-            this.TextBox_SpecMachineType.Text = Okuma.Scout.SpecCode.MachineType;
-            this.TextBox_SpecMachineType_DMC.Text = Okuma.Scout.DMC.MachineType;
+            bool ItemsAdded = false;
 
-            this.TextBox_PLCSpec1A.Text = Okuma.Scout.SpecCode.PLC1A;
-            this.TextBox_PLCSpec1B.Text = Okuma.Scout.SpecCode.PLC1B;
-            this.TextBox_PLCSpec2A.Text = Okuma.Scout.SpecCode.PLC2A;
-            this.TextBox_PLCSpec2B.Text = Okuma.Scout.SpecCode.PLC2B;
-            this.TextBox_NCSpecA.Text = Okuma.Scout.SpecCode.NCA;
-            this.TextBox_NCSpecB.Text = Okuma.Scout.SpecCode.NCB;
-            this.TextBox_NCBSpecA.Text = Okuma.Scout.SpecCode.NCBA;
-            this.TextBox_NCBSpecB.Text = Okuma.Scout.SpecCode.NCBB;
+            // Clear the list before starting
+            SubkeysBindingList.Clear();
+          
+            // Get the base key from user input
+            string basekey = TextBox_RegKey.Text;
 
-            this.TextBox_PLCSpec1A_DMC.Text = Okuma.Scout.SpecCode.PLC1A_DMC;
-            this.TextBox_PLCSpec1B_DMC.Text = Okuma.Scout.SpecCode.PLC1B_DMC;
-            this.TextBox_PLCSpec2A_DMC.Text = Okuma.Scout.SpecCode.PLC2A_DMC;
-            this.TextBox_PLCSpec2B_DMC.Text = Okuma.Scout.SpecCode.PLC2B_DMC;
-            this.TextBox_NCSpecA_DMC.Text = Okuma.Scout.SpecCode.NCA_DMC;
-            this.TextBox_NCSpecB_DMC.Text = Okuma.Scout.SpecCode.NCB_DMC;
-            this.TextBox_NCBSpecA_DMC.Text = Okuma.Scout.SpecCode.NCBA_DMC;
-            this.TextBox_NCBSpecB_DMC.Text = Okuma.Scout.SpecCode.NCBB_DMC;
+            // Initialize results output for Reg.RegistryGetSubKeyNames() 
+            string DisplayName = string.Empty;
 
-            this.TextBox_PLCSpec1A_Match.Text = Okuma.Scout.SpecCode.Match_PLC1A;
-            this.TextBox_PLCSpec1B_Match.Text = Okuma.Scout.SpecCode.Match_PLC1B;
-            this.TextBox_PLCSpec2A_Match.Text = Okuma.Scout.SpecCode.Match_PLC2A;
-            this.TextBox_PLCSpec2B_Match.Text = Okuma.Scout.SpecCode.Match_PLC2B;
-            this.TextBox_NCSpecA_Match.Text = Okuma.Scout.SpecCode.Match_NCA;
-            this.TextBox_NCSpecB_Match.Text = Okuma.Scout.SpecCode.Match_NCB;
-            this.TextBox_NCBSpecA_Match.Text = Okuma.Scout.SpecCode.Match_NCBA;
-            this.TextBox_NCBSpecB_Match.Text = Okuma.Scout.SpecCode.Match_NCBB;
+            // Initialize results output for Reg.RegistryGetLocalMachineValue()
+            List<string> SubkeysList = new List<string>();
+
+            // Only modify / add items to the binding list if sub-keys exist under the specified base key
+            if (Okuma.Scout.Reg.RegistryGetSubKeyNames(basekey, out SubkeysList))
+            {
+                // Iterate through the output results
+                foreach (string subkey in SubkeysList)
+                {                   
+                    // Combine the base key and sub key to check for a value
+                    // Do not escape the string literal or extra slashes will be added (for example: @"\\") 
+                    string newkey = basekey + "\\" + subkey;
+
+                    // For the purpose of filling the DataGridView, the value "DisplayName" is explicitly specified
+                    if (Okuma.Scout.Reg.RegistryGetLocalMachineValue(newkey, "DisplayName", out DisplayName))
+                    {
+                        // If a Value for "DisplayName" exists under the new key, add it to the binding list
+                        SubkeysBindingList.Add(new Subkeys(DisplayName, subkey));
+                        ItemsAdded = true;
+                    }
+                    else
+                    {
+                        // Otherwise, leave it blank and just add the sub-key
+                        SubkeysBindingList.Add(new Subkeys(string.Empty, subkey));
+                        ItemsAdded = true;
+                    }
+                }
+            }
+
+            // Resize the DataGridView columns (default is 50/50 [Fill])
+            if (ItemsAdded)
+            {
+                BackingInstanceForDataGridView_SubKeys.Columns[0].Width = 200;
+            }
         }
 
         /// <summary>
-        /// Set the Scout program information error message
+        /// Populates the "Exist" and "Data" text boxes based on the Key in the
+        /// selected DataGridView row and the value specified in 'TextBox_RegValue'.
         /// </summary>
         /// <param name="sender">The button object</param>
         /// <param name="e">Event arguments associated with the button click</param>
-        private void Button_SetErrorMessage_Click(object sender, EventArgs e)
+        private void Button_GetRegValue_Click(object sender, EventArgs e)
         {
-            Okuma.Scout.ProgramInfo.ErrorMessage = this.TextBox_ErrorMessage.Text;
+            string Key = string.Empty;
+            string ValueResult = string.Empty;
+
+
+            if (BackingInstanceForDataGridView_SubKeys.SelectedCells.Count > 0)
+            {
+                // Figure out which row of the DGV is selected
+                int selectedrowindex = BackingInstanceForDataGridView_SubKeys.SelectedCells[0].RowIndex;
+
+                // Get the Key value from the selected DGV row (second column = Cells[1])
+                Key = BackingInstanceForDataGridView_SubKeys.Rows[selectedrowindex].Cells[1].Value.ToString();
+
+                if (!String.IsNullOrEmpty(Key))
+                {
+                    // The Key is valid
+                    ResultBox_RegValueExist.Text = "True";
+
+                    // Combine the base key and sub key to check for a value
+                    // Do not escape the string literal or extra slashes will be added (for example: @"\\") 
+                    string FullKey = TextBox_RegKey.Text + "\\" + Key;
+
+                    // Get the DATA from the desired VALUE in the specified KEY
+                    if (Okuma.Scout.Reg.RegistryGetLocalMachineValue(FullKey, TextBox_RegValue.Text, out ValueResult))
+                    {
+                        // RegistryGetLocalMachineValue() returned TRUE, meaning data was obtained.
+                        ResultBox_RegData.Text = ValueResult;
+
+                        if (TextBox_RegValue.Text == "Version")
+                        {
+                            ResultBox_RegVersion.Text = Okuma.Scout.Helper.RegDwordIntegerVersionParse(ValueResult).ToString();
+                            label155.Enabled = true;
+                            ResultBox_RegVersion.Enabled = true; 
+                        }
+                        else
+                        {
+                            ResultBox_RegVersion.Text = string.Empty;
+                            label155.Enabled = false;
+                            ResultBox_RegVersion.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        // A value was not returned
+                        ResultBox_RegValueExist.Text = "False";
+                        ResultBox_RegData.Text = "";
+
+                        ResultBox_RegVersion.Text = string.Empty;
+                        label155.Enabled = false;
+                        ResultBox_RegVersion.Enabled = false;
+                    }
+                }
+                else
+                {
+                    // There is no key specified
+                    ResultBox_RegValueExist.Text = "False";
+                    ResultBox_RegData.Text = "";
+
+                    ResultBox_RegVersion.Text = string.Empty;
+                    label155.Enabled = false;
+                    ResultBox_RegVersion.Enabled = false;
+                }
+            }
+            else
+            {
+                // There are no selected rows in the DGV (no key to query)
+                ResultBox_RegValueExist.Text = "n/a";
+                ResultBox_RegData.Text = "nothing selected";
+
+                ResultBox_RegVersion.Text = string.Empty;
+                label155.Enabled = false;
+                ResultBox_RegVersion.Enabled = false;
+            }
         }
+
+        #endregion
+
+        #region Error Handling
+
+        /*
+         * Please refer to the separate file 'ErrorHandling.cs'
+        */
+
+        #endregion
+
 
         /// <summary>
         /// This function resolves cross-threading issues by invoking the 
         /// GUI thread to change text box contents </summary>
+        /// <remarks>Used under several different tabs; this is a "general" method. </remarks>
         /// <param name="tb">Text box object to modify</param>
         /// <param name="r">New string to pass to the text box</param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Exceptions are reported via the Error Handling Tab.")]
@@ -681,58 +994,18 @@ namespace ScoutTestApplication
         }
 
         /// <summary>
-        /// This function resolves cross-threading issues by invoking the 
-        /// GUI thread to change list box contents </summary>
-        /// <param name="item">New string to add to the list box</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Exceptions are reported via the Error Handling Tab.")]
-        private void PostItem(string item)
+        ///  Options Identification Not Implemented.
+        /// </summary>
+        /// <param name="sender">The button object</param>
+        /// <param name="e">Event arguments associated with the button click</param>
+        private void Button_Options_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (this.InvokeRequired)
-                {
-                    this.BeginInvoke((MethodInvoker)delegate
-                    {
-                        this.ListBox_DMC.Items.Add(item + Environment.NewLine);
-                    });
-                }
-                else
-                {
-                    this.ListBox_DMC.Items.Add(item + Environment.NewLine);
-                }
-            }
-            catch (Exception ex)
-            {
-                Okuma.Scout.Error.Args args = new Okuma.Scout.Error.Args(Okuma.Scout.Enums.MessageLevel.Exception, string.Empty, ex);
-                this.HandleScoutErrorInfo(null, args);
-            }
-        }
-
-        /// <summary>
-        /// This function resolves cross-threading issues by invoking the 
-        /// GUI thread to clear the list box contents </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Exceptions are reported via the Error Handling Tab.")]
-        private void ClearItems()
-        {
-            try
-            {
-                if (this.InvokeRequired)
-                {
-                    this.BeginInvoke((MethodInvoker)delegate
-                    {
-                        this.ListBox_DMC.Items.Clear();
-                    });
-                }
-                else
-                {
-                    this.ListBox_DMC.Items.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                Okuma.Scout.Error.Args args = new Okuma.Scout.Error.Args(Okuma.Scout.Enums.MessageLevel.Exception, string.Empty, ex);
-                this.HandleScoutErrorInfo(null, args);
-            }
+            // List<string> my list = Okuma.Scout.Options.OptionsList;
+            // ListBox_Options.Items.Add("Installed Options:" + Environment.NewLine);
+            // for each (string option in my list)
+            // {
+            //    ListBox_Options.Items.Add(option + Environment.NewLine);
+            // }
         }
     }
 }

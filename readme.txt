@@ -1,4 +1,4 @@
-﻿Okuma Open API Application SDK v0.4a
+﻿Okuma Open API Application SDK v0.5a
 ____________________________________________________________________
 Purpose:
 
@@ -31,9 +31,9 @@ Structure:
 ├───Documentation		  /* Guidelines and approval info */
 ├───Misc			  /* API Version Cross Reference  */
 └───Scout
-    ├───README.TXT		  /* Information about Scout      */
-    ├───ScoutTestApplication.sln  /* Scout Solution File (VS2013) */
+    ├───README.TXT		  /* Information about SCOUT      */
     └───ScoutTestApplication
+        ├───ScoutTestApplication.csproj /*    Project File	  */
         └───Scout Library	  /* Location of Scout dlls       */
 ____________________________________________________________________
 Revision History:
@@ -42,6 +42,7 @@ v0.1a	2014.04.??	> first distributable version
 v0.2a	2014.04.??	> add Okuma OpenAPI v1.17.1
 v0.3a	2014.06.26	> add approval and widget Documentation
 v0.4a	2015.01.28	> add Scout libraries and test application
+v0.5a	2015.06.05	> update to Okuma.Scout.dll v1.0.0.4
 ____________________________________________________________________
 Contact:
 
