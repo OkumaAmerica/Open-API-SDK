@@ -709,9 +709,9 @@ namespace ScoutTestApplication
         /// <param name="expires">Boolean value Okuma.Scout.LicenseItem.Expires </param>
         /// <param name="expireDate">DateTime Okuma.Scout.LicenseItem.ExpiryDate </param>
         /// <returns>type string</returns>
-        private static string FormatExpireDate(bool expires, DateTime expireDate)
+        private static string FormatExpireDate(bool? expires, DateTime expireDate)
         {
-            if (expires)
+            if (expires == true)
             {
                 return expireDate.ToString("dd/MM/yyyy");
             }

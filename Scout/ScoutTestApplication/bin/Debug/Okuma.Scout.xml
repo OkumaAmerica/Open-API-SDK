@@ -940,7 +940,7 @@
         <member name="F:Okuma.Scout.LicenseItem.privateEndIndex">
             <summary> End Index of last thing gotten from license file </summary>
         </member>
-        <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Boolean)">
+        <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Nullable{System.Boolean})">
             <summary> Initializes a new instance of the <see cref="T:Okuma.Scout.LicenseItem"/> class. 
             Requires that a feature name, version, and can expire?(Boolean) values be provided. </summary>
             <param name="featureName">Name of feature</param>
@@ -955,7 +955,8 @@
         </member>
         <member name="P:Okuma.Scout.LicenseItem.Expires">
             <summary>Gets a value indicating whether license expires</summary>
-            <remarks>False if type = "permanent", otherwise true. </remarks>
+            <remarks>False if type = "permanent", otherwise true. 
+            UNLESS the feature isn't found, in which case it will be NULL! </remarks>
         </member>
         <member name="P:Okuma.Scout.LicenseItem.Status">
             <summary>Gets the result of feature validation check. 

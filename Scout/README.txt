@@ -1,6 +1,6 @@
 ﻿# SCOUT DLL AND TEST APPLICATION README #
 
-* Last Compile date: 06/5/2015
+* Last Compile date: 06/15/2015
 * Okuma.Scout.dll - Version 1.0.0.4
 * Test Application - Version 1.0.0.5
 
@@ -16,6 +16,12 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 * For detailed, specific, or bug related questions, please email your question to API@Okuma.com
 
 ### Change Notes ###
+
+* 6/15/2015
+  > Created display information reporting in "Platform" tab of Test Program
+  > Bug fix - LicenseItems now correctly display the license item name in the return object when checking a non-existant feature.
+  > Bug fix - 'DetermineCAPIVersion()' now correctly sets 'ApiVersionCheckResult.UnknownVersion' when file version combination does not exist in ApiVersionCrossRef.xml
+  > Fixed syntax error that resulted in skipping the last resort method of detecting Control Type via DMC. 
 
 * 6/5/2015
   > Added class "Okuma.Scout.Display" class to provide information about screens / monitors attached to the system
