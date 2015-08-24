@@ -27,7 +27,7 @@ namespace ScoutTestApplication
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "CurrentVersion"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Mult")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "SelectScreen"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "CurrentVersion"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Mult")]
         private void InitializeComponent()
         {
             this.TextBox_MachineType = new System.Windows.Forms.TextBox();
@@ -36,6 +36,8 @@ namespace ScoutTestApplication
             this.TextBox_ControlType = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Platform = new System.Windows.Forms.TabPage();
+            this.TextBox_PanelType = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
             this.label154 = new System.Windows.Forms.Label();
             this.ComboBox_Display = new System.Windows.Forms.ComboBox();
             this.label153 = new System.Windows.Forms.Label();
@@ -465,6 +467,8 @@ namespace ScoutTestApplication
             this.OptionsTab = new System.Windows.Forms.TabPage();
             this.ListBox_Options = new System.Windows.Forms.ListBox();
             this.Button_Options = new System.Windows.Forms.Button();
+            this.TextBox_ScreenMode = new System.Windows.Forms.TextBox();
+            this.label157 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Platform.SuspendLayout();
             this.SpecCodes.SuspendLayout();
@@ -512,7 +516,7 @@ namespace ScoutTestApplication
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 87);
+            this.label2.Location = new System.Drawing.Point(62, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 3;
@@ -554,6 +558,10 @@ namespace ScoutTestApplication
             // 
             // Platform
             // 
+            this.Platform.Controls.Add(this.TextBox_ScreenMode);
+            this.Platform.Controls.Add(this.label157);
+            this.Platform.Controls.Add(this.TextBox_PanelType);
+            this.Platform.Controls.Add(this.label156);
             this.Platform.Controls.Add(this.label154);
             this.Platform.Controls.Add(this.ComboBox_Display);
             this.Platform.Controls.Add(this.label153);
@@ -572,10 +580,28 @@ namespace ScoutTestApplication
             this.Platform.Text = "Platform";
             this.Platform.UseVisualStyleBackColor = true;
             // 
+            // TextBox_PanelType
+            // 
+            this.TextBox_PanelType.Enabled = false;
+            this.TextBox_PanelType.Location = new System.Drawing.Point(138, 110);
+            this.TextBox_PanelType.Name = "TextBox_PanelType";
+            this.TextBox_PanelType.Size = new System.Drawing.Size(215, 20);
+            this.TextBox_PanelType.TabIndex = 13;
+            this.TextBox_PanelType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(68, 113);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(64, 13);
+            this.label156.TabIndex = 14;
+            this.label156.Text = "Panel Type:";
+            // 
             // label154
             // 
             this.label154.AutoSize = true;
-            this.label154.Location = new System.Drawing.Point(8, 163);
+            this.label154.Location = new System.Drawing.Point(8, 189);
             this.label154.Name = "label154";
             this.label154.Size = new System.Drawing.Size(92, 13);
             this.label154.TabIndex = 12;
@@ -585,7 +611,7 @@ namespace ScoutTestApplication
             // 
             this.ComboBox_Display.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Display.FormattingEnabled = true;
-            this.ComboBox_Display.Location = new System.Drawing.Point(11, 184);
+            this.ComboBox_Display.Location = new System.Drawing.Point(11, 210);
             this.ComboBox_Display.Name = "ComboBox_Display";
             this.ComboBox_Display.Size = new System.Drawing.Size(121, 21);
             this.ComboBox_Display.TabIndex = 11;
@@ -594,7 +620,7 @@ namespace ScoutTestApplication
             // label153
             // 
             this.label153.AutoSize = true;
-            this.label153.Location = new System.Drawing.Point(135, 147);
+            this.label153.Location = new System.Drawing.Point(135, 189);
             this.label153.Name = "label153";
             this.label153.Size = new System.Drawing.Size(99, 13);
             this.label153.TabIndex = 10;
@@ -605,10 +631,10 @@ namespace ScoutTestApplication
             this.TextBox_DisplayInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_DisplayInfo.Location = new System.Drawing.Point(138, 163);
+            this.TextBox_DisplayInfo.Location = new System.Drawing.Point(138, 210);
             this.TextBox_DisplayInfo.Multiline = true;
             this.TextBox_DisplayInfo.Name = "TextBox_DisplayInfo";
-            this.TextBox_DisplayInfo.Size = new System.Drawing.Size(508, 178);
+            this.TextBox_DisplayInfo.Size = new System.Drawing.Size(508, 131);
             this.TextBox_DisplayInfo.TabIndex = 9;
             // 
             // Button_Platform
@@ -5177,6 +5203,24 @@ namespace ScoutTestApplication
             this.Button_Options.UseVisualStyleBackColor = true;
             this.Button_Options.Click += new System.EventHandler(this.Button_Options_Click);
             // 
+            // TextBox_ScreenMode
+            // 
+            this.TextBox_ScreenMode.Enabled = false;
+            this.TextBox_ScreenMode.Location = new System.Drawing.Point(138, 136);
+            this.TextBox_ScreenMode.Name = "TextBox_ScreenMode";
+            this.TextBox_ScreenMode.Size = new System.Drawing.Size(215, 20);
+            this.TextBox_ScreenMode.TabIndex = 15;
+            this.TextBox_ScreenMode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(28, 139);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(104, 13);
+            this.label157.TabIndex = 16;
+            this.label157.Text = "SelectScreen Mode:";
+            // 
             // ScoutTestApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5669,6 +5713,10 @@ namespace ScoutTestApplication
         private System.Windows.Forms.TextBox TextBox_DisplayInfo;
         private System.Windows.Forms.TextBox ResultBox_RegVersion;
         private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.TextBox TextBox_PanelType;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.TextBox TextBox_ScreenMode;
+        private System.Windows.Forms.Label label157;
     }
 }
 
