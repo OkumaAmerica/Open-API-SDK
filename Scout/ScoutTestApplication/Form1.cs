@@ -92,6 +92,69 @@ namespace ScoutTestApplication
             this.TextBox_MachineType.Text = Okuma.Scout.Platform.ConvertToMachineTypeString(currentMachine);
             this.TextBox_ControlType.Text = currentControl.ToString();
 
+            // The PhysicalPanelSize enumeration isn't too bad, but the following lines of code
+            // attempt to improve readability anyway as the result is for human consumption in this case.
+            string PanelTypeEnumToText = "";
+            Okuma.Scout.Display.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
+            switch (PPS)
+            {
+                case Display.PhysicalPanelSize.FifteenInch:
+                    {
+                        PanelTypeEnumToText = @"15"" OSP panel";
+                        break;
+                    }
+                case Display.PhysicalPanelSize.NineteenInch:
+                    {
+                        PanelTypeEnumToText = @"19"" OSP panel";
+                        break;
+                    }
+                case Display.PhysicalPanelSize.UnknownSize:
+                    {
+                        PanelTypeEnumToText = "OSP panel not recognized";
+                        break;
+                    }
+                default:
+                    {
+                        PanelTypeEnumToText = "Not an OSP panel";
+                        break;
+                    }
+            }
+            this.TextBox_PanelType.Text = PanelTypeEnumToText;
+
+            // The following code is only applicable on 19" panel sizes because the 15" displays do not include
+            // the SELECTSCREEN tool. In that case, the result will be NA.
+            string ScreenModeEnumToText = "";
+            Okuma.Scout.Display.NineteenInchScreenMode NISM = Okuma.Scout.Display.SelectScreenMode;
+            switch (NISM)
+            {
+                case Display.NineteenInchScreenMode.FullScreen:
+                    {
+                        ScreenModeEnumToText = "Full Screen";
+                        break;
+                    }
+                case Display.NineteenInchScreenMode.ModeA:
+                    {
+                        ScreenModeEnumToText = "A Mode (Windowed, lower left)";
+                        break;
+                    }
+                case Display.NineteenInchScreenMode.ModeB:
+                    {
+                        ScreenModeEnumToText = "B Mode (Windowed, lower right)";
+                        break;
+                    }
+                case Display.NineteenInchScreenMode.UnknownMode:
+                    {
+                        ScreenModeEnumToText = "Error: Unknown Screen Mode";
+                        break;
+                    }
+                default:
+                    {
+                        ScreenModeEnumToText = "NA";
+                        break;
+                    }
+            }
+            TextBox_ScreenMode.Text = ScreenModeEnumToText;
+
             // Clear the display data and refresh it every time the Platform button is clicked.
             this.ComboBox_Display.Items.Clear();
             Okuma.Scout.Display.RefreshDisplayInfo();

@@ -198,6 +198,53 @@
             As display devices are enumerated, they are assigned a number based on the order 
             they are retrieved. This number will be used as the dictionary key.</remarks>
         </member>
+        <member name="P:Okuma.Scout.Display.PanelType">
+            <summary>
+            P200 and later only (P100 returns "non-OSP")
+            Returns type enum "PhysicalPanelSize" - the OSP panel type (15", 19", etc.) 
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Display.SelectScreenMode">
+            <summary>
+            Returns type enum "NineteenInchScreenMode" - the SELECTSCREEN mode (FullScreen, A Mode, etc.)
+            </summary>
+        </member>
+        <member name="T:Okuma.Scout.Display.PhysicalPanelSize">
+            <summary>
+            Return value for PanelType </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.PhysicalPanelSize.nonOSP">
+            <summary>Not an OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.PhysicalPanelSize.UnknownSize">
+            <summary>Unknown OSP panel type</summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.PhysicalPanelSize.FifteenInch">
+            <summary>15" OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.PhysicalPanelSize.NineteenInch">
+            <summary>19" OSP panel</summary>
+        </member>
+        <member name="T:Okuma.Scout.Display.NineteenInchScreenMode">
+            <summary>
+            Return value for SelectScreenMode
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.NineteenInchScreenMode.FullScreen">
+            <summary>19" Full Screen Mode (Data = 0) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.NineteenInchScreenMode.ModeA">
+            <summary>19" Windowed Lower-Left Display "A Mode" (Data = 1) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.NineteenInchScreenMode.ModeB">
+            <summary>19" Windowed Lower-Right Display "B Mode" (Data = 2) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.NineteenInchScreenMode.UnknownMode">
+            <summary>The Result Data is not equal to 0, 1, or 2 </summary>
+        </member>
+        <member name="F:Okuma.Scout.Display.NineteenInchScreenMode.RegistryKeyNotExist">
+            <summary>19" SelectScreen tool registry key does not exist </summary>
+        </member>
         <member name="M:Okuma.Scout.Display.DisplayDevice.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
             <summary>
             Initializes a new instance of the DisplayDevice class. </summary>
@@ -1630,24 +1677,35 @@
         </member>
         <member name="T:Okuma.Scout.Reg">
             <summary>
-            TO DO
+            .Net 2 compatible class for registry access that works in 32 or 64 bit environments.
             </summary>
+        </member>
+        <member name="F:Okuma.Scout.Reg.ERROR_SUCCESS">
+            <summary> 0 (0x0) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Reg.ERROR_NO_MORE_ITEMS">
+            <summary> 259 (0x103) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Reg.ERROR_MORE_DATA">
+            <summary> 234 (0XEA) </summary>
         </member>
         <member name="M:Okuma.Scout.Reg.RegistryGetSubKeyNames(System.String,System.Collections.Generic.List{System.String}@)">
             <summary>
-            
-            </summary>
-            <returns>List of sub-keys listed under the specified key (if present, otherwise NULL)</returns>
+            Retrieves a list of key names that exist under a specified key </summary>
+            <param name="SubKey">Key name </param>
+            <param name="Result">specify "out" before referencing a string list when using this function </param>
+            <returns>List of sub-keys listed under the specified key (if present, otherwise NULL) </returns>
         </member>
         <member name="M:Okuma.Scout.Reg.RegistryGetLocalMachineValue(System.String,System.String,System.String@)">
             <summary>
-            This function is superior to using .NET 'Registry' class because it will work on both 32bit and 64bit systems 
-            and uses native Win32 API code for faster execution. However the only data types supported at this time
-            are "REG_SZ", "REG_DWORD", and "REG_QWORD".</summary>
+            Returns the data for a specified value as an out parameter of type string</summary>
             <param name="SubKey">Name of the key to retrieve</param>
             <param name="Value">The value that will be retrieved</param>
             <param name="Result">Contents of Value</param>
             <returns>true if successful, false otherwise</returns>
+            <remarks>This function is superior to using .NET 'Registry' class because it will work on both 32bit and 64bit systems 
+            and uses native Win32 API code for faster execution. However the only data types supported at this time
+            are "REG_SZ", "REG_DWORD", and "REG_QWORD" </remarks>
         </member>
         <member name="M:Okuma.Scout.Reg.RegistryWOW6432.GetRegKey64(System.String,System.String)">
             <summary>

@@ -1,4 +1,4 @@
-﻿Okuma Open API Application SDK v0.5a
+﻿Okuma Open API Application SDK v0.6a
 ____________________________________________________________________
 Purpose:
 
@@ -43,6 +43,7 @@ v0.2a	2014.04.??	> add Okuma OpenAPI v1.17.1
 v0.3a	2014.06.26	> add approval and widget Documentation
 v0.4a	2015.01.28	> add Scout libraries and test application
 v0.5a	2015.06.05	> update to Okuma.Scout.dll v1.0.0.4
+v0.6a   2015.08.24	> SCOUT v1.0.1.0, Update Cross Reference
 ____________________________________________________________________
 Contact:
 
