@@ -1,0 +1,37 @@
+Thank you for your interest in creating Machine Tool Apps for the Okuma OSP Control. 
+http://www.okuma.com/wp-machine-tool-apps
+
+We’re always excited to get more developers involved with MyOkuma.com
+ 
+Our Open API Software Development Kit is currently located on Bitbucket.
+https://bitbucket.org/okuma/open-api-sdk
+
+We use StackOverflow to answer programming questions.
+http://stackoverflow.com/questions/tagged/okuma
+
+Open API questions can be sent to API@okuma.com
+Okuma App Store questions should be sent to AppStore@okuma.com
+
+If you have a completed application that you would like to appear on MyOkuma.com, please follow the steps listed below.
+
+   1) Fill out the Developer’s Information Form (this only needs to be done once.)
+
+   2) Fill out an Okuma App Store Icon Questionnaire for each app you will be submitting (PDF available upon request).
+	This is for the creation of the blue bordered tiles for each app as seen here: https://www.myokuma.com/all-apps
+
+   3) Send the following items to appstore@okuma.com (you may use Dropbox, FTP, or any other method you’d like)
+      a. The Application Installer (if not hosted externally)
+      b. 2 to 5 screen shots of the application
+      c. Installation manual and any other documentation
+      d. The completed Okuma App Store Icon Questionnaire
+      e. Optionally you may provide one or more videos related to the app
+
+   4) Fill out an Application Details Form for each app you will be submitting
+	This process may involve getting feedback from your Engineering or Marketing departments.
+        It is essential to have correct compatibility information for SCOUT to give accurate results.
+        The text that appears on your app’s detail page will come from this form.
+
+Please note that for paid software, we require that the version submitted either be a demo or include a trial license.
+
+If you want to have your Machine Tool App Okuma Certified, we will send you our certification checklist for your reference.
+You do not need to fill out this form; It is used by our team to determine if an app may receive certification during the app testing phase. 
