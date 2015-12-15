@@ -1,0 +1,38 @@
+If you are new to programming and looking for resources, here are a few to get started:
+ 
+http://www.dotnetperls.com/
+Well written, clear and concise examples of common functions
+ 
+http://stackoverflow.com/
+Great for really specific questions that involve things not working like you’d expect.
+Be careful about asking questions yourself until you’ve got a feel for what the community
+Considers a good question though. Before you get started, make sure you carefully read 
+Through the Help Center.  I have found that following the advice there for how to ask a
+Good question has resulted in me being a better programmer. 
+ 
+http://www.codeproject.com/
+This site is jam packed with example programs and articles.
+The forum is also a great alternative to StackOverflow.
+ 
+http://msdn.microsoft.com/en-us/library/ms123401.aspx
+The official documentation. 
+Some pages might not look so helpful, but dig deeper. 
+There is a mountain of information there.
+Try this for example: http://msdn.microsoft.com/en-us/library/vstudio/jj153219.aspx
+One of the first things you’ll probably need to get memorized are the VB Operators / C# Operators
+ 
+http://channel9.msdn.com/Series/C-Sharp-Fundamentals-Development-for-Absolute-Beginners
+Why read a boring book when you’ve got free instructional videos? 
+These are a really great way to learn things you’ll be using a lot in the future. 
+ 
+http://cplus.about.com/od/introductiontoprogramming/a/cshbeginners.htm
+The site that convinced me to switch from VB to C#
+ 
+http://www.learnvisualstudio.net/series/visual_csharp_2010_express_edition_for_absolute_beginners/
+Very nice learning program. 
+ 
+http://www.microsoftvirtualacademy.com/
+ 
+http://www.vbforums.com/forum.php
+ 
+http://www.dreamincode.net/

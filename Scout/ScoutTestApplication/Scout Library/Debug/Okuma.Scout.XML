@@ -615,6 +615,9 @@
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Invalid_Machine_Type">
             <summary> Unable to Check THINC API License due to Unknown Machine Type. </summary>
         </member>
+        <member name="F:Okuma.Scout.Enums.LicenseStatus.Invalid_Host">
+            <summary> Machine name plate serial number does not match OSP system software </summary>
+        </member>
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Bad_Version">
             <summary> Version number is invalid (must be in format '#.#', major-major.major-minor) </summary>
         </member>
@@ -1142,8 +1145,8 @@
         <member name="M:Okuma.Scout.LicenseChecker.ConvertExipreDate(System.String)">
             <summary>
             All of the license files I've seen that expire seem to use Jan. 1st.
-            How ever, I'd assume the same month naming convention is used for other
-            months, if expire date is not arbitrary. </summary>
+            However, assume the same month naming convention is used for other months, 
+            if expire date is not arbitrary. </summary>
             <param name="input">string from license file of its non-standard date format.</param>
             <returns>type DateTime</returns>
         </member>
