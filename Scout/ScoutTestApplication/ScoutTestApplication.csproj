@@ -54,10 +54,6 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Okuma.Scout, Version=1.0.0.0, Culture=neutral, processorArchitecture=AnyCPU">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Scout Library\$(ConfigurationName)\Okuma.Scout.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -123,10 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
-    <Content Include="Scout Library\Debug\Okuma.Scout.dll" />
-    <Content Include="Scout Library\Debug\Okuma.Scout.pdb" />
-    <Content Include="Scout Library\Debug\Okuma.Scout.XML" />
-    <Content Include="Scout Library\Release\Okuma.Scout.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Okuma.Scout, Version=1.0.0.0, Culture=neutral, processorArchitecture=AnyCPU">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Scout Library\$(ConfigurationName)\Okuma.Scout.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿Okuma Open API SDK v0.7
+﻿﻿Okuma Open API SDK v0.8
 ____________________________________________________________________
 Purpose:
 
@@ -6,10 +6,10 @@ To provide a reference for developers targeting the Okuma platform
 ____________________________________________________________________
 Structure:
 
-├───API				  /* Recommended API versions for */
-│   ├───1.18.0			  /* developmnet are listed in	  */
-│   │   ├───Bin			  /* the API Version Cross-       */
-│   │   └───Help		  /* Reference document.	  */
+├───API		      /* Recommended API versions for development */
+│   ├───1.18.0
+│   │   ├───Bin
+│   │   └───Help
 │   ├───1.17.2
 │   │   ├───Bin
 │   │   └───Help
@@ -32,12 +32,11 @@ Structure:
 │       ├───ThincLathe		  /* are used in Okuma testing to */
 │       └───ThincMC		  /* verify every function works  */
 ├───Documentation		  /* Guidelines and approval info */
-├───Misc			  /* API Version Cross Reference  */
 └───Scout
-    ├───README.TXT		  /* Information about SCOUT      */
+    ├───README.txt		  /* Information about SCOUT      */
     └───ScoutTestApplication
         ├───ScoutTestApplication.csproj    /*    Project File	  */
-        └───Scout Library
+        └───Scout Library		   /*    SCOUT Dlls	  */
 ____________________________________________________________________
 Revision History:
 
@@ -48,6 +47,7 @@ v0.4a	2015.01.28	> add Scout libraries and test application
 v0.5a	2015.06.05	> update to Okuma.Scout.dll v1.0.0.4
 v0.6a   2015.08.24	> SCOUT v1.0.1.0, Update Cross Reference
 v0.7    2015.12.15	> SCOUT v1.0.2.0, Add API 1.18.0 
+v0.8	2016.08.01	> SCOUT v1.0.4.0
 ____________________________________________________________________
 Contact:
 

@@ -258,6 +258,8 @@ namespace ScoutTestApplication
             this.TextBox_ThincLatheDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_Lathe.ToString();
             this.TextBox_ThincMachiningCenterCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_MachiningCenter.ToString();
             this.TextBox_ThincMachiningCenterDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_MachiningCenter.ToString();
+            this.TextBox_ThincGrinderCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_Grinder.ToString();
+            this.TextBox_ThincGrinderDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_Grinder.ToString();
             this.TextBox_FlexNet.Text = Okuma.Scout.ThincApi.FlexNetExistInGAC.ToString();
 
             // THINC API Installed Library Versions
@@ -265,6 +267,8 @@ namespace ScoutTestApplication
             this.TextBox_ThincLatheDataApiVer.Text = Okuma.Scout.ThincApi.DataApiVersionInGAC_Lathe;
             this.TextBox_ThincMachiningCenterCommandApiVer.Text = Okuma.Scout.ThincApi.CommandApiVersionInGAC_MachiningCenter;
             this.TextBox_ThincMachiningCenterDataApiVer.Text = Okuma.Scout.ThincApi.DataApiVersionInGAC_MachiningCenter;
+            this.TextBox_ThincGrinderCommandApiVer.Text = Okuma.Scout.ThincApi.CommandApiVersionInGAC_Grinder;
+            this.TextBox_ThincGrinderDataApiVer.Text = Okuma.Scout.ThincApi.DataApiVersionInGAC_Grinder;
             this.TextBox_FlexNetVersion.Text = Okuma.Scout.ThincApi.FlexNetVersionInGAC;
 
             if (this.apiHasBeenInitializedOrIsReady == false)
@@ -427,6 +431,13 @@ namespace ScoutTestApplication
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Exists.ToString();
             this.PostResult(this.TextBox_OspMachiningCenterDataApi, tempString);
 
+            // Grinder Files Exist?
+            // Returns type Boolean, converted to string for display in text box
+            tempString = Okuma.Scout.OspFileInfo.OspGrinderCommandApi_Exists.ToString();
+            this.PostResult(this.TextBox_OspGrinderCommandApi, tempString);
+            tempString = Okuma.Scout.OspFileInfo.OspGrinderDataApi_Exists.ToString();
+            this.PostResult(this.TextBox_OspGrinderDataApi, tempString);
+
             // Lathe File Versions
             // Returns type string
             tempString = Okuma.Scout.OspFileInfo.OspLatheSpecialApi_Version;
@@ -444,6 +455,13 @@ namespace ScoutTestApplication
             this.PostResult(this.TextBox_OspMachiningCenterCommandApiVer, tempString);
             tempString = Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Version;
             this.PostResult(this.TextBox_OspMachiningCenterDataApiVer, tempString);
+
+            // Grinder File Versions
+            // Returns type string
+            tempString = Okuma.Scout.OspFileInfo.OspGrinderCommandApi_Version;
+            this.PostResult(this.TextBox_OspGrinderCommandApiVer, tempString);
+            tempString = Okuma.Scout.OspFileInfo.OspGrinderDataApi_Version;
+            this.PostResult(this.TextBox_OspGrinderDataApiVer, tempString);
         }
 
         #endregion
@@ -471,6 +489,10 @@ namespace ScoutTestApplication
             this.TextBox_ApiNotifierVer.Text = Okuma.Scout.OspFileInfo.ApiNotifierVersion;
             this.TextBox_SoftSwitch.Text = Okuma.Scout.OspFileInfo.SoftSwitchExists.ToString();
             this.TextBox_SoftSwitchVer.Text = Okuma.Scout.OspFileInfo.SoftSwitchVersion;
+            this.TextBox_OspGestureExists.Text = Okuma.Scout.OspFileInfo.OspGesture_Exists.ToString();
+            this.TextBox_OspGestureVersion.Text = Okuma.Scout.OspFileInfo.OspGesture_Version.ToString();
+            this.TextBox_OspTouchExists.Text = Okuma.Scout.OspFileInfo.OspTouch_Exists.ToString();
+            this.TextBox_OspTouchVersion.Text = Okuma.Scout.OspFileInfo.OspTouch_Version.ToString();
 
             // Modified
             this.TextBox_DMCModified.Text = Okuma.Scout.OspFileInfo.DMCModifiedDate;
@@ -694,6 +716,14 @@ namespace ScoutTestApplication
             this.TextBox_License_MDATAPI_ExpireDate.Text = FormatExpireDate(dataApiMachiningCenter.Expires, dataApiMachiningCenter.ExpiryDate);
             this.TextBox_License_MDATAPI_Status.Text = dataApiMachiningCenter.Status.ToString();
 
+            // Data API License (Grinder):
+            Okuma.Scout.LicenseItem dataApiGrinder = Okuma.Scout.LicenseChecker.License_DataApi_G;
+            this.TextBox_License_GDATAPI_FeatureName.Text = dataApiGrinder.Feature;
+            this.TextBox_License_GDATAPI_Version.Text = dataApiGrinder.Version;
+            this.TextBox_License_GDATAPI_Expires.Text = dataApiGrinder.Expires.ToString();
+            this.TextBox_License_GDATAPI_ExpireDate.Text = FormatExpireDate(dataApiGrinder.Expires, dataApiGrinder.ExpiryDate);
+            this.TextBox_License_GDATAPI_Status.Text = dataApiGrinder.Status.ToString();      
+
             // Command API License (Lathe):
             Okuma.Scout.LicenseItem commandApiLathe = Okuma.Scout.LicenseChecker.License_CommandApi_L;
             this.TextBox_License_LCMDAPI_FeatureName.Text = commandApiLathe.Feature;
@@ -709,6 +739,14 @@ namespace ScoutTestApplication
             this.TextBox_License_MCMDAPI_Expires.Text = commandApiMachiningCenter.Expires.ToString();
             this.TextBox_License_MCMDAPI_ExpireDate.Text = FormatExpireDate(commandApiMachiningCenter.Expires, commandApiMachiningCenter.ExpiryDate);
             this.TextBox_License_MCMDAPI_Status.Text = commandApiMachiningCenter.Status.ToString();
+
+            // Command API License (Grinder):
+            Okuma.Scout.LicenseItem commandApiGrinder = Okuma.Scout.LicenseChecker.License_CommandApi_G;
+            this.TextBox_License_GCMDAPI_FeatureName.Text = commandApiGrinder.Feature;
+            this.TextBox_License_GCMDAPI_Version.Text = commandApiGrinder.Version;
+            this.TextBox_License_GCMDAPI_Expires.Text = commandApiGrinder.Expires.ToString();
+            this.TextBox_License_GCMDAPI_ExpireDate.Text = FormatExpireDate(commandApiGrinder.Expires, commandApiGrinder.ExpiryDate);
+            this.TextBox_License_GCMDAPI_Status.Text = commandApiGrinder.Status.ToString();
 
             // THINC Control Type P200 License:
             Okuma.Scout.LicenseItem p200Control = Okuma.Scout.LicenseChecker.License_ControlTypeP200;
@@ -871,7 +909,7 @@ namespace ScoutTestApplication
             this.PostResult(this.TextBox_EnvUserName, Environment.UserName);
             this.PostResult(this.TextBox_EnvUserDomain, Environment.UserDomainName);
 
-            // Do this last, as it takes the most time.
+            this.PostResult(this.TextBox_EnvUserPermissions, Okuma.Scout.OS.GetAccessLevel().ToString());
             this.PostResult(this.TextBox_OSInternet, Okuma.Scout.OS.InternetConnection.ToString());
         }
         #endregion
@@ -968,6 +1006,7 @@ namespace ScoutTestApplication
                         // RegistryGetLocalMachineValue() returned TRUE, meaning data was obtained.
                         ResultBox_RegData.Text = ValueResult;
 
+                        // If the registry value is "Version", parse the result to a version number.
                         if (TextBox_RegValue.Text == "Version")
                         {
                             ResultBox_RegVersion.Text = Okuma.Scout.Helper.RegDwordIntegerVersionParse(ValueResult).ToString();
@@ -1025,6 +1064,7 @@ namespace ScoutTestApplication
 
         #endregion
 
+        #region Misc
 
         /// <summary>
         /// This function resolves cross-threading issues by invoking the 
@@ -1070,5 +1110,8 @@ namespace ScoutTestApplication
             //    ListBox_Options.Items.Add(option + Environment.NewLine);
             // }
         }
+
+        #endregion
+
     }
 }

@@ -103,7 +103,7 @@ namespace ScoutTestApplication
             else
             {
                 // This is not an exception, thus e.Exception will be null
-                // and all of the revelant debugging information will be held
+                // and all of the relevant debugging information will be held
                 // in e.Message
                 this.PostError(e.Severity, e.Message.ToString());
             }
@@ -137,7 +137,7 @@ namespace ScoutTestApplication
         {
             // Remember to unsubscribe from this event when Scout functionality
             // is no longer required. As long as the Reporter Event is 
-            // subscribned to, Scout.dll will be held in memory and not 
+            // subscribed to, Scout.dll will be held in memory and not 
             // garbage collected by the CLR; even if the class which uses
             // Scout functionality loses scope.
             Okuma.Scout.Error.Reporter -= this.HandleScoutErrorInfo;
