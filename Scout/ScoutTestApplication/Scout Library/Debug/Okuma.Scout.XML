@@ -13,6 +13,17 @@
             Once class DMC is read, this contains the contents of the Data Management Card 
             (if it exists, otherwise will remain the default value and `dmc_exist` will = false. ) </summary>
         </member>
+        <member name="M:Okuma.Scout.DMC.SearchDMC(System.Int32,Okuma.Scout.Enums.DMCSearchPattern,System.String,System.String,System.Boolean)">
+            <summary>
+            Primary string search entry method for Data Management Card .CNC (text) files
+            </summary>
+            <param name="sn"> String Number (unique ID number for each string) </param>
+            <param name="Mode"> search mode "filter method" </param>
+            <param name="header"> Line Item Header in actual DMC file </param>
+            <param name="optional_var"> I really should have documented this better when I was writing it... </param>
+            <param name="optional_SpecCodeFirstPart"></param>
+            <returns></returns>
+        </member>
         <member name="P:Okuma.Scout.DMC.DMCString">
             <summary>
             This string holds the entire contents of the data management card.
@@ -603,6 +614,12 @@
         <member name="F:Okuma.Scout.Enums.ControlType.P300S">
             <summary>OSP-P300S (special type)</summary>
         </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300A">
+            <summary>OSP-P300A </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300SA">
+            <summary>OSP-P300A (special type)</summary>
+        </member>
         <member name="T:Okuma.Scout.Enums.LicenseStatus">
             <summary>Result of checking License</summary>
         </member>
@@ -1162,6 +1179,12 @@
             This object contains the licenses feature name, version, if it expires, 
             when it expires, and it's current status. </summary>
         </member>
+        <member name="P:Okuma.Scout.LicenseChecker.License_DataApi_G">
+            <summary>
+            Returns THINC Grinder Data API License object.
+            This object contains the licenses feature name, version, if it expires, 
+            when it expires, and it's current status. </summary>
+        </member>
         <member name="P:Okuma.Scout.LicenseChecker.License_CommandApi_L">
             <summary>
             Returns THINC Lathe Command API License object.
@@ -1169,6 +1192,12 @@
             when it expires, and it's current status. </summary>
         </member>
         <member name="P:Okuma.Scout.LicenseChecker.License_CommandApi_MC">
+            <summary>
+            Returns THINC Machining Center Command API License object.
+            This object contains the licenses feature name, version, if it expires, 
+            when it expires, and it's current status. </summary>
+        </member>
+        <member name="P:Okuma.Scout.LicenseChecker.License_CommandApi_G">
             <summary>
             Returns THINC Machining Center Command API License object.
             This object contains the licenses feature name, version, if it expires, 
@@ -1421,6 +1450,39 @@
             <remarks>Will either return the version information or an error message 
             [OAC API FILE] Obtained from Global Assembly Cache </remarks>
         </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGrinderCommandApi_Exists">
+            <summary> Does the OSP Command API file 'GCMDAPI.EXE' exist under 'C:\OSP-P\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OCJ API FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGrinderCommandApi_Version">
+            <summary> Return the version of the OSP Command API file 'GCMDAPI.EXE' </summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OCJ API FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGrinderDataApi_Exists">
+            <summary> Does the OSP Data API file 'GDATAPI.DLL' exist under 'C:\OSP-P\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OCJ API FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGrinderDataApi_Version">
+            <summary> Return the version of the OSP Data API file 'GDATAPI.DLL' </summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OCJ API FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.ThincGrinderDataApi_Exists">
+            <summary> Does the THINC Data API file 'Okuma.CGDATAPI.dll' exist in the Global Assembly Cache ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OAC API FILE]</remarks>    
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.ThincGrinderDataApi_Version">
+            <summary> Return the version of the THINC Data API file 'Okuma.CLDATAPI.dll' </summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OAC API FILE] Obtained from Global Assembly Cache </remarks>
+        </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincApiLicenseExists">
             <summary> Does the file 'okuma.api.lic' exist in 'D:\Program Files\Okuma\Licenses\' ? </summary>
             <returns>Boolean</returns>
@@ -1471,6 +1533,28 @@
             <returns>ShortDate in string format</returns>
             <remarks>Throws exception if file does not exist! [check first using DMCExists()].</remarks>
         </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGesture_Exists">
+            <summary> Does the P300A Touch Driver file 'OSP-GESTURE.dll' exist under 'C:\OSP-P\SHAREDLL\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OCJ DLL FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspGesture_Version">
+            <summary> Return the version of the P300A Touch Driver file 'OSP-GESTURE.dll' </summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OCJ DLL FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspTouch_Exists">
+            <summary> Does the P300A Touch Driver file 'OSP-TOUCH-LIB.dll' exist under 'C:\OSP-P\SHAREDLL\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OCJ DLL FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.OspTouch_Version">
+            <summary> Return the version of the P300A Touch Driver file 'OSP-TOUCH-LIB.dll' </summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OCJ DLL FILE]</remarks>
+        </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevCommandApiExists_Lathe">
             <summary> Does the THINC Command API file 'Okuma.CLCMDAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
             <returns>Boolean</returns>
@@ -1481,6 +1565,11 @@
             <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
+        <member name="P:Okuma.Scout.OspFileInfo.ThincDevCommandApiExists_Grinder">
+            <summary> Does the THINC Command API file 'Okuma.CGCMDAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
+        </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevDataApiExists_Lathe">
             <summary> Does the THINC Data API file 'Okuma.CLDATAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
             <returns>Boolean</returns>
@@ -1488,6 +1577,11 @@
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincDevDataApiExists_MachiningCenter">
             <summary> Does the THINC Data API file 'Okuma.CMDATAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.ThincDevDataApiExists_Grinder">
+            <summary> Does the THINC Data API file 'Okuma.CGDATAPI.dll' exist under 'D:\Program Files\Okuma\' ? </summary>
             <returns>Boolean</returns>
             <remarks>[OAC API FILE] Only present if THINC-API "Development" Version is installed. </remarks>
         </member>
@@ -1519,6 +1613,19 @@
         </member>
         <member name="M:Okuma.Scout.OS.#cctor">
             <summary> Constructor </summary>
+        </member>
+        <member name="M:Okuma.Scout.OS.GetAccessLevel">
+            <summary>
+            Determine the highest privileged built-in role the current user belongs to.
+            </summary>
+            <returns>System.Security.Principal.WindowsBuiltInRole Highest Privileged Role </returns>
+        </member>
+        <member name="M:Okuma.Scout.OS.p_CheckInternetAccess">
+            <remarks>
+            Previous version of this method used WebClient.
+            Not only was this slow AF, but caused the system to hang when run under a User (non-administrator account)
+            Now it is zippy and works great even under a "User" account.
+            </remarks>
         </member>
         <member name="P:Okuma.Scout.OS.ErrorMessage">
             <summary>
@@ -1597,6 +1704,7 @@
             If DMC doesn't exist or no match is found, returns ControlType "Unknown"
             </summary>
             <returns>enum Platform.ControlType</returns>
+            <remarks> What can we point to that would tell us we're dealing with P300A? </remarks>
         </member>
         <member name="M:Okuma.Scout.Platform.ConvertToMachineTypeString(Okuma.Scout.Enums.MachineType)">
             <summary>
@@ -2254,6 +2362,12 @@
         <member name="F:Okuma.Scout.ThincApi.privateMDataGacExist">
             <summary>Does the Machining Center Data API assembly exist </summary>
         </member>
+        <member name="F:Okuma.Scout.ThincApi.privateGCmdGacExist">
+            <summary>Does the Grinder Command API assembly exist </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateGDataGacExist">
+            <summary>Does the Grinder Data API assembly exist </summary>
+        </member>
         <member name="F:Okuma.Scout.ThincApi.privateFlexNetGacExist">
             <summary>Does the Flexnet assembly exist </summary>
         </member>
@@ -2268,6 +2382,12 @@
         </member>
         <member name="F:Okuma.Scout.ThincApi.privateMDataGacVer">
             <summary>Version of the Machining Center Data API assembly from Global Assembly Cache  </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateGCmdGacVer">
+            <summary>Version of the Grinder Command API assembly from Global Assembly Cache  </summary>
+        </member>
+        <member name="F:Okuma.Scout.ThincApi.privateGDataGacVer">
+            <summary>Version of the Grinder Data API assembly from Global Assembly Cache  </summary>
         </member>
         <member name="F:Okuma.Scout.ThincApi.privateFlexNetVer">
             <summary>Version of the FlexNet assembly from Global Assembly Cache</summary>
@@ -2346,6 +2466,16 @@
         <member name="M:Okuma.Scout.ThincApi.GacMachineCenterCmdApiExist">
             <summary>Checks the Global Assembly Cache for the existence of any version 
             of the Machine Center Command API (Okuma.CMCMDAPI) </summary>
+            <returns>type string</returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.GacGrinderDataApiExist">
+            <summary>Checks the Global Assembly Cache for the existence of any version 
+            of the Grinder Data API (Okuma.CGDATAPI) </summary>
+            <returns>type string</returns>
+        </member>
+        <member name="M:Okuma.Scout.ThincApi.GacGrinderCmdApiExist">
+            <summary>Checks the Global Assembly Cache for the existence of any version 
+            of the Grinder Command API (Okuma.CGCMDAPI) </summary>
             <returns>type string</returns>
         </member>
         <member name="M:Okuma.Scout.ThincApi.GacFlexNetExist">
@@ -2451,6 +2581,14 @@
             <summary>
             Gets a value indicating whether Okuma.CMCMDAPI exists in the Global Assembly Cache </summary>
         </member>
+        <member name="P:Okuma.Scout.ThincApi.DataApiExistInGAC_Grinder">
+            <summary>
+            Gets a value indicating whether Okuma.CGDATAPI exists in the Global Assembly Cache </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.CommandApiExistInGAC_Grinder">
+            <summary>
+            Gets a value indicating whether Okuma.CLCMDAPI exists in the Global Assembly Cache </summary>
+        </member>
         <member name="P:Okuma.Scout.ThincApi.FlexNetExistInGAC">
             <summary>
             Gets a value indicating whether Okuma.FlexNet exists in the Global Assembly Cache </summary>
@@ -2463,6 +2601,10 @@
             <summary>
             Gets string version of THINC Machining Center Data API file from the Global Assembly Cache </summary>
         </member>
+        <member name="P:Okuma.Scout.ThincApi.DataApiVersionInGAC_Grinder">
+            <summary>
+            Gets string version of THINC Grinder Data API file from the Global Assembly Cache </summary>
+        </member>
         <member name="P:Okuma.Scout.ThincApi.CommandApiVersionInGAC_Lathe">
             <summary>
             Gets string version of THINC Lathe Command API file from the Global Assembly Cache </summary>
@@ -2470,6 +2612,10 @@
         <member name="P:Okuma.Scout.ThincApi.CommandApiVersionInGAC_MachiningCenter">
             <summary>
             Gets string version of THINC Machining Center Command API file from the Global Assembly Cache </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.CommandApiVersionInGAC_Grinder">
+            <summary>
+            Gets string version of THINC Grinder Command API file from the Global Assembly Cache </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.FlexNetVersionInGAC">
             <summary>
@@ -2615,6 +2761,12 @@
         <member name="F:Okuma.Scout.Vars.privateFileNameStringMCMDAPIEXE">
             <summary> [FILES] Value for getter </summary>
         </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringGDATAPIDLL">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringGCMDAPIEXE">
+            <summary> [FILES] Value for getter </summary>
+        </member>
         <member name="F:Okuma.Scout.Vars.privateFileNameStringSOFTSWITCHEXE">
             <summary> [FILES] Value for getter </summary>
         </member>
@@ -2639,6 +2791,12 @@
         <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCMDATAPIdll">
             <summary> [FILES] Value for getter </summary>
         </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCGCMDAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaCGDATAPIdll">
+            <summary> [FILES] Value for getter </summary>
+        </member>
         <member name="F:Okuma.Scout.Vars.privateFileNameStringPLCSpecWild">
             <summary> [FILES] Value for getter </summary>
         </member>
@@ -2660,58 +2818,16 @@
         <member name="F:Okuma.Scout.Vars.privateFileNameStringOkumaFlexNetDll">
             <summary> [FILES] Value for getter </summary>
         </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueControlType">
-            <summary> [DMC VALUES] Value for getter </summary>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOspGesture">
+            <summary> [FILES] Value for getter </summary>
         </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueMachineType">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueSoftProdNum">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueSerialNumber">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueProductionDate">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerName">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerAddress">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerPhone">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCustomerCustomer">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteOne">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteSpecialSpec">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueNoteComment">
-            <summary> [DMC VALUES] Value for getter </summary>
+        <member name="F:Okuma.Scout.Vars.privateFileNameStringOspTouch">
+            <summary> [FILES] Value for getter </summary>
         </member>
         <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDMediaWindows">
             <summary> [DMC VALUES] Value for getter </summary>
         </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDDVDMediaWindows">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
         <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDMediaOSP">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueCDDVDMediaOSP">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueWindowsSystem">
-            <summary> [DMC VALUES] Value for getter </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.privateDataManCardValueOneTouchSSVersion">
             <summary> [DMC VALUES] Value for getter </summary>
         </member>
         <member name="F:Okuma.Scout.Vars.privateDataManCardValueExcelVersionA">
@@ -2870,6 +2986,27 @@
         <member name="F:Okuma.Scout.Vars.privateClassMCSpec">
             <summary> [THINC API Info] Value for getter </summary>
         </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceGDataApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateNameSpaceGCommandApi">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassGDataCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassGCommandCMachine">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassGCATC">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateSubClassGCVariables">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
+        <member name="F:Okuma.Scout.Vars.privateClassGCSpec">
+            <summary> [THINC API Info] Value for getter </summary>
+        </member>
         <member name="F:Okuma.Scout.Vars.privateNameSpaceFlexNet">
             <summary> [Licensing] Value for getter </summary>
         </member>
@@ -2927,6 +3064,12 @@
         <member name="P:Okuma.Scout.Vars.MC_CMD_API">
             <summary>Gets string literal "MCMDAPI.EXE" </summary>
         </member>
+        <member name="P:Okuma.Scout.Vars.G_Data_API">
+            <summary>Gets string literal "GDATAPI.DLL" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.G_CMD_API">
+            <summary>Gets string literal "GCMDAPI.EXE" </summary>
+        </member>
         <member name="P:Okuma.Scout.Vars.SoftSwitch">
             <summary>Gets string literal "SOFTSWITCH.EXE" </summary>
         </member>
@@ -2951,6 +3094,12 @@
         <member name="P:Okuma.Scout.Vars.CMDATAPI">
             <summary>Gets string literal "Okuma.CMDATAPI.dll" </summary>
         </member>
+        <member name="P:Okuma.Scout.Vars.CGCMDAPI">
+            <summary>Gets string literal "Okuma.CGCMDAPI.dll" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CGDATAPI">
+            <summary>Gets string literal "Okuma.CGDATAPI.dll" </summary>
+        </member>
         <member name="P:Okuma.Scout.Vars.PLCSpecWild">
             <summary>Gets string literal "PLCUB11-*.CNS" </summary>
         </member>
@@ -2972,59 +3121,17 @@
         <member name="P:Okuma.Scout.Vars.FlexNet">
             <summary>Gets string literal "Okuma.FlexNet.dll" </summary>
         </member>
-        <member name="P:Okuma.Scout.Vars.DMC_ControlType">
-            <summary>Gets string literal "Type of OSP" </summary>
+        <member name="P:Okuma.Scout.Vars.P300A_OspGesture">
+            <summary>Gets string literal "OSP-GESTURE.dll" </summary>
         </member>
-        <member name="P:Okuma.Scout.Vars.DMC_MachineType">
-            <summary>Gets string literal "Type of Machine" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_SoftProdNum">
-            <summary>Gets string literal "Soft Production No" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_SerialNumber">
-            <summary>Gets string literal "Project No" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_ProductionDate">
-            <summary>Gets string literal "Software Production Date" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CustomerName">
-            <summary>Gets string literal "Name" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CustomerAddress">
-            <summary>Gets string literal "Address" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CustomerPhone">
-            <summary>Gets string literal "Phone"</summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CustomerCustomer">
-            <summary>Gets string literal "Customer"</summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_NoteOne">
-            <summary>Gets string literal " Note NO.1 " </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_NoteSpecialSpec">
-            <summary>Gets string literal " Special Spec " </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_NoteComment">
-            <summary>Gets string literal " Comment " </summary>
+        <member name="P:Okuma.Scout.Vars.P300A_OspTouch">
+            <summary>Gets string literal "OSP-TOUCH-LIB.dll" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDMediaWindows">
             <summary>Gets string literal "[ Windows System CD Version ]" </summary>
         </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CDDVDMediaWindows">
-            <summary>Gets string literal "[ Windows System CD/DVD Version ]" </summary>
-        </member>
         <member name="P:Okuma.Scout.Vars.DMC_CDMediaOSP">
             <summary>Gets string literal "[ OSP System CD Version ]" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_CDDVDMediaOSP">
-            <summary>Gets string literal "[ OSP System CD/DVD Version ]" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_WindowsSystem">
-            <summary>Gets string literal "[ Windows System Version ]" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_OneTouchSSVersion">
-            <summary>Gets string literal "[ One-Touch SpreadSheet Sample Contents CD Version ]" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.DMC_ExcelVersionA">
             <summary>Gets string literal "[ Microsoft Excel Version ]" </summary>
@@ -3181,6 +3288,27 @@
         </member>
         <member name="P:Okuma.Scout.Vars.Class_MCSpec">
             <summary>Gets string literal "Okuma.CMDATAPI.DataAPI.CSpec" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NameSpace_GDataApi">
+            <summary>Gets string literal "Okuma.CGDATAPI" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NameSpace_GCommandApi">
+            <summary>Gets string literal "Okuma.CGCMDAPI" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_GDataCMachine">
+            <summary>Gets string literal "Okuma.CGDATAPI.DataAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_GCommandCMachine">
+            <summary>Gets string literal "Okuma.CGCMDAPI.CommandAPI.CMachine" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_GCATC">
+            <summary>Gets string literal "Okuma.CMCMDAPI.CommandAPI.CATC" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SubClass_GCVariables">
+            <summary>Gets string literal "Okuma.CGDATAPI.DataAPI.CVariables" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.Class_GCSpec">
+            <summary>Gets string literal "Okuma.CGDATAPI.DataAPI.CSpec" </summary>
         </member>
         <member name="P:Okuma.Scout.Vars.NameSpace_FlexNet">
             <summary>Gets string literal "Okuma.FlexNet" </summary>

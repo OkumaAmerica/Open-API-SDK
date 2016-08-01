@@ -27,7 +27,7 @@ namespace ScoutTestApplication
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "SelectScreen"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "CurrentVersion"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Mult")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "DisplayVersion"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "SelectScreen"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "CurrentVersion"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Mult")]
         private void InitializeComponent()
         {
             this.TextBox_MachineType = new System.Windows.Forms.TextBox();
@@ -36,6 +36,8 @@ namespace ScoutTestApplication
             this.TextBox_ControlType = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Platform = new System.Windows.Forms.TabPage();
+            this.TextBox_ScreenMode = new System.Windows.Forms.TextBox();
+            this.label157 = new System.Windows.Forms.Label();
             this.TextBox_PanelType = new System.Windows.Forms.TextBox();
             this.label156 = new System.Windows.Forms.Label();
             this.label154 = new System.Windows.Forms.Label();
@@ -150,6 +152,14 @@ namespace ScoutTestApplication
             this.API = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.TabThincApi = new System.Windows.Forms.TabPage();
+            this.label158 = new System.Windows.Forms.Label();
+            this.TextBox_ThincGrinderCommandApi = new System.Windows.Forms.TextBox();
+            this.TextBox_ThincGrinderCommandApiVer = new System.Windows.Forms.TextBox();
+            this.label159 = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.TextBox_ThincGrinderDataApi = new System.Windows.Forms.TextBox();
+            this.TextBox_ThincGrinderDataApiVer = new System.Windows.Forms.TextBox();
+            this.label161 = new System.Windows.Forms.Label();
             this.Button_ThincApiInfo = new System.Windows.Forms.Button();
             this.Button_InitApi = new System.Windows.Forms.Button();
             this.label132 = new System.Windows.Forms.Label();
@@ -192,6 +202,14 @@ namespace ScoutTestApplication
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.TabOcjApi = new System.Windows.Forms.TabPage();
+            this.label162 = new System.Windows.Forms.Label();
+            this.TextBox_OspGrinderDataApiVer = new System.Windows.Forms.TextBox();
+            this.TextBox_OspGrinderDataApi = new System.Windows.Forms.TextBox();
+            this.label163 = new System.Windows.Forms.Label();
+            this.label164 = new System.Windows.Forms.Label();
+            this.TextBox_OspGrinderCommandApiVer = new System.Windows.Forms.TextBox();
+            this.TextBox_OspGrinderCommandApi = new System.Windows.Forms.TextBox();
+            this.label165 = new System.Windows.Forms.Label();
             this.TextBox_CAPIVersion = new System.Windows.Forms.TextBox();
             this.label152 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -220,6 +238,15 @@ namespace ScoutTestApplication
             this.label21 = new System.Windows.Forms.Label();
             this.Button_OspApiInfo = new System.Windows.Forms.Button();
             this.Files = new System.Windows.Forms.TabPage();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label172 = new System.Windows.Forms.Label();
+            this.TextBox_OspTouchExists = new System.Windows.Forms.TextBox();
+            this.TextBox_OspTouchVersion = new System.Windows.Forms.TextBox();
+            this.label171 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.label168 = new System.Windows.Forms.Label();
+            this.TextBox_OspGestureExists = new System.Windows.Forms.TextBox();
+            this.TextBox_OspGestureVersion = new System.Windows.Forms.TextBox();
             this.label133 = new System.Windows.Forms.Label();
             this.TextBox_NCBSpecFileExist = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
@@ -302,6 +329,16 @@ namespace ScoutTestApplication
             this.TextBox_Net10Sp = new System.Windows.Forms.TextBox();
             this.Button_DotNet = new System.Windows.Forms.Button();
             this.License = new System.Windows.Forms.TabPage();
+            this.TextBox_License_GCMDAPI_ExpireDate = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GCMDAPI_Expires = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GCMDAPI_Version = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GCMDAPI_FeatureName = new System.Windows.Forms.TextBox();
+            this.label167 = new System.Windows.Forms.Label();
+            this.TextBox_License_GDATAPI_ExpireDate = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GDATAPI_Expires = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GDATAPI_Version = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GDATAPI_FeatureName = new System.Windows.Forms.TextBox();
+            this.label166 = new System.Windows.Forms.Label();
             this.TextBox_License_UserAlarmL_ExpireDate = new System.Windows.Forms.TextBox();
             this.TextBox_License_UserAlarmL_Expires = new System.Windows.Forms.TextBox();
             this.TextBox_License_UserAlarmL_Version = new System.Windows.Forms.TextBox();
@@ -363,17 +400,6 @@ namespace ScoutTestApplication
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.Button_ApiLicense = new System.Windows.Forms.Button();
-            this.TextBox_License_ToolId_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserAlarmMC_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserAlarmL_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_NcCurrentAlarm_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserTaskIOMC_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserTaskIOL_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_P200_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_MCMDAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_MDATAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_LCMDAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_LDATAPI_Status = new ScoutTestApplication.ResultBox();
             this.Program = new System.Windows.Forms.TabPage();
             this.label135 = new System.Windows.Forms.Label();
             this.TextBox_TestAppVersion = new System.Windows.Forms.TextBox();
@@ -467,8 +493,21 @@ namespace ScoutTestApplication
             this.OptionsTab = new System.Windows.Forms.TabPage();
             this.ListBox_Options = new System.Windows.Forms.ListBox();
             this.Button_Options = new System.Windows.Forms.Button();
-            this.TextBox_ScreenMode = new System.Windows.Forms.TextBox();
-            this.label157 = new System.Windows.Forms.Label();
+            this.TextBox_License_GCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_GDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_ToolId_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_NcCurrentAlarm_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_P200_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.label173 = new System.Windows.Forms.Label();
+            this.TextBox_EnvUserPermissions = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Platform.SuspendLayout();
             this.SpecCodes.SuspendLayout();
@@ -553,7 +592,7 @@ namespace ScoutTestApplication
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(662, 385);
+            this.tabControl1.Size = new System.Drawing.Size(684, 462);
             this.tabControl1.TabIndex = 8;
             // 
             // Platform
@@ -575,10 +614,28 @@ namespace ScoutTestApplication
             this.Platform.Location = new System.Drawing.Point(4, 32);
             this.Platform.Name = "Platform";
             this.Platform.Padding = new System.Windows.Forms.Padding(3);
-            this.Platform.Size = new System.Drawing.Size(654, 349);
+            this.Platform.Size = new System.Drawing.Size(676, 426);
             this.Platform.TabIndex = 0;
             this.Platform.Text = "Platform";
             this.Platform.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_ScreenMode
+            // 
+            this.TextBox_ScreenMode.Enabled = false;
+            this.TextBox_ScreenMode.Location = new System.Drawing.Point(138, 136);
+            this.TextBox_ScreenMode.Name = "TextBox_ScreenMode";
+            this.TextBox_ScreenMode.Size = new System.Drawing.Size(215, 20);
+            this.TextBox_ScreenMode.TabIndex = 15;
+            this.TextBox_ScreenMode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(28, 139);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(104, 13);
+            this.label157.TabIndex = 16;
+            this.label157.Text = "SelectScreen Mode:";
             // 
             // TextBox_PanelType
             // 
@@ -655,7 +712,7 @@ namespace ScoutTestApplication
             this.SpecCodes.Location = new System.Drawing.Point(4, 32);
             this.SpecCodes.Name = "SpecCodes";
             this.SpecCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.SpecCodes.Size = new System.Drawing.Size(654, 349);
+            this.SpecCodes.Size = new System.Drawing.Size(676, 426);
             this.SpecCodes.TabIndex = 10;
             this.SpecCodes.Text = "Spec Codes";
             this.SpecCodes.UseVisualStyleBackColor = true;
@@ -671,7 +728,7 @@ namespace ScoutTestApplication
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(648, 343);
+            this.tabControl2.Size = new System.Drawing.Size(670, 420);
             this.tabControl2.TabIndex = 129;
             // 
             // Comparison
@@ -714,7 +771,7 @@ namespace ScoutTestApplication
             this.Comparison.Location = new System.Drawing.Point(4, 29);
             this.Comparison.Name = "Comparison";
             this.Comparison.Padding = new System.Windows.Forms.Padding(3);
-            this.Comparison.Size = new System.Drawing.Size(640, 310);
+            this.Comparison.Size = new System.Drawing.Size(662, 387);
             this.Comparison.TabIndex = 0;
             this.Comparison.Text = "Comparison";
             this.Comparison.UseVisualStyleBackColor = true;
@@ -1093,7 +1150,7 @@ namespace ScoutTestApplication
             this.NCSpecFile.Location = new System.Drawing.Point(4, 29);
             this.NCSpecFile.Name = "NCSpecFile";
             this.NCSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.NCSpecFile.Size = new System.Drawing.Size(640, 310);
+            this.NCSpecFile.Size = new System.Drawing.Size(662, 387);
             this.NCSpecFile.TabIndex = 1;
             this.NCSpecFile.Text = "NC Spec File";
             this.NCSpecFile.UseVisualStyleBackColor = true;
@@ -1308,7 +1365,7 @@ namespace ScoutTestApplication
             this.NCBSpecFile.Location = new System.Drawing.Point(4, 29);
             this.NCBSpecFile.Name = "NCBSpecFile";
             this.NCBSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.NCBSpecFile.Size = new System.Drawing.Size(640, 310);
+            this.NCBSpecFile.Size = new System.Drawing.Size(662, 387);
             this.NCBSpecFile.TabIndex = 2;
             this.NCBSpecFile.Text = "NC B-Spec File";
             this.NCBSpecFile.UseVisualStyleBackColor = true;
@@ -1519,7 +1576,7 @@ namespace ScoutTestApplication
             this.PLCSpecFile.Location = new System.Drawing.Point(4, 29);
             this.PLCSpecFile.Name = "PLCSpecFile";
             this.PLCSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.PLCSpecFile.Size = new System.Drawing.Size(640, 310);
+            this.PLCSpecFile.Size = new System.Drawing.Size(662, 387);
             this.PLCSpecFile.TabIndex = 3;
             this.PLCSpecFile.Text = "PLC Spec File";
             this.PLCSpecFile.UseVisualStyleBackColor = true;
@@ -1688,7 +1745,7 @@ namespace ScoutTestApplication
             this.Dir.Location = new System.Drawing.Point(4, 32);
             this.Dir.Name = "Dir";
             this.Dir.Padding = new System.Windows.Forms.Padding(3);
-            this.Dir.Size = new System.Drawing.Size(654, 349);
+            this.Dir.Size = new System.Drawing.Size(676, 426);
             this.Dir.TabIndex = 1;
             this.Dir.Text = "Directories";
             this.Dir.UseVisualStyleBackColor = true;
@@ -1837,7 +1894,7 @@ namespace ScoutTestApplication
             this.API.Location = new System.Drawing.Point(4, 32);
             this.API.Name = "API";
             this.API.Padding = new System.Windows.Forms.Padding(3);
-            this.API.Size = new System.Drawing.Size(654, 349);
+            this.API.Size = new System.Drawing.Size(676, 426);
             this.API.TabIndex = 2;
             this.API.Text = "API Info";
             this.API.UseVisualStyleBackColor = true;
@@ -1851,11 +1908,19 @@ namespace ScoutTestApplication
             this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(648, 343);
+            this.tabControl3.Size = new System.Drawing.Size(670, 420);
             this.tabControl3.TabIndex = 199;
             // 
             // TabThincApi
             // 
+            this.TabThincApi.Controls.Add(this.label158);
+            this.TabThincApi.Controls.Add(this.TextBox_ThincGrinderCommandApi);
+            this.TabThincApi.Controls.Add(this.TextBox_ThincGrinderCommandApiVer);
+            this.TabThincApi.Controls.Add(this.label159);
+            this.TabThincApi.Controls.Add(this.label160);
+            this.TabThincApi.Controls.Add(this.TextBox_ThincGrinderDataApi);
+            this.TabThincApi.Controls.Add(this.TextBox_ThincGrinderDataApiVer);
+            this.TabThincApi.Controls.Add(this.label161);
             this.TabThincApi.Controls.Add(this.Button_ThincApiInfo);
             this.TabThincApi.Controls.Add(this.Button_InitApi);
             this.TabThincApi.Controls.Add(this.label132);
@@ -1900,10 +1965,90 @@ namespace ScoutTestApplication
             this.TabThincApi.Location = new System.Drawing.Point(4, 29);
             this.TabThincApi.Name = "TabThincApi";
             this.TabThincApi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabThincApi.Size = new System.Drawing.Size(640, 310);
+            this.TabThincApi.Size = new System.Drawing.Size(662, 387);
             this.TabThincApi.TabIndex = 0;
             this.TabThincApi.Text = "OSP Open API";
             this.TabThincApi.UseVisualStyleBackColor = true;
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label158.Location = new System.Drawing.Point(62, 182);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(156, 13);
+            this.label158.TabIndex = 199;
+            this.label158.Text = "Grinder API (THINC) Command:";
+            // 
+            // TextBox_ThincGrinderCommandApi
+            // 
+            this.TextBox_ThincGrinderCommandApi.Enabled = false;
+            this.TextBox_ThincGrinderCommandApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_ThincGrinderCommandApi.Location = new System.Drawing.Point(222, 178);
+            this.TextBox_ThincGrinderCommandApi.Name = "TextBox_ThincGrinderCommandApi";
+            this.TextBox_ThincGrinderCommandApi.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincGrinderCommandApi.TabIndex = 200;
+            this.TextBox_ThincGrinderCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_ThincGrinderCommandApiVer
+            // 
+            this.TextBox_ThincGrinderCommandApiVer.Enabled = false;
+            this.TextBox_ThincGrinderCommandApiVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_ThincGrinderCommandApiVer.Location = new System.Drawing.Point(365, 179);
+            this.TextBox_ThincGrinderCommandApiVer.Name = "TextBox_ThincGrinderCommandApiVer";
+            this.TextBox_ThincGrinderCommandApiVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincGrinderCommandApiVer.TabIndex = 201;
+            this.TextBox_ThincGrinderCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label159
+            // 
+            this.label159.AutoSize = true;
+            this.label159.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label159.Location = new System.Drawing.Point(314, 182);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(45, 13);
+            this.label159.TabIndex = 202;
+            this.label159.Text = "Version:";
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label160.Location = new System.Drawing.Point(62, 208);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(132, 13);
+            this.label160.TabIndex = 203;
+            this.label160.Text = "Grinder API (THINC) Data:";
+            // 
+            // TextBox_ThincGrinderDataApi
+            // 
+            this.TextBox_ThincGrinderDataApi.Enabled = false;
+            this.TextBox_ThincGrinderDataApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_ThincGrinderDataApi.Location = new System.Drawing.Point(222, 204);
+            this.TextBox_ThincGrinderDataApi.Name = "TextBox_ThincGrinderDataApi";
+            this.TextBox_ThincGrinderDataApi.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincGrinderDataApi.TabIndex = 204;
+            this.TextBox_ThincGrinderDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_ThincGrinderDataApiVer
+            // 
+            this.TextBox_ThincGrinderDataApiVer.Enabled = false;
+            this.TextBox_ThincGrinderDataApiVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_ThincGrinderDataApiVer.Location = new System.Drawing.Point(365, 205);
+            this.TextBox_ThincGrinderDataApiVer.Name = "TextBox_ThincGrinderDataApiVer";
+            this.TextBox_ThincGrinderDataApiVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincGrinderDataApiVer.TabIndex = 205;
+            this.TextBox_ThincGrinderDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label161.Location = new System.Drawing.Point(314, 208);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(45, 13);
+            this.label161.TabIndex = 206;
+            this.label161.Text = "Version:";
             // 
             // Button_ThincApiInfo
             // 
@@ -1921,7 +2066,7 @@ namespace ScoutTestApplication
             // 
             this.Button_InitApi.Enabled = false;
             this.Button_InitApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_InitApi.Location = new System.Drawing.Point(222, 246);
+            this.Button_InitApi.Location = new System.Drawing.Point(222, 298);
             this.Button_InitApi.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
             this.Button_InitApi.Name = "Button_InitApi";
             this.Button_InitApi.Size = new System.Drawing.Size(140, 23);
@@ -1944,7 +2089,7 @@ namespace ScoutTestApplication
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label32.Location = new System.Drawing.Point(95, 278);
+            this.label32.Location = new System.Drawing.Point(95, 330);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(121, 13);
             this.label32.TabIndex = 181;
@@ -1954,7 +2099,7 @@ namespace ScoutTestApplication
             // 
             this.label82.AutoSize = true;
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label82.Location = new System.Drawing.Point(375, 278);
+            this.label82.Location = new System.Drawing.Point(375, 330);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(101, 13);
             this.label82.TabIndex = 188;
@@ -1964,7 +2109,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_ApiInstantiated.Enabled = false;
             this.TextBox_ApiInstantiated.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_ApiInstantiated.Location = new System.Drawing.Point(222, 275);
+            this.TextBox_ApiInstantiated.Location = new System.Drawing.Point(222, 327);
             this.TextBox_ApiInstantiated.Name = "TextBox_ApiInstantiated";
             this.TextBox_ApiInstantiated.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiInstantiated.TabIndex = 182;
@@ -1974,7 +2119,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_ApiCV1.Enabled = false;
             this.TextBox_ApiCV1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_ApiCV1.Location = new System.Drawing.Point(482, 275);
+            this.TextBox_ApiCV1.Location = new System.Drawing.Point(482, 327);
             this.TextBox_ApiCV1.Name = "TextBox_ApiCV1";
             this.TextBox_ApiCV1.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiCV1.TabIndex = 189;
@@ -1984,7 +2129,7 @@ namespace ScoutTestApplication
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label41.Location = new System.Drawing.Point(119, 220);
+            this.label41.Location = new System.Drawing.Point(119, 272);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(97, 13);
             this.label41.TabIndex = 179;
@@ -1994,7 +2139,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_ApiAvailable.Enabled = false;
             this.TextBox_ApiAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_ApiAvailable.Location = new System.Drawing.Point(222, 217);
+            this.TextBox_ApiAvailable.Location = new System.Drawing.Point(222, 269);
             this.TextBox_ApiAvailable.Name = "TextBox_ApiAvailable";
             this.TextBox_ApiAvailable.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiAvailable.TabIndex = 180;
@@ -2004,7 +2149,7 @@ namespace ScoutTestApplication
             // 
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label81.Location = new System.Drawing.Point(400, 251);
+            this.label81.Location = new System.Drawing.Point(400, 303);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(76, 13);
             this.label81.TabIndex = 186;
@@ -2014,7 +2159,7 @@ namespace ScoutTestApplication
             // 
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label72.Location = new System.Drawing.Point(314, 182);
+            this.label72.Location = new System.Drawing.Point(314, 234);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(45, 13);
             this.label72.TabIndex = 195;
@@ -2024,7 +2169,7 @@ namespace ScoutTestApplication
             // 
             this.label80.AutoSize = true;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label80.Location = new System.Drawing.Point(394, 223);
+            this.label80.Location = new System.Drawing.Point(394, 275);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(82, 13);
             this.label80.TabIndex = 184;
@@ -2044,7 +2189,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_ApiSerialNumber.Enabled = false;
             this.TextBox_ApiSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_ApiSerialNumber.Location = new System.Drawing.Point(482, 248);
+            this.TextBox_ApiSerialNumber.Location = new System.Drawing.Point(482, 300);
             this.TextBox_ApiSerialNumber.Name = "TextBox_ApiSerialNumber";
             this.TextBox_ApiSerialNumber.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiSerialNumber.TabIndex = 187;
@@ -2054,7 +2199,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_FlexNetVersion.Enabled = false;
             this.TextBox_FlexNetVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_FlexNetVersion.Location = new System.Drawing.Point(365, 179);
+            this.TextBox_FlexNetVersion.Location = new System.Drawing.Point(365, 231);
             this.TextBox_FlexNetVersion.Name = "TextBox_FlexNetVersion";
             this.TextBox_FlexNetVersion.Size = new System.Drawing.Size(78, 20);
             this.TextBox_FlexNetVersion.TabIndex = 194;
@@ -2074,7 +2219,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_ApiMachineName.Enabled = false;
             this.TextBox_ApiMachineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_ApiMachineName.Location = new System.Drawing.Point(482, 220);
+            this.TextBox_ApiMachineName.Location = new System.Drawing.Point(482, 272);
             this.TextBox_ApiMachineName.Name = "TextBox_ApiMachineName";
             this.TextBox_ApiMachineName.Size = new System.Drawing.Size(140, 20);
             this.TextBox_ApiMachineName.TabIndex = 185;
@@ -2084,7 +2229,7 @@ namespace ScoutTestApplication
             // 
             this.TextBox_FlexNet.Enabled = false;
             this.TextBox_FlexNet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_FlexNet.Location = new System.Drawing.Point(222, 178);
+            this.TextBox_FlexNet.Location = new System.Drawing.Point(222, 230);
             this.TextBox_FlexNet.Name = "TextBox_FlexNet";
             this.TextBox_FlexNet.Size = new System.Drawing.Size(78, 20);
             this.TextBox_FlexNet.TabIndex = 193;
@@ -2104,7 +2249,7 @@ namespace ScoutTestApplication
             // 
             this.Button_ExecuteApiFunctions.Enabled = false;
             this.Button_ExecuteApiFunctions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_ExecuteApiFunctions.Location = new System.Drawing.Point(482, 191);
+            this.Button_ExecuteApiFunctions.Location = new System.Drawing.Point(482, 243);
             this.Button_ExecuteApiFunctions.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
             this.Button_ExecuteApiFunctions.Name = "Button_ExecuteApiFunctions";
             this.Button_ExecuteApiFunctions.Size = new System.Drawing.Size(140, 23);
@@ -2117,7 +2262,7 @@ namespace ScoutTestApplication
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label73.Location = new System.Drawing.Point(136, 182);
+            this.label73.Location = new System.Drawing.Point(136, 234);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(80, 13);
             this.label73.TabIndex = 192;
@@ -2325,6 +2470,14 @@ namespace ScoutTestApplication
             // 
             // TabOcjApi
             // 
+            this.TabOcjApi.Controls.Add(this.label162);
+            this.TabOcjApi.Controls.Add(this.TextBox_OspGrinderDataApiVer);
+            this.TabOcjApi.Controls.Add(this.TextBox_OspGrinderDataApi);
+            this.TabOcjApi.Controls.Add(this.label163);
+            this.TabOcjApi.Controls.Add(this.label164);
+            this.TabOcjApi.Controls.Add(this.TextBox_OspGrinderCommandApiVer);
+            this.TabOcjApi.Controls.Add(this.TextBox_OspGrinderCommandApi);
+            this.TabOcjApi.Controls.Add(this.label165);
             this.TabOcjApi.Controls.Add(this.TextBox_CAPIVersion);
             this.TabOcjApi.Controls.Add(this.label152);
             this.TabOcjApi.Controls.Add(this.label24);
@@ -2355,16 +2508,96 @@ namespace ScoutTestApplication
             this.TabOcjApi.Location = new System.Drawing.Point(4, 29);
             this.TabOcjApi.Name = "TabOcjApi";
             this.TabOcjApi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabOcjApi.Size = new System.Drawing.Size(640, 310);
+            this.TabOcjApi.Size = new System.Drawing.Size(662, 387);
             this.TabOcjApi.TabIndex = 1;
             this.TabOcjApi.Text = "Okuma Custom API";
             this.TabOcjApi.UseVisualStyleBackColor = true;
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label162.Location = new System.Drawing.Point(346, 241);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(45, 13);
+            this.label162.TabIndex = 123;
+            this.label162.Text = "Version:";
+            // 
+            // TextBox_OspGrinderDataApiVer
+            // 
+            this.TextBox_OspGrinderDataApiVer.Enabled = false;
+            this.TextBox_OspGrinderDataApiVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_OspGrinderDataApiVer.Location = new System.Drawing.Point(397, 238);
+            this.TextBox_OspGrinderDataApiVer.Name = "TextBox_OspGrinderDataApiVer";
+            this.TextBox_OspGrinderDataApiVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGrinderDataApiVer.TabIndex = 122;
+            this.TextBox_OspGrinderDataApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspGrinderDataApi
+            // 
+            this.TextBox_OspGrinderDataApi.Enabled = false;
+            this.TextBox_OspGrinderDataApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_OspGrinderDataApi.Location = new System.Drawing.Point(233, 238);
+            this.TextBox_OspGrinderDataApi.Name = "TextBox_OspGrinderDataApi";
+            this.TextBox_OspGrinderDataApi.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGrinderDataApi.TabIndex = 121;
+            this.TextBox_OspGrinderDataApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label163.Location = new System.Drawing.Point(83, 241);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(121, 13);
+            this.label163.TabIndex = 120;
+            this.label163.Text = "Grinder API (OSP) Data:";
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label164.Location = new System.Drawing.Point(346, 215);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(45, 13);
+            this.label164.TabIndex = 119;
+            this.label164.Text = "Version:";
+            // 
+            // TextBox_OspGrinderCommandApiVer
+            // 
+            this.TextBox_OspGrinderCommandApiVer.Enabled = false;
+            this.TextBox_OspGrinderCommandApiVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_OspGrinderCommandApiVer.Location = new System.Drawing.Point(397, 212);
+            this.TextBox_OspGrinderCommandApiVer.Name = "TextBox_OspGrinderCommandApiVer";
+            this.TextBox_OspGrinderCommandApiVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGrinderCommandApiVer.TabIndex = 118;
+            this.TextBox_OspGrinderCommandApiVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspGrinderCommandApi
+            // 
+            this.TextBox_OspGrinderCommandApi.Enabled = false;
+            this.TextBox_OspGrinderCommandApi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_OspGrinderCommandApi.Location = new System.Drawing.Point(233, 212);
+            this.TextBox_OspGrinderCommandApi.Name = "TextBox_OspGrinderCommandApi";
+            this.TextBox_OspGrinderCommandApi.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGrinderCommandApi.TabIndex = 117;
+            this.TextBox_OspGrinderCommandApi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label165
+            // 
+            this.label165.AutoSize = true;
+            this.label165.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label165.Location = new System.Drawing.Point(83, 216);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(145, 13);
+            this.label165.TabIndex = 116;
+            this.label165.Text = "Grinder API (OSP) Command:";
             // 
             // TextBox_CAPIVersion
             // 
             this.TextBox_CAPIVersion.Enabled = false;
             this.TextBox_CAPIVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_CAPIVersion.Location = new System.Drawing.Point(233, 244);
+            this.TextBox_CAPIVersion.Location = new System.Drawing.Point(233, 281);
             this.TextBox_CAPIVersion.Name = "TextBox_CAPIVersion";
             this.TextBox_CAPIVersion.Size = new System.Drawing.Size(242, 20);
             this.TextBox_CAPIVersion.TabIndex = 115;
@@ -2374,7 +2607,7 @@ namespace ScoutTestApplication
             // 
             this.label152.AutoSize = true;
             this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label152.Location = new System.Drawing.Point(99, 247);
+            this.label152.Location = new System.Drawing.Point(99, 284);
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(128, 13);
             this.label152.TabIndex = 114;
@@ -2634,6 +2867,15 @@ namespace ScoutTestApplication
             // 
             // Files
             // 
+            this.Files.Controls.Add(this.label169);
+            this.Files.Controls.Add(this.label172);
+            this.Files.Controls.Add(this.TextBox_OspTouchExists);
+            this.Files.Controls.Add(this.TextBox_OspTouchVersion);
+            this.Files.Controls.Add(this.label171);
+            this.Files.Controls.Add(this.label170);
+            this.Files.Controls.Add(this.label168);
+            this.Files.Controls.Add(this.TextBox_OspGestureExists);
+            this.Files.Controls.Add(this.TextBox_OspGestureVersion);
             this.Files.Controls.Add(this.label133);
             this.Files.Controls.Add(this.TextBox_NCBSpecFileExist);
             this.Files.Controls.Add(this.label91);
@@ -2665,10 +2907,91 @@ namespace ScoutTestApplication
             this.Files.Location = new System.Drawing.Point(4, 32);
             this.Files.Name = "Files";
             this.Files.Padding = new System.Windows.Forms.Padding(3);
-            this.Files.Size = new System.Drawing.Size(654, 349);
+            this.Files.Size = new System.Drawing.Size(676, 426);
             this.Files.TabIndex = 3;
             this.Files.Text = "File Info";
             this.Files.UseVisualStyleBackColor = true;
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Location = new System.Drawing.Point(316, 357);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(45, 13);
+            this.label169.TabIndex = 105;
+            this.label169.Text = "Version:";
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Location = new System.Drawing.Point(61, 357);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(135, 13);
+            this.label172.TabIndex = 102;
+            this.label172.Text = "OSP-TOUCH-LIB.dll Exists:";
+            // 
+            // TextBox_OspTouchExists
+            // 
+            this.TextBox_OspTouchExists.Enabled = false;
+            this.TextBox_OspTouchExists.Location = new System.Drawing.Point(203, 354);
+            this.TextBox_OspTouchExists.Name = "TextBox_OspTouchExists";
+            this.TextBox_OspTouchExists.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspTouchExists.TabIndex = 103;
+            this.TextBox_OspTouchExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspTouchVersion
+            // 
+            this.TextBox_OspTouchVersion.Enabled = false;
+            this.TextBox_OspTouchVersion.Location = new System.Drawing.Point(368, 354);
+            this.TextBox_OspTouchVersion.Name = "TextBox_OspTouchVersion";
+            this.TextBox_OspTouchVersion.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspTouchVersion.TabIndex = 104;
+            this.TextBox_OspTouchVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label171
+            // 
+            this.label171.AutoSize = true;
+            this.label171.Location = new System.Drawing.Point(316, 331);
+            this.label171.Name = "label171";
+            this.label171.Size = new System.Drawing.Size(45, 13);
+            this.label171.TabIndex = 101;
+            this.label171.Text = "Version:";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Location = new System.Drawing.Point(49, 306);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(148, 13);
+            this.label170.TabIndex = 100;
+            this.label170.Text = "P300A Touch Panel Libraries:";
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Location = new System.Drawing.Point(66, 331);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(130, 13);
+            this.label168.TabIndex = 96;
+            this.label168.Text = "OSP-GESTURE.dll Exists:";
+            // 
+            // TextBox_OspGestureExists
+            // 
+            this.TextBox_OspGestureExists.Enabled = false;
+            this.TextBox_OspGestureExists.Location = new System.Drawing.Point(203, 328);
+            this.TextBox_OspGestureExists.Name = "TextBox_OspGestureExists";
+            this.TextBox_OspGestureExists.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGestureExists.TabIndex = 97;
+            this.TextBox_OspGestureExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspGestureVersion
+            // 
+            this.TextBox_OspGestureVersion.Enabled = false;
+            this.TextBox_OspGestureVersion.Location = new System.Drawing.Point(368, 328);
+            this.TextBox_OspGestureVersion.Name = "TextBox_OspGestureVersion";
+            this.TextBox_OspGestureVersion.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGestureVersion.TabIndex = 99;
+            this.TextBox_OspGestureVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label133
             // 
@@ -2930,7 +3253,7 @@ namespace ScoutTestApplication
             this.Process.Location = new System.Drawing.Point(4, 32);
             this.Process.Name = "Process";
             this.Process.Padding = new System.Windows.Forms.Padding(3);
-            this.Process.Size = new System.Drawing.Size(654, 349);
+            this.Process.Size = new System.Drawing.Size(676, 426);
             this.Process.TabIndex = 4;
             this.Process.Text = "Processes";
             this.Process.UseVisualStyleBackColor = true;
@@ -3027,7 +3350,7 @@ namespace ScoutTestApplication
             this.DMC.Location = new System.Drawing.Point(4, 32);
             this.DMC.Name = "DMC";
             this.DMC.Padding = new System.Windows.Forms.Padding(3);
-            this.DMC.Size = new System.Drawing.Size(654, 349);
+            this.DMC.Size = new System.Drawing.Size(676, 426);
             this.DMC.TabIndex = 5;
             this.DMC.Text = "DMC";
             this.DMC.UseVisualStyleBackColor = true;
@@ -3109,7 +3432,7 @@ namespace ScoutTestApplication
             this.DotNet.Location = new System.Drawing.Point(4, 32);
             this.DotNet.Name = "DotNet";
             this.DotNet.Padding = new System.Windows.Forms.Padding(3);
-            this.DotNet.Size = new System.Drawing.Size(654, 349);
+            this.DotNet.Size = new System.Drawing.Size(676, 426);
             this.DotNet.TabIndex = 6;
             this.DotNet.Text = ".NET";
             this.DotNet.UseVisualStyleBackColor = true;
@@ -3469,6 +3792,16 @@ namespace ScoutTestApplication
             // 
             // License
             // 
+            this.License.Controls.Add(this.TextBox_License_GCMDAPI_ExpireDate);
+            this.License.Controls.Add(this.TextBox_License_GCMDAPI_Expires);
+            this.License.Controls.Add(this.TextBox_License_GCMDAPI_Version);
+            this.License.Controls.Add(this.TextBox_License_GCMDAPI_FeatureName);
+            this.License.Controls.Add(this.label167);
+            this.License.Controls.Add(this.TextBox_License_GDATAPI_ExpireDate);
+            this.License.Controls.Add(this.TextBox_License_GDATAPI_Expires);
+            this.License.Controls.Add(this.TextBox_License_GDATAPI_Version);
+            this.License.Controls.Add(this.TextBox_License_GDATAPI_FeatureName);
+            this.License.Controls.Add(this.label166);
             this.License.Controls.Add(this.TextBox_License_UserAlarmL_ExpireDate);
             this.License.Controls.Add(this.TextBox_License_UserAlarmL_Expires);
             this.License.Controls.Add(this.TextBox_License_UserAlarmL_Version);
@@ -3530,6 +3863,8 @@ namespace ScoutTestApplication
             this.License.Controls.Add(this.label64);
             this.License.Controls.Add(this.label63);
             this.License.Controls.Add(this.Button_ApiLicense);
+            this.License.Controls.Add(this.TextBox_License_GCMDAPI_Status);
+            this.License.Controls.Add(this.TextBox_License_GDATAPI_Status);
             this.License.Controls.Add(this.TextBox_License_ToolId_Status);
             this.License.Controls.Add(this.TextBox_License_UserAlarmMC_Status);
             this.License.Controls.Add(this.TextBox_License_UserAlarmL_Status);
@@ -3545,15 +3880,105 @@ namespace ScoutTestApplication
             this.License.Location = new System.Drawing.Point(4, 32);
             this.License.Name = "License";
             this.License.Padding = new System.Windows.Forms.Padding(3);
-            this.License.Size = new System.Drawing.Size(654, 349);
+            this.License.Size = new System.Drawing.Size(676, 426);
             this.License.TabIndex = 7;
             this.License.Text = "License";
             this.License.UseVisualStyleBackColor = true;
             // 
+            // TextBox_License_GCMDAPI_ExpireDate
+            // 
+            this.TextBox_License_GCMDAPI_ExpireDate.Enabled = false;
+            this.TextBox_License_GCMDAPI_ExpireDate.Location = new System.Drawing.Point(436, 183);
+            this.TextBox_License_GCMDAPI_ExpireDate.Name = "TextBox_License_GCMDAPI_ExpireDate";
+            this.TextBox_License_GCMDAPI_ExpireDate.Size = new System.Drawing.Size(80, 20);
+            this.TextBox_License_GCMDAPI_ExpireDate.TabIndex = 223;
+            this.TextBox_License_GCMDAPI_ExpireDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GCMDAPI_Expires
+            // 
+            this.TextBox_License_GCMDAPI_Expires.Enabled = false;
+            this.TextBox_License_GCMDAPI_Expires.Location = new System.Drawing.Point(383, 183);
+            this.TextBox_License_GCMDAPI_Expires.Name = "TextBox_License_GCMDAPI_Expires";
+            this.TextBox_License_GCMDAPI_Expires.Size = new System.Drawing.Size(47, 20);
+            this.TextBox_License_GCMDAPI_Expires.TabIndex = 222;
+            this.TextBox_License_GCMDAPI_Expires.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GCMDAPI_Version
+            // 
+            this.TextBox_License_GCMDAPI_Version.Enabled = false;
+            this.TextBox_License_GCMDAPI_Version.Location = new System.Drawing.Point(338, 183);
+            this.TextBox_License_GCMDAPI_Version.Name = "TextBox_License_GCMDAPI_Version";
+            this.TextBox_License_GCMDAPI_Version.Size = new System.Drawing.Size(39, 20);
+            this.TextBox_License_GCMDAPI_Version.TabIndex = 221;
+            this.TextBox_License_GCMDAPI_Version.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GCMDAPI_FeatureName
+            // 
+            this.TextBox_License_GCMDAPI_FeatureName.Enabled = false;
+            this.TextBox_License_GCMDAPI_FeatureName.Location = new System.Drawing.Point(147, 183);
+            this.TextBox_License_GCMDAPI_FeatureName.Name = "TextBox_License_GCMDAPI_FeatureName";
+            this.TextBox_License_GCMDAPI_FeatureName.Size = new System.Drawing.Size(185, 20);
+            this.TextBox_License_GCMDAPI_FeatureName.TabIndex = 220;
+            this.TextBox_License_GCMDAPI_FeatureName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label167
+            // 
+            this.label167.AutoSize = true;
+            this.label167.Location = new System.Drawing.Point(10, 186);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(134, 13);
+            this.label167.TabIndex = 219;
+            this.label167.Text = "Command API License (G):";
+            // 
+            // TextBox_License_GDATAPI_ExpireDate
+            // 
+            this.TextBox_License_GDATAPI_ExpireDate.Enabled = false;
+            this.TextBox_License_GDATAPI_ExpireDate.Location = new System.Drawing.Point(436, 105);
+            this.TextBox_License_GDATAPI_ExpireDate.Name = "TextBox_License_GDATAPI_ExpireDate";
+            this.TextBox_License_GDATAPI_ExpireDate.Size = new System.Drawing.Size(80, 20);
+            this.TextBox_License_GDATAPI_ExpireDate.TabIndex = 217;
+            this.TextBox_License_GDATAPI_ExpireDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GDATAPI_Expires
+            // 
+            this.TextBox_License_GDATAPI_Expires.Enabled = false;
+            this.TextBox_License_GDATAPI_Expires.Location = new System.Drawing.Point(383, 105);
+            this.TextBox_License_GDATAPI_Expires.Name = "TextBox_License_GDATAPI_Expires";
+            this.TextBox_License_GDATAPI_Expires.Size = new System.Drawing.Size(47, 20);
+            this.TextBox_License_GDATAPI_Expires.TabIndex = 216;
+            this.TextBox_License_GDATAPI_Expires.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GDATAPI_Version
+            // 
+            this.TextBox_License_GDATAPI_Version.Enabled = false;
+            this.TextBox_License_GDATAPI_Version.Location = new System.Drawing.Point(338, 105);
+            this.TextBox_License_GDATAPI_Version.Name = "TextBox_License_GDATAPI_Version";
+            this.TextBox_License_GDATAPI_Version.Size = new System.Drawing.Size(39, 20);
+            this.TextBox_License_GDATAPI_Version.TabIndex = 215;
+            this.TextBox_License_GDATAPI_Version.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_GDATAPI_FeatureName
+            // 
+            this.TextBox_License_GDATAPI_FeatureName.Enabled = false;
+            this.TextBox_License_GDATAPI_FeatureName.Location = new System.Drawing.Point(147, 105);
+            this.TextBox_License_GDATAPI_FeatureName.Name = "TextBox_License_GDATAPI_FeatureName";
+            this.TextBox_License_GDATAPI_FeatureName.Size = new System.Drawing.Size(185, 20);
+            this.TextBox_License_GDATAPI_FeatureName.TabIndex = 214;
+            this.TextBox_License_GDATAPI_FeatureName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Location = new System.Drawing.Point(35, 108);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(110, 13);
+            this.label166.TabIndex = 213;
+            this.label166.Text = "Data API License (G):";
+            // 
             // TextBox_License_UserAlarmL_ExpireDate
             // 
             this.TextBox_License_UserAlarmL_ExpireDate.Enabled = false;
-            this.TextBox_License_UserAlarmL_ExpireDate.Location = new System.Drawing.Point(436, 261);
+            this.TextBox_License_UserAlarmL_ExpireDate.Location = new System.Drawing.Point(436, 313);
             this.TextBox_License_UserAlarmL_ExpireDate.Name = "TextBox_License_UserAlarmL_ExpireDate";
             this.TextBox_License_UserAlarmL_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_UserAlarmL_ExpireDate.TabIndex = 211;
@@ -3562,7 +3987,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmL_Expires
             // 
             this.TextBox_License_UserAlarmL_Expires.Enabled = false;
-            this.TextBox_License_UserAlarmL_Expires.Location = new System.Drawing.Point(383, 261);
+            this.TextBox_License_UserAlarmL_Expires.Location = new System.Drawing.Point(383, 313);
             this.TextBox_License_UserAlarmL_Expires.Name = "TextBox_License_UserAlarmL_Expires";
             this.TextBox_License_UserAlarmL_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_UserAlarmL_Expires.TabIndex = 210;
@@ -3571,7 +3996,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmL_Version
             // 
             this.TextBox_License_UserAlarmL_Version.Enabled = false;
-            this.TextBox_License_UserAlarmL_Version.Location = new System.Drawing.Point(338, 261);
+            this.TextBox_License_UserAlarmL_Version.Location = new System.Drawing.Point(338, 313);
             this.TextBox_License_UserAlarmL_Version.Name = "TextBox_License_UserAlarmL_Version";
             this.TextBox_License_UserAlarmL_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_UserAlarmL_Version.TabIndex = 209;
@@ -3580,7 +4005,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmL_FeatureName
             // 
             this.TextBox_License_UserAlarmL_FeatureName.Enabled = false;
-            this.TextBox_License_UserAlarmL_FeatureName.Location = new System.Drawing.Point(147, 261);
+            this.TextBox_License_UserAlarmL_FeatureName.Location = new System.Drawing.Point(147, 313);
             this.TextBox_License_UserAlarmL_FeatureName.Name = "TextBox_License_UserAlarmL_FeatureName";
             this.TextBox_License_UserAlarmL_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_UserAlarmL_FeatureName.TabIndex = 208;
@@ -3589,7 +4014,7 @@ namespace ScoutTestApplication
             // TextBox_License_ToolId_ExpireDate
             // 
             this.TextBox_License_ToolId_ExpireDate.Enabled = false;
-            this.TextBox_License_ToolId_ExpireDate.Location = new System.Drawing.Point(436, 313);
+            this.TextBox_License_ToolId_ExpireDate.Location = new System.Drawing.Point(436, 365);
             this.TextBox_License_ToolId_ExpireDate.Name = "TextBox_License_ToolId_ExpireDate";
             this.TextBox_License_ToolId_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_ToolId_ExpireDate.TabIndex = 207;
@@ -3598,7 +4023,7 @@ namespace ScoutTestApplication
             // TextBox_License_ToolId_Expires
             // 
             this.TextBox_License_ToolId_Expires.Enabled = false;
-            this.TextBox_License_ToolId_Expires.Location = new System.Drawing.Point(383, 313);
+            this.TextBox_License_ToolId_Expires.Location = new System.Drawing.Point(383, 365);
             this.TextBox_License_ToolId_Expires.Name = "TextBox_License_ToolId_Expires";
             this.TextBox_License_ToolId_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_ToolId_Expires.TabIndex = 206;
@@ -3607,7 +4032,7 @@ namespace ScoutTestApplication
             // TextBox_License_ToolId_Version
             // 
             this.TextBox_License_ToolId_Version.Enabled = false;
-            this.TextBox_License_ToolId_Version.Location = new System.Drawing.Point(338, 313);
+            this.TextBox_License_ToolId_Version.Location = new System.Drawing.Point(338, 365);
             this.TextBox_License_ToolId_Version.Name = "TextBox_License_ToolId_Version";
             this.TextBox_License_ToolId_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_ToolId_Version.TabIndex = 205;
@@ -3616,7 +4041,7 @@ namespace ScoutTestApplication
             // TextBox_License_ToolId_FeatureName
             // 
             this.TextBox_License_ToolId_FeatureName.Enabled = false;
-            this.TextBox_License_ToolId_FeatureName.Location = new System.Drawing.Point(147, 313);
+            this.TextBox_License_ToolId_FeatureName.Location = new System.Drawing.Point(147, 365);
             this.TextBox_License_ToolId_FeatureName.Name = "TextBox_License_ToolId_FeatureName";
             this.TextBox_License_ToolId_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_ToolId_FeatureName.TabIndex = 204;
@@ -3625,7 +4050,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmMC_ExpireDate
             // 
             this.TextBox_License_UserAlarmMC_ExpireDate.Enabled = false;
-            this.TextBox_License_UserAlarmMC_ExpireDate.Location = new System.Drawing.Point(436, 287);
+            this.TextBox_License_UserAlarmMC_ExpireDate.Location = new System.Drawing.Point(436, 339);
             this.TextBox_License_UserAlarmMC_ExpireDate.Name = "TextBox_License_UserAlarmMC_ExpireDate";
             this.TextBox_License_UserAlarmMC_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_UserAlarmMC_ExpireDate.TabIndex = 203;
@@ -3634,7 +4059,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmMC_Expires
             // 
             this.TextBox_License_UserAlarmMC_Expires.Enabled = false;
-            this.TextBox_License_UserAlarmMC_Expires.Location = new System.Drawing.Point(383, 287);
+            this.TextBox_License_UserAlarmMC_Expires.Location = new System.Drawing.Point(383, 339);
             this.TextBox_License_UserAlarmMC_Expires.Name = "TextBox_License_UserAlarmMC_Expires";
             this.TextBox_License_UserAlarmMC_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_UserAlarmMC_Expires.TabIndex = 202;
@@ -3643,7 +4068,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmMC_Version
             // 
             this.TextBox_License_UserAlarmMC_Version.Enabled = false;
-            this.TextBox_License_UserAlarmMC_Version.Location = new System.Drawing.Point(338, 287);
+            this.TextBox_License_UserAlarmMC_Version.Location = new System.Drawing.Point(338, 339);
             this.TextBox_License_UserAlarmMC_Version.Name = "TextBox_License_UserAlarmMC_Version";
             this.TextBox_License_UserAlarmMC_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_UserAlarmMC_Version.TabIndex = 201;
@@ -3652,7 +4077,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserAlarmMC_FeatureName
             // 
             this.TextBox_License_UserAlarmMC_FeatureName.Enabled = false;
-            this.TextBox_License_UserAlarmMC_FeatureName.Location = new System.Drawing.Point(147, 287);
+            this.TextBox_License_UserAlarmMC_FeatureName.Location = new System.Drawing.Point(147, 339);
             this.TextBox_License_UserAlarmMC_FeatureName.Name = "TextBox_License_UserAlarmMC_FeatureName";
             this.TextBox_License_UserAlarmMC_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_UserAlarmMC_FeatureName.TabIndex = 200;
@@ -3661,7 +4086,7 @@ namespace ScoutTestApplication
             // TextBox_License_NcCurrentAlarm_ExpireDate
             // 
             this.TextBox_License_NcCurrentAlarm_ExpireDate.Enabled = false;
-            this.TextBox_License_NcCurrentAlarm_ExpireDate.Location = new System.Drawing.Point(436, 183);
+            this.TextBox_License_NcCurrentAlarm_ExpireDate.Location = new System.Drawing.Point(436, 235);
             this.TextBox_License_NcCurrentAlarm_ExpireDate.Name = "TextBox_License_NcCurrentAlarm_ExpireDate";
             this.TextBox_License_NcCurrentAlarm_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_NcCurrentAlarm_ExpireDate.TabIndex = 199;
@@ -3670,7 +4095,7 @@ namespace ScoutTestApplication
             // TextBox_License_NcCurrentAlarm_Expires
             // 
             this.TextBox_License_NcCurrentAlarm_Expires.Enabled = false;
-            this.TextBox_License_NcCurrentAlarm_Expires.Location = new System.Drawing.Point(383, 183);
+            this.TextBox_License_NcCurrentAlarm_Expires.Location = new System.Drawing.Point(383, 235);
             this.TextBox_License_NcCurrentAlarm_Expires.Name = "TextBox_License_NcCurrentAlarm_Expires";
             this.TextBox_License_NcCurrentAlarm_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_NcCurrentAlarm_Expires.TabIndex = 198;
@@ -3679,7 +4104,7 @@ namespace ScoutTestApplication
             // TextBox_License_NcCurrentAlarm_Version
             // 
             this.TextBox_License_NcCurrentAlarm_Version.Enabled = false;
-            this.TextBox_License_NcCurrentAlarm_Version.Location = new System.Drawing.Point(338, 183);
+            this.TextBox_License_NcCurrentAlarm_Version.Location = new System.Drawing.Point(338, 235);
             this.TextBox_License_NcCurrentAlarm_Version.Name = "TextBox_License_NcCurrentAlarm_Version";
             this.TextBox_License_NcCurrentAlarm_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_NcCurrentAlarm_Version.TabIndex = 197;
@@ -3688,7 +4113,7 @@ namespace ScoutTestApplication
             // TextBox_License_NcCurrentAlarm_FeatureName
             // 
             this.TextBox_License_NcCurrentAlarm_FeatureName.Enabled = false;
-            this.TextBox_License_NcCurrentAlarm_FeatureName.Location = new System.Drawing.Point(147, 183);
+            this.TextBox_License_NcCurrentAlarm_FeatureName.Location = new System.Drawing.Point(147, 235);
             this.TextBox_License_NcCurrentAlarm_FeatureName.Name = "TextBox_License_NcCurrentAlarm_FeatureName";
             this.TextBox_License_NcCurrentAlarm_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_NcCurrentAlarm_FeatureName.TabIndex = 196;
@@ -3697,7 +4122,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOMC_ExpireDate
             // 
             this.TextBox_License_UserTaskIOMC_ExpireDate.Enabled = false;
-            this.TextBox_License_UserTaskIOMC_ExpireDate.Location = new System.Drawing.Point(436, 235);
+            this.TextBox_License_UserTaskIOMC_ExpireDate.Location = new System.Drawing.Point(436, 287);
             this.TextBox_License_UserTaskIOMC_ExpireDate.Name = "TextBox_License_UserTaskIOMC_ExpireDate";
             this.TextBox_License_UserTaskIOMC_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_UserTaskIOMC_ExpireDate.TabIndex = 195;
@@ -3706,7 +4131,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOMC_Expires
             // 
             this.TextBox_License_UserTaskIOMC_Expires.Enabled = false;
-            this.TextBox_License_UserTaskIOMC_Expires.Location = new System.Drawing.Point(383, 235);
+            this.TextBox_License_UserTaskIOMC_Expires.Location = new System.Drawing.Point(383, 287);
             this.TextBox_License_UserTaskIOMC_Expires.Name = "TextBox_License_UserTaskIOMC_Expires";
             this.TextBox_License_UserTaskIOMC_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_UserTaskIOMC_Expires.TabIndex = 194;
@@ -3715,7 +4140,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOMC_Version
             // 
             this.TextBox_License_UserTaskIOMC_Version.Enabled = false;
-            this.TextBox_License_UserTaskIOMC_Version.Location = new System.Drawing.Point(338, 235);
+            this.TextBox_License_UserTaskIOMC_Version.Location = new System.Drawing.Point(338, 287);
             this.TextBox_License_UserTaskIOMC_Version.Name = "TextBox_License_UserTaskIOMC_Version";
             this.TextBox_License_UserTaskIOMC_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_UserTaskIOMC_Version.TabIndex = 193;
@@ -3724,7 +4149,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOMC_FeatureName
             // 
             this.TextBox_License_UserTaskIOMC_FeatureName.Enabled = false;
-            this.TextBox_License_UserTaskIOMC_FeatureName.Location = new System.Drawing.Point(147, 235);
+            this.TextBox_License_UserTaskIOMC_FeatureName.Location = new System.Drawing.Point(147, 287);
             this.TextBox_License_UserTaskIOMC_FeatureName.Name = "TextBox_License_UserTaskIOMC_FeatureName";
             this.TextBox_License_UserTaskIOMC_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_UserTaskIOMC_FeatureName.TabIndex = 192;
@@ -3733,7 +4158,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOL_ExpireDate
             // 
             this.TextBox_License_UserTaskIOL_ExpireDate.Enabled = false;
-            this.TextBox_License_UserTaskIOL_ExpireDate.Location = new System.Drawing.Point(436, 209);
+            this.TextBox_License_UserTaskIOL_ExpireDate.Location = new System.Drawing.Point(436, 261);
             this.TextBox_License_UserTaskIOL_ExpireDate.Name = "TextBox_License_UserTaskIOL_ExpireDate";
             this.TextBox_License_UserTaskIOL_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_UserTaskIOL_ExpireDate.TabIndex = 191;
@@ -3742,7 +4167,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOL_Expires
             // 
             this.TextBox_License_UserTaskIOL_Expires.Enabled = false;
-            this.TextBox_License_UserTaskIOL_Expires.Location = new System.Drawing.Point(383, 209);
+            this.TextBox_License_UserTaskIOL_Expires.Location = new System.Drawing.Point(383, 261);
             this.TextBox_License_UserTaskIOL_Expires.Name = "TextBox_License_UserTaskIOL_Expires";
             this.TextBox_License_UserTaskIOL_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_UserTaskIOL_Expires.TabIndex = 190;
@@ -3751,7 +4176,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOL_Version
             // 
             this.TextBox_License_UserTaskIOL_Version.Enabled = false;
-            this.TextBox_License_UserTaskIOL_Version.Location = new System.Drawing.Point(338, 209);
+            this.TextBox_License_UserTaskIOL_Version.Location = new System.Drawing.Point(338, 261);
             this.TextBox_License_UserTaskIOL_Version.Name = "TextBox_License_UserTaskIOL_Version";
             this.TextBox_License_UserTaskIOL_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_UserTaskIOL_Version.TabIndex = 189;
@@ -3760,7 +4185,7 @@ namespace ScoutTestApplication
             // TextBox_License_UserTaskIOL_FeatureName
             // 
             this.TextBox_License_UserTaskIOL_FeatureName.Enabled = false;
-            this.TextBox_License_UserTaskIOL_FeatureName.Location = new System.Drawing.Point(147, 209);
+            this.TextBox_License_UserTaskIOL_FeatureName.Location = new System.Drawing.Point(147, 261);
             this.TextBox_License_UserTaskIOL_FeatureName.Name = "TextBox_License_UserTaskIOL_FeatureName";
             this.TextBox_License_UserTaskIOL_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_UserTaskIOL_FeatureName.TabIndex = 188;
@@ -3769,7 +4194,7 @@ namespace ScoutTestApplication
             // TextBox_License_LCMDAPI_ExpireDate
             // 
             this.TextBox_License_LCMDAPI_ExpireDate.Enabled = false;
-            this.TextBox_License_LCMDAPI_ExpireDate.Location = new System.Drawing.Point(436, 105);
+            this.TextBox_License_LCMDAPI_ExpireDate.Location = new System.Drawing.Point(436, 131);
             this.TextBox_License_LCMDAPI_ExpireDate.Name = "TextBox_License_LCMDAPI_ExpireDate";
             this.TextBox_License_LCMDAPI_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_LCMDAPI_ExpireDate.TabIndex = 187;
@@ -3778,7 +4203,7 @@ namespace ScoutTestApplication
             // TextBox_License_LCMDAPI_Expires
             // 
             this.TextBox_License_LCMDAPI_Expires.Enabled = false;
-            this.TextBox_License_LCMDAPI_Expires.Location = new System.Drawing.Point(383, 105);
+            this.TextBox_License_LCMDAPI_Expires.Location = new System.Drawing.Point(383, 131);
             this.TextBox_License_LCMDAPI_Expires.Name = "TextBox_License_LCMDAPI_Expires";
             this.TextBox_License_LCMDAPI_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_LCMDAPI_Expires.TabIndex = 186;
@@ -3787,7 +4212,7 @@ namespace ScoutTestApplication
             // TextBox_License_LCMDAPI_Version
             // 
             this.TextBox_License_LCMDAPI_Version.Enabled = false;
-            this.TextBox_License_LCMDAPI_Version.Location = new System.Drawing.Point(338, 105);
+            this.TextBox_License_LCMDAPI_Version.Location = new System.Drawing.Point(338, 131);
             this.TextBox_License_LCMDAPI_Version.Name = "TextBox_License_LCMDAPI_Version";
             this.TextBox_License_LCMDAPI_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_LCMDAPI_Version.TabIndex = 185;
@@ -3796,7 +4221,7 @@ namespace ScoutTestApplication
             // TextBox_License_LCMDAPI_FeatureName
             // 
             this.TextBox_License_LCMDAPI_FeatureName.Enabled = false;
-            this.TextBox_License_LCMDAPI_FeatureName.Location = new System.Drawing.Point(147, 105);
+            this.TextBox_License_LCMDAPI_FeatureName.Location = new System.Drawing.Point(147, 131);
             this.TextBox_License_LCMDAPI_FeatureName.Name = "TextBox_License_LCMDAPI_FeatureName";
             this.TextBox_License_LCMDAPI_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_LCMDAPI_FeatureName.TabIndex = 184;
@@ -3805,7 +4230,7 @@ namespace ScoutTestApplication
             // TextBox_License_MCMDAPI_ExpireDate
             // 
             this.TextBox_License_MCMDAPI_ExpireDate.Enabled = false;
-            this.TextBox_License_MCMDAPI_ExpireDate.Location = new System.Drawing.Point(436, 131);
+            this.TextBox_License_MCMDAPI_ExpireDate.Location = new System.Drawing.Point(436, 157);
             this.TextBox_License_MCMDAPI_ExpireDate.Name = "TextBox_License_MCMDAPI_ExpireDate";
             this.TextBox_License_MCMDAPI_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_MCMDAPI_ExpireDate.TabIndex = 183;
@@ -3814,7 +4239,7 @@ namespace ScoutTestApplication
             // TextBox_License_MCMDAPI_Expires
             // 
             this.TextBox_License_MCMDAPI_Expires.Enabled = false;
-            this.TextBox_License_MCMDAPI_Expires.Location = new System.Drawing.Point(383, 131);
+            this.TextBox_License_MCMDAPI_Expires.Location = new System.Drawing.Point(383, 157);
             this.TextBox_License_MCMDAPI_Expires.Name = "TextBox_License_MCMDAPI_Expires";
             this.TextBox_License_MCMDAPI_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_MCMDAPI_Expires.TabIndex = 182;
@@ -3823,7 +4248,7 @@ namespace ScoutTestApplication
             // TextBox_License_MCMDAPI_Version
             // 
             this.TextBox_License_MCMDAPI_Version.Enabled = false;
-            this.TextBox_License_MCMDAPI_Version.Location = new System.Drawing.Point(338, 131);
+            this.TextBox_License_MCMDAPI_Version.Location = new System.Drawing.Point(338, 157);
             this.TextBox_License_MCMDAPI_Version.Name = "TextBox_License_MCMDAPI_Version";
             this.TextBox_License_MCMDAPI_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_MCMDAPI_Version.TabIndex = 181;
@@ -3832,7 +4257,7 @@ namespace ScoutTestApplication
             // TextBox_License_MCMDAPI_FeatureName
             // 
             this.TextBox_License_MCMDAPI_FeatureName.Enabled = false;
-            this.TextBox_License_MCMDAPI_FeatureName.Location = new System.Drawing.Point(147, 131);
+            this.TextBox_License_MCMDAPI_FeatureName.Location = new System.Drawing.Point(147, 157);
             this.TextBox_License_MCMDAPI_FeatureName.Name = "TextBox_License_MCMDAPI_FeatureName";
             this.TextBox_License_MCMDAPI_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_MCMDAPI_FeatureName.TabIndex = 180;
@@ -3841,7 +4266,7 @@ namespace ScoutTestApplication
             // TextBox_License_P200_ExpireDate
             // 
             this.TextBox_License_P200_ExpireDate.Enabled = false;
-            this.TextBox_License_P200_ExpireDate.Location = new System.Drawing.Point(436, 157);
+            this.TextBox_License_P200_ExpireDate.Location = new System.Drawing.Point(436, 209);
             this.TextBox_License_P200_ExpireDate.Name = "TextBox_License_P200_ExpireDate";
             this.TextBox_License_P200_ExpireDate.Size = new System.Drawing.Size(80, 20);
             this.TextBox_License_P200_ExpireDate.TabIndex = 179;
@@ -3850,7 +4275,7 @@ namespace ScoutTestApplication
             // TextBox_License_P200_Expires
             // 
             this.TextBox_License_P200_Expires.Enabled = false;
-            this.TextBox_License_P200_Expires.Location = new System.Drawing.Point(383, 157);
+            this.TextBox_License_P200_Expires.Location = new System.Drawing.Point(383, 209);
             this.TextBox_License_P200_Expires.Name = "TextBox_License_P200_Expires";
             this.TextBox_License_P200_Expires.Size = new System.Drawing.Size(47, 20);
             this.TextBox_License_P200_Expires.TabIndex = 178;
@@ -3859,7 +4284,7 @@ namespace ScoutTestApplication
             // TextBox_License_P200_Version
             // 
             this.TextBox_License_P200_Version.Enabled = false;
-            this.TextBox_License_P200_Version.Location = new System.Drawing.Point(338, 157);
+            this.TextBox_License_P200_Version.Location = new System.Drawing.Point(338, 209);
             this.TextBox_License_P200_Version.Name = "TextBox_License_P200_Version";
             this.TextBox_License_P200_Version.Size = new System.Drawing.Size(39, 20);
             this.TextBox_License_P200_Version.TabIndex = 177;
@@ -3868,7 +4293,7 @@ namespace ScoutTestApplication
             // TextBox_License_P200_FeatureName
             // 
             this.TextBox_License_P200_FeatureName.Enabled = false;
-            this.TextBox_License_P200_FeatureName.Location = new System.Drawing.Point(147, 157);
+            this.TextBox_License_P200_FeatureName.Location = new System.Drawing.Point(147, 209);
             this.TextBox_License_P200_FeatureName.Name = "TextBox_License_P200_FeatureName";
             this.TextBox_License_P200_FeatureName.Size = new System.Drawing.Size(185, 20);
             this.TextBox_License_P200_FeatureName.TabIndex = 176;
@@ -3949,7 +4374,7 @@ namespace ScoutTestApplication
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(17, 290);
+            this.label74.Location = new System.Drawing.Point(17, 342);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(126, 13);
             this.label74.TabIndex = 167;
@@ -3958,7 +4383,7 @@ namespace ScoutTestApplication
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(2, 238);
+            this.label71.Location = new System.Drawing.Point(2, 290);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(143, 13);
             this.label71.TabIndex = 162;
@@ -3967,7 +4392,7 @@ namespace ScoutTestApplication
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(2, 134);
+            this.label70.Location = new System.Drawing.Point(2, 160);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(142, 13);
             this.label70.TabIndex = 145;
@@ -3976,7 +4401,7 @@ namespace ScoutTestApplication
             // label90
             // 
             this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(12, 108);
+            this.label90.Location = new System.Drawing.Point(12, 134);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(132, 13);
             this.label90.TabIndex = 144;
@@ -4048,7 +4473,7 @@ namespace ScoutTestApplication
             // label69
             // 
             this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(27, 264);
+            this.label69.Location = new System.Drawing.Point(27, 316);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(116, 13);
             this.label69.TabIndex = 107;
@@ -4057,7 +4482,7 @@ namespace ScoutTestApplication
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(10, 212);
+            this.label67.Location = new System.Drawing.Point(10, 264);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(133, 13);
             this.label67.TabIndex = 106;
@@ -4066,7 +4491,7 @@ namespace ScoutTestApplication
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(33, 316);
+            this.label65.Location = new System.Drawing.Point(33, 368);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(110, 13);
             this.label65.TabIndex = 105;
@@ -4075,7 +4500,7 @@ namespace ScoutTestApplication
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(10, 186);
+            this.label64.Location = new System.Drawing.Point(10, 238);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(131, 13);
             this.label64.TabIndex = 104;
@@ -4084,7 +4509,7 @@ namespace ScoutTestApplication
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(69, 160);
+            this.label63.Location = new System.Drawing.Point(69, 212);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(75, 13);
             this.label63.TabIndex = 103;
@@ -4100,116 +4525,6 @@ namespace ScoutTestApplication
             this.Button_ApiLicense.Text = "Execute";
             this.Button_ApiLicense.UseVisualStyleBackColor = true;
             this.Button_ApiLicense.Click += new System.EventHandler(this.Button_ApiLicense1_Click);
-            // 
-            // TextBox_License_ToolId_Status
-            // 
-            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 313);
-            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
-            this.TextBox_License_ToolId_Status.ReadOnly = true;
-            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_ToolId_Status.TabIndex = 122;
-            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserAlarmMC_Status
-            // 
-            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 287);
-            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
-            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
-            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserAlarmL_Status
-            // 
-            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 261);
-            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
-            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
-            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_NcCurrentAlarm_Status
-            // 
-            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 183);
-            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
-            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
-            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
-            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserTaskIOMC_Status
-            // 
-            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 235);
-            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
-            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
-            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserTaskIOL_Status
-            // 
-            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 209);
-            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
-            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
-            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_P200_Status
-            // 
-            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 157);
-            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
-            this.TextBox_License_P200_Status.ReadOnly = true;
-            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_P200_Status.TabIndex = 116;
-            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_MCMDAPI_Status
-            // 
-            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
-            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
-            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
-            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_MDATAPI_Status
-            // 
-            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
-            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
-            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
-            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_LCMDAPI_Status
-            // 
-            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 105);
-            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
-            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
-            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_LDATAPI_Status
-            // 
-            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
-            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
-            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
-            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Program
             // 
@@ -4241,7 +4556,7 @@ namespace ScoutTestApplication
             this.Program.Location = new System.Drawing.Point(4, 32);
             this.Program.Name = "Program";
             this.Program.Padding = new System.Windows.Forms.Padding(3);
-            this.Program.Size = new System.Drawing.Size(654, 349);
+            this.Program.Size = new System.Drawing.Size(676, 426);
             this.Program.TabIndex = 8;
             this.Program.Text = "Program Info";
             this.Program.UseVisualStyleBackColor = true;
@@ -4467,6 +4782,8 @@ namespace ScoutTestApplication
             // 
             // OS
             // 
+            this.OS.Controls.Add(this.label173);
+            this.OS.Controls.Add(this.TextBox_EnvUserPermissions);
             this.OS.Controls.Add(this.label119);
             this.OS.Controls.Add(this.TextBox_EnvUserDomain);
             this.OS.Controls.Add(this.label118);
@@ -4509,7 +4826,7 @@ namespace ScoutTestApplication
             this.OS.Location = new System.Drawing.Point(4, 32);
             this.OS.Name = "OS";
             this.OS.Padding = new System.Windows.Forms.Padding(3);
-            this.OS.Size = new System.Drawing.Size(654, 349);
+            this.OS.Size = new System.Drawing.Size(676, 426);
             this.OS.TabIndex = 9;
             this.OS.Text = "Operating System";
             this.OS.UseVisualStyleBackColor = true;
@@ -4517,7 +4834,7 @@ namespace ScoutTestApplication
             // label119
             // 
             this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(284, 315);
+            this.label119.Location = new System.Drawing.Point(284, 341);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(71, 13);
             this.label119.TabIndex = 124;
@@ -4526,7 +4843,7 @@ namespace ScoutTestApplication
             // TextBox_EnvUserDomain
             // 
             this.TextBox_EnvUserDomain.Enabled = false;
-            this.TextBox_EnvUserDomain.Location = new System.Drawing.Point(361, 312);
+            this.TextBox_EnvUserDomain.Location = new System.Drawing.Point(361, 338);
             this.TextBox_EnvUserDomain.Name = "TextBox_EnvUserDomain";
             this.TextBox_EnvUserDomain.Size = new System.Drawing.Size(220, 20);
             this.TextBox_EnvUserDomain.TabIndex = 125;
@@ -4877,7 +5194,7 @@ namespace ScoutTestApplication
             this.Registry.Location = new System.Drawing.Point(4, 32);
             this.Registry.Name = "Registry";
             this.Registry.Padding = new System.Windows.Forms.Padding(3);
-            this.Registry.Size = new System.Drawing.Size(654, 349);
+            this.Registry.Size = new System.Drawing.Size(676, 426);
             this.Registry.TabIndex = 13;
             this.Registry.Text = "Registry";
             this.Registry.UseVisualStyleBackColor = true;
@@ -4887,7 +5204,7 @@ namespace ScoutTestApplication
             this.ResultBox_RegVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ResultBox_RegVersion.Enabled = false;
             this.ResultBox_RegVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ResultBox_RegVersion.Location = new System.Drawing.Point(423, 309);
+            this.ResultBox_RegVersion.Location = new System.Drawing.Point(422, 334);
             this.ResultBox_RegVersion.Name = "ResultBox_RegVersion";
             this.ResultBox_RegVersion.ReadOnly = true;
             this.ResultBox_RegVersion.Size = new System.Drawing.Size(223, 26);
@@ -4896,13 +5213,13 @@ namespace ScoutTestApplication
             // label155
             // 
             this.label155.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label155.AutoSize = true;
             this.label155.Enabled = false;
-            this.label155.Location = new System.Drawing.Point(419, 286);
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label155.Location = new System.Drawing.Point(419, 294);
             this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(132, 20);
+            this.label155.Size = new System.Drawing.Size(240, 37);
             this.label155.TabIndex = 118;
-            this.label155.Text = "Uninstall Version:";
+            this.label155.Text = "If Value = \"Version\", parse the data result to a human readable version number";
             // 
             // ResultBox_RegData
             // 
@@ -4974,7 +5291,7 @@ namespace ScoutTestApplication
             this.TextBox_RegValue.Name = "TextBox_RegValue";
             this.TextBox_RegValue.Size = new System.Drawing.Size(167, 20);
             this.TextBox_RegValue.TabIndex = 16;
-            this.TextBox_RegValue.Text = "Version";
+            this.TextBox_RegValue.Text = "DisplayVersion";
             // 
             // Button_GetRegValue
             // 
@@ -5066,7 +5383,7 @@ namespace ScoutTestApplication
             this.ErrorHandling.Location = new System.Drawing.Point(4, 32);
             this.ErrorHandling.Name = "ErrorHandling";
             this.ErrorHandling.Padding = new System.Windows.Forms.Padding(3);
-            this.ErrorHandling.Size = new System.Drawing.Size(654, 349);
+            this.ErrorHandling.Size = new System.Drawing.Size(676, 426);
             this.ErrorHandling.TabIndex = 11;
             this.ErrorHandling.Text = "Error Handling";
             this.ErrorHandling.UseVisualStyleBackColor = true;
@@ -5177,7 +5494,7 @@ namespace ScoutTestApplication
             this.OptionsTab.Location = new System.Drawing.Point(4, 32);
             this.OptionsTab.Name = "OptionsTab";
             this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OptionsTab.Size = new System.Drawing.Size(654, 349);
+            this.OptionsTab.Size = new System.Drawing.Size(676, 426);
             this.OptionsTab.TabIndex = 12;
             this.OptionsTab.Text = "Options";
             this.OptionsTab.UseVisualStyleBackColor = true;
@@ -5203,31 +5520,161 @@ namespace ScoutTestApplication
             this.Button_Options.UseVisualStyleBackColor = true;
             this.Button_Options.Click += new System.EventHandler(this.Button_Options_Click);
             // 
-            // TextBox_ScreenMode
+            // TextBox_License_GCMDAPI_Status
             // 
-            this.TextBox_ScreenMode.Enabled = false;
-            this.TextBox_ScreenMode.Location = new System.Drawing.Point(138, 136);
-            this.TextBox_ScreenMode.Name = "TextBox_ScreenMode";
-            this.TextBox_ScreenMode.Size = new System.Drawing.Size(215, 20);
-            this.TextBox_ScreenMode.TabIndex = 15;
-            this.TextBox_ScreenMode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_GCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GCMDAPI_Status.Location = new System.Drawing.Point(522, 183);
+            this.TextBox_License_GCMDAPI_Status.Name = "TextBox_License_GCMDAPI_Status";
+            this.TextBox_License_GCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_GCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GCMDAPI_Status.TabIndex = 218;
+            this.TextBox_License_GCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label157
+            // TextBox_License_GDATAPI_Status
             // 
-            this.label157.AutoSize = true;
-            this.label157.Location = new System.Drawing.Point(28, 139);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(104, 13);
-            this.label157.TabIndex = 16;
-            this.label157.Text = "SelectScreen Mode:";
+            this.TextBox_License_GDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GDATAPI_Status.Location = new System.Drawing.Point(522, 105);
+            this.TextBox_License_GDATAPI_Status.Name = "TextBox_License_GDATAPI_Status";
+            this.TextBox_License_GDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_GDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GDATAPI_Status.TabIndex = 212;
+            this.TextBox_License_GDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_ToolId_Status
+            // 
+            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 365);
+            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
+            this.TextBox_License_ToolId_Status.ReadOnly = true;
+            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_ToolId_Status.TabIndex = 122;
+            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserAlarmMC_Status
+            // 
+            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 339);
+            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
+            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
+            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserAlarmL_Status
+            // 
+            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 313);
+            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
+            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
+            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_NcCurrentAlarm_Status
+            // 
+            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 235);
+            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
+            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
+            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
+            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserTaskIOMC_Status
+            // 
+            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 287);
+            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
+            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
+            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserTaskIOL_Status
+            // 
+            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 261);
+            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
+            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
+            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_P200_Status
+            // 
+            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 209);
+            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
+            this.TextBox_License_P200_Status.ReadOnly = true;
+            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_P200_Status.TabIndex = 116;
+            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_MCMDAPI_Status
+            // 
+            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 157);
+            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
+            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
+            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_MDATAPI_Status
+            // 
+            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
+            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
+            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
+            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_LCMDAPI_Status
+            // 
+            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
+            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
+            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
+            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_LDATAPI_Status
+            // 
+            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
+            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
+            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
+            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Location = new System.Drawing.Point(265, 315);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(90, 13);
+            this.label173.TabIndex = 126;
+            this.label173.Text = "User Permissions:";
+            // 
+            // TextBox_EnvUserPermissions
+            // 
+            this.TextBox_EnvUserPermissions.Enabled = false;
+            this.TextBox_EnvUserPermissions.Location = new System.Drawing.Point(361, 312);
+            this.TextBox_EnvUserPermissions.Name = "TextBox_EnvUserPermissions";
+            this.TextBox_EnvUserPermissions.Size = new System.Drawing.Size(220, 20);
+            this.TextBox_EnvUserPermissions.TabIndex = 127;
+            this.TextBox_EnvUserPermissions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScoutTestApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 385);
+            this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.tabControl1);
-            this.MinimumSize = new System.Drawing.Size(678, 423);
+            this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "ScoutTestApplicationForm";
             this.Text = "Okuma.Scout Test Application";
             this.Load += new System.EventHandler(this.ScoutTestApplication_Loaded);
@@ -5717,6 +6164,45 @@ namespace ScoutTestApplication
         private System.Windows.Forms.Label label156;
         private System.Windows.Forms.TextBox TextBox_ScreenMode;
         private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.TextBox TextBox_ThincGrinderCommandApi;
+        private System.Windows.Forms.TextBox TextBox_ThincGrinderCommandApiVer;
+        private System.Windows.Forms.Label label159;
+        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.TextBox TextBox_ThincGrinderDataApi;
+        private System.Windows.Forms.TextBox TextBox_ThincGrinderDataApiVer;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.Label label162;
+        private System.Windows.Forms.TextBox TextBox_OspGrinderDataApiVer;
+        private System.Windows.Forms.TextBox TextBox_OspGrinderDataApi;
+        private System.Windows.Forms.Label label163;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.TextBox TextBox_OspGrinderCommandApiVer;
+        private System.Windows.Forms.TextBox TextBox_OspGrinderCommandApi;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.TextBox TextBox_License_GCMDAPI_ExpireDate;
+        private System.Windows.Forms.TextBox TextBox_License_GCMDAPI_Expires;
+        private System.Windows.Forms.TextBox TextBox_License_GCMDAPI_Version;
+        private System.Windows.Forms.TextBox TextBox_License_GCMDAPI_FeatureName;
+        private System.Windows.Forms.Label label167;
+        private ResultBox TextBox_License_GCMDAPI_Status;
+        private System.Windows.Forms.TextBox TextBox_License_GDATAPI_ExpireDate;
+        private System.Windows.Forms.TextBox TextBox_License_GDATAPI_Expires;
+        private System.Windows.Forms.TextBox TextBox_License_GDATAPI_Version;
+        private System.Windows.Forms.TextBox TextBox_License_GDATAPI_FeatureName;
+        private System.Windows.Forms.Label label166;
+        private ResultBox TextBox_License_GDATAPI_Status;
+        private System.Windows.Forms.Label label169;
+        private System.Windows.Forms.Label label172;
+        private System.Windows.Forms.TextBox TextBox_OspTouchExists;
+        private System.Windows.Forms.TextBox TextBox_OspTouchVersion;
+        private System.Windows.Forms.Label label171;
+        private System.Windows.Forms.Label label170;
+        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.TextBox TextBox_OspGestureExists;
+        private System.Windows.Forms.TextBox TextBox_OspGestureVersion;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.TextBox TextBox_EnvUserPermissions;
     }
 }
 
