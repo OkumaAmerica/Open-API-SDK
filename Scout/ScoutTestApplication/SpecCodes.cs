@@ -104,53 +104,14 @@ namespace ScoutTestApplication
 
             switch (ComboBox_NCSpecGroup.SelectedIndex)
             {
-                case 0:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC1MG;
-                        break;
-                    }
-
-                case 1:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC2MG;
-                        break;
-                    }
-
-                case 2:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC3MG;
-                        break;
-                    }
-
-                case 3:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC4MG;
-                        break;
-                    }
-
-                case 4:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC5MG;
-                        break;
-                    }
-
-                case 5:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC6MG;
-                        break;
-                    }
-
-                case 6:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC7MG;
-                        break;
-                    }
-
-                case 7:
-                    {
-                        selectedGroup = Enums.NCSpecGroup.NC8MG;
-                        break;
-                    }
+                case 0: { selectedGroup = Enums.NCSpecGroup.NC1MG; break; }
+                case 1: { selectedGroup = Enums.NCSpecGroup.NC2MG; break; }
+                case 2: { selectedGroup = Enums.NCSpecGroup.NC3MG; break; }
+                case 3: { selectedGroup = Enums.NCSpecGroup.NC4MG; break; }
+                case 4: { selectedGroup = Enums.NCSpecGroup.NC5MG; break; }
+                case 5: { selectedGroup = Enums.NCSpecGroup.NC6MG; break; }
+                case 6: { selectedGroup = Enums.NCSpecGroup.NC7MG; break; }
+                case 7: { selectedGroup = Enums.NCSpecGroup.NC8MG; break; }
             }
 
             TextBox_NCSpecFirstHalf.Text = Okuma.Scout.SpecCode.NC.GroupFirstHalf(selectedGroup);
@@ -203,10 +164,7 @@ namespace ScoutTestApplication
             {
                 RadioButton_NCSpecFileUser.Checked = true;
             }
-            else
-            {
-                this.ChooseNCSpecFile();
-            }
+            else { this.ChooseNCSpecFile(); }
         }
 
         /// <summary>
@@ -240,15 +198,9 @@ namespace ScoutTestApplication
                     Label_NCSpecFileUserFile.Text = string.Empty;
                     Okuma.Scout.SpecCode.NC.UserDefinedFilePath = string.Empty;
                 }
-                else
-                {
-                    Label_NCSpecFileUserFile.Text = ofd.FileName;
-                }
+                else { Label_NCSpecFileUserFile.Text = ofd.FileName; }
             }
-            else
-            {
-                RadioButton_NCSpecFileDefault.Checked = true;
-            }
+            else { RadioButton_NCSpecFileDefault.Checked = true; }
         }
 
         /// <summary>
@@ -267,53 +219,14 @@ namespace ScoutTestApplication
 
             switch (ComboBox_NCBSpecGroup.SelectedIndex)
             {
-                case 0:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB1MG;
-                        break;
-                    }
-
-                case 1:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB2MG;
-                        break;
-                    }
-
-                case 2:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB3MG;
-                        break;
-                    }
-
-                case 3:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB4MG;
-                        break;
-                    }
-
-                case 4:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB5MG;
-                        break;
-                    }
-
-                case 5:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB6MG;
-                        break;
-                    }
-
-                case 6:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB7MG;
-                        break;
-                    }
-
-                case 7:
-                    {
-                        selectedGroup = Enums.NCBSpecGroup.NCB8MG;
-                        break;
-                    }
+                case 0: { selectedGroup = Enums.NCBSpecGroup.NCB1MG; break; }
+                case 1: { selectedGroup = Enums.NCBSpecGroup.NCB2MG; break; }
+                case 2: { selectedGroup = Enums.NCBSpecGroup.NCB3MG; break; }
+                case 3: { selectedGroup = Enums.NCBSpecGroup.NCB4MG; break; }
+                case 4: { selectedGroup = Enums.NCBSpecGroup.NCB5MG; break; }
+                case 5: { selectedGroup = Enums.NCBSpecGroup.NCB6MG; break; }
+                case 6: { selectedGroup = Enums.NCBSpecGroup.NCB7MG; break; }
+                case 7: { selectedGroup = Enums.NCBSpecGroup.NCB8MG; break; }
             }
 
             TextBox_NCBSpecFirstHalf.Text = Okuma.Scout.SpecCode.NCB.GroupFirstHalf(selectedGroup);
@@ -427,23 +340,9 @@ namespace ScoutTestApplication
 
             switch (ComboBox_PLCSpecGroup.SelectedIndex)
             {
-                case 0:
-                    {
-                        selectedGroup = Enums.PLCSpecGroup.PLC1MG;
-                        break;
-                    }
-
-                case 1:
-                    {
-                        selectedGroup = Enums.PLCSpecGroup.PLC2MG;
-                        break;
-                    }
-
-                case 2:
-                    {
-                        selectedGroup = Enums.PLCSpecGroup.PLC3MG;
-                        break;
-                    }
+                case 0: { selectedGroup = Enums.PLCSpecGroup.PLC1MG; break; }
+                case 1: { selectedGroup = Enums.PLCSpecGroup.PLC2MG; break; }
+                case 2: { selectedGroup = Enums.PLCSpecGroup.PLC3MG; break; }
             }
 
             TextBox_PLCSpecFirstHalf.Text = Okuma.Scout.SpecCode.PLC.GroupFirstHalf(selectedGroup);
@@ -533,15 +432,9 @@ namespace ScoutTestApplication
                     Label_PLCSpecFileUserFile.Text = string.Empty;
                     Okuma.Scout.SpecCode.PLC.UserDefinedFilePath = string.Empty;
                 }
-                else
-                {
-                    Label_PLCSpecFileUserFile.Text = ofd.FileName;
-                }
+                else { Label_PLCSpecFileUserFile.Text = ofd.FileName; }
             }
-            else
-            {
-                RadioButton_PLCSpecFileDefault.Checked = true;
-            }
+            else { RadioButton_PLCSpecFileDefault.Checked = true; }
         }
     }
 } 
