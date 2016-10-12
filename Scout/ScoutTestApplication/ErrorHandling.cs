@@ -30,6 +30,7 @@ namespace ScoutTestApplication
     /// <summary>
     /// This is just an extension of Form1 broken into a separate file for
     /// organization and clarity </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
     public partial class ScoutTestApplicationForm : Form
     {
 

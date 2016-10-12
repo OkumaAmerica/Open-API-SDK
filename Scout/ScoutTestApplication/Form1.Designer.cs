@@ -35,120 +35,6 @@ namespace ScoutTestApplication
             this.label2 = new System.Windows.Forms.Label();
             this.TextBox_ControlType = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Platform = new System.Windows.Forms.TabPage();
-            this.TextBox_ScreenMode = new System.Windows.Forms.TextBox();
-            this.label157 = new System.Windows.Forms.Label();
-            this.TextBox_PanelType = new System.Windows.Forms.TextBox();
-            this.label156 = new System.Windows.Forms.Label();
-            this.label154 = new System.Windows.Forms.Label();
-            this.ComboBox_Display = new System.Windows.Forms.ComboBox();
-            this.label153 = new System.Windows.Forms.Label();
-            this.TextBox_DisplayInfo = new System.Windows.Forms.TextBox();
-            this.Button_Platform = new System.Windows.Forms.Button();
-            this.SpecCodes = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.Comparison = new System.Windows.Forms.TabPage();
-            this.label131 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecB_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_NCBSpecA_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_NCSpecB_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_NCSpecA_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec2B_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec2A_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec1B_Match = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec1A_Match = new System.Windows.Forms.TextBox();
-            this.label130 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecB_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_NCBSpecA_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_NCSpecB_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_NCSpecA_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_SpecMachineType_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec2B_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec2A_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec1B_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec1A_DMC = new System.Windows.Forms.TextBox();
-            this.TextBox_NCBSpecB = new System.Windows.Forms.TextBox();
-            this.label129 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecA = new System.Windows.Forms.TextBox();
-            this.label127 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecB = new System.Windows.Forms.TextBox();
-            this.label125 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecA = new System.Windows.Forms.TextBox();
-            this.label124 = new System.Windows.Forms.Label();
-            this.TextBox_SpecMachineType = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec2B = new System.Windows.Forms.TextBox();
-            this.label122 = new System.Windows.Forms.Label();
-            this.TextBox_PLCSpec2A = new System.Windows.Forms.TextBox();
-            this.TextBox_PLCSpec1B = new System.Windows.Forms.TextBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.TextBox_PLCSpec1A = new System.Windows.Forms.TextBox();
-            this.Button_SpecCodes = new System.Windows.Forms.Button();
-            this.NCSpecFile = new System.Windows.Forms.TabPage();
-            this.TextBox_NCSpecFileExists = new System.Windows.Forms.TextBox();
-            this.label126 = new System.Windows.Forms.Label();
-            this.label123 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecSerialNumber = new System.Windows.Forms.TextBox();
-            this.label121 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecMachineType = new System.Windows.Forms.TextBox();
-            this.label139 = new System.Windows.Forms.Label();
-            this.ComboBox_NCSpecGroup = new System.Windows.Forms.ComboBox();
-            this.Label_NcSpecGroup2 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecSecondHalf = new System.Windows.Forms.TextBox();
-            this.Button_NCSpecFileSelectFile = new System.Windows.Forms.Button();
-            this.Label_NCSpecFileUserFile = new System.Windows.Forms.Label();
-            this.RadioButton_NCSpecFileUser = new System.Windows.Forms.RadioButton();
-            this.RadioButton_NCSpecFileDefault = new System.Windows.Forms.RadioButton();
-            this.Button_NCSpecFileExecute = new System.Windows.Forms.Button();
-            this.Label_NcSpecGroup1 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecFirstHalf = new System.Windows.Forms.TextBox();
-            this.NCBSpecFile = new System.Windows.Forms.TabPage();
-            this.TextBox_NCBSpecFileExists = new System.Windows.Forms.TextBox();
-            this.label141 = new System.Windows.Forms.Label();
-            this.label136 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecSerialNumber = new System.Windows.Forms.TextBox();
-            this.label137 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecMachineType = new System.Windows.Forms.TextBox();
-            this.label138 = new System.Windows.Forms.Label();
-            this.ComboBox_NCBSpecGroup = new System.Windows.Forms.ComboBox();
-            this.label140 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecSecondHalf = new System.Windows.Forms.TextBox();
-            this.Button_NCBSpecFileSelectFile = new System.Windows.Forms.Button();
-            this.Label_NCBSpecFileUserFile = new System.Windows.Forms.Label();
-            this.RadioButton_NCBSpecFileUser = new System.Windows.Forms.RadioButton();
-            this.RadioButton_NCBSpecFileDefault = new System.Windows.Forms.RadioButton();
-            this.Button_NCBSpecFileExecute = new System.Windows.Forms.Button();
-            this.label142 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecFirstHalf = new System.Windows.Forms.TextBox();
-            this.PLCSpecFile = new System.Windows.Forms.TabPage();
-            this.TextBox_PLCSpecFileExists = new System.Windows.Forms.TextBox();
-            this.label128 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.ComboBox_PLCSpecGroup = new System.Windows.Forms.ComboBox();
-            this.label146 = new System.Windows.Forms.Label();
-            this.TextBox_PLCSpecSecondHalf = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Label_PLCSpecFileUserFile = new System.Windows.Forms.Label();
-            this.RadioButton_PLCSpecFileUser = new System.Windows.Forms.RadioButton();
-            this.RadioButton_PLCSpecFileDefault = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label148 = new System.Windows.Forms.Label();
-            this.TextBox_PLCSpecFirstHalf = new System.Windows.Forms.TextBox();
-            this.Dir = new System.Windows.Forms.TabPage();
-            this.label114 = new System.Windows.Forms.Label();
-            this.TextBox_DirSystem = new System.Windows.Forms.TextBox();
-            this.label113 = new System.Windows.Forms.Label();
-            this.TextBox_DirCurrent = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.TextBox_DirOkuma = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TextBox_DirOsp = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TextBox_DirCns = new System.Windows.Forms.TextBox();
-            this.TextBox_DirCrad = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TextBox_DirVolante = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Button_Directories = new System.Windows.Forms.Button();
             this.API = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.TabThincApi = new System.Windows.Forms.TabPage();
@@ -237,53 +123,22 @@ namespace ScoutTestApplication
             this.TextBox_OspLatheCommandApi = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.Button_OspApiInfo = new System.Windows.Forms.Button();
-            this.Files = new System.Windows.Forms.TabPage();
-            this.label169 = new System.Windows.Forms.Label();
-            this.label172 = new System.Windows.Forms.Label();
-            this.TextBox_OspTouchExists = new System.Windows.Forms.TextBox();
-            this.TextBox_OspTouchVersion = new System.Windows.Forms.TextBox();
-            this.label171 = new System.Windows.Forms.Label();
-            this.label170 = new System.Windows.Forms.Label();
-            this.label168 = new System.Windows.Forms.Label();
-            this.TextBox_OspGestureExists = new System.Windows.Forms.TextBox();
-            this.TextBox_OspGestureVersion = new System.Windows.Forms.TextBox();
-            this.label133 = new System.Windows.Forms.Label();
-            this.TextBox_NCBSpecFileExist = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.TextBox_NCSpecFileExist = new System.Windows.Forms.TextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.TextBox_PLCSpecFileExist = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.TextBox_ThincApiLicenseModified = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.TextBox_SoftSwitchVer = new System.Windows.Forms.TextBox();
-            this.TextBox_SoftSwitch = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.Button_FileInfo = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TextBox_DMC = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TextBox_DMCModified = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.TextBox_ThincApiLicense = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.TextBox_ApiNotifierVer = new System.Windows.Forms.TextBox();
-            this.TextBox_EbiFry = new System.Windows.Forms.TextBox();
-            this.TextBox_ApiNotifier = new System.Windows.Forms.TextBox();
-            this.TextBox_EbiFryVer = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Process = new System.Windows.Forms.TabPage();
-            this.TextBox_SoftSwitchRun = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.TextBox_ApiNotifierRun = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TextBox_OwmRun = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TextBox_OspRun = new System.Windows.Forms.TextBox();
-            this.Button_Processes = new System.Windows.Forms.Button();
+            this.Dir = new System.Windows.Forms.TabPage();
+            this.label114 = new System.Windows.Forms.Label();
+            this.TextBox_DirSystem = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.TextBox_DirCurrent = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.TextBox_DirOkuma = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TextBox_DirOsp = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TextBox_DirCns = new System.Windows.Forms.TextBox();
+            this.TextBox_DirCrad = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TextBox_DirVolante = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Button_Directories = new System.Windows.Forms.Button();
             this.DMC = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
             this.ListBox_DMC = new System.Windows.Forms.ListBox();
@@ -328,6 +183,60 @@ namespace ScoutTestApplication
             this.label45 = new System.Windows.Forms.Label();
             this.TextBox_Net10Sp = new System.Windows.Forms.TextBox();
             this.Button_DotNet = new System.Windows.Forms.Button();
+            this.ErrorHandling = new System.Windows.Forms.TabPage();
+            this.TextBox_ErrorHandling = new System.Windows.Forms.RichTextBox();
+            this.CheckBox_ErrorSubscribed = new System.Windows.Forms.CheckBox();
+            this.Button_ErrorUnSubscribe = new System.Windows.Forms.Button();
+            this.CheckBox_ShowDebugInfo = new System.Windows.Forms.CheckBox();
+            this.Button_ErrorError = new System.Windows.Forms.Button();
+            this.Button_ErrorInfo = new System.Windows.Forms.Button();
+            this.Button_ErrorWarning = new System.Windows.Forms.Button();
+            this.Button_ErrorException = new System.Windows.Forms.Button();
+            this.Button_ErrorSubscribe = new System.Windows.Forms.Button();
+            this.Files = new System.Windows.Forms.TabPage();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label172 = new System.Windows.Forms.Label();
+            this.TextBox_OspTouchExists = new System.Windows.Forms.TextBox();
+            this.TextBox_OspTouchVersion = new System.Windows.Forms.TextBox();
+            this.label171 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.label168 = new System.Windows.Forms.Label();
+            this.TextBox_OspGestureExists = new System.Windows.Forms.TextBox();
+            this.TextBox_OspGestureVersion = new System.Windows.Forms.TextBox();
+            this.label133 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecFileExist = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecFileExist = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpecFileExist = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.TextBox_ThincApiLicenseModified = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.TextBox_SoftSwitchVer = new System.Windows.Forms.TextBox();
+            this.TextBox_SoftSwitch = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.Button_FileInfo = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TextBox_DMC = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TextBox_DMCModified = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TextBox_ThincApiLicense = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TextBox_ApiNotifierVer = new System.Windows.Forms.TextBox();
+            this.TextBox_EbiFry = new System.Windows.Forms.TextBox();
+            this.TextBox_ApiNotifier = new System.Windows.Forms.TextBox();
+            this.TextBox_EbiFryVer = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.GAC = new System.Windows.Forms.TabPage();
+            this.Button_Clear = new System.Windows.Forms.Button();
+            this.TextBox_AssemblyName = new System.Windows.Forms.TextBox();
+            this.Button_ExecuteFindInGAC = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Label_B = new System.Windows.Forms.Label();
+            this.Label_A = new System.Windows.Forms.Label();
             this.License = new System.Windows.Forms.TabPage();
             this.TextBox_License_GCMDAPI_ExpireDate = new System.Windows.Forms.TextBox();
             this.TextBox_License_GCMDAPI_Expires = new System.Windows.Forms.TextBox();
@@ -400,32 +309,25 @@ namespace ScoutTestApplication
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.Button_ApiLicense = new System.Windows.Forms.Button();
-            this.Program = new System.Windows.Forms.TabPage();
-            this.label135 = new System.Windows.Forms.Label();
-            this.TextBox_TestAppVersion = new System.Windows.Forms.TextBox();
-            this.label134 = new System.Windows.Forms.Label();
-            this.TextBox_ScoutDllBuildDate = new System.Windows.Forms.TextBox();
-            this.label105 = new System.Windows.Forms.Label();
-            this.TextBox_ProgramBits = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.TextBox_TestAppBuildDate = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.TextBox_AssemblyDescription = new System.Windows.Forms.TextBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.TextBox_AssemblyCompany = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.TextBox_AssemblyCopyright = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.TextBox_ScoutDllAssemblyVersion = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.TextBox_AssemblyTitle = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.TextBox_AssemblyGuid = new System.Windows.Forms.TextBox();
-            this.Button_SetErrorMessage = new System.Windows.Forms.Button();
-            this.label75 = new System.Windows.Forms.Label();
-            this.TextBox_ErrorMessage = new System.Windows.Forms.TextBox();
-            this.Button_ProgramInfo = new System.Windows.Forms.Button();
+            this.TextBox_License_GCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_GDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_ToolId_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserAlarmL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_NcCurrentAlarm_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOMC_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_UserTaskIOL_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_P200_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_MDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LCMDAPI_Status = new ScoutTestApplication.ResultBox();
+            this.TextBox_License_LDATAPI_Status = new ScoutTestApplication.ResultBox();
+            this.OptionsTab = new System.Windows.Forms.TabPage();
+            this.ListBox_Options = new System.Windows.Forms.ListBox();
+            this.Button_Options = new System.Windows.Forms.Button();
             this.OS = new System.Windows.Forms.TabPage();
+            this.label173 = new System.Windows.Forms.Label();
+            this.TextBox_EnvUserPermissions = new System.Windows.Forms.TextBox();
             this.label119 = new System.Windows.Forms.Label();
             this.TextBox_EnvUserDomain = new System.Windows.Forms.TextBox();
             this.label118 = new System.Windows.Forms.Label();
@@ -464,6 +366,71 @@ namespace ScoutTestApplication
             this.label98 = new System.Windows.Forms.Label();
             this.TextBox_OSName = new System.Windows.Forms.TextBox();
             this.Button_OS = new System.Windows.Forms.Button();
+            this.PIOD = new System.Windows.Forms.TabPage();
+            this.TextBox_ValidPiodFileExists = new System.Windows.Forms.TextBox();
+            this.label180 = new System.Windows.Forms.Label();
+            this.Button_PiodSelectFile = new System.Windows.Forms.Button();
+            this.Label_PiodFileUserFile = new System.Windows.Forms.Label();
+            this.RadioButton_PiodFileUser = new System.Windows.Forms.RadioButton();
+            this.RadioButton_PiodFileDefault = new System.Windows.Forms.RadioButton();
+            this.label179 = new System.Windows.Forms.Label();
+            this.TextBox_PiodMachineType = new System.Windows.Forms.TextBox();
+            this.label178 = new System.Windows.Forms.Label();
+            this.TextBox_PiodPlcSystem = new System.Windows.Forms.TextBox();
+            this.label177 = new System.Windows.Forms.Label();
+            this.TextBox_PiodProjectNumber = new System.Windows.Forms.TextBox();
+            this.label176 = new System.Windows.Forms.Label();
+            this.TextBox_PiodControl = new System.Windows.Forms.TextBox();
+            this.Button_PiodFileExecute = new System.Windows.Forms.Button();
+            this.Platform = new System.Windows.Forms.TabPage();
+            this.TextBox_ScreenMode = new System.Windows.Forms.TextBox();
+            this.label157 = new System.Windows.Forms.Label();
+            this.TextBox_PanelType = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.label154 = new System.Windows.Forms.Label();
+            this.ComboBox_Display = new System.Windows.Forms.ComboBox();
+            this.label153 = new System.Windows.Forms.Label();
+            this.TextBox_DisplayInfo = new System.Windows.Forms.TextBox();
+            this.Button_Platform = new System.Windows.Forms.Button();
+            this.Process = new System.Windows.Forms.TabPage();
+            this.TextBox_SoftSwitchRun = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TextBox_ApiNotifierRun = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TextBox_OwmRun = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextBox_OspRun = new System.Windows.Forms.TextBox();
+            this.Button_Processes = new System.Windows.Forms.Button();
+            this.Program = new System.Windows.Forms.TabPage();
+            this.label175 = new System.Windows.Forms.Label();
+            this.TextBox_ScoutComBuildDate = new System.Windows.Forms.TextBox();
+            this.label174 = new System.Windows.Forms.Label();
+            this.TextBox_ScoutComAssemblyVersion = new System.Windows.Forms.TextBox();
+            this.label135 = new System.Windows.Forms.Label();
+            this.TextBox_TestAppVersion = new System.Windows.Forms.TextBox();
+            this.label134 = new System.Windows.Forms.Label();
+            this.TextBox_ScoutDllBuildDate = new System.Windows.Forms.TextBox();
+            this.label105 = new System.Windows.Forms.Label();
+            this.TextBox_ProgramBits = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.TextBox_TestAppBuildDate = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.TextBox_AssemblyDescription = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.TextBox_AssemblyCompany = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.TextBox_AssemblyCopyright = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.TextBox_ScoutDllAssemblyVersion = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.TextBox_AssemblyTitle = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.TextBox_AssemblyGuid = new System.Windows.Forms.TextBox();
+            this.Button_SetErrorMessage = new System.Windows.Forms.Button();
+            this.label75 = new System.Windows.Forms.Label();
+            this.TextBox_ErrorMessage = new System.Windows.Forms.TextBox();
+            this.Button_ProgramInfo = new System.Windows.Forms.Button();
             this.Registry = new System.Windows.Forms.TabPage();
             this.ResultBox_RegVersion = new System.Windows.Forms.TextBox();
             this.label155 = new System.Windows.Forms.Label();
@@ -480,58 +447,120 @@ namespace ScoutTestApplication
             this.TextBox_RegKey = new System.Windows.Forms.TextBox();
             this.label143 = new System.Windows.Forms.Label();
             this.Button_Registry = new System.Windows.Forms.Button();
-            this.ErrorHandling = new System.Windows.Forms.TabPage();
-            this.TextBox_ErrorHandling = new System.Windows.Forms.RichTextBox();
-            this.CheckBox_ErrorSubscribed = new System.Windows.Forms.CheckBox();
-            this.Button_ErrorUnSubscribe = new System.Windows.Forms.Button();
-            this.CheckBox_ShowDebugInfo = new System.Windows.Forms.CheckBox();
-            this.Button_ErrorError = new System.Windows.Forms.Button();
-            this.Button_ErrorInfo = new System.Windows.Forms.Button();
-            this.Button_ErrorWarning = new System.Windows.Forms.Button();
-            this.Button_ErrorException = new System.Windows.Forms.Button();
-            this.Button_ErrorSubscribe = new System.Windows.Forms.Button();
-            this.OptionsTab = new System.Windows.Forms.TabPage();
-            this.ListBox_Options = new System.Windows.Forms.ListBox();
-            this.Button_Options = new System.Windows.Forms.Button();
-            this.TextBox_License_GCMDAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_GDATAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_ToolId_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserAlarmMC_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserAlarmL_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_NcCurrentAlarm_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserTaskIOMC_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_UserTaskIOL_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_P200_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_MCMDAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_MDATAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_LCMDAPI_Status = new ScoutTestApplication.ResultBox();
-            this.TextBox_License_LDATAPI_Status = new ScoutTestApplication.ResultBox();
-            this.label173 = new System.Windows.Forms.Label();
-            this.TextBox_EnvUserPermissions = new System.Windows.Forms.TextBox();
+            this.SpecCodes = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.Comparison = new System.Windows.Forms.TabPage();
+            this.label131 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecB_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_NCBSpecA_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_NCSpecB_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_NCSpecA_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec2B_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec2A_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec1B_Match = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec1A_Match = new System.Windows.Forms.TextBox();
+            this.label130 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecB_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_NCBSpecA_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_NCSpecB_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_NCSpecA_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_SpecMachineType_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec2B_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec2A_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec1B_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec1A_DMC = new System.Windows.Forms.TextBox();
+            this.TextBox_NCBSpecB = new System.Windows.Forms.TextBox();
+            this.label129 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecA = new System.Windows.Forms.TextBox();
+            this.label127 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecB = new System.Windows.Forms.TextBox();
+            this.label125 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecA = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
+            this.TextBox_SpecMachineType = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec2B = new System.Windows.Forms.TextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpec2A = new System.Windows.Forms.TextBox();
+            this.TextBox_PLCSpec1B = new System.Windows.Forms.TextBox();
+            this.label120 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpec1A = new System.Windows.Forms.TextBox();
+            this.Button_SpecCodes = new System.Windows.Forms.Button();
+            this.NCSpecFile = new System.Windows.Forms.TabPage();
+            this.TextBox_NCSpecFileExists = new System.Windows.Forms.TextBox();
+            this.label126 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecSerialNumber = new System.Windows.Forms.TextBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecMachineType = new System.Windows.Forms.TextBox();
+            this.label139 = new System.Windows.Forms.Label();
+            this.ComboBox_NCSpecGroup = new System.Windows.Forms.ComboBox();
+            this.Label_NcSpecGroup2 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecSecondHalf = new System.Windows.Forms.TextBox();
+            this.Button_NCSpecFileSelectFile = new System.Windows.Forms.Button();
+            this.Label_NCSpecFileUserFile = new System.Windows.Forms.Label();
+            this.RadioButton_NCSpecFileUser = new System.Windows.Forms.RadioButton();
+            this.RadioButton_NCSpecFileDefault = new System.Windows.Forms.RadioButton();
+            this.Button_NCSpecFileExecute = new System.Windows.Forms.Button();
+            this.Label_NcSpecGroup1 = new System.Windows.Forms.Label();
+            this.TextBox_NCSpecFirstHalf = new System.Windows.Forms.TextBox();
+            this.NCBSpecFile = new System.Windows.Forms.TabPage();
+            this.TextBox_NCBSpecFileExists = new System.Windows.Forms.TextBox();
+            this.label141 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecSerialNumber = new System.Windows.Forms.TextBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecMachineType = new System.Windows.Forms.TextBox();
+            this.label138 = new System.Windows.Forms.Label();
+            this.ComboBox_NCBSpecGroup = new System.Windows.Forms.ComboBox();
+            this.label140 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecSecondHalf = new System.Windows.Forms.TextBox();
+            this.Button_NCBSpecFileSelectFile = new System.Windows.Forms.Button();
+            this.Label_NCBSpecFileUserFile = new System.Windows.Forms.Label();
+            this.RadioButton_NCBSpecFileUser = new System.Windows.Forms.RadioButton();
+            this.RadioButton_NCBSpecFileDefault = new System.Windows.Forms.RadioButton();
+            this.Button_NCBSpecFileExecute = new System.Windows.Forms.Button();
+            this.label142 = new System.Windows.Forms.Label();
+            this.TextBox_NCBSpecFirstHalf = new System.Windows.Forms.TextBox();
+            this.PLCSpecFile = new System.Windows.Forms.TabPage();
+            this.TextBox_PLCSpecFileExists = new System.Windows.Forms.TextBox();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.ComboBox_PLCSpecGroup = new System.Windows.Forms.ComboBox();
+            this.label146 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpecSecondHalf = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Label_PLCSpecFileUserFile = new System.Windows.Forms.Label();
+            this.RadioButton_PLCSpecFileUser = new System.Windows.Forms.RadioButton();
+            this.RadioButton_PLCSpecFileDefault = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label148 = new System.Windows.Forms.Label();
+            this.TextBox_PLCSpecFirstHalf = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
+            this.API.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.TabThincApi.SuspendLayout();
+            this.TabOcjApi.SuspendLayout();
+            this.Dir.SuspendLayout();
+            this.DMC.SuspendLayout();
+            this.DotNet.SuspendLayout();
+            this.ErrorHandling.SuspendLayout();
+            this.Files.SuspendLayout();
+            this.GAC.SuspendLayout();
+            this.License.SuspendLayout();
+            this.OptionsTab.SuspendLayout();
+            this.OS.SuspendLayout();
+            this.PIOD.SuspendLayout();
             this.Platform.SuspendLayout();
+            this.Process.SuspendLayout();
+            this.Program.SuspendLayout();
+            this.Registry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_SubKeys)).BeginInit();
             this.SpecCodes.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.Comparison.SuspendLayout();
             this.NCSpecFile.SuspendLayout();
             this.NCBSpecFile.SuspendLayout();
             this.PLCSpecFile.SuspendLayout();
-            this.Dir.SuspendLayout();
-            this.API.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.TabThincApi.SuspendLayout();
-            this.TabOcjApi.SuspendLayout();
-            this.Files.SuspendLayout();
-            this.Process.SuspendLayout();
-            this.DMC.SuspendLayout();
-            this.DotNet.SuspendLayout();
-            this.License.SuspendLayout();
-            this.Program.SuspendLayout();
-            this.OS.SuspendLayout();
-            this.Registry.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_SubKeys)).BeginInit();
-            this.ErrorHandling.SuspendLayout();
-            this.OptionsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextBox_MachineType
@@ -572,1329 +601,40 @@ namespace ScoutTestApplication
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Platform);
-            this.tabControl1.Controls.Add(this.SpecCodes);
-            this.tabControl1.Controls.Add(this.Dir);
             this.tabControl1.Controls.Add(this.API);
-            this.tabControl1.Controls.Add(this.Files);
-            this.tabControl1.Controls.Add(this.Process);
+            this.tabControl1.Controls.Add(this.Dir);
             this.tabControl1.Controls.Add(this.DMC);
             this.tabControl1.Controls.Add(this.DotNet);
-            this.tabControl1.Controls.Add(this.License);
-            this.tabControl1.Controls.Add(this.Program);
-            this.tabControl1.Controls.Add(this.OS);
-            this.tabControl1.Controls.Add(this.Registry);
             this.tabControl1.Controls.Add(this.ErrorHandling);
+            this.tabControl1.Controls.Add(this.Files);
+            this.tabControl1.Controls.Add(this.GAC);
+            this.tabControl1.Controls.Add(this.License);
             this.tabControl1.Controls.Add(this.OptionsTab);
+            this.tabControl1.Controls.Add(this.OS);
+            this.tabControl1.Controls.Add(this.PIOD);
+            this.tabControl1.Controls.Add(this.Platform);
+            this.tabControl1.Controls.Add(this.Process);
+            this.tabControl1.Controls.Add(this.Program);
+            this.tabControl1.Controls.Add(this.Registry);
+            this.tabControl1.Controls.Add(this.SpecCodes);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(50, 28);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(684, 462);
+            this.tabControl1.Size = new System.Drawing.Size(684, 484);
             this.tabControl1.TabIndex = 8;
-            // 
-            // Platform
-            // 
-            this.Platform.Controls.Add(this.TextBox_ScreenMode);
-            this.Platform.Controls.Add(this.label157);
-            this.Platform.Controls.Add(this.TextBox_PanelType);
-            this.Platform.Controls.Add(this.label156);
-            this.Platform.Controls.Add(this.label154);
-            this.Platform.Controls.Add(this.ComboBox_Display);
-            this.Platform.Controls.Add(this.label153);
-            this.Platform.Controls.Add(this.TextBox_DisplayInfo);
-            this.Platform.Controls.Add(this.Button_Platform);
-            this.Platform.Controls.Add(this.label1);
-            this.Platform.Controls.Add(this.TextBox_MachineType);
-            this.Platform.Controls.Add(this.TextBox_ControlType);
-            this.Platform.Controls.Add(this.label2);
-            this.Platform.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Platform.Location = new System.Drawing.Point(4, 32);
-            this.Platform.Name = "Platform";
-            this.Platform.Padding = new System.Windows.Forms.Padding(3);
-            this.Platform.Size = new System.Drawing.Size(676, 426);
-            this.Platform.TabIndex = 0;
-            this.Platform.Text = "Platform";
-            this.Platform.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_ScreenMode
-            // 
-            this.TextBox_ScreenMode.Enabled = false;
-            this.TextBox_ScreenMode.Location = new System.Drawing.Point(138, 136);
-            this.TextBox_ScreenMode.Name = "TextBox_ScreenMode";
-            this.TextBox_ScreenMode.Size = new System.Drawing.Size(215, 20);
-            this.TextBox_ScreenMode.TabIndex = 15;
-            this.TextBox_ScreenMode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label157
-            // 
-            this.label157.AutoSize = true;
-            this.label157.Location = new System.Drawing.Point(28, 139);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(104, 13);
-            this.label157.TabIndex = 16;
-            this.label157.Text = "SelectScreen Mode:";
-            // 
-            // TextBox_PanelType
-            // 
-            this.TextBox_PanelType.Enabled = false;
-            this.TextBox_PanelType.Location = new System.Drawing.Point(138, 110);
-            this.TextBox_PanelType.Name = "TextBox_PanelType";
-            this.TextBox_PanelType.Size = new System.Drawing.Size(215, 20);
-            this.TextBox_PanelType.TabIndex = 13;
-            this.TextBox_PanelType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Location = new System.Drawing.Point(68, 113);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(64, 13);
-            this.label156.TabIndex = 14;
-            this.label156.Text = "Panel Type:";
-            // 
-            // label154
-            // 
-            this.label154.AutoSize = true;
-            this.label154.Location = new System.Drawing.Point(8, 189);
-            this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(92, 13);
-            this.label154.TabIndex = 12;
-            this.label154.Text = "Choose a Display:";
-            // 
-            // ComboBox_Display
-            // 
-            this.ComboBox_Display.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox_Display.FormattingEnabled = true;
-            this.ComboBox_Display.Location = new System.Drawing.Point(11, 210);
-            this.ComboBox_Display.Name = "ComboBox_Display";
-            this.ComboBox_Display.Size = new System.Drawing.Size(121, 21);
-            this.ComboBox_Display.TabIndex = 11;
-            this.ComboBox_Display.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDisplay_IndexChanged);
-            // 
-            // label153
-            // 
-            this.label153.AutoSize = true;
-            this.label153.Location = new System.Drawing.Point(135, 189);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(99, 13);
-            this.label153.TabIndex = 10;
-            this.label153.Text = "Display Information:";
-            // 
-            // TextBox_DisplayInfo
-            // 
-            this.TextBox_DisplayInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_DisplayInfo.Location = new System.Drawing.Point(138, 210);
-            this.TextBox_DisplayInfo.Multiline = true;
-            this.TextBox_DisplayInfo.Name = "TextBox_DisplayInfo";
-            this.TextBox_DisplayInfo.Size = new System.Drawing.Size(508, 131);
-            this.TextBox_DisplayInfo.TabIndex = 9;
-            // 
-            // Button_Platform
-            // 
-            this.Button_Platform.Location = new System.Drawing.Point(11, 9);
-            this.Button_Platform.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_Platform.Name = "Button_Platform";
-            this.Button_Platform.Size = new System.Drawing.Size(109, 23);
-            this.Button_Platform.TabIndex = 8;
-            this.Button_Platform.Text = "Execute";
-            this.Button_Platform.UseVisualStyleBackColor = true;
-            this.Button_Platform.Click += new System.EventHandler(this.Button_Platform_Click);
-            // 
-            // SpecCodes
-            // 
-            this.SpecCodes.Controls.Add(this.tabControl2);
-            this.SpecCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.SpecCodes.Location = new System.Drawing.Point(4, 32);
-            this.SpecCodes.Name = "SpecCodes";
-            this.SpecCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.SpecCodes.Size = new System.Drawing.Size(676, 426);
-            this.SpecCodes.TabIndex = 10;
-            this.SpecCodes.Text = "Spec Codes";
-            this.SpecCodes.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.Comparison);
-            this.tabControl2.Controls.Add(this.NCSpecFile);
-            this.tabControl2.Controls.Add(this.NCBSpecFile);
-            this.tabControl2.Controls.Add(this.PLCSpecFile);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(670, 420);
-            this.tabControl2.TabIndex = 129;
-            // 
-            // Comparison
-            // 
-            this.Comparison.Controls.Add(this.label131);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecB_Match);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecA_Match);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecB_Match);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecA_Match);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B_Match);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A_Match);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B_Match);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A_Match);
-            this.Comparison.Controls.Add(this.label130);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecB_DMC);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecA_DMC);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecB_DMC);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecA_DMC);
-            this.Comparison.Controls.Add(this.TextBox_SpecMachineType_DMC);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B_DMC);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A_DMC);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B_DMC);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A_DMC);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecB);
-            this.Comparison.Controls.Add(this.label129);
-            this.Comparison.Controls.Add(this.TextBox_NCBSpecA);
-            this.Comparison.Controls.Add(this.label127);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecB);
-            this.Comparison.Controls.Add(this.label125);
-            this.Comparison.Controls.Add(this.TextBox_NCSpecA);
-            this.Comparison.Controls.Add(this.label124);
-            this.Comparison.Controls.Add(this.TextBox_SpecMachineType);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B);
-            this.Comparison.Controls.Add(this.label122);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B);
-            this.Comparison.Controls.Add(this.label120);
-            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A);
-            this.Comparison.Controls.Add(this.Button_SpecCodes);
-            this.Comparison.Location = new System.Drawing.Point(4, 29);
-            this.Comparison.Name = "Comparison";
-            this.Comparison.Padding = new System.Windows.Forms.Padding(3);
-            this.Comparison.Size = new System.Drawing.Size(662, 387);
-            this.Comparison.TabIndex = 0;
-            this.Comparison.Text = "Comparison";
-            this.Comparison.UseVisualStyleBackColor = true;
-            // 
-            // label131
-            // 
-            this.label131.AutoSize = true;
-            this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label131.Location = new System.Drawing.Point(595, 54);
-            this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(43, 13);
-            this.label131.TabIndex = 162;
-            this.label131.Text = "Match?";
-            // 
-            // TextBox_NCBSpecB_Match
-            // 
-            this.TextBox_NCBSpecB_Match.Enabled = false;
-            this.TextBox_NCBSpecB_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecB_Match.Location = new System.Drawing.Point(598, 278);
-            this.TextBox_NCBSpecB_Match.Name = "TextBox_NCBSpecB_Match";
-            this.TextBox_NCBSpecB_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_NCBSpecB_Match.TabIndex = 161;
-            this.TextBox_NCBSpecB_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCBSpecA_Match
-            // 
-            this.TextBox_NCBSpecA_Match.Enabled = false;
-            this.TextBox_NCBSpecA_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecA_Match.Location = new System.Drawing.Point(598, 252);
-            this.TextBox_NCBSpecA_Match.Name = "TextBox_NCBSpecA_Match";
-            this.TextBox_NCBSpecA_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_NCBSpecA_Match.TabIndex = 160;
-            this.TextBox_NCBSpecA_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCSpecB_Match
-            // 
-            this.TextBox_NCSpecB_Match.Enabled = false;
-            this.TextBox_NCSpecB_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecB_Match.Location = new System.Drawing.Point(598, 226);
-            this.TextBox_NCSpecB_Match.Name = "TextBox_NCSpecB_Match";
-            this.TextBox_NCSpecB_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_NCSpecB_Match.TabIndex = 159;
-            this.TextBox_NCSpecB_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCSpecA_Match
-            // 
-            this.TextBox_NCSpecA_Match.Enabled = false;
-            this.TextBox_NCSpecA_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecA_Match.Location = new System.Drawing.Point(598, 200);
-            this.TextBox_NCSpecA_Match.Name = "TextBox_NCSpecA_Match";
-            this.TextBox_NCSpecA_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_NCSpecA_Match.TabIndex = 158;
-            this.TextBox_NCSpecA_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec2B_Match
-            // 
-            this.TextBox_PLCSpec2B_Match.Enabled = false;
-            this.TextBox_PLCSpec2B_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2B_Match.Location = new System.Drawing.Point(598, 174);
-            this.TextBox_PLCSpec2B_Match.Name = "TextBox_PLCSpec2B_Match";
-            this.TextBox_PLCSpec2B_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_PLCSpec2B_Match.TabIndex = 157;
-            this.TextBox_PLCSpec2B_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec2A_Match
-            // 
-            this.TextBox_PLCSpec2A_Match.Enabled = false;
-            this.TextBox_PLCSpec2A_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2A_Match.Location = new System.Drawing.Point(598, 148);
-            this.TextBox_PLCSpec2A_Match.Name = "TextBox_PLCSpec2A_Match";
-            this.TextBox_PLCSpec2A_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_PLCSpec2A_Match.TabIndex = 156;
-            this.TextBox_PLCSpec2A_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec1B_Match
-            // 
-            this.TextBox_PLCSpec1B_Match.Enabled = false;
-            this.TextBox_PLCSpec1B_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1B_Match.Location = new System.Drawing.Point(598, 122);
-            this.TextBox_PLCSpec1B_Match.Name = "TextBox_PLCSpec1B_Match";
-            this.TextBox_PLCSpec1B_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_PLCSpec1B_Match.TabIndex = 155;
-            this.TextBox_PLCSpec1B_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec1A_Match
-            // 
-            this.TextBox_PLCSpec1A_Match.Enabled = false;
-            this.TextBox_PLCSpec1A_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1A_Match.Location = new System.Drawing.Point(598, 96);
-            this.TextBox_PLCSpec1A_Match.Name = "TextBox_PLCSpec1A_Match";
-            this.TextBox_PLCSpec1A_Match.Size = new System.Drawing.Size(36, 20);
-            this.TextBox_PLCSpec1A_Match.TabIndex = 154;
-            this.TextBox_PLCSpec1A_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label130.Location = new System.Drawing.Point(384, 54);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(181, 13);
-            this.label130.TabIndex = 153;
-            this.label130.Text = "Values From Data Management Card";
-            // 
-            // TextBox_NCBSpecB_DMC
-            // 
-            this.TextBox_NCBSpecB_DMC.Enabled = false;
-            this.TextBox_NCBSpecB_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecB_DMC.Location = new System.Drawing.Point(357, 278);
-            this.TextBox_NCBSpecB_DMC.Name = "TextBox_NCBSpecB_DMC";
-            this.TextBox_NCBSpecB_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCBSpecB_DMC.TabIndex = 152;
-            this.TextBox_NCBSpecB_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCBSpecA_DMC
-            // 
-            this.TextBox_NCBSpecA_DMC.Enabled = false;
-            this.TextBox_NCBSpecA_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecA_DMC.Location = new System.Drawing.Point(357, 252);
-            this.TextBox_NCBSpecA_DMC.Name = "TextBox_NCBSpecA_DMC";
-            this.TextBox_NCBSpecA_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCBSpecA_DMC.TabIndex = 151;
-            this.TextBox_NCBSpecA_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCSpecB_DMC
-            // 
-            this.TextBox_NCSpecB_DMC.Enabled = false;
-            this.TextBox_NCSpecB_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecB_DMC.Location = new System.Drawing.Point(357, 226);
-            this.TextBox_NCSpecB_DMC.Name = "TextBox_NCSpecB_DMC";
-            this.TextBox_NCSpecB_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCSpecB_DMC.TabIndex = 150;
-            this.TextBox_NCSpecB_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCSpecA_DMC
-            // 
-            this.TextBox_NCSpecA_DMC.Enabled = false;
-            this.TextBox_NCSpecA_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecA_DMC.Location = new System.Drawing.Point(357, 200);
-            this.TextBox_NCSpecA_DMC.Name = "TextBox_NCSpecA_DMC";
-            this.TextBox_NCSpecA_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCSpecA_DMC.TabIndex = 149;
-            this.TextBox_NCSpecA_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_SpecMachineType_DMC
-            // 
-            this.TextBox_SpecMachineType_DMC.Enabled = false;
-            this.TextBox_SpecMachineType_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_SpecMachineType_DMC.Location = new System.Drawing.Point(357, 70);
-            this.TextBox_SpecMachineType_DMC.Name = "TextBox_SpecMachineType_DMC";
-            this.TextBox_SpecMachineType_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_SpecMachineType_DMC.TabIndex = 148;
-            this.TextBox_SpecMachineType_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec2B_DMC
-            // 
-            this.TextBox_PLCSpec2B_DMC.Enabled = false;
-            this.TextBox_PLCSpec2B_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2B_DMC.Location = new System.Drawing.Point(357, 174);
-            this.TextBox_PLCSpec2B_DMC.Name = "TextBox_PLCSpec2B_DMC";
-            this.TextBox_PLCSpec2B_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec2B_DMC.TabIndex = 147;
-            this.TextBox_PLCSpec2B_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec2A_DMC
-            // 
-            this.TextBox_PLCSpec2A_DMC.Enabled = false;
-            this.TextBox_PLCSpec2A_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2A_DMC.Location = new System.Drawing.Point(357, 148);
-            this.TextBox_PLCSpec2A_DMC.Name = "TextBox_PLCSpec2A_DMC";
-            this.TextBox_PLCSpec2A_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec2A_DMC.TabIndex = 146;
-            this.TextBox_PLCSpec2A_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec1B_DMC
-            // 
-            this.TextBox_PLCSpec1B_DMC.Enabled = false;
-            this.TextBox_PLCSpec1B_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1B_DMC.Location = new System.Drawing.Point(357, 122);
-            this.TextBox_PLCSpec1B_DMC.Name = "TextBox_PLCSpec1B_DMC";
-            this.TextBox_PLCSpec1B_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec1B_DMC.TabIndex = 145;
-            this.TextBox_PLCSpec1B_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec1A_DMC
-            // 
-            this.TextBox_PLCSpec1A_DMC.Enabled = false;
-            this.TextBox_PLCSpec1A_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1A_DMC.Location = new System.Drawing.Point(357, 96);
-            this.TextBox_PLCSpec1A_DMC.Name = "TextBox_PLCSpec1A_DMC";
-            this.TextBox_PLCSpec1A_DMC.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec1A_DMC.TabIndex = 144;
-            this.TextBox_PLCSpec1A_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_NCBSpecB
-            // 
-            this.TextBox_NCBSpecB.Enabled = false;
-            this.TextBox_NCBSpecB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecB.Location = new System.Drawing.Point(116, 278);
-            this.TextBox_NCBSpecB.Name = "TextBox_NCBSpecB";
-            this.TextBox_NCBSpecB.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCBSpecB.TabIndex = 143;
-            this.TextBox_NCBSpecB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label129.Location = new System.Drawing.Point(0, 269);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(114, 13);
-            this.label129.TabIndex = 141;
-            this.label129.Text = "NC B-Spec Code No.1";
-            // 
-            // TextBox_NCBSpecA
-            // 
-            this.TextBox_NCBSpecA.Enabled = false;
-            this.TextBox_NCBSpecA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecA.Location = new System.Drawing.Point(116, 252);
-            this.TextBox_NCBSpecA.Name = "TextBox_NCBSpecA";
-            this.TextBox_NCBSpecA.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCBSpecA.TabIndex = 142;
-            this.TextBox_NCBSpecA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label127
-            // 
-            this.label127.AutoSize = true;
-            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label127.Location = new System.Drawing.Point(133, 54);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(196, 13);
-            this.label127.TabIndex = 140;
-            this.label127.Text = "Actual Values From NC Spec Code Files";
-            // 
-            // TextBox_NCSpecB
-            // 
-            this.TextBox_NCSpecB.Enabled = false;
-            this.TextBox_NCSpecB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecB.Location = new System.Drawing.Point(116, 226);
-            this.TextBox_NCSpecB.Name = "TextBox_NCSpecB";
-            this.TextBox_NCSpecB.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCSpecB.TabIndex = 139;
-            this.TextBox_NCSpecB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label125
-            // 
-            this.label125.AutoSize = true;
-            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label125.Location = new System.Drawing.Point(9, 217);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(104, 13);
-            this.label125.TabIndex = 137;
-            this.label125.Text = "NC Spec Code No.1";
-            // 
-            // TextBox_NCSpecA
-            // 
-            this.TextBox_NCSpecA.Enabled = false;
-            this.TextBox_NCSpecA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecA.Location = new System.Drawing.Point(116, 200);
-            this.TextBox_NCSpecA.Name = "TextBox_NCSpecA";
-            this.TextBox_NCSpecA.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_NCSpecA.TabIndex = 138;
-            this.TextBox_NCSpecA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label124.Location = new System.Drawing.Point(28, 73);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(78, 13);
-            this.label124.TabIndex = 135;
-            this.label124.Text = "Machine Type:";
-            // 
-            // TextBox_SpecMachineType
-            // 
-            this.TextBox_SpecMachineType.Enabled = false;
-            this.TextBox_SpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_SpecMachineType.Location = new System.Drawing.Point(116, 70);
-            this.TextBox_SpecMachineType.Name = "TextBox_SpecMachineType";
-            this.TextBox_SpecMachineType.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_SpecMachineType.TabIndex = 136;
-            this.TextBox_SpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec2B
-            // 
-            this.TextBox_PLCSpec2B.Enabled = false;
-            this.TextBox_PLCSpec2B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2B.Location = new System.Drawing.Point(116, 174);
-            this.TextBox_PLCSpec2B.Name = "TextBox_PLCSpec2B";
-            this.TextBox_PLCSpec2B.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec2B.TabIndex = 134;
-            this.TextBox_PLCSpec2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label122
-            // 
-            this.label122.AutoSize = true;
-            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label122.Location = new System.Drawing.Point(4, 163);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(109, 13);
-            this.label122.TabIndex = 132;
-            this.label122.Text = "PLC Spec Code No.2";
-            // 
-            // TextBox_PLCSpec2A
-            // 
-            this.TextBox_PLCSpec2A.Enabled = false;
-            this.TextBox_PLCSpec2A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec2A.Location = new System.Drawing.Point(116, 148);
-            this.TextBox_PLCSpec2A.Name = "TextBox_PLCSpec2A";
-            this.TextBox_PLCSpec2A.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec2A.TabIndex = 133;
-            this.TextBox_PLCSpec2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_PLCSpec1B
-            // 
-            this.TextBox_PLCSpec1B.Enabled = false;
-            this.TextBox_PLCSpec1B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1B.Location = new System.Drawing.Point(116, 122);
-            this.TextBox_PLCSpec1B.Name = "TextBox_PLCSpec1B";
-            this.TextBox_PLCSpec1B.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec1B.TabIndex = 131;
-            this.TextBox_PLCSpec1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label120.Location = new System.Drawing.Point(5, 112);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(109, 13);
-            this.label120.TabIndex = 129;
-            this.label120.Text = "PLC Spec Code No.1";
-            // 
-            // TextBox_PLCSpec1A
-            // 
-            this.TextBox_PLCSpec1A.Enabled = false;
-            this.TextBox_PLCSpec1A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpec1A.Location = new System.Drawing.Point(116, 96);
-            this.TextBox_PLCSpec1A.Name = "TextBox_PLCSpec1A";
-            this.TextBox_PLCSpec1A.Size = new System.Drawing.Size(235, 20);
-            this.TextBox_PLCSpec1A.TabIndex = 130;
-            this.TextBox_PLCSpec1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_SpecCodes
-            // 
-            this.Button_SpecCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_SpecCodes.Location = new System.Drawing.Point(9, 9);
-            this.Button_SpecCodes.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_SpecCodes.Name = "Button_SpecCodes";
-            this.Button_SpecCodes.Size = new System.Drawing.Size(109, 23);
-            this.Button_SpecCodes.TabIndex = 90;
-            this.Button_SpecCodes.Text = "Execute";
-            this.Button_SpecCodes.UseVisualStyleBackColor = true;
-            this.Button_SpecCodes.Click += new System.EventHandler(this.Button_SpecCodes_Click);
-            // 
-            // NCSpecFile
-            // 
-            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecFileExists);
-            this.NCSpecFile.Controls.Add(this.label126);
-            this.NCSpecFile.Controls.Add(this.label123);
-            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecSerialNumber);
-            this.NCSpecFile.Controls.Add(this.label121);
-            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecMachineType);
-            this.NCSpecFile.Controls.Add(this.label139);
-            this.NCSpecFile.Controls.Add(this.ComboBox_NCSpecGroup);
-            this.NCSpecFile.Controls.Add(this.Label_NcSpecGroup2);
-            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecSecondHalf);
-            this.NCSpecFile.Controls.Add(this.Button_NCSpecFileSelectFile);
-            this.NCSpecFile.Controls.Add(this.Label_NCSpecFileUserFile);
-            this.NCSpecFile.Controls.Add(this.RadioButton_NCSpecFileUser);
-            this.NCSpecFile.Controls.Add(this.RadioButton_NCSpecFileDefault);
-            this.NCSpecFile.Controls.Add(this.Button_NCSpecFileExecute);
-            this.NCSpecFile.Controls.Add(this.Label_NcSpecGroup1);
-            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecFirstHalf);
-            this.NCSpecFile.Location = new System.Drawing.Point(4, 29);
-            this.NCSpecFile.Name = "NCSpecFile";
-            this.NCSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.NCSpecFile.Size = new System.Drawing.Size(662, 387);
-            this.NCSpecFile.TabIndex = 1;
-            this.NCSpecFile.Text = "NC Spec File";
-            this.NCSpecFile.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_NCSpecFileExists
-            // 
-            this.TextBox_NCSpecFileExists.Enabled = false;
-            this.TextBox_NCSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecFileExists.Location = new System.Drawing.Point(421, 52);
-            this.TextBox_NCSpecFileExists.Name = "TextBox_NCSpecFileExists";
-            this.TextBox_NCSpecFileExists.Size = new System.Drawing.Size(63, 20);
-            this.TextBox_NCSpecFileExists.TabIndex = 68;
-            this.TextBox_NCSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label126.Location = new System.Drawing.Point(233, 55);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(182, 13);
-            this.label126.TabIndex = 67;
-            this.label126.Text = "Valid Machine Spec Code File Exists:";
-            // 
-            // label123
-            // 
-            this.label123.AutoSize = true;
-            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label123.Location = new System.Drawing.Point(272, 135);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(73, 13);
-            this.label123.TabIndex = 66;
-            this.label123.Text = "Serial Number";
-            // 
-            // TextBox_NCSpecSerialNumber
-            // 
-            this.TextBox_NCSpecSerialNumber.Enabled = false;
-            this.TextBox_NCSpecSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecSerialNumber.Location = new System.Drawing.Point(353, 132);
-            this.TextBox_NCSpecSerialNumber.Name = "TextBox_NCSpecSerialNumber";
-            this.TextBox_NCSpecSerialNumber.Size = new System.Drawing.Size(135, 20);
-            this.TextBox_NCSpecSerialNumber.TabIndex = 65;
-            this.TextBox_NCSpecSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label121.Location = new System.Drawing.Point(21, 135);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(75, 13);
-            this.label121.TabIndex = 64;
-            this.label121.Text = "Machine Type";
-            // 
-            // TextBox_NCSpecMachineType
-            // 
-            this.TextBox_NCSpecMachineType.Enabled = false;
-            this.TextBox_NCSpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecMachineType.Location = new System.Drawing.Point(102, 132);
-            this.TextBox_NCSpecMachineType.Name = "TextBox_NCSpecMachineType";
-            this.TextBox_NCSpecMachineType.Size = new System.Drawing.Size(135, 20);
-            this.TextBox_NCSpecMachineType.TabIndex = 63;
-            this.TextBox_NCSpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label139
-            // 
-            this.label139.AutoSize = true;
-            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label139.Location = new System.Drawing.Point(21, 178);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(112, 13);
-            this.label139.TabIndex = 62;
-            this.label139.Text = "Spec Code Group No.";
-            // 
-            // ComboBox_NCSpecGroup
-            // 
-            this.ComboBox_NCSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.ComboBox_NCSpecGroup.FormattingEnabled = true;
-            this.ComboBox_NCSpecGroup.Items.AddRange(new object[] {
-            "NC1MG [NC-SPEC CODE No.1]",
-            "NC2MG [ unused ]",
-            "NC3MG [ unused ]",
-            "NC4MG [ unused ]",
-            "NC5MG [ unused ]",
-            "NC6MG [ unused ]",
-            "NC7MG [ unused ]",
-            "NC8MG [ unused ]"});
-            this.ComboBox_NCSpecGroup.Location = new System.Drawing.Point(141, 175);
-            this.ComboBox_NCSpecGroup.Name = "ComboBox_NCSpecGroup";
-            this.ComboBox_NCSpecGroup.Size = new System.Drawing.Size(273, 21);
-            this.ComboBox_NCSpecGroup.TabIndex = 61;
-            // 
-            // Label_NcSpecGroup2
-            // 
-            this.Label_NcSpecGroup2.AutoSize = true;
-            this.Label_NcSpecGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Label_NcSpecGroup2.Location = new System.Drawing.Point(21, 253);
-            this.Label_NcSpecGroup2.Name = "Label_NcSpecGroup2";
-            this.Label_NcSpecGroup2.Size = new System.Drawing.Size(149, 13);
-            this.Label_NcSpecGroup2.TabIndex = 60;
-            this.Label_NcSpecGroup2.Text = "Second Half (Byte No. 17- 32)";
-            // 
-            // TextBox_NCSpecSecondHalf
-            // 
-            this.TextBox_NCSpecSecondHalf.Enabled = false;
-            this.TextBox_NCSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecSecondHalf.Location = new System.Drawing.Point(176, 250);
-            this.TextBox_NCSpecSecondHalf.Name = "TextBox_NCSpecSecondHalf";
-            this.TextBox_NCSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_NCSpecSecondHalf.TabIndex = 59;
-            this.TextBox_NCSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_NCSpecFileSelectFile
-            // 
-            this.Button_NCSpecFileSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_NCSpecFileSelectFile.Location = new System.Drawing.Point(216, 80);
-            this.Button_NCSpecFileSelectFile.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_NCSpecFileSelectFile.Name = "Button_NCSpecFileSelectFile";
-            this.Button_NCSpecFileSelectFile.Size = new System.Drawing.Size(76, 23);
-            this.Button_NCSpecFileSelectFile.TabIndex = 58;
-            this.Button_NCSpecFileSelectFile.Text = "Select File";
-            this.Button_NCSpecFileSelectFile.UseVisualStyleBackColor = true;
-            this.Button_NCSpecFileSelectFile.Click += new System.EventHandler(this.Button_NCSpecFileSelectFile_Click);
-            // 
-            // Label_NCSpecFileUserFile
-            // 
-            this.Label_NCSpecFileUserFile.AutoSize = true;
-            this.Label_NCSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Label_NCSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
-            this.Label_NCSpecFileUserFile.Location = new System.Drawing.Point(298, 85);
-            this.Label_NCSpecFileUserFile.Name = "Label_NCSpecFileUserFile";
-            this.Label_NCSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
-            this.Label_NCSpecFileUserFile.TabIndex = 57;
-            // 
-            // RadioButton_NCSpecFileUser
-            // 
-            this.RadioButton_NCSpecFileUser.AutoSize = true;
-            this.RadioButton_NCSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_NCSpecFileUser.Location = new System.Drawing.Point(24, 83);
-            this.RadioButton_NCSpecFileUser.Name = "RadioButton_NCSpecFileUser";
-            this.RadioButton_NCSpecFileUser.Size = new System.Drawing.Size(183, 17);
-            this.RadioButton_NCSpecFileUser.TabIndex = 56;
-            this.RadioButton_NCSpecFileUser.Text = "User Defined NC Spec Code File ";
-            this.RadioButton_NCSpecFileUser.UseVisualStyleBackColor = true;
-            this.RadioButton_NCSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_NCSpecFile_CheckedChanged);
-            // 
-            // RadioButton_NCSpecFileDefault
-            // 
-            this.RadioButton_NCSpecFileDefault.AutoSize = true;
-            this.RadioButton_NCSpecFileDefault.Checked = true;
-            this.RadioButton_NCSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_NCSpecFileDefault.Location = new System.Drawing.Point(24, 53);
-            this.RadioButton_NCSpecFileDefault.Name = "RadioButton_NCSpecFileDefault";
-            this.RadioButton_NCSpecFileDefault.Size = new System.Drawing.Size(192, 17);
-            this.RadioButton_NCSpecFileDefault.TabIndex = 55;
-            this.RadioButton_NCSpecFileDefault.TabStop = true;
-            this.RadioButton_NCSpecFileDefault.Text = "Active Machine NC Spec Code File";
-            this.RadioButton_NCSpecFileDefault.UseVisualStyleBackColor = true;
-            this.RadioButton_NCSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_NCSpecFile_CheckedChanged);
-            // 
-            // Button_NCSpecFileExecute
-            // 
-            this.Button_NCSpecFileExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_NCSpecFileExecute.Location = new System.Drawing.Point(9, 9);
-            this.Button_NCSpecFileExecute.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_NCSpecFileExecute.Name = "Button_NCSpecFileExecute";
-            this.Button_NCSpecFileExecute.Size = new System.Drawing.Size(109, 23);
-            this.Button_NCSpecFileExecute.TabIndex = 54;
-            this.Button_NCSpecFileExecute.Text = "Execute";
-            this.Button_NCSpecFileExecute.UseVisualStyleBackColor = true;
-            this.Button_NCSpecFileExecute.Click += new System.EventHandler(this.Button_NCSpecFileExecute_Click);
-            // 
-            // Label_NcSpecGroup1
-            // 
-            this.Label_NcSpecGroup1.AutoSize = true;
-            this.Label_NcSpecGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Label_NcSpecGroup1.Location = new System.Drawing.Point(42, 227);
-            this.Label_NcSpecGroup1.Name = "Label_NcSpecGroup1";
-            this.Label_NcSpecGroup1.Size = new System.Drawing.Size(128, 13);
-            this.Label_NcSpecGroup1.TabIndex = 53;
-            this.Label_NcSpecGroup1.Text = "First Half (Byte No. 1 - 16)";
-            // 
-            // TextBox_NCSpecFirstHalf
-            // 
-            this.TextBox_NCSpecFirstHalf.Enabled = false;
-            this.TextBox_NCSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCSpecFirstHalf.Location = new System.Drawing.Point(176, 224);
-            this.TextBox_NCSpecFirstHalf.Name = "TextBox_NCSpecFirstHalf";
-            this.TextBox_NCSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_NCSpecFirstHalf.TabIndex = 52;
-            this.TextBox_NCSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // NCBSpecFile
-            // 
-            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecFileExists);
-            this.NCBSpecFile.Controls.Add(this.label141);
-            this.NCBSpecFile.Controls.Add(this.label136);
-            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecSerialNumber);
-            this.NCBSpecFile.Controls.Add(this.label137);
-            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecMachineType);
-            this.NCBSpecFile.Controls.Add(this.label138);
-            this.NCBSpecFile.Controls.Add(this.ComboBox_NCBSpecGroup);
-            this.NCBSpecFile.Controls.Add(this.label140);
-            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecSecondHalf);
-            this.NCBSpecFile.Controls.Add(this.Button_NCBSpecFileSelectFile);
-            this.NCBSpecFile.Controls.Add(this.Label_NCBSpecFileUserFile);
-            this.NCBSpecFile.Controls.Add(this.RadioButton_NCBSpecFileUser);
-            this.NCBSpecFile.Controls.Add(this.RadioButton_NCBSpecFileDefault);
-            this.NCBSpecFile.Controls.Add(this.Button_NCBSpecFileExecute);
-            this.NCBSpecFile.Controls.Add(this.label142);
-            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecFirstHalf);
-            this.NCBSpecFile.Location = new System.Drawing.Point(4, 29);
-            this.NCBSpecFile.Name = "NCBSpecFile";
-            this.NCBSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.NCBSpecFile.Size = new System.Drawing.Size(662, 387);
-            this.NCBSpecFile.TabIndex = 2;
-            this.NCBSpecFile.Text = "NC B-Spec File";
-            this.NCBSpecFile.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_NCBSpecFileExists
-            // 
-            this.TextBox_NCBSpecFileExists.Enabled = false;
-            this.TextBox_NCBSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecFileExists.Location = new System.Drawing.Point(437, 51);
-            this.TextBox_NCBSpecFileExists.Name = "TextBox_NCBSpecFileExists";
-            this.TextBox_NCBSpecFileExists.Size = new System.Drawing.Size(63, 20);
-            this.TextBox_NCBSpecFileExists.TabIndex = 66;
-            this.TextBox_NCBSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label141
-            // 
-            this.label141.AutoSize = true;
-            this.label141.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label141.Location = new System.Drawing.Point(252, 57);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(182, 13);
-            this.label141.TabIndex = 65;
-            this.label141.Text = "Valid Machine Spec Code File Exists:";
-            // 
-            // label136
-            // 
-            this.label136.AutoSize = true;
-            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label136.Location = new System.Drawing.Point(275, 140);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(73, 13);
-            this.label136.TabIndex = 64;
-            this.label136.Text = "Serial Number";
-            // 
-            // TextBox_NCBSpecSerialNumber
-            // 
-            this.TextBox_NCBSpecSerialNumber.Enabled = false;
-            this.TextBox_NCBSpecSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecSerialNumber.Location = new System.Drawing.Point(353, 134);
-            this.TextBox_NCBSpecSerialNumber.Name = "TextBox_NCBSpecSerialNumber";
-            this.TextBox_NCBSpecSerialNumber.Size = new System.Drawing.Size(135, 20);
-            this.TextBox_NCBSpecSerialNumber.TabIndex = 63;
-            this.TextBox_NCBSpecSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label137
-            // 
-            this.label137.AutoSize = true;
-            this.label137.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label137.Location = new System.Drawing.Point(24, 140);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(75, 13);
-            this.label137.TabIndex = 62;
-            this.label137.Text = "Machine Type";
-            // 
-            // TextBox_NCBSpecMachineType
-            // 
-            this.TextBox_NCBSpecMachineType.Enabled = false;
-            this.TextBox_NCBSpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecMachineType.Location = new System.Drawing.Point(102, 134);
-            this.TextBox_NCBSpecMachineType.Name = "TextBox_NCBSpecMachineType";
-            this.TextBox_NCBSpecMachineType.Size = new System.Drawing.Size(135, 20);
-            this.TextBox_NCBSpecMachineType.TabIndex = 61;
-            this.TextBox_NCBSpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label138
-            // 
-            this.label138.AutoSize = true;
-            this.label138.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label138.Location = new System.Drawing.Point(24, 183);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(112, 13);
-            this.label138.TabIndex = 60;
-            this.label138.Text = "Spec Code Group No.";
-            // 
-            // ComboBox_NCBSpecGroup
-            // 
-            this.ComboBox_NCBSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.ComboBox_NCBSpecGroup.FormattingEnabled = true;
-            this.ComboBox_NCBSpecGroup.Items.AddRange(new object[] {
-            "NCB1MG [NC-B SPEC CODE No.1]",
-            "NCB2MG [ unused ]",
-            "NCB3MG [ unused ]",
-            "NCB4MG [ unused ]",
-            "NCB5MG [ unused ]",
-            "NCB6MG [ unused ]",
-            "NCB7MG [ unused ]",
-            "NCB8MG [ unused ]"});
-            this.ComboBox_NCBSpecGroup.Location = new System.Drawing.Point(141, 177);
-            this.ComboBox_NCBSpecGroup.Name = "ComboBox_NCBSpecGroup";
-            this.ComboBox_NCBSpecGroup.Size = new System.Drawing.Size(273, 21);
-            this.ComboBox_NCBSpecGroup.TabIndex = 59;
-            // 
-            // label140
-            // 
-            this.label140.AutoSize = true;
-            this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label140.Location = new System.Drawing.Point(24, 258);
-            this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(149, 13);
-            this.label140.TabIndex = 58;
-            this.label140.Text = "Second Half (Byte No. 17- 32)";
-            // 
-            // TextBox_NCBSpecSecondHalf
-            // 
-            this.TextBox_NCBSpecSecondHalf.Enabled = false;
-            this.TextBox_NCBSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecSecondHalf.Location = new System.Drawing.Point(176, 252);
-            this.TextBox_NCBSpecSecondHalf.Name = "TextBox_NCBSpecSecondHalf";
-            this.TextBox_NCBSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_NCBSpecSecondHalf.TabIndex = 57;
-            this.TextBox_NCBSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_NCBSpecFileSelectFile
-            // 
-            this.Button_NCBSpecFileSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_NCBSpecFileSelectFile.Location = new System.Drawing.Point(221, 79);
-            this.Button_NCBSpecFileSelectFile.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_NCBSpecFileSelectFile.Name = "Button_NCBSpecFileSelectFile";
-            this.Button_NCBSpecFileSelectFile.Size = new System.Drawing.Size(76, 23);
-            this.Button_NCBSpecFileSelectFile.TabIndex = 56;
-            this.Button_NCBSpecFileSelectFile.Text = "Select File";
-            this.Button_NCBSpecFileSelectFile.UseVisualStyleBackColor = true;
-            this.Button_NCBSpecFileSelectFile.Click += new System.EventHandler(this.Button_NCBSpecFileSelectFile_Click);
-            // 
-            // Label_NCBSpecFileUserFile
-            // 
-            this.Label_NCBSpecFileUserFile.AutoSize = true;
-            this.Label_NCBSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Label_NCBSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
-            this.Label_NCBSpecFileUserFile.Location = new System.Drawing.Point(306, 87);
-            this.Label_NCBSpecFileUserFile.Name = "Label_NCBSpecFileUserFile";
-            this.Label_NCBSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
-            this.Label_NCBSpecFileUserFile.TabIndex = 55;
-            // 
-            // RadioButton_NCBSpecFileUser
-            // 
-            this.RadioButton_NCBSpecFileUser.AutoSize = true;
-            this.RadioButton_NCBSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_NCBSpecFileUser.Location = new System.Drawing.Point(27, 85);
-            this.RadioButton_NCBSpecFileUser.Name = "RadioButton_NCBSpecFileUser";
-            this.RadioButton_NCBSpecFileUser.Size = new System.Drawing.Size(193, 17);
-            this.RadioButton_NCBSpecFileUser.TabIndex = 54;
-            this.RadioButton_NCBSpecFileUser.Text = "User Defined NC B-Spec Code File ";
-            this.RadioButton_NCBSpecFileUser.UseVisualStyleBackColor = true;
-            this.RadioButton_NCBSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_NCBSpecFile_CheckedChanged);
-            // 
-            // RadioButton_NCBSpecFileDefault
-            // 
-            this.RadioButton_NCBSpecFileDefault.AutoSize = true;
-            this.RadioButton_NCBSpecFileDefault.Checked = true;
-            this.RadioButton_NCBSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_NCBSpecFileDefault.Location = new System.Drawing.Point(27, 55);
-            this.RadioButton_NCBSpecFileDefault.Name = "RadioButton_NCBSpecFileDefault";
-            this.RadioButton_NCBSpecFileDefault.Size = new System.Drawing.Size(202, 17);
-            this.RadioButton_NCBSpecFileDefault.TabIndex = 53;
-            this.RadioButton_NCBSpecFileDefault.TabStop = true;
-            this.RadioButton_NCBSpecFileDefault.Text = "Active Machine NC B-Spec Code File";
-            this.RadioButton_NCBSpecFileDefault.UseVisualStyleBackColor = true;
-            this.RadioButton_NCBSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_NCBSpecFile_CheckedChanged);
-            // 
-            // Button_NCBSpecFileExecute
-            // 
-            this.Button_NCBSpecFileExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_NCBSpecFileExecute.Location = new System.Drawing.Point(9, 9);
-            this.Button_NCBSpecFileExecute.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_NCBSpecFileExecute.Name = "Button_NCBSpecFileExecute";
-            this.Button_NCBSpecFileExecute.Size = new System.Drawing.Size(109, 23);
-            this.Button_NCBSpecFileExecute.TabIndex = 52;
-            this.Button_NCBSpecFileExecute.Text = "Execute";
-            this.Button_NCBSpecFileExecute.UseVisualStyleBackColor = true;
-            this.Button_NCBSpecFileExecute.Click += new System.EventHandler(this.Button_NCBSpecFileExecute_Click);
-            // 
-            // label142
-            // 
-            this.label142.AutoSize = true;
-            this.label142.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label142.Location = new System.Drawing.Point(45, 232);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(128, 13);
-            this.label142.TabIndex = 51;
-            this.label142.Text = "First Half (Byte No. 1 - 16)";
-            // 
-            // TextBox_NCBSpecFirstHalf
-            // 
-            this.TextBox_NCBSpecFirstHalf.Enabled = false;
-            this.TextBox_NCBSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_NCBSpecFirstHalf.Location = new System.Drawing.Point(176, 226);
-            this.TextBox_NCBSpecFirstHalf.Name = "TextBox_NCBSpecFirstHalf";
-            this.TextBox_NCBSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_NCBSpecFirstHalf.TabIndex = 50;
-            this.TextBox_NCBSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // PLCSpecFile
-            // 
-            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecFileExists);
-            this.PLCSpecFile.Controls.Add(this.label128);
-            this.PLCSpecFile.Controls.Add(this.label145);
-            this.PLCSpecFile.Controls.Add(this.ComboBox_PLCSpecGroup);
-            this.PLCSpecFile.Controls.Add(this.label146);
-            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecSecondHalf);
-            this.PLCSpecFile.Controls.Add(this.button1);
-            this.PLCSpecFile.Controls.Add(this.Label_PLCSpecFileUserFile);
-            this.PLCSpecFile.Controls.Add(this.RadioButton_PLCSpecFileUser);
-            this.PLCSpecFile.Controls.Add(this.RadioButton_PLCSpecFileDefault);
-            this.PLCSpecFile.Controls.Add(this.button2);
-            this.PLCSpecFile.Controls.Add(this.label148);
-            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecFirstHalf);
-            this.PLCSpecFile.Location = new System.Drawing.Point(4, 29);
-            this.PLCSpecFile.Name = "PLCSpecFile";
-            this.PLCSpecFile.Padding = new System.Windows.Forms.Padding(3);
-            this.PLCSpecFile.Size = new System.Drawing.Size(662, 387);
-            this.PLCSpecFile.TabIndex = 3;
-            this.PLCSpecFile.Text = "PLC Spec File";
-            this.PLCSpecFile.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_PLCSpecFileExists
-            // 
-            this.TextBox_PLCSpecFileExists.Enabled = false;
-            this.TextBox_PLCSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpecFileExists.Location = new System.Drawing.Point(437, 51);
-            this.TextBox_PLCSpecFileExists.Name = "TextBox_PLCSpecFileExists";
-            this.TextBox_PLCSpecFileExists.Size = new System.Drawing.Size(63, 20);
-            this.TextBox_PLCSpecFileExists.TabIndex = 79;
-            this.TextBox_PLCSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label128.Location = new System.Drawing.Point(252, 57);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(182, 13);
-            this.label128.TabIndex = 78;
-            this.label128.Text = "Valid Machine Spec Code File Exists:";
-            // 
-            // label145
-            // 
-            this.label145.AutoSize = true;
-            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label145.Location = new System.Drawing.Point(24, 133);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(112, 13);
-            this.label145.TabIndex = 77;
-            this.label145.Text = "Spec Code Group No.";
-            // 
-            // ComboBox_PLCSpecGroup
-            // 
-            this.ComboBox_PLCSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.ComboBox_PLCSpecGroup.FormattingEnabled = true;
-            this.ComboBox_PLCSpecGroup.Items.AddRange(new object[] {
-            "PLC1MG [PLC-SPEC CODE No.1]",
-            "PLC2MG [PLC-SPEC CODE No.2]",
-            "PLC3MG [ unused ]"});
-            this.ComboBox_PLCSpecGroup.Location = new System.Drawing.Point(141, 127);
-            this.ComboBox_PLCSpecGroup.Name = "ComboBox_PLCSpecGroup";
-            this.ComboBox_PLCSpecGroup.Size = new System.Drawing.Size(273, 21);
-            this.ComboBox_PLCSpecGroup.TabIndex = 76;
-            // 
-            // label146
-            // 
-            this.label146.AutoSize = true;
-            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label146.Location = new System.Drawing.Point(24, 208);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(149, 13);
-            this.label146.TabIndex = 75;
-            this.label146.Text = "Second Half (Byte No. 17- 32)";
-            // 
-            // TextBox_PLCSpecSecondHalf
-            // 
-            this.TextBox_PLCSpecSecondHalf.Enabled = false;
-            this.TextBox_PLCSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpecSecondHalf.Location = new System.Drawing.Point(176, 202);
-            this.TextBox_PLCSpecSecondHalf.Name = "TextBox_PLCSpecSecondHalf";
-            this.TextBox_PLCSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_PLCSpecSecondHalf.TabIndex = 74;
-            this.TextBox_PLCSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button1.Location = new System.Drawing.Point(221, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 23);
-            this.button1.TabIndex = 73;
-            this.button1.Text = "Select File";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button_PLCSpecFileSelectFile_Click);
-            // 
-            // Label_PLCSpecFileUserFile
-            // 
-            this.Label_PLCSpecFileUserFile.AutoSize = true;
-            this.Label_PLCSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Label_PLCSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
-            this.Label_PLCSpecFileUserFile.Location = new System.Drawing.Point(306, 87);
-            this.Label_PLCSpecFileUserFile.Name = "Label_PLCSpecFileUserFile";
-            this.Label_PLCSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
-            this.Label_PLCSpecFileUserFile.TabIndex = 72;
-            // 
-            // RadioButton_PLCSpecFileUser
-            // 
-            this.RadioButton_PLCSpecFileUser.AutoSize = true;
-            this.RadioButton_PLCSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_PLCSpecFileUser.Location = new System.Drawing.Point(27, 85);
-            this.RadioButton_PLCSpecFileUser.Name = "RadioButton_PLCSpecFileUser";
-            this.RadioButton_PLCSpecFileUser.Size = new System.Drawing.Size(188, 17);
-            this.RadioButton_PLCSpecFileUser.TabIndex = 71;
-            this.RadioButton_PLCSpecFileUser.Text = "User Defined PLC Spec Code File ";
-            this.RadioButton_PLCSpecFileUser.UseVisualStyleBackColor = true;
-            this.RadioButton_PLCSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_PLCSpecFile_CheckedChanged);
-            // 
-            // RadioButton_PLCSpecFileDefault
-            // 
-            this.RadioButton_PLCSpecFileDefault.AutoSize = true;
-            this.RadioButton_PLCSpecFileDefault.Checked = true;
-            this.RadioButton_PLCSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.RadioButton_PLCSpecFileDefault.Location = new System.Drawing.Point(27, 55);
-            this.RadioButton_PLCSpecFileDefault.Name = "RadioButton_PLCSpecFileDefault";
-            this.RadioButton_PLCSpecFileDefault.Size = new System.Drawing.Size(197, 17);
-            this.RadioButton_PLCSpecFileDefault.TabIndex = 70;
-            this.RadioButton_PLCSpecFileDefault.TabStop = true;
-            this.RadioButton_PLCSpecFileDefault.Text = "Active Machine PLC Spec Code File";
-            this.RadioButton_PLCSpecFileDefault.UseVisualStyleBackColor = true;
-            this.RadioButton_PLCSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_PLCSpecFile_CheckedChanged);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button2.Location = new System.Drawing.Point(9, 9);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 69;
-            this.button2.Text = "Execute";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button_PLCSpecFileExecute_Click);
-            // 
-            // label148
-            // 
-            this.label148.AutoSize = true;
-            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label148.Location = new System.Drawing.Point(45, 182);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(128, 13);
-            this.label148.TabIndex = 68;
-            this.label148.Text = "First Half (Byte No. 1 - 16)";
-            // 
-            // TextBox_PLCSpecFirstHalf
-            // 
-            this.TextBox_PLCSpecFirstHalf.Enabled = false;
-            this.TextBox_PLCSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TextBox_PLCSpecFirstHalf.Location = new System.Drawing.Point(176, 176);
-            this.TextBox_PLCSpecFirstHalf.Name = "TextBox_PLCSpecFirstHalf";
-            this.TextBox_PLCSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
-            this.TextBox_PLCSpecFirstHalf.TabIndex = 67;
-            this.TextBox_PLCSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Dir
-            // 
-            this.Dir.Controls.Add(this.label114);
-            this.Dir.Controls.Add(this.TextBox_DirSystem);
-            this.Dir.Controls.Add(this.label113);
-            this.Dir.Controls.Add(this.TextBox_DirCurrent);
-            this.Dir.Controls.Add(this.label37);
-            this.Dir.Controls.Add(this.TextBox_DirOkuma);
-            this.Dir.Controls.Add(this.label6);
-            this.Dir.Controls.Add(this.TextBox_DirOsp);
-            this.Dir.Controls.Add(this.label9);
-            this.Dir.Controls.Add(this.TextBox_DirCns);
-            this.Dir.Controls.Add(this.TextBox_DirCrad);
-            this.Dir.Controls.Add(this.label7);
-            this.Dir.Controls.Add(this.TextBox_DirVolante);
-            this.Dir.Controls.Add(this.label8);
-            this.Dir.Controls.Add(this.Button_Directories);
-            this.Dir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dir.Location = new System.Drawing.Point(4, 32);
-            this.Dir.Name = "Dir";
-            this.Dir.Padding = new System.Windows.Forms.Padding(3);
-            this.Dir.Size = new System.Drawing.Size(676, 426);
-            this.Dir.TabIndex = 1;
-            this.Dir.Text = "Directories";
-            this.Dir.UseVisualStyleBackColor = true;
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(59, 224);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(89, 13);
-            this.label114.TabIndex = 28;
-            this.label114.Text = "System Directory:";
-            // 
-            // TextBox_DirSystem
-            // 
-            this.TextBox_DirSystem.Enabled = false;
-            this.TextBox_DirSystem.Location = new System.Drawing.Point(153, 221);
-            this.TextBox_DirSystem.Name = "TextBox_DirSystem";
-            this.TextBox_DirSystem.Size = new System.Drawing.Size(202, 20);
-            this.TextBox_DirSystem.TabIndex = 27;
-            this.TextBox_DirSystem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(59, 250);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(89, 13);
-            this.label113.TabIndex = 26;
-            this.label113.Text = "Current Directory:";
-            // 
-            // TextBox_DirCurrent
-            // 
-            this.TextBox_DirCurrent.Enabled = false;
-            this.TextBox_DirCurrent.Location = new System.Drawing.Point(153, 247);
-            this.TextBox_DirCurrent.Name = "TextBox_DirCurrent";
-            this.TextBox_DirCurrent.Size = new System.Drawing.Size(440, 20);
-            this.TextBox_DirCurrent.TabIndex = 25;
-            this.TextBox_DirCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(183, 189);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(89, 13);
-            this.label37.TabIndex = 24;
-            this.label37.Text = "Okuma Directory:";
-            // 
-            // TextBox_DirOkuma
-            // 
-            this.TextBox_DirOkuma.Enabled = false;
-            this.TextBox_DirOkuma.Location = new System.Drawing.Point(277, 186);
-            this.TextBox_DirOkuma.Name = "TextBox_DirOkuma";
-            this.TextBox_DirOkuma.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DirOkuma.TabIndex = 23;
-            this.TextBox_DirOkuma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(193, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "OSP Directory:";
-            // 
-            // TextBox_DirOsp
-            // 
-            this.TextBox_DirOsp.Enabled = false;
-            this.TextBox_DirOsp.Location = new System.Drawing.Point(277, 82);
-            this.TextBox_DirOsp.Name = "TextBox_DirOsp";
-            this.TextBox_DirOsp.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DirOsp.TabIndex = 11;
-            this.TextBox_DirOsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(186, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "CRAD Directory:";
-            // 
-            // TextBox_DirCns
-            // 
-            this.TextBox_DirCns.Enabled = false;
-            this.TextBox_DirCns.Location = new System.Drawing.Point(277, 108);
-            this.TextBox_DirCns.Name = "TextBox_DirCns";
-            this.TextBox_DirCns.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DirCns.TabIndex = 13;
-            this.TextBox_DirCns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_DirCrad
-            // 
-            this.TextBox_DirCrad.Enabled = false;
-            this.TextBox_DirCrad.Location = new System.Drawing.Point(277, 160);
-            this.TextBox_DirCrad.Name = "TextBox_DirCrad";
-            this.TextBox_DirCrad.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DirCrad.TabIndex = 21;
-            this.TextBox_DirCrad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(193, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "CNS Directory:";
-            // 
-            // TextBox_DirVolante
-            // 
-            this.TextBox_DirVolante.Enabled = false;
-            this.TextBox_DirVolante.Location = new System.Drawing.Point(277, 134);
-            this.TextBox_DirVolante.Name = "TextBox_DirVolante";
-            this.TextBox_DirVolante.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DirVolante.TabIndex = 15;
-            this.TextBox_DirVolante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(180, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Volante Directory:";
-            // 
-            // Button_Directories
-            // 
-            this.Button_Directories.Location = new System.Drawing.Point(11, 9);
-            this.Button_Directories.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_Directories.Name = "Button_Directories";
-            this.Button_Directories.Size = new System.Drawing.Size(109, 23);
-            this.Button_Directories.TabIndex = 9;
-            this.Button_Directories.Text = "Execute";
-            this.Button_Directories.UseVisualStyleBackColor = true;
-            this.Button_Directories.Click += new System.EventHandler(this.Button_Directories_Click);
             // 
             // API
             // 
             this.API.Controls.Add(this.tabControl3);
             this.API.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.API.Location = new System.Drawing.Point(4, 32);
+            this.API.Location = new System.Drawing.Point(4, 60);
             this.API.Name = "API";
             this.API.Padding = new System.Windows.Forms.Padding(3);
-            this.API.Size = new System.Drawing.Size(676, 426);
+            this.API.Size = new System.Drawing.Size(676, 420);
             this.API.TabIndex = 2;
             this.API.Text = "API Info";
             this.API.UseVisualStyleBackColor = true;
@@ -1908,7 +648,7 @@ namespace ScoutTestApplication
             this.tabControl3.Location = new System.Drawing.Point(3, 3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(670, 420);
+            this.tabControl3.Size = new System.Drawing.Size(670, 414);
             this.tabControl3.TabIndex = 199;
             // 
             // TabThincApi
@@ -1965,7 +705,7 @@ namespace ScoutTestApplication
             this.TabThincApi.Location = new System.Drawing.Point(4, 29);
             this.TabThincApi.Name = "TabThincApi";
             this.TabThincApi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabThincApi.Size = new System.Drawing.Size(662, 387);
+            this.TabThincApi.Size = new System.Drawing.Size(662, 381);
             this.TabThincApi.TabIndex = 0;
             this.TabThincApi.Text = "OSP Open API";
             this.TabThincApi.UseVisualStyleBackColor = true;
@@ -2508,7 +1248,7 @@ namespace ScoutTestApplication
             this.TabOcjApi.Location = new System.Drawing.Point(4, 29);
             this.TabOcjApi.Name = "TabOcjApi";
             this.TabOcjApi.Padding = new System.Windows.Forms.Padding(3);
-            this.TabOcjApi.Size = new System.Drawing.Size(662, 387);
+            this.TabOcjApi.Size = new System.Drawing.Size(662, 381);
             this.TabOcjApi.TabIndex = 1;
             this.TabOcjApi.Text = "Okuma Custom API";
             this.TabOcjApi.UseVisualStyleBackColor = true;
@@ -2865,481 +1605,168 @@ namespace ScoutTestApplication
             this.Button_OspApiInfo.UseVisualStyleBackColor = true;
             this.Button_OspApiInfo.Click += new System.EventHandler(this.Button_OspApiInfo_Click);
             // 
-            // Files
-            // 
-            this.Files.Controls.Add(this.label169);
-            this.Files.Controls.Add(this.label172);
-            this.Files.Controls.Add(this.TextBox_OspTouchExists);
-            this.Files.Controls.Add(this.TextBox_OspTouchVersion);
-            this.Files.Controls.Add(this.label171);
-            this.Files.Controls.Add(this.label170);
-            this.Files.Controls.Add(this.label168);
-            this.Files.Controls.Add(this.TextBox_OspGestureExists);
-            this.Files.Controls.Add(this.TextBox_OspGestureVersion);
-            this.Files.Controls.Add(this.label133);
-            this.Files.Controls.Add(this.TextBox_NCBSpecFileExist);
-            this.Files.Controls.Add(this.label91);
-            this.Files.Controls.Add(this.TextBox_NCSpecFileExist);
-            this.Files.Controls.Add(this.label68);
-            this.Files.Controls.Add(this.TextBox_PLCSpecFileExist);
-            this.Files.Controls.Add(this.label77);
-            this.Files.Controls.Add(this.TextBox_ThincApiLicenseModified);
-            this.Files.Controls.Add(this.label38);
-            this.Files.Controls.Add(this.TextBox_SoftSwitchVer);
-            this.Files.Controls.Add(this.TextBox_SoftSwitch);
-            this.Files.Controls.Add(this.label39);
-            this.Files.Controls.Add(this.Button_FileInfo);
-            this.Files.Controls.Add(this.label14);
-            this.Files.Controls.Add(this.TextBox_DMC);
-            this.Files.Controls.Add(this.label13);
-            this.Files.Controls.Add(this.TextBox_DMCModified);
-            this.Files.Controls.Add(this.label15);
-            this.Files.Controls.Add(this.TextBox_ThincApiLicense);
-            this.Files.Controls.Add(this.label18);
-            this.Files.Controls.Add(this.label17);
-            this.Files.Controls.Add(this.TextBox_ApiNotifierVer);
-            this.Files.Controls.Add(this.TextBox_EbiFry);
-            this.Files.Controls.Add(this.TextBox_ApiNotifier);
-            this.Files.Controls.Add(this.TextBox_EbiFryVer);
-            this.Files.Controls.Add(this.label19);
-            this.Files.Controls.Add(this.label16);
-            this.Files.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Files.Location = new System.Drawing.Point(4, 32);
-            this.Files.Name = "Files";
-            this.Files.Padding = new System.Windows.Forms.Padding(3);
-            this.Files.Size = new System.Drawing.Size(676, 426);
-            this.Files.TabIndex = 3;
-            this.Files.Text = "File Info";
-            this.Files.UseVisualStyleBackColor = true;
-            // 
-            // label169
-            // 
-            this.label169.AutoSize = true;
-            this.label169.Location = new System.Drawing.Point(316, 357);
-            this.label169.Name = "label169";
-            this.label169.Size = new System.Drawing.Size(45, 13);
-            this.label169.TabIndex = 105;
-            this.label169.Text = "Version:";
-            // 
-            // label172
-            // 
-            this.label172.AutoSize = true;
-            this.label172.Location = new System.Drawing.Point(61, 357);
-            this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(135, 13);
-            this.label172.TabIndex = 102;
-            this.label172.Text = "OSP-TOUCH-LIB.dll Exists:";
-            // 
-            // TextBox_OspTouchExists
-            // 
-            this.TextBox_OspTouchExists.Enabled = false;
-            this.TextBox_OspTouchExists.Location = new System.Drawing.Point(203, 354);
-            this.TextBox_OspTouchExists.Name = "TextBox_OspTouchExists";
-            this.TextBox_OspTouchExists.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OspTouchExists.TabIndex = 103;
-            this.TextBox_OspTouchExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_OspTouchVersion
-            // 
-            this.TextBox_OspTouchVersion.Enabled = false;
-            this.TextBox_OspTouchVersion.Location = new System.Drawing.Point(368, 354);
-            this.TextBox_OspTouchVersion.Name = "TextBox_OspTouchVersion";
-            this.TextBox_OspTouchVersion.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OspTouchVersion.TabIndex = 104;
-            this.TextBox_OspTouchVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label171
-            // 
-            this.label171.AutoSize = true;
-            this.label171.Location = new System.Drawing.Point(316, 331);
-            this.label171.Name = "label171";
-            this.label171.Size = new System.Drawing.Size(45, 13);
-            this.label171.TabIndex = 101;
-            this.label171.Text = "Version:";
-            // 
-            // label170
-            // 
-            this.label170.AutoSize = true;
-            this.label170.Location = new System.Drawing.Point(49, 306);
-            this.label170.Name = "label170";
-            this.label170.Size = new System.Drawing.Size(148, 13);
-            this.label170.TabIndex = 100;
-            this.label170.Text = "P300A Touch Panel Libraries:";
-            // 
-            // label168
-            // 
-            this.label168.AutoSize = true;
-            this.label168.Location = new System.Drawing.Point(66, 331);
-            this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(130, 13);
-            this.label168.TabIndex = 96;
-            this.label168.Text = "OSP-GESTURE.dll Exists:";
-            // 
-            // TextBox_OspGestureExists
-            // 
-            this.TextBox_OspGestureExists.Enabled = false;
-            this.TextBox_OspGestureExists.Location = new System.Drawing.Point(203, 328);
-            this.TextBox_OspGestureExists.Name = "TextBox_OspGestureExists";
-            this.TextBox_OspGestureExists.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OspGestureExists.TabIndex = 97;
-            this.TextBox_OspGestureExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_OspGestureVersion
-            // 
-            this.TextBox_OspGestureVersion.Enabled = false;
-            this.TextBox_OspGestureVersion.Location = new System.Drawing.Point(368, 328);
-            this.TextBox_OspGestureVersion.Name = "TextBox_OspGestureVersion";
-            this.TextBox_OspGestureVersion.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OspGestureVersion.TabIndex = 99;
-            this.TextBox_OspGestureVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label133
-            // 
-            this.label133.AutoSize = true;
-            this.label133.Location = new System.Drawing.Point(57, 110);
-            this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(140, 13);
-            this.label133.TabIndex = 94;
-            this.label133.Text = "NC B-Spec Code File Exists:";
-            // 
-            // TextBox_NCBSpecFileExist
-            // 
-            this.TextBox_NCBSpecFileExist.Enabled = false;
-            this.TextBox_NCBSpecFileExist.Location = new System.Drawing.Point(203, 107);
-            this.TextBox_NCBSpecFileExist.Name = "TextBox_NCBSpecFileExist";
-            this.TextBox_NCBSpecFileExist.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_NCBSpecFileExist.TabIndex = 95;
-            this.TextBox_NCBSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(67, 84);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(130, 13);
-            this.label91.TabIndex = 92;
-            this.label91.Text = "NC Spec Code File Exists:";
-            // 
-            // TextBox_NCSpecFileExist
-            // 
-            this.TextBox_NCSpecFileExist.Enabled = false;
-            this.TextBox_NCSpecFileExist.Location = new System.Drawing.Point(203, 81);
-            this.TextBox_NCSpecFileExist.Name = "TextBox_NCSpecFileExist";
-            this.TextBox_NCSpecFileExist.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_NCSpecFileExist.TabIndex = 93;
-            this.TextBox_NCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(62, 58);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(135, 13);
-            this.label68.TabIndex = 90;
-            this.label68.Text = "PLC Spec Code File Exists:";
-            // 
-            // TextBox_PLCSpecFileExist
-            // 
-            this.TextBox_PLCSpecFileExist.Enabled = false;
-            this.TextBox_PLCSpecFileExist.Location = new System.Drawing.Point(203, 55);
-            this.TextBox_PLCSpecFileExist.Name = "TextBox_PLCSpecFileExist";
-            this.TextBox_PLCSpecFileExist.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_PLCSpecFileExist.TabIndex = 91;
-            this.TextBox_PLCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(288, 156);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(73, 13);
-            this.label77.TabIndex = 64;
-            this.label77.Text = "Last Modified:";
-            // 
-            // TextBox_ThincApiLicenseModified
-            // 
-            this.TextBox_ThincApiLicenseModified.Enabled = false;
-            this.TextBox_ThincApiLicenseModified.Location = new System.Drawing.Point(367, 153);
-            this.TextBox_ThincApiLicenseModified.Name = "TextBox_ThincApiLicenseModified";
-            this.TextBox_ThincApiLicenseModified.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_ThincApiLicenseModified.TabIndex = 65;
-            this.TextBox_ThincApiLicenseModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(316, 234);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(45, 13);
-            this.label38.TabIndex = 63;
-            this.label38.Text = "Version:";
-            // 
-            // TextBox_SoftSwitchVer
-            // 
-            this.TextBox_SoftSwitchVer.Enabled = false;
-            this.TextBox_SoftSwitchVer.Location = new System.Drawing.Point(367, 231);
-            this.TextBox_SoftSwitchVer.Name = "TextBox_SoftSwitchVer";
-            this.TextBox_SoftSwitchVer.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_SoftSwitchVer.TabIndex = 62;
-            this.TextBox_SoftSwitchVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_SoftSwitch
-            // 
-            this.TextBox_SoftSwitch.Enabled = false;
-            this.TextBox_SoftSwitch.Location = new System.Drawing.Point(202, 231);
-            this.TextBox_SoftSwitch.Name = "TextBox_SoftSwitch";
-            this.TextBox_SoftSwitch.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_SoftSwitch.TabIndex = 61;
-            this.TextBox_SoftSwitch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(46, 234);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(150, 13);
-            this.label39.TabIndex = 60;
-            this.label39.Text = "\"Soft Switch\" (for Mode keys):";
-            // 
-            // Button_FileInfo
-            // 
-            this.Button_FileInfo.Location = new System.Drawing.Point(11, 9);
-            this.Button_FileInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_FileInfo.Name = "Button_FileInfo";
-            this.Button_FileInfo.Size = new System.Drawing.Size(109, 23);
-            this.Button_FileInfo.TabIndex = 59;
-            this.Button_FileInfo.Text = "Execute";
-            this.Button_FileInfo.UseVisualStyleBackColor = true;
-            this.Button_FileInfo.Click += new System.EventHandler(this.Button_FileInfo_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(73, 260);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 13);
-            this.label14.TabIndex = 45;
-            this.label14.Text = "Data Management Card:";
-            // 
-            // TextBox_DMC
-            // 
-            this.TextBox_DMC.Enabled = false;
-            this.TextBox_DMC.Location = new System.Drawing.Point(202, 257);
-            this.TextBox_DMC.Name = "TextBox_DMC";
-            this.TextBox_DMC.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DMC.TabIndex = 46;
-            this.TextBox_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(288, 260);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 47;
-            this.label13.Text = "Last Modified:";
-            // 
-            // TextBox_DMCModified
-            // 
-            this.TextBox_DMCModified.Enabled = false;
-            this.TextBox_DMCModified.Location = new System.Drawing.Point(367, 257);
-            this.TextBox_DMCModified.Name = "TextBox_DMCModified";
-            this.TextBox_DMCModified.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_DMCModified.TabIndex = 48;
-            this.TextBox_DMCModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(45, 156);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 13);
-            this.label15.TabIndex = 49;
-            this.label15.Text = "THINC API License File Exists:";
-            // 
-            // TextBox_ThincApiLicense
-            // 
-            this.TextBox_ThincApiLicense.Enabled = false;
-            this.TextBox_ThincApiLicense.Location = new System.Drawing.Point(203, 153);
-            this.TextBox_ThincApiLicense.Name = "TextBox_ThincApiLicense";
-            this.TextBox_ThincApiLicense.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_ThincApiLicense.TabIndex = 50;
-            this.TextBox_ThincApiLicense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(316, 208);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 13);
-            this.label18.TabIndex = 58;
-            this.label18.Text = "Version:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(57, 182);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 13);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "OSP NC Software Interface:";
-            // 
-            // TextBox_ApiNotifierVer
-            // 
-            this.TextBox_ApiNotifierVer.Enabled = false;
-            this.TextBox_ApiNotifierVer.Location = new System.Drawing.Point(367, 205);
-            this.TextBox_ApiNotifierVer.Name = "TextBox_ApiNotifierVer";
-            this.TextBox_ApiNotifierVer.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_ApiNotifierVer.TabIndex = 57;
-            this.TextBox_ApiNotifierVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_EbiFry
-            // 
-            this.TextBox_EbiFry.Enabled = false;
-            this.TextBox_EbiFry.Location = new System.Drawing.Point(203, 179);
-            this.TextBox_EbiFry.Name = "TextBox_EbiFry";
-            this.TextBox_EbiFry.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_EbiFry.TabIndex = 52;
-            this.TextBox_EbiFry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_ApiNotifier
-            // 
-            this.TextBox_ApiNotifier.Enabled = false;
-            this.TextBox_ApiNotifier.Location = new System.Drawing.Point(202, 205);
-            this.TextBox_ApiNotifier.Name = "TextBox_ApiNotifier";
-            this.TextBox_ApiNotifier.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_ApiNotifier.TabIndex = 56;
-            this.TextBox_ApiNotifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_EbiFryVer
-            // 
-            this.TextBox_EbiFryVer.Enabled = false;
-            this.TextBox_EbiFryVer.Location = new System.Drawing.Point(367, 179);
-            this.TextBox_EbiFryVer.Name = "TextBox_EbiFryVer";
-            this.TextBox_EbiFryVer.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_EbiFryVer.TabIndex = 53;
-            this.TextBox_EbiFryVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(133, 208);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 13);
-            this.label19.TabIndex = 55;
-            this.label19.Text = "API Notifier:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(316, 182);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 13);
-            this.label16.TabIndex = 54;
-            this.label16.Text = "Version:";
-            // 
-            // Process
-            // 
-            this.Process.Controls.Add(this.TextBox_SoftSwitchRun);
-            this.Process.Controls.Add(this.label42);
-            this.Process.Controls.Add(this.label40);
-            this.Process.Controls.Add(this.TextBox_ApiNotifierRun);
-            this.Process.Controls.Add(this.label4);
-            this.Process.Controls.Add(this.TextBox_OwmRun);
-            this.Process.Controls.Add(this.label3);
-            this.Process.Controls.Add(this.TextBox_OspRun);
-            this.Process.Controls.Add(this.Button_Processes);
-            this.Process.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Process.Location = new System.Drawing.Point(4, 32);
-            this.Process.Name = "Process";
-            this.Process.Padding = new System.Windows.Forms.Padding(3);
-            this.Process.Size = new System.Drawing.Size(676, 426);
-            this.Process.TabIndex = 4;
-            this.Process.Text = "Processes";
-            this.Process.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_SoftSwitchRun
-            // 
-            this.TextBox_SoftSwitchRun.Enabled = false;
-            this.TextBox_SoftSwitchRun.Location = new System.Drawing.Point(348, 132);
-            this.TextBox_SoftSwitchRun.Name = "TextBox_SoftSwitchRun";
-            this.TextBox_SoftSwitchRun.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_SoftSwitchRun.TabIndex = 63;
-            this.TextBox_SoftSwitchRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(148, 135);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(193, 13);
-            this.label42.TabIndex = 62;
-            this.label42.Text = "\"Soft Switch\" (for Mode keys) Running:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(200, 83);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(142, 13);
-            this.label40.TabIndex = 51;
-            this.label40.Text = "THINC API Notifier Running:";
-            // 
-            // TextBox_ApiNotifierRun
-            // 
-            this.TextBox_ApiNotifierRun.Enabled = false;
-            this.TextBox_ApiNotifierRun.Location = new System.Drawing.Point(348, 80);
-            this.TextBox_ApiNotifierRun.Name = "TextBox_ApiNotifierRun";
-            this.TextBox_ApiNotifierRun.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_ApiNotifierRun.TabIndex = 52;
-            this.TextBox_ApiNotifierRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Widget Manager Running:";
-            // 
-            // TextBox_OwmRun
-            // 
-            this.TextBox_OwmRun.Enabled = false;
-            this.TextBox_OwmRun.Location = new System.Drawing.Point(348, 158);
-            this.TextBox_OwmRun.Name = "TextBox_OwmRun";
-            this.TextBox_OwmRun.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OwmRun.TabIndex = 27;
-            this.TextBox_OwmRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "OSP NC Software Interface Running:";
-            // 
-            // TextBox_OspRun
-            // 
-            this.TextBox_OspRun.Enabled = false;
-            this.TextBox_OspRun.Location = new System.Drawing.Point(348, 106);
-            this.TextBox_OspRun.Name = "TextBox_OspRun";
-            this.TextBox_OspRun.Size = new System.Drawing.Size(78, 20);
-            this.TextBox_OspRun.TabIndex = 25;
-            this.TextBox_OspRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_Processes
-            // 
-            this.Button_Processes.Location = new System.Drawing.Point(11, 9);
-            this.Button_Processes.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_Processes.Name = "Button_Processes";
-            this.Button_Processes.Size = new System.Drawing.Size(109, 23);
-            this.Button_Processes.TabIndex = 10;
-            this.Button_Processes.Text = "Execute";
-            this.Button_Processes.UseVisualStyleBackColor = true;
-            this.Button_Processes.Click += new System.EventHandler(this.Button_Processes_Click);
+            // Dir
+            // 
+            this.Dir.Controls.Add(this.label114);
+            this.Dir.Controls.Add(this.TextBox_DirSystem);
+            this.Dir.Controls.Add(this.label113);
+            this.Dir.Controls.Add(this.TextBox_DirCurrent);
+            this.Dir.Controls.Add(this.label37);
+            this.Dir.Controls.Add(this.TextBox_DirOkuma);
+            this.Dir.Controls.Add(this.label6);
+            this.Dir.Controls.Add(this.TextBox_DirOsp);
+            this.Dir.Controls.Add(this.label9);
+            this.Dir.Controls.Add(this.TextBox_DirCns);
+            this.Dir.Controls.Add(this.TextBox_DirCrad);
+            this.Dir.Controls.Add(this.label7);
+            this.Dir.Controls.Add(this.TextBox_DirVolante);
+            this.Dir.Controls.Add(this.label8);
+            this.Dir.Controls.Add(this.Button_Directories);
+            this.Dir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dir.Location = new System.Drawing.Point(4, 60);
+            this.Dir.Name = "Dir";
+            this.Dir.Padding = new System.Windows.Forms.Padding(3);
+            this.Dir.Size = new System.Drawing.Size(676, 420);
+            this.Dir.TabIndex = 1;
+            this.Dir.Text = "Directories";
+            this.Dir.UseVisualStyleBackColor = true;
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(59, 224);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(89, 13);
+            this.label114.TabIndex = 28;
+            this.label114.Text = "System Directory:";
+            // 
+            // TextBox_DirSystem
+            // 
+            this.TextBox_DirSystem.Enabled = false;
+            this.TextBox_DirSystem.Location = new System.Drawing.Point(153, 221);
+            this.TextBox_DirSystem.Name = "TextBox_DirSystem";
+            this.TextBox_DirSystem.Size = new System.Drawing.Size(202, 20);
+            this.TextBox_DirSystem.TabIndex = 27;
+            this.TextBox_DirSystem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(59, 250);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(89, 13);
+            this.label113.TabIndex = 26;
+            this.label113.Text = "Current Directory:";
+            // 
+            // TextBox_DirCurrent
+            // 
+            this.TextBox_DirCurrent.Enabled = false;
+            this.TextBox_DirCurrent.Location = new System.Drawing.Point(153, 247);
+            this.TextBox_DirCurrent.Name = "TextBox_DirCurrent";
+            this.TextBox_DirCurrent.Size = new System.Drawing.Size(440, 20);
+            this.TextBox_DirCurrent.TabIndex = 25;
+            this.TextBox_DirCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(183, 189);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(89, 13);
+            this.label37.TabIndex = 24;
+            this.label37.Text = "Okuma Directory:";
+            // 
+            // TextBox_DirOkuma
+            // 
+            this.TextBox_DirOkuma.Enabled = false;
+            this.TextBox_DirOkuma.Location = new System.Drawing.Point(277, 186);
+            this.TextBox_DirOkuma.Name = "TextBox_DirOkuma";
+            this.TextBox_DirOkuma.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DirOkuma.TabIndex = 23;
+            this.TextBox_DirOkuma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(193, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "OSP Directory:";
+            // 
+            // TextBox_DirOsp
+            // 
+            this.TextBox_DirOsp.Enabled = false;
+            this.TextBox_DirOsp.Location = new System.Drawing.Point(277, 82);
+            this.TextBox_DirOsp.Name = "TextBox_DirOsp";
+            this.TextBox_DirOsp.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DirOsp.TabIndex = 11;
+            this.TextBox_DirOsp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(186, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "CRAD Directory:";
+            // 
+            // TextBox_DirCns
+            // 
+            this.TextBox_DirCns.Enabled = false;
+            this.TextBox_DirCns.Location = new System.Drawing.Point(277, 108);
+            this.TextBox_DirCns.Name = "TextBox_DirCns";
+            this.TextBox_DirCns.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DirCns.TabIndex = 13;
+            this.TextBox_DirCns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_DirCrad
+            // 
+            this.TextBox_DirCrad.Enabled = false;
+            this.TextBox_DirCrad.Location = new System.Drawing.Point(277, 160);
+            this.TextBox_DirCrad.Name = "TextBox_DirCrad";
+            this.TextBox_DirCrad.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DirCrad.TabIndex = 21;
+            this.TextBox_DirCrad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(193, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "CNS Directory:";
+            // 
+            // TextBox_DirVolante
+            // 
+            this.TextBox_DirVolante.Enabled = false;
+            this.TextBox_DirVolante.Location = new System.Drawing.Point(277, 134);
+            this.TextBox_DirVolante.Name = "TextBox_DirVolante";
+            this.TextBox_DirVolante.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DirVolante.TabIndex = 15;
+            this.TextBox_DirVolante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(180, 137);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Volante Directory:";
+            // 
+            // Button_Directories
+            // 
+            this.Button_Directories.Location = new System.Drawing.Point(11, 9);
+            this.Button_Directories.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_Directories.Name = "Button_Directories";
+            this.Button_Directories.Size = new System.Drawing.Size(109, 23);
+            this.Button_Directories.TabIndex = 9;
+            this.Button_Directories.Text = "Execute";
+            this.Button_Directories.UseVisualStyleBackColor = true;
+            this.Button_Directories.Click += new System.EventHandler(this.Button_Directories_Click);
             // 
             // DMC
             // 
@@ -3347,10 +1774,10 @@ namespace ScoutTestApplication
             this.DMC.Controls.Add(this.ListBox_DMC);
             this.DMC.Controls.Add(this.Button_DMC);
             this.DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.DMC.Location = new System.Drawing.Point(4, 32);
+            this.DMC.Location = new System.Drawing.Point(4, 60);
             this.DMC.Name = "DMC";
             this.DMC.Padding = new System.Windows.Forms.Padding(3);
-            this.DMC.Size = new System.Drawing.Size(676, 426);
+            this.DMC.Size = new System.Drawing.Size(676, 420);
             this.DMC.TabIndex = 5;
             this.DMC.Text = "DMC";
             this.DMC.UseVisualStyleBackColor = true;
@@ -3373,7 +1800,7 @@ namespace ScoutTestApplication
             this.ListBox_DMC.FormattingEnabled = true;
             this.ListBox_DMC.Location = new System.Drawing.Point(3, 52);
             this.ListBox_DMC.Name = "ListBox_DMC";
-            this.ListBox_DMC.Size = new System.Drawing.Size(643, 290);
+            this.ListBox_DMC.Size = new System.Drawing.Size(643, 277);
             this.ListBox_DMC.TabIndex = 12;
             // 
             // Button_DMC
@@ -3429,10 +1856,10 @@ namespace ScoutTestApplication
             this.DotNet.Controls.Add(this.TextBox_Net10Sp);
             this.DotNet.Controls.Add(this.Button_DotNet);
             this.DotNet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.DotNet.Location = new System.Drawing.Point(4, 32);
+            this.DotNet.Location = new System.Drawing.Point(4, 60);
             this.DotNet.Name = "DotNet";
             this.DotNet.Padding = new System.Windows.Forms.Padding(3);
-            this.DotNet.Size = new System.Drawing.Size(676, 426);
+            this.DotNet.Size = new System.Drawing.Size(676, 420);
             this.DotNet.TabIndex = 6;
             this.DotNet.Text = ".NET";
             this.DotNet.UseVisualStyleBackColor = true;
@@ -3790,6 +2217,579 @@ namespace ScoutTestApplication
             this.Button_DotNet.UseVisualStyleBackColor = true;
             this.Button_DotNet.Click += new System.EventHandler(this.Button_DotNet_Click);
             // 
+            // ErrorHandling
+            // 
+            this.ErrorHandling.Controls.Add(this.TextBox_ErrorHandling);
+            this.ErrorHandling.Controls.Add(this.CheckBox_ErrorSubscribed);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorUnSubscribe);
+            this.ErrorHandling.Controls.Add(this.CheckBox_ShowDebugInfo);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorError);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorInfo);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorWarning);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorException);
+            this.ErrorHandling.Controls.Add(this.Button_ErrorSubscribe);
+            this.ErrorHandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorHandling.Location = new System.Drawing.Point(4, 60);
+            this.ErrorHandling.Name = "ErrorHandling";
+            this.ErrorHandling.Padding = new System.Windows.Forms.Padding(3);
+            this.ErrorHandling.Size = new System.Drawing.Size(676, 420);
+            this.ErrorHandling.TabIndex = 11;
+            this.ErrorHandling.Text = "Error Handling";
+            this.ErrorHandling.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_ErrorHandling
+            // 
+            this.TextBox_ErrorHandling.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_ErrorHandling.Location = new System.Drawing.Point(6, 96);
+            this.TextBox_ErrorHandling.Name = "TextBox_ErrorHandling";
+            this.TextBox_ErrorHandling.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.TextBox_ErrorHandling.Size = new System.Drawing.Size(664, 316);
+            this.TextBox_ErrorHandling.TabIndex = 98;
+            this.TextBox_ErrorHandling.Text = "";
+            // 
+            // CheckBox_ErrorSubscribed
+            // 
+            this.CheckBox_ErrorSubscribed.AutoSize = true;
+            this.CheckBox_ErrorSubscribed.Enabled = false;
+            this.CheckBox_ErrorSubscribed.Location = new System.Drawing.Point(360, 13);
+            this.CheckBox_ErrorSubscribed.Name = "CheckBox_ErrorSubscribed";
+            this.CheckBox_ErrorSubscribed.Size = new System.Drawing.Size(166, 17);
+            this.CheckBox_ErrorSubscribed.TabIndex = 97;
+            this.CheckBox_ErrorSubscribed.Text = "Subscribed to Reporter Event";
+            this.CheckBox_ErrorSubscribed.UseVisualStyleBackColor = true;
+            // 
+            // Button_ErrorUnSubscribe
+            // 
+            this.Button_ErrorUnSubscribe.Location = new System.Drawing.Point(178, 9);
+            this.Button_ErrorUnSubscribe.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorUnSubscribe.Name = "Button_ErrorUnSubscribe";
+            this.Button_ErrorUnSubscribe.Size = new System.Drawing.Size(176, 23);
+            this.Button_ErrorUnSubscribe.TabIndex = 96;
+            this.Button_ErrorUnSubscribe.Text = "Unsubscribe from Error Handler";
+            this.Button_ErrorUnSubscribe.UseVisualStyleBackColor = true;
+            this.Button_ErrorUnSubscribe.Click += new System.EventHandler(this.Button_ErrorUnSubscribe_Click);
+            // 
+            // CheckBox_ShowDebugInfo
+            // 
+            this.CheckBox_ShowDebugInfo.AutoSize = true;
+            this.CheckBox_ShowDebugInfo.Location = new System.Drawing.Point(14, 41);
+            this.CheckBox_ShowDebugInfo.Name = "CheckBox_ShowDebugInfo";
+            this.CheckBox_ShowDebugInfo.Size = new System.Drawing.Size(163, 17);
+            this.CheckBox_ShowDebugInfo.TabIndex = 95;
+            this.CheckBox_ShowDebugInfo.Text = "Show Debugging Information";
+            this.CheckBox_ShowDebugInfo.UseVisualStyleBackColor = true;
+            this.CheckBox_ShowDebugInfo.CheckedChanged += new System.EventHandler(this.CheckBox_ShowDebugInfo_CheckedChanged);
+            // 
+            // Button_ErrorError
+            // 
+            this.Button_ErrorError.Location = new System.Drawing.Point(251, 67);
+            this.Button_ErrorError.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorError.Name = "Button_ErrorError";
+            this.Button_ErrorError.Size = new System.Drawing.Size(111, 23);
+            this.Button_ErrorError.TabIndex = 94;
+            this.Button_ErrorError.Text = "Generate Error";
+            this.Button_ErrorError.UseVisualStyleBackColor = true;
+            this.Button_ErrorError.Click += new System.EventHandler(this.Button_ErrorError_Click);
+            // 
+            // Button_ErrorInfo
+            // 
+            this.Button_ErrorInfo.Location = new System.Drawing.Point(11, 67);
+            this.Button_ErrorInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorInfo.Name = "Button_ErrorInfo";
+            this.Button_ErrorInfo.Size = new System.Drawing.Size(111, 23);
+            this.Button_ErrorInfo.TabIndex = 93;
+            this.Button_ErrorInfo.Text = "Generate Info";
+            this.Button_ErrorInfo.UseVisualStyleBackColor = true;
+            this.Button_ErrorInfo.Click += new System.EventHandler(this.Button_ErrorInfo_Click);
+            // 
+            // Button_ErrorWarning
+            // 
+            this.Button_ErrorWarning.Location = new System.Drawing.Point(131, 67);
+            this.Button_ErrorWarning.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorWarning.Name = "Button_ErrorWarning";
+            this.Button_ErrorWarning.Size = new System.Drawing.Size(111, 23);
+            this.Button_ErrorWarning.TabIndex = 92;
+            this.Button_ErrorWarning.Text = "Generate Warning";
+            this.Button_ErrorWarning.UseVisualStyleBackColor = true;
+            this.Button_ErrorWarning.Click += new System.EventHandler(this.Button_ErrorWarning_Click);
+            // 
+            // Button_ErrorException
+            // 
+            this.Button_ErrorException.Location = new System.Drawing.Point(371, 67);
+            this.Button_ErrorException.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorException.Name = "Button_ErrorException";
+            this.Button_ErrorException.Size = new System.Drawing.Size(123, 23);
+            this.Button_ErrorException.TabIndex = 91;
+            this.Button_ErrorException.Text = "Generate Exception";
+            this.Button_ErrorException.UseVisualStyleBackColor = true;
+            this.Button_ErrorException.Click += new System.EventHandler(this.Button_ErrorException_Click);
+            // 
+            // Button_ErrorSubscribe
+            // 
+            this.Button_ErrorSubscribe.Enabled = false;
+            this.Button_ErrorSubscribe.Location = new System.Drawing.Point(11, 9);
+            this.Button_ErrorSubscribe.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ErrorSubscribe.Name = "Button_ErrorSubscribe";
+            this.Button_ErrorSubscribe.Size = new System.Drawing.Size(158, 23);
+            this.Button_ErrorSubscribe.TabIndex = 90;
+            this.Button_ErrorSubscribe.Text = "Subscribe to Error Handler";
+            this.Button_ErrorSubscribe.UseVisualStyleBackColor = true;
+            this.Button_ErrorSubscribe.Click += new System.EventHandler(this.Button_ErrorSubscribe_Click);
+            // 
+            // Files
+            // 
+            this.Files.Controls.Add(this.label169);
+            this.Files.Controls.Add(this.label172);
+            this.Files.Controls.Add(this.TextBox_OspTouchExists);
+            this.Files.Controls.Add(this.TextBox_OspTouchVersion);
+            this.Files.Controls.Add(this.label171);
+            this.Files.Controls.Add(this.label170);
+            this.Files.Controls.Add(this.label168);
+            this.Files.Controls.Add(this.TextBox_OspGestureExists);
+            this.Files.Controls.Add(this.TextBox_OspGestureVersion);
+            this.Files.Controls.Add(this.label133);
+            this.Files.Controls.Add(this.TextBox_NCBSpecFileExist);
+            this.Files.Controls.Add(this.label91);
+            this.Files.Controls.Add(this.TextBox_NCSpecFileExist);
+            this.Files.Controls.Add(this.label68);
+            this.Files.Controls.Add(this.TextBox_PLCSpecFileExist);
+            this.Files.Controls.Add(this.label77);
+            this.Files.Controls.Add(this.TextBox_ThincApiLicenseModified);
+            this.Files.Controls.Add(this.label38);
+            this.Files.Controls.Add(this.TextBox_SoftSwitchVer);
+            this.Files.Controls.Add(this.TextBox_SoftSwitch);
+            this.Files.Controls.Add(this.label39);
+            this.Files.Controls.Add(this.Button_FileInfo);
+            this.Files.Controls.Add(this.label14);
+            this.Files.Controls.Add(this.TextBox_DMC);
+            this.Files.Controls.Add(this.label13);
+            this.Files.Controls.Add(this.TextBox_DMCModified);
+            this.Files.Controls.Add(this.label15);
+            this.Files.Controls.Add(this.TextBox_ThincApiLicense);
+            this.Files.Controls.Add(this.label18);
+            this.Files.Controls.Add(this.label17);
+            this.Files.Controls.Add(this.TextBox_ApiNotifierVer);
+            this.Files.Controls.Add(this.TextBox_EbiFry);
+            this.Files.Controls.Add(this.TextBox_ApiNotifier);
+            this.Files.Controls.Add(this.TextBox_EbiFryVer);
+            this.Files.Controls.Add(this.label19);
+            this.Files.Controls.Add(this.label16);
+            this.Files.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Files.Location = new System.Drawing.Point(4, 60);
+            this.Files.Name = "Files";
+            this.Files.Padding = new System.Windows.Forms.Padding(3);
+            this.Files.Size = new System.Drawing.Size(676, 420);
+            this.Files.TabIndex = 3;
+            this.Files.Text = "File Info";
+            this.Files.UseVisualStyleBackColor = true;
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Location = new System.Drawing.Point(316, 357);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(45, 13);
+            this.label169.TabIndex = 105;
+            this.label169.Text = "Version:";
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Location = new System.Drawing.Point(61, 357);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(135, 13);
+            this.label172.TabIndex = 102;
+            this.label172.Text = "OSP-TOUCH-LIB.dll Exists:";
+            // 
+            // TextBox_OspTouchExists
+            // 
+            this.TextBox_OspTouchExists.Enabled = false;
+            this.TextBox_OspTouchExists.Location = new System.Drawing.Point(203, 354);
+            this.TextBox_OspTouchExists.Name = "TextBox_OspTouchExists";
+            this.TextBox_OspTouchExists.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspTouchExists.TabIndex = 103;
+            this.TextBox_OspTouchExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspTouchVersion
+            // 
+            this.TextBox_OspTouchVersion.Enabled = false;
+            this.TextBox_OspTouchVersion.Location = new System.Drawing.Point(368, 354);
+            this.TextBox_OspTouchVersion.Name = "TextBox_OspTouchVersion";
+            this.TextBox_OspTouchVersion.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspTouchVersion.TabIndex = 104;
+            this.TextBox_OspTouchVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label171
+            // 
+            this.label171.AutoSize = true;
+            this.label171.Location = new System.Drawing.Point(316, 331);
+            this.label171.Name = "label171";
+            this.label171.Size = new System.Drawing.Size(45, 13);
+            this.label171.TabIndex = 101;
+            this.label171.Text = "Version:";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Location = new System.Drawing.Point(49, 306);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(148, 13);
+            this.label170.TabIndex = 100;
+            this.label170.Text = "P300A Touch Panel Libraries:";
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Location = new System.Drawing.Point(66, 331);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(130, 13);
+            this.label168.TabIndex = 96;
+            this.label168.Text = "OSP-GESTURE.dll Exists:";
+            // 
+            // TextBox_OspGestureExists
+            // 
+            this.TextBox_OspGestureExists.Enabled = false;
+            this.TextBox_OspGestureExists.Location = new System.Drawing.Point(203, 328);
+            this.TextBox_OspGestureExists.Name = "TextBox_OspGestureExists";
+            this.TextBox_OspGestureExists.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGestureExists.TabIndex = 97;
+            this.TextBox_OspGestureExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_OspGestureVersion
+            // 
+            this.TextBox_OspGestureVersion.Enabled = false;
+            this.TextBox_OspGestureVersion.Location = new System.Drawing.Point(368, 328);
+            this.TextBox_OspGestureVersion.Name = "TextBox_OspGestureVersion";
+            this.TextBox_OspGestureVersion.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspGestureVersion.TabIndex = 99;
+            this.TextBox_OspGestureVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(57, 110);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(140, 13);
+            this.label133.TabIndex = 94;
+            this.label133.Text = "NC B-Spec Code File Exists:";
+            // 
+            // TextBox_NCBSpecFileExist
+            // 
+            this.TextBox_NCBSpecFileExist.Enabled = false;
+            this.TextBox_NCBSpecFileExist.Location = new System.Drawing.Point(203, 107);
+            this.TextBox_NCBSpecFileExist.Name = "TextBox_NCBSpecFileExist";
+            this.TextBox_NCBSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_NCBSpecFileExist.TabIndex = 95;
+            this.TextBox_NCBSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(67, 84);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(130, 13);
+            this.label91.TabIndex = 92;
+            this.label91.Text = "NC Spec Code File Exists:";
+            // 
+            // TextBox_NCSpecFileExist
+            // 
+            this.TextBox_NCSpecFileExist.Enabled = false;
+            this.TextBox_NCSpecFileExist.Location = new System.Drawing.Point(203, 81);
+            this.TextBox_NCSpecFileExist.Name = "TextBox_NCSpecFileExist";
+            this.TextBox_NCSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_NCSpecFileExist.TabIndex = 93;
+            this.TextBox_NCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(62, 58);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(135, 13);
+            this.label68.TabIndex = 90;
+            this.label68.Text = "PLC Spec Code File Exists:";
+            // 
+            // TextBox_PLCSpecFileExist
+            // 
+            this.TextBox_PLCSpecFileExist.Enabled = false;
+            this.TextBox_PLCSpecFileExist.Location = new System.Drawing.Point(203, 55);
+            this.TextBox_PLCSpecFileExist.Name = "TextBox_PLCSpecFileExist";
+            this.TextBox_PLCSpecFileExist.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_PLCSpecFileExist.TabIndex = 91;
+            this.TextBox_PLCSpecFileExist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(288, 156);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(73, 13);
+            this.label77.TabIndex = 64;
+            this.label77.Text = "Last Modified:";
+            // 
+            // TextBox_ThincApiLicenseModified
+            // 
+            this.TextBox_ThincApiLicenseModified.Enabled = false;
+            this.TextBox_ThincApiLicenseModified.Location = new System.Drawing.Point(367, 153);
+            this.TextBox_ThincApiLicenseModified.Name = "TextBox_ThincApiLicenseModified";
+            this.TextBox_ThincApiLicenseModified.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincApiLicenseModified.TabIndex = 65;
+            this.TextBox_ThincApiLicenseModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(316, 234);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(45, 13);
+            this.label38.TabIndex = 63;
+            this.label38.Text = "Version:";
+            // 
+            // TextBox_SoftSwitchVer
+            // 
+            this.TextBox_SoftSwitchVer.Enabled = false;
+            this.TextBox_SoftSwitchVer.Location = new System.Drawing.Point(367, 231);
+            this.TextBox_SoftSwitchVer.Name = "TextBox_SoftSwitchVer";
+            this.TextBox_SoftSwitchVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_SoftSwitchVer.TabIndex = 62;
+            this.TextBox_SoftSwitchVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_SoftSwitch
+            // 
+            this.TextBox_SoftSwitch.Enabled = false;
+            this.TextBox_SoftSwitch.Location = new System.Drawing.Point(202, 231);
+            this.TextBox_SoftSwitch.Name = "TextBox_SoftSwitch";
+            this.TextBox_SoftSwitch.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_SoftSwitch.TabIndex = 61;
+            this.TextBox_SoftSwitch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(46, 234);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(150, 13);
+            this.label39.TabIndex = 60;
+            this.label39.Text = "\"Soft Switch\" (for Mode keys):";
+            // 
+            // Button_FileInfo
+            // 
+            this.Button_FileInfo.Location = new System.Drawing.Point(11, 9);
+            this.Button_FileInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_FileInfo.Name = "Button_FileInfo";
+            this.Button_FileInfo.Size = new System.Drawing.Size(109, 23);
+            this.Button_FileInfo.TabIndex = 59;
+            this.Button_FileInfo.Text = "Execute";
+            this.Button_FileInfo.UseVisualStyleBackColor = true;
+            this.Button_FileInfo.Click += new System.EventHandler(this.Button_FileInfo_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(73, 260);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(123, 13);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Data Management Card:";
+            // 
+            // TextBox_DMC
+            // 
+            this.TextBox_DMC.Enabled = false;
+            this.TextBox_DMC.Location = new System.Drawing.Point(202, 257);
+            this.TextBox_DMC.Name = "TextBox_DMC";
+            this.TextBox_DMC.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DMC.TabIndex = 46;
+            this.TextBox_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(288, 260);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Last Modified:";
+            // 
+            // TextBox_DMCModified
+            // 
+            this.TextBox_DMCModified.Enabled = false;
+            this.TextBox_DMCModified.Location = new System.Drawing.Point(367, 257);
+            this.TextBox_DMCModified.Name = "TextBox_DMCModified";
+            this.TextBox_DMCModified.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_DMCModified.TabIndex = 48;
+            this.TextBox_DMCModified.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(45, 156);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(152, 13);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "THINC API License File Exists:";
+            // 
+            // TextBox_ThincApiLicense
+            // 
+            this.TextBox_ThincApiLicense.Enabled = false;
+            this.TextBox_ThincApiLicense.Location = new System.Drawing.Point(203, 153);
+            this.TextBox_ThincApiLicense.Name = "TextBox_ThincApiLicense";
+            this.TextBox_ThincApiLicense.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ThincApiLicense.TabIndex = 50;
+            this.TextBox_ThincApiLicense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(316, 208);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.TabIndex = 58;
+            this.label18.Text = "Version:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(57, 182);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(140, 13);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "OSP NC Software Interface:";
+            // 
+            // TextBox_ApiNotifierVer
+            // 
+            this.TextBox_ApiNotifierVer.Enabled = false;
+            this.TextBox_ApiNotifierVer.Location = new System.Drawing.Point(367, 205);
+            this.TextBox_ApiNotifierVer.Name = "TextBox_ApiNotifierVer";
+            this.TextBox_ApiNotifierVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiNotifierVer.TabIndex = 57;
+            this.TextBox_ApiNotifierVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_EbiFry
+            // 
+            this.TextBox_EbiFry.Enabled = false;
+            this.TextBox_EbiFry.Location = new System.Drawing.Point(203, 179);
+            this.TextBox_EbiFry.Name = "TextBox_EbiFry";
+            this.TextBox_EbiFry.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_EbiFry.TabIndex = 52;
+            this.TextBox_EbiFry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_ApiNotifier
+            // 
+            this.TextBox_ApiNotifier.Enabled = false;
+            this.TextBox_ApiNotifier.Location = new System.Drawing.Point(202, 205);
+            this.TextBox_ApiNotifier.Name = "TextBox_ApiNotifier";
+            this.TextBox_ApiNotifier.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiNotifier.TabIndex = 56;
+            this.TextBox_ApiNotifier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_EbiFryVer
+            // 
+            this.TextBox_EbiFryVer.Enabled = false;
+            this.TextBox_EbiFryVer.Location = new System.Drawing.Point(367, 179);
+            this.TextBox_EbiFryVer.Name = "TextBox_EbiFryVer";
+            this.TextBox_EbiFryVer.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_EbiFryVer.TabIndex = 53;
+            this.TextBox_EbiFryVer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(133, 208);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 55;
+            this.label19.Text = "API Notifier:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(316, 182);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 13);
+            this.label16.TabIndex = 54;
+            this.label16.Text = "Version:";
+            // 
+            // GAC
+            // 
+            this.GAC.Controls.Add(this.Button_Clear);
+            this.GAC.Controls.Add(this.TextBox_AssemblyName);
+            this.GAC.Controls.Add(this.Button_ExecuteFindInGAC);
+            this.GAC.Controls.Add(this.textBox1);
+            this.GAC.Controls.Add(this.Label_B);
+            this.GAC.Controls.Add(this.Label_A);
+            this.GAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.GAC.Location = new System.Drawing.Point(4, 60);
+            this.GAC.Name = "GAC";
+            this.GAC.Size = new System.Drawing.Size(676, 420);
+            this.GAC.TabIndex = 14;
+            this.GAC.Text = "GAC";
+            this.GAC.UseVisualStyleBackColor = true;
+            // 
+            // Button_Clear
+            // 
+            this.Button_Clear.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Clear.Location = new System.Drawing.Point(207, 72);
+            this.Button_Clear.Name = "Button_Clear";
+            this.Button_Clear.Size = new System.Drawing.Size(74, 34);
+            this.Button_Clear.TabIndex = 12;
+            this.Button_Clear.Text = "Clear";
+            this.Button_Clear.UseVisualStyleBackColor = true;
+            this.Button_Clear.Click += new System.EventHandler(this.Button_Clear_Click);
+            // 
+            // TextBox_AssemblyName
+            // 
+            this.TextBox_AssemblyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_AssemblyName.Location = new System.Drawing.Point(297, 79);
+            this.TextBox_AssemblyName.Name = "TextBox_AssemblyName";
+            this.TextBox_AssemblyName.Size = new System.Drawing.Size(226, 22);
+            this.TextBox_AssemblyName.TabIndex = 11;
+            this.TextBox_AssemblyName.Text = "System.Data";
+            // 
+            // Button_ExecuteFindInGAC
+            // 
+            this.Button_ExecuteFindInGAC.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_ExecuteFindInGAC.Location = new System.Drawing.Point(13, 72);
+            this.Button_ExecuteFindInGAC.Name = "Button_ExecuteFindInGAC";
+            this.Button_ExecuteFindInGAC.Size = new System.Drawing.Size(188, 34);
+            this.Button_ExecuteFindInGAC.TabIndex = 10;
+            this.Button_ExecuteFindInGAC.Text = "Find Assemblies in GAC";
+            this.Button_ExecuteFindInGAC.UseVisualStyleBackColor = true;
+            this.Button_ExecuteFindInGAC.Click += new System.EventHandler(this.Button_ExecuteFindInGAC_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(8, 122);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(660, 290);
+            this.textBox1.TabIndex = 9;
+            // 
+            // Label_B
+            // 
+            this.Label_B.AutoSize = true;
+            this.Label_B.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_B.Location = new System.Drawing.Point(9, 39);
+            this.Label_B.Name = "Label_B";
+            this.Label_B.Size = new System.Drawing.Size(280, 22);
+            this.Label_B.TabIndex = 8;
+            this.Label_B.Text = "Okuma.Scout.Com CLR Version";
+            // 
+            // Label_A
+            // 
+            this.Label_A.AutoSize = true;
+            this.Label_A.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_A.Location = new System.Drawing.Point(9, 10);
+            this.Label_A.Name = "Label_A";
+            this.Label_A.Size = new System.Drawing.Size(310, 22);
+            this.Label_A.TabIndex = 1;
+            this.Label_A.Text = "Executing Assembly CLR Version";
+            // 
             // License
             // 
             this.License.Controls.Add(this.TextBox_License_GCMDAPI_ExpireDate);
@@ -3877,10 +2877,10 @@ namespace ScoutTestApplication
             this.License.Controls.Add(this.TextBox_License_LCMDAPI_Status);
             this.License.Controls.Add(this.TextBox_License_LDATAPI_Status);
             this.License.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.License.Location = new System.Drawing.Point(4, 32);
+            this.License.Location = new System.Drawing.Point(4, 60);
             this.License.Name = "License";
             this.License.Padding = new System.Windows.Forms.Padding(3);
-            this.License.Size = new System.Drawing.Size(676, 426);
+            this.License.Size = new System.Drawing.Size(676, 420);
             this.License.TabIndex = 7;
             this.License.Text = "License";
             this.License.UseVisualStyleBackColor = true;
@@ -4526,259 +3526,171 @@ namespace ScoutTestApplication
             this.Button_ApiLicense.UseVisualStyleBackColor = true;
             this.Button_ApiLicense.Click += new System.EventHandler(this.Button_ApiLicense1_Click);
             // 
-            // Program
+            // TextBox_License_GCMDAPI_Status
             // 
-            this.Program.Controls.Add(this.label135);
-            this.Program.Controls.Add(this.TextBox_TestAppVersion);
-            this.Program.Controls.Add(this.label134);
-            this.Program.Controls.Add(this.TextBox_ScoutDllBuildDate);
-            this.Program.Controls.Add(this.label105);
-            this.Program.Controls.Add(this.TextBox_ProgramBits);
-            this.Program.Controls.Add(this.label97);
-            this.Program.Controls.Add(this.TextBox_TestAppBuildDate);
-            this.Program.Controls.Add(this.label96);
-            this.Program.Controls.Add(this.TextBox_AssemblyDescription);
-            this.Program.Controls.Add(this.label95);
-            this.Program.Controls.Add(this.TextBox_AssemblyCompany);
-            this.Program.Controls.Add(this.label94);
-            this.Program.Controls.Add(this.TextBox_AssemblyCopyright);
-            this.Program.Controls.Add(this.label93);
-            this.Program.Controls.Add(this.TextBox_ScoutDllAssemblyVersion);
-            this.Program.Controls.Add(this.label92);
-            this.Program.Controls.Add(this.TextBox_AssemblyTitle);
-            this.Program.Controls.Add(this.label76);
-            this.Program.Controls.Add(this.TextBox_AssemblyGuid);
-            this.Program.Controls.Add(this.Button_SetErrorMessage);
-            this.Program.Controls.Add(this.label75);
-            this.Program.Controls.Add(this.TextBox_ErrorMessage);
-            this.Program.Controls.Add(this.Button_ProgramInfo);
-            this.Program.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Program.Location = new System.Drawing.Point(4, 32);
-            this.Program.Name = "Program";
-            this.Program.Padding = new System.Windows.Forms.Padding(3);
-            this.Program.Size = new System.Drawing.Size(676, 426);
-            this.Program.TabIndex = 8;
-            this.Program.Text = "Program Info";
-            this.Program.UseVisualStyleBackColor = true;
+            this.TextBox_License_GCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GCMDAPI_Status.Location = new System.Drawing.Point(522, 183);
+            this.TextBox_License_GCMDAPI_Status.Name = "TextBox_License_GCMDAPI_Status";
+            this.TextBox_License_GCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_GCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GCMDAPI_Status.TabIndex = 218;
+            this.TextBox_License_GCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label135
+            // TextBox_License_GDATAPI_Status
             // 
-            this.label135.AutoSize = true;
-            this.label135.Location = new System.Drawing.Point(93, 181);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(124, 13);
-            this.label135.TabIndex = 107;
-            this.label135.Text = "Test Application Version:";
+            this.TextBox_License_GDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GDATAPI_Status.Location = new System.Drawing.Point(522, 105);
+            this.TextBox_License_GDATAPI_Status.Name = "TextBox_License_GDATAPI_Status";
+            this.TextBox_License_GDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_GDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GDATAPI_Status.TabIndex = 212;
+            this.TextBox_License_GDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_TestAppVersion
+            // TextBox_License_ToolId_Status
             // 
-            this.TextBox_TestAppVersion.Enabled = false;
-            this.TextBox_TestAppVersion.Location = new System.Drawing.Point(223, 178);
-            this.TextBox_TestAppVersion.Name = "TextBox_TestAppVersion";
-            this.TextBox_TestAppVersion.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_TestAppVersion.TabIndex = 108;
-            this.TextBox_TestAppVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 365);
+            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
+            this.TextBox_License_ToolId_Status.ReadOnly = true;
+            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_ToolId_Status.TabIndex = 122;
+            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label134
+            // TextBox_License_UserAlarmMC_Status
             // 
-            this.label134.AutoSize = true;
-            this.label134.Location = new System.Drawing.Point(104, 155);
-            this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(113, 13);
-            this.label134.TabIndex = 105;
-            this.label134.Text = "Scout DLL Build Date:";
+            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 339);
+            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
+            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
+            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_ScoutDllBuildDate
+            // TextBox_License_UserAlarmL_Status
             // 
-            this.TextBox_ScoutDllBuildDate.Enabled = false;
-            this.TextBox_ScoutDllBuildDate.Location = new System.Drawing.Point(223, 152);
-            this.TextBox_ScoutDllBuildDate.Name = "TextBox_ScoutDllBuildDate";
-            this.TextBox_ScoutDllBuildDate.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_ScoutDllBuildDate.TabIndex = 106;
-            this.TextBox_ScoutDllBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 313);
+            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
+            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
+            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label105
+            // TextBox_License_NcCurrentAlarm_Status
             // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(148, 311);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(69, 13);
-            this.label105.TabIndex = 103;
-            this.label105.Text = "Program Bits:";
+            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 235);
+            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
+            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
+            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
+            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_ProgramBits
+            // TextBox_License_UserTaskIOMC_Status
             // 
-            this.TextBox_ProgramBits.Enabled = false;
-            this.TextBox_ProgramBits.Location = new System.Drawing.Point(223, 308);
-            this.TextBox_ProgramBits.Name = "TextBox_ProgramBits";
-            this.TextBox_ProgramBits.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_ProgramBits.TabIndex = 104;
-            this.TextBox_ProgramBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 287);
+            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
+            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
+            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label97
+            // TextBox_License_UserTaskIOL_Status
             // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(79, 207);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(138, 13);
-            this.label97.TabIndex = 97;
-            this.label97.Text = "Test Application Build Date:";
+            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 261);
+            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
+            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
+            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_TestAppBuildDate
+            // TextBox_License_P200_Status
             // 
-            this.TextBox_TestAppBuildDate.Enabled = false;
-            this.TextBox_TestAppBuildDate.Location = new System.Drawing.Point(223, 204);
-            this.TextBox_TestAppBuildDate.Name = "TextBox_TestAppBuildDate";
-            this.TextBox_TestAppBuildDate.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_TestAppBuildDate.TabIndex = 98;
-            this.TextBox_TestAppBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 209);
+            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
+            this.TextBox_License_P200_Status.ReadOnly = true;
+            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_P200_Status.TabIndex = 116;
+            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label96
+            // TextBox_License_MCMDAPI_Status
             // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(107, 285);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(110, 13);
-            this.label96.TabIndex = 95;
-            this.label96.Text = "Assembly Description:";
+            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 157);
+            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
+            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
+            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_AssemblyDescription
+            // TextBox_License_MDATAPI_Status
             // 
-            this.TextBox_AssemblyDescription.Enabled = false;
-            this.TextBox_AssemblyDescription.Location = new System.Drawing.Point(223, 282);
-            this.TextBox_AssemblyDescription.Name = "TextBox_AssemblyDescription";
-            this.TextBox_AssemblyDescription.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_AssemblyDescription.TabIndex = 96;
-            this.TextBox_AssemblyDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
+            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
+            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
+            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label95
+            // TextBox_License_LCMDAPI_Status
             // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(116, 259);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(101, 13);
-            this.label95.TabIndex = 93;
-            this.label95.Text = "Assembly Company:";
+            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
+            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
+            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
+            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_AssemblyCompany
+            // TextBox_License_LDATAPI_Status
             // 
-            this.TextBox_AssemblyCompany.Enabled = false;
-            this.TextBox_AssemblyCompany.Location = new System.Drawing.Point(223, 256);
-            this.TextBox_AssemblyCompany.Name = "TextBox_AssemblyCompany";
-            this.TextBox_AssemblyCompany.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_AssemblyCompany.TabIndex = 94;
-            this.TextBox_AssemblyCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
+            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
+            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
+            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label94
+            // OptionsTab
             // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(116, 233);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(101, 13);
-            this.label94.TabIndex = 91;
-            this.label94.Text = "Assembly Copyright:";
+            this.OptionsTab.Controls.Add(this.ListBox_Options);
+            this.OptionsTab.Controls.Add(this.Button_Options);
+            this.OptionsTab.Location = new System.Drawing.Point(4, 60);
+            this.OptionsTab.Name = "OptionsTab";
+            this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.OptionsTab.Size = new System.Drawing.Size(676, 420);
+            this.OptionsTab.TabIndex = 12;
+            this.OptionsTab.Text = "Options";
+            this.OptionsTab.UseVisualStyleBackColor = true;
             // 
-            // TextBox_AssemblyCopyright
+            // ListBox_Options
             // 
-            this.TextBox_AssemblyCopyright.Enabled = false;
-            this.TextBox_AssemblyCopyright.Location = new System.Drawing.Point(223, 230);
-            this.TextBox_AssemblyCopyright.Name = "TextBox_AssemblyCopyright";
-            this.TextBox_AssemblyCopyright.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_AssemblyCopyright.TabIndex = 92;
-            this.TextBox_AssemblyCopyright.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ListBox_Options.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBox_Options.FormattingEnabled = true;
+            this.ListBox_Options.ItemHeight = 20;
+            this.ListBox_Options.Location = new System.Drawing.Point(3, 58);
+            this.ListBox_Options.Name = "ListBox_Options";
+            this.ListBox_Options.Size = new System.Drawing.Size(667, 364);
+            this.ListBox_Options.TabIndex = 10;
             // 
-            // label93
+            // Button_Options
             // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(118, 129);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(99, 13);
-            this.label93.TabIndex = 89;
-            this.label93.Text = "Scout DLL Version:";
-            // 
-            // TextBox_ScoutDllAssemblyVersion
-            // 
-            this.TextBox_ScoutDllAssemblyVersion.Enabled = false;
-            this.TextBox_ScoutDllAssemblyVersion.Location = new System.Drawing.Point(223, 126);
-            this.TextBox_ScoutDllAssemblyVersion.Name = "TextBox_ScoutDllAssemblyVersion";
-            this.TextBox_ScoutDllAssemblyVersion.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_ScoutDllAssemblyVersion.TabIndex = 90;
-            this.TextBox_ScoutDllAssemblyVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(140, 103);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(77, 13);
-            this.label92.TabIndex = 87;
-            this.label92.Text = "Assembly Title:";
-            // 
-            // TextBox_AssemblyTitle
-            // 
-            this.TextBox_AssemblyTitle.Enabled = false;
-            this.TextBox_AssemblyTitle.Location = new System.Drawing.Point(223, 100);
-            this.TextBox_AssemblyTitle.Name = "TextBox_AssemblyTitle";
-            this.TextBox_AssemblyTitle.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_AssemblyTitle.TabIndex = 88;
-            this.TextBox_AssemblyTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(133, 77);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(84, 13);
-            this.label76.TabIndex = 85;
-            this.label76.Text = "Assembly GUID:";
-            // 
-            // TextBox_AssemblyGuid
-            // 
-            this.TextBox_AssemblyGuid.Enabled = false;
-            this.TextBox_AssemblyGuid.Location = new System.Drawing.Point(223, 74);
-            this.TextBox_AssemblyGuid.Name = "TextBox_AssemblyGuid";
-            this.TextBox_AssemblyGuid.Size = new System.Drawing.Size(234, 20);
-            this.TextBox_AssemblyGuid.TabIndex = 86;
-            this.TextBox_AssemblyGuid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_SetErrorMessage
-            // 
-            this.Button_SetErrorMessage.Location = new System.Drawing.Point(409, 45);
-            this.Button_SetErrorMessage.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_SetErrorMessage.Name = "Button_SetErrorMessage";
-            this.Button_SetErrorMessage.Size = new System.Drawing.Size(48, 23);
-            this.Button_SetErrorMessage.TabIndex = 84;
-            this.Button_SetErrorMessage.Text = "Set";
-            this.Button_SetErrorMessage.UseVisualStyleBackColor = true;
-            this.Button_SetErrorMessage.Click += new System.EventHandler(this.Button_SetErrorMessage_Click);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(139, 51);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(78, 13);
-            this.label75.TabIndex = 82;
-            this.label75.Text = "Error Message:";
-            // 
-            // TextBox_ErrorMessage
-            // 
-            this.TextBox_ErrorMessage.Location = new System.Drawing.Point(223, 48);
-            this.TextBox_ErrorMessage.Name = "TextBox_ErrorMessage";
-            this.TextBox_ErrorMessage.Size = new System.Drawing.Size(177, 20);
-            this.TextBox_ErrorMessage.TabIndex = 83;
-            this.TextBox_ErrorMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Button_ProgramInfo
-            // 
-            this.Button_ProgramInfo.Location = new System.Drawing.Point(11, 9);
-            this.Button_ProgramInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ProgramInfo.Name = "Button_ProgramInfo";
-            this.Button_ProgramInfo.Size = new System.Drawing.Size(109, 23);
-            this.Button_ProgramInfo.TabIndex = 81;
-            this.Button_ProgramInfo.Text = "Execute";
-            this.Button_ProgramInfo.UseVisualStyleBackColor = true;
-            this.Button_ProgramInfo.Click += new System.EventHandler(this.Button_ProgramInfo_Click);
+            this.Button_Options.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_Options.Location = new System.Drawing.Point(11, 9);
+            this.Button_Options.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_Options.Name = "Button_Options";
+            this.Button_Options.Size = new System.Drawing.Size(109, 23);
+            this.Button_Options.TabIndex = 9;
+            this.Button_Options.Text = "Execute";
+            this.Button_Options.UseVisualStyleBackColor = true;
+            this.Button_Options.Click += new System.EventHandler(this.Button_Options_Click);
             // 
             // OS
             // 
@@ -4823,13 +3735,31 @@ namespace ScoutTestApplication
             this.OS.Controls.Add(this.TextBox_OSName);
             this.OS.Controls.Add(this.Button_OS);
             this.OS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.OS.Location = new System.Drawing.Point(4, 32);
+            this.OS.Location = new System.Drawing.Point(4, 60);
             this.OS.Name = "OS";
             this.OS.Padding = new System.Windows.Forms.Padding(3);
-            this.OS.Size = new System.Drawing.Size(676, 426);
+            this.OS.Size = new System.Drawing.Size(676, 420);
             this.OS.TabIndex = 9;
             this.OS.Text = "Operating System";
             this.OS.UseVisualStyleBackColor = true;
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Location = new System.Drawing.Point(265, 315);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(90, 13);
+            this.label173.TabIndex = 126;
+            this.label173.Text = "User Permissions:";
+            // 
+            // TextBox_EnvUserPermissions
+            // 
+            this.TextBox_EnvUserPermissions.Enabled = false;
+            this.TextBox_EnvUserPermissions.Location = new System.Drawing.Point(361, 312);
+            this.TextBox_EnvUserPermissions.Name = "TextBox_EnvUserPermissions";
+            this.TextBox_EnvUserPermissions.Size = new System.Drawing.Size(220, 20);
+            this.TextBox_EnvUserPermissions.TabIndex = 127;
+            this.TextBox_EnvUserPermissions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label119
             // 
@@ -5174,6 +4104,697 @@ namespace ScoutTestApplication
             this.Button_OS.UseVisualStyleBackColor = true;
             this.Button_OS.Click += new System.EventHandler(this.Button_OS_Click);
             // 
+            // PIOD
+            // 
+            this.PIOD.Controls.Add(this.TextBox_ValidPiodFileExists);
+            this.PIOD.Controls.Add(this.label180);
+            this.PIOD.Controls.Add(this.Button_PiodSelectFile);
+            this.PIOD.Controls.Add(this.Label_PiodFileUserFile);
+            this.PIOD.Controls.Add(this.RadioButton_PiodFileUser);
+            this.PIOD.Controls.Add(this.RadioButton_PiodFileDefault);
+            this.PIOD.Controls.Add(this.label179);
+            this.PIOD.Controls.Add(this.TextBox_PiodMachineType);
+            this.PIOD.Controls.Add(this.label178);
+            this.PIOD.Controls.Add(this.TextBox_PiodPlcSystem);
+            this.PIOD.Controls.Add(this.label177);
+            this.PIOD.Controls.Add(this.TextBox_PiodProjectNumber);
+            this.PIOD.Controls.Add(this.label176);
+            this.PIOD.Controls.Add(this.TextBox_PiodControl);
+            this.PIOD.Controls.Add(this.Button_PiodFileExecute);
+            this.PIOD.Location = new System.Drawing.Point(4, 60);
+            this.PIOD.Name = "PIOD";
+            this.PIOD.Size = new System.Drawing.Size(676, 420);
+            this.PIOD.TabIndex = 15;
+            this.PIOD.Text = "PIOD";
+            this.PIOD.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_ValidPiodFileExists
+            // 
+            this.TextBox_ValidPiodFileExists.Enabled = false;
+            this.TextBox_ValidPiodFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_ValidPiodFileExists.Location = new System.Drawing.Point(370, 48);
+            this.TextBox_ValidPiodFileExists.Name = "TextBox_ValidPiodFileExists";
+            this.TextBox_ValidPiodFileExists.Size = new System.Drawing.Size(63, 20);
+            this.TextBox_ValidPiodFileExists.TabIndex = 76;
+            this.TextBox_ValidPiodFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label180
+            // 
+            this.label180.AutoSize = true;
+            this.label180.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label180.Location = new System.Drawing.Point(209, 51);
+            this.label180.Name = "label180";
+            this.label180.Size = new System.Drawing.Size(155, 13);
+            this.label180.TabIndex = 75;
+            this.label180.Text = "Valid Machine PIOD File Exists:";
+            // 
+            // Button_PiodSelectFile
+            // 
+            this.Button_PiodSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_PiodSelectFile.Location = new System.Drawing.Point(185, 76);
+            this.Button_PiodSelectFile.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_PiodSelectFile.Name = "Button_PiodSelectFile";
+            this.Button_PiodSelectFile.Size = new System.Drawing.Size(76, 23);
+            this.Button_PiodSelectFile.TabIndex = 74;
+            this.Button_PiodSelectFile.Text = "Select File";
+            this.Button_PiodSelectFile.UseVisualStyleBackColor = true;
+            this.Button_PiodSelectFile.Click += new System.EventHandler(this.Button_PiodSelectFile_Click);
+            // 
+            // Label_PiodFileUserFile
+            // 
+            this.Label_PiodFileUserFile.AutoSize = true;
+            this.Label_PiodFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_PiodFileUserFile.ForeColor = System.Drawing.Color.DimGray;
+            this.Label_PiodFileUserFile.Location = new System.Drawing.Point(270, 84);
+            this.Label_PiodFileUserFile.Name = "Label_PiodFileUserFile";
+            this.Label_PiodFileUserFile.Size = new System.Drawing.Size(0, 13);
+            this.Label_PiodFileUserFile.TabIndex = 73;
+            // 
+            // RadioButton_PiodFileUser
+            // 
+            this.RadioButton_PiodFileUser.AutoSize = true;
+            this.RadioButton_PiodFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_PiodFileUser.Location = new System.Drawing.Point(27, 79);
+            this.RadioButton_PiodFileUser.Name = "RadioButton_PiodFileUser";
+            this.RadioButton_PiodFileUser.Size = new System.Drawing.Size(138, 17);
+            this.RadioButton_PiodFileUser.TabIndex = 72;
+            this.RadioButton_PiodFileUser.Text = "User Defined PIOD File ";
+            this.RadioButton_PiodFileUser.UseVisualStyleBackColor = true;
+            this.RadioButton_PiodFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_PiodFile_CheckedChanged);
+            // 
+            // RadioButton_PiodFileDefault
+            // 
+            this.RadioButton_PiodFileDefault.AutoSize = true;
+            this.RadioButton_PiodFileDefault.Checked = true;
+            this.RadioButton_PiodFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_PiodFileDefault.Location = new System.Drawing.Point(27, 49);
+            this.RadioButton_PiodFileDefault.Name = "RadioButton_PiodFileDefault";
+            this.RadioButton_PiodFileDefault.Size = new System.Drawing.Size(147, 17);
+            this.RadioButton_PiodFileDefault.TabIndex = 71;
+            this.RadioButton_PiodFileDefault.TabStop = true;
+            this.RadioButton_PiodFileDefault.Text = "Active Machine PIOD File";
+            this.RadioButton_PiodFileDefault.UseVisualStyleBackColor = true;
+            this.RadioButton_PiodFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_PiodFile_CheckedChanged);
+            // 
+            // label179
+            // 
+            this.label179.AutoSize = true;
+            this.label179.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label179.Location = new System.Drawing.Point(60, 210);
+            this.label179.Name = "label179";
+            this.label179.Size = new System.Drawing.Size(78, 13);
+            this.label179.TabIndex = 69;
+            this.label179.Text = "Machine Type:";
+            // 
+            // TextBox_PiodMachineType
+            // 
+            this.TextBox_PiodMachineType.Enabled = false;
+            this.TextBox_PiodMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PiodMachineType.Location = new System.Drawing.Point(144, 207);
+            this.TextBox_PiodMachineType.Name = "TextBox_PiodMachineType";
+            this.TextBox_PiodMachineType.Size = new System.Drawing.Size(126, 20);
+            this.TextBox_PiodMachineType.TabIndex = 70;
+            this.TextBox_PiodMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label178
+            // 
+            this.label178.AutoSize = true;
+            this.label178.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label178.Location = new System.Drawing.Point(71, 184);
+            this.label178.Name = "label178";
+            this.label178.Size = new System.Drawing.Size(67, 13);
+            this.label178.TabIndex = 67;
+            this.label178.Text = "PLC System:";
+            // 
+            // TextBox_PiodPlcSystem
+            // 
+            this.TextBox_PiodPlcSystem.Enabled = false;
+            this.TextBox_PiodPlcSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PiodPlcSystem.Location = new System.Drawing.Point(144, 181);
+            this.TextBox_PiodPlcSystem.Name = "TextBox_PiodPlcSystem";
+            this.TextBox_PiodPlcSystem.Size = new System.Drawing.Size(126, 20);
+            this.TextBox_PiodPlcSystem.TabIndex = 68;
+            this.TextBox_PiodPlcSystem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label177
+            // 
+            this.label177.AutoSize = true;
+            this.label177.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label177.Location = new System.Drawing.Point(55, 158);
+            this.label177.Name = "label177";
+            this.label177.Size = new System.Drawing.Size(83, 13);
+            this.label177.TabIndex = 65;
+            this.label177.Text = "Project Number:";
+            // 
+            // TextBox_PiodProjectNumber
+            // 
+            this.TextBox_PiodProjectNumber.Enabled = false;
+            this.TextBox_PiodProjectNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PiodProjectNumber.Location = new System.Drawing.Point(144, 155);
+            this.TextBox_PiodProjectNumber.Name = "TextBox_PiodProjectNumber";
+            this.TextBox_PiodProjectNumber.Size = new System.Drawing.Size(126, 20);
+            this.TextBox_PiodProjectNumber.TabIndex = 66;
+            this.TextBox_PiodProjectNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label176.Location = new System.Drawing.Point(95, 132);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(43, 13);
+            this.label176.TabIndex = 63;
+            this.label176.Text = "Control:";
+            // 
+            // TextBox_PiodControl
+            // 
+            this.TextBox_PiodControl.Enabled = false;
+            this.TextBox_PiodControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PiodControl.Location = new System.Drawing.Point(144, 129);
+            this.TextBox_PiodControl.Name = "TextBox_PiodControl";
+            this.TextBox_PiodControl.Size = new System.Drawing.Size(126, 20);
+            this.TextBox_PiodControl.TabIndex = 64;
+            this.TextBox_PiodControl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_PiodFileExecute
+            // 
+            this.Button_PiodFileExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_PiodFileExecute.Location = new System.Drawing.Point(11, 9);
+            this.Button_PiodFileExecute.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_PiodFileExecute.Name = "Button_PiodFileExecute";
+            this.Button_PiodFileExecute.Size = new System.Drawing.Size(109, 23);
+            this.Button_PiodFileExecute.TabIndex = 9;
+            this.Button_PiodFileExecute.Text = "Execute";
+            this.Button_PiodFileExecute.UseVisualStyleBackColor = true;
+            this.Button_PiodFileExecute.Click += new System.EventHandler(this.Button_PiodFileExecute_Click);
+            // 
+            // Platform
+            // 
+            this.Platform.Controls.Add(this.TextBox_ScreenMode);
+            this.Platform.Controls.Add(this.label157);
+            this.Platform.Controls.Add(this.TextBox_PanelType);
+            this.Platform.Controls.Add(this.label156);
+            this.Platform.Controls.Add(this.label154);
+            this.Platform.Controls.Add(this.ComboBox_Display);
+            this.Platform.Controls.Add(this.label153);
+            this.Platform.Controls.Add(this.TextBox_DisplayInfo);
+            this.Platform.Controls.Add(this.Button_Platform);
+            this.Platform.Controls.Add(this.label1);
+            this.Platform.Controls.Add(this.TextBox_MachineType);
+            this.Platform.Controls.Add(this.TextBox_ControlType);
+            this.Platform.Controls.Add(this.label2);
+            this.Platform.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Platform.Location = new System.Drawing.Point(4, 60);
+            this.Platform.Name = "Platform";
+            this.Platform.Padding = new System.Windows.Forms.Padding(3);
+            this.Platform.Size = new System.Drawing.Size(676, 420);
+            this.Platform.TabIndex = 0;
+            this.Platform.Text = "Platform";
+            this.Platform.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_ScreenMode
+            // 
+            this.TextBox_ScreenMode.Enabled = false;
+            this.TextBox_ScreenMode.Location = new System.Drawing.Point(138, 136);
+            this.TextBox_ScreenMode.Name = "TextBox_ScreenMode";
+            this.TextBox_ScreenMode.Size = new System.Drawing.Size(215, 20);
+            this.TextBox_ScreenMode.TabIndex = 15;
+            this.TextBox_ScreenMode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(28, 139);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(104, 13);
+            this.label157.TabIndex = 16;
+            this.label157.Text = "SelectScreen Mode:";
+            // 
+            // TextBox_PanelType
+            // 
+            this.TextBox_PanelType.Enabled = false;
+            this.TextBox_PanelType.Location = new System.Drawing.Point(138, 110);
+            this.TextBox_PanelType.Name = "TextBox_PanelType";
+            this.TextBox_PanelType.Size = new System.Drawing.Size(215, 20);
+            this.TextBox_PanelType.TabIndex = 13;
+            this.TextBox_PanelType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(68, 113);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(64, 13);
+            this.label156.TabIndex = 14;
+            this.label156.Text = "Panel Type:";
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Location = new System.Drawing.Point(8, 189);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(92, 13);
+            this.label154.TabIndex = 12;
+            this.label154.Text = "Choose a Display:";
+            // 
+            // ComboBox_Display
+            // 
+            this.ComboBox_Display.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_Display.FormattingEnabled = true;
+            this.ComboBox_Display.Location = new System.Drawing.Point(11, 210);
+            this.ComboBox_Display.Name = "ComboBox_Display";
+            this.ComboBox_Display.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Display.TabIndex = 11;
+            this.ComboBox_Display.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDisplay_IndexChanged);
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.Location = new System.Drawing.Point(135, 189);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(99, 13);
+            this.label153.TabIndex = 10;
+            this.label153.Text = "Display Information:";
+            // 
+            // TextBox_DisplayInfo
+            // 
+            this.TextBox_DisplayInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox_DisplayInfo.Location = new System.Drawing.Point(138, 210);
+            this.TextBox_DisplayInfo.Multiline = true;
+            this.TextBox_DisplayInfo.Name = "TextBox_DisplayInfo";
+            this.TextBox_DisplayInfo.Size = new System.Drawing.Size(508, 125);
+            this.TextBox_DisplayInfo.TabIndex = 9;
+            // 
+            // Button_Platform
+            // 
+            this.Button_Platform.Location = new System.Drawing.Point(11, 9);
+            this.Button_Platform.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_Platform.Name = "Button_Platform";
+            this.Button_Platform.Size = new System.Drawing.Size(109, 23);
+            this.Button_Platform.TabIndex = 8;
+            this.Button_Platform.Text = "Execute";
+            this.Button_Platform.UseVisualStyleBackColor = true;
+            this.Button_Platform.Click += new System.EventHandler(this.Button_Platform_Click);
+            // 
+            // Process
+            // 
+            this.Process.Controls.Add(this.TextBox_SoftSwitchRun);
+            this.Process.Controls.Add(this.label42);
+            this.Process.Controls.Add(this.label40);
+            this.Process.Controls.Add(this.TextBox_ApiNotifierRun);
+            this.Process.Controls.Add(this.label4);
+            this.Process.Controls.Add(this.TextBox_OwmRun);
+            this.Process.Controls.Add(this.label3);
+            this.Process.Controls.Add(this.TextBox_OspRun);
+            this.Process.Controls.Add(this.Button_Processes);
+            this.Process.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Process.Location = new System.Drawing.Point(4, 60);
+            this.Process.Name = "Process";
+            this.Process.Padding = new System.Windows.Forms.Padding(3);
+            this.Process.Size = new System.Drawing.Size(676, 420);
+            this.Process.TabIndex = 4;
+            this.Process.Text = "Processes";
+            this.Process.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_SoftSwitchRun
+            // 
+            this.TextBox_SoftSwitchRun.Enabled = false;
+            this.TextBox_SoftSwitchRun.Location = new System.Drawing.Point(348, 132);
+            this.TextBox_SoftSwitchRun.Name = "TextBox_SoftSwitchRun";
+            this.TextBox_SoftSwitchRun.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_SoftSwitchRun.TabIndex = 63;
+            this.TextBox_SoftSwitchRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(148, 135);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(193, 13);
+            this.label42.TabIndex = 62;
+            this.label42.Text = "\"Soft Switch\" (for Mode keys) Running:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(200, 83);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(142, 13);
+            this.label40.TabIndex = 51;
+            this.label40.Text = "THINC API Notifier Running:";
+            // 
+            // TextBox_ApiNotifierRun
+            // 
+            this.TextBox_ApiNotifierRun.Enabled = false;
+            this.TextBox_ApiNotifierRun.Location = new System.Drawing.Point(348, 80);
+            this.TextBox_ApiNotifierRun.Name = "TextBox_ApiNotifierRun";
+            this.TextBox_ApiNotifierRun.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_ApiNotifierRun.TabIndex = 52;
+            this.TextBox_ApiNotifierRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(210, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Widget Manager Running:";
+            // 
+            // TextBox_OwmRun
+            // 
+            this.TextBox_OwmRun.Enabled = false;
+            this.TextBox_OwmRun.Location = new System.Drawing.Point(348, 158);
+            this.TextBox_OwmRun.Name = "TextBox_OwmRun";
+            this.TextBox_OwmRun.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OwmRun.TabIndex = 27;
+            this.TextBox_OwmRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(158, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(183, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "OSP NC Software Interface Running:";
+            // 
+            // TextBox_OspRun
+            // 
+            this.TextBox_OspRun.Enabled = false;
+            this.TextBox_OspRun.Location = new System.Drawing.Point(348, 106);
+            this.TextBox_OspRun.Name = "TextBox_OspRun";
+            this.TextBox_OspRun.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_OspRun.TabIndex = 25;
+            this.TextBox_OspRun.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_Processes
+            // 
+            this.Button_Processes.Location = new System.Drawing.Point(11, 9);
+            this.Button_Processes.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_Processes.Name = "Button_Processes";
+            this.Button_Processes.Size = new System.Drawing.Size(109, 23);
+            this.Button_Processes.TabIndex = 10;
+            this.Button_Processes.Text = "Execute";
+            this.Button_Processes.UseVisualStyleBackColor = true;
+            this.Button_Processes.Click += new System.EventHandler(this.Button_Processes_Click);
+            // 
+            // Program
+            // 
+            this.Program.Controls.Add(this.label175);
+            this.Program.Controls.Add(this.TextBox_ScoutComBuildDate);
+            this.Program.Controls.Add(this.label174);
+            this.Program.Controls.Add(this.TextBox_ScoutComAssemblyVersion);
+            this.Program.Controls.Add(this.label135);
+            this.Program.Controls.Add(this.TextBox_TestAppVersion);
+            this.Program.Controls.Add(this.label134);
+            this.Program.Controls.Add(this.TextBox_ScoutDllBuildDate);
+            this.Program.Controls.Add(this.label105);
+            this.Program.Controls.Add(this.TextBox_ProgramBits);
+            this.Program.Controls.Add(this.label97);
+            this.Program.Controls.Add(this.TextBox_TestAppBuildDate);
+            this.Program.Controls.Add(this.label96);
+            this.Program.Controls.Add(this.TextBox_AssemblyDescription);
+            this.Program.Controls.Add(this.label95);
+            this.Program.Controls.Add(this.TextBox_AssemblyCompany);
+            this.Program.Controls.Add(this.label94);
+            this.Program.Controls.Add(this.TextBox_AssemblyCopyright);
+            this.Program.Controls.Add(this.label93);
+            this.Program.Controls.Add(this.TextBox_ScoutDllAssemblyVersion);
+            this.Program.Controls.Add(this.label92);
+            this.Program.Controls.Add(this.TextBox_AssemblyTitle);
+            this.Program.Controls.Add(this.label76);
+            this.Program.Controls.Add(this.TextBox_AssemblyGuid);
+            this.Program.Controls.Add(this.Button_SetErrorMessage);
+            this.Program.Controls.Add(this.label75);
+            this.Program.Controls.Add(this.TextBox_ErrorMessage);
+            this.Program.Controls.Add(this.Button_ProgramInfo);
+            this.Program.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Program.Location = new System.Drawing.Point(4, 60);
+            this.Program.Name = "Program";
+            this.Program.Padding = new System.Windows.Forms.Padding(3);
+            this.Program.Size = new System.Drawing.Size(676, 420);
+            this.Program.TabIndex = 8;
+            this.Program.Text = "Program Info";
+            this.Program.UseVisualStyleBackColor = true;
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.Location = new System.Drawing.Point(53, 363);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(164, 13);
+            this.label175.TabIndex = 111;
+            this.label175.Text = "Okuma.Scout.Com.dll Build Date:";
+            // 
+            // TextBox_ScoutComBuildDate
+            // 
+            this.TextBox_ScoutComBuildDate.Enabled = false;
+            this.TextBox_ScoutComBuildDate.Location = new System.Drawing.Point(223, 360);
+            this.TextBox_ScoutComBuildDate.Name = "TextBox_ScoutComBuildDate";
+            this.TextBox_ScoutComBuildDate.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_ScoutComBuildDate.TabIndex = 112;
+            this.TextBox_ScoutComBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Location = new System.Drawing.Point(67, 337);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(150, 13);
+            this.label174.TabIndex = 109;
+            this.label174.Text = "Okuma.Scout.Com.dll Version:";
+            // 
+            // TextBox_ScoutComAssemblyVersion
+            // 
+            this.TextBox_ScoutComAssemblyVersion.Enabled = false;
+            this.TextBox_ScoutComAssemblyVersion.Location = new System.Drawing.Point(223, 334);
+            this.TextBox_ScoutComAssemblyVersion.Name = "TextBox_ScoutComAssemblyVersion";
+            this.TextBox_ScoutComAssemblyVersion.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_ScoutComAssemblyVersion.TabIndex = 110;
+            this.TextBox_ScoutComAssemblyVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(93, 233);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(124, 13);
+            this.label135.TabIndex = 107;
+            this.label135.Text = "Test Application Version:";
+            // 
+            // TextBox_TestAppVersion
+            // 
+            this.TextBox_TestAppVersion.Enabled = false;
+            this.TextBox_TestAppVersion.Location = new System.Drawing.Point(223, 230);
+            this.TextBox_TestAppVersion.Name = "TextBox_TestAppVersion";
+            this.TextBox_TestAppVersion.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_TestAppVersion.TabIndex = 108;
+            this.TextBox_TestAppVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(77, 311);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(140, 13);
+            this.label134.TabIndex = 105;
+            this.label134.Text = "Okuma.Scout.dll Build Date:";
+            // 
+            // TextBox_ScoutDllBuildDate
+            // 
+            this.TextBox_ScoutDllBuildDate.Enabled = false;
+            this.TextBox_ScoutDllBuildDate.Location = new System.Drawing.Point(223, 308);
+            this.TextBox_ScoutDllBuildDate.Name = "TextBox_ScoutDllBuildDate";
+            this.TextBox_ScoutDllBuildDate.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_ScoutDllBuildDate.TabIndex = 106;
+            this.TextBox_ScoutDllBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(148, 207);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(69, 13);
+            this.label105.TabIndex = 103;
+            this.label105.Text = "Program Bits:";
+            // 
+            // TextBox_ProgramBits
+            // 
+            this.TextBox_ProgramBits.Enabled = false;
+            this.TextBox_ProgramBits.Location = new System.Drawing.Point(223, 204);
+            this.TextBox_ProgramBits.Name = "TextBox_ProgramBits";
+            this.TextBox_ProgramBits.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_ProgramBits.TabIndex = 104;
+            this.TextBox_ProgramBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(79, 259);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(138, 13);
+            this.label97.TabIndex = 97;
+            this.label97.Text = "Test Application Build Date:";
+            // 
+            // TextBox_TestAppBuildDate
+            // 
+            this.TextBox_TestAppBuildDate.Enabled = false;
+            this.TextBox_TestAppBuildDate.Location = new System.Drawing.Point(223, 256);
+            this.TextBox_TestAppBuildDate.Name = "TextBox_TestAppBuildDate";
+            this.TextBox_TestAppBuildDate.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_TestAppBuildDate.TabIndex = 98;
+            this.TextBox_TestAppBuildDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(107, 181);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(110, 13);
+            this.label96.TabIndex = 95;
+            this.label96.Text = "Assembly Description:";
+            // 
+            // TextBox_AssemblyDescription
+            // 
+            this.TextBox_AssemblyDescription.Enabled = false;
+            this.TextBox_AssemblyDescription.Location = new System.Drawing.Point(223, 178);
+            this.TextBox_AssemblyDescription.Name = "TextBox_AssemblyDescription";
+            this.TextBox_AssemblyDescription.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_AssemblyDescription.TabIndex = 96;
+            this.TextBox_AssemblyDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(116, 155);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(101, 13);
+            this.label95.TabIndex = 93;
+            this.label95.Text = "Assembly Company:";
+            // 
+            // TextBox_AssemblyCompany
+            // 
+            this.TextBox_AssemblyCompany.Enabled = false;
+            this.TextBox_AssemblyCompany.Location = new System.Drawing.Point(223, 152);
+            this.TextBox_AssemblyCompany.Name = "TextBox_AssemblyCompany";
+            this.TextBox_AssemblyCompany.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_AssemblyCompany.TabIndex = 94;
+            this.TextBox_AssemblyCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(116, 129);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(101, 13);
+            this.label94.TabIndex = 91;
+            this.label94.Text = "Assembly Copyright:";
+            // 
+            // TextBox_AssemblyCopyright
+            // 
+            this.TextBox_AssemblyCopyright.Enabled = false;
+            this.TextBox_AssemblyCopyright.Location = new System.Drawing.Point(223, 126);
+            this.TextBox_AssemblyCopyright.Name = "TextBox_AssemblyCopyright";
+            this.TextBox_AssemblyCopyright.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_AssemblyCopyright.TabIndex = 92;
+            this.TextBox_AssemblyCopyright.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(91, 285);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(126, 13);
+            this.label93.TabIndex = 89;
+            this.label93.Text = "Okuma.Scout.dll Version:";
+            // 
+            // TextBox_ScoutDllAssemblyVersion
+            // 
+            this.TextBox_ScoutDllAssemblyVersion.Enabled = false;
+            this.TextBox_ScoutDllAssemblyVersion.Location = new System.Drawing.Point(223, 282);
+            this.TextBox_ScoutDllAssemblyVersion.Name = "TextBox_ScoutDllAssemblyVersion";
+            this.TextBox_ScoutDllAssemblyVersion.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_ScoutDllAssemblyVersion.TabIndex = 90;
+            this.TextBox_ScoutDllAssemblyVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(140, 103);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(77, 13);
+            this.label92.TabIndex = 87;
+            this.label92.Text = "Assembly Title:";
+            // 
+            // TextBox_AssemblyTitle
+            // 
+            this.TextBox_AssemblyTitle.Enabled = false;
+            this.TextBox_AssemblyTitle.Location = new System.Drawing.Point(223, 100);
+            this.TextBox_AssemblyTitle.Name = "TextBox_AssemblyTitle";
+            this.TextBox_AssemblyTitle.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_AssemblyTitle.TabIndex = 88;
+            this.TextBox_AssemblyTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(133, 77);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(84, 13);
+            this.label76.TabIndex = 85;
+            this.label76.Text = "Assembly GUID:";
+            // 
+            // TextBox_AssemblyGuid
+            // 
+            this.TextBox_AssemblyGuid.Enabled = false;
+            this.TextBox_AssemblyGuid.Location = new System.Drawing.Point(223, 74);
+            this.TextBox_AssemblyGuid.Name = "TextBox_AssemblyGuid";
+            this.TextBox_AssemblyGuid.Size = new System.Drawing.Size(234, 20);
+            this.TextBox_AssemblyGuid.TabIndex = 86;
+            this.TextBox_AssemblyGuid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_SetErrorMessage
+            // 
+            this.Button_SetErrorMessage.Location = new System.Drawing.Point(409, 45);
+            this.Button_SetErrorMessage.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_SetErrorMessage.Name = "Button_SetErrorMessage";
+            this.Button_SetErrorMessage.Size = new System.Drawing.Size(48, 23);
+            this.Button_SetErrorMessage.TabIndex = 84;
+            this.Button_SetErrorMessage.Text = "Set";
+            this.Button_SetErrorMessage.UseVisualStyleBackColor = true;
+            this.Button_SetErrorMessage.Click += new System.EventHandler(this.Button_SetErrorMessage_Click);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(139, 51);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(78, 13);
+            this.label75.TabIndex = 82;
+            this.label75.Text = "Error Message:";
+            // 
+            // TextBox_ErrorMessage
+            // 
+            this.TextBox_ErrorMessage.Location = new System.Drawing.Point(223, 48);
+            this.TextBox_ErrorMessage.Name = "TextBox_ErrorMessage";
+            this.TextBox_ErrorMessage.Size = new System.Drawing.Size(177, 20);
+            this.TextBox_ErrorMessage.TabIndex = 83;
+            this.TextBox_ErrorMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_ProgramInfo
+            // 
+            this.Button_ProgramInfo.Location = new System.Drawing.Point(11, 9);
+            this.Button_ProgramInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ProgramInfo.Name = "Button_ProgramInfo";
+            this.Button_ProgramInfo.Size = new System.Drawing.Size(109, 23);
+            this.Button_ProgramInfo.TabIndex = 81;
+            this.Button_ProgramInfo.Text = "Execute";
+            this.Button_ProgramInfo.UseVisualStyleBackColor = true;
+            this.Button_ProgramInfo.Click += new System.EventHandler(this.Button_ProgramInfo_Click);
+            // 
             // Registry
             // 
             this.Registry.Controls.Add(this.ResultBox_RegVersion);
@@ -5191,10 +4812,10 @@ namespace ScoutTestApplication
             this.Registry.Controls.Add(this.TextBox_RegKey);
             this.Registry.Controls.Add(this.label143);
             this.Registry.Controls.Add(this.Button_Registry);
-            this.Registry.Location = new System.Drawing.Point(4, 32);
+            this.Registry.Location = new System.Drawing.Point(4, 60);
             this.Registry.Name = "Registry";
             this.Registry.Padding = new System.Windows.Forms.Padding(3);
-            this.Registry.Size = new System.Drawing.Size(676, 426);
+            this.Registry.Size = new System.Drawing.Size(676, 420);
             this.Registry.TabIndex = 13;
             this.Registry.Text = "Registry";
             this.Registry.UseVisualStyleBackColor = true;
@@ -5324,7 +4945,7 @@ namespace ScoutTestApplication
             this.DataGridView_SubKeys.RowHeadersVisible = false;
             this.DataGridView_SubKeys.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataGridView_SubKeys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView_SubKeys.Size = new System.Drawing.Size(388, 237);
+            this.DataGridView_SubKeys.Size = new System.Drawing.Size(388, 308);
             this.DataGridView_SubKeys.TabIndex = 14;
             // 
             // label144
@@ -5368,319 +4989,1070 @@ namespace ScoutTestApplication
             this.Button_Registry.UseVisualStyleBackColor = true;
             this.Button_Registry.Click += new System.EventHandler(this.Button_Registry_Click);
             // 
-            // ErrorHandling
+            // SpecCodes
             // 
-            this.ErrorHandling.Controls.Add(this.TextBox_ErrorHandling);
-            this.ErrorHandling.Controls.Add(this.CheckBox_ErrorSubscribed);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorUnSubscribe);
-            this.ErrorHandling.Controls.Add(this.CheckBox_ShowDebugInfo);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorError);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorInfo);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorWarning);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorException);
-            this.ErrorHandling.Controls.Add(this.Button_ErrorSubscribe);
-            this.ErrorHandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorHandling.Location = new System.Drawing.Point(4, 32);
-            this.ErrorHandling.Name = "ErrorHandling";
-            this.ErrorHandling.Padding = new System.Windows.Forms.Padding(3);
-            this.ErrorHandling.Size = new System.Drawing.Size(676, 426);
-            this.ErrorHandling.TabIndex = 11;
-            this.ErrorHandling.Text = "Error Handling";
-            this.ErrorHandling.UseVisualStyleBackColor = true;
+            this.SpecCodes.Controls.Add(this.tabControl2);
+            this.SpecCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.SpecCodes.Location = new System.Drawing.Point(4, 60);
+            this.SpecCodes.Name = "SpecCodes";
+            this.SpecCodes.Padding = new System.Windows.Forms.Padding(3);
+            this.SpecCodes.Size = new System.Drawing.Size(676, 420);
+            this.SpecCodes.TabIndex = 10;
+            this.SpecCodes.Text = "Spec Codes";
+            this.SpecCodes.UseVisualStyleBackColor = true;
             // 
-            // TextBox_ErrorHandling
+            // tabControl2
             // 
-            this.TextBox_ErrorHandling.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox_ErrorHandling.Location = new System.Drawing.Point(6, 96);
-            this.TextBox_ErrorHandling.Name = "TextBox_ErrorHandling";
-            this.TextBox_ErrorHandling.Size = new System.Drawing.Size(640, 247);
-            this.TextBox_ErrorHandling.TabIndex = 98;
-            this.TextBox_ErrorHandling.Text = "";
+            this.tabControl2.Controls.Add(this.Comparison);
+            this.tabControl2.Controls.Add(this.NCSpecFile);
+            this.tabControl2.Controls.Add(this.NCBSpecFile);
+            this.tabControl2.Controls.Add(this.PLCSpecFile);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(670, 414);
+            this.tabControl2.TabIndex = 129;
             // 
-            // CheckBox_ErrorSubscribed
+            // Comparison
             // 
-            this.CheckBox_ErrorSubscribed.AutoSize = true;
-            this.CheckBox_ErrorSubscribed.Enabled = false;
-            this.CheckBox_ErrorSubscribed.Location = new System.Drawing.Point(360, 13);
-            this.CheckBox_ErrorSubscribed.Name = "CheckBox_ErrorSubscribed";
-            this.CheckBox_ErrorSubscribed.Size = new System.Drawing.Size(166, 17);
-            this.CheckBox_ErrorSubscribed.TabIndex = 97;
-            this.CheckBox_ErrorSubscribed.Text = "Subscribed to Reporter Event";
-            this.CheckBox_ErrorSubscribed.UseVisualStyleBackColor = true;
+            this.Comparison.Controls.Add(this.label131);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecB_Match);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecA_Match);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecB_Match);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecA_Match);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B_Match);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A_Match);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B_Match);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A_Match);
+            this.Comparison.Controls.Add(this.label130);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecB_DMC);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecA_DMC);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecB_DMC);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecA_DMC);
+            this.Comparison.Controls.Add(this.TextBox_SpecMachineType_DMC);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B_DMC);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A_DMC);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B_DMC);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A_DMC);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecB);
+            this.Comparison.Controls.Add(this.label129);
+            this.Comparison.Controls.Add(this.TextBox_NCBSpecA);
+            this.Comparison.Controls.Add(this.label127);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecB);
+            this.Comparison.Controls.Add(this.label125);
+            this.Comparison.Controls.Add(this.TextBox_NCSpecA);
+            this.Comparison.Controls.Add(this.label124);
+            this.Comparison.Controls.Add(this.TextBox_SpecMachineType);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2B);
+            this.Comparison.Controls.Add(this.label122);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec2A);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1B);
+            this.Comparison.Controls.Add(this.label120);
+            this.Comparison.Controls.Add(this.TextBox_PLCSpec1A);
+            this.Comparison.Controls.Add(this.Button_SpecCodes);
+            this.Comparison.Location = new System.Drawing.Point(4, 29);
+            this.Comparison.Name = "Comparison";
+            this.Comparison.Padding = new System.Windows.Forms.Padding(3);
+            this.Comparison.Size = new System.Drawing.Size(662, 381);
+            this.Comparison.TabIndex = 0;
+            this.Comparison.Text = "Comparison";
+            this.Comparison.UseVisualStyleBackColor = true;
             // 
-            // Button_ErrorUnSubscribe
+            // label131
             // 
-            this.Button_ErrorUnSubscribe.Location = new System.Drawing.Point(178, 9);
-            this.Button_ErrorUnSubscribe.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorUnSubscribe.Name = "Button_ErrorUnSubscribe";
-            this.Button_ErrorUnSubscribe.Size = new System.Drawing.Size(176, 23);
-            this.Button_ErrorUnSubscribe.TabIndex = 96;
-            this.Button_ErrorUnSubscribe.Text = "Unsubscribe from Error Handler";
-            this.Button_ErrorUnSubscribe.UseVisualStyleBackColor = true;
-            this.Button_ErrorUnSubscribe.Click += new System.EventHandler(this.Button_ErrorUnSubscribe_Click);
+            this.label131.AutoSize = true;
+            this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label131.Location = new System.Drawing.Point(595, 54);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(43, 13);
+            this.label131.TabIndex = 162;
+            this.label131.Text = "Match?";
             // 
-            // CheckBox_ShowDebugInfo
+            // TextBox_NCBSpecB_Match
             // 
-            this.CheckBox_ShowDebugInfo.AutoSize = true;
-            this.CheckBox_ShowDebugInfo.Location = new System.Drawing.Point(14, 41);
-            this.CheckBox_ShowDebugInfo.Name = "CheckBox_ShowDebugInfo";
-            this.CheckBox_ShowDebugInfo.Size = new System.Drawing.Size(163, 17);
-            this.CheckBox_ShowDebugInfo.TabIndex = 95;
-            this.CheckBox_ShowDebugInfo.Text = "Show Debugging Information";
-            this.CheckBox_ShowDebugInfo.UseVisualStyleBackColor = true;
-            this.CheckBox_ShowDebugInfo.CheckedChanged += new System.EventHandler(this.CheckBox_ShowDebugInfo_CheckedChanged);
+            this.TextBox_NCBSpecB_Match.Enabled = false;
+            this.TextBox_NCBSpecB_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecB_Match.Location = new System.Drawing.Point(598, 278);
+            this.TextBox_NCBSpecB_Match.Name = "TextBox_NCBSpecB_Match";
+            this.TextBox_NCBSpecB_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_NCBSpecB_Match.TabIndex = 161;
+            this.TextBox_NCBSpecB_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_ErrorError
+            // TextBox_NCBSpecA_Match
             // 
-            this.Button_ErrorError.Location = new System.Drawing.Point(251, 67);
-            this.Button_ErrorError.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorError.Name = "Button_ErrorError";
-            this.Button_ErrorError.Size = new System.Drawing.Size(111, 23);
-            this.Button_ErrorError.TabIndex = 94;
-            this.Button_ErrorError.Text = "Generate Error";
-            this.Button_ErrorError.UseVisualStyleBackColor = true;
-            this.Button_ErrorError.Click += new System.EventHandler(this.Button_ErrorError_Click);
+            this.TextBox_NCBSpecA_Match.Enabled = false;
+            this.TextBox_NCBSpecA_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecA_Match.Location = new System.Drawing.Point(598, 252);
+            this.TextBox_NCBSpecA_Match.Name = "TextBox_NCBSpecA_Match";
+            this.TextBox_NCBSpecA_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_NCBSpecA_Match.TabIndex = 160;
+            this.TextBox_NCBSpecA_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_ErrorInfo
+            // TextBox_NCSpecB_Match
             // 
-            this.Button_ErrorInfo.Location = new System.Drawing.Point(11, 67);
-            this.Button_ErrorInfo.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorInfo.Name = "Button_ErrorInfo";
-            this.Button_ErrorInfo.Size = new System.Drawing.Size(111, 23);
-            this.Button_ErrorInfo.TabIndex = 93;
-            this.Button_ErrorInfo.Text = "Generate Info";
-            this.Button_ErrorInfo.UseVisualStyleBackColor = true;
-            this.Button_ErrorInfo.Click += new System.EventHandler(this.Button_ErrorInfo_Click);
+            this.TextBox_NCSpecB_Match.Enabled = false;
+            this.TextBox_NCSpecB_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecB_Match.Location = new System.Drawing.Point(598, 226);
+            this.TextBox_NCSpecB_Match.Name = "TextBox_NCSpecB_Match";
+            this.TextBox_NCSpecB_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_NCSpecB_Match.TabIndex = 159;
+            this.TextBox_NCSpecB_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_ErrorWarning
+            // TextBox_NCSpecA_Match
             // 
-            this.Button_ErrorWarning.Location = new System.Drawing.Point(131, 67);
-            this.Button_ErrorWarning.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorWarning.Name = "Button_ErrorWarning";
-            this.Button_ErrorWarning.Size = new System.Drawing.Size(111, 23);
-            this.Button_ErrorWarning.TabIndex = 92;
-            this.Button_ErrorWarning.Text = "Generate Warning";
-            this.Button_ErrorWarning.UseVisualStyleBackColor = true;
-            this.Button_ErrorWarning.Click += new System.EventHandler(this.Button_ErrorWarning_Click);
+            this.TextBox_NCSpecA_Match.Enabled = false;
+            this.TextBox_NCSpecA_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecA_Match.Location = new System.Drawing.Point(598, 200);
+            this.TextBox_NCSpecA_Match.Name = "TextBox_NCSpecA_Match";
+            this.TextBox_NCSpecA_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_NCSpecA_Match.TabIndex = 158;
+            this.TextBox_NCSpecA_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_ErrorException
+            // TextBox_PLCSpec2B_Match
             // 
-            this.Button_ErrorException.Location = new System.Drawing.Point(371, 67);
-            this.Button_ErrorException.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorException.Name = "Button_ErrorException";
-            this.Button_ErrorException.Size = new System.Drawing.Size(123, 23);
-            this.Button_ErrorException.TabIndex = 91;
-            this.Button_ErrorException.Text = "Generate Exception";
-            this.Button_ErrorException.UseVisualStyleBackColor = true;
-            this.Button_ErrorException.Click += new System.EventHandler(this.Button_ErrorException_Click);
+            this.TextBox_PLCSpec2B_Match.Enabled = false;
+            this.TextBox_PLCSpec2B_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2B_Match.Location = new System.Drawing.Point(598, 174);
+            this.TextBox_PLCSpec2B_Match.Name = "TextBox_PLCSpec2B_Match";
+            this.TextBox_PLCSpec2B_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_PLCSpec2B_Match.TabIndex = 157;
+            this.TextBox_PLCSpec2B_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_ErrorSubscribe
+            // TextBox_PLCSpec2A_Match
             // 
-            this.Button_ErrorSubscribe.Location = new System.Drawing.Point(11, 9);
-            this.Button_ErrorSubscribe.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_ErrorSubscribe.Name = "Button_ErrorSubscribe";
-            this.Button_ErrorSubscribe.Size = new System.Drawing.Size(158, 23);
-            this.Button_ErrorSubscribe.TabIndex = 90;
-            this.Button_ErrorSubscribe.Text = "Subscribe to Error Handler";
-            this.Button_ErrorSubscribe.UseVisualStyleBackColor = true;
-            this.Button_ErrorSubscribe.Click += new System.EventHandler(this.Button_ErrorSubscribe_Click);
+            this.TextBox_PLCSpec2A_Match.Enabled = false;
+            this.TextBox_PLCSpec2A_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2A_Match.Location = new System.Drawing.Point(598, 148);
+            this.TextBox_PLCSpec2A_Match.Name = "TextBox_PLCSpec2A_Match";
+            this.TextBox_PLCSpec2A_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_PLCSpec2A_Match.TabIndex = 156;
+            this.TextBox_PLCSpec2A_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // OptionsTab
+            // TextBox_PLCSpec1B_Match
             // 
-            this.OptionsTab.Controls.Add(this.ListBox_Options);
-            this.OptionsTab.Controls.Add(this.Button_Options);
-            this.OptionsTab.Location = new System.Drawing.Point(4, 32);
-            this.OptionsTab.Name = "OptionsTab";
-            this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OptionsTab.Size = new System.Drawing.Size(676, 426);
-            this.OptionsTab.TabIndex = 12;
-            this.OptionsTab.Text = "Options";
-            this.OptionsTab.UseVisualStyleBackColor = true;
+            this.TextBox_PLCSpec1B_Match.Enabled = false;
+            this.TextBox_PLCSpec1B_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1B_Match.Location = new System.Drawing.Point(598, 122);
+            this.TextBox_PLCSpec1B_Match.Name = "TextBox_PLCSpec1B_Match";
+            this.TextBox_PLCSpec1B_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_PLCSpec1B_Match.TabIndex = 155;
+            this.TextBox_PLCSpec1B_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // ListBox_Options
+            // TextBox_PLCSpec1A_Match
             // 
-            this.ListBox_Options.FormattingEnabled = true;
-            this.ListBox_Options.ItemHeight = 20;
-            this.ListBox_Options.Location = new System.Drawing.Point(3, 58);
-            this.ListBox_Options.Name = "ListBox_Options";
-            this.ListBox_Options.Size = new System.Drawing.Size(645, 284);
-            this.ListBox_Options.TabIndex = 10;
+            this.TextBox_PLCSpec1A_Match.Enabled = false;
+            this.TextBox_PLCSpec1A_Match.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1A_Match.Location = new System.Drawing.Point(598, 96);
+            this.TextBox_PLCSpec1A_Match.Name = "TextBox_PLCSpec1A_Match";
+            this.TextBox_PLCSpec1A_Match.Size = new System.Drawing.Size(36, 20);
+            this.TextBox_PLCSpec1A_Match.TabIndex = 154;
+            this.TextBox_PLCSpec1A_Match.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_Options
+            // label130
             // 
-            this.Button_Options.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.Button_Options.Location = new System.Drawing.Point(11, 9);
-            this.Button_Options.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_Options.Name = "Button_Options";
-            this.Button_Options.Size = new System.Drawing.Size(109, 23);
-            this.Button_Options.TabIndex = 9;
-            this.Button_Options.Text = "Execute";
-            this.Button_Options.UseVisualStyleBackColor = true;
-            this.Button_Options.Click += new System.EventHandler(this.Button_Options_Click);
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label130.Location = new System.Drawing.Point(384, 54);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(181, 13);
+            this.label130.TabIndex = 153;
+            this.label130.Text = "Values From Data Management Card";
             // 
-            // TextBox_License_GCMDAPI_Status
+            // TextBox_NCBSpecB_DMC
             // 
-            this.TextBox_License_GCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_GCMDAPI_Status.Location = new System.Drawing.Point(522, 183);
-            this.TextBox_License_GCMDAPI_Status.Name = "TextBox_License_GCMDAPI_Status";
-            this.TextBox_License_GCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_GCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_GCMDAPI_Status.TabIndex = 218;
-            this.TextBox_License_GCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCBSpecB_DMC.Enabled = false;
+            this.TextBox_NCBSpecB_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecB_DMC.Location = new System.Drawing.Point(357, 278);
+            this.TextBox_NCBSpecB_DMC.Name = "TextBox_NCBSpecB_DMC";
+            this.TextBox_NCBSpecB_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCBSpecB_DMC.TabIndex = 152;
+            this.TextBox_NCBSpecB_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_GDATAPI_Status
+            // TextBox_NCBSpecA_DMC
             // 
-            this.TextBox_License_GDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_GDATAPI_Status.Location = new System.Drawing.Point(522, 105);
-            this.TextBox_License_GDATAPI_Status.Name = "TextBox_License_GDATAPI_Status";
-            this.TextBox_License_GDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_GDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_GDATAPI_Status.TabIndex = 212;
-            this.TextBox_License_GDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCBSpecA_DMC.Enabled = false;
+            this.TextBox_NCBSpecA_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecA_DMC.Location = new System.Drawing.Point(357, 252);
+            this.TextBox_NCBSpecA_DMC.Name = "TextBox_NCBSpecA_DMC";
+            this.TextBox_NCBSpecA_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCBSpecA_DMC.TabIndex = 151;
+            this.TextBox_NCBSpecA_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_ToolId_Status
+            // TextBox_NCSpecB_DMC
             // 
-            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 365);
-            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
-            this.TextBox_License_ToolId_Status.ReadOnly = true;
-            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_ToolId_Status.TabIndex = 122;
-            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCSpecB_DMC.Enabled = false;
+            this.TextBox_NCSpecB_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecB_DMC.Location = new System.Drawing.Point(357, 226);
+            this.TextBox_NCSpecB_DMC.Name = "TextBox_NCSpecB_DMC";
+            this.TextBox_NCSpecB_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCSpecB_DMC.TabIndex = 150;
+            this.TextBox_NCSpecB_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_UserAlarmMC_Status
+            // TextBox_NCSpecA_DMC
             // 
-            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 339);
-            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
-            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
-            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCSpecA_DMC.Enabled = false;
+            this.TextBox_NCSpecA_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecA_DMC.Location = new System.Drawing.Point(357, 200);
+            this.TextBox_NCSpecA_DMC.Name = "TextBox_NCSpecA_DMC";
+            this.TextBox_NCSpecA_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCSpecA_DMC.TabIndex = 149;
+            this.TextBox_NCSpecA_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_UserAlarmL_Status
+            // TextBox_SpecMachineType_DMC
             // 
-            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 313);
-            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
-            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
-            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_SpecMachineType_DMC.Enabled = false;
+            this.TextBox_SpecMachineType_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_SpecMachineType_DMC.Location = new System.Drawing.Point(357, 70);
+            this.TextBox_SpecMachineType_DMC.Name = "TextBox_SpecMachineType_DMC";
+            this.TextBox_SpecMachineType_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_SpecMachineType_DMC.TabIndex = 148;
+            this.TextBox_SpecMachineType_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_NcCurrentAlarm_Status
+            // TextBox_PLCSpec2B_DMC
             // 
-            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 235);
-            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
-            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
-            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
-            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_PLCSpec2B_DMC.Enabled = false;
+            this.TextBox_PLCSpec2B_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2B_DMC.Location = new System.Drawing.Point(357, 174);
+            this.TextBox_PLCSpec2B_DMC.Name = "TextBox_PLCSpec2B_DMC";
+            this.TextBox_PLCSpec2B_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec2B_DMC.TabIndex = 147;
+            this.TextBox_PLCSpec2B_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_UserTaskIOMC_Status
+            // TextBox_PLCSpec2A_DMC
             // 
-            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 287);
-            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
-            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
-            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_PLCSpec2A_DMC.Enabled = false;
+            this.TextBox_PLCSpec2A_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2A_DMC.Location = new System.Drawing.Point(357, 148);
+            this.TextBox_PLCSpec2A_DMC.Name = "TextBox_PLCSpec2A_DMC";
+            this.TextBox_PLCSpec2A_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec2A_DMC.TabIndex = 146;
+            this.TextBox_PLCSpec2A_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_UserTaskIOL_Status
+            // TextBox_PLCSpec1B_DMC
             // 
-            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 261);
-            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
-            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
-            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_PLCSpec1B_DMC.Enabled = false;
+            this.TextBox_PLCSpec1B_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1B_DMC.Location = new System.Drawing.Point(357, 122);
+            this.TextBox_PLCSpec1B_DMC.Name = "TextBox_PLCSpec1B_DMC";
+            this.TextBox_PLCSpec1B_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec1B_DMC.TabIndex = 145;
+            this.TextBox_PLCSpec1B_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_P200_Status
+            // TextBox_PLCSpec1A_DMC
             // 
-            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 209);
-            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
-            this.TextBox_License_P200_Status.ReadOnly = true;
-            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_P200_Status.TabIndex = 116;
-            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_PLCSpec1A_DMC.Enabled = false;
+            this.TextBox_PLCSpec1A_DMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1A_DMC.Location = new System.Drawing.Point(357, 96);
+            this.TextBox_PLCSpec1A_DMC.Name = "TextBox_PLCSpec1A_DMC";
+            this.TextBox_PLCSpec1A_DMC.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec1A_DMC.TabIndex = 144;
+            this.TextBox_PLCSpec1A_DMC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_MCMDAPI_Status
+            // TextBox_NCBSpecB
             // 
-            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 157);
-            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
-            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
-            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCBSpecB.Enabled = false;
+            this.TextBox_NCBSpecB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecB.Location = new System.Drawing.Point(116, 278);
+            this.TextBox_NCBSpecB.Name = "TextBox_NCBSpecB";
+            this.TextBox_NCBSpecB.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCBSpecB.TabIndex = 143;
+            this.TextBox_NCBSpecB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_MDATAPI_Status
+            // label129
             // 
-            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
-            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
-            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
-            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label129.AutoSize = true;
+            this.label129.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label129.Location = new System.Drawing.Point(0, 269);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(114, 13);
+            this.label129.TabIndex = 141;
+            this.label129.Text = "NC B-Spec Code No.1";
             // 
-            // TextBox_License_LCMDAPI_Status
+            // TextBox_NCBSpecA
             // 
-            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
-            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
-            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
-            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_NCBSpecA.Enabled = false;
+            this.TextBox_NCBSpecA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecA.Location = new System.Drawing.Point(116, 252);
+            this.TextBox_NCBSpecA.Name = "TextBox_NCBSpecA";
+            this.TextBox_NCBSpecA.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCBSpecA.TabIndex = 142;
+            this.TextBox_NCBSpecA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_License_LDATAPI_Status
+            // label127
             // 
-            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
-            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
-            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
-            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label127.AutoSize = true;
+            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label127.Location = new System.Drawing.Point(133, 54);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(196, 13);
+            this.label127.TabIndex = 140;
+            this.label127.Text = "Actual Values From NC Spec Code Files";
             // 
-            // label173
+            // TextBox_NCSpecB
             // 
-            this.label173.AutoSize = true;
-            this.label173.Location = new System.Drawing.Point(265, 315);
-            this.label173.Name = "label173";
-            this.label173.Size = new System.Drawing.Size(90, 13);
-            this.label173.TabIndex = 126;
-            this.label173.Text = "User Permissions:";
+            this.TextBox_NCSpecB.Enabled = false;
+            this.TextBox_NCSpecB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecB.Location = new System.Drawing.Point(116, 226);
+            this.TextBox_NCSpecB.Name = "TextBox_NCSpecB";
+            this.TextBox_NCSpecB.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCSpecB.TabIndex = 139;
+            this.TextBox_NCSpecB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_EnvUserPermissions
+            // label125
             // 
-            this.TextBox_EnvUserPermissions.Enabled = false;
-            this.TextBox_EnvUserPermissions.Location = new System.Drawing.Point(361, 312);
-            this.TextBox_EnvUserPermissions.Name = "TextBox_EnvUserPermissions";
-            this.TextBox_EnvUserPermissions.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_EnvUserPermissions.TabIndex = 127;
-            this.TextBox_EnvUserPermissions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label125.Location = new System.Drawing.Point(9, 217);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(104, 13);
+            this.label125.TabIndex = 137;
+            this.label125.Text = "NC Spec Code No.1";
+            // 
+            // TextBox_NCSpecA
+            // 
+            this.TextBox_NCSpecA.Enabled = false;
+            this.TextBox_NCSpecA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecA.Location = new System.Drawing.Point(116, 200);
+            this.TextBox_NCSpecA.Name = "TextBox_NCSpecA";
+            this.TextBox_NCSpecA.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_NCSpecA.TabIndex = 138;
+            this.TextBox_NCSpecA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label124.Location = new System.Drawing.Point(28, 73);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(78, 13);
+            this.label124.TabIndex = 135;
+            this.label124.Text = "Machine Type:";
+            // 
+            // TextBox_SpecMachineType
+            // 
+            this.TextBox_SpecMachineType.Enabled = false;
+            this.TextBox_SpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_SpecMachineType.Location = new System.Drawing.Point(116, 70);
+            this.TextBox_SpecMachineType.Name = "TextBox_SpecMachineType";
+            this.TextBox_SpecMachineType.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_SpecMachineType.TabIndex = 136;
+            this.TextBox_SpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_PLCSpec2B
+            // 
+            this.TextBox_PLCSpec2B.Enabled = false;
+            this.TextBox_PLCSpec2B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2B.Location = new System.Drawing.Point(116, 174);
+            this.TextBox_PLCSpec2B.Name = "TextBox_PLCSpec2B";
+            this.TextBox_PLCSpec2B.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec2B.TabIndex = 134;
+            this.TextBox_PLCSpec2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label122.Location = new System.Drawing.Point(4, 163);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(109, 13);
+            this.label122.TabIndex = 132;
+            this.label122.Text = "PLC Spec Code No.2";
+            // 
+            // TextBox_PLCSpec2A
+            // 
+            this.TextBox_PLCSpec2A.Enabled = false;
+            this.TextBox_PLCSpec2A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec2A.Location = new System.Drawing.Point(116, 148);
+            this.TextBox_PLCSpec2A.Name = "TextBox_PLCSpec2A";
+            this.TextBox_PLCSpec2A.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec2A.TabIndex = 133;
+            this.TextBox_PLCSpec2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_PLCSpec1B
+            // 
+            this.TextBox_PLCSpec1B.Enabled = false;
+            this.TextBox_PLCSpec1B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1B.Location = new System.Drawing.Point(116, 122);
+            this.TextBox_PLCSpec1B.Name = "TextBox_PLCSpec1B";
+            this.TextBox_PLCSpec1B.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec1B.TabIndex = 131;
+            this.TextBox_PLCSpec1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label120.Location = new System.Drawing.Point(5, 112);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(109, 13);
+            this.label120.TabIndex = 129;
+            this.label120.Text = "PLC Spec Code No.1";
+            // 
+            // TextBox_PLCSpec1A
+            // 
+            this.TextBox_PLCSpec1A.Enabled = false;
+            this.TextBox_PLCSpec1A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpec1A.Location = new System.Drawing.Point(116, 96);
+            this.TextBox_PLCSpec1A.Name = "TextBox_PLCSpec1A";
+            this.TextBox_PLCSpec1A.Size = new System.Drawing.Size(235, 20);
+            this.TextBox_PLCSpec1A.TabIndex = 130;
+            this.TextBox_PLCSpec1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_SpecCodes
+            // 
+            this.Button_SpecCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_SpecCodes.Location = new System.Drawing.Point(9, 9);
+            this.Button_SpecCodes.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_SpecCodes.Name = "Button_SpecCodes";
+            this.Button_SpecCodes.Size = new System.Drawing.Size(109, 23);
+            this.Button_SpecCodes.TabIndex = 90;
+            this.Button_SpecCodes.Text = "Execute";
+            this.Button_SpecCodes.UseVisualStyleBackColor = true;
+            this.Button_SpecCodes.Click += new System.EventHandler(this.Button_SpecCodes_Click);
+            // 
+            // NCSpecFile
+            // 
+            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecFileExists);
+            this.NCSpecFile.Controls.Add(this.label126);
+            this.NCSpecFile.Controls.Add(this.label123);
+            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecSerialNumber);
+            this.NCSpecFile.Controls.Add(this.label121);
+            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecMachineType);
+            this.NCSpecFile.Controls.Add(this.label139);
+            this.NCSpecFile.Controls.Add(this.ComboBox_NCSpecGroup);
+            this.NCSpecFile.Controls.Add(this.Label_NcSpecGroup2);
+            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecSecondHalf);
+            this.NCSpecFile.Controls.Add(this.Button_NCSpecFileSelectFile);
+            this.NCSpecFile.Controls.Add(this.Label_NCSpecFileUserFile);
+            this.NCSpecFile.Controls.Add(this.RadioButton_NCSpecFileUser);
+            this.NCSpecFile.Controls.Add(this.RadioButton_NCSpecFileDefault);
+            this.NCSpecFile.Controls.Add(this.Button_NCSpecFileExecute);
+            this.NCSpecFile.Controls.Add(this.Label_NcSpecGroup1);
+            this.NCSpecFile.Controls.Add(this.TextBox_NCSpecFirstHalf);
+            this.NCSpecFile.Location = new System.Drawing.Point(4, 29);
+            this.NCSpecFile.Name = "NCSpecFile";
+            this.NCSpecFile.Padding = new System.Windows.Forms.Padding(3);
+            this.NCSpecFile.Size = new System.Drawing.Size(662, 381);
+            this.NCSpecFile.TabIndex = 1;
+            this.NCSpecFile.Text = "NC Spec File";
+            this.NCSpecFile.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_NCSpecFileExists
+            // 
+            this.TextBox_NCSpecFileExists.Enabled = false;
+            this.TextBox_NCSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecFileExists.Location = new System.Drawing.Point(421, 52);
+            this.TextBox_NCSpecFileExists.Name = "TextBox_NCSpecFileExists";
+            this.TextBox_NCSpecFileExists.Size = new System.Drawing.Size(63, 20);
+            this.TextBox_NCSpecFileExists.TabIndex = 68;
+            this.TextBox_NCSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label126.Location = new System.Drawing.Point(233, 55);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(182, 13);
+            this.label126.TabIndex = 67;
+            this.label126.Text = "Valid Machine Spec Code File Exists:";
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label123.Location = new System.Drawing.Point(272, 135);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(73, 13);
+            this.label123.TabIndex = 66;
+            this.label123.Text = "Serial Number";
+            // 
+            // TextBox_NCSpecSerialNumber
+            // 
+            this.TextBox_NCSpecSerialNumber.Enabled = false;
+            this.TextBox_NCSpecSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecSerialNumber.Location = new System.Drawing.Point(353, 132);
+            this.TextBox_NCSpecSerialNumber.Name = "TextBox_NCSpecSerialNumber";
+            this.TextBox_NCSpecSerialNumber.Size = new System.Drawing.Size(135, 20);
+            this.TextBox_NCSpecSerialNumber.TabIndex = 65;
+            this.TextBox_NCSpecSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label121.Location = new System.Drawing.Point(21, 135);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(75, 13);
+            this.label121.TabIndex = 64;
+            this.label121.Text = "Machine Type";
+            // 
+            // TextBox_NCSpecMachineType
+            // 
+            this.TextBox_NCSpecMachineType.Enabled = false;
+            this.TextBox_NCSpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecMachineType.Location = new System.Drawing.Point(102, 132);
+            this.TextBox_NCSpecMachineType.Name = "TextBox_NCSpecMachineType";
+            this.TextBox_NCSpecMachineType.Size = new System.Drawing.Size(135, 20);
+            this.TextBox_NCSpecMachineType.TabIndex = 63;
+            this.TextBox_NCSpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label139.Location = new System.Drawing.Point(21, 178);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(112, 13);
+            this.label139.TabIndex = 62;
+            this.label139.Text = "Spec Code Group No.";
+            // 
+            // ComboBox_NCSpecGroup
+            // 
+            this.ComboBox_NCSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.ComboBox_NCSpecGroup.FormattingEnabled = true;
+            this.ComboBox_NCSpecGroup.Items.AddRange(new object[] {
+            "NC1MG [NC-SPEC CODE No.1]",
+            "NC2MG [ unused ]",
+            "NC3MG [ unused ]",
+            "NC4MG [ unused ]",
+            "NC5MG [ unused ]",
+            "NC6MG [ unused ]",
+            "NC7MG [ unused ]",
+            "NC8MG [ unused ]"});
+            this.ComboBox_NCSpecGroup.Location = new System.Drawing.Point(141, 175);
+            this.ComboBox_NCSpecGroup.Name = "ComboBox_NCSpecGroup";
+            this.ComboBox_NCSpecGroup.Size = new System.Drawing.Size(273, 21);
+            this.ComboBox_NCSpecGroup.TabIndex = 61;
+            // 
+            // Label_NcSpecGroup2
+            // 
+            this.Label_NcSpecGroup2.AutoSize = true;
+            this.Label_NcSpecGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_NcSpecGroup2.Location = new System.Drawing.Point(21, 253);
+            this.Label_NcSpecGroup2.Name = "Label_NcSpecGroup2";
+            this.Label_NcSpecGroup2.Size = new System.Drawing.Size(149, 13);
+            this.Label_NcSpecGroup2.TabIndex = 60;
+            this.Label_NcSpecGroup2.Text = "Second Half (Byte No. 17- 32)";
+            // 
+            // TextBox_NCSpecSecondHalf
+            // 
+            this.TextBox_NCSpecSecondHalf.Enabled = false;
+            this.TextBox_NCSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecSecondHalf.Location = new System.Drawing.Point(176, 250);
+            this.TextBox_NCSpecSecondHalf.Name = "TextBox_NCSpecSecondHalf";
+            this.TextBox_NCSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_NCSpecSecondHalf.TabIndex = 59;
+            this.TextBox_NCSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_NCSpecFileSelectFile
+            // 
+            this.Button_NCSpecFileSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_NCSpecFileSelectFile.Location = new System.Drawing.Point(216, 80);
+            this.Button_NCSpecFileSelectFile.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_NCSpecFileSelectFile.Name = "Button_NCSpecFileSelectFile";
+            this.Button_NCSpecFileSelectFile.Size = new System.Drawing.Size(76, 23);
+            this.Button_NCSpecFileSelectFile.TabIndex = 58;
+            this.Button_NCSpecFileSelectFile.Text = "Select File";
+            this.Button_NCSpecFileSelectFile.UseVisualStyleBackColor = true;
+            this.Button_NCSpecFileSelectFile.Click += new System.EventHandler(this.Button_NCSpecFileSelectFile_Click);
+            // 
+            // Label_NCSpecFileUserFile
+            // 
+            this.Label_NCSpecFileUserFile.AutoSize = true;
+            this.Label_NCSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_NCSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
+            this.Label_NCSpecFileUserFile.Location = new System.Drawing.Point(298, 85);
+            this.Label_NCSpecFileUserFile.Name = "Label_NCSpecFileUserFile";
+            this.Label_NCSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
+            this.Label_NCSpecFileUserFile.TabIndex = 57;
+            // 
+            // RadioButton_NCSpecFileUser
+            // 
+            this.RadioButton_NCSpecFileUser.AutoSize = true;
+            this.RadioButton_NCSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_NCSpecFileUser.Location = new System.Drawing.Point(24, 83);
+            this.RadioButton_NCSpecFileUser.Name = "RadioButton_NCSpecFileUser";
+            this.RadioButton_NCSpecFileUser.Size = new System.Drawing.Size(183, 17);
+            this.RadioButton_NCSpecFileUser.TabIndex = 56;
+            this.RadioButton_NCSpecFileUser.Text = "User Defined NC Spec Code File ";
+            this.RadioButton_NCSpecFileUser.UseVisualStyleBackColor = true;
+            this.RadioButton_NCSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_NCSpecFile_CheckedChanged);
+            // 
+            // RadioButton_NCSpecFileDefault
+            // 
+            this.RadioButton_NCSpecFileDefault.AutoSize = true;
+            this.RadioButton_NCSpecFileDefault.Checked = true;
+            this.RadioButton_NCSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_NCSpecFileDefault.Location = new System.Drawing.Point(24, 53);
+            this.RadioButton_NCSpecFileDefault.Name = "RadioButton_NCSpecFileDefault";
+            this.RadioButton_NCSpecFileDefault.Size = new System.Drawing.Size(192, 17);
+            this.RadioButton_NCSpecFileDefault.TabIndex = 55;
+            this.RadioButton_NCSpecFileDefault.TabStop = true;
+            this.RadioButton_NCSpecFileDefault.Text = "Active Machine NC Spec Code File";
+            this.RadioButton_NCSpecFileDefault.UseVisualStyleBackColor = true;
+            this.RadioButton_NCSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_NCSpecFile_CheckedChanged);
+            // 
+            // Button_NCSpecFileExecute
+            // 
+            this.Button_NCSpecFileExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_NCSpecFileExecute.Location = new System.Drawing.Point(9, 9);
+            this.Button_NCSpecFileExecute.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_NCSpecFileExecute.Name = "Button_NCSpecFileExecute";
+            this.Button_NCSpecFileExecute.Size = new System.Drawing.Size(109, 23);
+            this.Button_NCSpecFileExecute.TabIndex = 54;
+            this.Button_NCSpecFileExecute.Text = "Execute";
+            this.Button_NCSpecFileExecute.UseVisualStyleBackColor = true;
+            this.Button_NCSpecFileExecute.Click += new System.EventHandler(this.Button_NCSpecFileExecute_Click);
+            // 
+            // Label_NcSpecGroup1
+            // 
+            this.Label_NcSpecGroup1.AutoSize = true;
+            this.Label_NcSpecGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_NcSpecGroup1.Location = new System.Drawing.Point(42, 227);
+            this.Label_NcSpecGroup1.Name = "Label_NcSpecGroup1";
+            this.Label_NcSpecGroup1.Size = new System.Drawing.Size(128, 13);
+            this.Label_NcSpecGroup1.TabIndex = 53;
+            this.Label_NcSpecGroup1.Text = "First Half (Byte No. 1 - 16)";
+            // 
+            // TextBox_NCSpecFirstHalf
+            // 
+            this.TextBox_NCSpecFirstHalf.Enabled = false;
+            this.TextBox_NCSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCSpecFirstHalf.Location = new System.Drawing.Point(176, 224);
+            this.TextBox_NCSpecFirstHalf.Name = "TextBox_NCSpecFirstHalf";
+            this.TextBox_NCSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_NCSpecFirstHalf.TabIndex = 52;
+            this.TextBox_NCSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // NCBSpecFile
+            // 
+            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecFileExists);
+            this.NCBSpecFile.Controls.Add(this.label141);
+            this.NCBSpecFile.Controls.Add(this.label136);
+            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecSerialNumber);
+            this.NCBSpecFile.Controls.Add(this.label137);
+            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecMachineType);
+            this.NCBSpecFile.Controls.Add(this.label138);
+            this.NCBSpecFile.Controls.Add(this.ComboBox_NCBSpecGroup);
+            this.NCBSpecFile.Controls.Add(this.label140);
+            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecSecondHalf);
+            this.NCBSpecFile.Controls.Add(this.Button_NCBSpecFileSelectFile);
+            this.NCBSpecFile.Controls.Add(this.Label_NCBSpecFileUserFile);
+            this.NCBSpecFile.Controls.Add(this.RadioButton_NCBSpecFileUser);
+            this.NCBSpecFile.Controls.Add(this.RadioButton_NCBSpecFileDefault);
+            this.NCBSpecFile.Controls.Add(this.Button_NCBSpecFileExecute);
+            this.NCBSpecFile.Controls.Add(this.label142);
+            this.NCBSpecFile.Controls.Add(this.TextBox_NCBSpecFirstHalf);
+            this.NCBSpecFile.Location = new System.Drawing.Point(4, 29);
+            this.NCBSpecFile.Name = "NCBSpecFile";
+            this.NCBSpecFile.Padding = new System.Windows.Forms.Padding(3);
+            this.NCBSpecFile.Size = new System.Drawing.Size(662, 381);
+            this.NCBSpecFile.TabIndex = 2;
+            this.NCBSpecFile.Text = "NC B-Spec File";
+            this.NCBSpecFile.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_NCBSpecFileExists
+            // 
+            this.TextBox_NCBSpecFileExists.Enabled = false;
+            this.TextBox_NCBSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecFileExists.Location = new System.Drawing.Point(437, 51);
+            this.TextBox_NCBSpecFileExists.Name = "TextBox_NCBSpecFileExists";
+            this.TextBox_NCBSpecFileExists.Size = new System.Drawing.Size(63, 20);
+            this.TextBox_NCBSpecFileExists.TabIndex = 66;
+            this.TextBox_NCBSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label141.Location = new System.Drawing.Point(252, 57);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(182, 13);
+            this.label141.TabIndex = 65;
+            this.label141.Text = "Valid Machine Spec Code File Exists:";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label136.Location = new System.Drawing.Point(275, 140);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(73, 13);
+            this.label136.TabIndex = 64;
+            this.label136.Text = "Serial Number";
+            // 
+            // TextBox_NCBSpecSerialNumber
+            // 
+            this.TextBox_NCBSpecSerialNumber.Enabled = false;
+            this.TextBox_NCBSpecSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecSerialNumber.Location = new System.Drawing.Point(353, 134);
+            this.TextBox_NCBSpecSerialNumber.Name = "TextBox_NCBSpecSerialNumber";
+            this.TextBox_NCBSpecSerialNumber.Size = new System.Drawing.Size(135, 20);
+            this.TextBox_NCBSpecSerialNumber.TabIndex = 63;
+            this.TextBox_NCBSpecSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label137.Location = new System.Drawing.Point(24, 140);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(75, 13);
+            this.label137.TabIndex = 62;
+            this.label137.Text = "Machine Type";
+            // 
+            // TextBox_NCBSpecMachineType
+            // 
+            this.TextBox_NCBSpecMachineType.Enabled = false;
+            this.TextBox_NCBSpecMachineType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecMachineType.Location = new System.Drawing.Point(102, 134);
+            this.TextBox_NCBSpecMachineType.Name = "TextBox_NCBSpecMachineType";
+            this.TextBox_NCBSpecMachineType.Size = new System.Drawing.Size(135, 20);
+            this.TextBox_NCBSpecMachineType.TabIndex = 61;
+            this.TextBox_NCBSpecMachineType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label138.Location = new System.Drawing.Point(24, 183);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(112, 13);
+            this.label138.TabIndex = 60;
+            this.label138.Text = "Spec Code Group No.";
+            // 
+            // ComboBox_NCBSpecGroup
+            // 
+            this.ComboBox_NCBSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.ComboBox_NCBSpecGroup.FormattingEnabled = true;
+            this.ComboBox_NCBSpecGroup.Items.AddRange(new object[] {
+            "NCB1MG [NC-B SPEC CODE No.1]",
+            "NCB2MG [ unused ]",
+            "NCB3MG [ unused ]",
+            "NCB4MG [ unused ]",
+            "NCB5MG [ unused ]",
+            "NCB6MG [ unused ]",
+            "NCB7MG [ unused ]",
+            "NCB8MG [ unused ]"});
+            this.ComboBox_NCBSpecGroup.Location = new System.Drawing.Point(141, 177);
+            this.ComboBox_NCBSpecGroup.Name = "ComboBox_NCBSpecGroup";
+            this.ComboBox_NCBSpecGroup.Size = new System.Drawing.Size(273, 21);
+            this.ComboBox_NCBSpecGroup.TabIndex = 59;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label140.Location = new System.Drawing.Point(24, 258);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(149, 13);
+            this.label140.TabIndex = 58;
+            this.label140.Text = "Second Half (Byte No. 17- 32)";
+            // 
+            // TextBox_NCBSpecSecondHalf
+            // 
+            this.TextBox_NCBSpecSecondHalf.Enabled = false;
+            this.TextBox_NCBSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecSecondHalf.Location = new System.Drawing.Point(176, 252);
+            this.TextBox_NCBSpecSecondHalf.Name = "TextBox_NCBSpecSecondHalf";
+            this.TextBox_NCBSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_NCBSpecSecondHalf.TabIndex = 57;
+            this.TextBox_NCBSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Button_NCBSpecFileSelectFile
+            // 
+            this.Button_NCBSpecFileSelectFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_NCBSpecFileSelectFile.Location = new System.Drawing.Point(221, 79);
+            this.Button_NCBSpecFileSelectFile.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_NCBSpecFileSelectFile.Name = "Button_NCBSpecFileSelectFile";
+            this.Button_NCBSpecFileSelectFile.Size = new System.Drawing.Size(76, 23);
+            this.Button_NCBSpecFileSelectFile.TabIndex = 56;
+            this.Button_NCBSpecFileSelectFile.Text = "Select File";
+            this.Button_NCBSpecFileSelectFile.UseVisualStyleBackColor = true;
+            this.Button_NCBSpecFileSelectFile.Click += new System.EventHandler(this.Button_NCBSpecFileSelectFile_Click);
+            // 
+            // Label_NCBSpecFileUserFile
+            // 
+            this.Label_NCBSpecFileUserFile.AutoSize = true;
+            this.Label_NCBSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_NCBSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
+            this.Label_NCBSpecFileUserFile.Location = new System.Drawing.Point(306, 87);
+            this.Label_NCBSpecFileUserFile.Name = "Label_NCBSpecFileUserFile";
+            this.Label_NCBSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
+            this.Label_NCBSpecFileUserFile.TabIndex = 55;
+            // 
+            // RadioButton_NCBSpecFileUser
+            // 
+            this.RadioButton_NCBSpecFileUser.AutoSize = true;
+            this.RadioButton_NCBSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_NCBSpecFileUser.Location = new System.Drawing.Point(27, 85);
+            this.RadioButton_NCBSpecFileUser.Name = "RadioButton_NCBSpecFileUser";
+            this.RadioButton_NCBSpecFileUser.Size = new System.Drawing.Size(193, 17);
+            this.RadioButton_NCBSpecFileUser.TabIndex = 54;
+            this.RadioButton_NCBSpecFileUser.Text = "User Defined NC B-Spec Code File ";
+            this.RadioButton_NCBSpecFileUser.UseVisualStyleBackColor = true;
+            this.RadioButton_NCBSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_NCBSpecFile_CheckedChanged);
+            // 
+            // RadioButton_NCBSpecFileDefault
+            // 
+            this.RadioButton_NCBSpecFileDefault.AutoSize = true;
+            this.RadioButton_NCBSpecFileDefault.Checked = true;
+            this.RadioButton_NCBSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_NCBSpecFileDefault.Location = new System.Drawing.Point(27, 55);
+            this.RadioButton_NCBSpecFileDefault.Name = "RadioButton_NCBSpecFileDefault";
+            this.RadioButton_NCBSpecFileDefault.Size = new System.Drawing.Size(202, 17);
+            this.RadioButton_NCBSpecFileDefault.TabIndex = 53;
+            this.RadioButton_NCBSpecFileDefault.TabStop = true;
+            this.RadioButton_NCBSpecFileDefault.Text = "Active Machine NC B-Spec Code File";
+            this.RadioButton_NCBSpecFileDefault.UseVisualStyleBackColor = true;
+            this.RadioButton_NCBSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_NCBSpecFile_CheckedChanged);
+            // 
+            // Button_NCBSpecFileExecute
+            // 
+            this.Button_NCBSpecFileExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_NCBSpecFileExecute.Location = new System.Drawing.Point(9, 9);
+            this.Button_NCBSpecFileExecute.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_NCBSpecFileExecute.Name = "Button_NCBSpecFileExecute";
+            this.Button_NCBSpecFileExecute.Size = new System.Drawing.Size(109, 23);
+            this.Button_NCBSpecFileExecute.TabIndex = 52;
+            this.Button_NCBSpecFileExecute.Text = "Execute";
+            this.Button_NCBSpecFileExecute.UseVisualStyleBackColor = true;
+            this.Button_NCBSpecFileExecute.Click += new System.EventHandler(this.Button_NCBSpecFileExecute_Click);
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label142.Location = new System.Drawing.Point(45, 232);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(128, 13);
+            this.label142.TabIndex = 51;
+            this.label142.Text = "First Half (Byte No. 1 - 16)";
+            // 
+            // TextBox_NCBSpecFirstHalf
+            // 
+            this.TextBox_NCBSpecFirstHalf.Enabled = false;
+            this.TextBox_NCBSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_NCBSpecFirstHalf.Location = new System.Drawing.Point(176, 226);
+            this.TextBox_NCBSpecFirstHalf.Name = "TextBox_NCBSpecFirstHalf";
+            this.TextBox_NCBSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_NCBSpecFirstHalf.TabIndex = 50;
+            this.TextBox_NCBSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // PLCSpecFile
+            // 
+            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecFileExists);
+            this.PLCSpecFile.Controls.Add(this.label128);
+            this.PLCSpecFile.Controls.Add(this.label145);
+            this.PLCSpecFile.Controls.Add(this.ComboBox_PLCSpecGroup);
+            this.PLCSpecFile.Controls.Add(this.label146);
+            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecSecondHalf);
+            this.PLCSpecFile.Controls.Add(this.button1);
+            this.PLCSpecFile.Controls.Add(this.Label_PLCSpecFileUserFile);
+            this.PLCSpecFile.Controls.Add(this.RadioButton_PLCSpecFileUser);
+            this.PLCSpecFile.Controls.Add(this.RadioButton_PLCSpecFileDefault);
+            this.PLCSpecFile.Controls.Add(this.button2);
+            this.PLCSpecFile.Controls.Add(this.label148);
+            this.PLCSpecFile.Controls.Add(this.TextBox_PLCSpecFirstHalf);
+            this.PLCSpecFile.Location = new System.Drawing.Point(4, 29);
+            this.PLCSpecFile.Name = "PLCSpecFile";
+            this.PLCSpecFile.Padding = new System.Windows.Forms.Padding(3);
+            this.PLCSpecFile.Size = new System.Drawing.Size(662, 381);
+            this.PLCSpecFile.TabIndex = 3;
+            this.PLCSpecFile.Text = "PLC Spec File";
+            this.PLCSpecFile.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_PLCSpecFileExists
+            // 
+            this.TextBox_PLCSpecFileExists.Enabled = false;
+            this.TextBox_PLCSpecFileExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpecFileExists.Location = new System.Drawing.Point(437, 51);
+            this.TextBox_PLCSpecFileExists.Name = "TextBox_PLCSpecFileExists";
+            this.TextBox_PLCSpecFileExists.Size = new System.Drawing.Size(63, 20);
+            this.TextBox_PLCSpecFileExists.TabIndex = 79;
+            this.TextBox_PLCSpecFileExists.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label128.Location = new System.Drawing.Point(252, 57);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(182, 13);
+            this.label128.TabIndex = 78;
+            this.label128.Text = "Valid Machine Spec Code File Exists:";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label145.Location = new System.Drawing.Point(24, 133);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(112, 13);
+            this.label145.TabIndex = 77;
+            this.label145.Text = "Spec Code Group No.";
+            // 
+            // ComboBox_PLCSpecGroup
+            // 
+            this.ComboBox_PLCSpecGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.ComboBox_PLCSpecGroup.FormattingEnabled = true;
+            this.ComboBox_PLCSpecGroup.Items.AddRange(new object[] {
+            "PLC1MG [PLC-SPEC CODE No.1]",
+            "PLC2MG [PLC-SPEC CODE No.2]",
+            "PLC3MG [ unused ]"});
+            this.ComboBox_PLCSpecGroup.Location = new System.Drawing.Point(141, 127);
+            this.ComboBox_PLCSpecGroup.Name = "ComboBox_PLCSpecGroup";
+            this.ComboBox_PLCSpecGroup.Size = new System.Drawing.Size(273, 21);
+            this.ComboBox_PLCSpecGroup.TabIndex = 76;
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label146.Location = new System.Drawing.Point(24, 208);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(149, 13);
+            this.label146.TabIndex = 75;
+            this.label146.Text = "Second Half (Byte No. 17- 32)";
+            // 
+            // TextBox_PLCSpecSecondHalf
+            // 
+            this.TextBox_PLCSpecSecondHalf.Enabled = false;
+            this.TextBox_PLCSpecSecondHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpecSecondHalf.Location = new System.Drawing.Point(176, 202);
+            this.TextBox_PLCSpecSecondHalf.Name = "TextBox_PLCSpecSecondHalf";
+            this.TextBox_PLCSpecSecondHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_PLCSpecSecondHalf.TabIndex = 74;
+            this.TextBox_PLCSpecSecondHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button1.Location = new System.Drawing.Point(221, 79);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 23);
+            this.button1.TabIndex = 73;
+            this.button1.Text = "Select File";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button_PLCSpecFileSelectFile_Click);
+            // 
+            // Label_PLCSpecFileUserFile
+            // 
+            this.Label_PLCSpecFileUserFile.AutoSize = true;
+            this.Label_PLCSpecFileUserFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Label_PLCSpecFileUserFile.ForeColor = System.Drawing.Color.DimGray;
+            this.Label_PLCSpecFileUserFile.Location = new System.Drawing.Point(306, 87);
+            this.Label_PLCSpecFileUserFile.Name = "Label_PLCSpecFileUserFile";
+            this.Label_PLCSpecFileUserFile.Size = new System.Drawing.Size(0, 13);
+            this.Label_PLCSpecFileUserFile.TabIndex = 72;
+            // 
+            // RadioButton_PLCSpecFileUser
+            // 
+            this.RadioButton_PLCSpecFileUser.AutoSize = true;
+            this.RadioButton_PLCSpecFileUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_PLCSpecFileUser.Location = new System.Drawing.Point(27, 85);
+            this.RadioButton_PLCSpecFileUser.Name = "RadioButton_PLCSpecFileUser";
+            this.RadioButton_PLCSpecFileUser.Size = new System.Drawing.Size(188, 17);
+            this.RadioButton_PLCSpecFileUser.TabIndex = 71;
+            this.RadioButton_PLCSpecFileUser.Text = "User Defined PLC Spec Code File ";
+            this.RadioButton_PLCSpecFileUser.UseVisualStyleBackColor = true;
+            this.RadioButton_PLCSpecFileUser.CheckedChanged += new System.EventHandler(this.RadioButton_PLCSpecFile_CheckedChanged);
+            // 
+            // RadioButton_PLCSpecFileDefault
+            // 
+            this.RadioButton_PLCSpecFileDefault.AutoSize = true;
+            this.RadioButton_PLCSpecFileDefault.Checked = true;
+            this.RadioButton_PLCSpecFileDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.RadioButton_PLCSpecFileDefault.Location = new System.Drawing.Point(27, 55);
+            this.RadioButton_PLCSpecFileDefault.Name = "RadioButton_PLCSpecFileDefault";
+            this.RadioButton_PLCSpecFileDefault.Size = new System.Drawing.Size(197, 17);
+            this.RadioButton_PLCSpecFileDefault.TabIndex = 70;
+            this.RadioButton_PLCSpecFileDefault.TabStop = true;
+            this.RadioButton_PLCSpecFileDefault.Text = "Active Machine PLC Spec Code File";
+            this.RadioButton_PLCSpecFileDefault.UseVisualStyleBackColor = true;
+            this.RadioButton_PLCSpecFileDefault.CheckedChanged += new System.EventHandler(this.RadioButton_PLCSpecFile_CheckedChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button2.Location = new System.Drawing.Point(9, 9);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 69;
+            this.button2.Text = "Execute";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button_PLCSpecFileExecute_Click);
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label148.Location = new System.Drawing.Point(45, 182);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(128, 13);
+            this.label148.TabIndex = 68;
+            this.label148.Text = "First Half (Byte No. 1 - 16)";
+            // 
+            // TextBox_PLCSpecFirstHalf
+            // 
+            this.TextBox_PLCSpecFirstHalf.Enabled = false;
+            this.TextBox_PLCSpecFirstHalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TextBox_PLCSpecFirstHalf.Location = new System.Drawing.Point(176, 176);
+            this.TextBox_PLCSpecFirstHalf.Name = "TextBox_PLCSpecFirstHalf";
+            this.TextBox_PLCSpecFirstHalf.Size = new System.Drawing.Size(369, 20);
+            this.TextBox_PLCSpecFirstHalf.TabIndex = 67;
+            this.TextBox_PLCSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScoutTestApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.ClientSize = new System.Drawing.Size(684, 484);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "ScoutTestApplicationForm";
             this.Text = "Okuma.Scout Test Application";
             this.Load += new System.EventHandler(this.ScoutTestApplication_Loaded);
             this.tabControl1.ResumeLayout(false);
+            this.API.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.TabThincApi.ResumeLayout(false);
+            this.TabThincApi.PerformLayout();
+            this.TabOcjApi.ResumeLayout(false);
+            this.TabOcjApi.PerformLayout();
+            this.Dir.ResumeLayout(false);
+            this.Dir.PerformLayout();
+            this.DMC.ResumeLayout(false);
+            this.DMC.PerformLayout();
+            this.DotNet.ResumeLayout(false);
+            this.DotNet.PerformLayout();
+            this.ErrorHandling.ResumeLayout(false);
+            this.ErrorHandling.PerformLayout();
+            this.Files.ResumeLayout(false);
+            this.Files.PerformLayout();
+            this.GAC.ResumeLayout(false);
+            this.GAC.PerformLayout();
+            this.License.ResumeLayout(false);
+            this.License.PerformLayout();
+            this.OptionsTab.ResumeLayout(false);
+            this.OS.ResumeLayout(false);
+            this.OS.PerformLayout();
+            this.PIOD.ResumeLayout(false);
+            this.PIOD.PerformLayout();
             this.Platform.ResumeLayout(false);
             this.Platform.PerformLayout();
+            this.Process.ResumeLayout(false);
+            this.Process.PerformLayout();
+            this.Program.ResumeLayout(false);
+            this.Program.PerformLayout();
+            this.Registry.ResumeLayout(false);
+            this.Registry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_SubKeys)).EndInit();
             this.SpecCodes.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.Comparison.ResumeLayout(false);
@@ -5691,34 +6063,6 @@ namespace ScoutTestApplication
             this.NCBSpecFile.PerformLayout();
             this.PLCSpecFile.ResumeLayout(false);
             this.PLCSpecFile.PerformLayout();
-            this.Dir.ResumeLayout(false);
-            this.Dir.PerformLayout();
-            this.API.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.TabThincApi.ResumeLayout(false);
-            this.TabThincApi.PerformLayout();
-            this.TabOcjApi.ResumeLayout(false);
-            this.TabOcjApi.PerformLayout();
-            this.Files.ResumeLayout(false);
-            this.Files.PerformLayout();
-            this.Process.ResumeLayout(false);
-            this.Process.PerformLayout();
-            this.DMC.ResumeLayout(false);
-            this.DMC.PerformLayout();
-            this.DotNet.ResumeLayout(false);
-            this.DotNet.PerformLayout();
-            this.License.ResumeLayout(false);
-            this.License.PerformLayout();
-            this.Program.ResumeLayout(false);
-            this.Program.PerformLayout();
-            this.OS.ResumeLayout(false);
-            this.OS.PerformLayout();
-            this.Registry.ResumeLayout(false);
-            this.Registry.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_SubKeys)).EndInit();
-            this.ErrorHandling.ResumeLayout(false);
-            this.ErrorHandling.PerformLayout();
-            this.OptionsTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -6203,6 +6547,33 @@ namespace ScoutTestApplication
         private System.Windows.Forms.TextBox TextBox_OspGestureVersion;
         private System.Windows.Forms.Label label173;
         private System.Windows.Forms.TextBox TextBox_EnvUserPermissions;
+        private System.Windows.Forms.TabPage GAC;
+        private System.Windows.Forms.Button Button_Clear;
+        private System.Windows.Forms.TextBox TextBox_AssemblyName;
+        private System.Windows.Forms.Button Button_ExecuteFindInGAC;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Label_B;
+        private System.Windows.Forms.Label Label_A;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.TextBox TextBox_ScoutComBuildDate;
+        private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.TextBox TextBox_ScoutComAssemblyVersion;
+        private System.Windows.Forms.TabPage PIOD;
+        private System.Windows.Forms.Button Button_PiodFileExecute;
+        private System.Windows.Forms.Label label176;
+        private System.Windows.Forms.TextBox TextBox_PiodControl;
+        private System.Windows.Forms.Label label179;
+        private System.Windows.Forms.TextBox TextBox_PiodMachineType;
+        private System.Windows.Forms.Label label178;
+        private System.Windows.Forms.TextBox TextBox_PiodPlcSystem;
+        private System.Windows.Forms.Label label177;
+        private System.Windows.Forms.TextBox TextBox_PiodProjectNumber;
+        private System.Windows.Forms.TextBox TextBox_ValidPiodFileExists;
+        private System.Windows.Forms.Label label180;
+        private System.Windows.Forms.Button Button_PiodSelectFile;
+        private System.Windows.Forms.Label Label_PiodFileUserFile;
+        private System.Windows.Forms.RadioButton RadioButton_PiodFileUser;
+        private System.Windows.Forms.RadioButton RadioButton_PiodFileDefault;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿﻿Okuma Open API SDK v0.8
+﻿﻿Okuma Open API SDK v1.0
 ____________________________________________________________________
 Purpose:
 
@@ -7,31 +7,31 @@ ____________________________________________________________________
 Structure:
 
 ├───API		      /* Recommended API versions for development */
-│   ├───1.18.0
+│   ├───1.9.1
 │   │   ├───Bin
-│   │   └───Help
+|   |   ├───Help
+│   │   └───Test App  /* Refer to the test applications for detail*/
+│   ├───1.12.1	      /*  about how to use each function in the   */
+│   │   ├───Bin       /*  API. Okuma uses these projects to verify*/
+|   |   ├───Help      /*  the operation of the API before release.*/
+│   │   └───Test App
 │   ├───1.17.2
 │   │   ├───Bin
-│   │   └───Help
-│   ├───1.12.1
-│   │   ├───Bin
-│   │   └───Help
-│   └───1.9.1
+|   |   ├───Help
+│   │   └───Test App
+│   └───1.18.0
 │       ├───Bin
-│       └───Help
-├───Examples			  /* Example usage of the API	  */
-│   ├───CommonVariables_simple	  /* The example in this folder	  */
-│   │   ├───Compiled		  /* is repeated in several	  */
-│   │   ├───CS_Lathe		  /* programming languages,	  */
-│   │   ├───CS_MC		  /* targeting multiple platforms */
-│   │   ├───CS_WPF		  /* so the beginner can see a	  */
-│   │   ├───Shared		  /* minimal API reference work.  */
-│   │   ├───VB_Lathe
-│   │   └───VB_MC
-│   └───EveryFunction_complex	  /* The examples in this folder  */
-│       ├───ThincLathe		  /* are used in Okuma testing to */
-│       └───ThincMC		  /* verify every function works  */
-├───Documentation		  /* Guidelines and approval info */
+|       ├───Help
+│       └───Test App
+├───Documentation      /* Guidelines and approval info            */
+├───Examples           /* Example usage of the API                */
+│   ├───Compiled       /*   These examples, in different languages*/
+│   ├───CS_Lathe       /*   and targeting different machine types */
+│   ├───CS_MC          /*   each demonstrate how to access common */
+│   ├───CS_WPF         /*   variables.                            */
+│   ├───Python         /* API Tutorial for Python	          */
+│   ├───VB_Lathe
+│   └───VB_MC
 └───Scout
     ├───README.txt		  /* Information about SCOUT      */
     └───ScoutTestApplication
@@ -48,6 +48,7 @@ v0.5a	2015.06.05	> update to Okuma.Scout.dll v1.0.0.4
 v0.6a   2015.08.24	> SCOUT v1.0.1.0, Update Cross Reference
 v0.7    2015.12.15	> SCOUT v1.0.2.0, Add API 1.18.0 
 v0.8	2016.08.01	> SCOUT v1.0.4.0
+v1.0	2016.10.10	> SCOUT v2.2.0.0
 ____________________________________________________________________
 Contact:
 

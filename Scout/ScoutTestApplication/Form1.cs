@@ -73,6 +73,15 @@ namespace ScoutTestApplication
 
             // Options identification not implemented.
             tabControl1.TabPages.Remove(OptionsTab);
+
+            // Get Common Language Runtime Versions
+            DisplayClrVersions();
+
+            // Add more info to test app title bar
+            string moreInfo = "  v" + Okuma.Scout.ProgramInfo.ThisAssemblyVersion +
+                "  (Okuma.Scout.dll v" + Okuma.Scout.ProgramInfo.ScoutDllAssemblyVersion + ")";
+            this.Text += moreInfo;
+
         }
 
 
@@ -98,6 +107,16 @@ namespace ScoutTestApplication
             Okuma.Scout.Display.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
             switch (PPS)
             {
+                case Display.PhysicalPanelSize.PnP_NonOsp:
+                    {
+                        PanelTypeEnumToText = @"Plug and Play Non-OSP panel";
+                        break;
+                    }
+                case Display.PhysicalPanelSize.SixPointFiveInch:
+                    {
+                        PanelTypeEnumToText = @"6.5"" OSP panel";
+                        break;
+                    }
                 case Display.PhysicalPanelSize.FifteenInch:
                     {
                         PanelTypeEnumToText = @"15"" OSP panel";
@@ -254,13 +273,13 @@ namespace ScoutTestApplication
             }
 
             // THINC API Installed Libraries
-            this.TextBox_ThincLatheCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_Lathe.ToString();
-            this.TextBox_ThincLatheDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_Lathe.ToString();
-            this.TextBox_ThincMachiningCenterCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_MachiningCenter.ToString();
-            this.TextBox_ThincMachiningCenterDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_MachiningCenter.ToString();
-            this.TextBox_ThincGrinderCommandApi.Text = Okuma.Scout.ThincApi.CommandApiExistInGAC_Grinder.ToString();
-            this.TextBox_ThincGrinderDataApi.Text = Okuma.Scout.ThincApi.DataApiExistInGAC_Grinder.ToString();
-            this.TextBox_FlexNet.Text = Okuma.Scout.ThincApi.FlexNetExistInGAC.ToString();
+            this.TextBox_ThincLatheCommandApi.Text = Okuma.Scout.ThincApi.GACExist_CommandApi_Lathe.ToString();
+            this.TextBox_ThincLatheDataApi.Text = Okuma.Scout.ThincApi.GACExist_DataApi_Lathe.ToString();
+            this.TextBox_ThincMachiningCenterCommandApi.Text = Okuma.Scout.ThincApi.GACExist_CommandApi_MachiningCenter.ToString();
+            this.TextBox_ThincMachiningCenterDataApi.Text = Okuma.Scout.ThincApi.GACExist_DataApi_MachiningCenter.ToString();
+            this.TextBox_ThincGrinderCommandApi.Text = Okuma.Scout.ThincApi.GACExist_CommandApi_Grinder.ToString();
+            this.TextBox_ThincGrinderDataApi.Text = Okuma.Scout.ThincApi.GACExist_DataApi_Grinder.ToString();
+            this.TextBox_FlexNet.Text = Okuma.Scout.ThincApi.GACExist_FlexNet.ToString();
 
             // THINC API Installed Library Versions
             this.TextBox_ThincLatheCommandApiVer.Text = Okuma.Scout.ThincApi.CommandApiVersionInGAC_Lathe;
@@ -315,6 +334,11 @@ namespace ScoutTestApplication
                         {
                             this.TextBox_ApiAvailable.Text = status.ToString();
                             break;
+                        }
+                    case Enums.ApiStatus.UnsupportedAction:
+                        {
+                            this.TextBox_ApiAvailable.Text = "TAPI v1.19 Unsupported";
+                            break;                            
                         }
                 }
             }
@@ -515,6 +539,94 @@ namespace ScoutTestApplication
             this.TextBox_OwmRun.Text = Okuma.Scout.OspProcessInfo.WidgetManagerRunning.ToString();
             this.TextBox_SoftSwitchRun.Text = Okuma.Scout.OspProcessInfo.SoftSwitchRunning.ToString();
         }
+        #endregion
+
+        #region PIOD
+        private void Button_PiodFileExecute_Click(object sender, EventArgs e)
+        {
+            this.TextBox_ValidPiodFileExists.Text = Okuma.Scout.PIOD.MachinePiodFileExists.ToString();
+
+            this.TextBox_PiodControl.Text = Okuma.Scout.PIOD.Control;
+            this.TextBox_PiodMachineType.Text = Okuma.Scout.PIOD.MachineType;
+            this.TextBox_PiodPlcSystem.Text = Okuma.Scout.PIOD.PlcSystem;
+            this.TextBox_PiodProjectNumber.Text = Okuma.Scout.PIOD.ProjectNumber;
+        }
+
+        private void RadioButton_PiodFile_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton_PiodFile();
+        }
+
+        /// <summary>
+        /// Function called when radio button checked changed event is triggered.
+        /// Sets user defined file path and "UseUserDefinedFilePath" properties depending
+        /// on the checked state of the radio buttons. </summary>
+        private void RadioButton_PiodFile()
+        {
+            if ((bool)uiLoaded)
+            {
+                if (RadioButton_PiodFileUser.Checked == true)
+                {
+                    Okuma.Scout.PIOD.UseUserDefinedFile = true;
+                    if (string.IsNullOrEmpty(Okuma.Scout.PIOD.UserDefinedFilePath))
+                    {
+                        this.ChoosePiodFile();
+                    }
+                }
+                else if (RadioButton_PiodFileDefault.Checked == true)
+                {
+                    Okuma.Scout.PIOD.UseUserDefinedFile = false;
+                }
+            }
+        }
+
+        private void Button_PiodSelectFile_Click(object sender, EventArgs e)
+        {
+            if (RadioButton_PiodFileDefault.Checked == true)
+            {
+                RadioButton_PiodFileUser.Checked = true;
+            }
+            else { this.ChoosePiodFile(); }
+        }
+
+        /// <summary>
+        /// Generate open file dialog for selection of user defined spec file
+        /// </summary>
+        private void ChoosePiodFile()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select PIOD File";
+            ofd.InitialDirectory = @"C:\";
+            ofd.CustomPlaces.Add(@"C:\OSP-P\CNS-DAT\ENG\");
+            ofd.CustomPlaces.Add(@"C:\OSP-P\CNS-DAT\JPN\");
+            ofd.Filter = "PIOD File (*.CNS)|*.CNS";
+            ofd.FilterIndex = 2;
+            ofd.RestoreDirectory = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                Okuma.Scout.PIOD.UserDefinedFilePath = ofd.FileName;
+
+                if (!Okuma.Scout.PIOD.PiodFileIsValid)
+                {
+                    RadioButton_PiodFileDefault.Checked = true;
+                    MessageBox.Show(
+                        "The selected PIOD file is not valid." + Environment.NewLine +
+                        "Please choose another file.",
+                        "Error Reading File",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error,
+                        MessageBoxDefaultButton.Button1);
+
+                    Okuma.Scout.PIOD.UseUserDefinedFile = false;
+                    Label_PiodFileUserFile.Text = string.Empty;
+                    
+                    Okuma.Scout.PIOD.UserDefinedFilePath = string.Empty;
+                }
+                else { Label_PiodFileUserFile.Text = ofd.FileName; }
+            }
+            else { RadioButton_PiodFileDefault.Checked = true; }
+        }
+
         #endregion
 
         #region Data Management Card
@@ -834,21 +946,22 @@ namespace ScoutTestApplication
         private void Button_ProgramInfo_Click(object sender, EventArgs e)
         {
             this.TextBox_ErrorMessage.Text = Okuma.Scout.ProgramInfo.ErrorMessage;
+
             this.TextBox_AssemblyGuid.Text = Okuma.Scout.ProgramInfo.AssemblyGuid;
             this.TextBox_AssemblyTitle.Text = Okuma.Scout.ProgramInfo.AssemblyTitle;
             this.TextBox_AssemblyCopyright.Text = Okuma.Scout.ProgramInfo.AssemblyCopyright;
             this.TextBox_AssemblyCompany.Text = Okuma.Scout.ProgramInfo.AssemblyCompany;
             this.TextBox_AssemblyDescription.Text = Okuma.Scout.ProgramInfo.AssemblyDescription;
 
-            // This line vomits exception under XP32...
+            this.TextBox_TestAppVersion.Text = Okuma.Scout.ProgramInfo.ThisAssemblyVersion;
+            this.TextBox_TestAppBuildDate.Text = Okuma.Scout.ProgramInfo.ThisAssemblyBuildDate.ToString();        
+    
             this.TextBox_ScoutDllAssemblyVersion.Text = Okuma.Scout.ProgramInfo.ScoutDllAssemblyVersion;
-
             this.TextBox_ScoutDllBuildDate.Text = Okuma.Scout.ProgramInfo.ScoutDllBuildDate.ToString();
 
-            this.TextBox_TestAppVersion.Text = Okuma.Scout.ProgramInfo.ThisAssemblyVersion;
-            this.TextBox_TestAppBuildDate.Text = Okuma.Scout.ProgramInfo.ThisAssemblyBuildDate.ToString();
+            this.TextBox_ScoutComAssemblyVersion.Text = Okuma.Scout.ProgramInfo.ScoutComDllAssemblyVersion;
+            this.TextBox_ScoutComBuildDate.Text = Okuma.Scout.ProgramInfo.ScoutComBuildDate.ToString();
             
-
             // Slightly misleading, but this function is found in the Operating System class.
             // It reports the "bitness" of the currently executing program, hence it is under the Program tab.
             this.TextBox_ProgramBits.Text = Okuma.Scout.OS.ProgramBits.ToString();
@@ -1112,6 +1225,62 @@ namespace ScoutTestApplication
         }
 
         #endregion
+
+        #region GAC (Global Assembly Cache)
+
+        public void DisplayClrVersions()
+        {
+            Label_A.Text = String.Format("CLR version from {0}: {1}", 
+                System.IO.Path.GetFileName(System.Reflection.Assembly.GetEntryAssembly().Location),
+                Environment.Version);
+
+            // If a call to AccessGAC fails initially, call Init().
+            // This might not always be necessary.
+            Okuma.Scout.COM_InterfaceImplementation.Init();
+
+            string b = Okuma.Scout.AccessGAC.GAC_CLR_Version();
+            if (b != null) { Label_B.Text = string.Format("CLR version from Okuma.Scout.Com : {0}", b); }
+        }
+
+        private void Button_ExecuteFindInGAC_Click(object sender, EventArgs e)
+        {
+            List<System.Reflection.AssemblyName> AssemblyNames =
+                Okuma.Scout.AccessGAC.QueryGAC(TextBox_AssemblyName.Text);
+
+            if (AssemblyNames.Count > 0)
+            {
+                foreach (System.Reflection.AssemblyName a in AssemblyNames)
+                {
+                    if (a != null)
+                    {
+                        // Note: Culture seems to always be String.Empty
+                        //       Flags seem to always be 'None'?
+                        textBox1.Text +=
+                            a.FullName + "  " +
+                            a.ProcessorArchitecture + "  " +
+                            Environment.NewLine +
+                            a.CodeBase +
+                            Environment.NewLine + Environment.NewLine;
+                    }
+                }
+            }
+            else
+            {
+                textBox1.Text += "Assembly Alias \"" + TextBox_AssemblyName.Text + "\" not found in GAC." + Environment.NewLine;
+            }
+            textBox1.Text += "==================================================" + Environment.NewLine;
+        }
+
+        private void Button_Clear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+        }
+
+        #endregion
+
+
+
+
 
     }
 }

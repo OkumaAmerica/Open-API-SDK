@@ -1,14 +1,33 @@
 ﻿# SCOUT CHANGE LOG README #
 
-* Last Compile date: 8/1/2016
-* Okuma.Scout.dll   - Version 1.0.4.0
-* ScoutTestApplication.exe  - Version 1.0.4.1
+* Last Compile date: 10/10/2016
+* SCOUT Application      - Version 2.10.0.0
+* SCOUT Test Application - Version 2.2.0.0
+* Okuma.Scout.dll        - Version 2.2.0.0
+* Okuma.Scout.Com.dll    - Version 1.0.0.0
+
 
 ##[ NOTES ]##
+> #### ► About COM library: ####
+>
+>  * If the following classes accessed, Okuma.Scout.Com.dll must be deployed with Okuma.Scout.dll
+>    1. COM_InterfaceImplementation
+>    2. LicenseChecker
+>    3. AccessGAC
+>
+>  * Okuma.Scout.Com.dll is accessed by the main SCOUT library by means of [Registration-Free COM Interop](https://msdn.microsoft.com/en-us/library/fh1h056h(v=vs.110).aspx), which requires the use of manifest files.
+>  * Any executable that will use the COM library must have a manifest file that declares Okuma.Scout.Com as a dependant assembly. Please refer to the sample application. 
+>  * While developing an application which uses SCOUT, you ####MUST#### disable the Visual Studio Hosting Process! Failure to do so will result in File Not Found exceptions as a result of the hosting process executable not matching the manifest file for the application.
+
+
+► Only .NET versions are checked in command-line 'native' C++ 
+     code (with no .NET requirement). The bulk of SCOUT is 
+     contained in Scout.exe which is unpacked and ran 
+     if .NET 2 or later is found.
+
 ► Due to the differences in Data Management Cards on older OSP controls,
      the output from them may contain little or poorly formatted data.
      This does not affect compatibility results.
-
 
 
 ### Contact Information ###
@@ -30,7 +49,57 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 #[ CHANGE LOG ]#
-►　[ 2016-8-1 / Okuma Open API SDK v0.8  / SS ]
+►　[ 2016-10-10 / Release 2.10.0.0  / SS ]
+
+  * [本■] Added support for the following apps:
+    * MTConnect Agent & Adapter v2.2.5
+    * TrakHound Community v1.2.15
+    * GO Macro Interface v1.2.7
+    * GO Panel Mode v1.2.2
+    * Gosiger Program Scheduler v0.1.3
+    * Kitagawa Digital Grip Force Meter v1.0
+    * Gosiger IFTTT
+    * (Removed) Machining Cloud
+    * (Removed) MTConnect Agent & Adapter versions 2.1 and 2.2.2
+
+  * [全♦] Preliminary support for P300A Type Controls
+
+  * [全■] Report Grinder API file information 
+
+  * [全■] Report P300A Touch driver information
+
+  * [本■] Report User Permissions (User, Administrator, Guest, etc.)
+
+  * [本■] Fixed compatibility reporting scenario where THINC API is installed, apps report that they are compatible, and yet CAPI Spec is not enabled
+
+  * [本■] Changed compatibility note for Gosiger View Control (compatibility restriction is related to Panel Size, not control type)
+
+  * [本■] Fixed a bug that prevented THINC Startup Service version from being found compatible with required versions
+
+  * [中■] *NEW* Okuma.Scout.Com.dll - COM library that allows SCOUT to access .NET CLR4 to support TAPI 1.19(dev)
+
+  * [中■] Re-wrote the Machine Type detection routine for improved accuracy under various conditions
+
+  * [中■] Re-wrote the Control Type detection routine for improved accuracy under various conditions
+
+  * [中■] ApiVersionCrossRef.xml updated to detect CAPI v001A(Grinder), CAPI v003S(Lathe), and TAPI v1.19.0.0 (SCOUT Library Version up to v2.2.0.0)
+  
+  * [中■] Fixed an issue with registry key & value queries on 64-bit systems which limited the results returned 
+
+  * [中■] Fixed an issue that prevented P100-II from being correctly Identified
+
+  * [中■] Added HRESULT coercing to Windows string messages for registry access errors
+
+  * [中♦] Update Licensing and GAC access for new TAPI 1.19.0.0 .NET4 libraries
+
+  * [中◊] Instantiate and call methods (machine name, common variable) in TAPI 1.19 (.NET4) reflectively - Currently not possible, will develop.
+
+  * [中■] Fixed a bug where the OSP Panel is not identified correctly on P100 models
+
+
+
+
+►　[ 2016-8-1 / Okuma Open API SDK v0.8 (SCOUT Library v1.0.4.0)  / SS ]
 
   * [中♦] Preliminary support for P300A
 
@@ -352,6 +421,15 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
   * [本‡] Check for updates / report to Okuma over internet
 
+
+
+### Notes ###
+
+The test application includes a debug version and release version of the Scout library  
+To create a project using either the debug or release version depending on the compile setting, first include both versions using the same structure as the test application.  
+Add the debug version as a resource to your project.  
+Then modify the project file using a text editor and locate the Reference to Okuma.Scout change the <HintPath> by replacing the folder name "\Debug\" with "\$(ConfigurationName)\". 
+Refer to the test application project file 'ScoutTestApplication.csproj' to see how this is done.
 
 
 ### Notice ###
