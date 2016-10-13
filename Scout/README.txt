@@ -1,9 +1,9 @@
 ﻿# SCOUT CHANGE LOG README #
 
-* Last Compile date: 10/10/2016
-* SCOUT Application      - Version 2.10.0.0
+* Last Compile date: 10/13/2016
+* SCOUT Application      - Version 2.10.1.0
 * SCOUT Test Application - Version 2.2.0.0
-* Okuma.Scout.dll        - Version 2.2.0.0
+* Okuma.Scout.dll        - Version 2.2.1.0
 * Okuma.Scout.Com.dll    - Version 1.0.0.0
 
 
@@ -18,7 +18,6 @@
 >  * Okuma.Scout.Com.dll is accessed by the main SCOUT library by means of [Registration-Free COM Interop](https://msdn.microsoft.com/en-us/library/fh1h056h(v=vs.110).aspx), which requires the use of manifest files.
 >  * Any executable that will use the COM library must have a manifest file that declares Okuma.Scout.Com as a dependant assembly. Please refer to the sample application. 
 >  * While developing an application which uses SCOUT, you ####MUST#### disable the Visual Studio Hosting Process! Failure to do so will result in File Not Found exceptions as a result of the hosting process executable not matching the manifest file for the application.
-
 
 ► Only .NET versions are checked in command-line 'native' C++ 
      code (with no .NET requirement). The bulk of SCOUT is 
@@ -49,6 +48,14 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 #[ CHANGE LOG ]#
+►　[ 2016-10-13 / Release 2.10.1.0 (SCOUT Lib 2.2.1)  / SS ]
+  
+  * [中■] Fixed a bug where exceptions are thrown if the OSP-P folder exists, but OSP-P\CNS-DAT\ does not.
+
+  * [中■] Fixed a bug where API type reports API version Cross Reference is missing if THINC API files are installed to the GAC, but the machine type is PC. It now reports unsupported machine type.
+
+
+
 ►　[ 2016-10-10 / Release 2.10.0.0  / SS ]
 
   * [本■] Added support for the following apps:
@@ -61,6 +68,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
     * Gosiger IFTTT
     * (Removed) Machining Cloud
     * (Removed) MTConnect Agent & Adapter versions 2.1 and 2.2.2
+
 
   * [全♦] Preliminary support for P300A Type Controls
 
@@ -95,7 +103,6 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
   * [中◊] Instantiate and call methods (machine name, common variable) in TAPI 1.19 (.NET4) reflectively - Currently not possible, will develop.
 
   * [中■] Fixed a bug where the OSP Panel is not identified correctly on P100 models
-
 
 
 
