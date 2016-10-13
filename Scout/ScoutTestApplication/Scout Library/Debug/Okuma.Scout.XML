@@ -1761,13 +1761,6 @@
             </summary>
             <returns>System.Security.Principal.WindowsBuiltInRole Highest Privileged Role </returns>
         </member>
-        <member name="M:Okuma.Scout.OS.p_CheckInternetAccess">
-            <remarks>
-            Previous version of this method used WebClient.
-            Not only was this slow AF, but caused the system to hang when run under a User (non-administrator account)
-            Now it is zippy and works great even under a "User" account.
-            </remarks>
-        </member>
         <member name="P:Okuma.Scout.OS.ErrorMessage">
             <summary>
             This is the string value returned if an error is encountered during the file version retrieval process.
