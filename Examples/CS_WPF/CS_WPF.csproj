@@ -53,19 +53,37 @@
     <LangVersion>4</LangVersion>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>4</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Okuma.CLCMDAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CLCMDAPI.dll</HintPath>
+      <HintPath>..\Compiled\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CLDATAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CLDATAPI.dll</HintPath>
+      <HintPath>..\Compiled\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMCMDAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CMCMDAPI.dll</HintPath>
+      <HintPath>..\Compiled\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMDATAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CMDATAPI.dll</HintPath>
+      <HintPath>..\Compiled\Okuma.CMDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -142,6 +160,28 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Compiled\Okuma.Apilog.dll">
+      <Link>Okuma.Apilog.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Compiled\Okuma.CLCMDAPI.dll">
+      <Link>Okuma.CLCMDAPI.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Compiled\Okuma.CLDATAPI.dll">
+      <Link>Okuma.CLDATAPI.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Compiled\Okuma.CMCMDAPI.dll">
+      <Link>Okuma.CMCMDAPI.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Compiled\Okuma.CMDATAPI.dll">
+      <Link>Okuma.CMDATAPI.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

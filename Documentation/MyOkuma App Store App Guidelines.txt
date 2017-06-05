@@ -1,0 +1,58 @@
+Okuma Certified Application Check-list Items
+This check list applies applications appearing on MyOkuma.com
+[FOR REFERENCE ONLY] 
+Updated June 2017
+
+All Apps   Certified Apps	Item
+
+   X		X		Must be an "App"; no catalogs or advertisements, with the exception of apps requiring hardware.
+
+   X		X		"For profit" applications must include a demo or trial mode.
+
+   X		X		App must have a unique name (at least unique to App Store)
+
+   X		X		If Okuma's name or trademarks are used, they must follow the usage guidelines (http://www.okuma.com/usage-guide) (exception: application icons due to small dimensions)
+
+   X		X		Tester encounters no exceptions while using the application. “Using the application” includes confirming operation of the stated primary function or purpose of the application but does not mean extensive testing. Quality assurance is the developer’s responsibility.
+
+		X		Some kind of documentation is included. (Installation Instructions, User's Manual, Change Log, Read Me, Quick Start Guide, etc.)
+
+		X		Application is NOT built with .NET 3 or 3.5 
+
+		X		Dependent .NET Framework install is included and runs automatically before app install if necessary.
+
+		X		Start-menu entries are created during install in the following location: “Start | [Publisher] | [Application] | [Run Short-cut & Documentation Short-cut]” (exception: there is no user GUI)
+
+		X		Application’s default install location is D:\Program Files\[Publisher]\[Application] (exception: Install target does not have a D drive)
+
+		X		Installer DOES NOT put anything in the startup folder or the “Run” section of the registry. If auto-run is required, application registers with the Okuma Startup Service. (TSS on older systems)
+
+		X		Installs without error. (Detects previous versions and either updates, replaces or installs alongside.) Uninstalls without error via Windows built-in “add/remove programs” dialog.
+
+		X		Developer / OEM name can be easily determined, usually in an ‘about’ page.
+
+		X		Version can be easily determined, usually in an ‘about’ page.
+
+		X		Application is visible in the task-bar while its GUI is open. (is “alt-tab-able”)
+
+		X		If a system tray icon is used, ANY click or touch will cause a menu to be shown OR the main GUI to be displayed / brought to front. 
+
+		X		Application settings and data can be backed up by user
+
+		X		Location of application settings file or user backup process is documented
+
+		X		Application exits without errors when the control is powered off.
+
+		X		Developer has confirmed that the application does NOT poll the API faster than 100ms intervals
+
+		X		Developer has confirmed that daily disk writes do NOT exceed 500MB (Different than total storage used)
+
+		X		CPU usage does NOT remain constantly above 10%. (Applications can intermittently consume greater than 10% CPU but usage should not remain high for extended periods.)
+
+		X		Application implements logging (at minimum first run and any errors)
+
+		X		Application log file location or access method is documented
+
+		X		Application has been monitored (using process explorer) to check for memory leaks (private bytes) and it does not continuously accumulate file handles.
+
+		X		(If using THINC API), The application includes copies of the API DLLs of the version it was compiled to use (CLDATAPI.DLL, CMDATAPI.DLL, CLCMDAPI.DLL, CMCMDAPI.DLL, etc.)

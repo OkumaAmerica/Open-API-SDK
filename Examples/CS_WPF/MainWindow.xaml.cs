@@ -1,35 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
+﻿
 /* ***************************************************************************\
  *                                                                            *
  *                            IMPORTANT NOTE                                  * 
  *                                                                            *
  *   Any application using the THINC API created with .NET 4 and up           *
- *  REQUIRES an App.Config file with the following lines:                     *
+ *   REQUIRES an App.Config file with the following lines:                    *
  *                                                                            *
  *    <startup useLegacyV2RuntimeActivationPolicy="true">                     *
  *    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />    *
  *    </startup>                                                              *
  *                                                                            *
- *  This is due to a backwards compatability issue due to the fact            *
- *  that current (as of March 2014) versions of the API are created           *
- *  using .NET 1                                                              *
+ *  This is due to application dependencies (the THINC API) being built       *
+ *  with .NET Framework 1.1 which requires the legacy V2 Runtime.             *
+ *  This situation will persist until THINC API version 1.20, when            *
+ *  a move to .NET 4.0 is planned to be fully implemented.                    *
  *                                                                            *
  \*****************************************************************************/
 
 namespace CS_WPF
 {
+    using System;
+    using System.Windows;
+
     /// <summary> Interaction logic for MainWindow.xaml </summary>
     public partial class MainWindow : Window
     {
@@ -71,7 +63,7 @@ namespace CS_WPF
                     DoError(new Exception("Error initializing API: If API is installed, there should be a round" +
                      " green icon in the task-bar that tells API version when clicked. If version is less than" +
                      " 1.9.1, contact your distributor to request a free API upgrade.", ex));
-                    Environment.Exit(0);
+                    //Environment.Exit(0);
                 }
             }
 
@@ -96,7 +88,7 @@ namespace CS_WPF
                     DoError(new Exception("Error initializing API: If API is installed, there should be a round" +
                      " green icon in the task-bar that tells API version when clicked. If version is less than" +
                      " 1.9.1, contact your distributor to request a free API upgrade.", ex));
-                    Environment.Exit(0);
+                    //Environment.Exit(0);
                 }
             }
         }
@@ -106,7 +98,7 @@ namespace CS_WPF
             if (btn_ReadCV.IsEnabled == true)
             {
                 // When your application exits (finalize, onClose(), etc) you must
-                // release the connections to the thinc api using the following code:
+                // release the connections to the THINC API using the following code:
                 objMMachine.Close();
             }
         }
@@ -132,10 +124,7 @@ namespace CS_WPF
             }
             catch(Exception ex)
             {
-                DoError(new Exception("Error initializing API: If API is installed, there should be a round" +
-                 " green icon in the task-bar that tells API version when clicked. If version is less than" +
-                 " 1.9.1, contact your distributor to request a free API upgrade.", ex));
-                Environment.Exit(0);
+                DoError(new Exception(String.Format("Error Reading Common Variable {0}.", i), ex));
             }
 
             txtBlockReadResult.Text = value.ToString();
@@ -163,10 +152,7 @@ namespace CS_WPF
                 }
                 catch (Exception ex)
                 {
-                    DoError(new Exception("Error initializing API: If API is installed, there should be a round" +
-                     " green icon in the task-bar that tells API version when clicked. If version is less than" +
-                     " 1.9.1, contact your distributor to request a free API upgrade.", ex));
-                    Environment.Exit(0);
+                    DoError(new Exception(String.Format("Error Reading Common Variable {0}.", i), ex));
                 }
             }
             else { MessageBox.Show("Input Error! " + Environment.NewLine + "Blank or non-numerical input detected."); }
