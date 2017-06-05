@@ -1,4 +1,4 @@
-﻿﻿Okuma Open API SDK v1.0.1
+﻿﻿Okuma Open API SDK v1.2
 ____________________________________________________________________
 Purpose:
 
@@ -9,19 +9,19 @@ Structure:
 ├───API		      /* Recommended API versions for development */
 │   ├───1.9.1
 │   │   ├───Bin
-|   |   ├───Help
+│   │   ├───Help
 │   │   └───Test App  /* Refer to the test applications for detail*/
 │   ├───1.12.1	      /*  about how to use each function in the   */
 │   │   ├───Bin       /*  API. Okuma uses these projects to verify*/
-|   |   ├───Help      /*  the operation of the API before release.*/
+│   │   ├───Help      /*  the operation of the API before release.*/
 │   │   └───Test App
 │   ├───1.17.2
 │   │   ├───Bin
-|   |   ├───Help
+│   │   ├───Help
 │   │   └───Test App
 │   └───1.18.0
 │       ├───Bin
-|       ├───Help
+│       ├───Help
 │       └───Test App
 ├───Documentation      /* Guidelines and approval info            */
 ├───Examples           /* Example usage of the API                */
@@ -33,10 +33,18 @@ Structure:
 │   ├───VB_Lathe
 │   └───VB_MC
 └───Scout
-    ├───README.txt		  /* Information about SCOUT      */
-    └───ScoutTestApplication
-        ├───ScoutTestApplication.csproj    /*    Project File	  */
-        └───Scout Library		   /*    SCOUT Dlls	  */
+    ├───README.txt		     /* Information about SCOUT   */
+    ├───Okuma.Scout.TestApp.net20 
+    │   ├───Okuma.Scout.TestApp.net20.csproj    /*  Project File  */
+    │   └───Bin
+    │	    └─Release
+    │	      └─Okuma.Scout.dll	    /* .NET 2.0 SCOUT Library	  */
+    └───Okuma.Scout.TestApp.net40 
+        ├───Okuma.Scout.TestApp.net40.csproj    /*  Project File  */
+        └───Bin
+     	    └─Release
+     	      └─Okuma.Scout.dll	    /* .NET 4.0 SCOUT Library	  */
+
 ____________________________________________________________________
 Revision History:
 
@@ -50,6 +58,7 @@ v0.7    2015.12.15	> SCOUT v1.0.2.0, Add API 1.18.0
 v0.8	2016.08.01	> SCOUT v1.0.4.0
 v1.0	2016.10.10	> SCOUT v2.2.0.0
 v1.0.1  2016.10.13	> SCOUT v2.2.1.0
+v1.2	2017.06.05	> SCOUT v2.3.0.0 & 4.0.0.0
 ____________________________________________________________________
 Contact:
 

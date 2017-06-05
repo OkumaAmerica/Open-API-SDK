@@ -1,39 +1,32 @@
 ﻿# SCOUT CHANGE LOG README #
 
-* Last Compile date: 10/13/2016
-* SCOUT Application      - Version 2.10.1.0
-* SCOUT Test Application - Version 2.2.0.0
-* Okuma.Scout.dll        - Version 2.2.1.0
-* Okuma.Scout.Com.dll    - Version 1.0.0.0
+* Last Compile date: 06/05/2017
+  * Okuma.Scout.dll   (.NET4.0)                 - Version 4.0.0.0
+  * Okuma.Scout.TestApp.net40.exe				- Version 4.0.0.0
+  * Okuma.Scout.dll   (.NET2.0)                 - Version 2.3.0.0
+  * Okuma.Scout.TestApp.net20.exe				- Version 2.3.0.0
+
 
 
 ##[ NOTES ]##
-> #### ► About COM library: ####
->
->  * If the following classes accessed, Okuma.Scout.Com.dll must be deployed with Okuma.Scout.dll
->    1. COM_InterfaceImplementation
->    2. LicenseChecker
->    3. AccessGAC
->
->  * Okuma.Scout.Com.dll is accessed by the main SCOUT library by means of [Registration-Free COM Interop](https://msdn.microsoft.com/en-us/library/fh1h056h(v=vs.110).aspx), which requires the use of manifest files.
->  * Any executable that will use the COM library must have a manifest file that declares Okuma.Scout.Com as a dependant assembly. Please refer to the sample application. 
->  * While developing an application which uses SCOUT, you ####MUST#### disable the Visual Studio Hosting Process! Failure to do so will result in File Not Found exceptions as a result of the hosting process executable not matching the manifest file for the application.
 
-► Only .NET versions are checked in command-line 'native' C++ 
-     code (with no .NET requirement). The bulk of SCOUT is 
-     contained in Scout.exe which is unpacked and ran 
-     if .NET 2 or later is found.
+► Okuma.Scout.dll (.NET4.0) is fully backwards compatible with the .NET 2.0 version.
+	The .NET 2 version however, will only support up to THINC API version 1.19 on Lathe and MC.
+	THINC API versions for Grinder (1.19 and later) are UNSUPPORTED by Okuma.Scout.dll (.NET2.0).
+	YOU SHOULD ONLY USE THE .NET 2 VERSION IN CASES WHERE .NET 4 IS UNAVAILABLE ON THE TARGET MACHINE. 
 
 ► Due to the differences in Data Management Cards on older OSP controls,
-     the output from them may contain little or poorly formatted data.
-     This does not affect compatibility results.
+	the output from them may contain little or poorly formatted data.
+	This does not affect compatibility results.
 
 
 ### Contact Information ###
 
-* For general programming questions related to Okuma products, we recommend asking your question on stackoverflow.com with the tag "okuma".  
- Refer to the following link to view all Okuma questions:  
-http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50  
+* For general programming questions related to Okuma products, 
+	we recommend asking your question on stackoverflow.com with the tag "okuma".  
+	Refer to the following link to view all Okuma questions:  
+	http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50  
+
 * For detailed, specific, or bug related questions, please email your question to API@Okuma.com
 
 
@@ -48,6 +41,117 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 #[ CHANGE LOG ]#
+►　[ 2017-06-05 / Okuma Open API SDK v1.2 / SS  ]
+
+  * [本■] Resolves Issue #30; Implemented keyboard input handling for compatibility reporter.
+  
+  * [中■] Added PC NC-Master directory and application detection to OspFileInfo class.
+  
+  * [本■] Improved level of detail and accuracy of Machine Type identification.
+
+  * [中■] Resolves Issue #22; Now collects all applicable lines from DMC data fields in the Machine Data section.
+
+  * [本■] Resolves Issue #31; Buttons in SCOUT indicate keyboard focus and support flashing animation.
+
+  * [中■] Updated ApiVersionCrossRef.xml to Version 1.0.5.0 (add support for TAPI 1.20 and CAPI Q, R, S, and T)
+  
+  * [中■] Add Function to get NC Software Package Version to Platform class.
+
+  * [中■] Add Get Bit & Get Byte to SpecCode NC, NCB, and PLC classes and matching byte & bit display to Test App.
+
+  * [中■] Fixed a bug where the Select Screen Mode is listed as Unknown on 15" P300A controls instead of NA.
+
+  * [中■] Reopened Issue#1 due to complicating factors (refer to Platform Determination.pptx). 
+  Resolved the issue by creating 'SpecCode.OspRectrictions' property which returns type Enums.OSP_Restrictions.
+
+  * [本■] Resolves Issue #16 (REMOVE delcam  PMViewer & Multi-channel viewer)
+
+  * [中■] Test Apps Get Bit & Get Byte updated when combo boxes selected value changes
+
+    
+  
+►　[ 2017-05-01 / SS  ]
+
+  * [中■] Added "NotRSpecEnabled" property to SpecCode class.
+
+  * [本■] Resolves Issue #1; SCOUT now detects R-spec machines and notes the result on the main screen and log. 
+
+  * [中■] Added "OspSuiteVersion" property to Platform class.
+
+  * [本■] Resolves Issue #3; SCOUT now detects OSP suite version. 
+
+  * [本■] Resolves Issue #25; P300A touch input correctly activates display of compatibility details.
+
+  * [本■] Resolves Issue #26; Prompt to change time zone displayed once.
+
+  * [本■] Resolves Issue #28; File format exception on XP systems no longer occurs.
+
+  * [本■] Resolves Issue #27; Touch scroll through compatibility results.
+
+
+
+►　[ 2017-04-25 / SS  ]
+
+  * [全♦] Primary development of .NET 4.0 SCOUT Library, Library Test App, and SCOUT App complete.
+
+  * [中■] Registry class of SCOUT libraries improved for increased reliability
+  
+  * [本■] Architecture of SCOUT App enhanced to be more modular and follow MVVM design principals where possible
+  
+  * [本■] SCOUT now provides better indication of progress during CPU load sampling and Process examination.
+  
+  * [本■] App Files Hash verification class improved. Prepped for transition to SHA1.
+  
+  * [全■] Resolves Issue #24; Check existence and version of PIODLIB.dll
+
+  * [全■] Resolves Issue #23; SCOUT now will always attempt to output the versions of THINC API that are compatible.
+
+
+
+►　[ 2017-03-17 / SS  ]
+
+  * [本■] net4.0 Scout Application development beginning
+
+
+
+►　[ 2017-03-10 / SS  ]
+
+  * [本■] Reorganized Solution structure in preparation for two Scout Application projects (.NET2 and .NET4)
+
+  * [中■] BREAKING CHANGES: The SCOUT library version (2.2.1) used a separate COM library for reading the GAC in a .NET 4.0 environment. 
+  Okuma.Scout.Com.dll has been eliminated and now there are two separate versions of the Okuma.Scout library, One for .NET4 and one for .NET2.
+	* GAC_CLR_Version() removed from AccessGAC class.
+	* COM_InterfaceImplementation removed from Okuma.Scout
+
+  * [中■] Created a test application in .NET 4.0 (using WPF) specifically for the .NET 4.0 version of Okuma.Scout.dll
+
+  * [中■] Improvements to the Data Management Card reading class
+
+  * [中■] Updated .NET class to include detection of new versions of .NET (4.6, 4.6.1, and 4.6.2)
+
+  * [中■] BREAKING CHANGES: The following functions / properties now return type Nullable<DateTime> and return null on error instead of an error string:
+    * (ProgramInfo) getAssemblyBuildDate()
+	* (ProgramInfo) ThisAssemblyBuildDate
+	* (ProgramInfo) ScoutDllBuildDate
+	* (LicenseChecker) ConvertExpireDate() 
+	
+  * [中■] BREAKING CHANGES: The following properties now return type List<string> instead of string:
+    * DMC.NcControlMsg
+	* DMC.NcAlarmHelp
+	* DMC.NcManual
+
+  * [中■] BREAKING CHANGES: The following properties now return type Nullable<bool> and return null on error instead of an error string:
+    * SpecCode.Match_PLC1_FirstHalf
+	* SpecCode.Match_PLC1_SecondHalf
+	* SpecCode.Match_PLC2_FirstHalf
+	* SpecCode.Match_PLC2_SecondHalf
+	* SpecCode.Match_NC1_FirstHalf
+	* SpecCode.Match_NC1_SecondHalf
+	* SpecCode.Match_NCB1_FirstHalf
+	* SpecCode.Match_NCB1_SecondHalf
+
+
+
 ►　[ 2016-10-13 / Release 2.10.1.0 (SCOUT Lib 2.2.1)  / SS ]
   
   * [中■] Fixed a bug where exceptions are thrown if the OSP-P folder exists, but OSP-P\CNS-DAT\ does not.
@@ -68,7 +172,6 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
     * Gosiger IFTTT
     * (Removed) Machining Cloud
     * (Removed) MTConnect Agent & Adapter versions 2.1 and 2.2.2
-
 
   * [全♦] Preliminary support for P300A Type Controls
 
@@ -134,7 +237,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-►　[ 2016-2-15 / develop / SS ]
+►　[ 2016-2-15 / SS ]
 
   * [中■] Updated Okuma.Scout.dll v1.0.3.0
 
@@ -143,7 +246,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2016-2-15 / develop / SS ]
+► [ 2016-2-15 / SS ]
 
   * [本■] Removed escape character from machine name from spec code file return value
 
@@ -200,7 +303,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-8-24 / develop / SS ]
+► [ 2015-8-24 / SS ]
 
   * [中■] Bug Fix - THINC API 1.17.0.0 now identified correctly
 
@@ -208,7 +311,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-7-27 / develop / SS ]
+► [ 2015-7-27 / SS ]
 
   * [中■] Display class now includes "PanelType" property and matching PhysicalPanelSize enumeration
 
@@ -216,7 +319,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-6-16 / develop / SS ]
+► [ 2015-6-16 / SS ]
 
   * [中■] Bug Fix - Fixed a bug where THINC API v1.12.1.0 on Machining Center was not correctly identified.
 
@@ -238,7 +341,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
       * Scheduled Maintenance v2.0
 
   * [本■] Add the following data points for each app in the compatibility list:
-      * Include a .NET redistributable installer? (assume version included is the required version)
+      * Include a .NET re-distributable installer? (assume version included is the required version)
       * Required TSS / OSS version
       * Include TSS / OSS installer (assumes version included is the required version)
       * Details note (developer’s message to display in details page)
@@ -255,11 +358,11 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
       * Compare SCOUT assembly date to machine date time and report how recently it was updated and if the user should check for a new version (using green, yellow, red indicators and text).
       * Report the latest version of THINC API compatible with the control based on CAPI version
       * Show details note
-      * If contain .NET redistributable, ignore that requirement based on the included version and operating system For example: an XP machine + App that contains .Net 4.5 redistributable still won’t be compatible.
+      * If contain .NET re-distributable, ignore that requirement based on the included version and operating system For example: an XP machine + App that contains .Net 4.5 re-distributable still won’t be compatible.
 
 
 
-► [ 2015-6-15 / develop / SS ]
+► [ 2015-6-15 / SS ]
 
   * [中■] Created display information reporting in "Platform" tab of Test Program
 
@@ -271,7 +374,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-6-5 / develop / SS ]
+► [ 2015-6-5 / SS ]
 
   * [中■] Added class "Okuma.Scout.Display" class to provide information about screens / monitors attached to the system
 
@@ -279,13 +382,13 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-5-15 / develop / SS ]
+► [ 2015-5-15 / SS ]
 
   * [中■] Determine CAPI version based on OCJ API library versions
 
 
 
-► [ 2015-5-9 / develop / SS ]
+► [ 2015-5-9 / SS ]
 
   * [中■] Added class "Okuma.Scout.Reg" and accompanying "Registry" tab in test application. 
     Functions in this class are compatible with 32 & 64 bit systems and .NET 2+.
@@ -317,7 +420,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-3-23 / develop / SS ]
+► [ 2015-3-23 / SS ]
 
   * [中■] Fixed bug in API identification cross reference file that resulted in not properly detecting API version 1.17.2.0 on Machining Center.
 
@@ -329,14 +432,14 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-2-25 / develop / SS ]
+► [ 2015-2-25 / SS ]
 
   * [中■] Revamped the way PLC Spec codes are retrieved to allow for user defined files, 
     access to all spec code groups, file type validation, and more!  
 
 
 
-► [ 2015-02-24 / develop / SS ]
+► [ 2015-02-24 / SS ]
 
   * [中■] Changed the way NC & NCB Spec codes are retrieved to allow for user defined files, 
     access to all spec code groups, file type validation, and more.
@@ -365,7 +468,7 @@ http://stackoverflow.com/questions/tagged/okuma?sort=newest&pageSize=50
 
 
 
-► [ 2015-02-02 / develop / SS ]
+► [ 2015-02-02 / SS ]
 
   * [中■] Added properties for scout.dll version & build date 
     and the calling assembly (sample program for example) version & build date
@@ -442,7 +545,7 @@ Refer to the test application project file 'ScoutTestApplication.csproj' to see 
 ### Notice ###
 
   Author: Scott Solmer  
-  Copyright© 2017 Okuma America Corporation.  
+  Copyright© 2018 Okuma America Corporation.  
       
   This sample code is unlicensed.  
   It is distributed "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,  
