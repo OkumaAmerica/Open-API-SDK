@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace Okuma.Scout.TestApp.net40.ViewModels
 {
+    using System;
     using System.ComponentModel;
 
     class LicenseViewModel : INotifyPropertyChanged
@@ -19,7 +16,7 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
         private const bool AlwaysExecute = true;
 
         // Properties
-
+       
 
         private Okuma.Scout.LicenseItem _dataApiLathe;
         public Okuma.Scout.LicenseItem DataApiLathe
@@ -185,6 +182,18 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
         // Methods
 
         private void ExecuteThincApiLicenseTests()
+        {
+            System.Threading.Thread LicenseTestThread = new System.Threading.Thread(new System.Threading.ThreadStart(ThincApiLicenseTests));
+            LicenseTestThread.Name = "LicenseTestThread";
+            LicenseTestThread.Priority = System.Threading.ThreadPriority.Normal;
+            LicenseTestThread.Start();
+
+        }
+
+        /// <summary>
+        /// Testing license items can be slow, particularly for items which return 
+        /// non valid due to exception throwing and handling overhead.  </summary>
+        private void ThincApiLicenseTests()
         {
             DataApiLathe = Okuma.Scout.LicenseChecker.License_DataApi_L;
             DataApiMachiningCenter = Okuma.Scout.LicenseChecker.License_DataApi_MC;

@@ -163,6 +163,16 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
             }
         }
 
+        private bool? _dotNetInstalled47;
+        public bool? DotNetInstalled47
+        {
+            get { return _dotNetInstalled47; }
+            set
+            {
+                _dotNetInstalled47 = value;
+                OnPropertyChanged("DotNetInstalled47");
+            }
+        }
 
         private string _servicePack10;
         public string ServicePack10
@@ -288,6 +298,7 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
             DotNetInstalled46 = Okuma.Scout.DotNet.v46_Installed;
             DotNetInstalled461 = Okuma.Scout.DotNet.v461_Installed;
             DotNetInstalled462 = Okuma.Scout.DotNet.v462_Installed;
+            DotNetInstalled47 = Okuma.Scout.DotNet.v47_Installed;
 
             ServicePack10 = SPCheck(Okuma.Scout.DotNet.ServicePack_10);
             ServicePack11 = SPCheck(Okuma.Scout.DotNet.ServicePack_11);

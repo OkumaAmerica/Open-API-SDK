@@ -1,11 +1,8 @@
 ﻿
 namespace Okuma.Scout.TestApp.net40.ViewModels
 {
-    using System;
-    using System.Linq;
-    using System.Windows;
-    using System.Windows.Media;
     using System.ComponentModel;
+
 
     class MainViewModel : INotifyPropertyChanged
     {

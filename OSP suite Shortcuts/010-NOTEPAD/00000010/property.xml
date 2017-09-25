@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shortcutInfo>
+	<version>6.1.7600.16385</version>
+	<location>8</location>
+	<widgetGroup>15</widgetGroup>
+	<maxNum>1</maxNum>
+	<dispOpeMode>3</dispOpeMode>
+	<machine>A</machine>
+	<shortcutName>
+		<CHN>記事本</CHN>
+		<CZE>Notepad</CZE>
+		<DAN>Notesblok</DAN>
+		<DUT>Blocnote</DUT>
+		<ENG>Notepad</ENG>
+		<FIN>Muistilehtiö</FIN>
+		<FRN>Bloc-notes</FRN>
+		<GER>Notepad</GER>
+		<HUN>Notepad</HUN>
+		<ITL>Notepad</ITL>
+		<JPN>メモ帳</JPN>
+		<POL>Notatnik</POL>
+		<PRT>Bloco de notas</PRT>
+		<RON>Notepad</RON>
+		<RUS>блокнот</RUS>
+		<SPN>Bloc de notas</SPN>
+		<SWD>Anteckningar</SWD>
+		<TUR>Not Defteri</TUR>
+	</shortcutName>
+	<listIcon>res\listIcon.bmp</listIcon>
+	<preview>res\preview.bmp</preview>
+	<iconHM>res\iconHM.bmp</iconHM>
+	<iconEX>res\iconEX.bmp</iconEX>
+	<previewVF>res\previewVF.bmp</previewVF>
+	<iconVF>res\iconVF.bmp</iconVF>
+	<module>C:\Windows\System32\notepad.exe</module>
+</shortcutInfo>

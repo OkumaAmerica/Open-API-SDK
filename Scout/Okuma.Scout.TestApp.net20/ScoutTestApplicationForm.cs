@@ -102,30 +102,30 @@ namespace Okuma.Scout.TestApp.net20
             // The PhysicalPanelSize enumeration isn't too bad, but the following lines of code
             // attempt to improve readability anyway as the result is for human consumption in this case.
             string PanelTypeEnumToText = "";
-            Okuma.Scout.Display.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
+            Okuma.Scout.Enums.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
             switch (PPS)
             {
-                case Display.PhysicalPanelSize.PnP_NonOsp:
+                case Enums.PhysicalPanelSize.PnP_NonOsp:
                     {
                         PanelTypeEnumToText = @"Plug and Play Non-OSP panel";
                         break;
                     }
-                case Display.PhysicalPanelSize.SixPointFiveInch:
+                case Enums.PhysicalPanelSize.SixPointFiveInch:
                     {
                         PanelTypeEnumToText = @"6.5"" OSP panel";
                         break;
                     }
-                case Display.PhysicalPanelSize.FifteenInch:
+                case Enums.PhysicalPanelSize.FifteenInch:
                     {
                         PanelTypeEnumToText = @"15"" OSP panel";
                         break;
                     }
-                case Display.PhysicalPanelSize.NineteenInch:
+                case Enums.PhysicalPanelSize.NineteenInch:
                     {
                         PanelTypeEnumToText = @"19"" OSP panel";
                         break;
                     }
-                case Display.PhysicalPanelSize.UnknownSize:
+                case Enums.PhysicalPanelSize.UnknownSize:
                     {
                         PanelTypeEnumToText = "OSP panel not recognized";
                         break;
@@ -141,25 +141,25 @@ namespace Okuma.Scout.TestApp.net20
             // The following code is only applicable on 19" panel sizes because the 15" displays do not include
             // the SELECTSCREEN tool. In that case, the result will be NA.
             string ScreenModeEnumToText = "";
-            Okuma.Scout.Display.NineteenInchScreenMode NISM = Okuma.Scout.Display.SelectScreenMode;
+            Okuma.Scout.Enums.NineteenInchScreenMode NISM = Okuma.Scout.Display.SelectScreenMode;
             switch (NISM)
             {
-                case Display.NineteenInchScreenMode.FullScreen:
+                case Enums.NineteenInchScreenMode.FullScreen:
                     {
                         ScreenModeEnumToText = "Full Screen";
                         break;
                     }
-                case Display.NineteenInchScreenMode.ModeA:
+                case Enums.NineteenInchScreenMode.ModeA:
                     {
                         ScreenModeEnumToText = "A Mode (Windowed, lower left)";
                         break;
                     }
-                case Display.NineteenInchScreenMode.ModeB:
+                case Enums.NineteenInchScreenMode.ModeB:
                     {
                         ScreenModeEnumToText = "B Mode (Windowed, lower right)";
                         break;
                     }
-                case Display.NineteenInchScreenMode.UnknownMode:
+                case Enums.NineteenInchScreenMode.UnknownMode:
                     {
                         ScreenModeEnumToText = "Error: Unknown Screen Mode";
                         break;
@@ -345,7 +345,7 @@ namespace Okuma.Scout.TestApp.net20
         /// <param name="e">Event arguments associated with the button click</param>
         private void Button_InitApi_Click(object sender, EventArgs e)
         {
-            Okuma.Scout.Enums.ApiStatus status = Okuma.Scout.ThincApi.InitAPI();
+            Okuma.Scout.Enums.ApiStatus status = Okuma.Scout.ThincApiReflector.InitAPI();
             this.TextBox_ApiInstantiated.Text = status.ToString();
 
             if (status == Okuma.Scout.Enums.ApiStatus.Initialized)
@@ -368,9 +368,9 @@ namespace Okuma.Scout.TestApp.net20
              * references to your project. That is the recommended method to use the THINC API. 
              * These functions can only be executed once Okuma.Scout.ThincApi.InitAPI() returns "Initialized".
              */
-            this.TextBox_ApiMachineName.Text = Okuma.Scout.ThincApi.MachineName();
-            this.TextBox_ApiSerialNumber.Text = Okuma.Scout.ThincApi.SerialNumber();
-            this.TextBox_ApiCV1.Text = Okuma.Scout.ThincApi.GetCommonVariable(1).ToString();
+            this.TextBox_ApiMachineName.Text = Okuma.Scout.ThincApiReflector.MachineName();
+            this.TextBox_ApiSerialNumber.Text = Okuma.Scout.ThincApiReflector.SerialNumber();
+            this.TextBox_ApiCV1.Text = Okuma.Scout.ThincApiReflector.GetCommonVariable(1).ToString();
         }
 
 
@@ -482,6 +482,31 @@ namespace Okuma.Scout.TestApp.net20
             tempString = Okuma.Scout.OspFileInfo.OspGrinderDataApi_Version;
             this.PostResult(this.TextBox_OspGrinderDataApiVer, tempString);
         }
+
+
+        // ========================================================================
+        // ========================================================================
+        // THINC API 2
+        //
+
+        private void Button_ThincApiInfo2_Click(object sender, EventArgs e)
+        {
+            Version parsedInput;
+
+            bool parsed = Okuma.Scout.Helper.VersionTryParse(TextBox_IsTapiCompatibleInput.Text, out parsedInput);
+
+            if (parsed)
+            {
+                bool isSupported = Okuma.Scout.ThincApi.DoesMachineSupportThincApiVersion(parsedInput);
+
+                TextBox_IsTapiCompatibleResult.Text = isSupported.ToString();
+            }
+            else
+            {
+                TextBox_IsTapiCompatibleResult.Text = "Input is not a version.";
+            }
+        }
+
 
         #endregion
 
@@ -786,7 +811,10 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_Net45.Text = Okuma.Scout.DotNet.v45_Installed.ToString();
             this.TextBox_Net451.Text = Okuma.Scout.DotNet.v451_Installed.ToString();
             this.TextBox_Net452.Text = Okuma.Scout.DotNet.v452_Installed.ToString();
-            this.TextBox_Net46.Text = Okuma.Scout.DotNet.v46Preview_Installed.ToString();
+            this.TextBox_Net46.Text = Okuma.Scout.DotNet.v46_Installed.ToString();
+            this.TextBox_Net461.Text = Okuma.Scout.DotNet.v461_Installed.ToString();
+            this.TextBox_Net462.Text = Okuma.Scout.DotNet.v462_Installed.ToString();
+            this.TextBox_Net47.Text = Okuma.Scout.DotNet.v47_Installed.ToString();
 
             this.TextBox_Net10Sp.Text = SPCheck(Okuma.Scout.DotNet.ServicePack_10);
             this.TextBox_Net11Sp.Text = SPCheck(Okuma.Scout.DotNet.ServicePack_11);
@@ -984,25 +1012,69 @@ namespace Okuma.Scout.TestApp.net20
 
         #region Operating System
         /// <summary>
-        /// Using Scout, acquire information about the Operating System
-        /// </summary>
-        /// <param name="sender">The button object</param>
-        /// <param name="e">Event arguments associated with the button click</param>
-        private void Button_OS_Click(object sender, EventArgs e)
+        /// Using Scout, acquire information about the Operating System </summary>
+        private void Button_OS1_Click(object sender, EventArgs e)
         {
             // The process of gathering Operating System information can take up to a 
             // few seconds. To prevent locking up the User Interface, the retrieval
             // of this information is performed using a thread.
-            // Particularly, OS.InternetConnection takes time to obtain a result.
             Thread getOSInfo = new Thread(new ThreadStart(this.OSInfo));
             getOSInfo.Name = "GetApiFileInfoThread";
             getOSInfo.Priority = ThreadPriority.Normal;
             getOSInfo.Start();
         }
 
+        /// <summary> (WMI specific)
+        /// Using Scout, acquire information about the Operating System </summary>
+        private void Button_OS2_Click(object sender, EventArgs e)
+        {
+            string temp_ClassPropertiesAndValues = string.Empty;
+
+            // Access individual properties
+            TextBox_OS2Caption.Text = Okuma.Scout.OS.WMI_Win32OS.Caption;
+
+            // Or grab the entire class of properties
+            Okuma.Scout.OS.WMI_OperatingSystem WMI_OSinfo = Okuma.Scout.OS.WMI_Win32OS;
+
+            // Get values for all properties
+            foreach (System.Reflection.PropertyInfo prop in typeof(Okuma.Scout.OS.WMI_OperatingSystem).GetProperties())
+            {
+                // Retrieve a property value
+                var PropertyValueObject = prop.GetValue(WMI_OSinfo, null);
+
+                // Don't display properties whose values are null or empty.
+                if (PropertyValueObject != null)
+                {
+                    string PropertyValue = PropertyValueObject.ToString();
+
+                    if (PropertyValue != string.Empty)
+                    {
+                        temp_ClassPropertiesAndValues +=
+                            String.Format("{0} = {1}", prop.Name, PropertyValue) + Environment.NewLine;
+                    }
+                }
+            }
+
+            // Display the property names and values
+            TextBox_OS2WMI.Text = temp_ClassPropertiesAndValues;
+
+        }
+
+        /// <summary> (Version.txt specific)
+        /// Using Scout, acquire information about the Operating System </summary>
+        private void Button_OS3_Click(object sender, EventArgs e)
+        {
+            this.PostResult(this.TextBox_OSVersionTitle, Okuma.Scout.OS.VersionTitle);
+            this.PostResult(this.TextBox_OSVersionComment, Okuma.Scout.OS.VersionComment);
+            this.PostResult(this.TextBox_OSVersionConfigDate, Okuma.Scout.OS.VersionConfigDate);
+            this.PostResult(this.TextBox_OSVersionConfigVersion, Okuma.Scout.OS.VersionConfigVersion);
+            this.PostResult(this.TextBox_OSVersionLanguage, Okuma.Scout.OS.VersionLanguage);
+            this.PostResult(this.TextBox_OSVersionTarget, Okuma.Scout.OS.VersionTarget);
+        }
+
         /// <summary>
         /// Using Scout, acquire information about the Operating System.
-        /// Runs on a separate thread started by the <see cref="Button_OS_Click"/> method.
+        /// Runs on a separate thread started by the <see cref="Button_OS1_Click"/> method.
         /// </summary>
         private void OSInfo()
         {
@@ -1012,22 +1084,14 @@ namespace Okuma.Scout.TestApp.net20
             this.PostResult(this.TextBox_OSVersion, Okuma.Scout.OS.Version.ToString());
             this.PostResult(this.TextBox_OSProcessorBits, Okuma.Scout.OS.ProcessorBits.ToString());
             this.PostResult(this.TextBox_OSBits, Okuma.Scout.OS.OSBits.ToString());
-
-            this.PostResult(this.TextBox_OSVersionTitle, Okuma.Scout.OS.VersionTitle);
-            this.PostResult(this.TextBox_OSVersionComment, Okuma.Scout.OS.VersionComment);
-            this.PostResult(this.TextBox_OSVersionConfigDate, Okuma.Scout.OS.VersionConfigDate);
-            this.PostResult(this.TextBox_OSVersionConfigVersion, Okuma.Scout.OS.VersionConfigVersion);
-            this.PostResult(this.TextBox_OSVersionLanguage, Okuma.Scout.OS.VersionLanguage);
-            this.PostResult(this.TextBox_OSVersionTarget, Okuma.Scout.OS.VersionTarget);
+            this.PostResult(this.TextBox_OSInternet, Okuma.Scout.OS.InternetConnection.ToString());
+            this.PostResult(this.TextBox_EnvUserPermissions, Okuma.Scout.OS.GetAccessLevel().ToString());
 
             this.PostResult(this.TextBox_EnvMachineName, Environment.MachineName);
             this.PostResult(this.TextBox_EnvOSVer, Environment.OSVersion.ToString());
             this.PostResult(this.TextBox_EnvProcessorCount, Environment.ProcessorCount.ToString());
             this.PostResult(this.TextBox_EnvUserName, Environment.UserName);
-            this.PostResult(this.TextBox_EnvUserDomain, Environment.UserDomainName);
-
-            this.PostResult(this.TextBox_EnvUserPermissions, Okuma.Scout.OS.GetAccessLevel().ToString());
-            this.PostResult(this.TextBox_OSInternet, Okuma.Scout.OS.InternetConnection.ToString());
+            this.PostResult(this.TextBox_EnvUserDomain, Environment.UserDomainName);           
         }
         #endregion
 
@@ -1254,7 +1318,7 @@ namespace Okuma.Scout.TestApp.net20
 
 
 
-        #endregion
 
+        #endregion
     }
 }

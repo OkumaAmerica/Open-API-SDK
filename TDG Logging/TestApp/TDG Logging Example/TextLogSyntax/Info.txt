@@ -1,0 +1,8 @@
+﻿[{$EventTime}]
+     EventType   = {$EventType}
+     Sender      = {$Sender}
+     Message     = {$Message}
+     Method      = {$Method}
+     Assembly    = {$AssemblyName}
+     Version     = {$Version}
+     EventGuid   = {$EventGuid}

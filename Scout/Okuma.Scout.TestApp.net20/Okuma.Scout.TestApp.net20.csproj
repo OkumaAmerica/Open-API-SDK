@@ -55,7 +55,13 @@
     <DocumentationFile>
     </DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Okuma.Scout">
+      <HintPath>Lib\$(Configuration)\Okuma.Scout.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -97,6 +103,7 @@
     <EmbeddedResource Include="ScoutTestApplicationForm.resx">
       <DependentUpon>ScoutTestApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,12 +113,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Okuma.Scout\Okuma.Scout.net20\Okuma.Scout.net20.csproj">
-      <Project>{d003aec9-9cda-4c9d-a543-348115f15485}</Project>
-      <Name>Okuma.Scout.net20</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

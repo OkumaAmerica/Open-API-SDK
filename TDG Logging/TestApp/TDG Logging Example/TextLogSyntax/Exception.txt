@@ -1,0 +1,10 @@
+﻿[{$EventTime}]
+     EventType   = {$EventType}
+     Sender      = {$Sender}
+     ExMessage   = {$ExceptionMessage}
+     ExType      = {$ExceptionType}
+     Method      = {$Method}
+     Assembly    = {$AssemblyName}
+     Version     = {$Version}
+     StackTrace  = {$StackTrace}
+     EventGuid   = {$EventGuid}

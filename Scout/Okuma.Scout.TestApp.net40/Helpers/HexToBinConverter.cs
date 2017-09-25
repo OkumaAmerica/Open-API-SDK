@@ -15,6 +15,13 @@ namespace Okuma.Scout.TestApp.net40.Helpers
         {
             string castedString = (string)value;
 
+            if (castedString == string.Empty
+                || castedString == Okuma.Scout.SpecCode.FileNotFoundErrorMessage
+                || castedString == Okuma.Scout.SpecCode.FileReadErrorMessage)
+            {
+                return "00000000";
+            }
+
             UInt32 theByte = System.Convert.ToUInt32(castedString, 16);
 
             return System.Convert.ToString(theByte, 2).PadLeft(8, '0');

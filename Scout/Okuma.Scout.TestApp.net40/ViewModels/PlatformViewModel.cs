@@ -179,30 +179,30 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
             // The PhysicalPanelSize enumeration isn't too bad, but the following lines of code
             // attempt to improve readability anyway as the result is for human consumption in this case.
             string PanelTypeEnumToText = "";
-            Okuma.Scout.Display.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
+            Okuma.Scout.Enums.PhysicalPanelSize PPS = Okuma.Scout.Display.PanelType;
             switch (PPS)
             {
-                case Okuma.Scout.Display.PhysicalPanelSize.PnP_NonOsp:
+                case Okuma.Scout.Enums.PhysicalPanelSize.PnP_NonOsp:
                     {
                         PanelTypeEnumToText = @"Plug and Play Non-OSP panel";
                         break;
                     }
-                case Okuma.Scout.Display.PhysicalPanelSize.SixPointFiveInch:
+                case Okuma.Scout.Enums.PhysicalPanelSize.SixPointFiveInch:
                     {
                         PanelTypeEnumToText = @"6.5"" OSP panel";
                         break;
                     }
-                case Okuma.Scout.Display.PhysicalPanelSize.FifteenInch:
+                case Okuma.Scout.Enums.PhysicalPanelSize.FifteenInch:
                     {
                         PanelTypeEnumToText = @"15"" OSP panel";
                         break;
                     }
-                case Okuma.Scout.Display.PhysicalPanelSize.NineteenInch:
+                case Okuma.Scout.Enums.PhysicalPanelSize.NineteenInch:
                     {
                         PanelTypeEnumToText = @"19"" OSP panel";
                         break;
                     }
-                case Okuma.Scout.Display.PhysicalPanelSize.UnknownSize:
+                case Okuma.Scout.Enums.PhysicalPanelSize.UnknownSize:
                     {
                         PanelTypeEnumToText = "OSP panel not recognized";
                         break;
@@ -218,25 +218,25 @@ namespace Okuma.Scout.TestApp.net40.ViewModels
             // The following code is only applicable on 19" panel sizes because the 15" displays do not include
             // the SELECTSCREEN tool. In that case, the result will be NA.
             string ScreenModeEnumToText = "";
-            Okuma.Scout.Display.NineteenInchScreenMode NISM = Okuma.Scout.Display.SelectScreenMode;
+            Okuma.Scout.Enums.NineteenInchScreenMode NISM = Okuma.Scout.Display.SelectScreenMode;
             switch (NISM)
             {
-                case Okuma.Scout.Display.NineteenInchScreenMode.FullScreen:
+                case Okuma.Scout.Enums.NineteenInchScreenMode.FullScreen:
                     {
                         ScreenModeEnumToText = "Full Screen";
                         break;
                     }
-                case Okuma.Scout.Display.NineteenInchScreenMode.ModeA:
+                case Okuma.Scout.Enums.NineteenInchScreenMode.ModeA:
                     {
                         ScreenModeEnumToText = "A Mode (Windowed, lower left)";
                         break;
                     }
-                case Okuma.Scout.Display.NineteenInchScreenMode.ModeB:
+                case Okuma.Scout.Enums.NineteenInchScreenMode.ModeB:
                     {
                         ScreenModeEnumToText = "B Mode (Windowed, lower right)";
                         break;
                     }
-                case Okuma.Scout.Display.NineteenInchScreenMode.UnknownMode:
+                case Okuma.Scout.Enums.NineteenInchScreenMode.UnknownMode:
                     {
                         ScreenModeEnumToText = "Error: Unknown Screen Mode";
                         break;

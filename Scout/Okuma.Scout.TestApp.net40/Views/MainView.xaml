@@ -9,7 +9,7 @@
         ResizeMode="CanResizeWithGrip"
         mc:Ignorable="d"
         d:DesignHeight="560" 
-        d:DesignWidth="700"
+        Width="930"
         MinWidth="420" MinHeight="300"
         FontSize="12"
         Title="{Binding MainViewTitle, FallbackValue=Okuma.Scout Test Application}" 
@@ -21,14 +21,20 @@
     <Grid>
         <TabControl>
             <TabItem Header="API Info">
-                <TabControl>
-                    <TabItem Header="OSP Open API">
-                        <views:OspOpenApiView />
-                    </TabItem>
-                    <TabItem Header="Okuma Custom API">
-                        <views:CustomApiView />
-                    </TabItem>
-                </TabControl>
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="THINC API">
+                            <views:ThincApiView />
+                        </TabItem>
+                        <TabItem Header="THINC API 2">
+                            <views:ThincApi2View />
+                        </TabItem>
+                        <TabItem Header="Okuma Custom API">
+                            <views:CustomApiView />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
             <TabItem Header="Directories">
                 <views:DirectoriesView />
@@ -52,7 +58,21 @@
                 <views:LicenseView />
             </TabItem>
             <TabItem Header="Operating System">
-                <views:OperatingSystemView />
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="Operating System">
+                            <views:OperatingSystemView />
+                        </TabItem>
+                        <TabItem Header="Operating System 2">
+                            <views:OperatingSystem2View />
+                        </TabItem>
+                        <TabItem Header="Operating System 3">
+                            <views:OperatingSystem3View />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
             </TabItem>
             <TabItem Header="PIOD">
                 <views:PiodView />
@@ -70,20 +90,23 @@
                 <views:RegistryView />
             </TabItem>
             <TabItem Header="Spec Codes">
-                <TabControl>
-                    <TabItem Header="Comparison">
-                        <views:SpecCodeComparisonView />
-                    </TabItem>
-                    <TabItem Header="NC Spec File">
-                        <views:SpecCodeNCView />
-                    </TabItem>
-                    <TabItem Header="NC B-Spec File">
-                        <views:SpecCodeNCBView />
-                    </TabItem>
-                    <TabItem Header="PLC Spec File">
-                        <views:SpecCodePLCView />
-                    </TabItem>
-                </TabControl>
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="Comparison">
+                            <views:SpecCodeComparisonView />
+                        </TabItem>
+                        <TabItem Header="NC Spec File">
+                            <views:SpecCodeNCView />
+                        </TabItem>
+                        <TabItem Header="NC B-Spec File">
+                            <views:SpecCodeNCBView />
+                        </TabItem>
+                        <TabItem Header="PLC Spec File">
+                            <views:SpecCodePLCView />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
