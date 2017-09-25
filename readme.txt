@@ -1,55 +1,51 @@
-﻿﻿Okuma Open API SDK v1.2
-____________________________________________________________________
+﻿﻿Okuma Open API SDK v1.3 - September 2017
+_________________________________________________________________________
 Purpose:
 
-To provide a reference for developers targeting the Okuma platform
-____________________________________________________________________
+Reference information for developers targeting the Okuma OSP-P platform
+_________________________________________________________________________
 Structure:
 
-├───API		      /* Recommended API versions for development */
+├───API		       /* Recommended API versions for development     */
 │   ├───1.9.1
-│   │   ├───Bin
-│   │   ├───Help
-│   │   └───Test App  /* Refer to the test applications for detail*/
-│   ├───1.12.1	      /*  about how to use each function in the   */
-│   │   ├───Bin       /*  API. Okuma uses these projects to verify*/
-│   │   ├───Help      /*  the operation of the API before release.*/
-│   │   └───Test App
+│   │   ├───Bin        /* Refer to the test applications for details   */
+│   │   ├───Help       /*  about how to use each function in the       */
+│   │   └───Test App   /*  API. Okuma uses these projects to verify    */
+│   ├───1.12.1	       /*  the operation of the API before release.    */
 │   ├───1.17.2
-│   │   ├───Bin
-│   │   ├───Help
-│   │   └───Test App
-│   └───1.18.0
-│       ├───Bin
-│       ├───Help
-│       └───Test App
-├───Documentation      /* Guidelines and approval info            */
-├───Examples           /* Example usage of the API                */
-│   ├───Compiled       /*   These examples, in different languages*/
-│   ├───CS_Lathe       /*   and targeting different machine types */
-│   ├───CS_MC          /*   each demonstrate how to access common */
-│   ├───CS_WPF         /*   variables.                            */
-│   ├───Python         /* API Tutorial for Python	          */
+│   └───1.19.0
+├───Documentation    /* Various information useful for app development */
+├───Examples            /* Example usage of the API                    */
+│   ├───Compiled        /*   These examples, in different languages    */
+│   ├───CS_Lathe        /*   and targeting different machine types     */
+│   ├───CS_MC           /*   each demonstrate how to access common     */
+│   ├───CS_WPF          /*   variables.                                */
+│   ├───Python          /* API Tutorial for Python	               */
 │   ├───VB_Lathe
 │   └───VB_MC
-└───Scout
-    ├───README.txt		     /* Information about SCOUT   */
-    ├───Okuma.Scout.TestApp.net20 
-    │   ├───Okuma.Scout.TestApp.net20.csproj    /*  Project File  */
-    │   └───Bin
-    │	    └─Release
-    │	      └─Okuma.Scout.dll	    /* .NET 2.0 SCOUT Library	  */
-    └───Okuma.Scout.TestApp.net40 
-        ├───Okuma.Scout.TestApp.net40.csproj    /*  Project File  */
-        └───Bin
-     	    └─Release
-     	      └─Okuma.Scout.dll	    /* .NET 4.0 SCOUT Library	  */
-
-____________________________________________________________________
+├───OSP suite Shortcuts   /* Instructions and example to make shortcut */
+├───Register V-FKEY
+│   ├───README.txt	    /*  Information about RegisterVfkey        */
+│   └───RegisterVfkey.exe   /*  Utiltiy to add shortcut to V-FKEY      */
+├───Scout
+│   ├───README.html	    /*  Information about SCOUT                */
+│   ├───Scout SDK.sln	    /*  Microsoft Visual Studio Solution File  */
+│   ├───Okuma.Scout.TestApp.net20 
+│   │   └───Lib
+│   │	    └─Release
+│   │	      └─Okuma.Scout.dll	    /* .NET 2.0 SCOUT Library	       */
+│   └───Okuma.Scout.TestApp.net40 
+│       └───Lib
+│    	    └─Release
+│    	      └─Okuma.Scout.dll	    /* .NET 4.0 SCOUT Library	       */
+└───TDG Logging		   /* Library for creation of application logs */
+    ├───TDG.Logging 2.16   /* The logging library and dependencies     */
+    └───TestApp	 	   /* Test Application for TDG Logging Utility */
+_________________________________________________________________________
 Revision History:
 
 v0.1a	2014.04.??	> first distributable version
-v0.2a	2014.04.??	> add Okuma OpenAPI v1.17.1
+v0.2a	2014.04.??	> add Okuma Open API v1.17.1
 v0.3a	2014.06.26	> add approval and widget Documentation
 v0.4a	2015.01.28	> add Scout libraries and test application
 v0.5a	2015.06.05	> update to Okuma.Scout.dll v1.0.0.4
@@ -59,7 +55,10 @@ v0.8	2016.08.01	> SCOUT v1.0.4.0
 v1.0	2016.10.10	> SCOUT v2.2.0.0
 v1.0.1  2016.10.13	> SCOUT v2.2.1.0
 v1.2	2017.06.05	> SCOUT v2.3.0.0 & 4.0.0.0
-____________________________________________________________________
+v1.3	2017.09.25	> SCOUT v2.3.1.0 & 4.1.0.0, RegisterVfkey,
+			  OSP suite shortcuts, TDG Logging 2.16, API 1.19
+_________________________________________________________________________
+
 Contact:
 
 api@okuma.com

@@ -1,0 +1,572 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Okuma.CGCMDAPI
+</name>
+</assembly>
+<members>
+<member name="M:Okuma.CGCMDAPI.modMain.ThrowAE(System.String,System.String)">
+	<summary>For internal usage only</summary>
+	<example> This example shows how to call the ThrowAE mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="strMessage">Message String.</param>
+	<param name="strError">Error String</param>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.modMain.GetErrorCode(System.Int32)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the GetErrorCode mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<param name="intErrorCode">Error Code.</param>
+	<return>A System.String value</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CProgram.SelectProgram(System.String,System.String,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Load the specified part program file into NC. Optionally, it can also load sub program file name, or run a particular program name. 
+ </summary>
+	<example> This example shows how to call the SelectMainProgram mothod.
+ <code lang="VB.NET">
+ Dim objcprogram As New CGCMDAPI.CProgram
+    objcprogram.SelectMainProgram(strMainProgram, strSubProgram, strProgramName, prog4.Text)
+ </code></example>
+	<param name="strMainProgram">Main program file name to be loaded into NC</param>
+	<param name="strSubProgram">Sub program file name for this main program</param>
+	<param name="strProgramName">Name of program in the main program file to be run.  Name must be starting with an O and a maximum length of characters is 5.</param>
+	<param name="strSubFolderPath">sub folder path from default program folder which is D:\MD1</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<remarks>
+ All files should be located in the default MD1 folder of the OSP system.
+ </remarks>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CProgram.#ctor(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Create an instance of this class.
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+	<param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+	<remarks>
+ Only the first instance of any class created with a logging name will be used otherwise, the default logging name will be used.  It is recommended to provide an application name and its version as logging name per instancing of class.
+ </remarks>
+	<history>
+ 	[Lhuynh]	12/4/2007	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CProgram.SelectMainProgram(System.String,System.String,System.String,System.String)">
+	<summary>
+ Load the specified part program file into NC. Optionally, 
+ it can also load sub routines based on sub program file name, system subtitute program file name, or a particular program name. 
+ </summary>
+	<example> This example shows how to call SelectMainProgram method.
+ <code lang="VB.NET">
+ Dim strMainProgramFileName As String = ""
+ Dim strSubProgramFileName As String = ""
+ Dim strSystemSubstituteProgramFileName As String = ""
+ Dim strProgramName As String = ""
+ Dim strSubFolder As String = "\Part2\"
+ Dim objCMDProgram As CProgram = New CProgram()
+ if strSubFolder.Trim.Length &gt; 0 then
+     objCMDProgram.SelectMainProgram(strSubFolder + strMainProgramFileName, strSubFolder + strSubProgramFileName, strSubFolder + strSubProgramFileName, strProgramName)
+ else
+     objCMDProgram.SelectMainProgram(strMainProgramFileName, strSubProgramFileName, strSubProgramFileName, strProgramName)
+ End If
+ </code>
+	</example>
+	<param name="strMainProgramFileName">Main program file name to be loaded into NC</param>
+	<param name="strSubProgramFileName">Sub program file name to be used for the main program if available</param>
+	<param name="strSystemSubtituteProgramFileName">System Subtitute Programe file name (SSB) to be used for the main program if available</param>
+	<param name="strProgramName">Program Name.  It can be specified to load a particular program name inside program file name.  Program name must be start with capital O plus 4 characters for program name such as O1234. </param>
+	<exception cref="T:System.ApplicationException">Thrown when function fails to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system.</exception>
+	<remarks>
+ All program files should be located in the default MD1 folder of the OSP system or in sub folder relatively to the MD1 folder.
+ </remarks>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CProgram.SelectScheduleProgram(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Load the specified schedule part program file into NC.
+ </summary>
+	<example> 
+ This example shows how to call the SelectScheduleProgram mothod.
+ <code lang="VB.NET">
+ Dim objcprogram As New CGCMDAPI.CProgram
+ objcprogram.SelectScheduleProgram("A.SDF")
+ </code></example>
+	<param name="strScheduleProgramFileName">Schedule program file name to be loaded into NC</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<remarks>
+ All files should be located in the default MD1 folder of the OSP system.
+ </remarks>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Okuma.CGCMDAPI.CommandAPI.CProgram">
+ -----------------------------------------------------------------------------
+ Project	 : Okuma.CGCMDAPI
+ Class	 : CGCMDAPI.CommandAPI.CProgram
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Class provides general part program operations.
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[Lhuynh]	2/6/2007	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum.logException">
+	<summary>
+ Level 1 – All exceptions will be logged by the system. (not settable).
+ It is highly not recommended to have polling routines that produce exceptions for any purposes. 
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum.logSet">
+	<summary>
+ Level 2 – Level 1 + all write functions to the API (default value for all class instances)
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum.logGet">
+	<summary>
+ Level 3 – Level 2 + all read functions. 
+ Setting the level to 3 or greater will force logging of ALL calls to the API to facilitate debugging of your application. 
+ This function is CPU intensive and should only be used for debugging purposes. 
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum.logAll">
+	<summary>
+ Level 4 – all logging events regardless of level.
+ Setting the level to 3 or greater will force logging of ALL calls to the API to facilitate debugging of your application. 
+ This function is CPU intensive and should only be used for debugging purposes. 
+ </summary>
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum">
+	<summary>
+ Represents different levels of logging.
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ApiTypeEnum.THINC_API">
+	<summary>
+		<para> Support THINC-API only  </para>
+		<para> B Spec Code: [22,0]  </para>
+	</summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ApiTypeEnum.OSP_API">
+	<summary>
+		<para> Support OSP-API only   </para>
+		<para> B Spec Code: [22,1]  </para>
+	</summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ApiTypeEnum.ALL_API">
+	<summary>
+		<para> Support THINC-API</para>
+		<para> B Spec Code: [22,0]  </para>
+		<para> Support OSP-API</para>
+		<para> B Spec Code: [22,1]  </para>
+	</summary>
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.ApiTypeEnum">
+	<summary>
+ Type of API to be used by the system
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.Exact">
+	<summary>
+ Exact same level
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.SameOrHigher">
+	<summary>
+ Same or higher level
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.SameOrLower">
+	<summary>
+ Same or lower level
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.All">
+	<summary>
+ All control if applicable
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.Higher">
+	<summary>
+ Higher level
+ </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum.Lower">
+	<summary>
+ Lower Level
+ </summary>
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.ValidateLevelEnum">
+ -----------------------------------------------------------------------------
+ <summary>
+ Represent Validate Level Enumeration. For Internal Usage only
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[Lhuynh] 07/02/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.FeatureSetEnum">
+ -----------------------------------------------------------------------------
+ <summary>
+ 
+ Feature Set enumeration
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[Lhuynh]	3/25/2008	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.RelationalOperatorEnum">
+ -----------------------------------------------------------------------------
+ <summary>
+ Relational Operator Enum
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[lhuynh]	5/3/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.None">
+	<summary> Un-determined control type </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P100">
+	<summary> P100 Type II OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P200">
+	<summary> P200 OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P300SLP">
+	<summary> P300 Special Lathe OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P300L">
+	<summary> P300 Lathe OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P300SMP">
+	<summary> P300 Special Machining Center OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P300M">
+	<summary> P300 Machining Center OSP-P control  </summary>
+</member><member name="F:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum.P300G">
+	<summary> P300 Grinder OSP-P control  </summary>
+</member><member name="T:Okuma.CGCMDAPI.Enumerations.ControlTypeEnum">
+ -----------------------------------------------------------------------------
+ <summary>
+ Control type enumeration
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[Lhuynh]	3/25/2008	Created
+ 	[Lhuynh]	02/18/2013	Change to public type 
+ 	[Lhuynh]	10/18/2015	add P300G
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="F:Okuma.CGCMDAPI.CommandAPI.CBase.m_strOCJCommandAPILib">
+ ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Create an instance of CBase class given class ID and class name.
+ </summary>
+	<param name="strClassId">Derived class ID</param>
+	<param name="strClassName">Derived class name.</param>
+	<remarks>
+	</remarks>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.#ctor(System.String,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Create an instance of this class.
+ In addition to library name, the provided logging name will be used for logging all function calls 
+ </summary>
+	<param name="strClassId">Derived class ID</param>
+	<param name="strClassName">Derived class name.</param>
+	<param name="strLoggingName">Logging Name.  Globally, The logging name will be combined with library name as the logging name for all logging message.</param>
+	<remarks>
+	</remarks>
+	<history>
+ 	[Lhuynh]	12/4/2007	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetLastErrorMessage">
+	<summary>
+ Get the last error message
+ </summary>
+	<example> This example shows how to call the GetLastErrorMessage method.
+ <code lang="VB.NET">
+ Dim strMessage As String
+ Try
+     txtMessage.Text = objCMD.GetLastErrorMessage()
+ Catch ae As ApplicationException
+     doError("Command API", ae.Message)
+ Catch ex As Exception
+     doError("Command API", ex.Message)
+ End Try
+ </code></example>
+	<returns>A System.String value</returns>
+	<figure>
+	</figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.SetLoggingLevelToAll">
+	<summary>
+ Set logging level to LoggingLevelEnum.logAll for this instance
+ <para>The system will not log operations having logging level above this setting level.</para>
+	</summary>
+	<remarks>
+ Note: It is highly recommended for debugging purpose only
+ Note2: All exceptions and writing operations to NC will be logged automatically
+ </remarks>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.SetLoggingLevelToGet">
+	<summary>
+ Set logging level to LoggingLevelEnum.logGet for this instance.
+ <para>The system will not log operations having logging level above this setting level.</para>
+	</summary>
+	<remarks>
+ Note: It is highly recommended for debugging purpose only
+ Note2: All exceptions and writing operations to NC will be logged automatically
+ </remarks>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.SetLoggingLevelToSet">
+	<summary>
+ Set logging level to LoggingLevelEnum.logSet for this instance
+ <para>The system will not log operations having logging level above this setting level.</para>
+	</summary>
+	<remarks>
+	</remarks>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetLoggingLevel">
+	<summary>
+ Get current logging level for this instance
+ </summary>
+	<returns>An enumeration of LoggingLevelEnum</returns>
+	<remarks></remarks>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetControlType">
+ -----------------------------------------------------------------------------
+ <summary>
+ Get control type of this machine
+ </summary>
+	<returns>An enumeration of ControlTypeEnum</returns>
+	<remarks>
+	</remarks>
+	<history>
+ 	[lhuynh]	3/25/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.CheckErrorCode(System.Int16,System.String)">
+	<summary>For internal usage only</summary>
+	<param name="strSource"> source of this error</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.ThrowAE(System.Int32,System.String,System.String)">
+	<summary>For internal usage only</summary>
+	<example> This example shows how to call the ThrowAE mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="intFunctionId">Function ID.</param>
+	<param name="strMessage">Message String.</param>
+	<param name="strError">Error String</param>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.ThrowNE(System.Int32,System.String,System.String)">
+	<summary>For internal usage only</summary>
+	<example> This example shows how to call the ThrowNE mothod.
+</example>
+	<param name="intFunctionId">Function ID.</param>
+	<param name="strMessage">Message String.</param>
+	<param name="strError">Error String</param>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.AllExceptionHandler(System.String,System.String@,System.Exception@)">
+	<summary>For internal usage only. Log and throw exception back to calling app</summary>
+	<example> This example shows how to call the AllExceptionHandler mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="strFunctionName">Function Name.</param>
+	<param name="strParameters">Parameter String.</param>
+	<param name="objEx">Object Exception</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.LogExceptionMessage(System.String,System.String@,System.String@)">
+	<summary>Log exception message</summary>
+	<example> This example shows how to call the LogExceptionMessage mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<param name="strFunctionName">Function Name.</param>
+	<param name="strParameters">Parameter String.</param>
+	<param name="strError">Error String.</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String@,Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum)">
+	<summary>Log function name, function parameters.  This library name and name of instance of class derived from this base class is also logged.</summary>
+	<example> This example shows how to call the LogMessage mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="strFunctionName">Function Name.</param>
+	<param name="strParameters">Parameter String.</param>
+	<param name="enLoggingLevel">Logging level</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.LogMessage(System.String,System.String,System.String@,Okuma.CGCMDAPI.Enumerations.LoggingLevelEnum,System.Boolean)">
+	<summary>If no error then Log message with function name, function parameter given the logging level. </summary>
+	<param name="strFunctionName">Function Name</param>
+	<param name="strParameters">Parameters</param>
+	<param name="strLogMessage">log message</param>
+	<param name="enLoggingLevel">Logging level</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation .</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.ConvertUnitToInch(System.Double)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the ConvertUnitToInch mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="dblValue">Double Value.</param>
+	<return>A System.Double value that converted from unit to inch</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.ConvertUnitToMM(System.Double)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the ConvertUnitToMM mothod.
+<code escaped="true" language="Visual Basic">
+ Sample code is not available.
+</code>
+	</example>
+	<param name="dblValue">Double Value.</param>
+	<return>A System.Double value that converted from unit to MM</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.CheckLicense(System.String,System.String,System.String,System.String)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the CheckLicense method.
+<code escaped="true" language="Visual Basic">
+ Not available in Object Browser.
+</code>
+	</example>
+	<param name="strFeatureName">License Feature Name</param>
+	<param name="strFeatureVersion">License Feature Version</param>
+	<param name="strFeatureLabel">License Feature Label.</param>
+	<param name="strLicensePath">License Path</param>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system or it fails to write data to system.</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.CreateLoggingService">
+	<summary>N/A</summary>
+	<example> This example shows how to call the CreateLoggingService mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetErrorCode(System.Int32)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the GetErrorCode mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<param name="intErrorCode">Error Code.</param>
+	<return>A System.String value</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetErrorNumberFromErrorMessage(System.String)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the GetErrorNumberFromErrorMessage mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<param name="strErrorCode">Error Code String.</param>
+	<return>A System.String value</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.GetExceptionErrorCode(System.Int32)">
+	<summary>N/A</summary>
+	<example> This example shows how to call the GetExceptionErrorCode mothod.
+<code escaped="true" language="Visual Basic">
+ Not available in object browser
+</code>
+	</example>
+	<param name="intErrorCode">Error Code.</param>
+	<return>A System.String value</return>
+	<exception cref="T:System.ApplicationException">Thrown when function failes to perform the operation at current NC condition.</exception>
+	<exception cref="T:System.NotSupportedException">Thrown when operation/input parameters are not supported for the current system</exception>
+	<Figure>
+	</Figure>
+</member><member name="M:Okuma.CGCMDAPI.CommandAPI.CBase.DetectControlType">
+ -----------------------------------------------------------------------------
+ <summary>
+ Get control type of this machine
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[lhuynh]	3/25/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Okuma.CGCMDAPI.CommandAPI.CBase">
+ -----------------------------------------------------------------------------
+ Project	 : Okuma.CGCMDAPI
+ Class	 : CGCMDAPI.CommandAPI.CBase
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ It is a base class for all classes of Command API.  
+ All classes in Command API will be derived from this class to handle error handling, logging service, 
+ and other services for internal data structure of this library ONLY.
+ </summary>
+	<remarks>
+ It should not be create directly by any client application.
+ </remarks>
+ -----------------------------------------------------------------------------
+
+</member><member name="P:Okuma.CGCMDAPI.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Okuma.CGCMDAPI.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Okuma.CGCMDAPI.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

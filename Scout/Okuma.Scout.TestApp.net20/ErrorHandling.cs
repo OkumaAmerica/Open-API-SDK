@@ -63,7 +63,7 @@ namespace Okuma.Scout.TestApp.net20
             // Refer to the events below for more details.
 
             // Subscribe to the error handler by default
-            Okuma.Scout.Error.Reporter += this.HandleScoutErrorInfo;
+            Okuma.Scout.Error.ReporterEvent += this.HandleScoutErrorInfo;
             this.CheckBox_ErrorSubscribed.Checked = true;
 
             // Show debugging information by default
@@ -121,7 +121,7 @@ namespace Okuma.Scout.TestApp.net20
             // If this event is not subscribed to, SCOUT may generate unhandled 
             // exceptions. Additionally, minor errors / diagnostic information will 
             // be invisible / hidden from the user.
-            Okuma.Scout.Error.Reporter += this.HandleScoutErrorInfo;
+            Okuma.Scout.Error.ReporterEvent += this.HandleScoutErrorInfo;
 
             // display the status of subscription status
             this.CheckBox_ErrorSubscribed.Checked = true;
@@ -141,7 +141,7 @@ namespace Okuma.Scout.TestApp.net20
             // subscribed to, Scout.dll will be held in memory and not 
             // garbage collected by the CLR; even if the class which uses
             // Scout functionality loses scope.
-            Okuma.Scout.Error.Reporter -= this.HandleScoutErrorInfo;
+            Okuma.Scout.Error.ReporterEvent -= this.HandleScoutErrorInfo;
 
             // Display the status of subscription status.
             this.CheckBox_ErrorSubscribed.Checked = false;

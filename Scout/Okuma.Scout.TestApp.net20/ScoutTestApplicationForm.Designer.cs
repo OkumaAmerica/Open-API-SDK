@@ -87,6 +87,13 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_ThincMachiningCenterCommandApiVer = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.TabThincApi2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TextBox_IsTapiCompatibleResult = new System.Windows.Forms.TextBox();
+            this.TextBox_IsTapiCompatibleInput = new System.Windows.Forms.TextBox();
+            this.label202 = new System.Windows.Forms.Label();
+            this.label201 = new System.Windows.Forms.Label();
+            this.Button_ThincApiInfo2 = new System.Windows.Forms.Button();
             this.TabOcjApi = new System.Windows.Forms.TabPage();
             this.label162 = new System.Windows.Forms.Label();
             this.TextBox_OspGrinderDataApiVer = new System.Windows.Forms.TextBox();
@@ -146,6 +153,12 @@ namespace Okuma.Scout.TestApp.net20
             this.ListBox_DMC = new System.Windows.Forms.ListBox();
             this.Button_DMC = new System.Windows.Forms.Button();
             this.DotNet = new System.Windows.Forms.TabPage();
+            this.label205 = new System.Windows.Forms.Label();
+            this.label204 = new System.Windows.Forms.Label();
+            this.TextBox_Net47 = new System.Windows.Forms.TextBox();
+            this.TextBox_Net462 = new System.Windows.Forms.TextBox();
+            this.TextBox_Net461 = new System.Windows.Forms.TextBox();
+            this.label203 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.TextBox_Net46 = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
@@ -316,45 +329,22 @@ namespace Okuma.Scout.TestApp.net20
             this.label64 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.Button_ApiLicense = new System.Windows.Forms.Button();
-            this.TextBox_License_GCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_GDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_ToolId_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_UserAlarmMC_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_UserAlarmL_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_NcCurrentAlarm_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_UserTaskIOMC_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_UserTaskIOL_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_P200_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_MCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_MDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_LCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
-            this.TextBox_License_LDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
             this.OS = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TextBox_EnvOSVer = new System.Windows.Forms.TextBox();
+            this.TextBox_EnvMachineName = new System.Windows.Forms.TextBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.TextBox_EnvUserDomain = new System.Windows.Forms.TextBox();
+            this.TextBox_EnvProcessorCount = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.TextBox_EnvUserName = new System.Windows.Forms.TextBox();
             this.label173 = new System.Windows.Forms.Label();
             this.TextBox_EnvUserPermissions = new System.Windows.Forms.TextBox();
-            this.label119 = new System.Windows.Forms.Label();
-            this.TextBox_EnvUserDomain = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.TextBox_EnvUserName = new System.Windows.Forms.TextBox();
-            this.label117 = new System.Windows.Forms.Label();
-            this.TextBox_EnvProcessorCount = new System.Windows.Forms.TextBox();
-            this.label116 = new System.Windows.Forms.Label();
-            this.TextBox_EnvOSVer = new System.Windows.Forms.TextBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.TextBox_EnvMachineName = new System.Windows.Forms.TextBox();
-            this.label112 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionTarget = new System.Windows.Forms.TextBox();
-            this.label111 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionLanguage = new System.Windows.Forms.TextBox();
-            this.label110 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionConfigVersion = new System.Windows.Forms.TextBox();
-            this.label109 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionConfigDate = new System.Windows.Forms.TextBox();
-            this.label108 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionComment = new System.Windows.Forms.TextBox();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.TextBox_OSVersionTitle = new System.Windows.Forms.TextBox();
             this.label104 = new System.Windows.Forms.Label();
             this.TextBox_OSBits = new System.Windows.Forms.TextBox();
             this.label103 = new System.Windows.Forms.Label();
@@ -369,7 +359,28 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_OSEdition = new System.Windows.Forms.TextBox();
             this.label98 = new System.Windows.Forms.Label();
             this.TextBox_OSName = new System.Windows.Forms.TextBox();
-            this.Button_OS = new System.Windows.Forms.Button();
+            this.Button_OS1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TextBox_OS2WMI = new System.Windows.Forms.TextBox();
+            this.TextBox_OS2Caption = new System.Windows.Forms.TextBox();
+            this.label207 = new System.Windows.Forms.Label();
+            this.label206 = new System.Windows.Forms.Label();
+            this.Button_OS2 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Button_OS3 = new System.Windows.Forms.Button();
+            this.label112 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionTarget = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionLanguage = new System.Windows.Forms.TextBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionConfigVersion = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionConfigDate = new System.Windows.Forms.TextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionComment = new System.Windows.Forms.TextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.TextBox_OSVersionTitle = new System.Windows.Forms.TextBox();
             this.PIOD = new System.Windows.Forms.TabPage();
             this.TextBox_ValidPiodFileExists = new System.Windows.Forms.TextBox();
             this.label180 = new System.Windows.Forms.Label();
@@ -387,6 +398,8 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_PiodControl = new System.Windows.Forms.TextBox();
             this.Button_PiodFileExecute = new System.Windows.Forms.Button();
             this.Platform = new System.Windows.Forms.TabPage();
+            this.label200 = new System.Windows.Forms.Label();
+            this.TextBox_OspRestrictions = new System.Windows.Forms.TextBox();
             this.label199 = new System.Windows.Forms.Label();
             this.TextBox_NcSoftPkgVersion = new System.Windows.Forms.TextBox();
             this.label181 = new System.Windows.Forms.Label();
@@ -569,12 +582,25 @@ namespace Okuma.Scout.TestApp.net20
             this.button2 = new System.Windows.Forms.Button();
             this.label148 = new System.Windows.Forms.Label();
             this.TextBox_PLCSpecFirstHalf = new System.Windows.Forms.TextBox();
-            this.label200 = new System.Windows.Forms.Label();
-            this.TextBox_OspRestrictions = new System.Windows.Forms.TextBox();
+            this.TextBox_License_GCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_GDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_ToolId_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_UserAlarmMC_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_UserAlarmL_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_NcCurrentAlarm_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_UserTaskIOMC_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_UserTaskIOL_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_P200_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_MCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_MDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_LCMDAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
+            this.TextBox_License_LDATAPI_Status = new Okuma.Scout.TestApp.net20.ResultBox();
             this.tabControl1.SuspendLayout();
             this.API.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.TabThincApi.SuspendLayout();
+            this.TabThincApi2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.TabOcjApi.SuspendLayout();
             this.Dir.SuspendLayout();
             this.DMC.SuspendLayout();
@@ -584,6 +610,11 @@ namespace Okuma.Scout.TestApp.net20
             this.GAC.SuspendLayout();
             this.License.SuspendLayout();
             this.OS.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.PIOD.SuspendLayout();
             this.Platform.SuspendLayout();
             this.Process.SuspendLayout();
@@ -676,6 +707,7 @@ namespace Okuma.Scout.TestApp.net20
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.TabThincApi);
+            this.tabControl3.Controls.Add(this.TabThincApi2);
             this.tabControl3.Controls.Add(this.TabOcjApi);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -741,7 +773,7 @@ namespace Okuma.Scout.TestApp.net20
             this.TabThincApi.Padding = new System.Windows.Forms.Padding(3);
             this.TabThincApi.Size = new System.Drawing.Size(662, 381);
             this.TabThincApi.TabIndex = 0;
-            this.TabThincApi.Text = "OSP Open API";
+            this.TabThincApi.Text = "THINC API";
             this.TabThincApi.UseVisualStyleBackColor = true;
             // 
             // label158
@@ -1241,6 +1273,75 @@ namespace Okuma.Scout.TestApp.net20
             this.label35.Size = new System.Drawing.Size(45, 13);
             this.label35.TabIndex = 73;
             this.label35.Text = "Version:";
+            // 
+            // TabThincApi2
+            // 
+            this.TabThincApi2.Controls.Add(this.groupBox1);
+            this.TabThincApi2.Controls.Add(this.Button_ThincApiInfo2);
+            this.TabThincApi2.Location = new System.Drawing.Point(4, 29);
+            this.TabThincApi2.Name = "TabThincApi2";
+            this.TabThincApi2.Size = new System.Drawing.Size(662, 381);
+            this.TabThincApi2.TabIndex = 2;
+            this.TabThincApi2.Text = "THINC API 2";
+            this.TabThincApi2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.TextBox_IsTapiCompatibleResult);
+            this.groupBox1.Controls.Add(this.TextBox_IsTapiCompatibleInput);
+            this.groupBox1.Controls.Add(this.label202);
+            this.groupBox1.Controls.Add(this.label201);
+            this.groupBox1.Location = new System.Drawing.Point(18, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(492, 142);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Can Machine Run App That Requires THINC API Version x.x?";
+            // 
+            // TextBox_IsTapiCompatibleResult
+            // 
+            this.TextBox_IsTapiCompatibleResult.Location = new System.Drawing.Point(174, 75);
+            this.TextBox_IsTapiCompatibleResult.Name = "TextBox_IsTapiCompatibleResult";
+            this.TextBox_IsTapiCompatibleResult.ReadOnly = true;
+            this.TextBox_IsTapiCompatibleResult.Size = new System.Drawing.Size(163, 26);
+            this.TextBox_IsTapiCompatibleResult.TabIndex = 3;
+            // 
+            // TextBox_IsTapiCompatibleInput
+            // 
+            this.TextBox_IsTapiCompatibleInput.Location = new System.Drawing.Point(124, 38);
+            this.TextBox_IsTapiCompatibleInput.Name = "TextBox_IsTapiCompatibleInput";
+            this.TextBox_IsTapiCompatibleInput.Size = new System.Drawing.Size(163, 26);
+            this.TextBox_IsTapiCompatibleInput.TabIndex = 2;
+            // 
+            // label202
+            // 
+            this.label202.AutoSize = true;
+            this.label202.Location = new System.Drawing.Point(14, 78);
+            this.label202.Name = "label202";
+            this.label202.Size = new System.Drawing.Size(156, 20);
+            this.label202.TabIndex = 1;
+            this.label202.Text = "Is Compatible Result";
+            // 
+            // label201
+            // 
+            this.label201.AutoSize = true;
+            this.label201.Location = new System.Drawing.Point(14, 39);
+            this.label201.Name = "label201";
+            this.label201.Size = new System.Drawing.Size(104, 20);
+            this.label201.TabIndex = 0;
+            this.label201.Text = "Input Version";
+            // 
+            // Button_ThincApiInfo2
+            // 
+            this.Button_ThincApiInfo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.Button_ThincApiInfo2.Location = new System.Drawing.Point(9, 9);
+            this.Button_ThincApiInfo2.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_ThincApiInfo2.Name = "Button_ThincApiInfo2";
+            this.Button_ThincApiInfo2.Size = new System.Drawing.Size(109, 23);
+            this.Button_ThincApiInfo2.TabIndex = 27;
+            this.Button_ThincApiInfo2.Text = "Execute";
+            this.Button_ThincApiInfo2.UseVisualStyleBackColor = true;
+            this.Button_ThincApiInfo2.Click += new System.EventHandler(this.Button_ThincApiInfo2_Click);
             // 
             // TabOcjApi
             // 
@@ -1854,7 +1955,7 @@ namespace Okuma.Scout.TestApp.net20
             this.ListBox_DMC.FormattingEnabled = true;
             this.ListBox_DMC.Location = new System.Drawing.Point(3, 52);
             this.ListBox_DMC.Name = "ListBox_DMC";
-            this.ListBox_DMC.Size = new System.Drawing.Size(643, 667);
+            this.ListBox_DMC.Size = new System.Drawing.Size(643, 693);
             this.ListBox_DMC.TabIndex = 12;
             // 
             // Button_DMC
@@ -1870,6 +1971,12 @@ namespace Okuma.Scout.TestApp.net20
             // 
             // DotNet
             // 
+            this.DotNet.Controls.Add(this.label205);
+            this.DotNet.Controls.Add(this.label204);
+            this.DotNet.Controls.Add(this.TextBox_Net47);
+            this.DotNet.Controls.Add(this.TextBox_Net462);
+            this.DotNet.Controls.Add(this.TextBox_Net461);
+            this.DotNet.Controls.Add(this.label203);
             this.DotNet.Controls.Add(this.label61);
             this.DotNet.Controls.Add(this.TextBox_Net46);
             this.DotNet.Controls.Add(this.label62);
@@ -1918,19 +2025,73 @@ namespace Okuma.Scout.TestApp.net20
             this.DotNet.Text = ".NET";
             this.DotNet.UseVisualStyleBackColor = true;
             // 
+            // label205
+            // 
+            this.label205.AutoSize = true;
+            this.label205.Location = new System.Drawing.Point(75, 389);
+            this.label205.Name = "label205";
+            this.label205.Size = new System.Drawing.Size(141, 13);
+            this.label205.TabIndex = 72;
+            this.label205.Text = "Microsoft .NET 4.7 Installed:";
+            // 
+            // label204
+            // 
+            this.label204.AutoSize = true;
+            this.label204.Location = new System.Drawing.Point(75, 363);
+            this.label204.Name = "label204";
+            this.label204.Size = new System.Drawing.Size(150, 13);
+            this.label204.TabIndex = 71;
+            this.label204.Text = "Microsoft .NET 4.6.2 Installed:";
+            // 
+            // TextBox_Net47
+            // 
+            this.TextBox_Net47.Enabled = false;
+            this.TextBox_Net47.Location = new System.Drawing.Point(247, 386);
+            this.TextBox_Net47.Name = "TextBox_Net47";
+            this.TextBox_Net47.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_Net47.TabIndex = 70;
+            this.TextBox_Net47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_Net462
+            // 
+            this.TextBox_Net462.Enabled = false;
+            this.TextBox_Net462.Location = new System.Drawing.Point(247, 360);
+            this.TextBox_Net462.Name = "TextBox_Net462";
+            this.TextBox_Net462.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_Net462.TabIndex = 69;
+            this.TextBox_Net462.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_Net461
+            // 
+            this.TextBox_Net461.Enabled = false;
+            this.TextBox_Net461.Location = new System.Drawing.Point(247, 334);
+            this.TextBox_Net461.Name = "TextBox_Net461";
+            this.TextBox_Net461.Size = new System.Drawing.Size(78, 20);
+            this.TextBox_Net461.TabIndex = 68;
+            this.TextBox_Net461.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label203
+            // 
+            this.label203.AutoSize = true;
+            this.label203.Location = new System.Drawing.Point(75, 337);
+            this.label203.Name = "label203";
+            this.label203.Size = new System.Drawing.Size(150, 13);
+            this.label203.TabIndex = 67;
+            this.label203.Text = "Microsoft .NET 4.6.1 Installed:";
+            // 
             // label61
             // 
             this.label61.AutoSize = true;
             this.label61.Location = new System.Drawing.Point(75, 311);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(181, 13);
+            this.label61.Size = new System.Drawing.Size(141, 13);
             this.label61.TabIndex = 65;
-            this.label61.Text = "Microsoft .NET 4.6 Preview installed:";
+            this.label61.Text = "Microsoft .NET 4.6 Installed:";
             // 
             // TextBox_Net46
             // 
             this.TextBox_Net46.Enabled = false;
-            this.TextBox_Net46.Location = new System.Drawing.Point(262, 308);
+            this.TextBox_Net46.Location = new System.Drawing.Point(247, 308);
             this.TextBox_Net46.Name = "TextBox_Net46";
             this.TextBox_Net46.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net46.TabIndex = 66;
@@ -1948,7 +2109,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net452
             // 
             this.TextBox_Net452.Enabled = false;
-            this.TextBox_Net452.Location = new System.Drawing.Point(262, 282);
+            this.TextBox_Net452.Location = new System.Drawing.Point(247, 282);
             this.TextBox_Net452.Name = "TextBox_Net452";
             this.TextBox_Net452.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net452.TabIndex = 64;
@@ -1966,7 +2127,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net451
             // 
             this.TextBox_Net451.Enabled = false;
-            this.TextBox_Net451.Location = new System.Drawing.Point(262, 256);
+            this.TextBox_Net451.Location = new System.Drawing.Point(247, 256);
             this.TextBox_Net451.Name = "TextBox_Net451";
             this.TextBox_Net451.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net451.TabIndex = 60;
@@ -1984,7 +2145,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net45
             // 
             this.TextBox_Net45.Enabled = false;
-            this.TextBox_Net45.Location = new System.Drawing.Point(262, 230);
+            this.TextBox_Net45.Location = new System.Drawing.Point(247, 230);
             this.TextBox_Net45.Name = "TextBox_Net45";
             this.TextBox_Net45.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net45.TabIndex = 56;
@@ -2020,7 +2181,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net40F
             // 
             this.TextBox_Net40F.Enabled = false;
-            this.TextBox_Net40F.Location = new System.Drawing.Point(262, 204);
+            this.TextBox_Net40F.Location = new System.Drawing.Point(247, 204);
             this.TextBox_Net40F.Name = "TextBox_Net40F";
             this.TextBox_Net40F.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40F.TabIndex = 52;
@@ -2056,7 +2217,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net40C
             // 
             this.TextBox_Net40C.Enabled = false;
-            this.TextBox_Net40C.Location = new System.Drawing.Point(262, 178);
+            this.TextBox_Net40C.Location = new System.Drawing.Point(247, 178);
             this.TextBox_Net40C.Name = "TextBox_Net40C";
             this.TextBox_Net40C.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net40C.TabIndex = 48;
@@ -2092,7 +2253,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net35
             // 
             this.TextBox_Net35.Enabled = false;
-            this.TextBox_Net35.Location = new System.Drawing.Point(262, 152);
+            this.TextBox_Net35.Location = new System.Drawing.Point(247, 152);
             this.TextBox_Net35.Name = "TextBox_Net35";
             this.TextBox_Net35.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net35.TabIndex = 44;
@@ -2128,7 +2289,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net30
             // 
             this.TextBox_Net30.Enabled = false;
-            this.TextBox_Net30.Location = new System.Drawing.Point(262, 126);
+            this.TextBox_Net30.Location = new System.Drawing.Point(247, 126);
             this.TextBox_Net30.Name = "TextBox_Net30";
             this.TextBox_Net30.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net30.TabIndex = 40;
@@ -2164,7 +2325,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net20
             // 
             this.TextBox_Net20.Enabled = false;
-            this.TextBox_Net20.Location = new System.Drawing.Point(262, 100);
+            this.TextBox_Net20.Location = new System.Drawing.Point(247, 100);
             this.TextBox_Net20.Name = "TextBox_Net20";
             this.TextBox_Net20.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net20.TabIndex = 36;
@@ -2200,7 +2361,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net11
             // 
             this.TextBox_Net11.Enabled = false;
-            this.TextBox_Net11.Location = new System.Drawing.Point(262, 74);
+            this.TextBox_Net11.Location = new System.Drawing.Point(247, 74);
             this.TextBox_Net11.Name = "TextBox_Net11";
             this.TextBox_Net11.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net11.TabIndex = 32;
@@ -2236,7 +2397,7 @@ namespace Okuma.Scout.TestApp.net20
             // TextBox_Net10
             // 
             this.TextBox_Net10.Enabled = false;
-            this.TextBox_Net10.Location = new System.Drawing.Point(262, 48);
+            this.TextBox_Net10.Location = new System.Drawing.Point(247, 48);
             this.TextBox_Net10.Name = "TextBox_Net10";
             this.TextBox_Net10.Size = new System.Drawing.Size(78, 20);
             this.TextBox_Net10.TabIndex = 28;
@@ -2299,7 +2460,7 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_ErrorHandling.Location = new System.Drawing.Point(6, 96);
             this.TextBox_ErrorHandling.Name = "TextBox_ErrorHandling";
             this.TextBox_ErrorHandling.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.TextBox_ErrorHandling.Size = new System.Drawing.Size(664, 736);
+            this.TextBox_ErrorHandling.Size = new System.Drawing.Size(664, 764);
             this.TextBox_ErrorHandling.TabIndex = 98;
             this.TextBox_ErrorHandling.Text = "";
             // 
@@ -2880,7 +3041,7 @@ namespace Okuma.Scout.TestApp.net20
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(660, 743);
+            this.textBox1.Size = new System.Drawing.Size(660, 771);
             this.textBox1.TabIndex = 9;
             // 
             // Label_A
@@ -3629,178 +3790,9 @@ namespace Okuma.Scout.TestApp.net20
             this.Button_ApiLicense.UseVisualStyleBackColor = true;
             this.Button_ApiLicense.Click += new System.EventHandler(this.Button_ApiLicense1_Click);
             // 
-            // TextBox_License_GCMDAPI_Status
-            // 
-            this.TextBox_License_GCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_GCMDAPI_Status.Location = new System.Drawing.Point(522, 183);
-            this.TextBox_License_GCMDAPI_Status.Name = "TextBox_License_GCMDAPI_Status";
-            this.TextBox_License_GCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_GCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_GCMDAPI_Status.TabIndex = 218;
-            this.TextBox_License_GCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_GDATAPI_Status
-            // 
-            this.TextBox_License_GDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_GDATAPI_Status.Location = new System.Drawing.Point(522, 105);
-            this.TextBox_License_GDATAPI_Status.Name = "TextBox_License_GDATAPI_Status";
-            this.TextBox_License_GDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_GDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_GDATAPI_Status.TabIndex = 212;
-            this.TextBox_License_GDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_ToolId_Status
-            // 
-            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 365);
-            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
-            this.TextBox_License_ToolId_Status.ReadOnly = true;
-            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_ToolId_Status.TabIndex = 122;
-            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserAlarmMC_Status
-            // 
-            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 339);
-            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
-            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
-            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserAlarmL_Status
-            // 
-            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 313);
-            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
-            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
-            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
-            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_NcCurrentAlarm_Status
-            // 
-            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 235);
-            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
-            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
-            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
-            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserTaskIOMC_Status
-            // 
-            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 287);
-            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
-            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
-            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_UserTaskIOL_Status
-            // 
-            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 261);
-            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
-            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
-            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
-            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_P200_Status
-            // 
-            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 209);
-            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
-            this.TextBox_License_P200_Status.ReadOnly = true;
-            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_P200_Status.TabIndex = 116;
-            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_MCMDAPI_Status
-            // 
-            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 157);
-            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
-            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
-            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_MDATAPI_Status
-            // 
-            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
-            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
-            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
-            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_LCMDAPI_Status
-            // 
-            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
-            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
-            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
-            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
-            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TextBox_License_LDATAPI_Status
-            // 
-            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
-            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
-            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
-            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
-            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
-            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // OS
             // 
-            this.OS.Controls.Add(this.label173);
-            this.OS.Controls.Add(this.TextBox_EnvUserPermissions);
-            this.OS.Controls.Add(this.label119);
-            this.OS.Controls.Add(this.TextBox_EnvUserDomain);
-            this.OS.Controls.Add(this.label118);
-            this.OS.Controls.Add(this.TextBox_EnvUserName);
-            this.OS.Controls.Add(this.label117);
-            this.OS.Controls.Add(this.TextBox_EnvProcessorCount);
-            this.OS.Controls.Add(this.label116);
-            this.OS.Controls.Add(this.TextBox_EnvOSVer);
-            this.OS.Controls.Add(this.label115);
-            this.OS.Controls.Add(this.TextBox_EnvMachineName);
-            this.OS.Controls.Add(this.label112);
-            this.OS.Controls.Add(this.TextBox_OSVersionTarget);
-            this.OS.Controls.Add(this.label111);
-            this.OS.Controls.Add(this.TextBox_OSVersionLanguage);
-            this.OS.Controls.Add(this.label110);
-            this.OS.Controls.Add(this.TextBox_OSVersionConfigVersion);
-            this.OS.Controls.Add(this.label109);
-            this.OS.Controls.Add(this.TextBox_OSVersionConfigDate);
-            this.OS.Controls.Add(this.label108);
-            this.OS.Controls.Add(this.TextBox_OSVersionComment);
-            this.OS.Controls.Add(this.label107);
-            this.OS.Controls.Add(this.label106);
-            this.OS.Controls.Add(this.TextBox_OSVersionTitle);
-            this.OS.Controls.Add(this.label104);
-            this.OS.Controls.Add(this.TextBox_OSBits);
-            this.OS.Controls.Add(this.label103);
-            this.OS.Controls.Add(this.TextBox_OSInternet);
-            this.OS.Controls.Add(this.label102);
-            this.OS.Controls.Add(this.TextBox_OSProcessorBits);
-            this.OS.Controls.Add(this.label101);
-            this.OS.Controls.Add(this.TextBox_OSVersion);
-            this.OS.Controls.Add(this.label100);
-            this.OS.Controls.Add(this.TextBox_OSServicePack);
-            this.OS.Controls.Add(this.label99);
-            this.OS.Controls.Add(this.TextBox_OSEdition);
-            this.OS.Controls.Add(this.label98);
-            this.OS.Controls.Add(this.TextBox_OSName);
-            this.OS.Controls.Add(this.Button_OS);
+            this.OS.Controls.Add(this.tabControl4);
             this.OS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.OS.Location = new System.Drawing.Point(4, 60);
             this.OS.Name = "OS";
@@ -3810,366 +3802,523 @@ namespace Okuma.Scout.TestApp.net20
             this.OS.Text = "Operating System";
             this.OS.UseVisualStyleBackColor = true;
             // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage1);
+            this.tabControl4.Controls.Add(this.tabPage2);
+            this.tabControl4.Controls.Add(this.tabPage3);
+            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl4.Location = new System.Drawing.Point(3, 3);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(670, 414);
+            this.tabControl4.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl4.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.label173);
+            this.tabPage1.Controls.Add(this.TextBox_EnvUserPermissions);
+            this.tabPage1.Controls.Add(this.label104);
+            this.tabPage1.Controls.Add(this.TextBox_OSBits);
+            this.tabPage1.Controls.Add(this.label103);
+            this.tabPage1.Controls.Add(this.TextBox_OSInternet);
+            this.tabPage1.Controls.Add(this.label102);
+            this.tabPage1.Controls.Add(this.TextBox_OSProcessorBits);
+            this.tabPage1.Controls.Add(this.label101);
+            this.tabPage1.Controls.Add(this.TextBox_OSVersion);
+            this.tabPage1.Controls.Add(this.label100);
+            this.tabPage1.Controls.Add(this.TextBox_OSServicePack);
+            this.tabPage1.Controls.Add(this.label99);
+            this.tabPage1.Controls.Add(this.TextBox_OSEdition);
+            this.tabPage1.Controls.Add(this.label98);
+            this.tabPage1.Controls.Add(this.TextBox_OSName);
+            this.tabPage1.Controls.Add(this.Button_OS1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(662, 388);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Operating System";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.Controls.Add(this.TextBox_EnvOSVer);
+            this.groupBox2.Controls.Add(this.TextBox_EnvMachineName);
+            this.groupBox2.Controls.Add(this.label115);
+            this.groupBox2.Controls.Add(this.label119);
+            this.groupBox2.Controls.Add(this.label116);
+            this.groupBox2.Controls.Add(this.TextBox_EnvUserDomain);
+            this.groupBox2.Controls.Add(this.TextBox_EnvProcessorCount);
+            this.groupBox2.Controls.Add(this.label118);
+            this.groupBox2.Controls.Add(this.label117);
+            this.groupBox2.Controls.Add(this.TextBox_EnvUserName);
+            this.groupBox2.Location = new System.Drawing.Point(77, 238);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(579, 147);
+            this.groupBox2.TabIndex = 168;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "System.Environment";
+            // 
+            // TextBox_EnvOSVer
+            // 
+            this.TextBox_EnvOSVer.Enabled = false;
+            this.TextBox_EnvOSVer.Location = new System.Drawing.Point(109, 29);
+            this.TextBox_EnvOSVer.Name = "TextBox_EnvOSVer";
+            this.TextBox_EnvOSVer.Size = new System.Drawing.Size(450, 20);
+            this.TextBox_EnvOSVer.TabIndex = 159;
+            // 
+            // TextBox_EnvMachineName
+            // 
+            this.TextBox_EnvMachineName.Enabled = false;
+            this.TextBox_EnvMachineName.Location = new System.Drawing.Point(339, 59);
+            this.TextBox_EnvMachineName.Name = "TextBox_EnvMachineName";
+            this.TextBox_EnvMachineName.Size = new System.Drawing.Size(220, 20);
+            this.TextBox_EnvMachineName.TabIndex = 157;
+            this.TextBox_EnvMachineName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(251, 62);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(82, 13);
+            this.label115.TabIndex = 156;
+            this.label115.Text = "Machine Name:";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Location = new System.Drawing.Point(262, 114);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(71, 13);
+            this.label119.TabIndex = 164;
+            this.label119.Text = "User Domain:";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(12, 32);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(91, 13);
+            this.label116.TabIndex = 158;
+            this.label116.Text = "OS Version (Env):";
+            // 
+            // TextBox_EnvUserDomain
+            // 
+            this.TextBox_EnvUserDomain.Enabled = false;
+            this.TextBox_EnvUserDomain.Location = new System.Drawing.Point(339, 111);
+            this.TextBox_EnvUserDomain.Name = "TextBox_EnvUserDomain";
+            this.TextBox_EnvUserDomain.Size = new System.Drawing.Size(220, 20);
+            this.TextBox_EnvUserDomain.TabIndex = 165;
+            this.TextBox_EnvUserDomain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_EnvProcessorCount
+            // 
+            this.TextBox_EnvProcessorCount.Enabled = false;
+            this.TextBox_EnvProcessorCount.Location = new System.Drawing.Point(109, 59);
+            this.TextBox_EnvProcessorCount.Name = "TextBox_EnvProcessorCount";
+            this.TextBox_EnvProcessorCount.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_EnvProcessorCount.TabIndex = 161;
+            this.TextBox_EnvProcessorCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Location = new System.Drawing.Point(270, 88);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(63, 13);
+            this.label118.TabIndex = 162;
+            this.label118.Text = "User Name:";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Location = new System.Drawing.Point(15, 62);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(88, 13);
+            this.label117.TabIndex = 160;
+            this.label117.Text = "Processor Count:";
+            // 
+            // TextBox_EnvUserName
+            // 
+            this.TextBox_EnvUserName.Enabled = false;
+            this.TextBox_EnvUserName.Location = new System.Drawing.Point(339, 85);
+            this.TextBox_EnvUserName.Name = "TextBox_EnvUserName";
+            this.TextBox_EnvUserName.Size = new System.Drawing.Size(220, 20);
+            this.TextBox_EnvUserName.TabIndex = 163;
+            this.TextBox_EnvUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label173
             // 
             this.label173.AutoSize = true;
-            this.label173.Location = new System.Drawing.Point(265, 315);
+            this.label173.Location = new System.Drawing.Point(90, 209);
             this.label173.Name = "label173";
             this.label173.Size = new System.Drawing.Size(90, 13);
-            this.label173.TabIndex = 126;
+            this.label173.TabIndex = 166;
             this.label173.Text = "User Permissions:";
             // 
             // TextBox_EnvUserPermissions
             // 
             this.TextBox_EnvUserPermissions.Enabled = false;
-            this.TextBox_EnvUserPermissions.Location = new System.Drawing.Point(361, 312);
+            this.TextBox_EnvUserPermissions.Location = new System.Drawing.Point(186, 206);
             this.TextBox_EnvUserPermissions.Name = "TextBox_EnvUserPermissions";
             this.TextBox_EnvUserPermissions.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_EnvUserPermissions.TabIndex = 127;
+            this.TextBox_EnvUserPermissions.TabIndex = 167;
             this.TextBox_EnvUserPermissions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(284, 341);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(71, 13);
-            this.label119.TabIndex = 124;
-            this.label119.Text = "User Domain:";
-            // 
-            // TextBox_EnvUserDomain
-            // 
-            this.TextBox_EnvUserDomain.Enabled = false;
-            this.TextBox_EnvUserDomain.Location = new System.Drawing.Point(361, 338);
-            this.TextBox_EnvUserDomain.Name = "TextBox_EnvUserDomain";
-            this.TextBox_EnvUserDomain.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_EnvUserDomain.TabIndex = 125;
-            this.TextBox_EnvUserDomain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(292, 289);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(63, 13);
-            this.label118.TabIndex = 122;
-            this.label118.Text = "User Name:";
-            // 
-            // TextBox_EnvUserName
-            // 
-            this.TextBox_EnvUserName.Enabled = false;
-            this.TextBox_EnvUserName.Location = new System.Drawing.Point(361, 286);
-            this.TextBox_EnvUserName.Name = "TextBox_EnvUserName";
-            this.TextBox_EnvUserName.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_EnvUserName.TabIndex = 123;
-            this.TextBox_EnvUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(37, 263);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(88, 13);
-            this.label117.TabIndex = 120;
-            this.label117.Text = "Processor Count:";
-            // 
-            // TextBox_EnvProcessorCount
-            // 
-            this.TextBox_EnvProcessorCount.Enabled = false;
-            this.TextBox_EnvProcessorCount.Location = new System.Drawing.Point(131, 260);
-            this.TextBox_EnvProcessorCount.Name = "TextBox_EnvProcessorCount";
-            this.TextBox_EnvProcessorCount.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_EnvProcessorCount.TabIndex = 121;
-            this.TextBox_EnvProcessorCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(34, 233);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(91, 13);
-            this.label116.TabIndex = 118;
-            this.label116.Text = "OS Version (Env):";
-            // 
-            // TextBox_EnvOSVer
-            // 
-            this.TextBox_EnvOSVer.Enabled = false;
-            this.TextBox_EnvOSVer.Location = new System.Drawing.Point(131, 230);
-            this.TextBox_EnvOSVer.Name = "TextBox_EnvOSVer";
-            this.TextBox_EnvOSVer.Size = new System.Drawing.Size(450, 20);
-            this.TextBox_EnvOSVer.TabIndex = 119;
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(273, 263);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(82, 13);
-            this.label115.TabIndex = 116;
-            this.label115.Text = "Machine Name:";
-            // 
-            // TextBox_EnvMachineName
-            // 
-            this.TextBox_EnvMachineName.Enabled = false;
-            this.TextBox_EnvMachineName.Location = new System.Drawing.Point(361, 260);
-            this.TextBox_EnvMachineName.Name = "TextBox_EnvMachineName";
-            this.TextBox_EnvMachineName.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_EnvMachineName.TabIndex = 117;
-            this.TextBox_EnvMachineName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(314, 181);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(41, 13);
-            this.label112.TabIndex = 114;
-            this.label112.Text = "Target:";
-            // 
-            // TextBox_OSVersionTarget
-            // 
-            this.TextBox_OSVersionTarget.Enabled = false;
-            this.TextBox_OSVersionTarget.Location = new System.Drawing.Point(361, 178);
-            this.TextBox_OSVersionTarget.Name = "TextBox_OSVersionTarget";
-            this.TextBox_OSVersionTarget.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionTarget.TabIndex = 115;
-            this.TextBox_OSVersionTarget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(297, 155);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(58, 13);
-            this.label111.TabIndex = 112;
-            this.label111.Text = "Language:";
-            // 
-            // TextBox_OSVersionLanguage
-            // 
-            this.TextBox_OSVersionLanguage.Enabled = false;
-            this.TextBox_OSVersionLanguage.Location = new System.Drawing.Point(361, 152);
-            this.TextBox_OSVersionLanguage.Name = "TextBox_OSVersionLanguage";
-            this.TextBox_OSVersionLanguage.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionLanguage.TabIndex = 113;
-            this.TextBox_OSVersionLanguage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label110
-            // 
-            this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(277, 129);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(78, 13);
-            this.label110.TabIndex = 110;
-            this.label110.Text = "Config Version:";
-            // 
-            // TextBox_OSVersionConfigVersion
-            // 
-            this.TextBox_OSVersionConfigVersion.Enabled = false;
-            this.TextBox_OSVersionConfigVersion.Location = new System.Drawing.Point(361, 126);
-            this.TextBox_OSVersionConfigVersion.Name = "TextBox_OSVersionConfigVersion";
-            this.TextBox_OSVersionConfigVersion.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionConfigVersion.TabIndex = 111;
-            this.TextBox_OSVersionConfigVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label109
-            // 
-            this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(289, 103);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(66, 13);
-            this.label109.TabIndex = 108;
-            this.label109.Text = "Config Date:";
-            // 
-            // TextBox_OSVersionConfigDate
-            // 
-            this.TextBox_OSVersionConfigDate.Enabled = false;
-            this.TextBox_OSVersionConfigDate.Location = new System.Drawing.Point(361, 100);
-            this.TextBox_OSVersionConfigDate.Name = "TextBox_OSVersionConfigDate";
-            this.TextBox_OSVersionConfigDate.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionConfigDate.TabIndex = 109;
-            this.TextBox_OSVersionConfigDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(301, 77);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(54, 13);
-            this.label108.TabIndex = 106;
-            this.label108.Text = "Comment:";
-            // 
-            // TextBox_OSVersionComment
-            // 
-            this.TextBox_OSVersionComment.Enabled = false;
-            this.TextBox_OSVersionComment.Location = new System.Drawing.Point(361, 74);
-            this.TextBox_OSVersionComment.Name = "TextBox_OSVersionComment";
-            this.TextBox_OSVersionComment.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionComment.TabIndex = 107;
-            this.TextBox_OSVersionComment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(422, 23);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(82, 13);
-            this.label107.TabIndex = 105;
-            this.label107.Text = "From Version.txt";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(325, 51);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(30, 13);
-            this.label106.TabIndex = 103;
-            this.label106.Text = "Title:";
-            // 
-            // TextBox_OSVersionTitle
-            // 
-            this.TextBox_OSVersionTitle.Enabled = false;
-            this.TextBox_OSVersionTitle.Location = new System.Drawing.Point(361, 48);
-            this.TextBox_OSVersionTitle.Name = "TextBox_OSVersionTitle";
-            this.TextBox_OSVersionTitle.Size = new System.Drawing.Size(220, 20);
-            this.TextBox_OSVersionTitle.TabIndex = 104;
-            this.TextBox_OSVersionTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label104
             // 
             this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(80, 181);
+            this.label104.Location = new System.Drawing.Point(135, 157);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(45, 13);
-            this.label104.TabIndex = 99;
+            this.label104.TabIndex = 141;
             this.label104.Text = "OS Bits:";
             // 
             // TextBox_OSBits
             // 
             this.TextBox_OSBits.Enabled = false;
-            this.TextBox_OSBits.Location = new System.Drawing.Point(131, 178);
+            this.TextBox_OSBits.Location = new System.Drawing.Point(186, 154);
             this.TextBox_OSBits.Name = "TextBox_OSBits";
             this.TextBox_OSBits.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSBits.TabIndex = 100;
+            this.TextBox_OSBits.TabIndex = 142;
             this.TextBox_OSBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(22, 207);
+            this.label103.Location = new System.Drawing.Point(77, 183);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(103, 13);
-            this.label103.TabIndex = 97;
+            this.label103.TabIndex = 139;
             this.label103.Text = "Internet Connection:";
             // 
             // TextBox_OSInternet
             // 
             this.TextBox_OSInternet.Enabled = false;
-            this.TextBox_OSInternet.Location = new System.Drawing.Point(131, 204);
+            this.TextBox_OSInternet.Location = new System.Drawing.Point(186, 180);
             this.TextBox_OSInternet.Name = "TextBox_OSInternet";
             this.TextBox_OSInternet.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSInternet.TabIndex = 98;
+            this.TextBox_OSInternet.TabIndex = 140;
             this.TextBox_OSInternet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label102
             // 
             this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(48, 155);
+            this.label102.Location = new System.Drawing.Point(103, 131);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(77, 13);
-            this.label102.TabIndex = 95;
+            this.label102.TabIndex = 137;
             this.label102.Text = "Processor Bits:";
             // 
             // TextBox_OSProcessorBits
             // 
             this.TextBox_OSProcessorBits.Enabled = false;
-            this.TextBox_OSProcessorBits.Location = new System.Drawing.Point(131, 152);
+            this.TextBox_OSProcessorBits.Location = new System.Drawing.Point(186, 128);
             this.TextBox_OSProcessorBits.Name = "TextBox_OSProcessorBits";
             this.TextBox_OSProcessorBits.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSProcessorBits.TabIndex = 96;
+            this.TextBox_OSProcessorBits.TabIndex = 138;
             this.TextBox_OSProcessorBits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(80, 129);
+            this.label101.Location = new System.Drawing.Point(135, 105);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(45, 13);
-            this.label101.TabIndex = 93;
+            this.label101.TabIndex = 135;
             this.label101.Text = "Version:";
             // 
             // TextBox_OSVersion
             // 
             this.TextBox_OSVersion.Enabled = false;
-            this.TextBox_OSVersion.Location = new System.Drawing.Point(131, 126);
+            this.TextBox_OSVersion.Location = new System.Drawing.Point(186, 102);
             this.TextBox_OSVersion.Name = "TextBox_OSVersion";
             this.TextBox_OSVersion.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSVersion.TabIndex = 94;
+            this.TextBox_OSVersion.TabIndex = 136;
             this.TextBox_OSVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label100
             // 
             this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(51, 103);
+            this.label100.Location = new System.Drawing.Point(106, 79);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(74, 13);
-            this.label100.TabIndex = 91;
+            this.label100.TabIndex = 133;
             this.label100.Text = "Service Pack:";
             // 
             // TextBox_OSServicePack
             // 
             this.TextBox_OSServicePack.Enabled = false;
-            this.TextBox_OSServicePack.Location = new System.Drawing.Point(131, 100);
+            this.TextBox_OSServicePack.Location = new System.Drawing.Point(186, 76);
             this.TextBox_OSServicePack.Name = "TextBox_OSServicePack";
             this.TextBox_OSServicePack.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSServicePack.TabIndex = 92;
+            this.TextBox_OSServicePack.TabIndex = 134;
             this.TextBox_OSServicePack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label99
             // 
             this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(83, 77);
+            this.label99.Location = new System.Drawing.Point(138, 53);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(42, 13);
-            this.label99.TabIndex = 89;
+            this.label99.TabIndex = 131;
             this.label99.Text = "Edition:";
             // 
             // TextBox_OSEdition
             // 
             this.TextBox_OSEdition.Enabled = false;
-            this.TextBox_OSEdition.Location = new System.Drawing.Point(131, 74);
+            this.TextBox_OSEdition.Location = new System.Drawing.Point(186, 50);
             this.TextBox_OSEdition.Name = "TextBox_OSEdition";
-            this.TextBox_OSEdition.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSEdition.TabIndex = 90;
+            this.TextBox_OSEdition.Size = new System.Drawing.Size(241, 20);
+            this.TextBox_OSEdition.TabIndex = 132;
             this.TextBox_OSEdition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label98
             // 
             this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(87, 51);
+            this.label98.Location = new System.Drawing.Point(142, 27);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(38, 13);
-            this.label98.TabIndex = 87;
+            this.label98.TabIndex = 129;
             this.label98.Text = "Name:";
             // 
             // TextBox_OSName
             // 
             this.TextBox_OSName.Enabled = false;
-            this.TextBox_OSName.Location = new System.Drawing.Point(131, 48);
+            this.TextBox_OSName.Location = new System.Drawing.Point(186, 24);
             this.TextBox_OSName.Name = "TextBox_OSName";
-            this.TextBox_OSName.Size = new System.Drawing.Size(120, 20);
-            this.TextBox_OSName.TabIndex = 88;
+            this.TextBox_OSName.Size = new System.Drawing.Size(241, 20);
+            this.TextBox_OSName.TabIndex = 130;
             this.TextBox_OSName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Button_OS
+            // Button_OS1
             // 
-            this.Button_OS.Location = new System.Drawing.Point(11, 9);
-            this.Button_OS.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
-            this.Button_OS.Name = "Button_OS";
-            this.Button_OS.Size = new System.Drawing.Size(109, 23);
-            this.Button_OS.TabIndex = 9;
-            this.Button_OS.Text = "Execute";
-            this.Button_OS.UseVisualStyleBackColor = true;
-            this.Button_OS.Click += new System.EventHandler(this.Button_OS_Click);
+            this.Button_OS1.Location = new System.Drawing.Point(9, 9);
+            this.Button_OS1.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_OS1.Name = "Button_OS1";
+            this.Button_OS1.Size = new System.Drawing.Size(109, 23);
+            this.Button_OS1.TabIndex = 128;
+            this.Button_OS1.Text = "Execute";
+            this.Button_OS1.UseVisualStyleBackColor = true;
+            this.Button_OS1.Click += new System.EventHandler(this.Button_OS1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.TextBox_OS2WMI);
+            this.tabPage2.Controls.Add(this.TextBox_OS2Caption);
+            this.tabPage2.Controls.Add(this.label207);
+            this.tabPage2.Controls.Add(this.label206);
+            this.tabPage2.Controls.Add(this.Button_OS2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(662, 388);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Operating System 2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_OS2WMI
+            // 
+            this.TextBox_OS2WMI.Location = new System.Drawing.Point(36, 116);
+            this.TextBox_OS2WMI.Multiline = true;
+            this.TextBox_OS2WMI.Name = "TextBox_OS2WMI";
+            this.TextBox_OS2WMI.ReadOnly = true;
+            this.TextBox_OS2WMI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_OS2WMI.Size = new System.Drawing.Size(540, 258);
+            this.TextBox_OS2WMI.TabIndex = 133;
+            // 
+            // TextBox_OS2Caption
+            // 
+            this.TextBox_OS2Caption.Location = new System.Drawing.Point(87, 49);
+            this.TextBox_OS2Caption.Name = "TextBox_OS2Caption";
+            this.TextBox_OS2Caption.ReadOnly = true;
+            this.TextBox_OS2Caption.Size = new System.Drawing.Size(267, 20);
+            this.TextBox_OS2Caption.TabIndex = 132;
+            // 
+            // label207
+            // 
+            this.label207.AutoSize = true;
+            this.label207.Location = new System.Drawing.Point(35, 92);
+            this.label207.Name = "label207";
+            this.label207.Size = new System.Drawing.Size(311, 13);
+            this.label207.TabIndex = 131;
+            this.label207.Text = "Okuma.Scout.OS.WMI_OperatingSystem Properties and Values:";
+            // 
+            // label206
+            // 
+            this.label206.AutoSize = true;
+            this.label206.Location = new System.Drawing.Point(35, 52);
+            this.label206.Name = "label206";
+            this.label206.Size = new System.Drawing.Size(46, 13);
+            this.label206.TabIndex = 130;
+            this.label206.Text = "Caption:";
+            // 
+            // Button_OS2
+            // 
+            this.Button_OS2.Location = new System.Drawing.Point(9, 9);
+            this.Button_OS2.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_OS2.Name = "Button_OS2";
+            this.Button_OS2.Size = new System.Drawing.Size(109, 23);
+            this.Button_OS2.TabIndex = 129;
+            this.Button_OS2.Text = "Execute";
+            this.Button_OS2.UseVisualStyleBackColor = true;
+            this.Button_OS2.Click += new System.EventHandler(this.Button_OS2_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.Button_OS3);
+            this.tabPage3.Controls.Add(this.label112);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionTarget);
+            this.tabPage3.Controls.Add(this.label111);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionLanguage);
+            this.tabPage3.Controls.Add(this.label110);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionConfigVersion);
+            this.tabPage3.Controls.Add(this.label109);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionConfigDate);
+            this.tabPage3.Controls.Add(this.label108);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionComment);
+            this.tabPage3.Controls.Add(this.label107);
+            this.tabPage3.Controls.Add(this.label106);
+            this.tabPage3.Controls.Add(this.TextBox_OSVersionTitle);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(662, 388);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Operating System 3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // Button_OS3
+            // 
+            this.Button_OS3.Location = new System.Drawing.Point(9, 9);
+            this.Button_OS3.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.Button_OS3.Name = "Button_OS3";
+            this.Button_OS3.Size = new System.Drawing.Size(109, 23);
+            this.Button_OS3.TabIndex = 169;
+            this.Button_OS3.Text = "Execute";
+            this.Button_OS3.UseVisualStyleBackColor = true;
+            this.Button_OS3.Click += new System.EventHandler(this.Button_OS3_Click);
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(56, 199);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(41, 13);
+            this.label112.TabIndex = 167;
+            this.label112.Text = "Target:";
+            // 
+            // TextBox_OSVersionTarget
+            // 
+            this.TextBox_OSVersionTarget.Enabled = false;
+            this.TextBox_OSVersionTarget.Location = new System.Drawing.Point(103, 196);
+            this.TextBox_OSVersionTarget.Name = "TextBox_OSVersionTarget";
+            this.TextBox_OSVersionTarget.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionTarget.TabIndex = 168;
+            this.TextBox_OSVersionTarget.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(39, 173);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(58, 13);
+            this.label111.TabIndex = 165;
+            this.label111.Text = "Language:";
+            // 
+            // TextBox_OSVersionLanguage
+            // 
+            this.TextBox_OSVersionLanguage.Enabled = false;
+            this.TextBox_OSVersionLanguage.Location = new System.Drawing.Point(103, 170);
+            this.TextBox_OSVersionLanguage.Name = "TextBox_OSVersionLanguage";
+            this.TextBox_OSVersionLanguage.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionLanguage.TabIndex = 166;
+            this.TextBox_OSVersionLanguage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(19, 147);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(78, 13);
+            this.label110.TabIndex = 163;
+            this.label110.Text = "Config Version:";
+            // 
+            // TextBox_OSVersionConfigVersion
+            // 
+            this.TextBox_OSVersionConfigVersion.Enabled = false;
+            this.TextBox_OSVersionConfigVersion.Location = new System.Drawing.Point(103, 144);
+            this.TextBox_OSVersionConfigVersion.Name = "TextBox_OSVersionConfigVersion";
+            this.TextBox_OSVersionConfigVersion.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionConfigVersion.TabIndex = 164;
+            this.TextBox_OSVersionConfigVersion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(31, 121);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(66, 13);
+            this.label109.TabIndex = 161;
+            this.label109.Text = "Config Date:";
+            // 
+            // TextBox_OSVersionConfigDate
+            // 
+            this.TextBox_OSVersionConfigDate.Enabled = false;
+            this.TextBox_OSVersionConfigDate.Location = new System.Drawing.Point(103, 118);
+            this.TextBox_OSVersionConfigDate.Name = "TextBox_OSVersionConfigDate";
+            this.TextBox_OSVersionConfigDate.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionConfigDate.TabIndex = 162;
+            this.TextBox_OSVersionConfigDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(43, 95);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(54, 13);
+            this.label108.TabIndex = 159;
+            this.label108.Text = "Comment:";
+            // 
+            // TextBox_OSVersionComment
+            // 
+            this.TextBox_OSVersionComment.Enabled = false;
+            this.TextBox_OSVersionComment.Location = new System.Drawing.Point(103, 92);
+            this.TextBox_OSVersionComment.Name = "TextBox_OSVersionComment";
+            this.TextBox_OSVersionComment.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionComment.TabIndex = 160;
+            this.TextBox_OSVersionComment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(164, 41);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(82, 13);
+            this.label107.TabIndex = 158;
+            this.label107.Text = "From Version.txt";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(67, 69);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(30, 13);
+            this.label106.TabIndex = 156;
+            this.label106.Text = "Title:";
+            // 
+            // TextBox_OSVersionTitle
+            // 
+            this.TextBox_OSVersionTitle.Enabled = false;
+            this.TextBox_OSVersionTitle.Location = new System.Drawing.Point(103, 66);
+            this.TextBox_OSVersionTitle.Name = "TextBox_OSVersionTitle";
+            this.TextBox_OSVersionTitle.Size = new System.Drawing.Size(347, 20);
+            this.TextBox_OSVersionTitle.TabIndex = 157;
+            this.TextBox_OSVersionTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PIOD
             // 
@@ -4384,6 +4533,24 @@ namespace Okuma.Scout.TestApp.net20
             this.Platform.TabIndex = 0;
             this.Platform.Text = "Platform";
             this.Platform.UseVisualStyleBackColor = true;
+            // 
+            // label200
+            // 
+            this.label200.AutoSize = true;
+            this.label200.Location = new System.Drawing.Point(417, 113);
+            this.label200.Name = "label200";
+            this.label200.Size = new System.Drawing.Size(90, 13);
+            this.label200.TabIndex = 22;
+            this.label200.Text = "OSP Restrictions:";
+            // 
+            // TextBox_OspRestrictions
+            // 
+            this.TextBox_OspRestrictions.Enabled = false;
+            this.TextBox_OspRestrictions.Location = new System.Drawing.Point(513, 110);
+            this.TextBox_OspRestrictions.Name = "TextBox_OspRestrictions";
+            this.TextBox_OspRestrictions.Size = new System.Drawing.Size(92, 20);
+            this.TextBox_OspRestrictions.TabIndex = 21;
+            this.TextBox_OspRestrictions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label199
             // 
@@ -6557,23 +6724,135 @@ namespace Okuma.Scout.TestApp.net20
             this.TextBox_PLCSpecFirstHalf.TabIndex = 67;
             this.TextBox_PLCSpecFirstHalf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label200
+            // TextBox_License_GCMDAPI_Status
             // 
-            this.label200.AutoSize = true;
-            this.label200.Location = new System.Drawing.Point(417, 113);
-            this.label200.Name = "label200";
-            this.label200.Size = new System.Drawing.Size(90, 13);
-            this.label200.TabIndex = 22;
-            this.label200.Text = "OSP Restrictions:";
+            this.TextBox_License_GCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GCMDAPI_Status.Location = new System.Drawing.Point(522, 183);
+            this.TextBox_License_GCMDAPI_Status.Name = "TextBox_License_GCMDAPI_Status";
+            this.TextBox_License_GCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_GCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GCMDAPI_Status.TabIndex = 218;
+            this.TextBox_License_GCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TextBox_OspRestrictions
+            // TextBox_License_GDATAPI_Status
             // 
-            this.TextBox_OspRestrictions.Enabled = false;
-            this.TextBox_OspRestrictions.Location = new System.Drawing.Point(513, 110);
-            this.TextBox_OspRestrictions.Name = "TextBox_OspRestrictions";
-            this.TextBox_OspRestrictions.Size = new System.Drawing.Size(92, 20);
-            this.TextBox_OspRestrictions.TabIndex = 21;
-            this.TextBox_OspRestrictions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_License_GDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_GDATAPI_Status.Location = new System.Drawing.Point(522, 105);
+            this.TextBox_License_GDATAPI_Status.Name = "TextBox_License_GDATAPI_Status";
+            this.TextBox_License_GDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_GDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_GDATAPI_Status.TabIndex = 212;
+            this.TextBox_License_GDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_ToolId_Status
+            // 
+            this.TextBox_License_ToolId_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_ToolId_Status.Location = new System.Drawing.Point(522, 365);
+            this.TextBox_License_ToolId_Status.Name = "TextBox_License_ToolId_Status";
+            this.TextBox_License_ToolId_Status.ReadOnly = true;
+            this.TextBox_License_ToolId_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_ToolId_Status.TabIndex = 122;
+            this.TextBox_License_ToolId_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserAlarmMC_Status
+            // 
+            this.TextBox_License_UserAlarmMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmMC_Status.Location = new System.Drawing.Point(522, 339);
+            this.TextBox_License_UserAlarmMC_Status.Name = "TextBox_License_UserAlarmMC_Status";
+            this.TextBox_License_UserAlarmMC_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmMC_Status.TabIndex = 121;
+            this.TextBox_License_UserAlarmMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserAlarmL_Status
+            // 
+            this.TextBox_License_UserAlarmL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserAlarmL_Status.Location = new System.Drawing.Point(522, 313);
+            this.TextBox_License_UserAlarmL_Status.Name = "TextBox_License_UserAlarmL_Status";
+            this.TextBox_License_UserAlarmL_Status.ReadOnly = true;
+            this.TextBox_License_UserAlarmL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserAlarmL_Status.TabIndex = 120;
+            this.TextBox_License_UserAlarmL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_NcCurrentAlarm_Status
+            // 
+            this.TextBox_License_NcCurrentAlarm_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_NcCurrentAlarm_Status.Location = new System.Drawing.Point(522, 235);
+            this.TextBox_License_NcCurrentAlarm_Status.Name = "TextBox_License_NcCurrentAlarm_Status";
+            this.TextBox_License_NcCurrentAlarm_Status.ReadOnly = true;
+            this.TextBox_License_NcCurrentAlarm_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_NcCurrentAlarm_Status.TabIndex = 119;
+            this.TextBox_License_NcCurrentAlarm_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserTaskIOMC_Status
+            // 
+            this.TextBox_License_UserTaskIOMC_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOMC_Status.Location = new System.Drawing.Point(522, 287);
+            this.TextBox_License_UserTaskIOMC_Status.Name = "TextBox_License_UserTaskIOMC_Status";
+            this.TextBox_License_UserTaskIOMC_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOMC_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOMC_Status.TabIndex = 118;
+            this.TextBox_License_UserTaskIOMC_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_UserTaskIOL_Status
+            // 
+            this.TextBox_License_UserTaskIOL_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_UserTaskIOL_Status.Location = new System.Drawing.Point(522, 261);
+            this.TextBox_License_UserTaskIOL_Status.Name = "TextBox_License_UserTaskIOL_Status";
+            this.TextBox_License_UserTaskIOL_Status.ReadOnly = true;
+            this.TextBox_License_UserTaskIOL_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_UserTaskIOL_Status.TabIndex = 117;
+            this.TextBox_License_UserTaskIOL_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_P200_Status
+            // 
+            this.TextBox_License_P200_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_P200_Status.Location = new System.Drawing.Point(522, 209);
+            this.TextBox_License_P200_Status.Name = "TextBox_License_P200_Status";
+            this.TextBox_License_P200_Status.ReadOnly = true;
+            this.TextBox_License_P200_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_P200_Status.TabIndex = 116;
+            this.TextBox_License_P200_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_MCMDAPI_Status
+            // 
+            this.TextBox_License_MCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MCMDAPI_Status.Location = new System.Drawing.Point(522, 157);
+            this.TextBox_License_MCMDAPI_Status.Name = "TextBox_License_MCMDAPI_Status";
+            this.TextBox_License_MCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_MCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MCMDAPI_Status.TabIndex = 115;
+            this.TextBox_License_MCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_MDATAPI_Status
+            // 
+            this.TextBox_License_MDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_MDATAPI_Status.Location = new System.Drawing.Point(522, 79);
+            this.TextBox_License_MDATAPI_Status.Name = "TextBox_License_MDATAPI_Status";
+            this.TextBox_License_MDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_MDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_MDATAPI_Status.TabIndex = 114;
+            this.TextBox_License_MDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_LCMDAPI_Status
+            // 
+            this.TextBox_License_LCMDAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LCMDAPI_Status.Location = new System.Drawing.Point(522, 131);
+            this.TextBox_License_LCMDAPI_Status.Name = "TextBox_License_LCMDAPI_Status";
+            this.TextBox_License_LCMDAPI_Status.ReadOnly = true;
+            this.TextBox_License_LCMDAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LCMDAPI_Status.TabIndex = 113;
+            this.TextBox_License_LCMDAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TextBox_License_LDATAPI_Status
+            // 
+            this.TextBox_License_LDATAPI_Status.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TextBox_License_LDATAPI_Status.Location = new System.Drawing.Point(522, 53);
+            this.TextBox_License_LDATAPI_Status.Name = "TextBox_License_LDATAPI_Status";
+            this.TextBox_License_LDATAPI_Status.ReadOnly = true;
+            this.TextBox_License_LDATAPI_Status.Size = new System.Drawing.Size(120, 20);
+            this.TextBox_License_LDATAPI_Status.TabIndex = 112;
+            this.TextBox_License_LDATAPI_Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScoutTestApplicationForm
             // 
@@ -6590,6 +6869,9 @@ namespace Okuma.Scout.TestApp.net20
             this.tabControl3.ResumeLayout(false);
             this.TabThincApi.ResumeLayout(false);
             this.TabThincApi.PerformLayout();
+            this.TabThincApi2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.TabOcjApi.ResumeLayout(false);
             this.TabOcjApi.PerformLayout();
             this.Dir.ResumeLayout(false);
@@ -6607,7 +6889,15 @@ namespace Okuma.Scout.TestApp.net20
             this.License.ResumeLayout(false);
             this.License.PerformLayout();
             this.OS.ResumeLayout(false);
-            this.OS.PerformLayout();
+            this.tabControl4.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.PIOD.ResumeLayout(false);
             this.PIOD.PerformLayout();
             this.Platform.ResumeLayout(false);
@@ -6862,50 +7152,12 @@ namespace Okuma.Scout.TestApp.net20
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.TextBox TextBox_AssemblyDescription;
         private System.Windows.Forms.TabPage OS;
-        private System.Windows.Forms.Button Button_OS;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.TextBox TextBox_OSInternet;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.TextBox TextBox_OSProcessorBits;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.TextBox TextBox_OSVersion;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.TextBox TextBox_OSServicePack;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.TextBox TextBox_OSEdition;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.TextBox TextBox_OSName;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.TextBox TextBox_OSBits;
-        private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.TextBox TextBox_OSVersionTitle;
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.TextBox TextBox_ProgramBits;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.TextBox TextBox_OSVersionTarget;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.TextBox TextBox_OSVersionLanguage;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.TextBox TextBox_OSVersionConfigVersion;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.TextBox TextBox_OSVersionConfigDate;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.TextBox TextBox_OSVersionComment;
-        private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Label label114;
         private System.Windows.Forms.TextBox TextBox_DirSystem;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.TextBox TextBox_DirCurrent;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.TextBox TextBox_EnvMachineName;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.TextBox TextBox_EnvUserDomain;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.TextBox TextBox_EnvUserName;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.TextBox TextBox_EnvProcessorCount;
-        private System.Windows.Forms.Label label116;
-        private System.Windows.Forms.TextBox TextBox_EnvOSVer;
         private System.Windows.Forms.TabPage SpecCodes;
         private System.Windows.Forms.TextBox TextBox_ApiSpecValid;
         private System.Windows.Forms.Label label132;
@@ -7108,8 +7360,6 @@ namespace Okuma.Scout.TestApp.net20
         private System.Windows.Forms.Label label168;
         private System.Windows.Forms.TextBox TextBox_OspGestureExists;
         private System.Windows.Forms.TextBox TextBox_OspGestureVersion;
-        private System.Windows.Forms.Label label173;
-        private System.Windows.Forms.TextBox TextBox_EnvUserPermissions;
         private System.Windows.Forms.TabPage GAC;
         private System.Windows.Forms.Button Button_Clear;
         private System.Windows.Forms.TextBox TextBox_AssemblyName;
@@ -7176,5 +7426,69 @@ namespace Okuma.Scout.TestApp.net20
         private System.Windows.Forms.TextBox TextBox_NcSoftPkgVersion;
         private System.Windows.Forms.Label label200;
         private System.Windows.Forms.TextBox TextBox_OspRestrictions;
+        private System.Windows.Forms.TabPage TabThincApi2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox TextBox_IsTapiCompatibleResult;
+        private System.Windows.Forms.TextBox TextBox_IsTapiCompatibleInput;
+        private System.Windows.Forms.Label label202;
+        private System.Windows.Forms.Label label201;
+        private System.Windows.Forms.Button Button_ThincApiInfo2;
+        private System.Windows.Forms.Label label205;
+        private System.Windows.Forms.Label label204;
+        private System.Windows.Forms.TextBox TextBox_Net47;
+        private System.Windows.Forms.TextBox TextBox_Net462;
+        private System.Windows.Forms.TextBox TextBox_Net461;
+        private System.Windows.Forms.Label label203;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox TextBox_EnvOSVer;
+        private System.Windows.Forms.TextBox TextBox_EnvMachineName;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.TextBox TextBox_EnvUserDomain;
+        private System.Windows.Forms.TextBox TextBox_EnvProcessorCount;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.TextBox TextBox_EnvUserName;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.TextBox TextBox_EnvUserPermissions;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox TextBox_OSBits;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.TextBox TextBox_OSInternet;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TextBox TextBox_OSProcessorBits;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.TextBox TextBox_OSVersion;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TextBox TextBox_OSServicePack;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.TextBox TextBox_OSEdition;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.TextBox TextBox_OSName;
+        private System.Windows.Forms.Button Button_OS1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button Button_OS2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button Button_OS3;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.TextBox TextBox_OSVersionTarget;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.TextBox TextBox_OSVersionLanguage;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.TextBox TextBox_OSVersionConfigVersion;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TextBox TextBox_OSVersionConfigDate;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox TextBox_OSVersionComment;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.TextBox TextBox_OSVersionTitle;
+        private System.Windows.Forms.TextBox TextBox_OS2WMI;
+        private System.Windows.Forms.TextBox TextBox_OS2Caption;
+        private System.Windows.Forms.Label label207;
+        private System.Windows.Forms.Label label206;
     }
 }

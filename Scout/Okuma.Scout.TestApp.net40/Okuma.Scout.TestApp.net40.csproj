@@ -53,7 +53,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Okuma.Scout">
+      <HintPath>Lib\$(Configuration)\Okuma.Scout.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -78,6 +84,7 @@
     <Compile Include="Helpers\LicenseCheckResultTestBox.cs" />
     <Compile Include="Helpers\LicenseExipreDateConverter.cs" />
     <Compile Include="Helpers\LicenseExpiresBoolConverter.cs" />
+    <Compile Include="Helpers\ErrorHandler.cs" />
     <Compile Include="ViewModels\CustomApiViewModel.cs" />
     <Compile Include="ViewModels\DirectoriesViewModel.cs" />
     <Compile Include="ViewModels\DmcViewModel.cs" />
@@ -86,7 +93,9 @@
     <Compile Include="ViewModels\GacViewModel.cs" />
     <Compile Include="ViewModels\LicenseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\OperatingSystemViewModel.cs" />
+    <Compile Include="ViewModels\OS2ViewModel.cs" />
+    <Compile Include="ViewModels\OS3ViewModel.cs" />
+    <Compile Include="ViewModels\OSViewModel.cs" />
     <Compile Include="ViewModels\PiodViewModel.cs" />
     <Compile Include="ViewModels\PlatformViewModel.cs" />
     <Compile Include="ViewModels\ProcessViewModel.cs" />
@@ -96,6 +105,7 @@
     <Compile Include="ViewModels\SpecCodeNCBViewModel.cs" />
     <Compile Include="ViewModels\SpecCodeNCViewModel.cs" />
     <Compile Include="ViewModels\SpecCodePLCViewModel.cs" />
+    <Compile Include="ViewModels\ThincApi2ViewModel.cs" />
     <Compile Include="Views\CustomApiView.xaml.cs">
       <DependentUpon>CustomApiView.xaml</DependentUpon>
     </Compile>
@@ -120,16 +130,25 @@
     <Compile Include="Views\LicenseView.xaml.cs">
       <DependentUpon>LicenseView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OperatingSystemView.xaml.cs">
-      <DependentUpon>OperatingSystemView.xaml</DependentUpon>
+    <Compile Include="Views\OS2View.xaml.cs">
+      <DependentUpon>OS2View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OspOpenApiView.xaml.cs">
-      <DependentUpon>OspOpenApiView.xaml</DependentUpon>
+    <Compile Include="Views\OS3View.xaml.cs">
+      <DependentUpon>OS3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OSView.xaml.cs">
+      <DependentUpon>OSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThincApi2View.xaml.cs">
+      <DependentUpon>ThincApi2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThincApiView.xaml.cs">
+      <DependentUpon>ThincApiView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BindableRichTextBox.cs" />
     <Compile Include="Helpers\DelegateCommand.cs" />
     <Compile Include="ViewModels\ErrorHandlingViewModel.cs" />
-    <Compile Include="ViewModels\OspOpenpApiViewModel.cs" />
+    <Compile Include="ViewModels\ThincApiViewModel.cs" />
     <Compile Include="Views\PiodView.xaml.cs">
       <DependentUpon>PiodView.xaml</DependentUpon>
     </Compile>
@@ -205,11 +224,23 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\OperatingSystemView.xaml">
+    <Page Include="Views\OS2View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OspOpenApiView.xaml">
+    <Page Include="Views\OS3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ThincApi2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ThincApiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,17 +300,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Okuma.Scout\Okuma.Scout.net40\Okuma.Scout.net40.csproj">
-      <Project>{fe119464-40cb-496b-8b00-98ab2753136f}</Project>
-      <Name>Okuma.Scout.net40</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

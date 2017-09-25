@@ -38,6 +38,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -206,6 +207,14 @@
                              Width="100" Height="21" FontSize="11" IsReadOnly="True"
                              HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                              Text="{Binding DotNetInstalled462}"/>
+
+                    <Label Grid.Row="13" Grid.Column="0" HorizontalAlignment="Left"
+                           Content="Microsoft .NET 4.7 Installed:" />
+
+                    <TextBox Grid.Row="13" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             Text="{Binding DotNetInstalled47}"/>
 
                     <Label Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"
                            Content="Release Version (for 4.5 and up):" />

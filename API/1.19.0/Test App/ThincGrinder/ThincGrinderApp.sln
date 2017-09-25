@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ThincGrinderApp", "ThincGrinderApp.vbproj", "{0BEBA68A-1AC5-4571-AB8A-E77C4AA81DB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BEBA68A-1AC5-4571-AB8A-E77C4AA81DB0}.Debug|x86.ActiveCfg = Debug|x86
+		{0BEBA68A-1AC5-4571-AB8A-E77C4AA81DB0}.Debug|x86.Build.0 = Debug|x86
+		{0BEBA68A-1AC5-4571-AB8A-E77C4AA81DB0}.Release|x86.ActiveCfg = Release|x86
+		{0BEBA68A-1AC5-4571-AB8A-E77C4AA81DB0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

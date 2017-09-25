@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>﻿<img src="https://www.myokuma.com/stuff/contentmgr/files/0/9120ca08ca3f684d70e543e94ad53830/logo/_resized/30_140_140_okuma_scout_appicon_140x140.png" alt="SCOUT Icon" /> ﻿The SCOUT Project</p>
+<h1>SCOUT CHANGE LOG README</h1>
+<ul>
+<li>
+Last Compile date: 08/11/2017
+<ul>
+<li>Scout_v11.0.exe   (C++ Wrapper Application) - Version 11.0.0.0</li>
+<li>Scout.exe         (.NET4.0)                 - Version 4.11.0.0</li>
+<li>Okuma.Scout.dll   (.NET4.0)                 - Version 4.1.0.0</li>
+<li>Okuma.Scout.TestApp.net40.exe				- Version 4.1.0.0</li>
+<li>Scout.exe         (.NET2.0)                 - Version 2.11.0.0</li>
+<li>Okuma.Scout.dll   (.NET2.0)                 - Version 2.3.1.0</li>
+<li>Okuma.Scout.TestApp.net20.exe				- Version 2.3.1.0</li>
+</ul>
+</li>
+</ul>
+<h2>[ NOTES ]</h2>
+<p>► Okuma.Scout.dll (.NET4.0) is fully backwards compatible with the .NET 2.0 version.
+	The .NET 2 version however, will only support up to THINC API version 1.19 on Lathe and MC.
+	THINC API versions for Grinder (1.19 and later) are UNSUPPORTED by Okuma.Scout.dll (.NET2.0).
+	YOU SHOULD ONLY USE THE .NET 2 VERSION IN CASES WHERE .NET 4 IS UNAVAILABLE ON THE TARGET MACHINE. </p>
+<p>► The SCOUT Application is a command-line 'native' C++ utility that checks the available .NET versions on
+	the target machine and unpacks and runs either the .NET 2 or .NET 4 SCOUT GUI. If the target machine
+	does not have at least .NET 2, the command prompt will notify the user that their machine does not 
+	meet the minimum requirements.</p>
+<p>► Due to the differences in Data Management Cards on older OSP controls,
+	the output from them may contain little or poorly formatted data.
+	This does not affect compatibility results.</p>
+<h3>Contact Information</h3>
+<ul>
+<li>
+<p>For general programming questions related to Okuma products, we recommend asking your question on stackoverflow.com with the tag &quot;okuma&quot;.<br />
+  Refer to the following link to view all Okuma questions:<br />
+  http://stackoverflow.com/questions/tagged/okuma?sort=newest&amp;pageSize=50  
+</p>
+</li>
+<li>
+<p>For detailed, specific, or bug related questions, please email your question to API@Okuma.com</p>
+</li>
+</ul>
+<h2>[ KEY ]</h2>
+<pre><code>  [中] = SCOUT Libraries
+  [本] = SCOUT Application
+  [全] = Libraries and Application (whole project)
+  [■] = Fully implemented
+  [♦] = Implemented, not tested
+  [◊] = New request
+  [‡] = Not implemented request; will not add 
+</code></pre>
+
+<h1>[ CHANGE LOG ]</h1>
+<p>►　[ 2017-08-10 / SS  ]</p>
+<ul>
+<li>
+<p>[中■] Resolves Issue #34: Created DoesMachineSupportThincApiVersion(Version v) for THINC app compatibility testing</p>
+</li>
+<li>
+<p>[中■] Resolves Issue #14</p>
+</li>
+<li>
+<p>[中■] Resolves Issue #36: SpecCodes class bug fixes, performance improvements, and improved documentation</p>
+</li>
+<li>
+<p>[本■] Implements new SHA1 File integrity check for newer apps where it is provided.</p>
+</li>
+<li>
+<p>[全■] Added support for .NET Framework 4.6, 4.6.1, 4.6.2, and 4.7. Removed support for 4.6 Preview.</p>
+</li>
+<li>
+<p>[中■] Fixed a bug where the service pack version for .NET 3.0 was not correctly identified.</p>
+</li>
+<li>
+<p>[全■] App compatibility judgment for THINC API and .NET versions is now based on minimum required version.</p>
+</li>
+<li>
+<p>[全■] Added Thread-safe error handling to test projects and SCOUT app. Previously it was possible to drop / not see errors if SCOUT functions were called in a thread.</p>
+</li>
+<li>
+<p>[中■] Fixed a bug where certain models of 19&quot; OSP panels were not identified correctly.  
+</p>
+</li>
+<li>
+<p>[中■] Added WMI_Win32OS property and backing class to Operating System Information class.</p>
+</li>
+<li>
+<p>[本■] Fixed a bug where Windows 8 or later could not be properly identified. </p>
+</li>
+<li>
+<p>[中■] AddedGetCultureInfo conversion method (from LANGID hex string) to Helper class</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #20: Added support for the following apps:</p>
+<ul>
+<li>TrakHound Community v1.5.7.0</li>
+<li>EZ UI v1.0.1</li>
+<li>Okuma Fat Finger Prevent v1.0</li>
+<li>Okuma THINC Startup Service v4.4.0</li>
+<li>GO.Time v1.3.5</li>
+<li>Kitagawa Digital Grip Force Analyzer™ OSP v1.0.1</li>
+<li>Kitagawa Digital Grip Force Analyzer™ Desktop v1.0.1</li>
+<li>Scytec MTConnect Data Viewer v1.0</li>
+<li>GO.Weather Alert 1.3.15</li>
+<li>OSP Variables Manager v1.2.2</li>
+</ul>
+</li>
+</ul>
+<p>►　[ 2017-06-05 / Okuma Open API SDK v1.2 / SS  ]</p>
+<ul>
+<li>
+<p>[本■] Resolves Issue #30; Implemented keyboard input handling for compatibility reporter.</p>
+</li>
+<li>
+<p>[中■] Added PC NC-Master directory and application detection to OspFileInfo class.</p>
+</li>
+<li>
+<p>[本■] Improved level of detail and accuracy of Machine Type identification.</p>
+</li>
+<li>
+<p>[中■] Resolves Issue #22; Now collects all applicable lines from DMC data fields in the Machine Data section.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #31; Buttons in SCOUT indicate keyboard focus and support flashing animation.</p>
+</li>
+<li>
+<p>[中■] Updated ApiVersionCrossRef.xml to Version 1.0.5.0 (add support for TAPI 1.20 and CAPI Q, R, S, and T)</p>
+</li>
+<li>
+<p>[中■] Add Function to get NC Software Package Version to Platform class.</p>
+</li>
+<li>
+<p>[中■] Add Get Bit &amp; Get Byte to SpecCode NC, NCB, and PLC classes and matching byte &amp; bit display to Test App.</p>
+</li>
+<li>
+<p>[中■] Fixed a bug where the Select Screen Mode is listed as Unknown on 15&quot; P300A controls instead of NA.</p>
+</li>
+<li>
+<p>[中■] Reopened Issue#1 due to complicating factors (refer to Platform Determination.pptx). 
+  Resolved the issue by creating 'SpecCode.OspRectrictions' property which returns type Enums.OSP_Restrictions.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #16 (REMOVE delcam  PMViewer &amp; Multi-channel viewer)</p>
+</li>
+<li>
+<p>[中■] Test Apps Get Bit &amp; Get Byte updated when combo boxes selected value changes</p>
+</li>
+</ul>
+<p>►　[ 2017-05-01 / SS  ]</p>
+<ul>
+<li>
+<p>[中■] Added &quot;NotRSpecEnabled&quot; property to SpecCode class.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #1; SCOUT now detects R-spec machines and notes the result on the main screen and log. </p>
+</li>
+<li>
+<p>[中■] Added &quot;OspSuiteVersion&quot; property to Platform class.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #3; SCOUT now detects OSP suite version. </p>
+</li>
+<li>
+<p>[本■] Resolves Issue #25; P300A touch input correctly activates display of compatibility details.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #26; Prompt to change time zone displayed once.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #28; File format exception on XP systems no longer occurs.</p>
+</li>
+<li>
+<p>[本■] Resolves Issue #27; Touch scroll through compatibility results.</p>
+</li>
+</ul>
+<p>►　[ 2017-04-25 / SS  ]</p>
+<ul>
+<li>
+<p>[全♦] Primary development of .NET 4.0 SCOUT Library, Library Test App, and SCOUT App complete.</p>
+</li>
+<li>
+<p>[中■] Registry class of SCOUT libraries improved for increased reliability</p>
+</li>
+<li>
+<p>[本■] Architecture of SCOUT App enhanced to be more modular and follow MVVM design principals where possible</p>
+</li>
+<li>
+<p>[本■] SCOUT now provides better indication of progress during CPU load sampling and Process examination.</p>
+</li>
+<li>
+<p>[本■] App Files Hash verification class improved. Prepped for transition to SHA1.</p>
+</li>
+<li>
+<p>[全■] Resolves Issue #24; Check existence and version of PIODLIB.dll</p>
+</li>
+<li>
+<p>[全■] Resolves Issue #23; SCOUT now will always attempt to output the versions of THINC API that are compatible.</p>
+</li>
+</ul>
+<p>►　[ 2017-03-17 / SS  ]</p>
+<ul>
+<li>[本■] net4.0 Scout Application development beginning</li>
+</ul>
+<p>►　[ 2017-03-10 / SS  ]</p>
+<ul>
+<li>
+<p>[本■] Reorganized Solution structure in preparation for two Scout Application projects (.NET2 and .NET4)</p>
+</li>
+<li>
+<p>[中■] BREAKING CHANGES: The SCOUT library version (2.2.1) used a separate COM library for reading the GAC in a .NET 4.0 environment. 
+  Okuma.Scout.Com.dll has been eliminated and now there are two separate versions of the Okuma.Scout library, One for .NET4 and one for .NET2.</p>
+<ul>
+<li>GAC<em>CLR</em>Version() removed from AccessGAC class.</li>
+<li>COM_InterfaceImplementation removed from Okuma.Scout</li>
+</ul>
+</li>
+<li>
+<p>[中■] Created a test application in .NET 4.0 (using WPF) specifically for the .NET 4.0 version of Okuma.Scout.dll</p>
+</li>
+<li>
+<p>[中■] Improvements to the Data Management Card reading class</p>
+</li>
+<li>
+<p>[中■] Updated .NET class to include detection of new versions of .NET (4.6, 4.6.1, and 4.6.2)</p>
+</li>
+<li>
+<p>[中■] BREAKING CHANGES: The following functions / properties now return type Nullable<DateTime> and return null on error instead of an error string:</p>
+<ul>
+<li>(ProgramInfo) getAssemblyBuildDate()</li>
+<li>(ProgramInfo) ThisAssemblyBuildDate</li>
+<li>(ProgramInfo) ScoutDllBuildDate</li>
+<li>(LicenseChecker) ConvertExpireDate() </li>
+</ul>
+</li>
+<li>
+<p>[中■] BREAKING CHANGES: The following properties now return type List<string> instead of string:</p>
+<ul>
+<li>DMC.NcControlMsg</li>
+<li>DMC.NcAlarmHelp</li>
+<li>DMC.NcManual</li>
+</ul>
+</li>
+<li>
+<p>[中■] BREAKING CHANGES: The following properties now return type Nullable<bool> and return null on error instead of an error string:</p>
+<ul>
+<li>SpecCode.Match<em>PLC1</em>FirstHalf</li>
+<li>SpecCode.Match<em>PLC1</em>SecondHalf</li>
+<li>SpecCode.Match<em>PLC2</em>FirstHalf</li>
+<li>SpecCode.Match<em>PLC2</em>SecondHalf</li>
+<li>SpecCode.Match<em>NC1</em>FirstHalf</li>
+<li>SpecCode.Match<em>NC1</em>SecondHalf</li>
+<li>SpecCode.Match<em>NCB1</em>FirstHalf</li>
+<li>SpecCode.Match<em>NCB1</em>SecondHalf</li>
+</ul>
+</li>
+</ul>
+<p>►　[ 2016-10-13 / Release 2.10.1.0 (SCOUT Lib 2.2.1)  / SS ]</p>
+<ul>
+<li>
+<p>[中■] Fixed a bug where exceptions are thrown if the OSP-P folder exists, but OSP-P\CNS-DAT\ does not.</p>
+</li>
+<li>
+<p>[中■] Fixed a bug where API type reports API version Cross Reference is missing if THINC API files are installed to the GAC, but the machine type is PC. It now reports unsupported machine type.</p>
+</li>
+</ul>
+<p>►　[ 2016-10-10 / Release 2.10.0.0  / SS ]</p>
+<ul>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>MTConnect Agent &amp; Adapter v2.2.5</li>
+<li>TrakHound Community v1.2.15</li>
+<li>GO Macro Interface v1.2.7</li>
+<li>GO Panel Mode v1.2.2</li>
+<li>Gosiger Program Scheduler v0.1.3</li>
+<li>Kitagawa Digital Grip Force Meter v1.0</li>
+<li>Gosiger IFTTT</li>
+<li>(Removed) Machining Cloud</li>
+<li>(Removed) MTConnect Agent &amp; Adapter versions 2.1 and 2.2.2</li>
+</ul>
+</li>
+<li>
+<p>[全♦] Preliminary support for P300A Type Controls</p>
+</li>
+<li>
+<p>[全■] Report Grinder API file information </p>
+</li>
+<li>
+<p>[全■] Report P300A Touch driver information</p>
+</li>
+<li>
+<p>[本■] Report User Permissions (User, Administrator, Guest, etc.)</p>
+</li>
+<li>
+<p>[本■] Fixed compatibility reporting scenario where THINC API is installed, apps report that they are compatible, and yet CAPI Spec is not enabled</p>
+</li>
+<li>
+<p>[本■] Changed compatibility note for Gosiger View Control (compatibility restriction is related to Panel Size, not control type)</p>
+</li>
+<li>
+<p>[本■] Fixed a bug that prevented THINC Startup Service version from being found compatible with required versions</p>
+</li>
+<li>
+<p>[中■] <em>NEW</em> Okuma.Scout.Com.dll - COM library that allows SCOUT to access .NET CLR4 to support TAPI 1.19(dev)</p>
+</li>
+<li>
+<p>[中■] Re-wrote the Machine Type detection routine for improved accuracy under various conditions</p>
+</li>
+<li>
+<p>[中■] Re-wrote the Control Type detection routine for improved accuracy under various conditions</p>
+</li>
+<li>
+<p>[中■] ApiVersionCrossRef.xml updated to detect CAPI v001A(Grinder), CAPI v003S(Lathe), and TAPI v1.19.0.0 (SCOUT Library Version up to v2.2.0.0)</p>
+</li>
+<li>
+<p>[中■] Fixed an issue with registry key &amp; value queries on 64-bit systems which limited the results returned </p>
+</li>
+<li>
+<p>[中■] Fixed an issue that prevented P100-II from being correctly Identified</p>
+</li>
+<li>
+<p>[中■] Added HRESULT coercing to Windows string messages for registry access errors</p>
+</li>
+<li>
+<p>[中♦] Update Licensing and GAC access for new TAPI 1.19.0.0 .NET4 libraries</p>
+</li>
+<li>
+<p>[中◊] Instantiate and call methods (machine name, common variable) in TAPI 1.19 (.NET4) reflectively - Currently not possible, will develop.</p>
+</li>
+<li>
+<p>[中■] Fixed a bug where the OSP Panel is not identified correctly on P100 models</p>
+</li>
+</ul>
+<p>►　[ 2016-8-1 / Okuma Open API SDK v0.8 (SCOUT Library v1.0.4.0)  / SS ]</p>
+<ul>
+<li>
+<p>[中♦] Preliminary support for P300A</p>
+</li>
+<li>
+<p>[中♦] Preliminary support for Grinder Machine Type and Grinder APIs</p>
+</li>
+<li>
+<p>[中■] Determine User Permissions (Operating System Tab)</p>
+</li>
+<li>
+<p>[中■] Performance of (bool)OS.InternetConnection increased substantially </p>
+</li>
+</ul>
+<p>►　[ 2016-2-19 / Release v2.0.0.8 / SS ]</p>
+<ul>
+<li>
+[本■] Added support for the following apps:
+<ul>
+<li>GO View Control v16.2.191.0</li>
+<li>Blum Gauging Guide v1.5.4.0</li>
+<li>Machining Cloud v2.1.1.314</li>
+<li>STEP-NC Machine v11.64.0.0</li>
+</ul>
+</li>
+</ul>
+<p>►　[ 2016-2-17 / SS ]</p>
+<ul>
+<li>[全■] SCOUT Library project merged with SCOUT application repository</li>
+</ul>
+<p>►　[ 2016-2-15 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Updated Okuma.Scout.dll v1.0.3.0</p>
+</li>
+<li>
+<p>[本♦] Scout_v2.0.0.8.exe now extracts Scout Pack to system temp directory.
+This is done to prevent direct copy and run of Scout Pack on control without .NET</p>
+</li>
+</ul>
+<p>► [ 2016-2-15 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Removed escape character from machine name from spec code file return value</p>
+</li>
+<li>
+<p>[本■] DMC Items no longer return page break information (correct data is returned)</p>
+</li>
+</ul>
+<p>► [ 2015-12-16 / Release v2.0.0.7 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>Elbo Controlli App v1.17.2.0</li>
+<li>MTConnect Agent v2.2.0.0</li>
+<li>Machining Cloud v2.0.1.193</li>
+</ul>
+</li>
+<li>
+<p>[本■] Added support for THINC API 1.18.0.0</p>
+<ul>
+<li>Detection, upgrade recommendation, app compatibility support</li>
+</ul>
+</li>
+</ul>
+<p>► [ 2015-12-15 / SS ] </p>
+<ul>
+<li>
+<p>[中■] API Version Cross Reference updated. </p>
+<ul>
+<li>Added detection of CUSTOM API versions 003N and 003R.</li>
+<li>Added detection of THIC API version 1.18.0.0.</li>
+</ul>
+</li>
+<li>
+<p>[中■] New API License check status added: Invalid Host</p>
+</li>
+</ul>
+<p>► [ 2015-10-20 / Release v2.0.0.6 / SS ]</p>
+<ul>
+<li>
+[本■] Added support for the following apps:
+<ul>
+<li>MTConnect Agent v2.2.0.0</li>
+</ul>
+</li>
+</ul>
+<p>► [ 2015-08-28 / Release v2.0.0.5 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Time zone &amp; OS language detection: prompt if time zone is Japan and language is English</p>
+</li>
+<li>
+<p>[本■] MD5 File verification - Drag and drop AppStore downloads into Scout for integrity check</p>
+</li>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>dataZen MIRA LITE 1.0.8</li>
+<li>Machine Alert v1.4.7</li>
+<li>OSP Variables Manager 1.1  
+</li>
+</ul>
+</li>
+<li>
+<p>[本■] Bug fix - Fixed an issue where some 15&quot; panel types were not correctly identified</p>
+</li>
+<li>
+<p>[本♦] Detect 19&quot; Screen Mode (Full, A, B)</p>
+</li>
+<li>
+<p>[本■] Uses updated Okuma.Scout.dll v1.0.1.0 - Refer to Scout library readme for more information</p>
+</li>
+</ul>
+<p>► [ 2015-8-24 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Bug Fix - THINC API 1.17.0.0 now identified correctly</p>
+</li>
+<li>
+<p>[中■] Bug Fix - Spec files with lower case file extensions identified correctly</p>
+</li>
+</ul>
+<p>► [ 2015-7-27 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Display class now includes &quot;PanelType&quot; property and matching PhysicalPanelSize enumeration</p>
+</li>
+<li>
+<p>[中■] Display class now includes &quot;SelectScreenMode&quot; property and matching NineteenInchScreenMode enumeration</p>
+</li>
+</ul>
+<p>► [ 2015-6-16 / SS ]</p>
+<ul>
+<li>[中■] Bug Fix - Fixed a bug where THINC API v1.12.1.0 on Machining Center was not correctly identified.</li>
+</ul>
+<p>► [ 2015-06-15 / Release v2.0.0.4 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Single Instance</p>
+</li>
+<li>
+<p>[本■] Main thread close delegate callback to end GatherInfo thread</p>
+</li>
+<li>
+<p>[本■] Compatibility Results indicate apps that have already been installed</p>
+</li>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>Part Flip Monitor v1.3</li>
+<li>ABB Robot Studio</li>
+<li>PartMaker Multi-Channel Viewer v15.0</li>
+<li>Delcam PartMaker Viewer v8.1.10</li>
+<li>Scheduled Maintenance v2.0</li>
+</ul>
+</li>
+<li>
+<p>[本■] Add the following data points for each app in the compatibility list:</p>
+<ul>
+<li>Include a .NET re-distributable installer? (assume version included is the required version)</li>
+<li>Required TSS / OSS version</li>
+<li>Include TSS / OSS installer (assumes version included is the required version)</li>
+<li>Details note (developer’s message to display in details page)</li>
+<li>App Installer Package File Names</li>
+<li>MD5 hash for app installer packages</li>
+</ul>
+</li>
+<li>
+<p>[本■] Add the following detection capability to SCOUT.dll</p>
+<ul>
+<li>Determine CAPI version based on OCJ API library versions	</li>
+<li>TSS / OSS Installed &amp; version</li>
+<li>Display identification (primarily for determining 15&quot; or 19&quot; panel) </li>
+</ul>
+</li>
+<li>
+<p>[本■] Add the following Reporting Functions</p>
+<ul>
+<li>THINC API compatibility report button: informs the user if a new version is available and how to get it. Also reports if there is any issue with the currently installed version and if an NC upgrade is required to get a newer version.</li>
+<li>Compare SCOUT assembly date to machine date time and report how recently it was updated and if the user should check for a new version (using green, yellow, red indicators and text).</li>
+<li>Report the latest version of THINC API compatible with the control based on CAPI version</li>
+<li>Show details note</li>
+<li>If contain .NET re-distributable, ignore that requirement based on the included version and operating system For example: an XP machine + App that contains .Net 4.5 re-distributable still won’t be compatible.</li>
+</ul>
+</li>
+</ul>
+<p>► [ 2015-6-15 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Created display information reporting in &quot;Platform&quot; tab of Test Program</p>
+</li>
+<li>
+<p>[中■] Bug fix - LicenseItems now correctly display the license item name in the return object when checking a non-existent feature.</p>
+</li>
+<li>
+<p>[中■] Bug fix - 'DetermineCAPIVersion()' now correctly sets 'ApiVersionCheckResult.UnknownVersion' when file version combination does not exist in ApiVersionCrossRef.xml</p>
+</li>
+<li>
+<p>[中■] Fixed syntax error that resulted in skipping the last resort method of detecting Control Type via DMC. </p>
+</li>
+</ul>
+<p>► [ 2015-6-5 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Added class &quot;Okuma.Scout.Display&quot; class to provide information about screens / monitors attached to the system</p>
+</li>
+<li>
+<p>[中■] Added method &quot;Okuma.Scout.Helper.RegDwordIntegerVersionParse()&quot; to convert raw uninstall &quot;Version&quot; data to version objects. </p>
+</li>
+</ul>
+<p>► [ 2015-5-15 / SS ]</p>
+<ul>
+<li>[中■] Determine CAPI version based on OCJ API library versions</li>
+</ul>
+<p>► [ 2015-5-9 / SS ]</p>
+<ul>
+<li>
+[中■] Added class &quot;Okuma.Scout.Reg&quot; and accompanying &quot;Registry&quot; tab in test application. 
+Functions in this class are compatible with 32 &amp; 64 bit systems and .NET 2+.
+</li>
+</ul>
+<p>► [ 2015-03-25 / Release v2.0.0.3 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>dataZen MIRA LITE V1.0.0.0</li>
+<li>Okuma MT Connect Agent / Adapter V1.0.0.0</li>
+</ul>
+</li>
+<li>
+<p>[本■] Updated the following App versions</p>
+<ul>
+<li>Okuma MT Connect Agent / Adapter V2.1.0.0</li>
+<li>Delcam PartMaker Viewer V7.8.10.02 - changed compatibility to only PC or PC NC-Master due to PC requirements</li>
+</ul>
+</li>
+<li>
+<p>[本■] Okuma.Scout.dll updated to version 1.0.0.3
+Refer to change notes of Scout.dll for details (can be found in the SDK)</p>
+</li>
+<li>
+<p>[本■] Bug fix - 64 bit Operating Systems now detected properly</p>
+</li>
+<li>
+<p>[本■] Bug fix - API Version 1.17.2.0 on Machine Center is now detected properly</p>
+</li>
+<li>
+<p>[本■] Bug fix - Absence of C:\VERSION.txt no longer causes exception</p>
+</li>
+<li>
+<p>[本♦] App compatibility by specific machine model</p>
+</li>
+<li>
+<p>[本‡] Generate list of installed options based on Spec Codes (on hold until further notice)</p>
+</li>
+</ul>
+<p>► [ 2015-3-23 / SS ]</p>
+<ul>
+<li>
+<p>[中■] Fixed bug in API identification cross reference file that resulted in not properly detecting API version 1.17.2.0 on Machining Center.</p>
+</li>
+<li>
+<p>[中■] Fixed bug in Operating System module that resulted in incorrect reporting of OS bitness.</p>
+</li>
+<li>
+<p>[中■] Fixed bug where the absence of C:\Version.txt resulted in exception (handled).</p>
+</li>
+<li>
+<p>[中■] Removed Options Identification class and supporting structures.</p>
+</li>
+</ul>
+<p>► [ 2015-2-25 / SS ]</p>
+<ul>
+<li>
+[中■] Revamped the way PLC Spec codes are retrieved to allow for user defined files, 
+access to all spec code groups, file type validation, and more!  
+
+</li>
+</ul>
+<p>► [ 2015-02-24 / SS ]</p>
+<ul>
+<li>
+[中■] Changed the way NC &amp; NCB Spec codes are retrieved to allow for user defined files, 
+access to all spec code groups, file type validation, and more.
+</li>
+</ul>
+<p>► [ 2015-02-04 / Release v2.0.0.2 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Data collection code has been moved to the new Okuma.Scout.dll library</p>
+</li>
+<li>
+<p>[本■] Added support for the following apps:</p>
+<ul>
+<li>STEP-NC Machine v11.17.0.0</li>
+<li>Machine Alert v1.4.6.0</li>
+</ul>
+</li>
+<li>
+<p>[本■] Correction to the requirements for OSP Message v1.0.0.0
+ This app is not compatible with the client version of .NET 4.0</p>
+</li>
+<li>
+<p>[本■] Correction to the requirements for dataZen P_LOADER v2.0.0.0
+ This app requires .NET 4+ and XP-SP3+</p>
+</li>
+<li>
+<p>[本■] Okuma.Scout.dll is now featured in the Okuma Open API SDK. Future updates to 
+ either this application or the Scout library will be reflected in both packages.</p>
+</li>
+<li>
+<p>[本◊] Determine if upgrade of THINC API can be performed 
+ without the need for OS or OSP upgrade</p>
+</li>
+</ul>
+<p>► [ 2015-02-02 / SS ]</p>
+<ul>
+<li>
+[中■] Added properties for scout.dll version &amp; build date 
+and the calling assembly (sample program for example) version &amp; build date
+The new properties use a more reliable method to obtain the actual build date
+rather than the file modified date.
+</li>
+</ul>
+<p>► [ 2014-11-24 / Release v2.0.0.1 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Add support for the following apps:</p>
+<ul>
+<li>Caron BarCode v1.0.0.0		</li>
+<li>Renishaw GUI for Lathes [Demo] v1.12.0.0</li>
+<li>dataZen P-Keyboard v1.0.0.0</li>
+<li>KennaTechnical LaunchPad v1.0.0.0	</li>
+</ul>
+</li>
+<li>
+<p>[本■] Updated the following App versions</p>
+<ul>
+<li>Blum Easy Results v1.0.6.0</li>
+<li>MTConnect Agent v2.0.0.0</li>
+<li>Visual Assistant Support v1.1.2.0</li>
+</ul>
+</li>
+<li>
+<p>[本■] Corrected requirements for MTConnect Agent </p>
+</li>
+</ul>
+<p>► [ 2014-11-11 / Release v2.0.0.0 / SS ]</p>
+<ul>
+<li>
+<p>[本■] Gathers System Information for comparison with requirements</p>
+</li>
+<li>
+<p>[本■] Reports compatibility for all apps known at time of release</p>
+</li>
+<li>
+<p>[本■] Generates log file in C root</p>
+</li>
+<li>
+<p>[本‡] Check for updates / report to Okuma over Internet</p>
+</li>
+<li>
+<p>[本■] INITIAL APP SUPPORT  
+</p>
+<ul>
+<li>Screen Blocker v1.3.0.7</li>
+<li>AutoComp [DEMO] v1.13.5.0</li>
+<li>Scheduled Maintenance v1.2.7.0</li>
+<li>Blum Easy Results v1.0.1.0</li>
+<li>Blum Gauging Guide v1.4.22.0</li>
+<li>Coolant Monitor v1.6.3.0</li>
+<li>dataZen P_LOADER v2.0.0.0</li>
+<li>dataZen P-SCANNER v1.0.0.0</li>
+<li>Machine Alert v1.4.5.0</li>
+<li>Delcam PartMaker Viewer v7.8.10.02</li>
+<li>Machining Cloud v1.5.1.88</li>
+<li>NOVO v1.5.1.88</li>
+<li>MTConnect Agent v1.5.7.0</li>
+<li>OSP Message v1.0.0.0</li>
+<li>OSP Alarm Notifier v1.0.0.0</li>
+<li>OSP Variables Manager v1.0.5.0</li>
+<li>OSP Widget Manager v1.0.0.0</li>
+<li>Part Flip Monitor v1.0.1.0</li>
+<li>Renishaw GUI for Mills [Demo] v1.14.0.0</li>
+<li>Sandvik Drilling &amp; Tapping Calculator v1.0.6.0</li>
+<li>Sandvik Milling Calculator v1.0.6.0</li>
+<li>Sandvik Turning Calculator v1.0.6.0</li>
+<li>STEP-NC Machine v10.50.0.0 </li>
+<li>View Control v14.3.28.1</li>
+<li>Visual Assistance Support v1.0.5.0</li>
+</ul>
+</li>
+</ul>
+<h3>Notes</h3>
+<p>The test application includes a debug version and release version of the Scout library<br />
+To create a project using either the debug or release version depending on the compile setting, first include both versions using the same structure as the test application.<br />
+Add the debug version as a resource to your project.<br />
+Then modify the project file using a text editor and locate the Reference to Okuma.Scout change the <HintPath> by replacing the folder name &quot;\Debug\&quot; with &quot;\$(ConfigurationName)\&quot;. 
+Refer to the test application project file 'ScoutTestApplication.csproj' to see how this is done.</p>
+<h3>Notice</h3>
+<p>Author: Scott Solmer<br />
+  Copyright© 2018 Okuma America Corporation.  </p>
+<p>This sample code is unlicensed.<br />
+  It is distributed &quot;AS IS&quot;, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,<br />
+  either expressed or implied. Okuma America grants you permission to use<br />
+  this code and derivative works thereof without limitation or obligation.  </p>
+<p>Under no circumstance shall Okuma America be held liable to anyone <br />
+  using this code or programs derived there from for damages of any kind<br />
+  as a result of the use or inability to use this code, including but not<br />
+  limited to damages for loss of goodwill, work stoppage, computer failure<br />
+  or malfunction, or any and all other commercial damages or losses.</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

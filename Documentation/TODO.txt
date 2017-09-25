@@ -1,11 +1,1 @@
-
-> Add info and utilities for THINC Start-up Service registration
-
-> Add info and utilities for adding short-cuts to Vertical Function Key Menu
-
-> Add info and example files for short cut registration in OSP suite
-
-> Add TDG.Logging library with usage example
-
-> Add information about THINC Developers Group
-
+> Add info for THINC Start-up Service registration
