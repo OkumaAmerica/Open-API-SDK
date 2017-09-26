@@ -1,4 +1,4 @@
-﻿﻿Okuma Open API SDK v1.3 - September 2017
+﻿﻿Okuma Open API SDK v1.4 - January 2018 ???
 _________________________________________________________________________
 Purpose:
 
@@ -41,6 +41,104 @@ Structure:
 └───TDG Logging		   /* Library for creation of application logs */
     ├───TDG.Logging 2.16   /* The logging library and dependencies     */
     └───TestApp	 	   /* Test Application for TDG Logging Utility */
+
+
+tree...
+├───API
+│   ├───1.12.1
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───Test App
+│   │       ├───Lathe
+│   │       └───MC
+│   ├───1.17.2
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───Test App
+│   │       ├───Lathe
+│   │       └───MC
+│   ├───1.19.0
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───Test App
+│   │       ├───ThincGrinder
+│   │       │   ├───Lib
+│   │       │   └───My Project
+│   │       │       └───DataSources
+│   │       ├───ThincLathe
+│   │       │   └───lib
+│   │       └───ThincMC
+│   │           └───lib
+│   └───1.9.1
+│       ├───Bin
+│       ├───Help
+│       └───Test App
+│           ├───Lathe
+│           └───MC
+├───Documentation
+│   └───THINC API Release Notes
+│       ├───1.10.0
+│       ├───1.11.0
+│       ├───1.11.1
+│       ├───1.12.0
+│       ├───1.12.1
+│       ├───1.15.0
+│       ├───1.16.0
+│       ├───1.17.0
+│       ├───1.17.1
+│       ├───1.17.2
+│       ├───1.18.0
+│       ├───1.19.0
+│       └───1.9.1
+├───Examples
+│   ├───API Common Variables
+│   │   ├───Compiled
+│   │   ├───CS_Lathe
+│   │   │   ├───Properties
+│   │   │   └───Resources
+│   │   ├───CS_MC
+│   │   │   ├───Properties
+│   │   │   └───Resources
+│   │   ├───CS_WPF
+│   │   │   └───Properties
+│   │   ├───VB_Lathe
+│   │   │   ├───My Project
+│   │   │   └───Resources
+│   │   └───VB_MC
+│   │       ├───My Project
+│   │       └───Resources
+│   ├───Python
+│   └───Single Instance
+│       └───Single Instance WPF
+│           └───Properties
+├───OSP suite Shortcuts
+│   └───010-NOTEPAD
+│       └───00000010
+│           └───res
+├───Register V-FKEY
+├───Scout
+│   ├───Okuma.Scout.TestApp.net20
+│   │   ├───Lib
+│   │   │   ├───Debug
+│   │   │   └───Release
+│   │   └───Properties
+│   └───Okuma.Scout.TestApp.net40
+│       ├───Helpers
+│       ├───Lib
+│       │   ├───Debug
+│       │   └───Release
+│       ├───Properties
+│       ├───Resources
+│       ├───ViewModels
+│       └───Views
+└───TDG Logging
+    ├───TDG.Logging 2.16
+    └───TestApp
+        └───TDG Logging Example
+            ├───Properties
+            └───TextLogSyntax
+
+
 _________________________________________________________________________
 Revision History:
 
