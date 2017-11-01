@@ -6,49 +6,11 @@ Reference information for developers targeting the Okuma OSP-P platform
 _________________________________________________________________________
 Structure:
 
-├───API		       /* Recommended API versions for development     */
-│   ├───1.9.1
-│   │   ├───Bin        /* Refer to the test applications for details   */
-│   │   ├───Help       /*  about how to use each function in the       */
-│   │   └───Test App   /*  API. Okuma uses these projects to verify    */
-│   ├───1.12.1	       /*  the operation of the API before release.    */
-│   ├───1.17.2
-│   └───1.19.0
-├───Documentation    /* Various information useful for app development */
-├───Examples            /* Example usage of the API                    */
-│   ├───Compiled        /*   These examples, in different languages    */
-│   ├───CS_Lathe        /*   and targeting different machine types     */
-│   ├───CS_MC           /*   each demonstrate how to access common     */
-│   ├───CS_WPF          /*   variables.                                */
-│   ├───Python          /* API Tutorial for Python	               */
-│   ├───VB_Lathe
-│   └───VB_MC
-├───OSP suite Shortcuts   /* Instructions and example to make shortcut */
-├───Register V-FKEY
-│   ├───README.txt	    /*  Information about RegisterVfkey        */
-│   └───RegisterVfkey.exe   /*  Utiltiy to add shortcut to V-FKEY      */
-├───Scout
-│   ├───README.html	    /*  Information about SCOUT                */
-│   ├───Scout SDK.sln	    /*  Microsoft Visual Studio Solution File  */
-│   ├───Okuma.Scout.TestApp.net20 
-│   │   └───Lib
-│   │	    └─Release
-│   │	      └─Okuma.Scout.dll	    /* .NET 2.0 SCOUT Library	       */
-│   └───Okuma.Scout.TestApp.net40 
-│       └───Lib
-│    	    └─Release
-│    	      └─Okuma.Scout.dll	    /* .NET 4.0 SCOUT Library	       */
-└───TDG Logging		   /* Library for creation of application logs */
-    ├───TDG.Logging 2.16   /* The logging library and dependencies     */
-    └───TestApp	 	   /* Test Application for TDG Logging Utility */
-
-
-tree...
-├───API
-│   ├───1.12.1
-│   │   ├───Bin
-│   │   ├───Help
-│   │   └───Test App
+├───API			/* Recommended API versions for development     */
+│   ├───1.12.1		/* Refer to the test applications for details   */
+│   │   ├───Bin		/*  about how to use each function in the       */
+│   │   ├───Help	/*  API. Okuma uses these projects to verify    */
+│   │   └───Test App	/*  the operation of the API before release.    */
 │   │       ├───Lathe
 │   │       └───MC
 │   ├───1.17.2
@@ -58,7 +20,7 @@ tree...
 │   │       ├───Lathe
 │   │       └───MC
 │   ├───1.19.0
-│   │   ├───Bin
+│   │   ├───Bin		
 │   │   ├───Help
 │   │   └───Test App
 │   │       ├───ThincGrinder
@@ -75,8 +37,9 @@ tree...
 │       └───Test App
 │           ├───Lathe
 │           └───MC
-├───Documentation
+├───Documentation	/* Various information useful for app development */
 │   └───THINC API Release Notes
+│       ├───1.9.1
 │       ├───1.10.0
 │       ├───1.11.0
 │       ├───1.11.1
@@ -88,14 +51,13 @@ tree...
 │       ├───1.17.1
 │       ├───1.17.2
 │       ├───1.18.0
-│       ├───1.19.0
-│       └───1.9.1
-├───Examples
-│   ├───API Common Variables
-│   │   ├───Compiled
-│   │   ├───CS_Lathe
-│   │   │   ├───Properties
-│   │   │   └───Resources
+│       └───1.19.0
+├───Examples		    /* Example usage of the API                    */
+│   ├───API Common Variables/*   These examples, in different languages    */
+│   │   ├───Compiled	    /*   and targeting different machine types     */
+│   │   ├───CS_Lathe	    /*   each demonstrate how to access common     */
+│   │   │   ├───Properties  /*   variables.                                */
+│   │   │   └───Resources	
 │   │   ├───CS_MC
 │   │   │   ├───Properties
 │   │   │   └───Resources
@@ -107,15 +69,17 @@ tree...
 │   │   └───VB_MC
 │   │       ├───My Project
 │   │       └───Resources
-│   ├───Python
+│   ├───Python			/* API Tutorial for Python	             */
 │   └───Single Instance
 │       └───Single Instance WPF
 │           └───Properties
-├───OSP suite Shortcuts
+├───OSP suite Shortcuts		/* Instructions and example to make shortcut */
 │   └───010-NOTEPAD
 │       └───00000010
 │           └───res
-├───Register V-FKEY
+├───Register V-FKEY	
+│   ├───README.txt		/*  Information about RegisterVfkey          */    
+│   └───RegisterVfkey.exe   	/*  Utiltiy to add shortcut to V-FKEY        */
 ├───Scout
 │   ├───Okuma.Scout.TestApp.net20
 │   │   ├───Lib
@@ -131,14 +95,13 @@ tree...
 │       ├───Resources
 │       ├───ViewModels
 │       └───Views
-└───TDG Logging
-    ├───TDG.Logging 2.16
-    └───TestApp
+└───TDG Logging			/* Library for creation of application logs */
+    ├───TDG.Logging 2.16	/* The logging library and dependencies     */
+    └───TestApp			/* Test Application for TDG Logging Utility */
         └───TDG Logging Example
             ├───Properties
             └───TextLogSyntax
-
-
+	   
 _________________________________________________________________________
 Revision History:
 
@@ -155,6 +118,7 @@ v1.0.1  2016.10.13	> SCOUT v2.2.1.0
 v1.2	2017.06.05	> SCOUT v2.3.0.0 & 4.0.0.0
 v1.3	2017.09.25	> SCOUT v2.3.1.0 & 4.1.0.0, RegisterVfkey,
 			  OSP suite shortcuts, TDG Logging 2.16, API 1.19
+v1.4	2017.11.01	> Okuma_Scout_Help.chm
 _________________________________________________________________________
 
 Contact:
