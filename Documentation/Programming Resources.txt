@@ -31,6 +31,8 @@ The site that convinced me to switch from VB to C#
 http://www.learnvisualstudio.net/series/visual_csharp_2010_express_edition_for_absolute_beginners/
 Very nice learning program. 
  
+https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application
+
 http://www.microsoftvirtualacademy.com/
  
 http://www.vbforums.com/forum.php
