@@ -1,4 +1,4 @@
-﻿﻿Okuma Open API SDK v1.4 - January 2018 ???
+﻿﻿Okuma Open API SDK v1.4 - November 2017
 _________________________________________________________________________
 Purpose:
 
