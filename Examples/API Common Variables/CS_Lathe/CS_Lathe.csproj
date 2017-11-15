@@ -33,7 +33,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -41,7 +41,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -50,11 +50,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Okuma.CLCMDAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CLCMDAPI.dll</HintPath>
+    <Reference Include="Okuma.CLCMDAPI, Version=2.1.0.0, Culture=neutral, PublicKeyToken=a223a5616e84547b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Okuma.CLDATAPI">
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CLDATAPI.dll</HintPath>
+    <Reference Include="Okuma.CLDATAPI, Version=2.7.0.0, Culture=neutral, PublicKeyToken=2d3497331b752ad6">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -96,36 +98,38 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\P200CVEditFullBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Synchronize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fire-Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit21.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancel1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fire-Exit1.png" />
+    <Content Include="..\Common\Cancel.png">
+      <Link>Resources\Cancel.png</Link>
+    </Content>
+    <Content Include="..\Common\Cancel1.png">
+      <Link>Resources\Cancel1.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Edit.png">
+      <Link>Resources\Data-Edit.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Edit2.png">
+      <Link>Resources\Data-Edit2.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Edit21.png">
+      <Link>Resources\Data-Edit21.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Synchronize.png">
+      <Link>Resources\Data-Synchronize.png</Link>
+    </Content>
+    <Content Include="..\Common\Fire-Exit.png">
+      <Link>Resources\Fire-Exit.png</Link>
+    </Content>
+    <Content Include="..\Common\Fire-Exit1.png">
+      <Link>Resources\Fire-Exit1.png</Link>
+    </Content>
+    <Content Include="..\Common\P200CVEditFullBG.png">
+      <Link>Resources\P200CVEditFullBG.png</Link>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\"
-copy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\"</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\" /Y
+xcopy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
