@@ -11,11 +11,12 @@ Software Development Kit for applications targeting Okuma OSP-P Machine Tools.
 
 > :warning:  NOTE:
 >
-> The API's `Init()` method must be called before any accessing any machine data.  
-Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running. The following environments will allow successful execution of API methods:
-  * PC NC-Master (PC Simulation Software)
-  * NC-Master (Physical Hardware Simulator)
-  * Actual Okuma Machine Tool with P-type control
+> The API's `Init()` method must be called before accessing any machine data.  
+> Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running.  
+> The following environments will allow successful execution of API methods:  
+>   * PC NC-Master (PC Simulation Software)
+>   * NC-Master (Physical Hardware Simulator)
+>   * Actual Okuma Machine Tool with P-type control
 
 
 ## Structure
