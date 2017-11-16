@@ -7,9 +7,15 @@ Software Development Kit for applications targeting Okuma OSP-P Machine Tools.
   * v1.5 pre-release
 
 
-## Purpose
+## Getting Started
 
-Reference information for developers targeting the Okuma OSP-P platform
+> :warning:  NOTE:
+>
+> The API's `Init()` method must be called before any accessing any machine data.  
+Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running. The following environments will allow successful execution of API methods:
+  * PC NC-Master (PC Simulation Software)
+  * NC-Master (Physical Hardware Simulator)
+  * Actual Okuma Machine Tool with P-type control
 
 
 ## Structure
@@ -104,11 +110,11 @@ Reference information for developers targeting the Okuma OSP-P platform
 │       ├───Resources
 │       ├───ViewModels
 │       └───Views
-└───TDG Logging		 	/* Library for creation of application logs */
-    ├───TDG.Logging 2.16	/* The logging library and dependencies     */
-    └───TestApp			 /* Test Application for TDG Logging Utility */
-        └───TDG Logging Example
-            ├───Properties
+└───TDG Logging               ※ Library for creation of application logs
+    ├───TDG.Logging 2.16      ※ The logging library and dependencies
+    └───TestApp			          
+        └───TDG Logging Example    ※ Test Application for TDG Logging Utility
+            ├───Properties       
             └───TextLogSyntax
 ```	   
 
@@ -132,4 +138,10 @@ v1.5    2017.TBD   > Improved Examples
 
 ## Contact
 
-api@okuma.com
+api@okuma.com  
+
+
+Retrieved from GitHub :octocat:  
+[https://github.com/OkumaAmerica/Open-API-SDK](https://github.com/OkumaAmerica/Open-API-SDK)
+
+© 2017 Okuma America Corporation All rights reserved.
