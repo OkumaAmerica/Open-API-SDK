@@ -25,11 +25,12 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
  API help files are provided in .chm [Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help) format.  
  For various reasons, these files might not open or display correctly.  
  If you experience this, please try the following:  
+
 >    * Store the files locally and do not attempt to open over a netowrk
 >    * Do not store the files in a directory which contains the '#' character.
 >    * Right-click on the help file and select Properties.  
 >      Then click the "Unblock" button.  
->      
+
       ![Unblock](Images/Unblock.png)
 
 
@@ -37,12 +38,13 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
  The API's `Init()` method must be called before accessing any machine data.  
  Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running.  
  The following environments will allow successful execution of API methods:  
+
     * PC NC-Master (PC Simulation Software)
     * NC-Master (Physical Hardware Simulator)
     * Actual Okuma Machine Tool with P-type control
 
     To purchanse simulator hardware or software, please contact your local Okuma distributor.
-    https://www.okuma.com/distributors
+    [https://www.okuma.com/distributors](https://www.okuma.com/distributors)
 
 
 ## Structure
@@ -150,14 +152,12 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 [api@okuma.com](mailto:api@okuma.com)  
 
 
->Do you enjoy developing applications for the Okuma OSP Control?  
+Do you enjoy developing applications for the Okuma OSP Control?  
 Have some ideas you would like to share?  
 Or maybe you would just enjoy the chance to talk with the experts?  
->
-Consider joining the **THINC Developers Group**
->
+
+Consider joining the **THINC Developers Group**  
 Contact: [thincdg@gmail.com](mailto:thincdg@gmail.com)  
->
 Information:  
 https://www.okuma.com/thinc-developers-group  
 https://www.linkedin.com/company/thinc-developers-group
@@ -184,4 +184,4 @@ v1.5    2017.TBD   > Improved Examples
 Retrieved from GitHub :octocat:  
 [https://github.com/OkumaAmerica/Open-API-SDK](https://github.com/OkumaAmerica/Open-API-SDK)
 
-© 2017 Okuma America Corporation All rights reserved.
+© 2017 Okuma America Corporation
