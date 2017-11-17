@@ -31,7 +31,7 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 >    * Right-click on the help file and select Properties.  
 >      Then click the "Unblock" button.  
 
-      ![Unblock](Images/Unblock.png)
+  ![Unblock](Images/Unblock.png)
 
 
 ### :warning: Where can API functions be executed
@@ -44,7 +44,7 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
     * Actual Okuma Machine Tool with P-type control
 
     To purchanse simulator hardware or software, please contact your local Okuma distributor.
-    [https://www.okuma.com/distributors](https://www.okuma.com/distributors)
+    ![https://www.okuma.com/distributors](https://www.okuma.com/distributors)
 
 
 ## Structure
