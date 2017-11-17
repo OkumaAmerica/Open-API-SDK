@@ -101,7 +101,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.BackgroundImage = Global.VB_MC.My.Resources.Resources.P200CVEditFullBG
+        Me.BackgroundImage = Global.VB_MC.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(320, 210)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.tbNo2)

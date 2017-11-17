@@ -52,11 +52,11 @@
   <ItemGroup>
     <Reference Include="Okuma.CLCMDAPI, Version=2.1.0.0, Culture=neutral, PublicKeyToken=a223a5616e84547b">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\Okuma.CLCMDAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CLDATAPI, Version=2.7.0.0, Culture=neutral, PublicKeyToken=2d3497331b752ad6">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Common\Okuma.CLDATAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -98,11 +98,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Common\Background.png">
+      <Link>Resources\Background.png</Link>
+    </Content>
     <Content Include="..\Common\Cancel.png">
       <Link>Resources\Cancel.png</Link>
-    </Content>
-    <Content Include="..\Common\Cancel1.png">
-      <Link>Resources\Cancel1.png</Link>
     </Content>
     <Content Include="..\Common\Data-Edit.png">
       <Link>Resources\Data-Edit.png</Link>
@@ -110,20 +110,11 @@
     <Content Include="..\Common\Data-Edit2.png">
       <Link>Resources\Data-Edit2.png</Link>
     </Content>
-    <Content Include="..\Common\Data-Edit21.png">
-      <Link>Resources\Data-Edit21.png</Link>
-    </Content>
     <Content Include="..\Common\Data-Synchronize.png">
       <Link>Resources\Data-Synchronize.png</Link>
     </Content>
     <Content Include="..\Common\Fire-Exit.png">
       <Link>Resources\Fire-Exit.png</Link>
-    </Content>
-    <Content Include="..\Common\Fire-Exit1.png">
-      <Link>Resources\Fire-Exit1.png</Link>
-    </Content>
-    <Content Include="..\Common\P200CVEditFullBG.png">
-      <Link>Resources\P200CVEditFullBG.png</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

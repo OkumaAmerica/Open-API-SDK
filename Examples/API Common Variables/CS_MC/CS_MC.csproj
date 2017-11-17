@@ -50,11 +50,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Okuma.CMCMDAPI">
-      <HintPath>..\Common\Okuma.CMCMDAPI.dll</HintPath>
+    <Reference Include="Okuma.CMCMDAPI, Version=1.7.0.0, Culture=neutral, PublicKeyToken=da5164982ff0f268">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Okuma.CMDATAPI">
-      <HintPath>..\Common\Okuma.CMDATAPI.dll</HintPath>
+    <Reference Include="Okuma.CMDATAPI, Version=1.7.0.1, Culture=neutral, PublicKeyToken=ddd409d78457d7ad">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,18 +79,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -96,11 +98,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Common\Background.png">
+      <Link>Resources\Background.png</Link>
+    </Content>
     <Content Include="..\Common\Cancel.png">
       <Link>Resources\Cancel.png</Link>
-    </Content>
-    <Content Include="..\Common\Cancel1.png">
-      <Link>Resources\Cancel1.png</Link>
     </Content>
     <Content Include="..\Common\Data-Edit.png">
       <Link>Resources\Data-Edit.png</Link>
@@ -108,20 +110,11 @@
     <Content Include="..\Common\Data-Edit2.png">
       <Link>Resources\Data-Edit2.png</Link>
     </Content>
-    <Content Include="..\Common\Data-Edit21.png">
-      <Link>Resources\Data-Edit21.png</Link>
-    </Content>
     <Content Include="..\Common\Data-Synchronize.png">
       <Link>Resources\Data-Synchronize.png</Link>
     </Content>
     <Content Include="..\Common\Fire-Exit.png">
       <Link>Resources\Fire-Exit.png</Link>
-    </Content>
-    <Content Include="..\Common\Fire-Exit1.png">
-      <Link>Resources\Fire-Exit1.png</Link>
-    </Content>
-    <Content Include="..\Common\P200CVEditFullBG.png">
-      <Link>Resources\P200CVEditFullBG.png</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

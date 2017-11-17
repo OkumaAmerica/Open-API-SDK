@@ -1,22 +1,48 @@
 
-<img src="Header.png" width="100%" title="Github Logo">
+<img src="Images/Header.png" width="100%" title="Github Logo">
 
 # ﻿﻿Okuma Open API SDK
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.
   * v1.5 pre-release
 
+## Welcome
+
+Thank you for your interest in creating [Machine Tool Apps](http://www.okuma.com/wp-machine-tool-apps) for the Okuma OSP-P NC Control.  
+We use [StackOverflow](http://stackoverflow.com/questions/tagged/okuma) to answer programming questions.
+
+Open API questions should be sent to [API@okuma.com](mailto:API@okuma.com)  
+Okuma App Store questions should be sent to [AppStore@okuma.com](mailto:AppStore@okuma.com)  
+
+If you have an app you would like to appear on the MyOkuma.com App Store,  
+please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
+
 
 ## Getting Started
 
-> :warning:  NOTE:
->
-> The API's `Init()` method must be called before accessing any machine data.  
-> Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running.  
-> The following environments will allow successful execution of API methods:  
->   * PC NC-Master (PC Simulation Software)
->   * NC-Master (Physical Hardware Simulator)
->   * Actual Okuma Machine Tool with P-type control
+### :heavy_exclamation_mark: How to open API Help files  
+
+ API help files are provided in .chm [Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help) format.  
+ For various reasons, these files might not open or display correctly.  
+ If you experience this, please try the following:  
+>    * Store the files locally and do not attempt to open over a netowrk
+>    * Do not store the files in a directory which contains the '#' character.
+>    * Right-click on the help file and select Properties.  
+>      Then click the "Unblock" button.  
+>      
+      ![Unblock](Images/Unblock.png)
+
+
+### :warning: Where can API functions be executed
+ The API's `Init()` method must be called before accessing any machine data.  
+ Furthermore, the initialization will **FAIL** if it is not executed in an environment where OSP NC Software is running.  
+ The following environments will allow successful execution of API methods:  
+    * PC NC-Master (PC Simulation Software)
+    * NC-Master (Physical Hardware Simulator)
+    * Actual Okuma Machine Tool with P-type control
+
+    To purchanse simulator hardware or software, please contact your local Okuma distributor.
+    https://www.okuma.com/distributors
 
 
 ## Structure
@@ -119,6 +145,23 @@ Software Development Kit for applications targeting Okuma OSP-P Machine Tools.
             └───TextLogSyntax
 ```	   
 
+## :mega: Contact
+
+[api@okuma.com](mailto:api@okuma.com)  
+
+
+>Do you enjoy developing applications for the Okuma OSP Control?  
+Have some ideas you would like to share?  
+Or maybe you would just enjoy the chance to talk with the experts?  
+>
+Consider joining the **THINC Developers Group**
+>
+Contact: [thincdg@gmail.com](mailto:thincdg@gmail.com)  
+>
+Information:  
+https://www.okuma.com/thinc-developers-group  
+https://www.linkedin.com/company/thinc-developers-group
+
 ## Revision History
 
 v0.1a   2014.04.??	> first distributable version  
@@ -136,10 +179,6 @@ v1.3    2017.09.25	> SCOUT v2.3.1.0 & 4.1.0.0, RegisterVfkey, OSP suite shortcut
 v1.4    2017.11.01	> Okuma_Scout_Help.chm  
 v1.5    2017.TBD   > Improved Examples
 
-
-## Contact
-
-api@okuma.com  
 
 
 Retrieved from GitHub :octocat:  
