@@ -179,6 +179,12 @@ v1.3    2017.09.25	> SCOUT v2.3.1.0 & 4.1.0.0, RegisterVfkey, OSP suite shortcut
 v1.4    2017.11.01	> Okuma_Scout_Help.chm  
 v1.5    2017.TBD   > Improved Examples
 
+# TO DO
+
+  * Update the tree output
+  * New VB_WPF app error handling
+  * Stop WPF examples creating vshost files
+  * Finnish API Usage Best Practice
 
 
 Retrieved from GitHub :octocat:  
