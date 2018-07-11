@@ -21,12 +21,12 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("Single Instance WPF")]
+[assembly: AssemblyTitle("Single Instance C# WPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Okuma America Corporation")]
 [assembly: AssemblyProduct("Single Instance WPF")]
-[assembly: AssemblyCopyright("Copyright © Okuma America Corporation 2018")]
+[assembly: AssemblyCopyright("Copyright © Okuma America Corporation 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

@@ -17,7 +17,7 @@
 // </disclaimer> 
 //-----------------------------------------------------------------------
 
-namespace Single_Instance_WPF
+namespace Single_Instance_CS_WPF
 {
     using System;
     using System.Collections.Generic;

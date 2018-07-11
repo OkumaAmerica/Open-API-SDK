@@ -63,9 +63,9 @@ namespace CS_Lathe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel {
+        internal static System.Drawing.Bitmap Background {
             get {
-                object obj = ResourceManager.GetObject("Cancel", resourceCulture);
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CS_Lathe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel1 {
+        internal static System.Drawing.Bitmap Cancel {
             get {
-                object obj = ResourceManager.GetObject("Cancel1", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,16 +103,6 @@ namespace CS_Lathe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Data_Edit21 {
-            get {
-                object obj = ResourceManager.GetObject("Data_Edit21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Data_Synchronize {
             get {
                 object obj = ResourceManager.GetObject("Data_Synchronize", resourceCulture);
@@ -126,26 +116,6 @@ namespace CS_Lathe.Properties {
         internal static System.Drawing.Bitmap Fire_Exit {
             get {
                 object obj = ResourceManager.GetObject("Fire_Exit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fire_Exit1 {
-            get {
-                object obj = ResourceManager.GetObject("Fire_Exit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap P200CVEditFullBG {
-            get {
-                object obj = ResourceManager.GetObject("P200CVEditFullBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
