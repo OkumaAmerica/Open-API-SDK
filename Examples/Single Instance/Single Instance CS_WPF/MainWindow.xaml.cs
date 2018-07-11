@@ -1,6 +1,6 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="MainWindow.xaml.cs" company="Okuma America Corporation" >
-//    Copyright© 2018 Okuma America Corporation
+//    Copyright© 2019 Okuma America Corporation
 // </copyright>
 // <project> Single Instance WPF </project>
 // <author> Scott Solmer</author>
@@ -17,7 +17,7 @@
 // </disclaimer> 
 //-----------------------------------------------------------------------
 
-namespace Single_Instance_WPF
+namespace Single_Instance_CS_WPF
 {
     using System;
     using System.Windows;
@@ -33,7 +33,7 @@ namespace Single_Instance_WPF
         }
 
         private string instructions =
-            "Directions to Create a Single Instance WPF Application:" +
+            "Directions to Create a Single Instance C# WPF Application:" +
                 Environment.NewLine +
                 "    1:  Create a new WPF project." +
                 Environment.NewLine +

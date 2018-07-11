@@ -1,7 +1,7 @@
 #========================
 # Okuma America Corporation
 # Standard Git Ignore file
-# v1.0
+# v1.1
  
  
 #========================
@@ -18,11 +18,13 @@
 
 # Build results
 [Dd]ebug/
+[Dd]ebug/x64/
+[Dd]ebug/x86/
 [Dd]ebugPublic/
 [Rr]elease/
+[Rr]elease/x64/
+[Rr]elease/x86/
 [Rr]eleases/
-x64/
-x86/
 bld/
 [Bb]in/
 [Oo]bj/
