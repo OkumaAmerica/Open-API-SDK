@@ -1,0 +1,118 @@
+﻿<Window x:Class="WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:util="clr-namespace:Wpf.Util"
+        xmlns:local="clr-namespace:WpfClient"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Width="700"
+        Height="500">
+
+    <Grid>
+        <ScrollViewer>
+            <Viewbox VerticalAlignment="Top" MaxHeight="800">
+                <StackPanel>
+
+                    <Label Content="THINC API Common Variables WCF Client Example" FontSize="18" HorizontalAlignment="Center" Foreground="#FF0E4F85">
+                        <Label.Effect>
+                            <DropShadowEffect ShadowDepth="1" BlurRadius="6" Color="#FF005DFF"/>
+                        </Label.Effect>
+                    </Label>
+
+                    <Line StrokeThickness="2" Stroke="#FFC70606" Fill="#FF003AFF" />
+
+                    <StackPanel Orientation="Horizontal" Background="#FFF7F7F7">
+                        <Button Content="Add To Value" Margin="5" Click="AddButton_Click"/>
+                        <Label Content="Index:" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="60" Text="{Binding AddIndex}" Margin="5"/>
+
+                        <Label Content="Value:" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="60" Text="{Binding AddValue}" Margin="5"/>
+
+                        <Label Content="Result:" VerticalAlignment="Center"/>
+                        <Border MinWidth="70" BorderBrush="#FF858585" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding AddResult}" 
+                                   FontSize="14" FontFamily="Consolas" Margin="4,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Get Count" Margin="5" Click="CountButton_Click"/>
+                        <Label Content="Number of Common Variables:" VerticalAlignment="Center"/>
+                        <Border MinWidth="70" BorderBrush="#FF858585" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding CVCount}" 
+                                   FontSize="14" FontFamily="Consolas" Margin="4,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Background="#FFF7F7F7">
+                        <Button Content="Get Value" Margin="5" Click="GetValueButton_Click"/>
+                        <Label Content="Index:" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="60" Text="{Binding ValueIndex}" Margin="5"/>
+
+                        <Label Content="Value:" VerticalAlignment="Center"/>
+                        <Border MinWidth="70" BorderBrush="#FF858585" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding ValueResult}" 
+                                   FontSize="14" FontFamily="Consolas" Margin="4,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Set Value" Margin="5" Click="SetButton_Click"/>
+                        <Label Content="Index:" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="60" Text="{Binding SetIndex}" Margin="5"/>
+
+                        <Label Content="Value:" VerticalAlignment="Center"/>
+                        <TextBox MinWidth="60" Text="{Binding SetVarValue}" Margin="5"/>
+
+                        <Label Content="Result:" VerticalAlignment="Center"/>
+                        <Border MinWidth="70" BorderBrush="#FF858585" BorderThickness="1" Margin="5">
+                            <TextBlock Text="{Binding SetResult}" 
+                                   FontSize="14" FontFamily="Consolas" Margin="4,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Background="#FFF7F7F7">
+                        <Button Content="Get Values" Margin="5" Click="GetValuesButton_Click" VerticalAlignment="Top"/>
+
+                        <Label Content="From Index:" VerticalAlignment="Top" Margin="0,2,0,0"/>
+                        <TextBox MinWidth="60" Text="{Binding FromIndex}" Margin="5" VerticalAlignment="Top"/>
+
+                        <Label Content="To Index:" VerticalAlignment="Top" Margin="0,2,0,0"/>
+                        <TextBox MinWidth="60" Text="{Binding ToIndex}" Margin="5" VerticalAlignment="Top"/>
+
+                        <Label Content="Values:" VerticalAlignment="Top" Margin="0,2,0,0"/>
+                        <ListView Grid.Row="1" Grid.Column="0" x:Name="ValidAxisCombosListView" Margin="6"
+                        ItemsSource="{Binding CVCollection}" IsSynchronizedWithCurrentItem="True"
+                        util:GridViewSort.AutoSort="True" MinWidth="100" MinHeight="50" MaxHeight="355">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Index}" util:GridViewSort.PropertyName="CV">
+                                        <GridViewColumnHeader Content="CV" Padding="5,0,20,0" HorizontalContentAlignment="Left" />
+                                    </GridViewColumn>
+
+                                    <GridViewColumn DisplayMemberBinding="{Binding Value}">
+                                        <GridViewColumnHeader Content="Value" Padding="5,0,20,0" HorizontalContentAlignment="Left"  />
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                    </StackPanel>
+
+                    <TextBox VerticalAlignment="Top" MinHeight="100" Background="#FFECECEC" 
+                             Margin="5" MaxWidth="500" TextWrapping="Wrap" Text="{Binding Log}" 
+                             FontSize="8" FontFamily="Consolas" Foreground="#FFC32828">
+                    </TextBox>
+
+                </StackPanel>
+            </Viewbox>
+        </ScrollViewer>
+    </Grid>
+</Window>

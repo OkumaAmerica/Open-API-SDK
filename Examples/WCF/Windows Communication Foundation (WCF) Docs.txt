@@ -1,0 +1,3 @@
+For Windows Communication Foundation Readmes go to: 
+	http://msdn.microsoft.com/en-us/library/dd483346(VS.100).aspx
+

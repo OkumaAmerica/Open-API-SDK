@@ -2,32 +2,27 @@
 
 # SCOUT CHANGE LOG README #
 
-* Last Compile date: 08/11/2017
-  * Scout_v11.0.exe   (C++ Wrapper Application) - Version 11.0.0.0
-  * Scout.exe         (.NET4.0)                 - Version 4.11.0.0
-  * Okuma.Scout.dll   (.NET4.0)                 - Version 4.1.0.0
-  * Okuma.Scout.TestApp.net40.exe				- Version 4.1.0.0
-  * Scout.exe         (.NET2.0)                 - Version 2.11.0.0
-  * Okuma.Scout.dll   (.NET2.0)                 - Version 2.3.1.0
-  * Okuma.Scout.TestApp.net20.exe				- Version 2.3.1.0
+* Last Compile date: 2018/09/19
+
+ Assembly                     | Version         | Note
+ :---                         |:---             |:---
+ Scout_v12.0.exe              | 12.0.1.0        | C++ Wrapper Application
+ Scout.exe                    | 4.12.1.0        | .NET 4.0
+ Okuma.Scout.dll              | 4.12.36.1       | .NET 4.0
+ Okuma.Scout.TestApp.net4.exe | 4.12.36.0       | .NET 4.0
+ Scout.exe                    | 2.12.0.0        | .NET 2.0
+ Okuma.Scout.dll              | 2.12.0.1        | .NET 2.0
+ Okuma.Scout.TestApp.net2.exe |	2.12.0.0        | .NET 2.0
 
 
 
 ## [ NOTES ] ##
 
-► Okuma.Scout.dll (.NET4.0) is fully backwards compatible with the .NET 2.0 version.
-	The .NET 2 version however, will only support up to THINC API version 1.19 on Lathe and MC.
-	THINC API versions for Grinder (1.19 and later) are UNSUPPORTED by Okuma.Scout.dll (.NET2.0).
-	YOU SHOULD ONLY USE THE .NET 2 VERSION IN CASES WHERE .NET 4 IS UNAVAILABLE ON THE TARGET MACHINE. 
+► Okuma.Scout.dll (.NET4.0) is fully backwards compatible with the .NET 2.0 version. The .NET 2 version however, will only support up to THINC API version 1.19 on Lathe and MC. THINC API versions for Grinder (1.19 and later) are UNSUPPORTED by Okuma.Scout.dll (.NET2.0).	YOU SHOULD ONLY USE THE .NET 2 VERSION IN CASES WHERE .NET 4 IS UNAVAILABLE ON THE TARGET MACHINE.
 
-► The SCOUT Application is a command-line 'native' C++ utility that checks the available .NET versions on
-	the target machine and unpacks and runs either the .NET 2 or .NET 4 SCOUT GUI. If the target machine
-	does not have at least .NET 2, the command prompt will notify the user that their machine does not 
-	meet the minimum requirements.
+► The SCOUT Application is a command-line 'native' C++ utility that checks the available .NET versions on	the target machine and unpacks and runs either the .NET 2 or .NET 4 SCOUT GUI. If the target machine does not have at least .NET 2, the command prompt will notify the user that their machine does not meet the minimum requirements.
 
-► Due to the differences in Data Management Cards on older OSP controls,
-	the output from them may contain little or poorly formatted data.
-	This does not affect compatibility results.
+► Due to the differences in Data Management Cards on older OSP controls, the output from them may contain little or poorly formatted data. This does not affect compatibility results.
 
 
 ### Contact Information ###
@@ -46,22 +41,74 @@
 	  [■] = Fully implemented
 	  [♦] = Implemented, not tested
 	  [◊] = New request
-	  [‡] = Not implemented request; will not add 
+	  [‡] = Not implemented request; will not add
 
 
 # [ CHANGE LOG ] #
-►　[ 2018-01-17 / SS  ]
+►　[ 2018-09-19 / SS  ]  
+
+  * [中■] API Cross Reference Updated - fixed TAPI MC 1.19.0.0 version ID 
+
+
+►　[ 2018-08-10 / Release v12.0 / SS  ]  
+
+  * [中◊] API Help v4.12 - prep for Open SDK Release 1.5
+
+  * [中■] API Cross Reference Updated
+  	* Added TAPI 1.20.0.0, TAPI 1.21.1.0, M-CAPI 003R, M-CAPI 003S, L-CAPI 003-U
+  	
+  * [全■] Support for .NET Framework 4.7.1 and 4.7.2
+  
+  * [本♦] Added the ability to add comments to SCOUT log
+	* Comment file name above CAPI text descriptions
+
+  * [本■] Scout App GUI now displays machine serial number if found, and OS display includes "CD Version". 
+	  * Closes #5.
+	
+  * [本♦] Added support for the following Machine Tool Applications
+  	* Kennametal NOVO 2.9.1.200
+  	* OSP Variables Manager 1.5.1.0
+  	* Renishaw Set and Inspect 2.1.1.7
+  	* Scheduled Maintenance 2.5.0
+  	* GO Panel Mode 1.2.4.1
+  	* GO Okuma IFTTT 1.1.7
+  	* Kitagawa Digital Grip Force Analyzer for Desktop 1.2.0
+  	* Kitagawa Digital Grip Force Analyzer for PC 1.2.0
+  	* BLUM Gauging Guide 2.2.4.0 Lathe
+  	* BLUM Gauging Guide 2.2.4.0 Mill
+  	* BLUM Gauging Guide 2.2.4.0 PC
+  	* MT Connect Agent & Adapter 3.1.0.0
+  	* OSP Variables Manager 1.5.1.0
+  	* Go Variable Export 1.6.4
+  
+
+►　[ 2018-05-18 / DEV / SS  ]
 
   * [中■] Improved performance of internal methods in SpecCode class for retrieval of byte data. This allows for rapid consecutive calls for spec codes without consuming large amounts of memory or CPU time.
-  * 
 
+  * [中■] Resolves Issue #1 : OS.Edition Property no longer throws EntryPointNotFoundExceptions on Windows systems where GetProductInfo does not exist in Kernel32.dll. Created Helper.EntryPointExistsInLibrary Method. Only executes NativeMethods.GetProductInfo when that function returns true AND Environment.OSVersion MajorVersion == 6.
+
+  * [中■] Removed Usage of LoadLibrary function in Kernel32.dll - was potentially unsafe and blocked by some anti-virus software
+
+  * [中■] If API is installed on a PC (non-machine environment), ThincApi.InstallVersion will now correctly return the installed API version (based on Lathe).
+  
+  * [中■] Refactored OS.Edition property getter. Is more reliable and maintainable now. Resolves Issue #7.
+  
+  * [中■] Added QueryWMI_Win32_ComputerSystemProduct() function  
+      NOTE: does not appear in test application yet.
+	  
+  * [全■] Updated Assembly Information / version numbers & slightly changed internal class naming convention
+  
+  * [中] Documentation modified to reflect the existence check of API files searches sub-directories under OSP-P
+   
+     
 
 ►　[ 2017-08-11 / SS  ]
 
-  * [中■] Resolves Issue #34: Created DoesMachineSupportThincApiVersion(Version v) for THINC app compatibility testing
+  * [中■] Resolves Issue #34 : Created DoesMachineSupportThincApiVersion(Version v) for THINC app compatibility testing
 
   * [中■] Resolves Issue #14
-   
+
   * [中■] Resolves Issue #36: SpecCodes class bug fixes, performance improvements, and improved documentation
 
   * [本■] Implements new SHA1 File integrity check for newer apps where it is provided.
@@ -78,10 +125,10 @@
 
   * [中■] Added WMI_Win32OS property and backing class to Operating System Information class.
 
-  * [本■] Fixed a bug where Windows 8 or later could not be properly identified. 
-  
+  * [本■] Fixed a bug where Windows 8 or later could not be properly identified.
+
   * [中■] AddedGetCultureInfo conversion method (from LANGID hex string) to Helper class
-  
+
   * [本■] Resolves Issue #20: Added support for the following apps:
     * TrakHound Community v1.5.7.0
     * EZ UI v1.0.1
@@ -90,18 +137,18 @@
 	* GO.Time v1.3.5
 	* Kitagawa Digital Grip Force Analyzer™ OSP v1.0.1
 	* Kitagawa Digital Grip Force Analyzer™ Desktop v1.0.1
-	* Scytec MTConnect Data Viewer v1.0
-    * GO.Weather Alert 1.3.15
+	* Scytec MTConnect Data Viewer v1.0  
+    * GO.Weather Alert 1.3.15  
     * OSP Variables Manager v1.2.2
-  
+
 
 
 ►　[ 2017-06-05 / Okuma Open API SDK v1.2 / SS  ]
 
   * [本■] Resolves Issue #30; Implemented keyboard input handling for compatibility reporter.
-  
+
   * [中■] Added PC NC-Master directory and application detection to OspFileInfo class.
-  
+
   * [本■] Improved level of detail and accuracy of Machine Type identification.
 
   * [中■] Resolves Issue #22; Now collects all applicable lines from DMC data fields in the Machine Data section.
@@ -109,31 +156,31 @@
   * [本■] Resolves Issue #31; Buttons in SCOUT indicate keyboard focus and support flashing animation.
 
   * [中■] Updated ApiVersionCrossRef.xml to Version 1.0.5.0 (add support for TAPI 1.20 and CAPI Q, R, S, and T)
-  
+
   * [中■] Add Function to get NC Software Package Version to Platform class.
 
   * [中■] Add Get Bit & Get Byte to SpecCode NC, NCB, and PLC classes and matching byte & bit display to Test App.
 
   * [中■] Fixed a bug where the Select Screen Mode is listed as Unknown on 15" P300A controls instead of NA.
 
-  * [中■] Reopened Issue#1 due to complicating factors (refer to Platform Determination.pptx). 
+  * [中■] Reopened Issue#1 due to complicating factors (refer to Platform Determination.pptx).
   Resolved the issue by creating 'SpecCode.OspRectrictions' property which returns type Enums.OSP_Restrictions.
 
   * [本■] Resolves Issue #16 (REMOVE delcam  PMViewer & Multi-channel viewer)
 
   * [中■] Test Apps Get Bit & Get Byte updated when combo boxes selected value changes
-      
-  
+
+
 
 ►　[ 2017-05-01 / SS  ]
 
   * [中■] Added "NotRSpecEnabled" property to SpecCode class.
 
-  * [本■] Resolves Issue #1; SCOUT now detects R-spec machines and notes the result on the main screen and log. 
+  * [本■] Resolves Issue #1; SCOUT now detects R-spec machines and notes the result on the main screen and log.
 
   * [中■] Added "OspSuiteVersion" property to Platform class.
 
-  * [本■] Resolves Issue #3; SCOUT now detects OSP suite version. 
+  * [本■] Resolves Issue #3; SCOUT now detects OSP suite version.
 
   * [本■] Resolves Issue #25; P300A touch input correctly activates display of compatibility details.
 
@@ -150,13 +197,13 @@
   * [全♦] Primary development of .NET 4.0 SCOUT Library, Library Test App, and SCOUT App complete.
 
   * [中■] Registry class of SCOUT libraries improved for increased reliability
-  
+
   * [本■] Architecture of SCOUT App enhanced to be more modular and follow MVVM design principals where possible
-  
+
   * [本■] SCOUT now provides better indication of progress during CPU load sampling and Process examination.
-  
+
   * [本■] App Files Hash verification class improved. Prepped for transition to SHA1.
-  
+
   * [全■] Resolves Issue #24; Check existence and version of PIODLIB.dll
 
   * [全■] Resolves Issue #23; SCOUT now will always attempt to output the versions of THINC API that are compatible.
@@ -173,7 +220,7 @@
 
   * [本■] Reorganized Solution structure in preparation for two Scout Application projects (.NET2 and .NET4)
 
-  * [中■] BREAKING CHANGES: The SCOUT library version (2.2.1) used a separate COM library for reading the GAC in a .NET 4.0 environment. 
+  * [中■] BREAKING CHANGES: The SCOUT library version (2.2.1) used a separate COM library for reading the GAC in a .NET 4.0 environment.
   Okuma.Scout.Com.dll has been eliminated and now there are two separate versions of the Okuma.Scout library, One for .NET4 and one for .NET2.
 	* GAC_CLR_Version() removed from AccessGAC class.
 	* COM_InterfaceImplementation removed from Okuma.Scout
@@ -184,18 +231,18 @@
 
   * [中■] Updated .NET class to include detection of new versions of .NET (4.6, 4.6.1, and 4.6.2)
 
-  * [中■] BREAKING CHANGES: The following functions / properties now return type Nullable<DateTime> and return null on error instead of an error string:
+  * [中■] BREAKING CHANGES: The following functions / properties now return type Nullable DateTime  and return null on error instead of an error string:
     * (ProgramInfo) getAssemblyBuildDate()
 	* (ProgramInfo) ThisAssemblyBuildDate
 	* (ProgramInfo) ScoutDllBuildDate
-	* (LicenseChecker) ConvertExpireDate() 
-	
+	* (LicenseChecker) ConvertExpireDate()
+
   * [中■] BREAKING CHANGES: The following properties now return type List<string> instead of string:
     * DMC.NcControlMsg
 	* DMC.NcAlarmHelp
 	* DMC.NcManual
 
-  * [中■] BREAKING CHANGES: The following properties now return type Nullable<bool> and return null on error instead of an error string:
+  * [中■] BREAKING CHANGES: The following properties now return type Nullable bool and return null on error instead of an error string:
     * SpecCode.Match_PLC1_FirstHalf
 	* SpecCode.Match_PLC1_SecondHalf
 	* SpecCode.Match_PLC2_FirstHalf
@@ -208,7 +255,7 @@
 
 
 ►　[ 2016-10-13 / Release 2.10.1.0 (SCOUT Lib 2.2.1)  / SS ]
-  
+
   * [中■] Fixed a bug where exceptions are thrown if the OSP-P folder exists, but OSP-P\CNS-DAT\ does not.
 
   * [中■] Fixed a bug where API type reports API version Cross Reference is missing if THINC API files are installed to the GAC, but the machine type is PC. It now reports unsupported machine type.
@@ -230,7 +277,7 @@
 
   * [全♦] Preliminary support for P300A Type Controls
 
-  * [全■] Report Grinder API file information 
+  * [全■] Report Grinder API file information
 
   * [全■] Report P300A Touch driver information
 
@@ -248,9 +295,10 @@
 
   * [中■] Re-wrote the Control Type detection routine for improved accuracy under various conditions
 
-  * [中■] ApiVersionCrossRef.xml updated to detect CAPI v001A(Grinder), CAPI v003S(Lathe), and TAPI v1.19.0.0 (SCOUT Library Version up to v2.2.0.0)
-  
-  * [中■] Fixed an issue with registry key & value queries on 64-bit systems which limited the results returned 
+  * [中■] ApiVersionCrossRef.xml updated to detect the following
+  	* CAPI v001A(Grinder), CAPI v003S(Lathe), and TAPI v1.19.0.0 (SCOUT Library Version up to v2.2.0.0)
+
+  * [中■] Fixed an issue with registry key & value queries on 64-bit systems which limited the results returned
 
   * [中■] Fixed an issue that prevented P100-II from being correctly Identified
 
@@ -272,7 +320,7 @@
 
   * [中■] Determine User Permissions (Operating System Tab)
 
-  * [中■] Performance of (bool)OS.InternetConnection increased substantially 
+  * [中■] Performance of (bool)OS.InternetConnection increased substantially
 
 
 
@@ -322,9 +370,9 @@
 
 
 
-► [ 2015-12-15 / SS ] 
+► [ 2015-12-15 / SS ]
 
-  * [中■] API Version Cross Reference updated. 
+  * [中■] API Version Cross Reference updated.
       * Added detection of CUSTOM API versions 003N and 003R.
       * Added detection of THIC API version 1.18.0.0.
 
@@ -404,9 +452,9 @@
       * MD5 hash for app installer packages
 
   * [本■] Add the following detection capability to SCOUT.dll
-      * Determine CAPI version based on OCJ API library versions	
+      * Determine CAPI version based on OCJ API library versions
       * TSS / OSS Installed & version
-      * Display identification (primarily for determining 15" or 19" panel) 
+      * Display identification (primarily for determining 15" or 19" panel)
 
   * [本■] Add the following Reporting Functions
       * THINC API compatibility report button: informs the user if a new version is available and how to get it. Also reports if there is any issue with the currently installed version and if an NC upgrade is required to get a newer version.
@@ -425,7 +473,7 @@
 
   * [中■] Bug fix - 'DetermineCAPIVersion()' now correctly sets 'ApiVersionCheckResult.UnknownVersion' when file version combination does not exist in ApiVersionCrossRef.xml
 
-  * [中■] Fixed syntax error that resulted in skipping the last resort method of detecting Control Type via DMC. 
+  * [中■] Fixed syntax error that resulted in skipping the last resort method of detecting Control Type via DMC.
 
 
 
@@ -433,7 +481,7 @@
 
   * [中■] Added class "Okuma.Scout.Display" class to provide information about screens / monitors attached to the system
 
-  * [中■] Added method "Okuma.Scout.Helper.RegDwordIntegerVersionParse()" to convert raw uninstall "Version" data to version objects. 
+  * [中■] Added method "Okuma.Scout.Helper.RegDwordIntegerVersionParse()" to convert raw uninstall "Version" data to version objects.
 
 
 
@@ -445,7 +493,7 @@
 
 ► [ 2015-5-9 / SS ]
 
-  * [中■] Added class "Okuma.Scout.Reg" and accompanying "Registry" tab in test application. 
+  * [中■] Added class "Okuma.Scout.Reg" and accompanying "Registry" tab in test application.
     Functions in this class are compatible with 32 & 64 bit systems and .NET 2+.
 
 
@@ -489,14 +537,14 @@
 
 ► [ 2015-2-25 / SS ]
 
-  * [中■] Revamped the way PLC Spec codes are retrieved to allow for user defined files, 
+  * [中■] Revamped the way PLC Spec codes are retrieved to allow for user defined files,
     access to all spec code groups, file type validation, and more!  
 
 
 
 ► [ 2015-02-24 / SS ]
 
-  * [中■] Changed the way NC & NCB Spec codes are retrieved to allow for user defined files, 
+  * [中■] Changed the way NC & NCB Spec codes are retrieved to allow for user defined files,
     access to all spec code groups, file type validation, and more.
 
 
@@ -515,17 +563,17 @@
   * [本■] Correction to the requirements for dataZen P_LOADER v2.0.0.0
      This app requires .NET 4+ and XP-SP3+
 
-  * [本■] Okuma.Scout.dll is now featured in the Okuma Open API SDK. Future updates to 
+  * [本■] Okuma.Scout.dll is now featured in the Okuma Open API SDK. Future updates to
      either this application or the Scout library will be reflected in both packages.
 
-  * [本◊] Determine if upgrade of THINC API can be performed 
+  * [本◊] Determine if upgrade of THINC API can be performed
      without the need for OS or OSP upgrade
 
 
 
 ► [ 2015-02-02 / SS ]
 
-  * [中■] Added properties for scout.dll version & build date 
+  * [中■] Added properties for scout.dll version & build date
     and the calling assembly (sample program for example) version & build date
     The new properties use a more reliable method to obtain the actual build date
     rather than the file modified date.
@@ -538,14 +586,14 @@
       + Caron BarCode v1.0.0.0		
       + Renishaw GUI for Lathes [Demo] v1.12.0.0
       + dataZen P-Keyboard v1.0.0.0
-      + KennaTechnical LaunchPad v1.0.0.0	
+      + KennaTechnical LaunchPad v1.0.0.0
 
   * [本■] Updated the following App versions
      * Blum Easy Results v1.0.6.0
      * MTConnect Agent v2.0.0.0
      * Visual Assistant Support v1.1.2.0
 
-  * [本■] Corrected requirements for MTConnect Agent 
+  * [本■] Corrected requirements for MTConnect Agent
 
 
 
@@ -582,7 +630,7 @@
       + Sandvik Drilling & Tapping Calculator v1.0.6.0
       + Sandvik Milling Calculator v1.0.6.0
       + Sandvik Turning Calculator v1.0.6.0
-      + STEP-NC Machine v10.50.0.0 
+      + STEP-NC Machine v10.50.0.0
       + View Control v14.3.28.1
       + Visual Assistance Support v1.0.5.0
 
@@ -591,22 +639,26 @@
 ### Notes ###
 
 The test application includes a debug version and release version of the Scout library  
-To create a project using either the debug or release version depending on the compile setting, first include both versions using the same structure as the test application.  
-Add the debug version as a resource to your project.  
-Then modify the project file using a text editor and locate the Reference to Okuma.Scout change the <HintPath> by replacing the folder name "\Debug\" with "\$(ConfigurationName)\". 
-Refer to the test application project file 'ScoutTestApplication.csproj' to see how this is done.
+To create a project using either the debug or release version depending on the compile setting:  
+
+>
+  1. First include both versions using the same structure as the test application.  
+  2. Add the debug version as a resource to your project.  
+  3. Modify the project file using a text editor and locate the Reference to Okuma.Scout change the HintPath by replacing the folder name "\Debug\" with "\$(ConfigurationName)\".  
+  
+  * Refer to the test application project file 'ScoutTestApplication.csproj' to see how this is done.
 
 
 ### Notice ###
 
   Author: Scott Solmer  
-  Copyright© 2018 Okuma America Corporation.  
-      
+  Copyright© 2019 Okuma America Corporation.  
+
   This sample code is unlicensed.  
   It is distributed "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,  
   either expressed or implied. Okuma America grants you permission to use  
   this code and derivative works thereof without limitation or obligation.  
-      
+
   Under no circumstance shall Okuma America be held liable to anyone   
   using this code or programs derived there from for damages of any kind  
   as a result of the use or inability to use this code, including but not  

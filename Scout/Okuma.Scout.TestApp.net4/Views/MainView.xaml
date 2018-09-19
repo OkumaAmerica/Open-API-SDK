@@ -1,0 +1,113 @@
+﻿<Window x:Class="Okuma.Scout.TestApp.net4.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Okuma.Scout.TestApp.net4.ViewModels"
+        xmlns:local="clr-namespace:Okuma.Scout.TestApp.net4"
+        xmlns:views="clr-namespace:Okuma.Scout.TestApp.net4.Views"
+        ResizeMode="CanResizeWithGrip"
+        mc:Ignorable="d"
+        d:DesignHeight="560" 
+        Width="930"
+        MinWidth="420" MinHeight="300"
+        FontSize="12"
+        Title="{Binding MainViewTitle, FallbackValue=Okuma.Scout Test Application}" 
+        >
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="API Info">
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="THINC API">
+                            <views:ThincApiView />
+                        </TabItem>
+                        <TabItem Header="THINC API 2">
+                            <views:ThincApi2View />
+                        </TabItem>
+                        <TabItem Header="Okuma Custom API">
+                            <views:CustomApiView />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Directories">
+                <views:DirectoriesView />
+            </TabItem>
+            <TabItem Header="DMC">
+                <views:DmcView />
+            </TabItem>
+            <TabItem Header=".NET">
+                <views:DotNetView />
+            </TabItem>
+            <TabItem Header="Error Handling">
+                <views:ErrorHandlingView />
+            </TabItem>
+            <TabItem Header="File Info">
+                <views:FileInfoView />
+            </TabItem>
+            <TabItem Header="GAC">
+                <views:GacView />
+            </TabItem>
+            <TabItem Header="License">
+                <views:LicenseView />
+            </TabItem>
+            <TabItem Header="Operating System">
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="Operating System">
+                            <views:OperatingSystemView />
+                        </TabItem>
+                        <TabItem Header="Operating System 2">
+                            <views:OperatingSystem2View />
+                        </TabItem>
+                        <TabItem Header="Operating System 3">
+                            <views:OperatingSystem3View />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="PIOD">
+                <views:PiodView />
+            </TabItem>
+            <TabItem Header="Platform">
+                <views:PlatformView />
+            </TabItem>
+            <TabItem Header="Processes">
+                <views:ProcessesView />
+            </TabItem>
+            <TabItem Header="Program Info">
+                <views:ProgramInfoView />
+            </TabItem>
+            <TabItem Header="Registry">
+                <views:RegistryView />
+            </TabItem>
+            <TabItem Header="Spec Codes">
+                <Grid>
+                    <Border VerticalAlignment="Top" Height="26" Background="{StaticResource BlueGradient}" />
+                    <TabControl>
+                        <TabItem Header="Comparison">
+                            <views:SpecCodeComparisonView />
+                        </TabItem>
+                        <TabItem Header="NC Spec File">
+                            <views:SpecCodeNCView />
+                        </TabItem>
+                        <TabItem Header="NC B-Spec File">
+                            <views:SpecCodeNCBView />
+                        </TabItem>
+                        <TabItem Header="PLC Spec File">
+                            <views:SpecCodePLCView />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

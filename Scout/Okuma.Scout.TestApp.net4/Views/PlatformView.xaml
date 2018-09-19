@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="Okuma.Scout.TestApp.net4.Views.PlatformView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Okuma.Scout.TestApp.net4.Views"
+             xmlns:vm="clr-namespace:Okuma.Scout.TestApp.net4.ViewModels"
+             mc:Ignorable="d"  
+             d:DesignHeight="420" 
+             d:DesignWidth="670">
+    <UserControl.DataContext>
+        <vm:PlatformViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox Margin="10,40,10,10" MaxHeight="450"
+                 VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid HorizontalAlignment="Left" Margin="10,4,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Machine Type:" />
+
+                <TextBox Grid.Row="0" Grid.Column="1"   
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding MachineType}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Control Type:" />
+
+                <TextBox Grid.Row="1" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding ControlType}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Panel Type:" />
+
+                <TextBox Grid.Row="2" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding PanelType}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="SelectScreen Mode:" />
+
+                <TextBox Grid.Row="3" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding SelectScreenMode}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="OSP suite Version:" />
+
+                <TextBox Grid.Row="4" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding OspSuiteVersion}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="NC Software Pkg. Version:" />
+
+                <TextBox Grid.Row="5" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding NcSoftPackageVersion}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="OSP Restrictions:" />
+
+                <TextBox Grid.Row="6" Grid.Column="1"   
+                         HorizontalAlignment="Left"
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding OSPRestrictions}"/>
+
+
+                <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left" 
+                        Content="Choose a Display:" />
+
+                <Label Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" 
+                        Content="Display Information:" />
+
+                <ComboBox Grid.Row="9" Grid.Column="0" 
+                          ItemsSource="{Binding DisplaysCollection}"
+                          DisplayMemberPath="DisplayName"
+                          SelectedValuePath="DisplayName"
+                          SelectedIndex="{Binding DisplaysSelectedIndex}"                 
+                          Width="121" Height="21" 
+                          Margin="0,0,10,0"
+                          VerticalAlignment="Top"/>
+
+                <TextBox Grid.Row="9" Grid.Column="1"   
+                         Width="Auto" Height="125" FontSize="11" IsReadOnly="True"
+                         MinWidth="510"
+                         HorizontalContentAlignment="Left" VerticalContentAlignment="Top" 
+                         Text="{Binding DisplayInfo}"/>
+
+            </Grid>
+
+           
+
+        </Viewbox>
+
+    </Grid>
+</UserControl>
