@@ -1,14 +1,14 @@
 ﻿<Window x:Class="WpfClient.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:util="clr-namespace:Wpf.Util"
-        xmlns:local="clr-namespace:WpfClient"
-        mc:Ignorable="d"
-        Title="MainWindow" 
-        Width="700"
-        Height="500">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:util="clr-namespace:Wpf.Util"
+    xmlns:local="clr-namespace:WpfClient"
+    mc:Ignorable="d"
+    Title="MainWindow" 
+    Width="700"
+    Height="500">
 
     <Grid>
         <ScrollViewer>
@@ -61,6 +61,22 @@
                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </StackPanel>
+
+                    <!--
+                    !!! WARNING !!!
+                    YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT!
+
+                    Modifying variables on a machine which is in production HAS RESULTED IN MACHINE
+                    CRASHES AND PROPERTY DAMAGE, AND COULD RESULT IN PERSONAL INJURY OR EVEN DEATH!
+
+                    This example does not include any transport security, message security, authentication, 
+                    or authorization of clients.It is configured to operate only on the local machine. 
+
+                    IF you decide to MODIFY this example to operate over a network connection, compile and
+                    deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY 
+                    for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE 
+                    for your poor judgment and failure to heed this warning.
+                    -->
 
                     <StackPanel Orientation="Horizontal">
                         <Button Content="Set Value" Margin="5" Click="SetButton_Click"/>

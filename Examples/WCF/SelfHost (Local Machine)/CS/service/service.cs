@@ -1,5 +1,18 @@
-﻿
-//  Copyright (c) Okuma America Corporation.  All Rights Reserved.
+﻿/*
+!!! WARNING !!!
+YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT!
+
+Modifying variables on a machine which is in production HAS RESULTED IN MACHINE
+CRASHES AND PROPERTY DAMAGE, AND COULD RESULT IN PERSONAL INJURY OR EVEN DEATH!
+
+This example does not include any transport security, message security, authentication, 
+or authorization of clients.It is configured to operate only on the local machine. 
+
+IF you decide to MODIFY this example to operate over a network connection, compile and
+deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY 
+for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE 
+for your poor judgment and failure to heed this warning.
+*/
 
 using System;
 using System.Configuration;
@@ -188,6 +201,22 @@ namespace Okuma.THINC_WCF_ServiceModel.Samples
                     serviceHost.Open();
 
                     // The service can now be accessed.
+
+                    Console.WriteLine(
+                        "YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT! " +
+                        Environment.NewLine + Environment.NewLine +
+                        "Modifying variables on a machine which is in production HAS RESULTED IN MACHINE " +
+                        "CRASHES AND PROPERTY DAMAGE, AND COULD RESULT IN PERSONAL INJURY OR EVEN DEATH! " +
+                        Environment.NewLine + Environment.NewLine +
+                        "This example does not include any transport security, message security, authentication, " +
+                        "or authorization of clients. It is configured to operate only on the local machine. " +
+                        Environment.NewLine + Environment.NewLine +
+                        "IF you decide to MODIFY this example to operate over a network connection, compile and " +
+                        "deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY " +
+                        "for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE " +
+                        "for your poor judgment and failure to heed this warning. " +
+                        Environment.NewLine);
+
                     Console.WriteLine("Okuma THINC API WCF service is running.");
                     Console.WriteLine("Press <ENTER> to terminate service.");
                     Console.WriteLine();

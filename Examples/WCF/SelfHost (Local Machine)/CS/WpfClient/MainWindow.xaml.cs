@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿/*
+!!! WARNING !!!
+YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT!
+
+Modifying variables on a machine which is in production HAS RESULTED IN MACHINE
+CRASHES AND PROPERTY DAMAGE, AND COULD RESULT IN PERSONAL INJURY OR EVEN DEATH!
+
+This example does not include any transport security, message security, authentication, 
+or authorization of clients.It is configured to operate only on the local machine. 
+
+IF you decide to MODIFY this example to operate over a network connection, compile and
+deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY 
+for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE 
+for your poor judgment and failure to heed this warning.
+*/
+
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 using System.ComponentModel;
-
-
 
 namespace WpfClient
 {
@@ -168,6 +170,25 @@ namespace WpfClient
 
             // Create the client
             client = new CommonVariablesClient();
+
+            MessageBox.Show(
+                "YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT! " +
+                Environment.NewLine + Environment.NewLine +
+                "Modifying variables on a machine which is in production HAS RESULTED IN MACHINE " +
+                "CRASHES AND PROPERTY DAMAGE, AND COULD RESULT IN PERSONAL INJURY OR EVEN DEATH! " + 
+                Environment.NewLine + Environment.NewLine +
+                "This example does not include any transport security, message security, authentication, " +
+                "or authorization of clients. It is configured to operate only on the local machine. " +
+                Environment.NewLine + Environment.NewLine +
+                "IF you decide to MODIFY this example to operate over a network connection, compile and " + 
+                "deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY " + 
+                "for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE " + 
+                "for your poor judgment and failure to heed this warning. " +
+                Environment.NewLine,
+                "!!!WARNING!!!", 
+                MessageBoxButton.OK, 
+                MessageBoxImage.Warning
+                );
         }
 
 

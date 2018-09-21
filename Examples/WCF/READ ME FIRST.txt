@@ -1,4 +1,11 @@
-﻿<!--
+
+This example client and server are directly based on the following Microsoft Example Project:
+  WCF Samples > Basic > Services > Hosting > Self-Host
+
+  Sample Code: http://go.microsoft.com/fwlink/?linkid=150780
+  Documentation: http://msdn.microsoft.com/en-us/library/dd483346(VS.100).aspx
+
+
 !!! WARNING !!!
 YOU SHOULD NEVER USE THIS EXAMPLE CODE IN A PRODUCTION ENVIRONMENT!
 
@@ -12,14 +19,6 @@ IF you decide to MODIFY this example to operate over a network connection, compi
 deploy any part of this code in a production environment, YOU ACCEPT ALL RESPONSIBILTY 
 for the outcome, however detrimental, and AGREE that OKUMA CANNOT BE HELD LIABLE 
 for your poor judgment and failure to heed this warning.
--->
-    
-<Application x:Class="WpfClient.App"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:local="clr-namespace:WpfClient"
-            StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
-</Application>
+
+
+
