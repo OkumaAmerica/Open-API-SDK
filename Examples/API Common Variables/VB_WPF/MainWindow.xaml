@@ -1,0 +1,107 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" x:Name="MainWindow1" x:Class="VB_WPF.MainWindow"
+        Title="THINC-API CV Function Test" Unloaded="MainWindow_UnLoad" MaxWidth="405" 
+        MaxHeight="405" MinWidth="405" MinHeight="405" Grid.IsSharedSizeScope="True">
+    <Window.Resources>
+        <Storyboard x:Key="OnLoaded1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.RelativeTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="PrimaryGrid" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="362"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="PrimaryGrid">
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                        <RotateTransform Angle="1" CenterY="0.5" CenterX="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF1A78D8"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label x:Name="lbl_Title" Content="THINC-API: Common Variables" HorizontalAlignment="Left" Margin="29,10,0,0" 
+               VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Foreground="White"/>
+
+        <GroupBox Header="Functions" HorizontalAlignment="Left" Margin="10,185.096,0,0" VerticalAlignment="Top" Height="174.904" Width="372" BorderBrush="White" Foreground="White">
+            <Grid>
+                <ComboBox x:Name="combo_CVN" HorizontalAlignment="Left" Margin="179,17,0,0" VerticalAlignment="Top" 
+            		Width="73" SelectedIndex="0" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                    <ComboBoxItem Content="0" IsEnabled="False" Visibility="Hidden"/>
+                    <ComboBoxItem Content="1" IsSelected="True"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="7"/>
+                    <ComboBoxItem Content="8"/>
+                    <ComboBoxItem Content="9"/>
+                    <ComboBoxItem Content="10"/>
+                </ComboBox>
+                <Label x:Name="lbl_Title_Copy" Content="CV No." HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" FontSize="18" 
+            		FontWeight="Bold" Height="35" RenderTransformOrigin="1.091,0.543" Foreground="White"/>
+                <Grid HorizontalAlignment="Left" Height="29" Margin="72.5,77,0,0" VerticalAlignment="Top" Width="90.5" Background="#FFE0E0E0">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBlock x:Name="txtBlockReadResult" Margin="5,3" TextWrapping="Wrap" Text="init" Foreground="Black" FontSize="16"/>
+                    </Border>
+                </Grid>
+                <TextBox x:Name="txtBox_WriteVal" HorizontalAlignment="Left" Height="26.1" Margin="217.5,79.9,0,0" 
+                	TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89.5" FontSize="16"/>
+                <Button x:Name="btn_ReadCV" Content="Read CV" HorizontalAlignment="Left" Margin="72.5,111,0,0" VerticalAlignment="Top" 
+                	Width="90.5" Click="btn_ReadCV_Click" Height="32" IsEnabled="False" FontSize="16"/>
+                <Button x:Name="btn_WriteCV" Content="Write CV" HorizontalAlignment="Left" Margin="217.5,111,0,0" 
+                	VerticalAlignment="Top" Width="89.5" Click="btn_WriteCV_Click" Height="32" IsEnabled="False" FontSize="16"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Initialization" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="108" Width="372" Foreground="White" BorderBrush="White">
+            <Grid>
+                <RadioButton x:Name="RadioBtnMC" Content="Machine Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,15,0,0" Foreground="White" FontSize="10" Width="166" Background="Black" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsChecked="True">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton x:Name="RadioBtnLathe" Content="Lathe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="46,52,0,0" Foreground="White" FontSize="10" Width="71" Background="Black" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <Button x:Name="btnInit" Content="Initialize API" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="208,17,0,0" Click="btnInit_Click" Height="49" FontSize="18"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

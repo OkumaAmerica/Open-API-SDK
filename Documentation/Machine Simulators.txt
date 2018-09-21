@@ -1,0 +1,47 @@
+
+NOTICE: 
+
+    The sale of Simulator Software and Hardware is conducted through 
+    Okuma Distributors and is subject to approval on a case-by-case basis. 
+    Availabity and approval is not garenteed.
+
+    Find your distributor: https://www.okuma.com/distributors
+
+    Simulation Software and Hardware cannot be used for cycle time calculation or gaurentee. 
+    Not all functions may operate the same as on an actual machine. 
+    In order to test THINC API Applications, you must request THINC API with your order.
+
+
+Software Simulator (requires USB dongle)
+
+  > PC NC-Master
+    - Basic Package (One machine model, no AOT or CAS) 
+    - Premium Package (One machine model, Includes AOT and CAS) 
+        
+   AOT = Advanced One-Touch IGF 
+   CAS = Collision Avoidance System
+
+   Available Models (as of April 2017):
+
+   Control Type	 Machine Model	 Screen Size & Software
+   OSP-P300L	 LB3000EXII	 15 inch
+   OSP-P300S	 MULTUS U3000	 19 inch w/ OSP suite
+   OSP-P300M	 MU-6300V	 19 inch w/ OSP suite
+   OSP-P300L	 LU3000EX	 15 inch w/ OSP suite
+   OSP-P300M	 MB-66VB	 15 inch w/ OSP suite
+   OSP-P300M	 MU-500VII	 15 inch
+
+
+Hardware Simulator
+
+  > NC-Master
+    - Includes Panel PC, Operation Panel(s), IO Unit, Power Supply, Storage Device, Rugged Case, etc.
+      Choose from a standard model or request a custom machine type and options.
+      Custom orders subject to RFEQ process.
+
+   Standard Models:
+
+   Control Type	 Machine Model  
+   OSP-P300S	 MULTUS 300W
+   OSP-P300L	 LT2000
+   OSP-P300M	 MA-600HII

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okuma.Scout.TestApp.net40", "Okuma.Scout.TestApp.net40\Okuma.Scout.TestApp.net40.csproj", "{07CB6445-2AE5-4FEE-B68F-C7F537136383}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okuma.Scout.TestApp.net4", "Okuma.Scout.TestApp.net4\Okuma.Scout.TestApp.net4.csproj", "{07CB6445-2AE5-4FEE-B68F-C7F537136383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okuma.Scout.TestApp.net20", "Okuma.Scout.TestApp.net20\Okuma.Scout.TestApp.net20.csproj", "{1C67D06E-9604-48FF-AA78-8E4AA86A017D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okuma.Scout.TestApp.net2", "Okuma.Scout.TestApp.net2\Okuma.Scout.TestApp.net2.csproj", "{1C67D06E-9604-48FF-AA78-8E4AA86A017D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

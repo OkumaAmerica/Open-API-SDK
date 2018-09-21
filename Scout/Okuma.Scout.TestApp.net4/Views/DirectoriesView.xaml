@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Okuma.Scout.TestApp.net4.Views.DirectoriesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Okuma.Scout.TestApp.net4.Views"
+             xmlns:vm="clr-namespace:Okuma.Scout.TestApp.net4.ViewModels"
+             mc:Ignorable="d"  
+             d:DesignHeight="420" 
+             d:DesignWidth="670">
+    <UserControl.DataContext>
+        <vm:DirectoriesViewModel />
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+        
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox Margin="10,40,10,10" MaxHeight="300"
+                 VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <StackPanel>
+
+                <Grid HorizontalAlignment="Left" Margin="10,4,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="OSP Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding OspDirectory}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="CNS Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="1" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding CnsDirectory}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="VOLANTE Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="2" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding VolanteDirectory}"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="CRAD Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="3" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding CradDirectory}"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="Okuma Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="4" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding OkumaDirectory}"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="PC NC-Master Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="5" Grid.Column="1"   
+                             Width="100" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding PcncmDirectory}"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="System Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="6" Grid.Column="1"   
+                             Width="200" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding SystemDirectory}"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" 
+                           Content="Current Directory:" Margin="0,0,19,0"/>
+
+                    <TextBox Grid.Row="7" Grid.Column="1"   
+                             Width="500" Height="21" FontSize="11" IsReadOnly="True"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             HorizontalAlignment="Left"
+                             Text="{Binding CurrentDirectory}"/>
+
+                </Grid>
+                
+            </StackPanel>
+
+        </Viewbox>
+
+    </Grid>
+</UserControl>

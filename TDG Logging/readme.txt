@@ -1,3 +1,8 @@
+[ TDG.Logging.dll 4.19.0.0 ]
+
+  [/] No Documentation - Use at your own risk
+
+
 [ TDG.Logging.dll 2.16.0.0 ]
 
   [ ~~~~~ Important ~~~~~ ]
@@ -15,8 +20,8 @@
 		* .NET = 2.0
 		* CPU  = ANY
 		* Built in Visual Studio 2010
-		* Requires applications to run with Administrative privileges; must be able to write to 
-		  local directory
+		* Requires applications to run with Administrative privileges; 
+		    must be able to write to local directory
 		* No THINC-API requirement
 
 [ To Do ]
