@@ -55,13 +55,13 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 ## :notebook_with_decorative_cover: Structure
 
 ```  
-├───API					╔══════════════════════════════════════════════╗ 
-│   ├───1.12.1			║  Recommended API versions for development.   ║
-│   │   ├───Bin			║  Refer to the test applications for details  ║
-│   │   ├───Help		║  about how to use each function in the       ║
-│   │   └───Test App  	║  API. Okuma uses these projects to verify    ║
-│   │       ├───Lathe	║  the operation of the API before release.    ║
-│   │       └───MC		╚══════════════════════════════════════════════╝
+├───API                ╔══════════════════════════════════════════════╗   
+│   ├───1.12.1         ║  Recommended API versions for development.   ║  
+│   │   ├───Bin        ║  Refer to the test applications for details  ║  
+│   │   ├───Help       ║  about how to use each function in the       ║  
+│   │   └───Test App   ║  API. Okuma uses these projects to verify    ║  
+│   │       ├───Lathe  ║  the operation of the API before release.    ║  
+│   │       └───MC     ╚══════════════════════════════════════════════╝  
 │   ├───1.17.2
 │   │   ├───Bin
 │   │   ├───Help
@@ -136,8 +136,8 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 │   │   └───VB_WPF
 │   │       └───My Project
 │   │           └───MyExtensions
-│   ├───Python						※ API Tutorial for Python
-│   ├───Single Instance				※ Only allow one copy of a program to run at a time (examples)
+│   ├───Python                     ※ API Tutorial for Python
+│   ├───Single Instance            ※ Only allow one copy of a program to run at a time (examples)
 │   │   ├───Single Instance CS_Forms
 │   │   │   ├───bin
 │   │   │   │   ├───Debug
@@ -160,8 +160,8 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 │   │       └───obj
 │   │           └───Debug
 │   │               └───TempPE
-│   └───WCF							※ Windows Communication Foundation  
-│       └───SelfHost (Local Machine)	※ Basic Example using Common Variables Class
+│   └───WCF                             ※ Windows Communication Foundation  
+│       └───SelfHost (Local Machine)    ※ Basic Example using Common Variables Class
 │           └───CS
 │               ├───service
 │               │   ├───bin
@@ -176,13 +176,13 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 │                   │   └───Debug
 │                   └───Properties
 ├───Images
-├───OSP suite Shortcuts				※ Instructions and example to make shortcut
+├───OSP suite Shortcuts                 ※ Instructions and example to make shortcut
 │   └───010-NOTEPAD
 │       └───00000010
 │           └───res
 ├───Register V-FKEY
-│   ├───README.txt            		※ Information about RegisterVfkey
-│   └───RegisterVfkey.exe     		※ Utility to add shortcut to V-FKEY
+│   ├───README.txt                      ※ Information about RegisterVfkey
+│   └───RegisterVfkey.exe               ※ Utility to add shortcut to V-FKEY
 ├───Scout
 │   ├───Doc
 │   ├───Lib
@@ -206,11 +206,11 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 │       ├───Resources
 │       ├───ViewModels
 │       └───Views
-└───TDG Logging						※ Library for creation of application logs
-    ├───TDG.Logging 2.16			※ The logging library and dependencies
+└───TDG Logging                     ※ Library for creation of application logs
+    ├───TDG.Logging 2.16            ※ The logging library and dependencies
     ├───TDG.Logging 4.19
     └───TestApp
-        └───TDG Logging Example		※ Test Application for TDG Logging Utility
+        └───TDG Logging Example     ※ Test Application for TDG Logging Utility
             ├───Properties
             └───TextLogSyntax
 ```	   
