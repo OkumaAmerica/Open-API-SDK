@@ -59,6 +59,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Okuma.Scout, Version=2.12.0.1, Culture=neutral, PublicKeyToken=9f4decc161e6c9e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\.NET 2.0\Debug\Okuma.Scout.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -110,12 +114,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Okuma.Scout\Okuma.Scout.net20\Okuma.Scout.net2.csproj">
-      <Project>{d003aec9-9cda-4c9d-a543-348115f15485}</Project>
-      <Name>Okuma.Scout.net2</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 #========================
 # Okuma America Corporation
 # Standard Git Ignore file
-# v1.1
+# v1.5
  
  
 #========================
@@ -17,16 +17,14 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebug/x64/
-[Dd]ebug/x86/
+#REM [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
-[Rr]elease/x64/
-[Rr]elease/x86/
+#REM [Rr]elease/
 [Rr]eleases/
+x64/
+x86/
 bld/
-[Bb]in/
+#REM [Bb]in/
 [Oo]bj/
 [Ll]og/
 
