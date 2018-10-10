@@ -61,6 +61,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\Release\</OutputPath>
@@ -73,17 +74,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Okuma.CLCMDAPI">
-      <HintPath>..\Compiled\Okuma.CLCMDAPI.dll</HintPath>
+    <Reference Include="Okuma.CLCMDAPI, Version=2.1.0.0, Culture=neutral, PublicKeyToken=a223a5616e84547b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Okuma.CLDATAPI">
-      <HintPath>..\Compiled\Okuma.CLDATAPI.dll</HintPath>
+    <Reference Include="Okuma.CLDATAPI, Version=2.7.0.0, Culture=neutral, PublicKeyToken=2d3497331b752ad6">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Okuma.CMCMDAPI">
-      <HintPath>..\Compiled\Okuma.CMCMDAPI.dll</HintPath>
+    <Reference Include="Okuma.CMCMDAPI, Version=1.7.0.0, Culture=neutral, PublicKeyToken=da5164982ff0f268">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
-    <Reference Include="Okuma.CMDATAPI">
-      <HintPath>..\Compiled\Okuma.CMDATAPI.dll</HintPath>
+    <Reference Include="Okuma.CMDATAPI, Version=1.7.0.1, Culture=neutral, PublicKeyToken=ddd409d78457d7ad">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -161,33 +166,11 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Compiled\Okuma.Apilog.dll">
-      <Link>Okuma.Apilog.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Compiled\Okuma.CLCMDAPI.dll">
-      <Link>Okuma.CLCMDAPI.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Compiled\Okuma.CLDATAPI.dll">
-      <Link>Okuma.CLDATAPI.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Compiled\Okuma.CMCMDAPI.dll">
-      <Link>Okuma.CMCMDAPI.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Compiled\Okuma.CMDATAPI.dll">
-      <Link>Okuma.CMDATAPI.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\"
-copy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\"
-copy "$(TargetDir)*.config" "$(SolutionDir)Compiled\"</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\" /Y
+xcopy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\" /Y
+xcopy "$(TargetDir)*.config" "$(SolutionDir)Compiled\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

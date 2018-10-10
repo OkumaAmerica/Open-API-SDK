@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>THINCLathe</name>
+    <version>1.19.0.0</version>
+    <fullname>THINCLathe, Version=1.19.0.0, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="M:thincLathe.frmMain.btnP300SToolsUpdate_Click(System.Object,System.EventArgs)">
+      <summary>
+ P300 S TD/TL Mode ONLY 
+ </summary>
+ <param name="sender" />
+ <param name="e" />
+ <remarks>
+ </remarks>
+ <history>
+ 	[lhuynh]	2/4/2013	Created 
+ </history></member>
+  </members>
+</doc>

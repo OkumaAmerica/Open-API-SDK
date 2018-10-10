@@ -54,7 +54,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\x86\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>VB_MC.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
@@ -63,7 +63,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\x86\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>VB_MC.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
@@ -74,11 +74,11 @@
   <ItemGroup>
     <Reference Include="Okuma.CMCMDAPI, Version=1.7.0.0, Culture=neutral, PublicKeyToken=da5164982ff0f268">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CMCMDAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMDATAPI, Version=1.7.0.1, Culture=neutral, PublicKeyToken=ddd409d78457d7ad">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Bin\1.9.1\Okuma.CMDATAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -127,9 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -144,27 +144,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\P200CVEditFullBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Synchronize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data-Edit2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fire-Exit.png" />
+    <Content Include="..\Common\Background.png">
+      <Link>Resources\Background.png</Link>
+    </Content>
+    <Content Include="..\Common\Cancel.png">
+      <Link>Resources\Cancel.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Edit.png">
+      <Link>Resources\Data-Edit.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Edit2.png">
+      <Link>Resources\Data-Edit2.png</Link>
+    </Content>
+    <Content Include="..\Common\Data-Synchronize.png">
+      <Link>Resources\Data-Synchronize.png</Link>
+    </Content>
+    <Content Include="..\Common\Fire-Exit.png">
+      <Link>Resources\Fire-Exit.png</Link>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\"
-copy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\"</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)*.exe" "$(SolutionDir)Compiled\" /Y
+xcopy "$(TargetDir)*.dll" "$(SolutionDir)Compiled\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

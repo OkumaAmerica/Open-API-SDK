@@ -1,1 +1,0 @@
-> Add info for THINC Start-up Service registration
