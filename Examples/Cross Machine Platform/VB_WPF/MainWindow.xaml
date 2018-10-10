@@ -1,0 +1,189 @@
+﻿<Window
+    x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="MainWindow1"
+    Title="THINC-API CV Function Test"
+    MinWidth="405"
+    MinHeight="405"
+    MaxWidth="405"
+    MaxHeight="405"
+    Grid.IsSharedSizeScope="True"
+    Unloaded="MainWindow_UnLoad"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Storyboard x:Key="OnLoaded1">
+            <DoubleAnimationUsingKeyFrames
+                RepeatBehavior="Forever"
+                Storyboard.TargetName="PrimaryGrid"
+                Storyboard.TargetProperty="(Panel.Background).(Brush.RelativeTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="2" />
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="362" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}" />
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="PrimaryGrid">
+
+        <Grid.Background>
+            <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" EndPoint="0.5,1">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterX="0.5" CenterY="0.5" />
+                        <SkewTransform CenterX="0.5" CenterY="0.5" />
+                        <RotateTransform Angle="1" CenterX="0.5" CenterY="0.5" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Offset="1" Color="Black" />
+                <GradientStop Color="#FF1A78D8" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label
+            x:Name="lbl_Title"
+            Margin="29,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="THINC-API: Common Variables"
+            FontSize="22"
+            FontWeight="Bold"
+            Foreground="White" />
+
+
+
+
+
+        <GroupBox
+            Width="372"
+            Height="174.904"
+            Margin="10,185.096,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="White"
+            Foreground="White"
+            Header="Functions">
+            <Grid>
+                <ComboBox
+                    x:Name="combo_CVN"
+                    Width="73"
+                    Margin="179,17,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    IsEnabled="False"
+                    RenderTransformOrigin="0.5,0.5"
+                    SelectedIndex="0">
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                    <ComboBoxItem
+                        Content="0"
+                        IsEnabled="False"
+                        Visibility="Hidden" />
+                    <ComboBoxItem Content="1" IsSelected="True" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="5" />
+                    <ComboBoxItem Content="6" />
+                    <ComboBoxItem Content="7" />
+                    <ComboBoxItem Content="8" />
+                    <ComboBoxItem Content="9" />
+                    <ComboBoxItem Content="10" />
+                </ComboBox>
+                <Label
+                    x:Name="lbl_Title_Copy"
+                    Height="35"
+                    Margin="72,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="CV No."
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    RenderTransformOrigin="1.091,0.543" />
+                <Grid
+                    Width="90.5"
+                    Height="29"
+                    Margin="72.5,77,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Background="#FFE0E0E0">
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBlock
+                            x:Name="txtBlockReadResult"
+                            Margin="5,3"
+                            FontSize="16"
+                            Foreground="Black"
+                            Text="init"
+                            TextWrapping="Wrap" />
+                    </Border>
+                </Grid>
+                <TextBox
+                    x:Name="txtBox_WriteVal"
+                    Width="89.5"
+                    Height="26.1"
+                    Margin="217.5,79.9,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontSize="16"
+                    Text=""
+                    TextWrapping="Wrap" />
+                <Button
+                    x:Name="btn_ReadCV"
+                    Width="90.5"
+                    Height="32"
+                    Margin="72.5,111,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="btn_ReadCV_Click"
+                    Content="Read CV"
+                    FontSize="16"
+                    IsEnabled="False" />
+                <Button
+                    x:Name="btn_WriteCV"
+                    Width="89.5"
+                    Height="32"
+                    Margin="217.5,111,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="btn_WriteCV_Click"
+                    Content="Write CV"
+                    FontSize="16"
+                    IsEnabled="False" />
+            </Grid>
+        </GroupBox>
+        <GroupBox
+            Width="372"
+            Height="108"
+            Margin="10,54,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="White"
+            Foreground="White"
+            Header="Initialization">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="txtMachinePlatform" FontSize="18" />
+                <TextBlock
+                    x:Name="txtMachineMode"
+                    Grid.Row="1"
+                    FontSize="18" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DataApi = Okuma.CMDATAPI.DataAPI;
-using DataEnums = Okuma.CMDATAPI.Enumerations;
-
-namespace CS_WPF.OkumaInterface
+﻿namespace CS_WPF.OkumaInterface
 {
-    public class OkumaMill : IOkuma, IDisposable
+
+    using DataApi = Okuma.CLDATAPI.DataAPI;
+
+    public class OkumaLathe : IOkuma
     {
 
         DataApi.CMachine _machine;
         DataApi.CVariables _variables;
 
-        public OkumaMill()
+        public OkumaLathe()
         {
             _machine = new DataApi.CMachine();
             _machine.Init();

@@ -14,7 +14,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,16 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Okuma.CLCMDAPI">
-      <HintPath>..\..\..\..\API\1.9.1\Bin\Okuma.CLCMDAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CLDATAPI">
-      <HintPath>..\..\..\..\API\1.9.1\Bin\Okuma.CLDATAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMCMDAPI">
-      <HintPath>..\..\..\..\API\1.9.1\Bin\Okuma.CMCMDAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMDATAPI">
-      <HintPath>..\..\..\..\API\1.9.1\Bin\Okuma.CMDATAPI.dll</HintPath>
+      <HintPath>..\..\..\API\1.9.1\Bin\Okuma.CMDATAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Okuma.Scout">
+      <HintPath>..\..\..\Scout\Lib\.NET 4.0\Debug\Okuma.Scout.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,6 +104,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CS_WPF.OkumaInterface
+﻿namespace CS_WPF.OkumaInterface
 {
+    using System.Collections.Generic;
+
     public class OkumaSim : IOkuma
     {
         Dictionary<int, double> _variables;
@@ -33,5 +30,12 @@ namespace CS_WPF.OkumaInterface
         {
             _variables[variableNumber] = newValue;
         }
+
+        public void Dispose()
+        {
+            _variables.Clear();
+            _variables = null;
+        }
+
     }
 }

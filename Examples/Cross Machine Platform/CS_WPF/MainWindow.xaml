@@ -174,7 +174,15 @@
             Foreground="White"
             Header="Initialization">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
                 <TextBlock x:Name="txtMachinePlatform" FontSize="18" />
+                <TextBlock
+                    x:Name="txtMachineMode"
+                    Grid.Row="1"
+                    FontSize="18" />
             </Grid>
         </GroupBox>
     </Grid>

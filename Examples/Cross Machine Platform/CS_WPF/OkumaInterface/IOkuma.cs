@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 
 namespace CS_WPF.OkumaInterface
 {
-    public interface IOkuma
+    public interface IOkuma:IDisposable
     {
         OperationModeEnum GetOperationMode();
         double ReadVariable(int variableNumber);
