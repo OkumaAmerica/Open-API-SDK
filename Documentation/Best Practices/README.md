@@ -123,7 +123,7 @@ locations.
 
 C\#
 
-\`\`\`
+```
 
 // Create an instance of CMachine class
 
@@ -143,11 +143,11 @@ var objMMachine = new Okuma.CMDATAPI.DataAPI.CMachine();
 
 objMMachine.Init();
 
-\`\`\`
+```
 
 VB.NET
 
-\`\`\`
+```
 
 >   ' 'Init()' must be called exactly once on the main
 
@@ -167,7 +167,7 @@ With New CMachine
 
 End With
 
-\`\`\`
+```
 
 Threading
 =========
