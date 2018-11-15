@@ -1,5 +1,5 @@
 ---
-title: Thinc API development Best Practices
+# Thinc API development Best Practices
 ---
 
 Application Settings
