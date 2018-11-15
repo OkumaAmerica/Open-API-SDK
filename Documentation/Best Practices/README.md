@@ -119,7 +119,8 @@ Before any API operations are called the CMachine.Init() must be called. This
 must be done once per application one time on the main thread of the
 application. Init can be called at any time before instantiating any instance of
 any other API class. The application Startup or FormLoad are both acceptable
-locations.
+locations.  The instance of CMachine upon which Init() does not need to be retained
+since that part of CMachine is static.
 
 C\#
 
@@ -149,7 +150,7 @@ VB.NET
 
 ```
 
->   ' 'Init()' must be called exactly once on the main
+' Init()' must be called exactly once on the main
 
 ' thread from an instance of CMachine before any
 
