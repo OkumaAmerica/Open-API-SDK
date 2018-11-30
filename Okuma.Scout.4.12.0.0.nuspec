@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Okuma.Scout</id>
+    <version>4.12.0</version>
+    <authors>Scott Solmer</authors>
+    <owners>Okuma America Corporation</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://bitbucket.org/okuma/open-api-sdk</projectUrl>
+    <description>Utility related to Okuma API development
+
+Scout Library for .NET 4.0 +</description>
+    <releaseNotes># SCOUT CHANGE LOG README #
+* Last Compile date: 03/07/2017
+* SCOUT Application			      - Version 2.11.0.0
+* Okuma.Scout.dll (.NET2.0)       - Version 2.3.0.0
+* Okuma.Scout.dll (.NET4.0)       - Version 4.0.0.0
+* SCOUT .NET 2.0 Test Application - Version 2.3.0.0
+* SCOUT .NET 4.0 Test Application - Version 4.0.0.0
+This sample code is unlicensed.  
+  It is distributed "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,  
+  either expressed or implied. Okuma America grants you permission to use  
+  this code and derivative works thereof without limitation or obligation.  
+      
+  Under no circumstance shall Okuma America be held liable to anyone   
+  using this code or programs derived there from for damages of any kind  
+  as a result of the use or inability to use this code, including but not  
+  limited to damages for loss of goodwill, work stoppage, computer failure  
+  or malfunction, or any and all other commercial damages or losses.</releaseNotes>
+    <copyright>Copyright© 2016 Okuma America Corporation</copyright>
+  </metadata>
+  <files>
+    <file src="Scout\Lib\.NET 2.0\Release\Okuma.Scout.dll" target="lib\net20\Okuma.Scout.dll" />
+    <file src="Scout\Lib\.NET 4.0\Release\Okuma.Scout.dll" target="lib\net40\Okuma.Scout.dll" />
+  </files>
+</package>

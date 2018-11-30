@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Okuma.API</id>
+    <version>1.0.0</version>
+    <title>Okuma API</title>
+    <authors>Okuma America</authors>
+    <owners>Okuma America</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/OkumaAmerica/Open-API-SDK</projectUrl>
+    <description>Okuma Open API</description>
+    <summary>The Okuma Open API SDK aids developers in learning to create consistent, effective, stable, maintainable machine tool applications targeting the Okuma OSP Open Architecture Control. https://www.okuma.</summary>
+  </metadata>
+  <files>
+    <file src="API\1.19.0\Bin\Okuma.CGCMDAPI.dll" target="lib\net40\Okuma.CGCMDAPI.dll" />
+    <file src="API\1.19.0\Bin\Okuma.CGDATAPI.dll" target="lib\net40\Okuma.CGDATAPI.dll" />
+    <file src="API\1.19.0\Bin\Okuma.CLCMDAPI.dll" target="lib\net40\Okuma.CLCMDAPI.dll" />
+    <file src="API\1.19.0\Bin\Okuma.CLDATAPI.dll" target="lib\net40\Okuma.CLDATAPI.dll" />
+    <file src="API\1.19.0\Bin\Okuma.CMCMDAPI.dll" target="lib\net40\Okuma.CMCMDAPI.dll" />
+    <file src="API\1.19.0\Bin\Okuma.CMDATAPI.dll" target="lib\net40\Okuma.CMDATAPI.dll" />
+  </files>
+</package>
