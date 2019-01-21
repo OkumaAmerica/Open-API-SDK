@@ -1,7 +1,7 @@
 #========================
 # Okuma America Corporation
 # Standard Git Ignore file
-# v1.6
+# v1.7
  
  
 #========================
@@ -447,7 +447,7 @@ sysinfo.txt
 # ECLIPSE
 
 .metadata
-bin/
+#REM bin/
 tmp/
 *.tmp
 *.bak
