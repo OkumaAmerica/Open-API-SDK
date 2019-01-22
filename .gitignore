@@ -1,7 +1,7 @@
 #========================
 # Okuma America Corporation
 # Standard Git Ignore file
-# v1.5
+# v1.7
  
  
 #========================
@@ -201,9 +201,10 @@ _pkginfo.txt
 
 # Visual Studio cache files
 # files ending in .cache can be ignored
-*.[Cc]ache
-# but keep track of directories ending in .cache
-!*.[Cc]ache/
+*.cache
+*.Cache
+# but keep track of directories ending in .cache *NAH!
+*.[Cc]ache/
 
 # Others
 ClientBin/
@@ -446,7 +447,7 @@ sysinfo.txt
 # ECLIPSE
 
 .metadata
-bin/
+#REM bin/
 tmp/
 *.tmp
 *.bak

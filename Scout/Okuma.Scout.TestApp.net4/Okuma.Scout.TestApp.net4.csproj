@@ -57,9 +57,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Okuma.Scout, Version=4.12.36.1, Culture=neutral, PublicKeyToken=4bb95c359d1d98b9, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\.NET 4.0\Debug\Okuma.Scout.dll</HintPath>
+      <Reference Include="Okuma.Scout">
+      <HintPath>..\Lib\.NET 4.0\$(Configuration)\Okuma.Scout.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

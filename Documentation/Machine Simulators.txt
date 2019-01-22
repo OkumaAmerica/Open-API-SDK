@@ -18,8 +18,8 @@ Software Simulator (requires USB dongle)
     - Basic Package (One machine model, no AOT or CAS) 
     - Premium Package (One machine model, Includes AOT and CAS) 
         
-   AOT = Advanced One-Touch IGF 
-   CAS = Collision Avoidance System
+   AOT = [Advanced One-Touch IGF](https://www.okuma.com/advanced-technologies)
+   CAS = [Collision Avoidance System](https://www.okuma.com/collision-avoidance-system-1)
 
    Available Models (as of April 2017):
 

@@ -173,5 +173,4 @@ End With
 Threading
 =========
 
-All calls to the API should be performed from a thread with an MTA apartment
-state. Any calls performed on STA thread are likely to yield unreliable data.
+After the API has been initialized on the main GUI thread, it is safe to spawn threads which create THINC API classes and call their methods. However, these threads must be spawned by the application, and not the system. Threads which call API functions, but are created by the system, are likely to yield unreliable results. An example of a thread which is may be created by the system and not the application is the [BackgroundWorker](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.backgroundworker?view=netframework-4.7.2).
