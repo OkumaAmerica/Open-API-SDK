@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Okuma America Corporation")]
 [assembly: AssemblyProduct("Okuma.Scout.TestApp.net4")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("© Okuma 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,7 +51,7 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.12.36.0")]
-[assembly: AssemblyFileVersion("4.12.36.0")]
+[assembly: AssemblyVersion("4.12.37.0")]
+[assembly: AssemblyFileVersion("4.12.37.0")]
 [assembly: Guid("50757A3E-D8BA-4AAE-AE4B-785390C37DBC")]
 

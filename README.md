@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v1.5
+# ﻿﻿Okuma Open API SDK v1.5.2
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -40,13 +40,13 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
  executed in an environment where OSP NC Software is running
  **AND** THINC API is installed with API Notifier service running
  and Initialized.
-  
+
  The following environments will allow successful execution of API methods:  
 
     * PC NC-Master (PC Simulation Software)
     * NC-Master (Physical Hardware Simulator)
     * Actual Okuma Machine Tool with P-type control
-
+    
     For information about simulation hardware or software, refer to
     'Documentation\Machine Simulators.txt' and contact your local Okuma distributor. 
 [https://www.okuma.com/distributors](https://www.okuma.com/distributors)
@@ -213,7 +213,7 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
         └───TDG Logging Example     ※ Test Application for TDG Logging Utility
             ├───Properties
             └───TextLogSyntax
-```	   
+```
 
 ## :mailbox_with_mail: Contact
 
@@ -227,7 +227,7 @@ Or maybe you would just enjoy the chance to talk with the experts?
 Consider joining the **THINC Developers Group**  
 Contact: [thincdg@gmail.com](mailto:thincdg@gmail.com)  
 Information:
-  
+
   * [https://www.okuma.com/thinc-developers-group](https://www.okuma.com/thinc-developers-group)
   * [https://www.linkedin.com/company/thinc-developers-group](https://www.linkedin.com/company/thinc-developers-group)
 
@@ -249,15 +249,13 @@ v0.4a   | 2015.01.28	| add Scout libraries and test application
 v0.3a   | 2014.06.26	| add approval and widget Documentation    
 v0.2a   | 2014.04.??	| API v1.17.1  
 v0.1a   | 2014.04.??	| first distributed version   
-  
+
 
 ## :construction: TO DO
 
   * Examples - Error Handling 
   * THINC API - Best Practices
-  * ~~Examples - WCF Remote Server / Security~~
-    * _WILL NOT_ distribute due to liability concerns. 
-  
+
 ___
 
 Retrieved from GitHub :octocat:  
