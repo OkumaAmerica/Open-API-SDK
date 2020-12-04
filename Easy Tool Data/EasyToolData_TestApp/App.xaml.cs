@@ -44,13 +44,6 @@ namespace EasyToolData_TestApp
                 //Console.Error.WriteLine("Unhandled exception: " + args.ExceptionObject);
                 //Log.WriteEvent((object)"EasyToolData_TestApp.App", "Global Unhandled Exception", (Exception)args.ExceptionObject);
 
-                //// This doesn't work? Maybe exits before can write to log?
-                //Log.SendEx((Exception)args.ExceptionObject, typeof(App).FullName, "Global Unhandled Exception");
-                //Environment.Exit(Okuma.EasyToolData.Global.EXCEPTION_CODE);
-
-
-                // still bombs...  Overflow is happening?
-
                 Exception ex = (Exception)args.ExceptionObject;
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
 
