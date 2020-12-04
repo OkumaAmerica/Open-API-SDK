@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.Program1_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" d:DesignWidth="670">
+
+    <UserControl.DataContext>
+        <vm:Program1_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Command="{Binding ExecuteCommand}" />
+
+        <Viewbox Margin="10,40,10,10" MaxHeight="450" VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid HorizontalAlignment="Left" Margin="10,4,0,0" MinWidth="350">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="Margin" Value="0,0,5,0" />
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                    </Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="MinWidth" Value="100" />
+                        <Setter Property="Height" Value="21" />
+                        <Setter Property="FontSize" Value="11" />
+                        <Setter Property="IsReadOnly" Value="True" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="IsEnabled" Value="False" />
+                    </Style>
+                </Grid.Resources>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Part Program Is Executing:" />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProgramIsExecuting}" />
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Has Active Scheduled Program:" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding HasActiveSDF}" />
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Scheduled Program File Name:" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SDFFileName}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Scheduled Program File Path:" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SDFFilePath}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Has Active Part Program:" />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding HasActiveProgram}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Part Program File Name:" />
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ProgramFileName}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Part Program File Path:" />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PartProgramFilePath}"/>
+
+                <Label Grid.Row="7" Grid.Column="0" Content="Part Program Name:" />
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ActivePartProgramName}"/>
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyToolData_TestApp", "EasyToolData_TestApp\EasyToolData_TestApp.csproj", "{136EA23E-0FB7-4024-8DF0-A94B5A2DE2E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{136EA23E-0FB7-4024-8DF0-A94B5A2DE2E0}.Debug|x86.ActiveCfg = Debug|x86
+		{136EA23E-0FB7-4024-8DF0-A94B5A2DE2E0}.Debug|x86.Build.0 = Debug|x86
+		{136EA23E-0FB7-4024-8DF0-A94B5A2DE2E0}.Release|x86.ActiveCfg = Release|x86
+		{136EA23E-0FB7-4024-8DF0-A94B5A2DE2E0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B61DE20-8C94-4F1D-BD8F-0934B5F0EE13}
+	EndGlobalSection
+EndGlobal

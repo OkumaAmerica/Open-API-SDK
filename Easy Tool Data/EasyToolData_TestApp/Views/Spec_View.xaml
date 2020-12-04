@@ -1,0 +1,213 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.Spec_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp.Views"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670"
+             >
+
+    <UserControl.DataContext>
+        <vm:Spec_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{StaticResource OrangeGradient}">
+
+        <TabControl Margin="3,5,3,3" Background="{DynamicResource Background1}">
+
+            <TabItem Header="Spec Codes">
+                <Border Background="{StaticResource Background1}">
+                    <Viewbox MaxHeight="450" VerticalAlignment="Top">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <GroupBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="5"
+                                      Header="Pre-defined Specs" BorderBrush="#FF009FFF" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <ComboBox Grid.Row="0" Margin="5,15,5,5" HorizontalAlignment="Left" MinWidth="250"
+                                              ItemsSource="{Binding DefinedSpecsCollection}" 
+                                              DisplayMemberPath="NameEn"
+                                              SelectedIndex="{Binding SelectedDefindSpecIndex}"/>
+                                    
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+                                        <Label Content="Name_EN:"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_NameEn}"
+                                                 VerticalContentAlignment="Center"/>
+
+                                        <Label Content="Name_JP:" Margin="15,0,0,0" />
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_NameJp}"
+                                                 VerticalContentAlignment="Center"/>
+
+                                        <Label Content="Code:" Margin="15,0,0,0"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Code}"
+                                                 VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                                        <Label Content="Spec Type:"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Type}"
+                                                 VerticalContentAlignment="Center"/>
+
+                                        <Label Content="Group:" Margin="15,0,0,0"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Group}"
+                                                 VerticalContentAlignment="Center"/>
+
+                                        <Label Content="Word:" Margin="15,0,0,0"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Word}"
+                                                 VerticalContentAlignment="Center"/>
+
+                                        <Label Content="Bit:" Margin="15,0,0,0"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Bit}"
+                                                 VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="5">
+                                        <Label Content="Value:"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" Text="{Binding PreDefinedSpec_Value}"
+                                                 VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+
+
+                            </GroupBox>
+
+                            <GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,20,5,5"
+                                      Header="Pick-a-Spec" BorderBrush="#FF009FFF">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5,15,5,5">
+                                        <Label Content="Type:"/>
+                                        <ComboBox MinWidth="100"
+                                              ItemsSource="{Binding SpecTypeCollection}" 
+                                              SelectedIndex="{Binding SelectedSpecTypeIndex}"/>
+
+                                        <Label Content="Group:" Margin="15,0,0,0"/>
+                                        <ComboBox MinWidth="120"
+                                              ItemsSource="{Binding SpecGroupCollection}" 
+                                              SelectedIndex="{Binding SelectedSpecGroupIndex}"/>
+
+                                        <Label Content="Word:" Margin="15,0,0,0"/>
+                                        <ComboBox MinWidth="70"
+                                              ItemsSource="{Binding SpecWordCollection}" 
+                                              SelectedIndex="{Binding SelectedSpecWordIndex}"/>
+
+                                        <Label Content="Bit:" Margin="15,0,0,0"/>
+                                        <ComboBox MinWidth="50"
+                                              ItemsSource="{Binding SpecBitCollection}" 
+                                              SelectedIndex="{Binding SelectedSpecBitIndex}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5,15,5,5">
+                                        <Button Grid.Row="1" Content="Get Value" HorizontalAlignment="Left" MinWidth="80" 
+                                            Margin="5" Command="{Binding GetSpecValueCommand}"/>
+                                        <Label Content="Value:" VerticalContentAlignment="Center"/>
+                                        <TextBox IsEnabled="False" MinWidth="100" 
+                                                 Text="{Binding PickSpec_Value}" 
+                                                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    
+
+
+                                </Grid>
+                            </GroupBox>
+
+                        </Grid>
+                    </Viewbox>
+                </Border>
+            </TabItem>
+
+            <TabItem Header="Extras">
+                <Grid Background="{StaticResource Background1}">
+
+                    <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+                    <Viewbox MaxHeight="450"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,30,0,0">
+
+                        <Grid HorizontalAlignment="Left" Margin="10,4,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Machine Name:" />
+
+                            <TextBox Grid.Row="0" Grid.Column="1"   
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding MachineName}" IsEnabled="False"/>
+
+                            <Label Grid.Row="1" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content= "Serial Number:" />
+
+                            <TextBox Grid.Row="1" Grid.Column="1"   
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding SerialNumber}" IsEnabled="False"/>
+
+                            <Label Grid.Row="2" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Control Type:" />
+
+                            <TextBox Grid.Row="2" Grid.Column="1"   
+                         Width="250" Height="21" FontSize="11" IsReadOnly="True"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding ControlType}" IsEnabled="False"/>
+
+                            <StackPanel  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Orientation="Horizontal" Margin="10,20,10,0">
+                                <Label Content="Subsystem" />
+                                <ComboBox Margin="5,0" MinWidth="150"
+                                      ItemsSource="{Binding SubSystemsCollection}" 
+                                      SelectedIndex="{Binding SelectedSubSystemIndex}" />
+                                <Label Content="Is Valid:" Margin="10,0,0,0" />
+                                <TextBox Grid.Row="2" Grid.Column="1" MinWidth="100" IsReadOnly="True"
+                                         VerticalContentAlignment="Center" IsEnabled="False"
+                                         Text="{Binding IsValidSubsystemResult}" />
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</UserControl>

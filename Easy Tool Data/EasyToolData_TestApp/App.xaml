@@ -1,0 +1,22 @@
+﻿<Application x:Class="EasyToolData_TestApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EasyToolData_TestApp"
+             xmlns:helpers="clr-namespace:EasyToolData_TestApp.Helpers"
+             StartupUri="Views\MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\Brushes.xaml"/>
+                <ResourceDictionary Source="Resources\ListBoxes.xaml"/>
+                <ResourceDictionary Source="Resources\ProgressBars.xaml"/>
+                <ResourceDictionary Source="Resources\TabControls.xaml"/>
+                <ResourceDictionary Source="Resources\TabItems.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <helpers:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
+            <helpers:HexToBinConverter x:Key="HexToBinConverter"/>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

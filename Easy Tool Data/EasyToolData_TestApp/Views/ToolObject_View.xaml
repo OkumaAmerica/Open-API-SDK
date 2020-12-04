@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.ToolObject_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:models="clr-namespace:EasyToolData_TestApp.Models"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             xmlns:etd="clr-namespace:Okuma.EasyToolData;assembly=Okuma.EasyToolData"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670">
+
+    <UserControl.DataContext>
+        <vm:ToolObject_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{StaticResource Background1}">
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Command="{Binding ExecuteCommand}" />
+
+        <StackPanel Margin="175,13,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Text="Time To Retrieve Tool Object (avg. ms): "/>
+            <TextBlock Text="{Binding TimeToGetTool}"/>
+        </StackPanel>
+        
+
+        <TreeView Margin="12,50,10,10" 
+                  ItemsSource="{Binding TreeViewNodeCollection}">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type models:TreeViewNode}" ItemsSource="{Binding Path=Children}">
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <StackPanel Orientation="Horizontal" Margin="-10,0,0,0">
+                                <TextBlock Text="{Binding Path=Name}"/>
+                                <TextBlock Text=" : "/>
+                                <TextBlock Text="{Binding Path=Value}"/>
+                            </StackPanel>
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+
+    </Grid>
+</UserControl>
+

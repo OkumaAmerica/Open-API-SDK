@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.ATC_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" 
+             d:DesignWidth="800"
+             >
+    
+    <UserControl.DataContext>
+        <vm:ATC_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox Margin="10,40,10,10" MaxHeight="450"
+                 VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid HorizontalAlignment="Left" Margin="10,4,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Has ATC:" />
+
+                <TextBox Grid.Row="0" Grid.Column="1" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding HasATC}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="ATC Address Mode:" />
+
+                <TextBox Grid.Row="1" Grid.Column="1" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
+                         Text="{Binding AddressModeATC}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" 
+                       HorizontalAlignment="Right" Margin="0,0,5,0" Content="Magazine Kind:" />
+
+                <TextBox Grid.Row="2" Grid.Column="1" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding MagKind}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" 
+                       HorizontalAlignment="Right" 
+                       Margin="0,0,5,0"
+                       Content="Max Magazine Pots:" />
+
+                <TextBox Grid.Row="3" Grid.Column="1" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding MagPots}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" 
+                       HorizontalAlignment="Right" Margin="0,0,5,0" Content="Tool in Spindle:" />
+
+                <TextBox Grid.Row="4" Grid.Column="1" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding ToolInSpindle}"/>
+
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Label HorizontalAlignment="Right" Margin="0,0,5,0" Content="Tool:" />
+                    <TextBox MinWidth="80" Height="21" FontSize="11" Text="{Binding ToolInput}"
+                         HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                    <Label HorizontalAlignment="Right" Margin="0,0,5,0" Content="In Pot:" />
+                    <TextBox MinWidth="60" Height="21" FontSize="11" IsReadOnly="True" IsEnabled="False"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                             Text="{Binding PotOutput}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <Label HorizontalAlignment="Right" Margin="0,0,5,0" Content="Pot:" />
+                    <TextBox Width="60" Height="21" FontSize="11" Text="{Binding PotInput}"
+                         HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                    <Label HorizontalAlignment="Right" Margin="0,0,5,0" Content="Has Tool #:" />
+                    <TextBox MinWidth="80" Height="21" FontSize="11" IsReadOnly="True" Text="{Binding ToolOutput}"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" />
+                </StackPanel>
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

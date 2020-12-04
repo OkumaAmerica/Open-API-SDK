@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.ToolCurrent_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp.Views"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670">
+
+    <UserControl.DataContext>
+        <vm:ToolCurrent_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{StaticResource Background1}">
+
+        <Button Content="Refresh Current Tools" Margin="10,8,0,0" Width="150" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox MaxHeight="450" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,50,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="1" Content="Pot / Station" HorizontalAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Tool" HorizontalAlignment="Center"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Main Spindle:" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding CurrentToolPot}"/>
+                <TextBox Grid.Row="1" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding MainSpindleTool}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="H1-Turret:" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding H1TurretStation}"/>
+                <TextBox Grid.Row="2" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding H1TurretTool}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="A-Turret:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding ATurretStation}"/>
+                <TextBox Grid.Row="3" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding ATurretTool}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="B-Turret:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding BTurretStation}"/>
+                <TextBox Grid.Row="4" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding BTurretTool}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="C-Turret:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding CTurretStation}"/>
+                <TextBox Grid.Row="5" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding CTurretTool}"/>
+                
+                <Label Grid.Row="6" Grid.Column="0" Content="2SP Left Side Turret:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="6" Grid.Column="1" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding LeftSideStation}"/>
+                <TextBox Grid.Row="6" Grid.Column="2" IsEnabled="False" MinWidth="60" Margin="5" HorizontalContentAlignment="Center" Text="{Binding LeftSideTool}"/>
+
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

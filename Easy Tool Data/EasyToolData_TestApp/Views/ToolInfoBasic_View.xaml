@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.ToolInfoBasic_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp.Views"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670">
+
+    <UserControl.DataContext>
+        <vm:ToolInfoBasic_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{StaticResource Background1}">
+
+        <Button Content="Refresh Available Tools" Margin="10,8,0,0" Width="150" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox MaxHeight="450" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,50,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition MinWidth="200"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="15,5,0,15" Orientation="Horizontal">
+                    <Label  Content="Tool: "/>
+                    <ComboBox  MinWidth="80"
+                              ItemsSource="{Binding AllToolsCollection}" 
+                              SelectedIndex="{Binding AllToolsCollection_SelectedIndex}"/>
+                </StackPanel>
+                
+                <Label Grid.Row="1" Grid.Column="0" Content="Comment:" HorizontalAlignment="Right"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <TextBox  MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                              Text="{Binding Comment, Mode=TwoWay}"/>
+                    
+                    <Button Content="Set" Height="20" Padding="6,1"
+                            Command="{Binding SetCommentCommand}"/>
+                    
+                </StackPanel>
+
+                <Label Grid.Row="1" Grid.Column="2" Content="Kind:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="1" Grid.Column="3" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolKind}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Is Registered:" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolIsRegistered}"/>
+
+                <Label Grid.Row="3" Grid.Column="2" Content="Is Mounted:" HorizontalAlignment="Right" Margin="15,0,0,0" />
+                <TextBox Grid.Row="3" Grid.Column="3" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolIsMounted}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Location:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolLocation}"/>
+
+                <Label Grid.Row="4" Grid.Column="2" Content="Tool Size Enum:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="4" Grid.Column="3" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolSizeEnum}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Is Multi-Edge:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolIsMultiEdge}"/>
+
+                <Label Grid.Row="5" Grid.Column="2" Content="Tool Size String:" Margin="15,0,0,0" HorizontalAlignment="Right"/>
+                <TextBox Grid.Row="5" Grid.Column="3" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding ToolSizeString}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Content="Registered Edges:" HorizontalAlignment="Right"/>
+                <ListBox Grid.Row="6" Grid.Column="1" Height="75" Width="100" Margin="5" HorizontalAlignment="Left"
+                         IsEnabled="{Binding SelectedToolIsMultiEdge}"
+                         ItemsSource="{Binding ToolEdgeCollection}"
+                         Style="{DynamicResource OkumaListBoxStyle}">
+                </ListBox>
+
+                <Label Grid.Row="6" Grid.Column="2" Content="Used:" Margin="15,2,0,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <TextBox Grid.Row="6" Grid.Column="3" IsEnabled="False" MinWidth="100" Margin="5" HorizontalAlignment="Left"
+                         Text="{Binding Used}" VerticalAlignment="Top"/>
+
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

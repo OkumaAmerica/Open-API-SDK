@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.Machine_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp.Views"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670"
+             >
+
+    <UserControl.DataContext>
+        <vm:Machine_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Viewbox Margin="10,40,10,10" MaxHeight="450"
+                 VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid HorizontalAlignment="Left" Margin="10,4,0,0" MinWidth="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Margin="0,0,5,0"
+                       HorizontalAlignment="Right" Content="Get In Units:" />
+
+                <CheckBox Grid.Row="0" Grid.Column="1"
+                          Content="Inch (Un-checked = Metric)" 
+                          HorizontalAlignment="Left" VerticalAlignment="Center"
+                          IsChecked="{Binding GetUnits}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Margin="0,0,5,0"
+                       HorizontalAlignment="Right" Content="Display Units:" />
+
+                <TextBox Grid.Row="1" Grid.Column="1" MinWidth="75" Height="21"
+                         FontSize="11" IsReadOnly="True"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding DisplayUnits}" IsEnabled="False"/>
+
+
+                <Label Grid.Row="2" Grid.Column="0" Margin="0,0,5,0" Content= "TD Mode:" HorizontalAlignment="Right"/>
+
+                <TextBox Grid.Row="2" Grid.Column="1" MinWidth="75" Height="21" IsReadOnly="True" 
+                         HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                         Text="{Binding TD_Mode}" IsEnabled="False"/>
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="EasyToolData_TestApp.Views.Workpiece2_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EasyToolData_TestApp.Views"
+             xmlns:vm="clr-namespace:EasyToolData_TestApp.ViewModels"
+             xmlns:util="clr-namespace:Wpf.Util"
+             mc:Ignorable="d" 
+             d:DesignHeight="420" 
+             d:DesignWidth="670"
+             >
+
+    <UserControl.DataContext>
+        <vm:Workpiece2_ViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="{DynamicResource Background1}">
+
+        <Button Content="Execute" Margin="10,8,0,0" Width="120" Height="22" 
+                Command="{Binding ExecuteCommand}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <Button Content="?" Margin="200,8,0,0" Width="22" Height="22" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowLegend" Background="#FFDCC1D3" FontWeight="Bold" FontSize="14" />
+        
+        <Viewbox Margin="10,40,10,10" MaxHeight="450"
+                 VerticalAlignment="Top" HorizontalAlignment="Left">
+
+            <Grid HorizontalAlignment="Left" Margin="10,4,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Margin="6,15,15,15" 
+                            Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label Content="Spindle: "/>
+                    <ComboBox MinWidth="80"
+                              ItemsSource="{Binding ValidSpindlesCollection}"
+                              SelectedIndex="{Binding Spindle_SelectedIndex}"/>
+
+                    <Label Content="Turret: " Margin="20,0,0,0"/>
+                    <ComboBox MinWidth="80"
+                              ItemsSource="{Binding ValidTurretsCollection}"
+                              SelectedIndex="{Binding Turret_SelectedIndex}"
+                              IsEnabled="{Binding TurretsExist}"/>
+                </StackPanel>
+
+
+                <ListView Grid.Row="1" Grid.Column="0" x:Name="ValidAxisCombosListView" Margin="6"
+                          ItemsSource="{Binding OffsetsCollection}" IsSynchronizedWithCurrentItem="True"
+                          util:GridViewSort.AutoSort="True" MinWidth="130" MinHeight="150" MaxHeight="355">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Axis}" util:GridViewSort.PropertyName="Axis" >
+                                <GridViewColumnHeader Content="Axis" Padding="5,0,20,0" HorizontalContentAlignment="Left" />
+                            </GridViewColumn>
+
+                            <GridViewColumn DisplayMemberBinding="{Binding Value, Converter={StaticResource DoubleToStringConverter}}">
+                                <GridViewColumnHeader Content="Zero Offset" Padding="5,0,20,0" HorizontalContentAlignment="Left"  />
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+
+                <ListView Grid.Row="1" Grid.Column="1" Margin="6"
+                          ItemsSource="{Binding ZeroShiftsCollection}" IsSynchronizedWithCurrentItem="True"
+                          util:GridViewSort.AutoSort="True" MinWidth="130" MaxHeight="355">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Axis}" util:GridViewSort.PropertyName="Axis">
+                                <GridViewColumnHeader Content="Axis" Padding="5,0,20,0" HorizontalContentAlignment="Left" />
+                            </GridViewColumn>
+
+                            <GridViewColumn DisplayMemberBinding="{Binding Value, Converter={StaticResource DoubleToStringConverter}}">
+                                <GridViewColumnHeader Content="Zero Shift" Padding="5,0,20,0" HorizontalContentAlignment="Left"  />
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <Border Grid.Row="1" Grid.Column="1" Background="#B2343438" CornerRadius="7"
+                        Visibility="{Binding ZeroShiftUnavailableVisibility}"/>
+
+
+
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>
