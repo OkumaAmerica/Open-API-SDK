@@ -1,17 +1,3 @@
-
-NOTICE: 
-
-    The sale of Simulator Software and Hardware is conducted through 
-    Okuma Distributors and is subject to approval on a case-by-case basis. 
-    Availabity and approval is not garenteed.
-
-    Find your distributor: https://www.okuma.com/distributors
-
-    Simulation Software and Hardware cannot be used for cycle time calculation or gaurentee. 
-    Not all functions may operate the same as on an actual machine. 
-    In order to test THINC API Applications, you must request THINC API with your order.
-
-
 Software Simulator (requires USB dongle)
 
   > PC NC-Master
@@ -21,15 +7,15 @@ Software Simulator (requires USB dongle)
    AOT = [Advanced One-Touch IGF](https://www.okuma.com/advanced-technologies)
    CAS = [Collision Avoidance System](https://www.okuma.com/collision-avoidance-system-1)
 
-   Available Models (as of April 2017):
+   Available Models (as of December 2020):
 
-   Control Type	 Machine Model	 Screen Size & Software
-   OSP-P300L	 LB3000EXII	 15 inch
-   OSP-P300S	 MULTUS U3000	 19 inch w/ OSP suite
-   OSP-P300M	 MU-6300V	 19 inch w/ OSP suite
-   OSP-P300L	 LU3000EX	 15 inch w/ OSP suite
-   OSP-P300M	 MB-66VB	 15 inch w/ OSP suite
-   OSP-P300M	 MU-500VII	 15 inch
+   Control Type	 Machine Model	 	Screen Size & Software
+   OSP-P300L	 LB3000EXII	 		15 inch
+   OSP-P300S	 MULTUS U3000	 	19 inch w/ OSP suite
+   OSP-P300M	 MU-6300V	 		19 inch w/ OSP suite
+   OSP-P300L	 LU3000EX	 		15 inch w/ OSP suite
+   OSP-P300M	 MB-66VB	 		15 inch w/ OSP suite
+   OSP-P300M	 MU-500VII	 		15 inch
 
 
 Hardware Simulator
@@ -45,3 +31,16 @@ Hardware Simulator
    OSP-P300S	 MULTUS 300W
    OSP-P300L	 LT2000
    OSP-P300M	 MA-600HII
+   
+   
+NOTICE: 
+
+    The sale of Simulator Software and Hardware is subject to approval on a case-by-case basis. 
+    Availability and approval is not guaranteed.
+
+	If you are located in the Americas, all sales are conducted through Okuma's distribution network. 
+    Find your distributor: https://www.okuma.com/distributors
+
+    Simulation Software and Hardware cannot be used for cycle time calculation or guarantee. 
+    Not all functions may operate the same as on an actual machine. 
+    In order to test THINC API Applications, you must request THINC API with your order.
