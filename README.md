@@ -32,6 +32,10 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 
   ![Unblock](Images/Unblock.png)
 
+### :heavy_exclamation_mark: Calling THINC-API functions inside a thread
+All functions of THINC-API can be called inside a thread if and only if the thread is not 
+spawn by the system (thread pool).  BackgroundWorker thread or Task thread will use system thread pool
+which will cause intermittent issue with the THINC-API library.
 
 ### :warning: Where can API functions be executed
  The API's `Init()` method must be called in the MAIN / GUI
