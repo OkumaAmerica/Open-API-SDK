@@ -239,7 +239,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
-v1.5    | 2018.09.21  	| API 1.21.1.0, SCOUT v4.12.36.1, TDG Logging 4.19, Example - WCF SelfHost  
+v1.5    | 2018.09.21  	| API 1.21.1.0, SCOUT v4.12.36.1, TDG Logging 4.19 
 v1.4    | 2017.11.01	| SCOUT .CHM Help File  
 v1.3    | 2017.09.25	| API 1.19, SCOUT v4.1.0.0, TDG Logging 2.16, RegisterVfkey, OSP suite Shortcuts  
 v1.2    | 2017.06.05	| SCOUT v2.3.0.0 & 4.0.0.0  
