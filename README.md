@@ -45,6 +45,10 @@ which will cause intermittent issue with the THINC-API library.
  **AND** THINC API is installed with API Notifier service running
  and Initialized.
 
+### :warning: Initialized THINC-API
+All applications/services using THINC-API must use OKUMA Startup Service to start the applications/services to 
+ensure that THINC-API is ready before trying to initialize THINC-API in the application itself. 
+ 
  The following environments will allow successful execution of API methods:  
 
     * PC NC-Master (PC Simulation Software)
