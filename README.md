@@ -32,6 +32,10 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
 
   ![Unblock](Images/Unblock.png)
 
+### :heavy_exclamation_mark: Calling THINC-API functions inside a thread
+All functions of THINC-API can be called inside a thread if and only if the thread is not 
+spawn by the system (thread pool).  BackgroundWorker thread or Task thread will use system thread pool
+which will cause intermittent issue with the THINC-API library.
 
 ### :warning: Where can API functions be executed
  The API's `Init()` method must be called in the MAIN / GUI
@@ -41,6 +45,10 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
  **AND** THINC API is installed with API Notifier service running
  and Initialized.
 
+### :warning: Initialized THINC-API
+All applications/services using THINC-API must use OKUMA Startup Service to start the applications/services to 
+ensure that THINC-API is ready before trying to initialize THINC-API in the application itself. 
+ 
  The following environments will allow successful execution of API methods:  
 
     * PC NC-Master (PC Simulation Software)
@@ -235,7 +243,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
-v1.5    | 2018.09.21  	| API 1.21.1.0, SCOUT v4.12.36.1, TDG Logging 4.19, Example - WCF SelfHost  
+v1.5    | 2018.09.21  	| API 1.21.1.0, SCOUT v4.12.36.1, TDG Logging 4.19 
 v1.4    | 2017.11.01	| SCOUT .CHM Help File  
 v1.3    | 2017.09.25	| API 1.19, SCOUT v4.1.0.0, TDG Logging 2.16, RegisterVfkey, OSP suite Shortcuts  
 v1.2    | 2017.06.05	| SCOUT v2.3.0.0 & 4.0.0.0  
