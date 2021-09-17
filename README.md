@@ -104,6 +104,10 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │   │           ├───lib
 │   │           └───My Project
 │   │               └───DataSources
+│   ├───1.23.1
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───Test App
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
@@ -126,7 +130,8 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │       ├───1.18.0
 │       ├───1.19.0
 │       ├───1.20.0
-│       └───1.21.1
+│       ├───1.21.1
+        └───1.23.1
 ├───Examples                   ╔══════════════════════════════════════════╗
 │   ├───API Common Variables   ║  Example usage of the API                ║
 │   │   ├───Compiled           ║  These examples, in different languages  ║
@@ -168,21 +173,6 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │   │       └───obj
 │   │           └───Debug
 │   │               └───TempPE
-│   └───WCF                             ※ Windows Communication Foundation  
-│       └───SelfHost (Local Machine)    ※ Basic Example using Common Variables Class
-│           └───CS
-│               ├───service
-│               │   ├───bin
-│               │   │   ├───Debug
-│               │   │   │   └───metadata
-│               │   │   │       └───output
-│               │   │   └───Release
-│               │   ├───lib
-│               │   └───Properties
-│               └───WpfClient
-│                   ├───bin
-│                   │   └───Debug
-│                   └───Properties
 ├───Images
 ├───OSP suite Shortcuts                 ※ Instructions and example to make shortcut
 │   └───010-NOTEPAD
