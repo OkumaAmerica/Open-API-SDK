@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v1.5.2
+# ﻿﻿Okuma Open API SDK v1.6.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
