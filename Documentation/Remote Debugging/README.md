@@ -143,6 +143,7 @@ You should see this box pop up:
 Note: occasionally the first time I run the remote debugger another menu will
 pop up with some other options. This menu can be ignored just click ‘ok’ or
 ‘yes’.
+If possible, go to the Option menu and set the remote debug to use No Authentication to simplify the debugging process.
 
 Visual Studio Setup
 ===================
@@ -184,6 +185,8 @@ Now go to the ‘Debug’ tab and check ‘Use Remote Machine’ and put in the 
 the machine or its IP address.
 
 ![](media/744d5745d757cfe283d2625112047b29.png)
+
+If possible, select No Authentication in the Authentication Mode to simplify the debugging process.
 
 Building
 --------
