@@ -149,7 +149,6 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │   │   └───VB_WPF
 │   │       └───My Project
 │   │           └───MyExtensions
-│   ├───Python                     ※ API Tutorial for Python
 │   ├───Single Instance            ※ Only allow one copy of a program to run at a time (examples)
 │   │   ├───Single Instance CS_Forms
 │   │   │   ├───bin
