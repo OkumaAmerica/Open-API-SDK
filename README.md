@@ -1,5 +1,4 @@
 
-
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
 # ﻿﻿Okuma Open API SDK v1.7.0
@@ -144,7 +143,30 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │       ├───1.21.1
 │       ├───1.22.0
 │       ├───1.23.1
+│       ├───1.24.0
 │       └───1.9.1
+├───Documentation
+│   ├───Best Practices
+│   ├───Remote Debugging
+│   │   └───media
+│   └───THINC API Release Notes
+│       ├───1.10.0
+│       ├───1.11.0
+│       ├───1.11.1
+│       ├───1.12.0
+│       ├───1.12.1
+│       ├───1.15.0
+│       ├───1.16.0
+│       ├───1.17.0
+│       ├───1.17.1
+│       ├───1.17.2
+│       ├───1.18.0
+│       ├───1.19.0
+│       ├───1.20.0
+│       ├───1.21.1
+│       ├───1.22.0
+│       ├───1.23.1
+│       └───1.24.0
 ├───Examples
 │   ├───API Common Variables
 │   │   ├───Common
