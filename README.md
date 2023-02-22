@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v1.6.0
+# ﻿﻿Okuma Open API SDK v1.7.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -51,7 +51,7 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
  
  The following environments will allow successful execution of API methods:  
 
-    * PC NC-Master (PC Simulation Software)
+    * PC NC-Master (PC Simulation Software,  application must be run under Administrator account, explicitly)
     * NC-Master (Physical Hardware Simulator)
     * Actual Okuma Machine Tool with P-type control
     
@@ -104,10 +104,18 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │   │           ├───lib
 │   │           └───My Project
 │   │               └───DataSources
+│   ├───1.23.0
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   ├───1.23.1
 │   │   ├───Bin
 │   │   ├───Help
-│   │   └───Test App
+│   │   └───TestApp
+│   ├───1.24.0
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
@@ -115,8 +123,10 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │           ├───Lathe
 │           └───MC
 ├───Documentation
+│   ├───Best Practices
+│   ├───Remote Debugging
+│   │   └───media
 │   └───THINC API Release Notes
-│       ├───1.9.1
 │       ├───1.10.0
 │       ├───1.11.0
 │       ├───1.11.1
@@ -131,14 +141,16 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │       ├───1.19.0
 │       ├───1.20.0
 │       ├───1.21.1
-        └───1.23.1
-├───Examples                   ╔══════════════════════════════════════════╗
-│   ├───API Common Variables   ║  Example usage of the API                ║
-│   │   ├───Compiled           ║  These examples, in different languages  ║
-│   │   ├───CS_Lathe           ║  and targeting different machine types   ║
-│   │   │   ├───Properties     ║  each demonstrate how to access common   ║
-│   │   │   └───Resources      ║  variables.                              ║
-│   │   ├───CS_MC              ╚══════════════════════════════════════════╝
+│       ├───1.22.0
+│       ├───1.23.1
+│       └───1.9.1
+├───Examples
+│   ├───API Common Variables
+│   │   ├───Common
+│   │   ├───Compiled
+│   │   ├───CS_Lathe
+│   │   │   └───Properties
+│   │   ├───CS_MC
 │   │   │   └───Properties
 │   │   ├───CS_WPF
 │   │   │   └───Properties
@@ -149,67 +161,51 @@ ensure that THINC-API is ready before trying to initialize THINC-API in the appl
 │   │   └───VB_WPF
 │   │       └───My Project
 │   │           └───MyExtensions
-│   ├───Single Instance            ※ Only allow one copy of a program to run at a time (examples)
-│   │   ├───Single Instance CS_Forms
-│   │   │   ├───bin
-│   │   │   │   ├───Debug
-│   │   │   │   └───Release
-│   │   │   ├───obj
-│   │   │   │   └───Debug
-│   │   │   │       └───TempPE
+│   ├───Cross Machine Platform
+│   │   ├───CS_WPF
+│   │   │   ├───OkumaInterface
 │   │   │   └───Properties
-│   │   ├───Single Instance CS_WPF
-│   │   │   ├───bin
-│   │   │   │   └───Debug
-│   │   │   ├───obj
-│   │   │   │   └───Debug
-│   │   │   │       └───TempPE
-│   │   │   └───Properties
-│   │   └───Single Instance VB_Forms
-│   │       ├───bin
-│   │       │   └───Debug
+│   │   └───VB_WPF
 │   │       ├───My Project
-│   │       └───obj
-│   │           └───Debug
-│   │               └───TempPE
+│   │       │   └───MyExtensions
+│   │       └───OkumaInterface
+│   └───Single Instance
+│       ├───Single Instance CS_Forms
+│       │   ├───bin
+│       │   │   └───Debug
+│       │   └───Properties
+│       ├───Single Instance CS_WPF
+│       │   ├───bin
+│       │   │   └───Debug
+│       │   └───Properties
+│       └───Single Instance VB_Forms
+│           ├───bin
+│           │   └───Debug
+│           └───My Project
 ├───Images
-├───OSP suite Shortcuts                 ※ Instructions and example to make shortcut
+├───OSP suite Shortcuts
 │   └───010-NOTEPAD
 │       └───00000010
 │           └───res
 ├───Register V-FKEY
-│   ├───README.txt                      ※ Information about RegisterVfkey
-│   └───RegisterVfkey.exe               ※ Utility to add shortcut to V-FKEY
-├───Scout
-│   ├───Doc
-│   ├───Lib
-│   │   ├───.NET 2.0
-│   │   │   ├───Debug
-│   │   │   └───Release
-│   │   └───.NET 4.0
-│   │       ├───Debug
-│   │       └───Release
-│   ├───Okuma.Scout.TestApp.net2
-│   │   ├───bin
-│   │   │   ├───Debug
-│   │   │   └───Release
-│   │   └───Properties
-│   └───Okuma.Scout.TestApp.net4
-│       ├───bin
-│       │   ├───Debug
-│       │   └───Release
-│       ├───Helpers
-│       ├───Properties
-│       ├───Resources
-│       ├───ViewModels
-│       └───Views
-└───TDG Logging                     ※ Library for creation of application logs
-    ├───TDG.Logging 2.16            ※ The logging library and dependencies
-    ├───TDG.Logging 4.19
-    └───TestApp
-        └───TDG Logging Example     ※ Test Application for TDG Logging Utility
-            ├───Properties
-            └───TextLogSyntax
+└───Scout
+    ├───Doc
+    ├───Lib
+    │   ├───.NET 2.0
+    │   │   ├───Debug
+    │   │   └───Release
+    │   └───.NET 4.0
+    │       ├───Debug
+    │       └───Release
+    ├───Okuma.Scout.TestApp.net2
+    │   └───Properties
+    └───Okuma.Scout.TestApp.net4
+        ├───Helpers
+        ├───Properties
+        ├───Resources
+        ├───ViewModels
+        └───Views
+
 ```
 
 ## :mailbox_with_mail: Contact
@@ -232,6 +228,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
+v1.7    | 2023.02.22  	| API 1.24.0.0
 v1.6    | 2021.09.17  	| API 1.23.1.0
 v1.5    | 2018.09.21  	| API 1.21.1.0, SCOUT v4.12.36.1, TDG Logging 4.19 
 v1.4    | 2017.11.01	| SCOUT .CHM Help File  
@@ -259,4 +256,4 @@ ___
 Retrieved from GitHub :octocat:  
 [https://github.com/OkumaAmerica/Open-API-SDK](https://github.com/OkumaAmerica/Open-API-SDK)
 
-© 2019 Okuma America Corporation
+© 2023 Okuma America Corporation
