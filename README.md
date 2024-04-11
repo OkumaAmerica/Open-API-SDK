@@ -124,6 +124,10 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │   │   ├───Bin
 │   │   ├───Help
 │   │   └───TestApp
+│   ├───1.25.0
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
