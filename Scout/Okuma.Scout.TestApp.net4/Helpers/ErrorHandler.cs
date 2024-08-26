@@ -9,7 +9,7 @@ namespace Okuma.Scout.TestApp.net4.Helpers
     {
         /// <summary> The Scout Error Reporter is linked to this Event when subscribed.
         /// This event is used for handling all errors in the test application, including those from Scout. </summary>
-        public static event EventHandler<Okuma.Scout.Error.Args> AppErrorReporterEvent;
+        public static event EventHandler<MessageArgs> AppErrorReporterEvent;
 
         private static bool SubscribedToScoutErrorHandler = true;
 
@@ -70,7 +70,7 @@ namespace Okuma.Scout.TestApp.net4.Helpers
         /// <summary> Thread-safe Error Handler </summary>
         /// <remarks> This method accepts error events from the SCOUT library 
         /// and connects them to the test application's error handler. </remarks>
-        public static void HandleError(object sender, Error.Args e)
+        public static void HandleError(object sender, MessageArgs e)
         {
             //// DEBUG FOR TESTING!!
             //Application.Current.Dispatcher.BeginInvoke(

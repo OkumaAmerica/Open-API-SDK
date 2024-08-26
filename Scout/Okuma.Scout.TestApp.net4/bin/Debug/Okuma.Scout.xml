@@ -4,68 +4,6 @@
         <name>Okuma.Scout</name>
     </assembly>
     <members>
-        <member name="T:Okuma.Scout.AccessGAC">
-            <summary> 
-            
-            This class provides access to the Global Assembly Cache 
-            
-            </summary>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.QueryGAC(System.String)">
-            <summary> 
-            Returns a list of unique assembly identities found in the GAC for a given assembly name </summary>
-            <param name="assemblyName"> [in] Generic Assembly Name </param>
-            <returns> List of type System.Reflection.AssemblyName </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.QueryLatest(System.String,System.Reflection.AssemblyName@)">
-            <summary> 
-            Returns the latest (highest version number) assembly identity found in the GAC for a given assembly name </summary>
-            <param name="assemblyName"> [in] Generic Assembly Name </param>
-            <param name="Assembly"> [out] Object of type AssemblyName </param>
-            <returns> True if result found else False. 
-            The out parameter "Assembly" will be null in case of exception or no result found </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.QueryLatestAssemblyPath(System.String,System.String@)">
-            <summary> INTERNAL
-            Extends the QueryLatest method to return the code base </summary>
-            <param name="AssemblyName"> [in] name of the thing your looking for </param>
-            <param name="Path"> [out] the return path </param>
-            <returns> True if found, else False and Path will be null or string.empty </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.AssemblyVersionCompare(System.Reflection.AssemblyName,System.Reflection.AssemblyName)">
-            <summary> INTERNAL
-            Executes AN1.Version.CompareTo(AN2.Version) </summary>
-            <param name="AN1"> [in] Assembly Name 1 </param>
-            <param name="AN2"> [in] Assembly Name 2 </param>
-            <returns> List containing the higher version AssemblyName or both if equal </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.AssemblyArchitectureCompare(System.Collections.Generic.List{System.Reflection.AssemblyName})">
-            <summary> INTERNAL
-            Try to return only the assemblyName that matches the OS in terms of Architecture. </summary>
-            <param name="ANList"> [in] Filtered list of assemblyNames that should all 
-            have the same version and only vary based on Architecture. </param>
-            <returns> a single assemblyName </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.GetAssemblyNameObjectsFromGAC(System.String)">
-            <summary> PRIVATE
-            Get a list of objects representing assemblies found in the GAC. 
-            This method manually populates the "CodeBase" field in the class objects. </summary>
-            <param name="asm"> [in] assembly name string (minus extension) </param>
-            <returns> List of class objects of type AssemblyName. Returns empty list of nothing found. </returns>
-            <remarks> GetInstalledVersions eats HRRESULT = 1 (normal return value for no results) so doesn't throw exception </remarks>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.Base_GetAssemblyNameObjectsFromGAC(System.String)">
-            <summary> PRIVATE
-            Uses Microsoft Fusion API calls to query the Global Assembly Cache </summary>
-            <param name="name"> [in] the file name (minus extension) to search the GAC for </param>
-            <returns> A generic collection of AssemblyName objects </returns>
-        </member>
-        <member name="M:Okuma.Scout.AccessGAC.GetGACAssemblyPath(System.Reflection.AssemblyName)">
-            <summary> PRIVATE
-            Uses Microsoft Fusion API to get the full path to an AssemblyName object in the GAC </summary>
-            <param name="assemblyName"> System Reflection assemblyName object </param>
-            <returns> type string currentAssemblyPath or string.empty if error </returns>
-        </member>
         <member name="T:Okuma.Scout.DMC">
             <summary> 
             
@@ -310,7 +248,9 @@
         <member name="M:Okuma.Scout.DMC.ReadInDMC_SkipPageBreaks">
             <summary> PRIVATE
             Uses IO.StreamReader.ReadLine() to open and read the Data Management Card line by line,
-            looks DMC page breaks, and skips them. </summary>
+            looks DMC page breaks, and skips them. Returns false if cannot read file. 
+            This will help to reduce repeat failed attempts to access.</summary>
+            <returns> Returns True on fail.</returns>
         </member>
         <member name="M:Okuma.Scout.DMC.FilterResults(System.String,System.String)">
             <summary> PRIVATE
@@ -344,6 +284,86 @@
             <param name="sSourceString"> [ref in] Source string to search in </param>
             <param name="firstPart"> [in] Return the first part? If false, will return the second half. </param>
             <returns> type string, the value of the header item or else string empty "". </returns>
+        </member>
+        <member name="T:Okuma.Scout.MessageArgs">
+            <summary>
+            This is a custom event arguments class for Scout error reporting  
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.MessageArgs.#ctor(Okuma.Scout.Enums.MessageLevel,System.String,System.Exception)">
+            <summary>
+            Constructor for new Error event arguments </summary>
+            <param name="severity"> [in] Type Scout.Enums.MessageLevel: severity </param>
+            <param name="message"> [in] Type string: information content </param>
+            <param name="exception"> [opt in] Type System.Exception: only valid for severity of type MessageLevel.Exception </param>
+        </member>
+        <member name="P:Okuma.Scout.MessageArgs.Severity">
+            <summary> Level of seriousness associated with the error </summary>
+        </member>
+        <member name="P:Okuma.Scout.MessageArgs.Message">
+            <summary> Error information (not used for exceptions) </summary>
+        </member>
+        <member name="P:Okuma.Scout.MessageArgs.Exception">
+            <summary> Exception object (not used for debugging information) </summary>
+        </member>
+        <member name="T:Okuma.Scout.Vars">
+            <summary>
+            This class contains commonly referenced variables related to Okuma OSP Controls
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.OSP_Dir">
+            <summary>Gets the OSP-P directory.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CNS_Dir">
+            <summary>Gets the CNS-DAT directory.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.LicenseDir">
+            <summary>Gets the Licenses directory under D drive, Program Files, Okuma.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.SoftSwitch">
+            <summary>Gets the file name 'SOFTSWITCH.EXE'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.API_License">
+            <summary>Gets the file name 'okuma.api.lic'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CLCMDAPI">
+            <summary>Gets the file name 'Okuma.CLCMDAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CLDATAPI">
+            <summary>Gets the file name 'Okuma.CLDATAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CMCMDAPI">
+            <summary>Gets the file name 'Okuma.CMCMDAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CMDATAPI">
+            <summary>Gets the file name 'Okuma.CMDATAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CGCMDAPI">
+            <summary>Gets the file name 'Okuma.CGCMDAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.CGDATAPI">
+            <summary>Gets the file name 'Okuma.CGDATAPI.dll'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.DataManagementCard">
+            <summary>Gets the file name 'OSPMNGCD.CNC'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.EbiFry">
+            <summary>Gets the file name 'EBISTART.EXE'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.ApiNotifier">
+            <summary>Gets the file name 'APINotifierService.exe'.</summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.DMC_NCSpecCode1">
+            <summary> [DMC VALUES] Gets string literal "[ NC-SPEC CODE No.1 ]" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.PLCSpecWild">
+            <summary> [FILES] Gets string literal "PLCUB11-*.CNS" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NCSpecWild">
+            <summary> [FILES] Gets string literal "*NCSPEC-*.DAT" </summary>
+        </member>
+        <member name="P:Okuma.Scout.Vars.NCBSpecWild">
+            <summary> [FILES] Gets string literal "*NCBSPC-*.DAT" </summary>
         </member>
         <member name="T:Okuma.Scout.Display">
             <summary> 
@@ -591,65 +611,102 @@
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx46">
+        <member name="F:Okuma.Scout.DotNet.Netfx46ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx461">
+        <member name="F:Okuma.Scout.DotNet.Netfx461ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx462">
+        <member name="F:Okuma.Scout.DotNet.Netfx462ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx47">
+        <member name="F:Okuma.Scout.DotNet.Netfx47ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx471">
+        <member name="F:Okuma.Scout.DotNet.Netfx471ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
             </summary>
         </member>
-        <member name="F:Okuma.Scout.DotNet.Netfx472">
+        <member name="F:Okuma.Scout.DotNet.Netfx472ReleaseVersionMin">
             <summary>
             .NET Framework Versions and Dependencies
             https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.DotNet.Netfx48ReleaseVersionMin">
+            <summary>
+            .NET Framework Versions and Dependencies
+            https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.DotNet.P_ReleaseVersion_45AndUp">
+            <summary>
+            Cache value for .NET FW v4.5+ Release Version
+            (default unchecked = -456789)
             </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v10_Installed">
             <summary> Type Boolean, true if .NET 1.0 is installed </summary>
         </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_10">
+            <summary> Type Int32, service pack level of .NET 1.0 </summary>
+        </member>
         <member name="P:Okuma.Scout.DotNet.v11_Installed">
             <summary> Type Boolean, true if .NET 1.1 is installed </summary>
+        </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_11">
+            <summary> Type Int32, service pack level of .NET 1.1 </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v20_Installed">
             <summary> Type Boolean, true if .NET 2.0 is installed </summary>
         </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_20">
+            <summary> Type Int32, service pack level of .NET 2.0 </summary>
+        </member>
         <member name="P:Okuma.Scout.DotNet.v30_Installed">
             <summary> Type Boolean, true if .NET 3.0 is installed </summary>
+        </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_30">
+            <summary> Type Int32, service pack level of .NET 3.0 </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v35_Installed">
             <summary> Type Boolean, true if .NET 3.5 is installed </summary>
         </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_35">
+            <summary> Type Int32, service pack level of .NET 3.5 </summary>
+        </member>
         <member name="P:Okuma.Scout.DotNet.v40Client_Installed">
             <summary> Type Boolean, true if .NET 4.0 Client is installed </summary>
+        </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_40Client">
+            <summary> Type Int32, service pack level of .NET 4.0 Client </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v40Full_Installed">
             <summary> Type Boolean, true if .NET 4.0 Full is installed </summary>
         </member>
+        <member name="P:Okuma.Scout.DotNet.ServicePack_40Full">
+            <summary> Type Int32, service pack level of .NET 4.0 Full </summary>
+        </member>
         <member name="P:Okuma.Scout.DotNet.v45_Installed">
             <summary> Type Boolean, true if .NET 4.5 is installed </summary>
+        </member>
+        <member name="P:Okuma.Scout.DotNet.ReleaseVersion_45AndUp">
+            <summary> Type Int32, Revision Number of the .NET Framework 4.5 and later.  
+            Returns '-1' if .NET Framework 4.5 and later not installed. </summary>
         </member>
         <member name="P:Okuma.Scout.DotNet.v451_Installed">
             <summary> Type Boolean, true if .NET 4.5.1 is installed </summary>
@@ -675,29 +732,8 @@
         <member name="P:Okuma.Scout.DotNet.v472_Installed">
             <summary> Type Boolean, true if .NET 4.7.2 is installed </summary>
         </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_10">
-            <summary> Type Int32, service pack level of .NET 1.0 </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_11">
-            <summary> Type Int32, service pack level of .NET 1.1 </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_20">
-            <summary> Type Int32, service pack level of .NET 2.0 </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_30">
-            <summary> Type Int32, service pack level of .NET 3.0 </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_35">
-            <summary> Type Int32, service pack level of .NET 3.5 </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_40Client">
-            <summary> Type Int32, service pack level of .NET 4.0 Client </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ServicePack_40Full">
-            <summary> Type Int32, service pack level of .NET 4.0 Full </summary>
-        </member>
-        <member name="P:Okuma.Scout.DotNet.ReleaseVersion_45AndUp">
-            <summary> Type Int32, Revision Number of the .NET Framework 4.5 and later </summary>
+        <member name="P:Okuma.Scout.DotNet.v48_Installed">
+            <summary> Type Boolean, true if .NET 4.8 is installed </summary>
         </member>
         <member name="M:Okuma.Scout.DotNet.NetVersionComparible(System.String)">
             <summary> Converts .NET version string to int32 for easy comparison </summary>
@@ -768,6 +804,13 @@
             http://msdn.microsoft.com/library/ee942965(v=VS.100).aspx </summary>
             <returns> Type Boolean </returns>
         </member>
+        <member name="M:Okuma.Scout.DotNet.releaseVersion_45AndUp(System.Int32@)">
+            <summary> PRIVATE
+            Returns the instillation status of FW 4.5+ and ReleaseVersion as out parameter if true. </summary>
+            <remarks> Uses cached registry value for ReleaseVersion </remarks>
+            <param name="RelaseVersion"> [out] if FW 4.5+ Installed, the Release Version. </param>
+            <returns> Boolean True if FW 4.5+ Installed, otherwise False. </returns>
+        </member>
         <member name="M:Okuma.Scout.DotNet.p_v45_Installed">
             <summary> PRIVATE
             Is .NET Framework 4.5 installed? 
@@ -815,6 +858,221 @@
             <summary> PRIVATE
             Is .NET Framework 4.7.2 installed? </summary>
             <returns> Type Boolean </returns>
+        </member>
+        <member name="M:Okuma.Scout.DotNet.p_v48_Installed">
+            <summary> PRIVATE
+            Is .NET Framework 4.8 installed? </summary>
+            <returns> Type Boolean </returns>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ApiStatus">
+            <summary>
+            Used as the return value for 'ThincApi.ApiAvailable' and 'ThincApi.InitAPI()'.
+            These values provide more detailed information about the results, beyond what would
+            be possible with a simple Boolean result.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.Ready">
+            <summary> The API is ready to be initialized. </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.NotReady">
+            <summary> API cannot be initialized and API functions cannot be used at this time. </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.Initialized">
+            <summary> API <see cref="M:Okuma.Scout.ThincApiReflector.InitAPI"/>  was successful, and API functions may now be called. </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.FailedToInitialize">
+            <summary> Exception encountered while attempting to initialize the API. </summary>
+            <remarks>Handle the Error Event <see cref="E:Okuma.Scout.Error.ReporterEvent"/> or use a try-catch around the 
+            methods that return this object to view the specific details. </remarks>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.FiveSecondTimeOutPeriod">
+            <summary>When 'ThincApi.ApiAvailable' is called on machines with API version less than 1.17.1, 
+            an attempt to initialize the API will take place to determine readiness. That function or calling 
+            Initialize directly may only attempt to call Init at 5 second or greater intervals. This is the 
+            return result that will be generated if more than one call is generated within a 5 second period.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiStatus.UnsupportedAction">
+            <summary> 
+            Obsolete - this return value is retained for backwards compatibility, but no longer used. 
+            </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ApiType">
+            <summary>
+            Used to differentiate between API code bases
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.NONE">
+            <summary>Uninitialized Value</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.THINC">
+            <summary>THINC API type</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.CUSTOM">
+            <summary>CUSTOM API type</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiType.OSP">
+            <summary>OSP API type</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ApiVersionCheckResult">
+            <summary>
+            Return value for 'VersionInformation.Result' used to indicate 
+            If the THINC API Install Version was successfully determined. 
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.NoResult">
+            <summary>Default value before check performed</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.VersionRecognized">
+            <summary>Value indicating success</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.UnknownVersion">
+            <summary>Install version cannot be identified, but the individual
+            API file versions should still be available.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MachineTypeNotSupported">
+            <summary>Base machine type other than L or M was identified</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingApiFiles">
+            <summary>Install version identification is accomplished by comparing known version information 
+            for API files. If any of these files are missing, identification cannot take place.</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingCrossReference">
+            <summary>An internal file is used for version information comparison. 
+            The comparison cannot take place without this file.</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.BaseMachineType">
+            <summary>
+            Simplified version of MachineType</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.BaseMachineType.Unknown">
+            <summary>Indeterminate</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.BaseMachineType.PC">
+            <summary>Personal Computer (not a machine) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.BaseMachineType.L">
+            <summary>Type Lathe </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.BaseMachineType.M">
+            <summary>Type Machining Center </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.BaseMachineType.G">
+            <summary>Type Grinder </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ComparisonOperators">
+            <summary>
+            Simple enumeration of comparison operators.
+            Useful for method arguments.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.Equal">
+            <summary> == </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.NotEqual">
+            <summary> != </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.LessThan">
+            <summary> &lt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.GreaterThan">
+            <summary> &gt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.LessThanOrEqualTo">
+            <summary> &lt;= </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ComparisonOperators.GreaterThanOrEqualTo">
+            <summary> &gt;= </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ControlType">
+            <summary>
+            Describes the hardware generation of the machine control (OSP series), NA for PC, or unknown 
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.Unknown">
+            <summary>Indeterminate </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.NA">
+            <summary>Not Applicable (for machine type PC) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P100">
+            <summary>OSP-P100</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P100II">
+            <summary>OSP-P100 Type II</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P200">
+            <summary>OSP-P200</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P200A">
+            <summary>OSP-P200 Type A</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300">
+            <summary>OSP-P300</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300M">
+            <summary>OSP-P300M (special type)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300S">
+            <summary>OSP-P300S (special type)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300A">
+            <summary>OSP-P300A </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P300SA">
+            <summary>OSP-P300A (special type)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P500">
+            <summary>OSP-P500</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P500M">
+            <summary>OSP-P500M (special type)</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ControlType.P500S">
+            <summary>OSP-P500S (special type)</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.DMCSearchPattern">
+            <summary>
+            Used to specify which section of the DMC is being searched.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Data">
+            <summary>Standard Search</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Filter">
+            <summary>Filtered Search</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Package">
+            <summary>Search for 'Package' information</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.MultiNormal">
+            <summary>Any section except 'Package' or 'Spec Codes'</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.MultiPackage">
+            <summary>Search for 'Package' information using multiple strings</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.SpecCode">
+            <summary>Search for Spec Codes</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.DMC_MachineData">
+            <summary>
+            Data Management Card "[ Machine Data ]" Item 
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMC_MachineData.OspType">
+            <summary> &lt; Type of OSP &gt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMC_MachineData.MachineType">
+            <summary> &lt; Type of Machine &gt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProductionNumber">
+            <summary> &lt; Soft Production No &gt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProjectNumber">
+            <summary> &lt; Project No &gt; </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProductionDate">
+            <summary> &lt; Software Production Date &gt; </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.NCSpecGroup">
             <summary>
@@ -888,79 +1146,33 @@
         <member name="F:Okuma.Scout.Enums.PLCSpecGroup.PLC3MG">
             <summary>Group 3 (currently unused)</summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.MachineType">
+        <member name="T:Okuma.Scout.Enums.PlcSpecCode">
             <summary>
-            Describes the Machine as a PC, Lathe, Machining Center, or Grinder (also if it's either an NC Master or PC NC Master)
-            Indeterminate value = "Unknown"
+            Used by SpecCode class to determine which part of the PLC Spec code to fetch 
             </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.Unknown">
-            <summary>Indeterminate</summary>
+        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc1_A">
+            <summary>PLC Spec Code 1 (first half) </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.PC">
-            <summary>Personal Computer (not a machine) </summary>
+        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc1_B">
+            <summary>PLC Spec Code 1 (second half) </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.L">
-            <summary>Type Lathe </summary>
+        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc2_A">
+            <summary>PLC Spec Code 2 (first half) </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.NCM_L">
-            <summary>Type NC-Master Lathe </summary>
+        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc2_B">
+            <summary>PLC Spec Code 2 (second half) </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_L">
-            <summary>Type PC-NC-Master Lathe </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.M">
-            <summary>Type Machining Center </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.NCM_M">
-            <summary>Type NC-Master Machining Center </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_M">
-            <summary>Type PC-NC-Master Machining Center </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.G">
-            <summary>Type Grinder </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.NCM_G">
-            <summary>Type NC-Master Grinder </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_G">
-            <summary>Type PC-NC-Master Grinder </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.ControlType">
+        <member name="T:Okuma.Scout.Enums.FindLength">
             <summary>
-            Describes the hardware generation of the machine control (OSP series), NA for PC, or unknown 
+            Used by Helpers.FindStringInArrayByLength
             </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.Unknown">
-            <summary>Indeterminate </summary>
+        <member name="F:Okuma.Scout.Enums.FindLength.Shortest">
+            <summary> Return Shortest String </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.NA">
-            <summary>Not Applicable (for machine type PC) </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P100">
-            <summary>OSP-P100</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P100II">
-            <summary>OSP-P100 Type II</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P200">
-            <summary>OSP-P200</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P200A">
-            <summary>OSP-P200 Type A</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P300">
-            <summary>OSP-P300</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P300S">
-            <summary>OSP-P300S (special type)</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P300A">
-            <summary>OSP-P300A </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ControlType.P300SA">
-            <summary>OSP-P300A (special type)</summary>
+        <member name="F:Okuma.Scout.Enums.FindLength.Longest">
+            <summary> Return Longest String </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.LicenseStatus">
             <summary>
@@ -1006,76 +1218,44 @@
         <member name="F:Okuma.Scout.Enums.LicenseStatus.Critical_Exception">
             <summary> Critical Exception Occurred! </summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.PlcSpecCode">
+        <member name="T:Okuma.Scout.Enums.MachineType">
             <summary>
-            Used by SpecCode class to determine which part of the PLC Spec code to fetch 
+            Describes the Machine as a PC, Lathe, Machining Center, or Grinder (also if it's either an NC Master or PC NC Master)
+            Indeterminate value = "Unknown"
             </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc1_A">
-            <summary>PLC Spec Code 1 (first half) </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.Unknown">
+            <summary>Indeterminate</summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc1_B">
-            <summary>PLC Spec Code 1 (second half) </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.PC">
+            <summary>Personal Computer (not a machine) </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc2_A">
-            <summary>PLC Spec Code 2 (first half) </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.L">
+            <summary>Type Lathe </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.PlcSpecCode.Plc2_B">
-            <summary>PLC Spec Code 2 (second half) </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.NCM_L">
+            <summary>Type NC-Master Lathe </summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.SoftwareArchitecture">
-            <summary>
-            Return value for ProgramBits 
-            </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_L">
+            <summary>Type PC-NC-Master Lathe </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Unknown">
-            <summary> Unable to determine S/W Bits </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.M">
+            <summary>Type Machining Center </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Bit32">
-            <summary> 32-bit </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.NCM_M">
+            <summary>Type NC-Master Machining Center </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Bit64">
-            <summary> 64-bit </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_M">
+            <summary>Type PC-NC-Master Machining Center </summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.ProcessorArchitecture">
-            <summary>
-            Return value for ProcessorBits 
-            </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.G">
+            <summary>Type Grinder </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Unknown">
-            <summary> Unable to determine processor bits </summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.NCM_G">
+            <summary>Type NC-Master Grinder </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Bit32">
-            <summary> 32-bit </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Bit64">
-            <summary> 64-bit </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Itanium64">
-            <summary> I64-bit </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.DMCSearchPattern">
-            <summary>
-            Used to specify which section of the DMC is being searched.
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Data">
-            <summary>Standard Search</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Filter">
-            <summary>Filtered Search</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.Package">
-            <summary>Search for 'Package' information</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.MultiNormal">
-            <summary>Any section except 'Package' or 'Spec Codes'</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.MultiPackage">
-            <summary>Search for 'Package' information using multiple strings</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMCSearchPattern.SpecCode">
-            <summary>Search for Spec Codes</summary>
+        <member name="F:Okuma.Scout.Enums.MachineType.PCNCM_G">
+            <summary>Type PC-NC-Master Grinder </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.MessageLevel">
             <summary>
@@ -1094,84 +1274,88 @@
         <member name="F:Okuma.Scout.Enums.MessageLevel.Exception">
             <summary>Run-time error that effects the operation of SCOUT </summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.ApiVersionCheckResult">
-            <summary>
-            Return value for 'VersionInformation.Result' used to indicate 
-            If the THINC API Install Version was successfully determined. 
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.NoResult">
-            <summary>Default value before check performed</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.VersionRecognized">
-            <summary>Value indicating success</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.UnknownVersion">
-            <summary>Install version cannot be identified, but the individual
-            API file versions should still be available.</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MachineTypeNotSupported">
-            <summary>Base machine type other than L or M was identified</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingApiFiles">
-            <summary>Install version identification is accomplished by comparing known version information 
-            for API files. If any of these files are missing, identification cannot take place.</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiVersionCheckResult.MissingCrossReference">
-            <summary>An internal file is used for version information comparison. 
-            The comparison cannot take place without this file.</summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.ApiStatus">
-            <summary>
-            Used as the return value for 'ThincApi.ApiAvailable' and 'ThincApi.InitAPI()'.
-            These values provide more detailed information about the results, beyond what would
-            be possible with a simple Boolean result.
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.Ready">
-            <summary> The API is ready to be initialized. </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.NotReady">
-            <summary> API cannot be initialized and API functions cannot be used at this time. </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.Initialized">
-            <summary> API <see cref="M:Okuma.Scout.ThincApiReflector.InitAPI"/>  was successful, and API functions may now be called. </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.FailedToInitialize">
-            <summary> Exception encountered while attempting to initialize the API. </summary>
-            <remarks>Handle the Error Event <see cref="E:Okuma.Scout.Error.ReporterEvent"/> or use a try-catch around the 
-            methods that return this object to view the specific details. </remarks>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.FiveSecondTimeOutPeriod">
-            <summary>When 'ThincApi.ApiAvailable' is called on machines with API version less than 1.17.1, 
-            an attempt to initialize the API will take place to determine readiness. That function or calling 
-            Initialize directly may only attempt to call Init at 5 second or greater intervals. This is the 
-            return result that will be generated if more than one call is generated within a 5 second period.
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ApiStatus.UnsupportedAction">
+        <member name="T:Okuma.Scout.Enums.NineteenInchScreenMode">
             <summary> 
-            Obsolete - this return value is retained for backwards compatibility, but no longer used. 
+            Enumerated Return Value for SelectScreenMode 
             </summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.ApiType">
+        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.FullScreen">
+            <summary>19" Full Screen Mode (Data = 0) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.ModeA">
+            <summary>19" Windowed Lower-Left Display "A Mode" (Data = 1) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.ModeB">
+            <summary>19" Windowed Lower-Right Display "B Mode" (Data = 2) </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.UnknownMode">
+            <summary>The Result Data is not equal to 0, 1, or 2 </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.RegistryKeyNotExist">
+            <summary>19" SelectScreen tool registry key does not exist </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.OSP_Restrictions">
             <summary>
-            Used to differentiate between API code bases
+            Restricted OSP Operation Specifications 
             </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ApiType.NONE">
-            <summary>Uninitialized Value</summary>
+        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.Unknown">
+            <summary> Indeterminate </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ApiType.THINC">
-            <summary>THINC API type (OAC)</summary>
+        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.NA">
+            <summary> Not Applicable </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.ApiType.CUSTOM">
-            <summary>CUSTOM API type (OCJ)</summary>
+        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.NONE">
+            <summary> No Restrictions </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.RSpec">
+            <summary> -R Specification </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.eSpec">
+            <summary> -e Specification </summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.PhysicalPanelSize">
+            <summary>
+            Enumerated Return Value for PanelType
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.NonOSP">
+            <summary>Not an OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.PnP_NonOsp">
+            <summary>Plug and Play Monitor, Not an OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.UnknownSize">
+            <summary>Unknown OSP panel type</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.SixPointFiveInch">
+            <summary>6.5" OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.FifteenInch">
+            <summary>15" OSP panel</summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.NineteenInch">
+            <summary>19" OSP panel</summary>
+        </member>
+        <member name="T:Okuma.Scout.Enums.ProcessorArchitecture">
+            <summary>
+            Return value for ProcessorBits 
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Unknown">
+            <summary> Unable to determine processor bits </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Bit32">
+            <summary> 32-bit </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Bit64">
+            <summary> 64-bit </summary>
+        </member>
+        <member name="F:Okuma.Scout.Enums.ProcessorArchitecture.Itanium64">
+            <summary> I64-bit </summary>
         </member>
         <member name="T:Okuma.Scout.Enums.RegDataType">
-            <summary>
-            Specify the data type to retrieve from the registry
-            </summary>
+            <summary>Specify the data type to retrieve from the registry.</summary>
             <remarks> https://msdn.microsoft.com/en-us/library/windows/desktop/ms724884%28v=vs.85%29.aspx </remarks>
         </member>
         <member name="F:Okuma.Scout.Enums.RegDataType.REG_NONE">
@@ -1262,123 +1446,19 @@
         <member name="F:Okuma.Scout.Enums.RegSAM.AllAccess">
             <summary>Combination of KEY_QUERY_VALUE, KEY_ENUMERATE_SUB_KEYS, KEY_NOTIFY, KEY_CREATE_SUB_KEY, KEY_CREATE_LINK, and KEY_SET_VALUE access.</summary>
         </member>
-        <member name="T:Okuma.Scout.Enums.DMC_MachineData">
+        <member name="T:Okuma.Scout.Enums.SoftwareArchitecture">
             <summary>
-            Data Management Card "[ Machine Data ]" Item 
+            Return value for ProgramBits 
             </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.DMC_MachineData.OspType">
-            <summary> &lt; Type of OSP &gt; </summary>
+        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Unknown">
+            <summary> Unable to determine S/W Bits </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.DMC_MachineData.MachineType">
-            <summary> &lt; Type of Machine &gt; </summary>
+        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Bit32">
+            <summary> 32-bit </summary>
         </member>
-        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProductionNumber">
-            <summary> &lt; Soft Production No &gt; </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProjectNumber">
-            <summary> &lt; Project No &gt; </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.DMC_MachineData.ProductionDate">
-            <summary> &lt; Software Production Date &gt; </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.PhysicalPanelSize">
-            <summary>
-            Enumerated Return Value for PanelType
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.NonOSP">
-            <summary>Not an OSP panel</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.PnP_NonOsp">
-            <summary>Plug and Play Monitor, Not an OSP panel</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.UnknownSize">
-            <summary>Unknown OSP panel type</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.SixPointFiveInch">
-            <summary>6.5" OSP panel</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.FifteenInch">
-            <summary>15" OSP panel</summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.PhysicalPanelSize.NineteenInch">
-            <summary>19" OSP panel</summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.NineteenInchScreenMode">
-            <summary> 
-            Enumerated Return Value for SelectScreenMode 
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.FullScreen">
-            <summary>19" Full Screen Mode (Data = 0) </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.ModeA">
-            <summary>19" Windowed Lower-Left Display "A Mode" (Data = 1) </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.ModeB">
-            <summary>19" Windowed Lower-Right Display "B Mode" (Data = 2) </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.UnknownMode">
-            <summary>The Result Data is not equal to 0, 1, or 2 </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.NineteenInchScreenMode.RegistryKeyNotExist">
-            <summary>19" SelectScreen tool registry key does not exist </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.FindLength">
-            <summary>
-            Used by Helpers.FindStringInArrayByLength
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.FindLength.Shortest">
-            <summary> Return Shortest String </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.FindLength.Longest">
-            <summary> Return Longest String </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.OSP_Restrictions">
-            <summary>
-            Restricted OSP Operation Specifications 
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.Unknown">
-            <summary> Indeterminate </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.NA">
-            <summary> Not Applicable </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.NONE">
-            <summary> No Restrictions </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.RSpec">
-            <summary> -R Specification </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.OSP_Restrictions.eSpec">
-            <summary> -e Specification </summary>
-        </member>
-        <member name="T:Okuma.Scout.Enums.ComparisonOperators">
-            <summary>
-            Simple enumeration of comparison operators.
-            Useful for method arguments.
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.Equal">
-            <summary> == </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.NotEqual">
-            <summary> != </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.LessThan">
-            <summary> &lt; </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.GreaterThan">
-            <summary> &gt; </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.LessThanOrEqualTo">
-            <summary> &lt;= </summary>
-        </member>
-        <member name="F:Okuma.Scout.Enums.ComparisonOperators.GreaterThanOrEqualTo">
-            <summary> &gt;= </summary>
+        <member name="F:Okuma.Scout.Enums.SoftwareArchitecture.Bit64">
+            <summary> 64-bit </summary>
         </member>
         <member name="T:Okuma.Scout.Error">
             <summary>
@@ -1411,28 +1491,38 @@
             Generate error messages to test error reporting functionality. </summary>
             <param name="level"> [in] Enums.MessageLevel </param>
         </member>
-        <member name="T:Okuma.Scout.Error.Args">
+        <member name="M:Okuma.Scout.Internal.Extensions.IsBasicLetter(System.Char)">
+            <summary>Is char a simple letter of the alphabet</summary>
+        </member>
+        <member name="T:Okuma.Scout.Extensions">
             <summary>
-            
-            This is a custom event arguments class for Scout error reporting 
-            
+            Extends the functionality of SCOUT data-types
+            </summary>
+            <summary>
+            Extends the functionality of SCOUT data-types
+            </summary>
+            <summary>
+            Extends the functionality of SCOUT data-types
             </summary>
         </member>
-        <member name="M:Okuma.Scout.Error.Args.#ctor(Okuma.Scout.Enums.MessageLevel,System.String,System.Exception)">
+        <member name="M:Okuma.Scout.Extensions.ToBaseMachineType(Okuma.Scout.Enums.MachineType)">
             <summary>
-            Constructor for new Error event arguments </summary>
-            <param name="severity"> [in] Type Scout.Enums.MessageLevel: severity </param>
-            <param name="message"> [in] Type string: information content </param>
-            <param name="exception"> [opt in] Type System.Exception: only valid for severity of type MessageLevel.Exception </param>
+            Extension that returns only the most basic machine type. 
+            NCM and PCNCM values are converted to their base type.</summary>
+            <param name="MT">The full machine type <see cref="T:Okuma.Scout.Enums.MachineType"/>.</param>
+            <returns>Base machine type (M,L,G,PC,Unknown)</returns>
         </member>
-        <member name="P:Okuma.Scout.Error.Args.Severity">
-            <summary> Level of seriousness associated with the error </summary>
+        <member name="M:Okuma.Scout.Extensions.ToCommaSeparatedString(System.Collections.Generic.List{System.String})">
+            <summary>
+            Extension that returns a single comma separated string from a list of strings.</summary>
+            <param name="MyList">A list of type string.</param>
+            <returns>a single command separated string.</returns>
         </member>
-        <member name="P:Okuma.Scout.Error.Args.Message">
-            <summary> Error information (not used for exceptions) </summary>
-        </member>
-        <member name="P:Okuma.Scout.Error.Args.Exception">
-            <summary> Exception object (not used for debugging information) </summary>
+        <member name="M:Okuma.Scout.Extensions.ToFormattedString(Okuma.Scout.Enums.MachineType)">
+            <summary>
+            Extension that returns a more human readable version of the enumeration values for MachineType. </summary>
+            <param name="MT"> [in] Machine Type </param>
+            <returns> Description of the machine type. </returns>
         </member>
         <member name="T:Okuma.Scout.Helper">
             <summary>
@@ -1450,10 +1540,14 @@
         </member>
         <member name="M:Okuma.Scout.Helper.RegDwordIntegerVersionParse(System.String)">
             <summary>
-            This function is designed specifically for producing a System.Version object from the 
-            Uninstall information ("Version" key) in the Windows registry for a given app. </summary>
-            <param name="input"> [in] Type string, a REG_DWORD value obtained from Registry class for an installed application </param>
-            <returns> Type System.Version (Major, Minor, Build) </returns>
+            This function is designed specifically for producing a 
+            System.Version object from the Uninstall information
+            ("Version" key) in the Windows registry for a given app.
+            </summary>
+            <param name="input">Using the Registry class to obtain a 
+            REG_DWORD value for an installed application, 
+            Input the integer value as a string.</param>
+            <returns>System Version Object (Major, Minor, Build) </returns>
         </member>
         <member name="M:Okuma.Scout.Helper.VersionParse(System.String)">
             <summary>
@@ -1468,6 +1562,15 @@
             (Framework Version.TryParse method requires .NET 4.0) </summary>
             <param name="input"> [in] version string, period delimited </param>
             <param name="output"> [out] Type System.Version result if TryParse is successful, else null </param>
+            <returns> Type Boolean, True if successful, else false. </returns>
+        </member>
+        <member name="M:Okuma.Scout.Helper.VersionTryParse(System.String,System.Version@,Okuma.Scout.Enums.BaseMachineType)">
+            <summary>
+            Version.TryParse method supported in .NET 2.0 
+            (Framework Version.TryParse method requires .NET 4.0) </summary>
+            <param name="input"> [in] version string, period delimited </param>
+            <param name="output"> [out] Type System.Version result if TryParse is successful, else null </param>
+            <param name="enMachineType"> [in] machine type to check for version</param>
             <returns> Type Boolean, True if successful, else false. </returns>
         </member>
         <member name="M:Okuma.Scout.Helper.ByteArrayToHex(System.Byte[])">
@@ -1489,12 +1592,6 @@
             <param name="strings"> [in] string array </param>
             <returns> Type string, a value from the provided array </returns>
         </member>
-        <member name="M:Okuma.Scout.Helper.IsBasicLetter(System.Char)">
-            <summary>
-            Determines if a character is a simple letter of the alphabet </summary>
-            <param name="c"> [in] Type char, input character </param>
-            <returns> boolean true if simple letter, else false. </returns>
-        </member>
         <member name="M:Okuma.Scout.Helper.GetCultureInfo(System.String)">
             <summary>
             Converts a hexadecimal string 
@@ -1504,6 +1601,12 @@
             <returns> CultureInfo corresponding to the locale string provided, 
             or CultureInfo.InvariantCulture if not found. </returns>
             <seealso href="https://msdn.microsoft.com/en-us/library/dd318691(v=vs.85).aspx">Language Identifiers</seealso>
+        </member>
+        <member name="M:Okuma.Scout.Helper.IsBasicLetter(System.Char)">
+            <summary>
+            Determines if a character is a simple letter of the alphabet </summary>
+            <param name="c"> [in] Type char, input character </param>
+            <returns> boolean true if simple letter, else false. </returns>
         </member>
         <member name="T:Okuma.Scout.LicenseChecker">
             <summary>
@@ -1618,29 +1721,9 @@
             <returns> Type Nullable DateTime </returns>
         </member>
         <member name="T:Okuma.Scout.LicenseItem">
-            <summary>
-            
+            <summary> 
             Stores information about individual license features 
-            
             </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateFeature">
-            <summary> Feature Name </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateVersion">
-            <summary> Version of feature </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateExpires">
-            <summary> If the feature expires </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateStatus">
-            <summary> status of check </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateExpiryDate">
-            <summary> Expiration date </summary>
-        </member>
-        <member name="F:Okuma.Scout.LicenseItem.privateEndIndex">
-            <summary> End Index of last thing gotten from license file </summary>
         </member>
         <member name="M:Okuma.Scout.LicenseItem.#ctor(System.String,System.String,System.Nullable{System.Boolean})">
             <summary> Initializes a new instance of the <see cref="T:Okuma.Scout.LicenseItem" /> class. </summary>
@@ -1660,7 +1743,7 @@
         <member name="P:Okuma.Scout.LicenseItem.Expires">
             <summary> Gets a value indicating whether license expires </summary>
             <remarks> False if type = "permanent", otherwise true. 
-            UNLESS the feature isn't found, in which case it will be NULL! </remarks>
+            UNLESS the feature isn't found, in which case it will be NULL.</remarks>
         </member>
         <member name="P:Okuma.Scout.LicenseItem.Status">
             <summary> Gets the result of feature validation check. 
@@ -1671,6 +1754,161 @@
         </member>
         <member name="P:Okuma.Scout.LicenseItem.EndIndex">
             <summary> Gets or sets the end index </summary>
+        </member>
+        <member name="T:Okuma.Scout.AccessGAC">
+            <summary>
+            This class provides access to the Global Assembly Cache.
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.QueryGAC(System.String)">
+            <summary> 
+            Returns a list of unique assembly identities found in the GAC for a given assembly name </summary>
+            <param name="assemblyName"> [in] Generic Assembly Name </param>
+            <returns> List of type System.Reflection.AssemblyName </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.QueryLatest(System.String,System.Reflection.AssemblyName@)">
+            <summary> 
+            Returns the latest (highest version number) assembly identity found in the GAC for a given assembly name </summary>
+            <param name="assemblyName"> [in] Generic Assembly Name </param>
+            <param name="assembly"> [out] Object of type AssemblyName </param>
+            <returns> True if result found else False. 
+            The out parameter "Assembly" will be null in case of exception or no result found </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.QueryLatestAssemblyPath(System.String,System.String@)">
+            <summary> INTERNAL
+            Extends the QueryLatest method to return the code base </summary>
+            <param name="AssemblyName"> [in] name of the thing your looking for </param>
+            <param name="Path"> [out] the return path </param>
+            <returns> True if found, else False and Path will be null or string.empty </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.AssemblyVersionCompare(System.Reflection.AssemblyName,System.Reflection.AssemblyName)">
+            <summary> INTERNAL
+            Executes AN1.Version.CompareTo(AN2.Version) </summary>
+            <param name="AN1"> [in] Assembly Name 1 </param>
+            <param name="AN2"> [in] Assembly Name 2 </param>
+            <returns> List containing the higher version AssemblyName or both if equal </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.AssemblyArchitectureCompare(System.Collections.Generic.List{System.Reflection.AssemblyName})">
+            <summary> INTERNAL
+            Try to return only the assemblyName that matches the OS in terms of Architecture. </summary>
+            <param name="ANList"> [in] Filtered list of assemblyNames that should all 
+            have the same version and only vary based on Architecture. </param>
+            <returns> a single assemblyName </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.GetAssemblyNameObjectsFromGAC(System.String)">
+            <summary> PRIVATE
+            Get a list of objects representing assemblies found in the GAC. 
+            This method manually populates the "CodeBase" field in the class objects. </summary>
+            <param name="asm"> [in] assembly name string (minus extension) </param>
+            <returns> List of class objects of type AssemblyName. Returns empty list of nothing found. </returns>
+            <remarks> GetInstalledVersions eats HRRESULT = 1 (normal return value for no results) so doesn't throw exception </remarks>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.Base_GetAssemblyNameObjectsFromGAC(System.String)">
+            <summary> PRIVATE
+            Uses Microsoft Fusion API calls to query the Global Assembly Cache </summary>
+            <param name="name"> [in] the file name (minus extension) to search the GAC for </param>
+            <returns> A generic collection of AssemblyName objects </returns>
+        </member>
+        <member name="M:Okuma.Scout.AccessGAC.GetGACAssemblyPath(System.Reflection.AssemblyName)">
+            <summary> PRIVATE
+            Uses Microsoft Fusion API to get the full path to an AssemblyName object in the GAC </summary>
+            <param name="assemblyName"> System Reflection assemblyName object </param>
+            <returns> type string currentAssemblyPath or string.empty if error </returns>
+        </member>
+        <member name="T:Okuma.Scout.ApiCompatibility">
+            <summary>
+            Used to check for compatible THINC API versions based on a Custom API version. 
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.ApiCompatibility.CustomAPIVersion">
+            <summary>
+            Which version of the Custom API </summary>
+        </member>
+        <member name="P:Okuma.Scout.ApiCompatibility.RecommendOEMUpgrade">
+            <summary>
+            Does this version of Custom API Require an OEM Upgrade? </summary>
+        </member>
+        <member name="P:Okuma.Scout.ApiCompatibility.CompatibleTAPIVersions">
+            <summary>
+            Which versions of the THINC API are compatible with this Custom API version? </summary>
+        </member>
+        <member name="T:Okuma.Scout.CompatibilityList">
+            <summary>
+            TO DO: MOVE TO Okuma.SCOUT Library (Because ApiXRef.xml has been transitioned to SCOUT Library)
+            This shouldn't be a part of the App, but rather the library. 
+            So where these methods are called in the app, just reference the library instead.
+            
+            FUCK
+            
+            </summary>
+        </member>
+        <member name="M:Okuma.Scout.CompatibilityList.GetLatestTAPIVersion">
+            <summary>
+            Get the latest THINC-API version that this SCOUT version knows
+            Note: There is no need to search in the list of ApiXef since this list is only included with
+            the application and not be changed unless we make a new version
+            Therefore we know what latest version of THINC-API at the time we make this SCout
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Okuma.Scout.FileSystem">
+            <summary>
+            Handle tasks associated with the file system
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.FileSystem.FolderCNSDAT">
+            <summary> </summary>
+        </member>
+        <member name="F:Okuma.Scout.FileSystem.CachedDMCFilePath">
+            <summary> Path to cached DMC file </summary>
+            <remarks> Prevent unnecessary file access </remarks>
+        </member>
+        <member name="F:Okuma.Scout.FileSystem.CachedDMCFileContents">
+            <summary> Cached DMC file contents </summary>
+            <remarks> Prevent unnecessary file access </remarks>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.GetDatFileSpecialIndex(System.String)">
+            <summary>
+            Returns index of 'NCSPEC', 'NCBSPC', else -1.
+            </summary>
+            <param name="file">file name or path to file</param>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.GetCnsFileSpecialIndex(System.String)">
+            <summary>
+            Returns index of 'PLCUB11-', else -1. </summary>
+            <param name="file">file name or path to file</param>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.IsDirectoryEmpty(System.String)">
+            <summary>
+            Determines if a directory is empty. </summary>
+            <param name="path">The folder path.</param>
+            <returns>Value indicating if the folder is empty.</returns>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.FileIsType(System.String,System.String)">
+            <summary>
+            Determines if a file is of a given type.
+            </summary>
+            <param name="file">The file to check</param>
+            <param name="extension">The file extension to confirm</param>
+            <returns>Value indicating if the file is of a certain type.</returns>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.FolderContainsFile(System.String,System.String)">
+            <summary>
+            Determines if a folder contains any file matching a given search pattern.
+            </summary>
+            <param name="folder">Where to look for files</param>
+            <param name="pattern">The file pattern to look for</param>
+            <returns>Value indicating if the folder contains any file matching the pattern</returns>
+        </member>
+        <member name="M:Okuma.Scout.FileSystem.FindCnsDatFile(System.String,System.String,System.String@)">
+            <summary>
+            Gets a path to the first file found in the CNS-DAT folder matching a given pattern. 
+            <para>Attempts to eliminate false-positives such as copies or backups.</para>
+            </summary>
+            <param name="filePattern">Search pattern</param>
+            <param name="folder">folder to search in</param>
+            <param name="filePath">[out] path to the first matching file found</param>
+            <returns>Value indicating if any matching file found</returns>
         </member>
         <member name="T:Okuma.Scout.NativeMethods">
             <summary>
@@ -2155,11 +2393,7 @@
             </remarks>
         </member>
         <member name="T:Okuma.Scout.NativeMethods.Fusion">
-            <summary>
-            ===========================================================
-            Microsoft Fusion Class; fusion.dll P-Invokes for GAC Access 
-            ===========================================================
-            </summary>
+            <summary>Microsoft Fusion Class. fusion.dll P-Invokes for GAC Access.</summary>
         </member>
         <member name="M:Okuma.Scout.NativeMethods.Fusion.CreateAssemblyCache(Okuma.Scout.NativeMethods.IAssemblyCache@,System.Int32)">
             <summary>
@@ -2262,11 +2496,18 @@
             to the global assembly cache for CLR version 4. 
             Meaningful only in the context of a call to GetCachePath.  </summary>
         </member>
+        <member name="T:Okuma.Scout.NativeMethods.InstallReferenceGuid">
+            <summary></summary>
+        </member>
+        <member name="T:Okuma.Scout.NativeMethods.AssemblyCache">
+            <summary>Represents the global assembly cache for use by the fusion technology.</summary>
+        </member>
+        <member name="T:Okuma.Scout.NativeMethods.AssemblyCacheInstallReferenceEnum">
+            <summary>Retrieves information about an assembly</summary>
+        </member>
         <member name="T:Okuma.Scout.OspFileInfo">
-            <summary>
-            
+            <summary> 
             This class is used to discover information about the file system
-            
             </summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ErrorMessage">
@@ -2275,31 +2516,25 @@
             version retrieval process. </summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_OSP">
-            <summary> Does the directory 'C:\OSP-P\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the OSP-P directory exists.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_CNS">
-            <summary> Does the directory 'C:\OSP-P\CNS-DAT\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the CNS-DAT directory exists.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_VOLANTE">
-            <summary> Does the directory 'C:\OSP-P\VOLANTE\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the VOLANTE directory exists.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_CRAD">
-            <summary> Does the directory 'C:\OSP-P\VOLANTE\CRAD\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the CRAD directory exists.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_Okuma">
-            <summary> Does the directory 'D:\Program Files\Okuma\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the Okuma directory exists.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DirExists_PCNCM">
-            <summary> Does the directory 'C:\OSP-P\emulator\' Exist? </summary>
-            <returns>Boolean</returns>
+            <summary>Gets a value indicating whether the tools directory exists under C, OSP-P, emulator.</summary>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheSpecialApi_Exists">
-            <summary> Does the OSP API file for P300 Special Lathe 'LTMIM_API.DLL' exist under 'C:\OSP-P\', including subdirectories?
+            <summary> Does the OSP API file for P300 Special Lathe 'LTMIM_API.DLL' exist under OSP-P, including subdirectories?
             </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
@@ -2311,7 +2546,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheCommandApi_Exists">
-            <summary> Does the OSP Command API file 'LCMDAPI.EXE' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Command API file 'LCMDAPI.EXE' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2322,7 +2557,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspLatheDataApi_Exists">
-            <summary> Does the OSP Data API file 'LDATAPI.DLL' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Data API file 'LDATAPI.DLL' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2333,7 +2568,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterSpecialApi_Exists">
-            <summary> Does the OSP API file for P300 Special Machining Center 'MTMIM_API.DLL' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP API file for P300 Special Machining Center 'MTMIM_API.DLL' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2344,7 +2579,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterCommandApi_Exists">
-            <summary> Does the OSP Command API file 'MCMDAPI.EXE' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Command API file 'MCMDAPI.EXE' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2355,7 +2590,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspMachiningCenterDataApi_Exists">
-            <summary> Does the OSP Data API file 'MDATAPI.DLL' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Data API file 'MDATAPI.DLL' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2366,7 +2601,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspGrinderCommandApi_Exists">
-            <summary> Does the OSP Command API file 'GCMDAPI.EXE' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Command API file 'GCMDAPI.EXE' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2377,7 +2612,7 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspGrinderDataApi_Exists">
-            <summary> Does the OSP Data API file 'GDATAPI.DLL' exist under 'C:\OSP-P\', including subdirectories? </summary>
+            <summary> Does the OSP Data API file 'GDATAPI.DLL' exist under OSP-P, including subdirectories? </summary>
             <returns>Boolean</returns>
             <remarks>[OCJ API FILE]</remarks>
         </member>
@@ -2388,17 +2623,17 @@
             [OCJ API FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincApiLicenseExists">
-            <summary> Does the file 'okuma.api.lic' exist in 'D:\Program Files\Okuma\Licenses\' ? </summary>
+            <summary> Does the file 'okuma.api.lic' exist in the Licenses folder?</summary>
             <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ThincApiLicenseModifiedDate">
             <summary>
-            Gets the Last Write Time of file ''OSPMNGCD.CNC' in 'C:\OSP-P\' </summary>
+            Gets the Last Write Time of file 'OSPMNGCD.CNC' in OSP-P</summary>
             <returns>ShortDate in string format</returns>
             <remarks>Throws exception if file does not exist! [check first using DMCExists()].</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.EbyFryExists">
-            <summary> Does the file 'EBISTART.EXE' exist in 'C:\OSP-P\HMI\' ? </summary>
+            <summary> Does the file 'EBISTART.EXE' exist in the HMI folder?</summary>
             <returns>Boolean</returns>
             <remarks>This is part of the OSP NC Software HMI Program</remarks>
         </member>
@@ -2409,11 +2644,11 @@
             <remarks>This is part of the OSP NC Software HMI Program</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.PcNcMasterExists">
-            <summary> Does the file 'conpanel.exe' exist in 'C:\OSP-P\emulator\tools\' ? </summary>
+            <summary> Does the file 'conpanel.exe' exist in the tools folder under OSP-P, emulator?</summary>
             <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ApiNotifierExists">
-            <summary> Does the file 'APINotifierService.exe' exist in 'D:\Program Files\Okuma\APINotifier\' ? </summary>
+            <summary> Does the file 'APINotifierService.exe' exist in the APINotifier folder under the Okuma directory?</summary>
             <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.ApiNotifierVersion">
@@ -2422,7 +2657,7 @@
             <returns>string</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.SoftSwitchExists">
-            <summary> Does the file 'SOFTSWITCH.EXE' exist in 'C:\OSP-P\VOLANTE\' ? </summary>
+            <summary> Does the file 'SOFTSWITCH.EXE' exist in the VOLANTE folder?</summary>
             <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.SoftSwitchVersion">
@@ -2432,17 +2667,17 @@
             <returns></returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DMCExists">
-            <summary> Does the file 'OSPMNGCD.CNC' exist in 'C:\OSP-P\' ? </summary>
+            <summary> Does the file 'OSPMNGCD.CNC' exist in OSP-P? </summary>
             <returns>Boolean</returns>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.DMCModifiedDate">
             <summary>
-            Gets the Last Write Time of file ''OSPMNGCD.CNC' in 'C:\OSP-P\' </summary>
+            Gets the Last Write Time of file ''OSPMNGCD.CNC' in OSP-P</summary>
             <returns>ShortDate in string format</returns>
             <remarks>Throws exception if file does not exist! [check first using DMCExists()].</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.PiodLib_Exists">
-            <summary> Does the OSP IO Data Library 'PIODLIB.dll' exist under 'C:\OSP-P\SHAREDLL\' ? </summary>
+            <summary> Does the OSP IO Data Library 'PIODLIB.dll' exist in the SHAREDLL folder?</summary>
             <returns> type Boolean </returns>
             <remarks>[OCJ DLL FILE]</remarks>
         </member>
@@ -2453,7 +2688,7 @@
             [OCJ DLL FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspGesture_Exists">
-            <summary> Does the P300A Touch Driver file 'OSP-GESTURE.dll' exist under 'C:\OSP-P\SHAREDLL\' ? </summary>
+            <summary> Does the P300A Touch Driver file 'OSP-GESTURE.dll' exist in the SHAREDLL folder?</summary>
             <returns>Boolean</returns>
             <remarks>[OCJ DLL FILE]</remarks>
         </member>
@@ -2464,7 +2699,7 @@
             [OCJ DLL FILE]</remarks>
         </member>
         <member name="P:Okuma.Scout.OspFileInfo.OspTouch_Exists">
-            <summary> Does the P300A Touch Driver file 'OSP-TOUCH-LIB.dll' exist under 'C:\OSP-P\SHAREDLL\' ? </summary>
+            <summary> Does the P300A Touch Driver file 'OSP-TOUCH-LIB.dll' exist in the SHAREDLL folder?</summary>
             <returns>Boolean</returns>
             <remarks>[OCJ DLL FILE]</remarks>
         </member>
@@ -2473,6 +2708,35 @@
             <returns>string</returns>
             <remarks>Will either return the version information or an error message 
             [OCJ DLL FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.SpecCodeFileExists_NC">
+            <summary> Does NC Spec Code File exist in the expected location?</summary>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.SpecCodeFileExists_NCB">
+            <summary> Does NC-B Spec Code File exist in the expected location?</summary>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.SpecCodeFileExists_PLC">
+            <summary> Does PLC Spec Code File exist in the expected location?</summary>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.P500MacManGesture_Exist">
+            <summary>
+            Check if P500 MacMan Gesture dll library exist
+            </summary>
+            <returns>Boolean</returns>
+            <remarks>[P500 MACMAN DLL FILE]</remarks>
+        </member>
+        <member name="P:Okuma.Scout.OspFileInfo.P500MacManGesture_Version">
+            <summary> Return the version of the P500 MacMan Gesture dll library</summary>
+            <returns>string</returns>
+            <remarks>Will either return the version information or an error message 
+            [OCJ DLL FILE]</remarks>
+        </member>
+        <member name="M:Okuma.Scout.OspFileInfo.GetDir_OSP">
+            <summary>
+            return OSP directory without backlash at the end: C:\OSP-P
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Okuma.Scout.OspFileInfo.ExistanceCheckPlusSearch(System.Nullable{System.Boolean}@,System.String,System.String,System.String)">
             <summary>
@@ -2542,6 +2806,11 @@
             <param name="FileName"></param>
             <returns></returns>
         </member>
+        <member name="P:Okuma.Scout.OspFileInfo.P500CradSvrRemoteDllFilesExist">
+            <summary> Does the P500 libaries exist under 'C:\OSP-P\SHAREDDLL' ? </summary>
+            <returns>Boolean</returns>
+            <remarks>For all P500 control types</remarks>
+        </member>
         <member name="T:Okuma.Scout.OspProcessInfo">
             <summary>
             
@@ -2567,10 +2836,19 @@
         </member>
         <member name="T:Okuma.Scout.OS">
             <summary>
-            
             This class provides detailed information about the host operating system.
+            </summary>
+        </member>
+        <member name="F:Okuma.Scout.OS.is64BitOperatingSystem">
+            <summary>
             
             </summary>
+        </member>
+        <member name="M:Okuma.Scout.OS.InternalCheckIsWow64">
+            <summary>
+            Check 64-bit OS
+            </summary>
+            <returns></returns>
         </member>
         <member name="P:Okuma.Scout.OS.ErrorMessage">
             <summary> This is the string value returned if an error is 
@@ -2668,8 +2946,8 @@
             <summary>
             The Win32_ComputerSystemProduct WMI class represents a product. 
             This includes software and hardware used on this computer system.
-            <para>For additional info, please refer to 
-            <see href="https://msdn.microsoft.com/en-us/library/aa394105(v=vs.85).aspx">Win32_ComputerSystemProduct class</see>.</para>
+            <para>For additional info, please refer to the Win32_ComputerSystemProduct class:
+            https://msdn.microsoft.com/en-us/library/aa394105(v=vs.85).aspx </para>
             </summary>
         </member>
         <member name="P:Okuma.Scout.OS.WMI_ComputerSystemProduct.Caption">
@@ -2703,9 +2981,9 @@
         <member name="T:Okuma.Scout.OS.WMI_OperatingSystem">
             <summary> 
             The Win32_OperatingSystem WMI class represents a Windows-based operating system installed on a computer.
-            <para>For additional info, please refer to 
-            <see href="https://msdn.microsoft.com/en-us/library/aa394239(v=vs.85).aspx">The Win32_OperatingSystem class</see>.</para>
-            </summary>
+            <para>For additional info, please refer to The 
+            <a href="https://msdn.microsoft.com/en-us/library/aa394239(v=vs.85).aspx">Win32_OperatingSystem class</a>. 
+            </para></summary>
         </member>
         <member name="P:Okuma.Scout.OS.WMI_OperatingSystem.BootDevice">
             <summary> Name of the disk drive from which the Windows operating system starts. </summary>
@@ -3056,6 +3334,10 @@
             <summary>
             Initializes static members of the <see cref="T:Okuma.Scout.Platform" /> class. </summary>
         </member>
+        <member name="P:Okuma.Scout.Platform.BaseMachine">
+            <summary>
+            Returns enumeration of type 'BaseMachineType' </summary>
+        </member>
         <member name="P:Okuma.Scout.Platform.Machine">
             <summary>
             Returns enumeration of type 'MachineType' </summary>
@@ -3065,9 +3347,9 @@
             Returns enumeration of type 'ControlType' </summary>
         </member>
         <member name="P:Okuma.Scout.Platform.BaseMachineType">
-            <summary>
-            The Base type ignores NC-Master or PC-NC master types and only reports 
-            Lathe, Machining Center, or Grinder for those types. </summary>
+            <summary>DEPRECIATED. Consider Using Platform.BaseMachine or MachineType.ToBaseMachineType() extension.
+            <para>The Base type ignores NC-Master or PC-NC master types and only reports 
+            Lathe, Machining Center, or Grinder for those types. </para></summary>
             <remarks> This is for convenience when differentiating 
             which API calls are required in a function which can then 
             provide the desired functionality regardless of machine type. </remarks>
@@ -3083,8 +3365,8 @@
             <remarks> Returns "N/A" if unable to determine version. </remarks>
         </member>
         <member name="M:Okuma.Scout.Platform.ConvertToMachineTypeString(Okuma.Scout.Enums.MachineType)">
-            <summary>
-            Returns a more human readable version of the enumeration values for MachineType. </summary>
+            <summary> DEPRECIATED - use Okuma.Scout.Extensions.ToFormattedString(this MachineType MT)
+            <para>Returns a more human readable version of the enumeration values for MachineType. </para></summary>
             <param name="MT"> [in] Machine Type </param>
             <returns> Description of the machine type. </returns>
         </member>
@@ -3155,6 +3437,32 @@
         </member>
         <member name="M:Okuma.Scout.ProgramInfo.getAssemblyBuildDate(System.String)">
             <summary> Returns the build date of a given library via linker time stamp </summary>
+        </member>
+        <member name="T:Okuma.Scout.Properties.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Properties.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Properties.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Properties.Strings.FileNotFoundErrorMessage">
+            <summary>
+              Looks up a localized string similar to FILE_NOT_FOUND.
+            </summary>
+        </member>
+        <member name="P:Okuma.Scout.Properties.Strings.FileReadErrorMessage">
+            <summary>
+              Looks up a localized string similar to ERROR_READING_FILE.
+            </summary>
         </member>
         <member name="T:Okuma.Scout.Reg">
             <summary>
@@ -3256,6 +3564,14 @@
             <param name="lResult"> Windows System Error Code as integer (ex. 5) </param>
             <param name="Arguments"> optional string (ex. "@" + inKeyName) </param>
             <returns> type string </returns>
+        </member>
+        <member name="M:Okuma.Scout.Reg.SetLocalRegistryKeyValue(System.String,System.String,System.Object)">
+            <summary>
+            Set local machine registry key value given main and its sub key
+            </summary>
+            <param name="strMainRegistryKey">registry key: SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System</param>
+            <param name="strSubKey">registry sub key under main registry key</param>
+            <param name="objValue">value to be set</param>
         </member>
         <member name="T:Okuma.Scout.SpecCode">
             <summary>
@@ -3850,16 +4166,14 @@
         </member>
         <member name="T:Okuma.Scout.ThincApi">
             <summary>
-            
-            Provides information about the THINC API on the current system 
-            
+            Provides information about the THINC API on the current system.
             </summary>
         </member>
-        <member name="F:Okuma.Scout.ThincApi.thincApiVersion">
+        <member name="F:Okuma.Scout.ThincApi.ThincApiVersion">
             <summary>Object to store Version information of THINC API files and installed version </summary>
             <remarks> Storing here and checking for null prevents unnecessarily running code to check every time.</remarks>
         </member>
-        <member name="F:Okuma.Scout.ThincApi.customApiVersion">
+        <member name="F:Okuma.Scout.ThincApi.CustomApiVersion">
             <summary>Object to store Version information of CUSTOM API files and CAPI version </summary>
             <remarks> Storing here and checking for null prevents unnecessarily running code to check every time.</remarks>
         </member>
@@ -3954,10 +4268,19 @@
             <summary>
             Gets a value indicating whether Okuma.FlexNet OR Okuma.FlexNet.Net4 exists in the Global Assembly Cache </summary>
         </member>
+        <member name="P:Okuma.Scout.ThincApi.GACExist_OACLicensingMgr">
+            <summary>
+            Gets a value indicating whether Okuma.LicensingMgr.dll library exists in the Global Assembly Cache </summary>
+        </member>
         <member name="P:Okuma.Scout.ThincApi.GACAssemblies_FlexNet">
             <summary>
             Gets a list of AssemblyName objects from the Global Assembly Cache 
             for libraries matching the alias Okuma.FlexNet OR Okuma.FlexNet.Net4 </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApi.GACAssemblies_OACLicensingMgr">
+            <summary>
+            Gets a list of AssemblyName objects from the Global Assembly Cache 
+            for libraries matching the alias Okuma.FlexNet OR Okuma.LicensingMgr </summary>
         </member>
         <member name="P:Okuma.Scout.ThincApi.DataApiVersionInGAC_Lathe">
             <summary>
@@ -4037,7 +4360,7 @@
         </member>
         <member name="M:Okuma.Scout.ThincApi.BuildApiCrossReference">
             <summary>
-            Read 'ApiVersionCrossRef.xml' and populate the API Cross Reference Dictionary. </summary>
+            Read 'ApiXRef.xml' and populate the API Cross Reference Dictionary. </summary>
             <remarks>This method may be called several times but should only execute once,
             based on the dictionary item count. 
             If the base machine type is other than M, L, or G, than the nothing will be added
@@ -4059,6 +4382,7 @@
             <param name="result">Contents of Value</param>
             <returns>true if successful, false otherwise</returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Okuma.Scout.ThincApi.CompareVersion(System.String,System.String,System.Boolean,System.Boolean)" -->
         <member name="T:Okuma.Scout.ThincApi.ApiCrossReferenceItem">
             <summary>
             This class is used to store the various assembly versions used 
@@ -4211,6 +4535,16 @@
             <param name="readCV"> [in] type integer, the CV number to read (0 is NOT ALLOWED). </param>
             <returns> type double: the value of the common variable or -1 on fail </returns>
         </member>
+        <member name="P:Okuma.Scout.ThincApiReflector.AssemblyName_CmdApi">
+            <summary>
+            "Okuma.CLCMDAPI", "Okuma.CMCMDAPI", "Okuma.CGCMDAPI",
+            or string.Empty depending on machine type. </summary>
+        </member>
+        <member name="P:Okuma.Scout.ThincApiReflector.AssemblyName_DataApi">
+            <summary>
+            "Okuma.CLDATAPI", "Okuma.CMDATAPI", "Okuma.CGDATAPI",
+            or string.Empty depending on machine type. </summary>
+        </member>
         <member name="T:Okuma.Scout.ThisSystemInfo">
             <summary>
             Structure to keep machine compatibility information for comparison with system
@@ -4244,131 +4578,6 @@
         <member name="P:Okuma.Scout.ThisSystemInfo.StartupService">
             <summary>Version of THINC Startup Service (TSS)</summary>
             <value>3.2.1.0,4.4.0.0</value>
-        </member>
-        <member name="T:Okuma.Scout.Vars">
-            <summary>
-            
-            This class contains commonly referenced constants related to Okuma OSP Controls 
-            
-            </summary>
-        </member>
-        <member name="F:Okuma.Scout.Vars.OSP_Dir">
-            <summary> C:\OSP-P\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CNS_Dir">
-            <summary> [DIRECTORIES] Gets C:\OSP-P\CNS-DAT\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.HMI_Dir">
-            <summary> [DIRECTORIES] Gets C:\OSP-P\HMI\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.SHAREDDLL_Dir">
-            <summary> [DIRECTORIES] Gets C:\OSP-P\SHAREDDLL\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CRAD_Dir">
-            <summary> [DIRECTORIES] Gets C:\OSP-P\VOLANTE\CRAD\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.OkumaDir">
-            <summary> [DIRECTORIES] Gets D:\Program Files\Okuma\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.LicenseDir">
-            <summary> [DIRECTORIES] Gets D:\Program Files\Okuma\Licenses\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.ThincApiBinDir">
-            <summary> [DIRECTORIES] Gets D:\Program Files\Okuma\THINC API\Bin\ </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.L_Data_API">
-            <summary> [FILES] Gets string literal "LDATAPI.DLL" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.L_CMD_API">
-            <summary> [FILES] Gets string literal "LCMDAPI.EXE" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.MC_Data_API">
-            <summary> [FILES] Gets string literal "MDATAPI.DLL" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.MC_CMD_API">
-            <summary> [FILES] Gets string literal "MCMDAPI.EXE" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.G_Data_API">
-            <summary> [FILES] Gets string literal "GDATAPI.DLL" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.G_CMD_API">
-            <summary> [FILES] Gets string literal "GCMDAPI.EXE" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.SoftSwitch">
-            <summary> [FILES] Gets string literal "SOFTSWITCH.EXE" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.P300LS_API">
-            <summary> [FILES] Gets string literal "LTMIM_API.DLL" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.P300M_API">
-            <summary> [FILES] Gets string literal "MTMIM_API.DLL" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.API_License">
-            <summary> [FILES] Gets string literal "okuma.api.lic" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CLCMDAPI">
-            <summary> [FILES] Gets string literal "Okuma.CLCMDAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CLDATAPI">
-            <summary> [FILES] Gets string literal "Okuma.CLDATAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CMCMDAPI">
-            <summary> [FILES] Gets string literal "Okuma.CMCMDAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CMDATAPI">
-            <summary> [FILES] Gets string literal "Okuma.CMDATAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CGCMDAPI">
-            <summary> [FILES] Gets string literal "Okuma.CGCMDAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.CGDATAPI">
-            <summary> [FILES] Gets string literal "Okuma.CGDATAPI.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.PLCSpecWild">
-            <summary> [FILES] Gets string literal "PLCUB11-*.CNS" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.NCSpecWild">
-            <summary> [FILES] Gets string literal "*NCSPEC-*.DAT" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.NCBSpecWild">
-            <summary> [FILES] Gets string literal "*NCBSPC-*.DAT" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DataManagementCard">
-            <summary> [FILES] Gets string literal "OSPMNGCD.CNC" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.EbiFry">
-            <summary> [FILES] Gets string literal "EBISTART.EXE" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.ApiNotifier">
-            <summary> [FILES] Gets string literal "APINotifierService.exe" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.FlexNet">
-            <summary> [FILES] Gets string literal "Okuma.FlexNet.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.FlexNet4">
-            <summary> [FILES] Gets string literal "Okuma.FlexNet.Net4.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.PiodLib">
-            <summary> [FILES] Gets string literal "PIODLIB.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.P300A_OspGesture">
-            <summary> [FILES] Gets string literal "OSP-GESTURE.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.P300A_OspTouch">
-            <summary> [FILES] Gets string literal "OSP-TOUCH-LIB.dll" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.DMC_NCSpecCode1">
-            <summary> [DMC VALUES] Gets string literal "[ NC-SPEC CODE No.1 ]" </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.AssemblyName_DataApi">
-            <summary>
-            "Okuma.CLDATAPI", "Okuma.CMDATAPI", "Okuma.CGDATAPI",
-            or string.Empty depending on machine type. </summary>
-        </member>
-        <member name="P:Okuma.Scout.Vars.AssemblyName_CmdApi">
-            <summary>
-            "Okuma.CLCMDAPI", "Okuma.CMCMDAPI", "Okuma.CGCMDAPI",
-            or string.Empty depending on machine type. </summary>
         </member>
     </members>
 </doc>

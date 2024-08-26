@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v1.9.0
+# ﻿﻿Okuma Open API SDK v2.0.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -128,6 +128,10 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │   │   ├───Bin
 │   │   ├───Help
 │   │   └───TestApp
+│   ├───1.26.1
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
@@ -158,6 +162,7 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │       ├───1.24.0
 │       ├───1.24.2
 │       ├───1.25.0
+│       ├───1.26.1
 │       └───1.9.1
 ├───Examples
 │   ├───API Common Variables
@@ -243,6 +248,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
+v2.0    | 2024.08.26  	| API 1.26.1
 v1.9    | 2024.04.11  	| API 1.25.0
 v1.8    | 2023.03.07  	| API 1.24.2.0
 v1.7    | 2023.02.22  	| API 1.24.0.0
@@ -268,7 +274,7 @@ v0.1a   | 2014.04.??	| first distributed version
   * Examples - Error Handling
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v1.9.0
+# ﻿﻿Okuma Open API SDK v2.0.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -395,6 +401,10 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │   │   ├───Bin
 │   │   ├───Help
 │   │   └───TestApp
+│   ├───1.26.1
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
@@ -425,6 +435,7 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │       ├───1.24.0
 │       ├───1.24.2
 │       ├───1.25.0
+│       ├───1.26.1
 │       └───1.9.1
 ├───Examples
 │   ├───API Common Variables
@@ -510,6 +521,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
+v2.0    | 2024.08.26  	| API 1.26.1.0
 v1.9    | 2024.04.11  	| API 1.25.0.0
 v1.8    | 2024.03.07  	| API 1.24.2.0
 v1.7    | 2023.02.22  	| API 1.24.0.0

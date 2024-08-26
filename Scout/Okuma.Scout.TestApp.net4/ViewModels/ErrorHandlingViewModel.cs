@@ -211,7 +211,7 @@ namespace Okuma.Scout.TestApp.net4.ViewModels
         /// <param name="e"> You may use any custom event arguments you like.
         /// For simplicity, this test app uses Type 'Okuma.Scout.Error.Args' to make
         /// it easy to get exception and message information from SCOUT. </param>
-        private void ReportAppError(object sender, Okuma.Scout.Error.Args e)
+        private void ReportAppError(object sender, MessageArgs e)
         {
             if (e.Severity == Okuma.Scout.Enums.MessageLevel.Exception)
             {
