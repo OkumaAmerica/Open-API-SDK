@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v2.2.0
+# ﻿﻿Okuma Open API SDK v2.3.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -171,8 +171,9 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │       ├───1.24.2
 │       ├───1.25.0
 │       ├───1.25.1
-│       ├───1.26.1
-│       ├───1.26.2
+│       ├───1.26.1 OBSOLETE
+│       ├───1.26.2 OBSOLETE
+│       ├───1.26.3
 │       └───1.9.1
 ├───Examples
 │   ├───API Common Variables
@@ -258,7 +259,8 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
-v2.2    | 2024.11.15  	| API 1.26.2
+v2.3    | 2025.03.14  	| API 1.26.3 
+v2.2    | 2024.11.15  	| API 1.26.2 OBSOLETE
 v2.1    | 2024.09.09  	| API 1.25.1
 v2.0    | 2024.08.26  	| API 1.26.1
 v1.9    | 2024.04.11  	| API 1.25.0
