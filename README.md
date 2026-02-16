@@ -1,7 +1,7 @@
 
 <img src="Images/Header.png" width="100%" title="Github Logo">
 
-# ﻿﻿Okuma Open API SDK v2.3.0
+# ﻿﻿Okuma Open API SDK v2.4.0
 
 Software Development Kit for applications targeting Okuma OSP-P Machine Tools.  
 
@@ -25,7 +25,7 @@ please refer to "MyOkuma App Store App Guidelines.txt" before submitting.
  For various reasons, these files might not open or display correctly.  
  If you experience this, please try the following:  
 
->    * Store the files locally and do not attempt to open over a netowrk
+>    * Store the files locally and do not attempt to open over a network
 >    * Do not store the files in a directory which contains the '#' character.
 >    * Right-click on the help file and select Properties.  
 >      Then click the "Unblock" button.  
@@ -144,6 +144,10 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │   │   ├───Bin
 │   │   ├───Help
 │   │   └───TestApp
+│   ├───1.26.4
+│   │   ├───Bin
+│   │   ├───Help
+│   │   └───TestApp
 │   └───1.9.1
 │       ├───Bin
 │       ├───Help
@@ -178,6 +182,7 @@ Unless the application is shutting down, the Close method on CMachine class shou
 │       ├───1.26.1 OBSOLETE
 │       ├───1.26.2 OBSOLETE
 │       ├───1.26.3
+│       ├───1.26.4
 │       └───1.9.1
 ├───Examples
 │   ├───API Common Variables
@@ -263,6 +268,7 @@ Information:
 
 Version | Date 			| Note  
 :---	|:---			|:--  
+v2.4    | 2026.02.16  	| API 1.26.4 
 v2.3    | 2025.03.14  	| API 1.26.3 
 v2.2    | 2024.11.15  	| API 1.26.2 OBSOLETE
 v2.1    | 2024.09.09  	| API 1.25.1
