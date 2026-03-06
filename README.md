@@ -7,7 +7,7 @@ Software Development Kit for applications targeting Okuma OSP-P Machine Tools.
 
 ## Welcome
 
-Thank you for your interest in creating [Machine Tool Apps](http://www.okuma.com/wp-machine-tool-apps) for the Okuma OSP-P NC Control.  
+Thank you for your interest in creating [Machine Tool Apps](https://www.myokuma.com/) for the Okuma OSP-P NC Control.  
 We use [StackOverflow](http://stackoverflow.com/questions/tagged/okuma) to answer programming questions.
 
 Open API questions should be sent to [API@okuma.com](mailto:API@okuma.com)  
