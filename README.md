@@ -262,7 +262,6 @@ Contact: [thincdg@gmail.com](mailto:thincdg@gmail.com)
 Information:
 
   * [https://www.okuma.com/thinc-developers-group](https://www.okuma.com/thinc-developers-group)
-  * [https://www.linkedin.com/company/thinc-developers-group](https://www.linkedin.com/company/thinc-developers-group)
 
 ## :memo: Revision History
 
