@@ -300,11 +300,3 @@ Retrieved from GitHub :octocat:
 © 2024 Okuma America Corporation
 	Please see the Installation Manual
   * THINC API - Best Practices
-	Please see the Installation Manual
-
-___
-
-Retrieved from GitHub :octocat:  
-[https://github.com/OkumaAmerica/Open-API-SDK](https://github.com/OkumaAmerica/Open-API-SDK)
-
-© 2024 Okuma America Corporation
